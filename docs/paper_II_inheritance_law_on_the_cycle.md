@@ -43,7 +43,7 @@ Throughout, $z$ is the sieve depth, the cycle modulus in the cell index is $\pro
 ### 2.1 The update
 
 Counting cells of each type over a full cycle, the entry of line $p$ gives
-$$A' = (p-2)A, \quad B' = A + (p-1)B, \quad C' = A + (p-1)C, \quad D' = B + C + pD. \tag{2.1}$$
+$$A' = (p-2)A, \quad B' = A + (p-1)B, \quad C' = A + (p-1)C, \quad D' = B + C + pD. \qquad\text{(2.1)}$$
 
 *Reason.* Of the $p$ copies of an $NN$ cell, one has its lower member struck and one its upper, so $p-2$ remain and two migrate. In $NO$ one member is already dead, so only the live member can be hit and one copy migrates to $OO$. $OO$ is invariant.
 
@@ -63,7 +63,7 @@ The full cycle state — which grows like $\prod q$ — is thus carried by four 
 Write $a = A/M$ and so on.
 
 > **Theorem 1.** The quantity $a+b$ is form-invariant, $(a+b)' = (1-1/p)(a+b)$, and consequently
-> $$\boxed{(a,b,c,d) = \big(P_2,   P_1-P_2,   P_1-P_2,   1-2P_1+P_2\big)} \tag{2.2}$$
+> $$\boxed{(a,b,c,d) = \big(P_2,   P_1-P_2,   P_1-P_2,   1-2P_1+P_2\big)} \qquad\text{(2.2)}$$
 > where $P_1 = \prod_{5\le q\le P}(1-1/q)$ and $P_2 = \prod_{5\le q\le P}(1-2/q)$.
 
 *Proof.* From (2.1) in normalised form,
@@ -81,13 +81,13 @@ Since $a+b = 1$ initially, $a+b = P_1$. Also $a' = (1-2/p)a$ with $a=1$ initiall
 ### 2.3 Asymptotics
 
 Removing the factors at $2$ and $3$ (whose product is $1/3$) from Mertens' theorem [1],
-$$P_1 \sim \frac{C}{\log P}, \quad C = 3e^{-\gamma} = 1.6843785; \qquad P_2 \sim \frac{K}{\log^2 P}, \quad K = 12 C_2 e^{-2\gamma} = 2.4972872. \tag{2.3}$$
+$$P_1 \sim \frac{C}{\log P}, \quad C = 3e^{-\gamma} = 1.6843785; \qquad P_2 \sim \frac{K}{\log^2 P}, \quad K = 12 C_2 e^{-2\gamma} = 2.4972872. \qquad\text{(2.3)}$$
 
 *Verification.* Iterating (2.1) to $P = 2\times10^8$: $a\log^2 P \to 2.497274$; and $(1-d)\log P \to 3.37227$ against the predicted $2C = 3.3687569$.
 
 ### 2.4 Structural reading
 
-$$\frac{b}{a} \sim \frac{C}{K}\log P = 0.6744833 \log P. \tag{2.4}$$
+$$\frac{b}{a} \sim \frac{C}{K}\log P = 0.6744833 \log P. \qquad\text{(2.4)}$$
 
 Fully alive cells — the twin candidates — die like $1/\log^2 P$, whereas half-dead cells die only like $1/\log P$. The flow is always $NN \to NO/ON \to OO$, and the surviving population becomes overwhelmingly $OO$.
 
@@ -112,9 +112,9 @@ Theorem 1 records how many cells occupy each state. One may ask for more: the di
 > **Theorem 2.** Let $N_{s,j}$ count the cells in state $s$ with inheritance depth $j$. Then the entry of a line $p$ gives
 > $$NN_j  \to  (p-2)NN_j + NO_{j+1} + ON_{j+1},$$
 > $$NO_j  \to  (p-2)NO_j + NO_{j+1} + OO_{j+1}, \qquad ON \text{ likewise},$$
-> $$OO_j  \to  (p-2)OO_j + 2 OO_{j+1}. \tag{3.1}$$
+> $$OO_j  \to  (p-2)OO_j + 2 OO_{j+1}. \qquad\text{(3.1)}$$
 > Equivalently, marking a strike by $x$ and the two rails by $u$ and $v$, the full census is read off from
-> $$\boxed{ \prod_{5\le q\le z}\big((q-2) + xu + xv\big). } \tag{3.2}$$
+> $$\boxed{ \prod_{5\le q\le z}\big((q-2) + xu + xv\big). } \qquad\text{(3.2)}$$
 
 *Proof.* Of the $p$ copies of any cell, exactly two are struck — one on each rail — by [I, Thm 3]. A copy that is struck acquires one further dividing line, hence depth $j+1$; the other $p-2$ copies retain depth $j$. Reading off which rails are affected in each state gives (3.1), and (3.2) is the generating-function form of the same statement, one factor per line. $\blacksquare$
 
@@ -141,8 +141,8 @@ each matching the direct census exactly. Setting $x = 1$ recovers Theorem 1.
 ### 4.1 What Theorem 2 gives, and what it does not
 
 Weighted sieves attach to each surviving element a weight depending on its factorisation, and deduce an almost-prime from the positivity of the weighted sum. The weight that powers the current explicit results between consecutive squares and cubes (see [V, §7.6] for those) is Richert's [2]:
-$$w(a)  =  \lambda  -  \sum_{\substack{p \mid a \cr  z\le p<y}}\Big(1 - \frac{\log p}{\log y}\Big), \qquad \lambda = k+1-k_2,$$
-with $z = X^{1/k_1}$ and $y = X^{1/k_2}$; the mechanism is that $w(a) > 0$ forces $\Omega(a) \le k$, so a positive lower bound for $\sum w(a)$ over the sifted set produces an almost-prime. (The constant is $\lambda$, not $1$; with $\lambda = 1$ the weight detects $\Omega \le k_2$ instead.) It is a nonlinear function of the factorisation and, through $\log p/\log y$, of the *sizes* of the factors.
+$$w(a)  =  \lambda  -  \sum_{\substack{p \mid a \cr  z\le p\lt y}}\Big(1 - \frac{\log p}{\log y}\Big), \qquad \lambda = k+1-k_2,$$
+with $z = X^{1/k_1}$ and $y = X^{1/k_2}$; the mechanism is that $w(a) \gt  0$ forces $\Omega(a) \le k$, so a positive lower bound for $\sum w(a)$ over the sifted set produces an almost-prime. (The constant is $\lambda$, not $1$; with $\lambda = 1$ the weight detects $\Omega \le k_2$ instead.) It is a nonlinear function of the factorisation and, through $\log p/\log y$, of the *sizes* of the factors.
 
 It is tempting to conclude that the framework cannot carry such a weight, since its objects are binary or counts. **That conclusion is half false, and Theorem 2 says which half.** The refined law transports the *full distribution* of inheritance depth, in a finite state space of size $O(\pi(z))$, exactly. Consequently:
 
@@ -162,7 +162,7 @@ The cheap repair is to bin cells by the value of a log-weight into a fixed numbe
 The obstruction identified in §4.1 is that the marker $x$ in (3.2) records *that* a line struck and never *which*. The repair is to mark by size.
 
 > **Corollary 2.** Let $\beta$ assign to each line a bin. Then on the full cycle
-> $$\prod_{5\le q\le z}\big((q-2) + x_{\beta(q)}u + x_{\beta(q)}v\big) \tag{4.1}$$
+> $$\prod_{5\le q\le z}\big((q-2) + x_{\beta(q)}u + x_{\beta(q)}v\big) \qquad\text{(4.1)}$$
 > transports the **joint distribution of the per-bin strike counts on each rail**, exactly.
 
 *Proof.* Identical to Theorem 2. Of the $p$ copies of any cell exactly two are struck, one on each rail; the only change is that the marker attached to the striking line is $x_{\beta(q)}$ rather than $x$. $\blacksquare$
@@ -199,17 +199,17 @@ $$O(n) = \min\lbrace q : q \mid n,  q \ne n\rbrace , \qquad O(n) = N \text{ if n
 
 Thus $O(25) = O(35) = 5$, $O(45) = 3$, $O(49) = 7$, and $O(105) = 3$ — priority resolves every overlap, so $105$ belongs to $3$ alone although $5$ and $7$ also divide it.
 
-> **Theorem 3.** Let $S_{<q}$ denote the survivors of all lines below $q$. Then the ownership layers
-> $$E_q  =  q \cdot S_{<q}, \qquad \text{taken from } q^2 \text{ onward},$$
+> **Theorem 3.** Let $S_{\lt q}$ denote the survivors of all lines below $q$. Then the ownership layers
+> $$E_q  =  q \cdot S_{\lt q}, \qquad \text{taken from } q^2 \text{ onward},$$
 > are pairwise disjoint, and consequently
-> $$\mathrm{card}S(I)  =  \mathrm{card}I  -  \sum_q \mathrm{card}E_q(I) \tag{5.1}$$
+> $$\mathrm{card}S(I)  =  \mathrm{card}I  -  \sum_q \mathrm{card}E_q(I) \qquad\text{(5.1)}$$
 > **with no inclusion–exclusion corrections.**
 
-*Proof.* If $n$ has owner $q$ then $n = q r$ with $r$ divisible by no line below $q$, i.e. $r \in S_{<q}$; and $n \ge q^2$ since $r \ge q$. Conversely any $q r$ with $r \in S_{<q}$ and $q r \ge q^2$ has least prime factor $q$. So $E_q$ is exactly $\lbrace n : O(n) = q\rbrace$, and distinct owners give disjoint sets. $\blacksquare$
+*Proof.* If $n$ has owner $q$ then $n = q r$ with $r$ divisible by no line below $q$, i.e. $r \in S_{\lt q}$; and $n \ge q^2$ since $r \ge q$. Conversely any $q r$ with $r \in S_{\lt q}$ and $q r \ge q^2$ has least prime factor $q$. So $E_q$ is exactly $\lbrace n : O(n) = q\rbrace$, and distinct owners give disjoint sets. $\blacksquare$
 
 *Verification.* $E_5 = \lbrace 25, 35, 55, 65, 85, 95, 115, 125, \dots\rbrace$ and $E_7 = \lbrace 49, 77, 91, 119, 133, 161, 203, 217, \dots\rbrace$ agree exactly, term by term, with $\lbrace n : O(n) = 5\rbrace$ and $\lbrace n : O(n) = 7\rbrace$.
 
-**A genuine structural gain, and a precise accounting of what it costs.** The $2^{\pi(z)}$ intersection terms vanish by construction — the difficulty does not disappear, it moves: evaluating $\mathrm{card}E_q(I)$ requires knowing how many earlier survivors the layer copies, i.e. the *shape* of $S_{<q}$. **Each layer is a scaled copy of the previous survivor strip**, which is the same statement as the observation that all lines read a common word on a common strip.
+**A genuine structural gain, and a precise accounting of what it costs.** The $2^{\pi(z)}$ intersection terms vanish by construction — the difficulty does not disappear, it moves: evaluating $\mathrm{card}E_q(I)$ requires knowing how many earlier survivors the layer copies, i.e. the *shape* of $S_{\lt q}$. **Each layer is a scaled copy of the previous survivor strip**, which is the same statement as the observation that all lines read a common word on a common strip.
 
 
 
@@ -232,9 +232,9 @@ $$\boxed{ \text{The layered bound is below } 1 \text{ for every } z, \text{ howe
 
 **So the summation failure is genuinely repaired: disjointness is exactly the property the union bound lacked.**
 
-**But on the full cycle the repaired sum returns the sieve product and nothing more.** Since each residue class occurs exactly once in every $q$ copies, $|E_q| = \frac{1}{q}|S_{<q}|$ on the full CRT cycle; the layer sizes already contain the product of everything below, and
+**But on the full cycle the repaired sum returns the sieve product and nothing more.** Since each residue class occurs exactly once in every $q$ copies, $|E_q| = \frac{1}{q}|S_{\lt q}|$ on the full CRT cycle; the layer sizes already contain the product of everything below, and
 
-$$\sum_{q\le z} \frac{|E_q|}{|I|}  =  1 - \prod_{q\le z}\Big(1-\frac1q\Big), \qquad\text{hence}\qquad \frac{|S|}{|I|} = \prod_{q\le z}\Big(1-\frac1q\Big). \tag{5.2}$$
+$$\sum_{q\le z} \frac{|E_q|}{|I|}  =  1 - \prod_{q\le z}\Big(1-\frac1q\Big), \qquad\text{hence}\qquad \frac{|S|}{|I|} = \prod_{q\le z}\Big(1-\frac1q\Big). \qquad\text{(5.2)}$$
 
 *Verification.* Measured layer fractions in $(P^2, 9P^2)$ at $P = 997$: $|E_3| = 0.3333$, $|E_5| = 0.1333$, $|E_7| = 0.0762$ — matching $1/3$, $2/15$, $8/105$ exactly, and identically at $P = 101$ and $P = 499$.
 
@@ -246,7 +246,7 @@ $$\sum_{q\le z} \frac{|E_q|}{|I|}  =  1 - \prod_{q\le z}\Big(1-\frac1q\Big), \qq
 | **disjoint layers** | $\prod(1-1/q)$ |
 | inclusion–exclusion | $\prod(1-1/q)$ |
 
-**The layered form is the cleanest of the three and the only one whose bound never exceeds $1$, but it is not stronger.** Evaluating $|E_q(I)|$ requires $|S_{<q}|$ on the interval $I/q$ — the same problem one level down. That recursion is Legendre's, and its shape and its limitations are classical.
+**The layered form is the cleanest of the three and the only one whose bound never exceeds $1$, but it is not stronger.** Evaluating $|E_q(I)|$ requires $|S_{\lt q}|$ on the interval $I/q$ — the same problem one level down. That recursion is Legendre's, and its shape and its limitations are classical.
 
 
 
@@ -279,8 +279,8 @@ The five rungs of the ladder now all have meanings: $q$ counts cells, $q-1$ sing
 
 ### 6.2 Why no single number closes the second moment
 
-For a window of $L$ consecutive pair slots placed at $s$, write $N_s(L) = \sum_{j<L} A(s+j)$. Averaging over $s$ gives the mean $LT/M$ and, exactly,
-$$\mathrm{Var}(N_L)  =  \frac{LT + 2\sum_{h=1}^{L-1}(L-h) C(h)}{M}  -  \Big(\frac{LT}{M}\Big)^{2}, \tag{6.1}$$
+For a window of $L$ consecutive pair slots placed at $s$, write $N_s(L) = \sum_{j\lt L} A(s+j)$. Averaging over $s$ gives the mean $LT/M$ and, exactly,
+$$\mathrm{Var}(N_L)  =  \frac{LT + 2\sum_{h=1}^{L-1}(L-h) C(h)}{M}  -  \Big(\frac{LT}{M}\Big)^{2}, \qquad\text{(6.1)}$$
 with no sampling and no independence assumption anywhere.
 
 > **Corollary 3.** There is no function $f$ with $\mathrm{Var}' = f(\mathrm{Var}, q)$.

@@ -12,7 +12,7 @@ Three criteria are examined and each is shown to fall short: capacity, resonance
 
 §6 is the substance. Cutting the sieve at depth $z$ with $z^3$ above the window makes every surviving endpoint either prime or a product of exactly two primes, each with a **unique** responsible line. Writing $C$ for the surviving cells, $R$ for the composite endpoints inside them and $S$ for the cells with both endpoints composite, the twin count of the window is exactly $T = C - R + S$, and therefore
 $$2(R-C)  =  \sum (-1)^{\Omega(n)}$$
-over the endpoints of the surviving cells. The inequality one wants, $R < C$, is precisely the statement that a **Liouville sum over the sifted set is negative**. We then show that the classical Buchstab upper bound for the composite part equals *exactly twice* the corresponding lower-bound sieve function on the whole relevant range, so any purely sieve-theoretic attempt loses a clean factor of two uniformly in every parameter; and that the two natural constraints on the cut are incompatible, $R<C$ requiring the sieve variable below $2e^{\gamma} = 3.5621$ while a positive lower bound in dimension two requires it above $\beta_2 = 4.2664$.
+over the endpoints of the surviving cells. The inequality one wants, $R \lt  C$, is precisely the statement that a **Liouville sum over the sifted set is negative**. We then show that the classical Buchstab upper bound for the composite part equals *exactly twice* the corresponding lower-bound sieve function on the whole relevant range, so any purely sieve-theoretic attempt loses a clean factor of two uniformly in every parameter; and that the two natural constraints on the cut are incompatible, $R\lt C$ requiring the sieve variable below $2e^{\gamma} = 3.5621$ while a positive lower bound in dimension two requires it above $\beta_2 = 4.2664$.
 
 A closing subsection (§6.7) records the shape of the fallacy that the identity is written to avoid: rewriting the total correlation as a sum over shifts and declaring the ratio of one shift to another to be a constant. That step is not merely unproved — the inequality is false as a general statement, and we give the counterexample.
 
@@ -51,7 +51,7 @@ with both extrema attained exactly (at $|I| = 868$, offset $2069$, and at $|I| =
 
 **(c) Resonance alone.** No correlation was measured between boundary resonance ($r \mid q^2-p^2$) and survival.
 
-**(d) Parity.** The sieve counts *rough* integers and does not separate a prime from a semiprime. We measured this directly on the relevant quantity: after conditioning on the size of the rough part in bins of width $0.02$ in $\log$, with permutation performed within bins, the slope of $\mathbf{P}(\Omega_{>P} \text{ odd})$ against $\Omega_{\le P}$ is $-0.0013$ against a null of s.d. $0.0012$, i.e. $z = -1.11$. Over $1.5\times10^6$ samples we therefore detect **no statistically significant dependence** between the two axes under this control.
+**(d) Parity.** The sieve counts *rough* integers and does not separate a prime from a semiprime. We measured this directly on the relevant quantity: after conditioning on the size of the rough part in bins of width $0.02$ in $\log$, with permutation performed within bins, the slope of $\mathbf{P}(\Omega_{\gt P} \text{ odd})$ against $\Omega_{\le P}$ is $-0.0013$ against a null of s.d. $0.0012$, i.e. $z = -1.11$. Over $1.5\times10^6$ samples we therefore detect **no statistically significant dependence** between the two axes under this control.
 
 ---
 
@@ -62,9 +62,9 @@ with both extrema attained exactly (at $|I| = 868$, offset $2069$, and at $|I| =
 ### 3.1 $\Delta_q$: the Buchstab factor [5] decomposed into internal quantities
 
 Periodically a line should delete the fraction $2/q$ of the surviving pairs. Write the actual deletion as
-$$E_q = \frac{2}{q}T_{q^-} + \Delta_q, \qquad\text{so}\qquad T_q = \Big(1-\frac2q\Big)T_{q^-} - \Delta_q, \tag{4.1}$$
+$$E_q = \frac{2}{q}T_{q^-} + \Delta_q, \qquad\text{so}\qquad T_q = \Big(1-\frac2q\Big)T_{q^-} - \Delta_q, \qquad\text{(4.1)}$$
 and iterating from a core at $13$,
-$$T_P = T_{13}\prod_{13<q\le P}\Big(1-\frac2q\Big)  -  \sum_{13<r\le P}\Delta_r \prod_{r<q\le P}\Big(1-\frac2q\Big). \tag{4.2}$$
+$$T_P = T_{13}\prod_{13\lt q\le P}\Big(1-\frac2q\Big)  -  \sum_{13\lt r\le P}\Delta_r \prod_{r\lt q\le P}\Big(1-\frac2q\Big). \qquad\text{(4.2)}$$
 
 **Measured at $P = 499$**, ratio of actual to periodic deletion, binned by $q/P$:
 
@@ -87,7 +87,7 @@ as an accumulated effect of the $\Delta_q$, negligible for the smallest lines an
 ### 3.2 A conditional asymptotic comparison: the $0.73$% margin
 
 The available future deletions are the surviving semiprimes
-$$S_P=\sum_{P<q<3P}\big[\pi(9P^2/q)-\pi(q-1)\big],$$
+$$S_P=\sum_{P\lt q\lt 3P}\big[\pi(9P^2/q)-\pi(q-1)\big],$$
 each counted once by its least factor. The prime number theorem gives the formal main term
 $$S_P \sim \Big(\int_1^3 \big(\tfrac{9}{t}-t\big) dt\Big)\frac{P^2}{\log^2 P}=\big(9\log3-4\big)\frac{P^2}{\log^2P},\qquad 9\log3-4=5.8875106.$$
 
@@ -113,9 +113,9 @@ $$\boxed{ \frac{\tau}{S} \approx \frac{5.9304658}{5.8875106}=1.0072960,\qquad\te
 
 **The measured inheritance profile is not the dominant distortion at $P=1999$.** The ratios of window to global values for $V/W$, $T/V$, $U/T$ and $Q/U$ are $0.9534,\ 0.9531,\ 0.9532,\ 0.9533$. Their agreement to four decimals suggests a nearly uniform scale factor across these observables. This supports, but does not prove asymptotically, the use of a common local correction in the budget comparison.
 
-### 3.3 Why $K < G$ does not close
+### 3.3 Why $K \lt  G$ does not close
 
-For each survivor $v$ let $\deg_6(v) \in \lbrace 0,1,2\rbrace$, let $\mathcal{C}$ be the set of survivors the future lines will remove, and put $K = \sum_{v\in\mathcal{C}}\deg_6(v)$. If $K < G$ then some gap-$6$ pair has neither endpoint touched — i.e. a prime pair $(p,p+6)$, by the caution at the head of §4.
+For each survivor $v$ let $\deg_6(v) \in \lbrace 0,1,2\rbrace$, let $\mathcal{C}$ be the set of survivors the future lines will remove, and put $K = \sum_{v\in\mathcal{C}}\deg_6(v)$. If $K \lt  G$ then some gap-$6$ pair has neither endpoint touched — i.e. a prime pair $(p,p+6)$, by the caution at the head of §4.
 
 Defining the concentration factor $c_p = (K/S) \div (2G/V)$:
 
@@ -128,13 +128,13 @@ $c_p$ is flat at $1.01$ across five doublings while the required bound widens; t
 
 **The criterion nonetheless fails, and for a reason that recurs.** It needs an **upper** bound on $K$ — available, since Selberg's upper-bound sieve has no parity obstruction — and a **lower** bound on $G$, which is not. Inside $(P^2, 9P^2)$ sieved to depth $P$, the sieve variable is
 $$s = \frac{\log(8P^2)}{\log P} = 2.451,\ 2.301,\ 2.226,\ 2.151 \quad\text{at } P = 101,\ 997,\ 9973,\ 10^6,$$
-i.e. always $\approx 2$ and falling toward it, whereas a lower bound in dimension $2$ requires $s > \beta_2 = 4.2664$, the sifting limit of the Diamond–Halberstam–Richert sieve [8] (the $\Lambda^2\Lambda^-$ sieve gives $4.516$ and the Rosser–Iwaniec $\beta$-sieve $4.85$; see Franze [11] for the table and [12, §11.19]). Sieve methods have of course gone a long way at bounded gaps — Zhang [27], Maynard [21] and Polymath [24] — but Polymath's §8 shows that $6$ is the floor obtainable from purely sieve-theoretic considerations, by adapting Selberg's parity argument [26]; the present framework sits inside that same family. **The route inherits the barrier rather than avoiding it — and the irony is that the crude part ($K$) is available while the part one expects to know ($G$) is not.**
+i.e. always $\approx 2$ and falling toward it, whereas a lower bound in dimension $2$ requires $s \gt  \beta_2 = 4.2664$, the sifting limit of the Diamond–Halberstam–Richert sieve [8] (the $\Lambda^2\Lambda^-$ sieve gives $4.516$ and the Rosser–Iwaniec $\beta$-sieve $4.85$; see Franze [11] for the table and [12, §11.19]). Sieve methods have of course gone a long way at bounded gaps — Zhang [27], Maynard [21] and Polymath [24] — but Polymath's §8 shows that $6$ is the floor obtainable from purely sieve-theoretic considerations, by adapting Selberg's parity argument [26]; the present framework sits inside that same family. **The route inherits the barrier rather than avoiding it — and the irony is that the crude part ($K$) is available while the part one expects to know ($G$) is not.**
 
 
 
 ## 4. A deterministic local constraint, and its weakness
 
-> **Proposition 1.** In any contiguous block of length $H$, each residue of a period-$q$ ruler occurs $\lfloor H/q\rfloor$ or $\lceil H/q\rceil$ times. Hence one old line's deviation from its cyclic mean is $<1$ for a single mark and $<r$ for a run of $r$ marks.
+> **Proposition 1.** In any contiguous block of length $H$, each residue of a period-$q$ ruler occurs $\lfloor H/q\rfloor$ or $\lceil H/q\rceil$ times. Hence one old line's deviation from its cyclic mean is $\lt 1$ for a single mark and $\lt r$ for a run of $r$ marks.
 
 This is a pigeonhole statement, not a statistical one, and it is the only non-probabilistic constraint the framework produces. *Zero violations over $q \in \lbrace 5,7,11,13\rbrace$, $H \le 40$, every starting position.*
 
@@ -183,15 +183,15 @@ Sections 2–5 each end the same way: an exact local statement that is absorbed 
 ### 6.1 The depth cut
 
 Fix a window $W \subset (1,U)$ and a cut $z$ with
-$$z^3  >  U. \tag{6.1}$$
+$$z^3  \gt   U. \qquad\text{(6.1)}$$
 
 > **Theorem 1 (depth cut).** After every line up to $z$ has been switched on, each surviving endpoint $n \in W$ is either prime or a product of exactly two primes, both exceeding $z$.
 
-*Proof.* Every prime factor of a survivor exceeds $z$, or a line below $z$ would have closed it. Three such factors would give $n > z^3 > U$, which is impossible. $\blacksquare$
+*Proof.* Every prime factor of a survivor exceeds $z$, or a line below $z$ would have closed it. Three such factors would give $n \gt  z^3 \gt  U$, which is impossible. $\blacksquare$
 
-> **Theorem 2 (unique owner).** If $n = qr$ with $q < r$ both prime, then $n$ lies on $L_q$ and not on $L_r$. Hence every surviving composite endpoint has exactly one line responsible for it: its smaller factor.
+> **Theorem 2 (unique owner).** If $n = qr$ with $q \lt  r$ both prime, then $n$ lies on $L_q$ and not on $L_r$. Hence every surviving composite endpoint has exactly one line responsible for it: its smaller factor.
 
-*Proof.* $qr \ge q^2$, so $n \in L_q$. And $qr < r^2$, so $L_r$ has not yet begun at $n$. $\blacksquare$
+*Proof.* $qr \ge q^2$, so $n \in L_q$. And $qr \lt  r^2$, so $L_r$ has not yet begun at $n$. $\blacksquare$
 
 Together these remove, at one stroke, everything the earlier sections had to track: the multiplicative depth beyond two, and the overlap of several lines on one endpoint. **After the cut there is exactly one kind of composite left, and exactly one line responsible for each.**
 
@@ -221,18 +221,18 @@ $$\sum_{\text{endpoints of surviving cells}} (-1)^{\Omega(n)}  =  R - P  =  2(R-
 > **Theorem 4.** With the cut (6.1) in force,
 > $$\boxed{ 2 (R-C)  =  \sum_{\text{endpoints of surviving cells}} (-1)^{\Omega(n)} }$$
 > and consequently
-> $$R < C \quad\Longleftrightarrow\quad \sum (-1)^{\Omega(n)} < 0 .$$
+> $$R \lt  C \quad\Longleftrightarrow\quad \sum (-1)^{\Omega(n)} \lt  0 .$$
 
-**This is the point of the paper.** The inequality $R<C$ is what every criterion in Paper IV eventually reduces to. Theorem 4 says it is *identical* to the statement that a Liouville sum over the sifted set is negative. The parity problem is therefore not an external obstacle that the framework happens to run into; **it is what the framework reduces to.**
+**This is the point of the paper.** The inequality $R\lt C$ is what every criterion in Paper IV eventually reduces to. Theorem 4 says it is *identical* to the statement that a Liouville sum over the sifted set is negative. The parity problem is therefore not an external obstacle that the framework happens to run into; **it is what the framework reduces to.**
 
 Two remarks make the shape of this clearer.
 
-- **$R<C$ is stronger than what is needed.** Since $C - R = T - S$, the inequality asks for $T > S$: more twins than double-semiprime cells, not merely $T>0$. The natural weaker requirement is that the number of cells with at least one composite endpoint, namely $R-S$, be less than $C$; measured, this holds comfortably even at cuts where $R>C$. But using it requires a *lower* bound on $S$ — the count of cells with both endpoints semiprime — which is itself parity-sensitive.
+- **$R\lt C$ is stronger than what is needed.** Since $C - R = T - S$, the inequality asks for $T \gt  S$: more twins than double-semiprime cells, not merely $T\gt 0$. The natural weaker requirement is that the number of cells with at least one composite endpoint, namely $R-S$, be less than $C$; measured, this holds comfortably even at cuts where $R\gt C$. But using it requires a *lower* bound on $S$ — the count of cells with both endpoints semiprime — which is itself parity-sensitive.
 - **The identity is indifferent to the window.** Nothing in Theorems 1–4 refers to the length or the position of $W$. Lengthening the window from squares to cubes, or to $[x,2x]$, changes $C$, $R$ and $S$ and leaves the identity untouched. That is the structural reason none of the geometric variations in Papers I and IV can help.
 
 ### 6.4 The classical loss is exactly a factor of two
 
-One might hope the sieve could deliver $R<C$ directly: bound $C$ from below and $R$ from above. It cannot, and the loss is a clean constant.
+One might hope the sieve could deliver $R\lt C$ directly: bound $C$ from below and $R$ from above. It cannot, and the loss is a clean constant.
 
 Set the problem in the standard normalisation. Let the sequence be sifted to depth $z$ with level of distribution $D = x^{\theta}$, so the sieve variable is $s = \log D/\log z$, and let $f_1, F_1$ be the linear-sieve functions, the solutions of
 $$(sF)' = f(s-1), \qquad (sf)' = F(s-1), \qquad sF(s) = 2e^{\gamma} \ \ (1\le s\le 3), \qquad f(s) = \tfrac{2e^{\gamma}\log(s-1)}{s} \ \ (2\le s\le 4).$$
@@ -251,19 +251,19 @@ while $f_1(s) = 2e^{\gamma}\log(s-1)/s$ on $2 \le s \le 4$. Hence $I(s) = 2f_1(s
 
 *Verification.* Computed from the delay system: $I(s)/2f_1(s) = 1.00000$ at $s = 2.2, 2.5, 3.0, 3.5, 4.0$, confirming the theorem on its whole range. Checks on the functions themselves: $f_1(3) = 0.82303 = 2e^{\gamma}\log 2/3$, $F_1(2) = 1.781072 = e^{\gamma}$, $F_1(3) = 1.187382 = 2e^{\gamma}/3$.
 
-> **Corollary 1.** On $2 \le s \le 4$ the naive balance is $f_1(s) - I(s) = -f_1(s)$, identically. The deficit is a **factor of two, uniform on that range and independent of $\theta$ and of the window** — and $[2,4]$ is the whole of the sieve-usable region for this problem, since a lower bound in dimension two needs $s > \beta_2 = 4.2664$ (§6.5).
+> **Corollary 1.** On $2 \le s \le 4$ the naive balance is $f_1(s) - I(s) = -f_1(s)$, identically. The deficit is a **factor of two, uniform on that range and independent of $\theta$ and of the window** — and $[2,4]$ is the whole of the sieve-usable region for this problem, since a lower bound in dimension two needs $s \gt  \beta_2 = 4.2664$ (§6.5).
 
 That uniformity is the reason no choice of cut, level or geometry has ever improved matters in this framework: the parameters cancel out of the comparison before the comparison is made. It is Selberg's parity factor in its most explicit form, reached here from inside the construction.
 
 ### 6.5 The two constraints on the cut are incompatible
 
-The heuristic version of $R<C$ is also instructive, because it fails by a small and identifiable amount.
+The heuristic version of $R\lt C$ is also instructive, because it fails by a small and identifiable amount.
 
 Among the $z$-rough numbers below $x$, the proportion that are prime is $1/(u \omega(u))$ with $u = \log x/\log z$ and $\omega$ Buchstab's function; hence
-$$\frac RC  =  2\Big(1-\frac{1}{u \omega(u)}\Big), \qquad\text{so}\qquad R<C \iff u \omega(u) < 2 .$$
-Since $\omega(u) \to e^{-\gamma}$ rapidly, the numerical threshold is $u^{*} \approx 3.5658$, close to the limiting proxy $2e^{\gamma} \approx 3.56215$; the two are near but not equal, and we use $u^{*}$ where the numerics require it and $2e^{\gamma}$ only as the limiting value. Equivalently: **$R<C$ asks that more than half the rough numbers be prime.**
+$$\frac RC  =  2\Big(1-\frac{1}{u \omega(u)}\Big), \qquad\text{so}\qquad R\lt C \iff u \omega(u) \lt  2 .$$
+Since $\omega(u) \to e^{-\gamma}$ rapidly, the numerical threshold is $u^{*} \approx 3.5658$, close to the limiting proxy $2e^{\gamma} \approx 3.56215$; the two are near but not equal, and we use $u^{*}$ where the numerics require it and $2e^{\gamma}$ only as the limiting value. Equivalently: **$R\lt C$ asks that more than half the rough numbers be prime.**
 
-*At the natural cut the threshold is closed-form, and needs no delay system.* The cut (6.1) is $z^3 > U$, i.e. $u = 3$, and there $\omega(u) = (1+\log(u-1))/u$ still holds, so
+*At the natural cut the threshold is closed-form, and needs no delay system.* The cut (6.1) is $z^3 \gt  U$, i.e. $u = 3$, and there $\omega(u) = (1+\log(u-1))/u$ still holds, so
 $$u \omega(u)\big|_{u=3}  =  1+\log 2, \qquad \frac RC  \longrightarrow  2\Big(1-\frac{1}{1+\log 2}\Big)  =  0.818768 .$$
 The same number arrives without Buchstab at all: a $z$-rough $n \le x$ with $z = x^{1/3}$ is prime or a product of two primes $x^{\alpha}, x^{1-\alpha}$ with $\alpha \in (1/3,1/2)$, and counting the latter gives $\frac{x}{\log x}\int_{1/3}^{1/2}\frac{\mathrm{d}\alpha}{\alpha(1-\alpha)} = \frac{x}{\log x}\log 2$, so $\Phi(x,x^{1/3}) \sim (1+\log 2) x/\log x$ and the prime proportion tends to $1/(1+\log 2) = 0.590616$. **So at the cut this paper actually uses, the heuristic of this subsection is a consequence of the prime number theorem and not of any sieve estimate.**
 
@@ -289,17 +289,17 @@ The same number arrives without Buchstab at all: a $z$-rough $n \le x$ with $z =
 
 The prime proportion among surviving endpoints is the quotient of two finite-size quantities, $\big[\pi(x)\log x/x\big]\big/\big[\Phi(x,x^{1/3})\log x/x\big]$; at $X = 10^9$ that reads $1.0537/1.6893 = 0.6237$ against the directly measured $0.6237$. **The whole distance from the prediction is the secondary term of the prime number theorem, and the numerator is what carries it.** The limiting value of $T/C$ shown above is $1/(1+\log 2)^2 = 0.3488$, i.e. the two endpoints treated as independent; the measured departure from independence, $\big(T\cdot S\big)/\big(\text{one-composite halves}\big)$, reads $1.0633,\ 1.0694,\ 1.0354,\ 1.0237,\ 1.0203$ across the same five heights — decreasing, consistent with independence, and **not established by it**, since that residual is the only place a twin excess could live.
 
-On the other side, a positive lower bound for $C$ is a sieve lower bound in **dimension two**, and therefore requires $s > \beta_2 = 4.2664$.
+On the other side, a positive lower bound for $C$ is a sieve lower bound in **dimension two**, and therefore requires $s \gt  \beta_2 = 4.2664$.
 
-$$\boxed{ u < 2e^{\gamma} = 3.5621 \quad\text{and}\quad s > \beta_2 = 4.2664 \quad\text{cannot both hold.} }$$
+$$\boxed{ u \lt  2e^{\gamma} = 3.5621 \quad\text{and}\quad s \gt  \beta_2 = 4.2664 \quad\text{cannot both hold.} }$$
 
-The window is empty, and it stays empty under the dimension-versus-level trade: taking $\kappa = 1$ with $\theta = 1/2$ (Chen's setting) requires $u > \beta_1/\theta = 4$, exactly what $\kappa=2$ with $\theta=1$ requires. **The trade between dimension and level of distribution is neutral for this problem.**
+The window is empty, and it stays empty under the dimension-versus-level trade: taking $\kappa = 1$ with $\theta = 1/2$ (Chen's setting) requires $u \gt  \beta_1/\theta = 4$, exactly what $\kappa=2$ with $\theta=1$ requires. **The trade between dimension and level of distribution is neutral for this problem.**
 
-*A caution about the last paragraph.* This comparison uses only leading-order densities; it ignores the sieve efficiency factors $f_{\kappa}$, which vanish as $s \to \beta_{\kappa}$, and $F_{\kappa} > 1$ in the upper bound. Including them makes the requirement strictly harder — the tell is that the row $\kappa=1$, $\theta=1$ (Elliott–Halberstam) gives $u>2$, which lies inside the window, and Elliott–Halberstam is known not to give twin primes. The comparison above is therefore a diagnostic, not a criterion, and Theorem 5 is the criterion.
+*A caution about the last paragraph.* This comparison uses only leading-order densities; it ignores the sieve efficiency factors $f_{\kappa}$, which vanish as $s \to \beta_{\kappa}$, and $F_{\kappa} \gt  1$ in the upper bound. Including them makes the requirement strictly harder — the tell is that the row $\kappa=1$, $\theta=1$ (Elliott–Halberstam) gives $u\gt 2$, which lies inside the window, and Elliott–Halberstam is known not to give twin primes. The comparison above is therefore a diagnostic, not a criterion, and Theorem 5 is the criterion.
 
 ### 6.6 Why switching cannot repair it
 
-Chen's switching principle bridges exactly the region where the upper-bound sieve is vacuous, that is where $D/(q_1q_2\cdots) < z$. Its reach can be located precisely in the present normalisation.
+Chen's switching principle bridges exactly the region where the upper-bound sieve is vacuous, that is where $D/(q_1q_2\cdots) \lt  z$. Its reach can be located precisely in the present normalisation.
 
 For the target $\Omega \le 2$ the quantity to subtract is the double Buchstab integral, and the balance $f_1(s) - I_2$ is **positive** on the sieve-usable region: computed at $\theta = 1/2$, it is $+0.823$, $+0.789$, $+0.583$ and $+0.128$ at $u = 6, 7, 8, 10$, going negative just afterwards. Chen's own choice is $z = x^{1/10}$, i.e. $u = 10$, where the balance is $+0.128$ — thin and positive, which is a strong check that the normalisation is right.
 
@@ -317,8 +317,8 @@ $$2(R-C)  =  \sum (-1)^{\Omega(n)}$$
 says that the inequality one wants is *equivalent* to a statement nobody knows how to prove. It would have been easy, and would have looked like progress, to write the same content in a form that hides this.
 
 The characteristic way of hiding it is to introduce a ratio and assume it bounded. Suppose one writes the total correlation over all shifts as a sum of the individual shift correlations,
-$$\sum_{n < m \le x} f(n)f(m)  =  \sum_{l \ge 1} \sum_{n \le x} f(n)f(n+l),$$
-an identity — both sides count the ordered pairs $n<m$ — and then bounds each term by a multiple of the one term of interest,
+$$\sum_{n \lt  m \le x} f(n)f(m)  =  \sum_{l \ge 1} \sum_{n \le x} f(n)f(n+l),$$
+an identity — both sides count the ordered pairs $n\lt m$ — and then bounds each term by a multiple of the one term of interest,
 $$\sum_{n\le x} f(n)f(n+l)  \le  C \sum_{n\le x} f(n)f(n+l_0),$$
 with $C$ declared to be a constant. Inverting gives a lower bound for the shift-$l_0$ correlation in terms of the total, and for $f = \vartheta$, $l_0 = 2$ the total is $\sim x^2/2$ by the prime number theorem alone, so a positive lower bound for the twin correlation appears to follow.
 
@@ -391,7 +391,7 @@ The counting condition that saturation feeds is $\sum_p \lceil L/p\rceil \ge L$.
 | $k$ | 3 | 5 | 10 |
 |---|---|---|---|
 | true $j(P_k)-1$ | 5 | 13 | 45 |
-| counting bound | $>2\times10^4$ | $>2\times10^4$ | $>2\times10^4$ |
+| counting bound | $\gt 2\times10^4$ | $\gt 2\times10^4$ | $\gt 2\times10^4$ |
 
 The bound exceeds the truth by factors of $400$ to $4000$ already at small $k$. **This is the same failure recorded in §4 and §3.4(b): the framework's local statements are exact, and its summation over lines destroys them.**
 
@@ -399,7 +399,7 @@ The bound exceeds the truth by factors of $400$ to $4000$ already at small $k$. 
 
 $$\boxed{ \text{Across the tested routes, the local laws are much sharper than the available summed bounds.} }$$
 
-The routes examined here exhibit this repeatedly: the pigeonhole constraint (§4), the deletion budget (§3.4b), the criterion $K<G$ (§3.3), the collective cancellation [III, §4], and the covering condition for Jacobsthal (§7.4). In each case a sharp local law is followed by a summation — or, equivalently, a passage from cycle to short window — whose loss exceeds the margin available. **Paper II, [IV, §5.2] isolates why with unusual clarity: making the layers disjoint removes the double-counting entirely, so the summed bound stops diverging and stays below $1$ for every depth — yet it then returns exactly $\prod(1-1/q)$. The interference was never in the intersections; it lives in the size of each layer, which already contains the product of all the layers before it.** **We therefore treat this as the recurring limitation revealed by the present tests, rather than as a theorem excluding every possible summation method.**
+The routes examined here exhibit this repeatedly: the pigeonhole constraint (§4), the deletion budget (§3.4b), the criterion $K\lt G$ (§3.3), the collective cancellation [III, §4], and the covering condition for Jacobsthal (§7.4). In each case a sharp local law is followed by a summation — or, equivalently, a passage from cycle to short window — whose loss exceeds the margin available. **Paper II, [IV, §5.2] isolates why with unusual clarity: making the layers disjoint removes the double-counting entirely, so the summed bound stops diverging and stays below $1$ for every depth — yet it then returns exactly $\prod(1-1/q)$. The interference was never in the intersections; it lives in the size of each layer, which already contains the product of all the layers before it.** **We therefore treat this as the recurring limitation revealed by the present tests, rather than as a theorem excluding every possible summation method.**
 
 
 
@@ -418,7 +418,7 @@ The pattern in §7.1 suggests a second family of test problems, structurally clo
 
 At the depth required for $\Omega \le 2$ the cube window gives a sieve variable larger by exactly the exponent gap $2/3 - 1/2 = 1/6$, i.e. by $33$%. **This exponent gap is one structural reason the cube problem gives more sieve room than the square problem; it is not, by itself, a proof of the published distinction.** (Measured, the distinction is about provability and not truth: the minimum of $\Omega$ over the window is $1$ for both squares and cubes at $x = 10^6, 10^8, 10^{10}$.)
 
-**Where the framework stops, and where it does not.** For $k=3$ the sieve variable is $s = 1.500$, and for $k=2$ it is $s = 1.000$ — both far below the linear sieve's lower-bound threshold $s>2$. The published proofs bridge the gap with **weights**. Paper II shows that the framework carries those weights exactly on the cycle, including Richert's once the generating function is refined by the size of the line [II, Cor 2]; Paper III finds that weights of that soft shape transfer very accurately on the tested windows [III, Prop 1]. **Thus the experiments do not identify the algebraic representation of the weight as the bottleneck; the required rigorous lower-bound argument remains external.**
+**Where the framework stops, and where it does not.** For $k=3$ the sieve variable is $s = 1.500$, and for $k=2$ it is $s = 1.000$ — both far below the linear sieve's lower-bound threshold $s\gt 2$. The published proofs bridge the gap with **weights**. Paper II shows that the framework carries those weights exactly on the cycle, including Richert's once the generating function is refined by the size of the line [II, Cor 2]; Paper III finds that weights of that soft shape transfer very accurately on the tested windows [III, Prop 1]. **Thus the experiments do not identify the algebraic representation of the weight as the bottleneck; the required rigorous lower-bound argument remains external.**
 
 **How much is lost in that transfer, measured.** The statement just made is qualitative, and it can be replaced by numbers. Compare the cycle law of [II, Thm 2] against a direct census over consecutive square windows $[M^2,(M+2)^2]$ near $X$, sieving at depth $z = X^{1/u}$, and separate the comparison into three layers.
 
@@ -447,15 +447,15 @@ The truncated sum — the quantity a weighted sieve argument evaluates — trans
 
 **What this does and does not settle.** A weighted-sieve argument needs the *sign* of the truncated sum, not its value to four figures; an error of a third of a percent cannot change a sign. **So the computational side of the weight is not the obstruction, by a wide margin — and that is now a measured statement rather than an impression.** What is missing is not a better computation but a *proof*: a rigorous upper bound for $\bigl|\sum_{\text{window}}\max(0,w) - \sum_{\text{cycle}}\max(0,w)\bigr|$, valid for all $X$ rather than observed over three decades. That is the distribution of a weighted $\Omega$ in a short interval, and it is the external ingredient of §8.1 in its most concrete form the present work can give it.
 
-**A sharper localisation of what is missing, obtained inside the framework.** The bound above ($s = 1.500$ for $k=3$) describes the sieve at the depth that makes survivors $P_3$ directly. One may instead sieve *less* deeply and let the almost-prime bound come from the size of the window. Write $Y = \sqrt{n+1}$ and sieve $(n^2,(n+1)^2)$ only to depth $Y/2$. Every prime factor of a survivor then exceeds $Y/2$ while the survivor itself is below $Y^4$, and $(Y/2)^5 > Y^4$ as soon as $Y > 32$; hence
+**A sharper localisation of what is missing, obtained inside the framework.** The bound above ($s = 1.500$ for $k=3$) describes the sieve at the depth that makes survivors $P_3$ directly. One may instead sieve *less* deeply and let the almost-prime bound come from the size of the window. Write $Y = \sqrt{n+1}$ and sieve $(n^2,(n+1)^2)$ only to depth $Y/2$. Every prime factor of a survivor then exceeds $Y/2$ while the survivor itself is below $Y^4$, and $(Y/2)^5 \gt  Y^4$ as soon as $Y \gt  32$; hence
 
-$$\Omega(x) \le 4 \quad\text{for every survivor, once } Y > 32,$$
+$$\Omega(x) \le 4 \quad\text{for every survivor, once } Y \gt  32,$$
 
 so the *only* obstruction to $\Omega \le 3$ in the window is a survivor with exactly four prime factors. Such a survivor is severely constrained. Writing $x = pqrs$ with $p \le q \le r \le s$:
 
-- **the fourth factor is forced.** Given $p,q,r$, the admissible $s$ lies in a window of width $(2n+1)/pqr < 2Y^2/(Y/2)^3 = 16/Y$, which is below $1$ once $Y > 16$: there is at most one candidate;
-- **the first two are confined to about four positions.** Given $r,s$, the product $pq$ lies in a window of width $(2n+1)/rs < 2Y^2/(Y/2)^2 = 8$;
-- **the factorisation always straddles $n$:** $pq \le n < rs$ in every case examined ($78$ of $78$ at $Y = 29, 53, 101, 199, 293, 401$).
+- **the fourth factor is forced.** Given $p,q,r$, the admissible $s$ lies in a window of width $(2n+1)/pqr \lt  2Y^2/(Y/2)^3 = 16/Y$, which is below $1$ once $Y \gt  16$: there is at most one candidate;
+- **the first two are confined to about four positions.** Given $r,s$, the product $pq$ lies in a window of width $(2n+1)/rs \lt  2Y^2/(Y/2)^2 = 8$;
+- **the factorisation always straddles $n$:** $pq \le n \lt  rs$ in every case examined ($78$ of $78$ at $Y = 29, 53, 101, 199, 293, 401$).
 
 | $Y$ | $29$ | $53$ | $101$ | $199$ | $293$ | $401$ |
 |---|---|---|---|---|---|---|
@@ -473,11 +473,11 @@ i.e. the critical point once more. **The reduction is genuine and sharp — it r
 
 **The variance of the survivor count, and where that question already stands.** The measurements above concern the mean; one may also ask for the second moment of $B(a)$, the number of cells of $(a^2,(a+2)^2)$ surviving all lines $p \le a/2$. Expanding the square introduces the correlation of the survivor indicator at cell-distance $h$, and **that correlation is already transported exactly by [II, Thm 4]**; nothing new is needed here beyond a change of coordinates, which we record because the resulting form is the one the present section uses.
 
-Paper II indexes gap-$2$ pairs by $x$, so that consecutive indices differ by $2$ in the integer, and obtains the ladder $K_q(h_{\mathrm{II}}) = q-2, q-3, q-4$ according as $h_{\mathrm{II}} \equiv 0$, $\pm1$, or otherwise modulo $q$. Cells are spaced $6$ apart, so a cell-distance $h$ is $h_{\mathrm{II}} = 3h$; substituting, $h_{\mathrm{II}} \equiv 0$ becomes $p \mid h$ for $p>3$, and $h_{\mathrm{II}} \equiv \pm1$ becomes $3h \equiv \pm1$, i.e. $p \mid 9h^2-1$. Writing $\nu_p(h) = p - K_p$ for the number of residues the pair of cells forbids:
+Paper II indexes gap-$2$ pairs by $x$, so that consecutive indices differ by $2$ in the integer, and obtains the ladder $K_q(h_{\mathrm{II}}) = q-2, q-3, q-4$ according as $h_{\mathrm{II}} \equiv 0$, $\pm1$, or otherwise modulo $q$. Cells are spaced $6$ apart, so a cell-distance $h$ is $h_{\mathrm{II}} = 3h$; substituting, $h_{\mathrm{II}} \equiv 0$ becomes $p \mid h$ for $p\gt 3$, and $h_{\mathrm{II}} \equiv \pm1$ becomes $3h \equiv \pm1$, i.e. $p \mid 9h^2-1$. Writing $\nu_p(h) = p - K_p$ for the number of residues the pair of cells forbids:
 
 $$\nu_p(h)  =  \begin{cases} 2, & p \mid h,\cr  3, & p \mid 9h^2-1,\cr  4, & \text{otherwise,}\end{cases}$$
 
-the three cases being mutually exclusive, since $p \mid h$ forces $3h \equiv 0$. (Directly: with $c_p \equiv 6^{-1}$, the forbidden residues for $m$ are $\pm c_p$ and $-h\pm c_p$, which coincide in pairs under exactly those two conditions. Checked against a direct count with no mismatch for all $p<200$, $h<300$.) **[II, §6.3] already names the resulting product as the singular series of the Hardy--Littlewood $k$-tuple conjecture, "suitably normalised"; what is added below is the normalising constant, the exact mean, and the order of the error.** The series is
+the three cases being mutually exclusive, since $p \mid h$ forces $3h \equiv 0$. (Directly: with $c_p \equiv 6^{-1}$, the forbidden residues for $m$ are $\pm c_p$ and $-h\pm c_p$, which coincide in pairs under exactly those two conditions. Checked against a direct count with no mismatch for all $p\lt 200$, $h\lt 300$.) **[II, §6.3] already names the resulting product as the singular series of the Hardy--Littlewood $k$-tuple conjecture, "suitably normalised"; what is added below is the normalising constant, the exact mean, and the order of the error.** The series is
 
 $$S_B(h;z) = \prod_{5\le p\le z}\frac{1-\nu_p(h)/p}{(1-2/p)^2} = G(z)\prod_{p \mid h}\frac{1-2/p}{1-4/p}\prod_{p \mid 9h^2-1}\frac{1-3/p}{1-4/p},\qquad G(z)=\prod_{5\le p\le z}\frac{1-4/p}{(1-2/p)^2},$$
 
@@ -485,13 +485,13 @@ with $G$ convergent ($\log$ of the factor is $\asymp -4/p^2$) and $G(\infty) = 0
 
 **This series is self-normalising, exactly.** Two derivations agree. Per prime, the three cases have densities $1/p$, $2/p$ and $1-3/p$, so with $q = 1/p$ the expected local factor is
 $$(1-3q) + q \frac{1-2q}{1-4q} + 2q \frac{1-3q}{1-4q} = \frac{1-4q+4q^2}{1-4q} = \frac{(1-2/p)^2}{1-4/p},$$
-which is the reciprocal of the corresponding factor of $G$; hence $G\prod_p E_p = 1$. Equivalently, expanding by Dirichlet convolution with $f(p) = 2/(p-4)$ and $g(p) = 1/(p-4)$, the condition $e \mid 9h^2-1$ contributes $2^{\omega(e)}$ residues and the main term is $G H \prod_p\bigl(1 + 4/(p(p-4))\bigr) = GH\prod_p (p-2)^2/(p(p-4)) = H$. This is the analogue, for the pattern $h(3h-1)(3h+1)$, of the singular-series averages of Montgomery and Soundararajan, and it identifies the object: $S_B$ is the Hardy--Littlewood series of a prime quadruple, normalised by the square of the twin constant. Writing $\mathcal H_h = \lbrace -1,1,6h-1,6h+1\rbrace$, the local factors at $2$ and $3$ are $8$ and $27/16$, and $\prod_{p>3}$ of the $C_2$ factor is $\tfrac43 C_2$, so that
+which is the reciprocal of the corresponding factor of $G$; hence $G\prod_p E_p = 1$. Equivalently, expanding by Dirichlet convolution with $f(p) = 2/(p-4)$ and $g(p) = 1/(p-4)$, the condition $e \mid 9h^2-1$ contributes $2^{\omega(e)}$ residues and the main term is $G H \prod_p\bigl(1 + 4/(p(p-4))\bigr) = GH\prod_p (p-2)^2/(p(p-4)) = H$. This is the analogue, for the pattern $h(3h-1)(3h+1)$, of the singular-series averages of Montgomery and Soundararajan, and it identifies the object: $S_B$ is the Hardy--Littlewood series of a prime quadruple, normalised by the square of the twin constant. Writing $\mathcal H_h = \lbrace -1,1,6h-1,6h+1\rbrace$, the local factors at $2$ and $3$ are $8$ and $27/16$, and $\prod_{p\gt 3}$ of the $C_2$ factor is $\tfrac43 C_2$, so that
 
 $$\mathfrak S(\mathcal H_h)  =  \tfrac{27}{2}\bigl(\tfrac43\bigr)^2 C_2^2  S_B(h)  =  24 C_2^2 S_B(h).$$
 
 **The size of the error in that average is larger than a first look suggests, and we record the correction.** An earlier draft of this section fitted $\sum_{h\le H}(S_B(h)-1)$ over $H \le 4\times10^5$, obtained a coefficient near $0.85$ that drifted with the fitting range, and reported the error as $O(\log H)$. Extending the computation to $H = Q_7 = 37{,}182{,}145$ (the seventh primorial from $5$) shows that reading to be wrong: the drift was not instability in a coefficient but the curvature of a quadratic seen over too short a range. For the smoothed sum, which has far smaller fluctuation,
 
-$$\Sigma_B(C) := \sum_{h<C}\Bigl(1-\frac{h}{C}\Bigr)\bigl(S_B(h)-1\bigr)  =  -0.0329 (\log C)^2  -  0.244\log C  -  0.38,$$
+$$\Sigma_B(C) := \sum_{h\lt C}\Bigl(1-\frac{h}{C}\Bigr)\bigl(S_B(h)-1\bigr)  =  -0.0329 (\log C)^2  -  0.244\log C  -  0.38,$$
 
 with root-mean-square residual $0.0018$ over nine points spanning $10^5 \le C \le 3.7\times10^7$; the linear model $a\log C + b$ has residual $0.105$ over the same points, and $a\log C\log\log C + \cdots$ has $0.0045$. The unsmoothed sum fluctuates by $O(1)$ and does not separate the models on its own, but its local slope over the upper range is near $1.5$, against the $0.85$ that the short-range fit had suggested. **We therefore state the order as $(\log C)^2$ and withdraw the earlier $O(\log H)$.** The coefficient is measured, not derived; we have no closed form for it.
 
@@ -509,7 +509,7 @@ the factor $2$ accounting for $\pm h$. Had $\Sigma_B$ been $O(\log C)$ the produ
 
 A direct evaluation at $a = 100001$ from the exact truncated series ($C = 66{,}668$, $z = 50{,}000$, $\rho_1 = 2.13\times10^{-2}$, $\sum_{h\ne0} = -13.95$) gives $0.681$ against the measured $0.702$, a $3$% agreement with no free parameter. **The negative sign is the substance: the repulsion encoded in $\nu_p$ is what makes the count sub-Poisson.** The model runs a few percent low at these sizes, and predicts a slow rise of the dispersion toward $0.836$; the two available measurements do rise, $0.685$ at $a\sim10^4$ to $0.702$ at $a\sim10^5$, against a predicted rise of $0.616$ to $0.674$. That the increments agree better than the levels is consistent with a constant offset from the Buchstab correction, which the independence model omits; we have not isolated it, and the rise itself remains a prediction rather than a confirmed law.
 
-**Why this is a description and not a route.** It is natural to hope that a second-moment bound of the shape $\sum_{A<a\le2A}(B(a)-\mu(a))^2 \ll \sum_{A<a\le2A}\mu(a)$ would give $B(a)>0$ for almost all $a$, which is far weaker than a large-deviation estimate. But that conclusion is already known, in a much stronger form and by different means. Bazzanella [2] proves **unconditionally** that all intervals $[n^2,(n+1)^2]\subset[1,N]$ with at most $O(N^{1/4+\varepsilon})$ exceptions contain the *expected number of primes* — not merely a survivor of the small lines — with $O(f(N)\log^2 N)$ exceptions on the Riemann hypothesis, $O(N^{\varepsilon})$ under the Lindelöf or Density hypotheses [3], and none at all under a strong form of Montgomery's conjecture. The mechanism is zero-density estimates for $\zeta$ together with a fourth-power mean of $\psi$ in short intervals; the bridge to square windows is the observation that consecutive square windows are spaced further apart than the block of exceptions forced around any one of them, so their exceptional blocks are disjoint [3, Lem. 2.2]. **We record the local law above as a description of the dispersion, therefore, and not as the first step of a route: the almost-all statement it was reaching for is settled, more strongly, by analytic methods this framework does not contain.**
+**Why this is a description and not a route.** It is natural to hope that a second-moment bound of the shape $\sum_{A\lt a\le2A}(B(a)-\mu(a))^2 \ll \sum_{A\lt a\le2A}\mu(a)$ would give $B(a)\gt 0$ for almost all $a$, which is far weaker than a large-deviation estimate. But that conclusion is already known, in a much stronger form and by different means. Bazzanella [2] proves **unconditionally** that all intervals $[n^2,(n+1)^2]\subset[1,N]$ with at most $O(N^{1/4+\varepsilon})$ exceptions contain the *expected number of primes* — not merely a survivor of the small lines — with $O(f(N)\log^2 N)$ exceptions on the Riemann hypothesis, $O(N^{\varepsilon})$ under the Lindelöf or Density hypotheses [3], and none at all under a strong form of Montgomery's conjecture. The mechanism is zero-density estimates for $\zeta$ together with a fourth-power mean of $\psi$ in short intervals; the bridge to square windows is the observation that consecutive square windows are spaced further apart than the block of exceptions forced around any one of them, so their exceptional blocks are disjoint [3, Lem. 2.2]. **We record the local law above as a description of the dispersion, therefore, and not as the first step of a route: the almost-all statement it was reaching for is settled, more strongly, by analytic methods this framework does not contain.**
 
 **A methodological caution that cost two false readings here.** The subtracted term $W(C) e_k(\lbrace \lambda_p\rbrace )$ is of size $C$, so an unclosed tail in the expectation is amplified by $C$: two computations differing only in the prime bound used for $G$ and $e_k$ disagreed by $0.1$ at $C = 1.6\times10^6$, an amount larger than several of the effects under discussion, and the disagreement was traced exactly to $4/(P\log P)$ summed over the missing primes. Any reproduction must close that tail analytically or fix the bound; the accompanying script does the former.
 

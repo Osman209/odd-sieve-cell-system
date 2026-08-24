@@ -115,7 +115,7 @@ The widths climb by exactly $8$; the strike count climbs $2,3,4,5,6$ **and stops
 ### 2.1 Definition
 
 For odd $p$,
-$$L_p(k)  =  p^2 + 2pk  =  p (p+2k), \qquad k = 0,1,2,\dots \tag{2.1}$$
+$$L_p(k)  =  p^2 + 2pk  =  p (p+2k), \qquad k = 0,1,2,\dots \qquad\text{(2.1)}$$
 
 The line begins at $p^2$ and has step $2p$.
 
@@ -127,11 +127,11 @@ The line begins at $p^2$ and has step $2p$.
 
 ### 2.2 Why the line begins at $p^2$
 
-Any odd multiple of $p$ below $p^2$ has the form $p\cdot s$ with $s<p$, hence lies on a smaller line. Starting at $p^2$ makes each line responsible exactly for what it alone contributes.
+Any odd multiple of $p$ below $p^2$ has the form $p\cdot s$ with $s\lt p$, hence lies on a smaller line. Starting at $p^2$ makes each line responsible exactly for what it alone contributes.
 
 ### 2.3 A difference-of-squares identity
 
-$$L_m(k)  =  (m+k)^2 - k^2 \tag{2.2}$$
+$$L_m(k)  =  (m+k)^2 - k^2 \qquad\text{(2.2)}$$
 
 Every strike is a difference of two squares whose roots differ by the fixed amount $m$. This is the first link between lines and squares; it returns in §3.6 and §3.7, and again in Paper 0.
 
@@ -139,13 +139,13 @@ Every strike is a difference of two squares whose roots differ by the fixed amou
 
 > **Theorem 1.** For every odd $m\ge3$, $L_m$ contributes at least one position unreached by any smaller line if and only if $m$ is prime.
 
-*Proof.* Suppose first that $m$ is composite and let $q$ be its least prime factor, so $q<m$. Every strike $n = m(m+2k)$ is divisible by $q$. Since $n \ge m^2 > q^2$ we have $q \le \sqrt n$, so the line $L_q$ has already been born at this position and has struck it. Hence $L_m$ contributes nothing new.
+*Proof.* Suppose first that $m$ is composite and let $q$ be its least prime factor, so $q\lt m$. Every strike $n = m(m+2k)$ is divisible by $q$. Since $n \ge m^2 \gt  q^2$ we have $q \le \sqrt n$, so the line $L_q$ has already been born at this position and has struck it. Hence $L_m$ contributes nothing new.
 
-Conversely, let $m=p$ be prime. Its first strike is $p^2$. If a smaller line $L_q$ with $3\le q<p$ had already struck $p^2$, then $q\mid p^2$, hence $q=p$, impossible. Thus $p^2$ is new when $L_p$ is born, so $L_p$ contributes at least one previously unreached position. $\blacksquare$
+Conversely, let $m=p$ be prime. Its first strike is $p^2$. If a smaller line $L_q$ with $3\le q\lt p$ had already struck $p^2$, then $q\mid p^2$, hence $q=p$, impossible. Thus $p^2$ is new when $L_p$ is born, so $L_p$ contributes at least one previously unreached position. $\blacksquare$
 
-*Remark.* The hypothesis $q \le \sqrt n$ is essential and is often left implicit: a line $L_q$ does not reach any position before $q^2$. Here it holds automatically because $n \ge m^2 > q^2$.
+*Remark.* The hypothesis $q \le \sqrt n$ is essential and is often left implicit: a line $L_q$ does not reach any position before $q^2$. Here it holds automatically because $n \ge m^2 \gt  q^2$.
 
-*Verification.* Over every composite odd $m < 200$ and every strike $m(m+2k) \le 10^5$ — $38{,}904$ strikes in all — the number carrying no smaller line is **zero**.
+*Verification.* Over every composite odd $m \lt  200$ and every strike $m(m+2k) \le 10^5$ — $38{,}904$ strikes in all — the number carrying no smaller line is **zero**.
 
 Consequently the underlying network consists of the odd prime lines alone.
 
@@ -161,7 +161,7 @@ With $L_2$ admitted, gaps between consecutive struck numbers lie in $\lbrace 1,2
 
 ### 3.1 Definition
 
-$$\underbrace{6b-3}_{\text{on } L_3}  \Big|  \underbrace{6b-1,   6b+1}_{\textbf{cell } C_b}  \Big|  \underbrace{6b+3}_{\text{on } L_3} \tag{3.1}$$
+$$\underbrace{6b-3}_{\text{on } L_3}  \Big|  \underbrace{6b-1,   6b+1}_{\textbf{cell } C_b}  \Big|  \underbrace{6b+3}_{\text{on } L_3} \qquad\text{(3.1)}$$
 
 The cell is symmetric about its centre $6b$; this symmetry is inherited by everything that follows.
 
@@ -170,11 +170,11 @@ The cell is symmetric about its centre $6b$; this symmetry is inherited by every
 Write $p = 6a+\sigma$ with $\sigma = \pm 1$.
 
 > **Theorem 2.** For all $b$ and $\varepsilon = \pm 1$,
-> $$p (6b+\varepsilon)  =  6 (pb + a\varepsilon)  +  \sigma\varepsilon. \tag{3.2}$$
+> $$p (6b+\varepsilon)  =  6 (pb + a\varepsilon)  +  \sigma\varepsilon. \qquad\text{(3.2)}$$
 
 *Proof.* Direct expansion: $p(6b+\varepsilon) = (6a+\sigma)(6b+\varepsilon) = 36ab + 6a\varepsilon + 6b\sigma + \sigma\varepsilon = 6(pb + a\varepsilon) + \sigma\varepsilon$, using $6ab + b\sigma = b(6a+\sigma) = pb$. $\blacksquare$
 
-*Verification.* Zero failures over every prime $p < 200$, every $b$ with $0 \le b < 50$ and both signs $\varepsilon = \pm1$: $4{,}400$ instances.
+*Verification.* Zero failures over every prime $p \lt  200$, every $b$ with $0 \le b \lt  50$ and both signs $\varepsilon = \pm1$: $4{,}400$ instances.
 
 **Interpretation.** The line $p$ sends the two members of the factor-cell $C_b$ into the cells centred at $pb-a$ and $pb+a$ — two positions symmetric about $pb$, at distance $2a$.
 
@@ -189,7 +189,7 @@ Two consequences are immediate. First, **the symmetry of a line's fingerprint is
 
 ### 3.3 The repeating unit
 
-Among $p,  p+2,  p+4$ exactly one is divisible by $3$, so every line $p>3$ has the fixed repeating unit
+Among $p,  p+2,  p+4$ exactly one is divisible by $3$, so every line $p\gt 3$ has the fixed repeating unit
 $$L_3 \to \text{strike} \to \text{strike} \to L_3 \to \cdots$$
 
 > **Proposition 1.** If $p \equiv +1 \pmod 6$ the $L_3$-meeting is the *first* strike $p(p+2)$; if $p \equiv -1 \pmod 6$ it is the *second*, $p(p+4)$.
@@ -208,8 +208,8 @@ Assign to each factor-cell the state of its two members ($N$ = alive, $O$ = alre
 |---|---|---|---|---|
 | new strikes | 2 | 1 | 1 | 0 |
 
-*Reason.* If $6b+1$ is divisible by some $r<p$, then so is $p(6b+1)$. **The state of the factor-cell is transported by multiplication.** Hence
-$$\text{effect of } L_p  =  (\text{its geometric track})  \cap  (\text{previous survivors}). \tag{3.3}$$
+*Reason.* If $6b+1$ is divisible by some $r\lt p$, then so is $p(6b+1)$. **The state of the factor-cell is transported by multiplication.** Hence
+$$\text{effect of } L_p  =  (\text{its geometric track})  \cap  (\text{previous survivors}). \qquad\text{(3.3)}$$
 
 The counting form of this law, its closed solution and its refinement by inheritance depth are the subject of Paper II; nothing below depends on them.
 
@@ -218,7 +218,7 @@ The counting form of this law, its closed solution and its refinement by inherit
 ### 3.5 The survivor law as a geometric statement
 
 A line's cycle in cell coordinates has length $p$ cells, and the line has two branches; it therefore closes two cells out of every $p$:
-$$|R_{Mp}| = (p-2) |R_M| \qquad\Longrightarrow\qquad |R_M| = \prod_{3<p\le z}(p-2). \tag{3.4}$$
+$$|R_{Mp}| = (p-2) |R_M| \qquad\Longrightarrow\qquad |R_M| = \prod_{3\lt p\le z}(p-2). \qquad\text{(3.4)}$$
 
 | lines | 5 | 7 | 11 | 13 | 17 |
 |---|---|---|---|---|---|
@@ -242,8 +242,8 @@ $$(p-2) = (p \text{ cells per cycle}) - (2 \text{ branches}).$$
 Theorem 2 has a consequence that is worth isolating, because it turns a law that looks separate into the shadow of a straight line.
 
 **The coordinates.** Take two cells $C_a$ and $C_b$ with $a \ge b$ and multiply their members. Writing $X_{a,\varepsilon} = 6a+\varepsilon$ with $\varepsilon = \pm1$, the identity behind Theorem 2 reads
-$$X_{a,\varepsilon} X_{b,\delta}  =  6\big(6ab + a\delta + b\varepsilon\big) + \varepsilon\delta. \tag{3.5}$$
-Verified with zero errors over $1 \le a,b < 100$ and all four sign pairs. Now set
+$$X_{a,\varepsilon} X_{b,\delta}  =  6\big(6ab + a\delta + b\varepsilon\big) + \varepsilon\delta. \qquad\text{(3.5)}$$
+Verified with zero errors over $1 \le a,b \lt  100$ and all four sign pairs. Now set
 $$S = a+b, \qquad D = a-b, \qquad M = 6ab = \tfrac{3}{2}\big(S^2-D^2\big),$$
 so the four products land at cell indices $M-S,\ M-D,\ M+D,\ M+S$, on the rails $+,-,-,+$ respectively — an exact symmetry about $M$, not an approximate one.
 
@@ -291,7 +291,7 @@ Three readings of the same picture, and they are the three facts above:
 > $$2a, \quad p-2a.$$
 > Explicitly, $p = 6a-1$ gives $(2a,\ 4a-1)$ and $p = 6a+1$ gives $(4a+1,\ 2a)$.
 
-Verified with zero errors for every prime $5 \le p < 200$. Examples: $p=5$ gives $(2,3)$; $p=7$ gives $(5,2)$; $p=11$ gives $(4,7)$; $p=13$ gives $(9,4)$.
+Verified with zero errors for every prime $5 \le p \lt  200$. Examples: $p=5$ gives $(2,3)$; $p=7$ gives $(5,2)$; $p=11$ gives $(4,7)$; $p=13$ gives $(9,4)$.
 
 **So the fingerprint of a line is not an independent law.** It is the projection onto the cell axis of the single straight line $S-D = 2a$, and the two numbers in it are the distance across the pair of strikes and the distance to the next pair. The asymmetry between $p \equiv 1$ and $p \equiv -1 \pmod 6$ — which in a direct computation looks like a case distinction — is only the order in which the two gaps appear.
 
@@ -307,11 +307,11 @@ Fix an odd $m$ coprime to $6$. Then $m^2 \equiv 1 \pmod{24}$, so $m^2$ is the up
 
 **Straddling — a difference.** With $q = m-d$ and $r = m+e$, $d, e$ even and positive, one has $qr = m^2 + m(e-d) - de$, so the product lands at
 
-$$6t  =  m(e-d) - de  +  \lbrace 0, 2\rbrace . \tag{3.6}$$
+$$6t  =  m(e-d) - de  +  \lbrace 0, 2\rbrace . \qquad\text{(3.6)}$$
 
 **Both above — a sum.** With $q = m+u$ and $r = m+v$, $u, v$ even and positive, one has $qr = m^2 + m(u+v) + uv$, so
 
-$$6t  =  m(u+v) + uv  +  \lbrace 0, 2\rbrace . \tag{3.7}$$
+$$6t  =  m(u+v) + uv  +  \lbrace 0, 2\rbrace . \qquad\text{(3.7)}$$
 
 In each case the ambiguity $\lbrace 0,2\rbrace$ is only which member of the cell is hit.
 
@@ -321,7 +321,7 @@ The two formulas are the same expression with one sign changed, and §3.6 shows 
 
 Two consequences are immediate, and they are why the pair of formulas is worth stating rather than decorative.
 
-- **(3.7) confines the second regime to a triangle.** If the product is to lie below $(m+h)^2$ then $m(u+v)+uv < 2mh+h^2$, and when $h^2 < 2m$ this forces $u+v \le h$. The pairs $(u,v)$ with $1 \le u \le v$ available at all therefore number
+- **(3.7) confines the second regime to a triangle.** If the product is to lie below $(m+h)^2$ then $m(u+v)+uv \lt  2mh+h^2$, and when $h^2 \lt  2m$ this forces $u+v \le h$. The pairs $(u,v)$ with $1 \le u \le v$ available at all therefore number
 $$\sum_{s=2}^{h} \Big\lfloor \tfrac s2 \Big\rfloor  =  \Big\lfloor \tfrac{h^2}{4}\Big\rfloor .$$
 - **(3.6) admits no such confinement**, since $e-d$ may be small while $d$ and $e$ are both large.
 
@@ -344,7 +344,7 @@ the sector between consecutive odd squares, anchored so that its root is the low
 > $$c  =  c_0,\ c_0+1,\ \dots,\ c_0+N-1, \qquad c_0 = 6a^2-2a+1, \qquad N = 4a-1 .$$
 > Moreover a line $\ell$ closes the cell $c_0+j$ exactly when $j \equiv \pm 6^{-1} - c_0 \pmod \ell$ — **two residue classes, always.**
 
-*Proof.* $q^2 = 36a^2-12a+1$, so the smallest $c$ with $6c-1 > q^2$ is $(q^2+5)/6 = 6a^2-2a+1$; the largest with $6c+1 < r^2 = 36a^2+12a+1$ is $c_0+4a-2$. The second statement is Theorem 3 translated by $c_0$. $\blacksquare$
+*Proof.* $q^2 = 36a^2-12a+1$, so the smallest $c$ with $6c-1 \gt  q^2$ is $(q^2+5)/6 = 6a^2-2a+1$; the largest with $6c+1 \lt  r^2 = 36a^2+12a+1$ is $c_0+4a-2$. The second statement is Theorem 3 translated by $c_0$. $\blacksquare$
 
 *Verification.* Exact for every $a = 1,\dots,299$.
 
@@ -368,10 +368,10 @@ Examples: $(35,37)$, $(143,145)$, $(323,325)$, $(575,577)$, $(899,901)$, and $(3
 
 Theorem 4 makes one thing immediate that the outside indexing hides. **A line's two classes each occur at most once in an interval of $N$ indices as soon as $\ell \ge N$.** So the lines divide at the window's own length:
 
-- $\ell < N = 4a-1$: the line **wraps**, and takes about $2N/\ell$ cells;
+- $\ell \lt  N = 4a-1$: the line **wraps**, and takes about $2N/\ell$ cells;
 - $\ell \ge N$: the line **does not wrap**, and its entire budget is $2$ — usually already spent by the small lines.
 
-| $a$ | $N$ | lines $\ell<N$ | cells they close | lines $\ell \ge N$ | cells they close | twins |
+| $a$ | $N$ | lines $\ell\lt N$ | cells they close | lines $\ell \ge N$ | cells they close | twins |
 |---|---|---|---|---|---|---|
 | 3 | 11 | 2 | 8 | 4 | 1 | 2 |
 | 17 | 67 | 16 | 60 | 9 | **0** | 7 |
@@ -391,9 +391,9 @@ Sections 8.1–8.3 index the window by position. This one indexes it by the *str
 Keep $n = 6a$, and call **layer $j$** the pair of lines
 $$p = n-6j-1, \qquad s = n-6j+1,$$
 running them on the shared index $k = 6j+t$. Translating the anchor identity $L_{q-6j}(6j) = q^2-36j^2$ of [IV, Thm 15] into the window coordinate $u$ gives, exactly,
-$$u^-(t) = 2pt - 36j^2, \qquad u^+(t) = 4n - 36j^2 + 2st. \tag{4.1}$$
+$$u^-(t) = 2pt - 36j^2, \qquad u^+(t) = 4n - 36j^2 + 2st. \qquad\text{(4.1)}$$
 
-*Verification.* Zero failures over $695{,}968$ checks ($a < 120$, all $j$, $t \in [-40,60]$).
+*Verification.* Zero failures over $695{,}968$ checks ($a \lt  120$, all $j$, $t \in [-40,60]$).
 
 Under the passage $W_n \to W_{n+6}$ an old layer has $j \to j+1$ and $k \to k+6$, so
 $$t  =  k - 6j \quad\text{is invariant},$$
@@ -401,11 +401,11 @@ while the two positions shift by $-(72j+36)$ and $-(72j+12)$ — differing by $2
 
 > **Theorem 6 (two-pass crossing).** At a common index $t$ the two members of a layer are
 > $$u^+ - u^-  =  4n + 4t$$
-> apart, against a window of width $4n$. Hence a layer has both members inside the window only at $t = 0$; and since $j > 0$ forces $t \ge \lceil 18j^2/p\rceil > 0$, **every old layer crosses the window in two disjoint passes — the family-$7$ member first, the family-$5$ member after — and only the newly born layer has both members present, sitting exactly on the two endpoints.**
+> apart, against a window of width $4n$. Hence a layer has both members inside the window only at $t = 0$; and since $j \gt  0$ forces $t \ge \lceil 18j^2/p\rceil \gt  0$, **every old layer crosses the window in two disjoint passes — the family-$7$ member first, the family-$5$ member after — and only the newly born layer has both members present, sitting exactly on the two endpoints.**
 
 *Proof.* Subtract the two lines of (4.1); the $36j^2$ cancels and $s-p = 2$. The window admits $u^+-u^- \le 4n$ only at $t \le 0$, and the left member requires $2pt \ge 36j^2$. $\blacksquare$
 
-*Verification.* Over every window and layer with $a < 200$ the two $t$-ranges never overlap: zero exceptions.
+*Verification.* Over every window and layer with $a \lt  200$ the two $t$-ranges never overlap: zero exceptions.
 
 **The reading is worth stating.** The window is cut exactly to the size of the pair that is born at its edges; every older pair has already opened wider than the window and can only pass through one member at a time.
 
@@ -437,14 +437,14 @@ For odd $m \ge 3$ write $m = ab$ with
 $$a  =  \max\lbrace d : d \mid m,\ d^2 \le m\rbrace , \qquad b  =  m/a ,$$
 so $a \le b$; we call $(a,b)$ the **central pair** of $m$. For prime $m$ it is $(1,m)$. (These are the classical *middle divisors*, sequences A033676 and A033677 of [2]; $a+b$ is the least semiperimeter of an integral rectangle of area $m$ — see the note in §5.6.)
 
-At the strike $N = L_m(k) = m(m+2k)$ we have $m < \sqrt N < m+2k$, so $m$ is a divisor of $N$ below its square root. Say that $L_m$ **holds the centre** of that strike if $m$ is still the *largest* such divisor, and define
+At the strike $N = L_m(k) = m(m+2k)$ we have $m \lt  \sqrt N \lt  m+2k$, so $m$ is a divisor of $N$ below its square root. Say that $L_m$ **holds the centre** of that strike if $m$ is still the *largest* such divisor, and define
 $$\ell(m)  =  \min\lbrace  k \ge 1 : L_m \text{ does not hold the centre of } L_m(k) \rbrace .$$
 
 ### 5.2 A reformulation
 
-> **Lemma.** For $n > m$, the line $L_m$ fails to hold the centre of $N = mn$ **iff** $N$ has a divisor strictly between $m$ and $n$.
+> **Lemma.** For $n \gt  m$, the line $L_m$ fails to hold the centre of $N = mn$ **iff** $N$ has a divisor strictly between $m$ and $n$.
 
-*Proof.* If $d \mid N$ with $m < d \le \sqrt N$ then $d < n$, since $\sqrt N < n$. Conversely let $d \mid N$ with $m < d < n$. Either $d \le \sqrt N$, and we are done; or $d > \sqrt N$, and then $N/d < \sqrt N$ while $N/d = mn/d > mn/n = m$, so $N/d$ serves instead. $\blacksquare$
+*Proof.* If $d \mid N$ with $m \lt  d \le \sqrt N$ then $d \lt  n$, since $\sqrt N \lt  n$. Conversely let $d \mid N$ with $m \lt  d \lt  n$. Either $d \le \sqrt N$, and we are done; or $d \gt  \sqrt N$, and then $N/d \lt  \sqrt N$ while $N/d = mn/d \gt  mn/n = m$, so $N/d$ serves instead. $\blacksquare$
 
 ### 5.3 Theorem 8 (when the centre is lost)
 
@@ -455,18 +455,18 @@ $$\ell(m)  =  \min\lbrace  k \ge 1 : L_m \text{ does not hold the centre of } L_
 > and the divisor that displaces $m$ from the centre is $a(b+2) = m+2a$.
 
 *Proof.* **The value is attained.** Put $n = (a+2)(b+2) = m + 2(a+b+2)$, which is odd. Then $a(b+2)$ divides $mn$ and
-$$m  =  ab  <  ab+2a  =  a(b+2)  <  ab+2a+2b+4  =  n ,$$
+$$m  =  ab  \lt   ab+2a  =  a(b+2)  \lt   ab+2a+2b+4  =  n ,$$
 so by the Lemma the centre is already lost at $k = a+b+2$.
 
-**No earlier $k$ is possible.** Let $n = m+2k$ and suppose $mn$ has a divisor $d$ with $m < d < n$. Splitting prime by prime, write $d = g d_1$ with $g \mid m$ and $d_1 \mid n$, and set $m_1 = m/g$, $e_1 = n/d_1$. Then
-$$d > m \iff g d_1 > g m_1 \iff d_1 > m_1, \qquad d < n \iff g d_1 < d_1 e_1 \iff g < e_1 .$$
+**No earlier $k$ is possible.** Let $n = m+2k$ and suppose $mn$ has a divisor $d$ with $m \lt  d \lt  n$. Splitting prime by prime, write $d = g d_1$ with $g \mid m$ and $d_1 \mid n$, and set $m_1 = m/g$, $e_1 = n/d_1$. Then
+$$d \gt  m \iff g d_1 \gt  g m_1 \iff d_1 \gt  m_1, \qquad d \lt  n \iff g d_1 \lt  d_1 e_1 \iff g \lt  e_1 .$$
 Now $m$ and $n$ are odd, so $g, m_1, d_1, e_1$ are **all odd**; two distinct odd numbers differ by at least $2$, giving $d_1 \ge m_1+2$ and $e_1 \ge g+2$. Hence
 $$n  =  d_1 e_1  \ge  (m_1+2)(g+2)  =  g m_1 + 2(g+m_1) + 4  =  m + 2(g+m_1) + 4 .$$
 Over all factorisations $m = g m_1$ the sum $g+m_1$ is least for the central pair, so $g+m_1 \ge a+b$ and $n \ge m + 2(a+b) + 4$, i.e. $k \ge a+b+2$. $\blacksquare$
 
 *Where the odd world enters.* The two steps of $2$ are the whole content of the bound. Without the parity hypothesis one gets only $d_1 \ge m_1+1$, $e_1 \ge g+1$ and the weaker floor $n \ge (m_1+1)(g+1) = m + (a+b) + 1$; and for even $m$ the value $a+b+2$ is indeed **not** attained.
 
-*Verification.* Over every odd $3 \le m < 4000$, the first $k$ at which the largest divisor of $m(m+2k)$ below the square root exceeds $m$ equals $a+b+2$: **zero exceptions**. Over every even $4 \le m < 600$ the equality fails in all $298$ cases, while the weaker floor above is never breached. The Lemma was checked separately: the two formulations agree on all $39{,}800$ pairs $(m,n)$ with $m < 400$ odd and $m < n < m+400$.
+*Verification.* Over every odd $3 \le m \lt  4000$, the first $k$ at which the largest divisor of $m(m+2k)$ below the square root exceeds $m$ equals $a+b+2$: **zero exceptions**. Over every even $4 \le m \lt  600$ the equality fails in all $298$ cases, while the weaker floor above is never breached. The Lemma was checked separately: the two formulations agree on all $39{,}800$ pairs $(m,n)$ with $m \lt  400$ odd and $m \lt  n \lt  m+400$.
 
 ### 5.4 Corollary 2 (the handover)
 
@@ -487,9 +487,9 @@ So the first loss is not merely a coincidence of two lines at one integer: it na
 
 > **Corollary 3.** $T(m) = m+2a = a(b+2)$. Hence if $m$ is composite then $T(m)$ is composite.
 
-*Proof.* $a > 1$ and $b+2 > 1$. $\blacksquare$
+*Proof.* $a \gt  1$ and $b+2 \gt  1$. $\blacksquare$
 
-Under iteration of $T$ the primes are therefore a transient set: an orbit may leave them and can never return. Verified over every composite odd $m < 20{,}001$: no $T(m)$ is prime.
+Under iteration of $T$ the primes are therefore a transient set: an orbit may leave them and can never return. Verified over every composite odd $m \lt  20{,}001$: no $T(m)$ is prime.
 
 ### 5.6 What this does not give, and where it sits
 

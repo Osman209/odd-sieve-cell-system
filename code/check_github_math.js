@@ -20,7 +20,7 @@ let grand = 0;
 for (const f of process.argv.slice(2)) {
   const t = fs.readFileSync(f, 'utf8');
   const S = spans(t);
-  let esc = 0, fail = 0, silent = 0, deny = 0, pipe = 0;
+  let esc = 0, fail = 0, silent = 0, deny = 0, pipe = 0, angle = 0, tagc = 0;
   const msgs = [];
   for (const s of S) {
     if (ESC.test(s.tex)) { esc++; msgs.push(`  L${lineOf(t, s.at)} escape-stripped: ${s.tex.slice(0,70)}`); }
@@ -28,6 +28,12 @@ for (const f of process.argv.slice(2)) {
     const un = s.tex.replace(ESC, '$1');
     for (const d of DENY) if (un.includes(d)) { deny++; msgs.push(`  L${lineOf(t, s.at)} DENIED macro "${d.trim()}": ${un.slice(0,60)}`); }
     if (/(?<!\\)\|/.test(un)) pipe++;
+    // GitHub extracts the math AFTER markdown->HTML, so a raw < is scanned as a
+    // tag and swallows the formula.  And \tag{} inside $$..$$ makes GitHub lay
+    // the display out as a table whose body collapses to one glyph per line.
+    // Both were found on the rendered page after this checker passed the source.
+    if (/(?<!\\lt |\\gt )[<>]/.test(un)) { angle++; msgs.push(`  L${lineOf(t, s.at)} RAW ANGLE BRACKET (use \\lt / \\gt): ${un.slice(0,60)}`); }
+    if (/\\tag\{/.test(un)) { tagc++; msgs.push(`  L${lineOf(t, s.at)} \\tag inside math (breaks the GitHub display): ${un.slice(0,50)}`); }
     let html = '';
     try { html = katex.renderToString(un, { displayMode: s.disp, throwOnError: true }); }
     catch (e) { fail++; msgs.push(`  L${lineOf(t, s.at)} RENDER FAIL: ${e.message.slice(0,80)} :: ${un.slice(0,60)}`); continue; }
@@ -50,9 +56,9 @@ for (const f of process.argv.slice(2)) {
       i = j;
     } else i++;
   }
-  const bad = esc + fail + silent + deny + badT;
+  const bad = esc + fail + silent + deny + badT + angle + tagc;
   grand += bad;
-  console.log(`${f}\n  formulas ${S.length} | escape-stripped ${esc} | render-fail ${fail} | silent-risk ${silent} | denied ${deny} | broken tables ${badT} | raw-pipe spans ${pipe}`);
+  console.log(`${f}\n  formulas ${S.length} | escape-stripped ${esc} | render-fail ${fail} | silent-risk ${silent} | denied ${deny} | broken tables ${badT} | raw angle ${angle} | \\tag ${tagc} | raw-pipe spans ${pipe}`);
   msgs.filter(m=>/FAIL|DENIED|escape|TABLE/.test(m)).concat(msgs.filter(m=>!/FAIL|DENIED|escape|TABLE/.test(m))).slice(0, 14).forEach(m => console.log(m));
   if (msgs.length > 14) console.log(`  ... and ${msgs.length - 14} more`);
 }

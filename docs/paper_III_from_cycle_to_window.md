@@ -54,8 +54,8 @@ A line is nothing but the strip $k = 0,1,2,\dots$, and the squares do not alter 
 
 ### 2.2 Theorem 1 (old lines as rulers)
 
-> **Theorem 1.** For a new line $p$ and an old line $q<p$, with $x = L_p(k)$,
-> $$x + 6j \equiv 0 \pmod q \iff k \equiv k_0 - j d \pmod q, \qquad d = 3 p^{-1} \bmod q, \tag{2.1}$$
+> **Theorem 1.** For a new line $p$ and an old line $q\lt p$, with $x = L_p(k)$,
+> $$x + 6j \equiv 0 \pmod q \iff k \equiv k_0 - j d \pmod q, \qquad d = 3 p^{-1} \bmod q, \qquad\text{(2.1)}$$
 > where $k_0 = -p^2(2p)^{-1} \bmod q$.
 
 *Proof.* $x+6j = p^2+2pk+6j \equiv 0$ gives $k \equiv (-p^2-6j)(2p)^{-1} = k_0 - 3jp^{-1}$. $\blacksquare$
@@ -65,7 +65,7 @@ A line is nothing but the strip $k = 0,1,2,\dots$, and the squares do not alter 
 The coefficient is $3$, not $6$, because one step in $k$ moves the integer by $2p$; matching a displacement of $6$ modulo $q$ requires $2pd \equiv 6 \pmod q$.
 
 **Equivalently, in clock form.** The first inherited strike index is
-$$\phi_q(p) \equiv \frac{q-p}{2} \pmod q, \tag{2.2}$$
+$$\phi_q(p) \equiv \frac{q-p}{2} \pmod q, \qquad\text{(2.2)}$$
 zero failures among $4{,}983$ instances.
 
 ### 2.3 Theorem 2 (binary decision) and phase collisions
@@ -76,7 +76,7 @@ Thus the block contains a mark of $q$ exactly when this next-mark distance does 
 
 > **Theorem 2.** For every old line $q \ge 7$ and every sector $j$ **in the first cycle** $0 \le j \le p-1$, the number of strikes of $q$ inside the block is $C_q(j) \in \lbrace 0,1\rbrace$; and $C_q(j)=1$ exactly when $\delta_q(j) \le H_j$, in which case the strike falls in slot $s = \delta_q(j)$.
 
-*Proof.* By [0, Thm 1], $H_j \le 6 < 7 \le q$ throughout the first cycle, so a block is shorter than the ruler's period and cannot contain two of its marks. $\blacksquare$
+*Proof.* By [0, Thm 1], $H_j \le 6 \lt  7 \le q$ throughout the first cycle, so a block is shorter than the ruler's period and cannot contain two of its marks. $\blacksquare$
 
 **Two hypotheses, both necessary.**
 
@@ -108,8 +108,8 @@ $$\boxed{ T/M \approx 0.80,\ \text{stable across three orders of magnitude.} }$$
 
 ### 3.3 Why accumulation matters more than a single sector
 
-One does not need $T(u)>0$ for every sector, only $T(U) \to \infty$. Since $\sum C(u) \asymp U^2/6$ and $P(U) \asymp 1/\log^2 U$,
-$$M(U) \asymp \frac{U^2}{\log^2 U}, \tag{3.1}$$
+One does not need $T(u)\gt 0$ for every sector, only $T(U) \to \infty$. Since $\sum C(u) \asymp U^2/6$ and $P(U) \asymp 1/\log^2 U$,
+$$M(U) \asymp \frac{U^2}{\log^2 U}, \qquad\text{(3.1)}$$
 so **any error bound of size $O(U\log^A U)$ suffices** — a requirement weaker by a full factor of $U$ than square-root cancellation.
 
 ### 3.4 Theorem 3 (telescoping to a single sum)
@@ -165,13 +165,13 @@ Split $\varepsilon_r = \mu_r + \xi_r$ into mean and fluctuation.
 *Verification.* The single-line law holds exactly for $r = 5,7,11,13,17,19,23,29,31,37,41,43,47$. The general law gives $\lbrace 5,7\rbrace \mapsto 1$, $\lbrace 5,11\rbrace \mapsto 3$, $\lbrace 7,17\rbrace \mapsto -5$, $\lbrace 7,11\rbrace \mapsto 1$, $\lbrace 11,13\rbrace \mapsto 3$, $\lbrace 5,13\rbrace \mapsto 3$, $\lbrace 5,7,11\rbrace \mapsto 5$ — every value exact.
 
 **$r$ boundary errors, each of size $O(1)$, collapse to $\pm1$.** Consequently the whole inclusion–exclusion compresses into two products:
-$$E_{\text{cycle}} = M\left[\prod_{r}\left(1-\frac2r\right) - \prod_{r}\left(1-\frac{2+(2/r)}{r}\right)\right]. \tag{4.1}$$
+$$E_{\text{cycle}} = M\left[\prod_{r}\left(1-\frac2r\right) - \prod_{r}\left(1-\frac{2+(2/r)}{r}\right)\right]. \qquad\text{(4.1)}$$
 The second product is a factor the purely periodic model does not contain; it is contributed by the square clock.
 
 ### 4.3 Algebraic consequence of identity A
 
 Assuming identity A, $\sum_r -\mu_r/P_r = 1 - Q_z/P_z$, whence
-$$E_{\text{mean}}(U) = \sum_{u\le U}(P_u - Q_u) = O\left(\frac{U}{\log^2 U}\right), \tag{4.2}$$
+$$E_{\text{mean}}(U) = \sum_{u\le U}(P_u - Q_u) = O\left(\frac{U}{\log^2 U}\right), \qquad\text{(4.2)}$$
 smaller than the main term (3.1) by a full factor of $U$.
 
 *Verification.* At $U = 1000$ the total error is $-2057$ while the mean part contributes $-6.93$; at $U = 2000$, $-6479$ against $-11.24$. **The means account for $0.17$% of the deviation.**
@@ -204,7 +204,7 @@ Since $P_z \asymp 1/\log^2 z$, the total $L^2$ energy of *all* lines is $O(\log^
 ### 5.1 Statement
 
 By Cauchy–Schwarz, $\left|\sum_{r\le U} D_r\right| \le \sqrt{\pi(U)}\left(\sum_{r\le U}|D_r|^2\right)^{1/2}$. Hence if
-$$\sum_{r\le U}\big|D_r(X)\big|^2  \ll  (X+U^2) \mathrm{polylog}(U), \qquad X \asymp U^2, \tag{5.1}$$
+$$\sum_{r\le U}\big|D_r(X)\big|^2  \ll  (X+U^2) \mathrm{polylog}(U), \qquad X \asymp U^2, \qquad\text{(5.1)}$$
 the total error would be $O(U^{3/2} \mathrm{polylog})$ against a main term $\asymp U^2/\log^2 U$, giving $T(U)\to\infty$ and hence infinitely many twin primes.
 
 ### 5.2 Why $X \asymp U^2$ is the critical scale
@@ -235,7 +235,7 @@ A large-sieve-type inequality adapted to such *nested* masks would be the kind o
 ### 5.5 What would have sufficed
 
 Precisely a bound
-$$\big|S_r(V)\big|  \le  C\sqrt{N_r(V)} \log^A U, \tag{5.2}$$
+$$\big|S_r(V)\big|  \le  C\sqrt{N_r(V)} \log^A U, \qquad\text{(5.2)}$$
 where $S_r(V)$ is the centred partial sum since the line's birth and $N_r(V)$ the number of sectors observed. **This is weaker than Hardy–Littlewood: no constant need be identified and no asymptotic formula proved — only a bound.**
 
 The tested data do not support a small uniform constant: the worst ratio $\max|S_r|/\sqrt{N_r}$ rises from $4.25$ at $U=4199$ to $5.75$ at $U=7199$. This does **not** refute the existence of some larger eventual constant. The polylogarithmic form is **beyond what computation can settle here**: each sector costs $O(u)$ work, so distinguishing $\sqrt N \log^A$ from $\sqrt N \log^{A+1}$ would require $U$ in the millions.
@@ -276,7 +276,7 @@ Two structural remarks, both of which the table makes visible.
 
 *A second family: pattern transfer at fixed depth.* Proposition 1 measures the transfer of a *weight* on one cell. The cycle law of [II, §6.3] is more general than that: it transports an arbitrary finite pattern $H$ of cells, with $N_{\mathrm{new}}(H) = (q-\nu_q(H)) N_{\mathrm{old}}(H)$. Nothing above tests it beyond $|H| = 2$, and the patterns are the sharpest indicators the framework has — a pattern of $k$ cells is a condition on $2k$ integers at once. This paragraph tests that law directly.
 
-*Setup, and a constraint that appears immediately.* Fix a height $X$ and a depth $z = X^{1/u}$, sieve the whole range $6n\pm1 \le X$ by every line $\le z$, and write $S_n = 1$ when both members of cell $n$ survive. For a pattern $H = \lbrace h_1=0 < \dots < h_k\rbrace$ set
+*Setup, and a constraint that appears immediately.* Fix a height $X$ and a depth $z = X^{1/u}$, sieve the whole range $6n\pm1 \le X$ by every line $\le z$, and write $S_n = 1$ when both members of cell $n$ survive. For a pattern $H = \lbrace h_1=0 \lt  \dots \lt  h_k\rbrace$ set
 $$J(H)  =  \frac{\Pr\big(S_{n+h_1} = \dots = S_{n+h_k} = 1\big)}{\Pr(S_n=1)^k}, \qquad L(H)  =  \prod_{5\le q\le z}\frac{1-\nu_q(H)/q}{(1-2/q)^{k}} ,$$
 so that $J/L = 1$ is exactly the assertion that the cycle law of [II, §6.3] survives the passage to a real window at depth $z$. Here $\nu_q(H) = \mathrm{card}\lbrace \pm 6^{-1} - h_i \bmod q\rbrace$, and the pattern must be admissible: consecutive cells $H = \lbrace 0,1,2\rbrace$ already give $\nu_5 = 5$ and density zero, so the shortest admissible patterns are $\lbrace 0,1\rbrace$, $\lbrace 0,1,3\rbrace$, $\lbrace 0,1,3,5\rbrace$, $\lbrace 0,1,3,5,6\rbrace$ — the last a condition on ten integers spanning $38$.
 

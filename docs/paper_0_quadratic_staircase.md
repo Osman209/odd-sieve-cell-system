@@ -36,7 +36,7 @@ $F$ is a staircase under the parabola $2x^2/n$; $W_j$ is its increment, and $r_j
 Two elementary remarks fix the scale. The total rise is
 $$\sum_{j=0}^{n-1} W_j = F(n)-F(0) = 2n,$$
 so the mean increment is exactly $2$; and $W_j$ counts the multiples of $n$ in the interval
-$$I_j = \big(2j^2,\ 2(j+1)^2\big], \qquad |I_j| = 4j+2 . \tag{1.1}$$
+$$I_j = \big(2j^2,\ 2(j+1)^2\big], \qquad |I_j| = 4j+2 . \qquad\text{(1.1)}$$
 
 The intervals $I_0, I_1, \dots$ tile $(0,\infty)$. That is the only structural fact the histogram needs.
 
@@ -56,7 +56,7 @@ which is positive and, for $j \le n-1$, strictly less than $4$. A difference of 
 The restriction $j \le n-1$ is real: for $j$ in the range $[rn, (r+1)n)$ the same computation gives $W_j \in \lbrace 4r, \dots, 4r+4\rbrace$, so the bound moves up in steps of four. Everything below concerns $0 \le j \le n-1$, which we call the **first cycle**.
 
 Two further symmetries, both immediate from (1.1), will be used:
-$$W_j + W_{n-1-j} = 4, \qquad W_{(n-1)/2} = 2. \tag{2.1}$$
+$$W_j + W_{n-1-j} = 4, \qquad W_{(n-1)/2} = 2. \qquad\text{(2.1)}$$
 
 ---
 
@@ -77,27 +77,27 @@ $$W_j + W_{n-1-j} = 4, \qquad W_{(n-1)/2} = 2. \tag{2.1}$$
 
 *Proof.* By (1.1), $W_j$ counts the multiples of $n$ in $I_j$, an interval of length exactly $4j+2$. Hence:
 
-- if $4j+2 < n$, the interval is shorter than $n$ and holds **at most one** multiple, so $W_j \in \lbrace 0,1\rbrace$;
+- if $4j+2 \lt  n$, the interval is shorter than $n$ and holds **at most one** multiple, so $W_j \in \lbrace 0,1\rbrace$;
 - if $4j+2 \ge n$, it is at least as long and holds **at least one**, so $W_j \ge 1$.
 
-**The count of zeros.** Consequently $W_j = 0$ forces $j < m := \lfloor (n+1)/4\rfloor$. On that range the intervals $I_0,\dots,I_{m-1}$ tile $(0, 2m^2]$ exactly and each holds at most one multiple, so the number of *occupied* intervals equals the number of multiples in the range, namely $\lfloor 2m^2/n\rfloor$. Therefore
-$$N_0  =  m - \left\lfloor \frac{2m^2}{n}\right\rfloor. \tag{3.1}$$
+**The count of zeros.** Consequently $W_j = 0$ forces $j \lt  m := \lfloor (n+1)/4\rfloor$. On that range the intervals $I_0,\dots,I_{m-1}$ tile $(0, 2m^2]$ exactly and each holds at most one multiple, so the number of *occupied* intervals equals the number of multiples in the range, namely $\lfloor 2m^2/n\rfloor$. Therefore
+$$N_0  =  m - \left\lfloor \frac{2m^2}{n}\right\rfloor. \qquad\text{(3.1)}$$
 
 Write $n = 8t+r$ with $r \in \lbrace 1,3,5,7\rbrace$; then $m = 2t+\varepsilon$ with $\varepsilon = 0,1,1,2$ respectively. We claim the quotient in (3.1) is $q = t+\varepsilon-1$:
 
 | $r$ | $m$ | $q$ | $2m^2-nq$ | check |
 |---|---|---|---|---|
-| 1 | $2t$ | $t-1$ | $7t+1$ | $< 8t+1$ ✓ |
-| 3 | $2t+1$ | $t$ | $5t+2$ | $< 8t+3$ ✓ |
-| 5 | $2t+1$ | $t$ | $3t+2$ | $< 8t+5$ ✓ |
-| 7 | $2t+2$ | $t+1$ | $t+1$ | $< 8t+7$ ✓ |
+| 1 | $2t$ | $t-1$ | $7t+1$ | $\lt  8t+1$ ✓ |
+| 3 | $2t+1$ | $t$ | $5t+2$ | $\lt  8t+3$ ✓ |
+| 5 | $2t+1$ | $t$ | $3t+2$ | $\lt  8t+5$ ✓ |
+| 7 | $2t+2$ | $t+1$ | $t+1$ | $\lt  8t+7$ ✓ |
 
 Each remainder is a positive linear function of $t$ strictly below $n$, so the quotient is as claimed and
-$$N_0 = (2t+\varepsilon)-(t+\varepsilon-1) = t+1 = \left\lfloor \frac{n+7}{8}\right\rfloor = A. \tag{3.2}$$
+$$N_0 = (2t+\varepsilon)-(t+\varepsilon-1) = t+1 = \left\lfloor \frac{n+7}{8}\right\rfloor = A. \qquad\text{(3.2)}$$
 
-**The remaining four.** Put $H = (n-1)/2$. For $0 \le j < H$ the interval $I_j$ has length $4j+2 < 2n$, so $W_j \in \lbrace 0,1,2\rbrace$. These $H$ intervals tile $(0, 2H^2]$, which contains
+**The remaining four.** Put $H = (n-1)/2$. For $0 \le j \lt  H$ the interval $I_j$ has length $4j+2 \lt  2n$, so $W_j \in \lbrace 0,1,2\rbrace$. These $H$ intervals tile $(0, 2H^2]$, which contains
 $$\left\lfloor \frac{2H^2}{n}\right\rfloor = H-1$$
-multiples of $n$. Writing $N_i^- = \mathrm{card}\lbrace 0 \le j < H : W_j = i\rbrace$, we have $N_0^- = A$ together with
+multiples of $n$. Writing $N_i^- = \mathrm{card}\lbrace 0 \le j \lt  H : W_j = i\rbrace$, we have $N_0^- = A$ together with
 $$N_0^- + N_1^- + N_2^- = H, \qquad N_1^- + 2N_2^- = H-1,$$
 and subtracting gives $N_2^- = A-1$. The central index $j = H$ has $W_H = 2$ by (2.1). Finally the symmetry $W_j + W_{n-1-j} = 4$ pairs $W{=}0$ with $W{=}4$ and $W{=}1$ with $W{=}3$, while $W{=}2$ pairs with itself. Therefore
 $$N_4 = N_0 = A, \qquad N_2 = 2(A-1)+1 = 2A-1,$$
@@ -107,7 +107,7 @@ $$N_1 = N_3 = \frac{n+1}{2}-2A. \qquad \blacksquare$$
 ### 3.1 Why the count has no error term
 
 A probabilistic model, assuming $2j^2 \bmod n$ equidistributed, estimates $N_0$ by
-$$\sum_{j < (n-2)/4} \frac{n-4j-2}{n}  \approx  \frac n8,$$
+$$\sum_{j \lt  (n-2)/4} \frac{n-4j-2}{n}  \approx  \frac n8,$$
 the correct answer, with deviation never exceeding $0.889$ for odd $n \le 20{,}001$. Sums of this shape normally carry an error of size $\sqrt n \log n$ (character sums) or $n^{1/3}$ (lattice points).
 
 **The reason none appears here is that the indicators are not independent: the intervals tile, and the tiling is exact.** The residues $2j^2 \bmod n$ never enter the argument. Theorem 5 is the statement about those residues, and it is a good deal harder.
@@ -126,7 +126,7 @@ Index the symmetric pairs $\lbrace j, n-1-j\rbrace$ by $R = 1,3,\dots,n-2$.
 $$\frac{(R+2)^2-R^2}{2n} = \frac{2(R+1)}{n},$$
 which for $1 \le R \le n-2$ lies strictly between $0$ and $2$; hence the difference of floors is $0$, $1$ or $2$. Substituting the pair parametrisation into the definition of $W$ gives $W_R = 2+d_n(R)$, and (2.1) then gives $W_L = 2-d_n(R)$. $\blacksquare$
 
-*Verification.* Zero failures over every odd $n < 600$ and every odd $R$ with $1 \le R \le n-2$.
+*Verification.* Zero failures over every odd $n \lt  600$ and every odd $R$ with $1 \le R \le n-2$.
 
 > **Theorem 4.** Let $N_d = \mathrm{card}\lbrace R : d_n(R) = d\rbrace$. Then $N_2 = N_0+1$.
 
@@ -136,7 +136,7 @@ Hence
 $$N_0+N_1+N_2 = \frac{n-1}{2}, \qquad N_1+2N_2 = \frac{n+1}{2},$$
 and subtracting gives $N_2-N_0 = 1$. $\blacksquare$
 
-*Verification.* Zero failures over all odd $n < 2000$.
+*Verification.* Zero failures over all odd $n \lt  2000$.
 
 | $n$ | $N_0$ | $N_1$ | $N_2$ |
 |---|---|---|---|
@@ -159,13 +159,13 @@ Theorem 2 counts the values of $W$. The companion question concerns their *arran
 *Range of the statement.* The proof below needs $n \ge 51$, where the interval structure of Step 4 is in its generic configuration. Computation shows the conclusion is in fact true for **every** odd $n$ except five: $n = 3, 5, 7, 9, 49$. Checked exhaustively for all odd $n \le 200{,}001$.
 
 Throughout put
-$$\varepsilon_j = [ r_{j+1} < r_j ], \qquad q_j = \left\lfloor \frac{4j+2}{n}\right\rfloor, \qquad \Phi(x) = \left\lfloor \frac{2x^2}{n}\right\rfloor + \left\lfloor \frac{2(x-1)^2}{n}\right\rfloor, \qquad H = \frac{n-1}{2},$$
+$$\varepsilon_j = [ r_{j+1} \lt  r_j ], \qquad q_j = \left\lfloor \frac{4j+2}{n}\right\rfloor, \qquad \Phi(x) = \left\lfloor \frac{2x^2}{n}\right\rfloor + \left\lfloor \frac{2(x-1)^2}{n}\right\rfloor, \qquad H = \frac{n-1}{2},$$
 so that $\varepsilon_j = W_j - q_j$, and $j$ is a local maximum exactly when $\varepsilon_{j-1} = 0$ and $\varepsilon_j = 1$.
 
 ### 5.1 Step 1: the palindrome
 
 Since $2(n-j)^2 \equiv 2j^2$, we have $r_j = r_{n-j}$ for $1 \le j \le n-1$. Maxima therefore occur in mirror pairs $j \leftrightarrow n-j$, with no fixed point because $n$ is odd. Also $r_{H+1} = r_{n-H-1} = r_H$, so
-$$\varepsilon_0 = 0 \quad (\text{since } r_1 = 2 > 0 = r_0), \qquad \varepsilon_H = 0,$$
+$$\varepsilon_0 = 0 \quad (\text{since } r_1 = 2 \gt  0 = r_0), \qquad \varepsilon_H = 0,$$
 and no maximum straddles the middle. Hence the total is twice the number of maxima in $1 \le j \le H$.
 
 ### 5.2 Step 2: maxima are exactly the mixed pairs
@@ -185,14 +185,14 @@ $P_j$ has length exactly $8j$. No residue occurs in this condition.
 
 Consecutive $P_j$ overlap, but each parity subfamily tiles exactly:
 $$P_{2s+1} = \big(8s^2,\ 8(s+1)^2\big], \qquad P_{2s} = \big(2(2s-1)^2,\ 2(2s+1)^2\big],$$
-of lengths $8(2s+1)$ and $16s$. Since $8j < 4n$ on $j \le H$, each $P_j$ carries $L_j$ or $L_j+1$ multiples with $L_j = \lfloor 8j/n\rfloor \in \lbrace 0,1,2,3\rbrace$, and over any block of consecutive $j$ of one parity the total telescopes. Set $\mathrm{off}_j = (q_{j-1}+q_j)-L_j$; then $j$ is mixed iff $P_j$ carries the **larger** count when $\mathrm{off}_j = 0$, the **smaller** when $\mathrm{off}_j = -1$.
+of lengths $8(2s+1)$ and $16s$. Since $8j \lt  4n$ on $j \le H$, each $P_j$ carries $L_j$ or $L_j+1$ multiples with $L_j = \lfloor 8j/n\rfloor \in \lbrace 0,1,2,3\rbrace$, and over any block of consecutive $j$ of one parity the total telescopes. Set $\mathrm{off}_j = (q_{j-1}+q_j)-L_j$; then $j$ is mixed iff $P_j$ carries the **larger** count when $\mathrm{off}_j = 0$, the **smaller** when $\mathrm{off}_j = -1$.
 
 Both $L_j$ and $\mathrm{off}_j$ are explicit step functions of $j$, with jumps only at
-$$1 < \ell_1 = \left\lceil \tfrac n8\right\rceil \le \beta_1 = \left\lceil \tfrac{n-2}4\right\rceil \le \ell_2 = \left\lceil \tfrac n4\right\rceil \le \beta_2 = \left\lceil \tfrac{n+2}4\right\rceil < \ell_3 = \left\lceil \tfrac{3n}8\right\rceil < H < H+1,$$
+$$1 \lt  \ell_1 = \left\lceil \tfrac n8\right\rceil \le \beta_1 = \left\lceil \tfrac{n-2}4\right\rceil \le \ell_2 = \left\lceil \tfrac n4\right\rceil \le \beta_2 = \left\lceil \tfrac{n+2}4\right\rceil \lt  \ell_3 = \left\lceil \tfrac{3n}8\right\rceil \lt  H \lt  H+1,$$
 giving **seven** intervals with $(L,\mathrm{off}) = (0,0),(1,-1),(1,0),(2,-1),(2,0),(3,-1),(3,0)$ in order. The last is the single point $j = H$, where $4H+2 = 2n$ forces $q_H = 2$. Combining the two parities, an interval $[\alpha,\beta)$ has $\beta-\alpha$ tiles whose multiples total $\Phi(\beta)-\Phi(\alpha)$, independently of which parity starts it. Its contribution to the mixed count is $G-LC$ if $\mathrm{off}=0$ and $(L+1)C-G$ if $\mathrm{off}=-1$, with $G = \Phi(\beta)-\Phi(\alpha)$ and $C = \beta-\alpha$.
 
 Summing the seven intervals and telescoping the $\Phi$'s (note $\Phi(1)=0$):
-$$\mathrm{card}(\text{mixed}) = 2\big[\Phi(\ell_1)-\Phi(\beta_1)+\Phi(\ell_2)-\Phi(\beta_2)+\Phi(\ell_3)-\Phi(H)\big] + \Phi(H+1) + \Sigma_C, \tag{5.1}$$
+$$\mathrm{card}(\text{mixed}) = 2\big[\Phi(\ell_1)-\Phi(\beta_1)+\Phi(\ell_2)-\Phi(\beta_2)+\Phi(\ell_3)-\Phi(H)\big] + \Phi(H+1) + \Sigma_C, \qquad\text{(5.1)}$$
 $$\Sigma_C = 2(\beta_1-\ell_1)-(\ell_2-\beta_1)+3(\beta_2-\ell_2)-2(\ell_3-\beta_2)+4(H-\ell_3)-3.$$
 
 *Verification of (5.1).* Zero failures against the direct count for every odd $9 \le n \le 20{,}001$.

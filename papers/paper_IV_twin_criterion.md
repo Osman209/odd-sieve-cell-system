@@ -12,11 +12,11 @@ The gap between consecutive odd composites takes only the values $2$, $4$ and $6
 
 Inside a single sector the criterion sharpens as far as the framework can take it: after switching on every line $p \le M$, **at most six cells can be open without being a twin pair, and their positions are given by an explicit formula in $M$** (Theorem 4). A twin therefore follows from one open cell that avoids six named places — the places being fixed by the geometry of the square rather than chosen by the lines.
 
-The closing budget is exact: the distance-$6$ graph has minimum deletion cover $\tau = T-U+Q$ (Theorem 8), the four-state census transports under a new line (Theorem 9), and the late lines of a sweep compress (Theorem 10). The clock coordinate turns primality into a zero-test (Theorem 11) and forces every surviving cofactor in a range to be prime (Theorem 12). Read along a whole row that becomes a general law: for $p \le p+2j < p^2$ the cell $p(p+2j)$ is **original** — owned by no smaller line — exactly when $p+2j$ is prime (Theorem 13), so a row carries the primality of every odd number up to $p^2$ in one bit per cell, the twin condition becomes "originality survives one step past the diagonal", and the cell it tests is $(p+1)^2-1$, which is [I, Thm 5] read along the row. Finally, across the *sequence* of sectors, a fixed set of lines leaves exactly $12S$ fresh open cells each time its cycle returns to the same phase (Theorem 14); a later line closes at most two of the twelve copies of any surviving class and at most one beyond an explicit threshold (Theorem 15, Corollary 6).
+The closing budget is exact: the distance-$6$ graph has minimum deletion cover $\tau = T-U+Q$ (Theorem 8), the four-state census transports under a new line (Theorem 9), and the late lines of a sweep compress (Theorem 10). The clock coordinate turns primality into a zero-test (Theorem 11) and forces every surviving cofactor in a range to be prime (Theorem 12). Read along a whole row that becomes a general law: for $p \le p+2j \lt  p^2$ the cell $p(p+2j)$ is **original** — owned by no smaller line — exactly when $p+2j$ is prime (Theorem 13), so a row carries the primality of every odd number up to $p^2$ in one bit per cell, the twin condition becomes "originality survives one step past the diagonal", and the cell it tests is $(p+1)^2-1$, which is [I, Thm 5] read along the row. Finally, across the *sequence* of sectors, a fixed set of lines leaves exactly $12S$ fresh open cells each time its cycle returns to the same phase (Theorem 14); a later line closes at most two of the twelve copies of any surviving class and at most one beyond an explicit threshold (Theorem 15, Corollary 6).
 
-A last section takes the four cells nearest the window's ends and turns them into four **tracks** as $a$ runs, each member a quadratic in $a$; a prime can own a track only if the corresponding discriminant is a quadratic residue (Theorem 18), which makes the four tracks unequal — Bateman–Horn gives them densities $0.41$, $0.73$, $1.10$ and $1.43$ times that of a generic cell, so the last is three and a half times richer in twins than the first. And where eligibility admits three quarters of the primes for one track and a quarter for all four, **simultaneous double duty inside one window admits exactly nine primes, so every $r > 97$ can close at most one of the four** (Theorem 19). That constraint is sharp for a single line and empty for four: assigning a distinct line to each track and combining the congruences produces an explicit infinite progression along which all four cells are closed, $q$ is prime and $q+2$ is composite (Proposition 2), so **no fixed number of named cells can force a twin.** The same coordinates make the operative threshold visible: a line whose modulus reaches the window's own length cannot wrap inside it and has a total budget of two, so at $a = 1667$ the $857$ lines below $N$ close $6{,}500$ cells while the $370$ above it close $20$.
+A last section takes the four cells nearest the window's ends and turns them into four **tracks** as $a$ runs, each member a quadratic in $a$; a prime can own a track only if the corresponding discriminant is a quadratic residue (Theorem 18), which makes the four tracks unequal — Bateman–Horn gives them densities $0.41$, $0.73$, $1.10$ and $1.43$ times that of a generic cell, so the last is three and a half times richer in twins than the first. And where eligibility admits three quarters of the primes for one track and a quarter for all four, **simultaneous double duty inside one window admits exactly nine primes, so every $r \gt  97$ can close at most one of the four** (Theorem 19). That constraint is sharp for a single line and empty for four: assigning a distinct line to each track and combining the congruences produces an explicit infinite progression along which all four cells are closed, $q$ is prime and $q+2$ is composite (Proposition 2), so **no fixed number of named cells can force a twin.** The same coordinates make the operative threshold visible: a line whose modulus reaches the window's own length cannot wrap inside it and has a total budget of two, so at $a = 1667$ the $857$ lines below $N$ close $6{,}500$ cells while the $370$ above it close $20$.
 
-A further section changes the unit from the sector to the **belt** between consecutive prime gates $q^2$ and $r^2$. The belt holds exactly $(r^2-q^2)/6-1$ cells and so grows like $qg$ with $g = r-q$ (Theorem 16), while the line born at its left end can strike only $\lfloor 2g/3\rfloor$ of them — **a count independent of $q$** (Verified Law 17, proved under $g^2<2q$). Measured, the new line closes nothing at all in about three quarters of belts. A deterministic ceiling for a whole age layer follows (Proposition 1), generous by one to two orders of magnitude; but summed over the full pyramid of layers it exceeds the belt by a factor $\sim\tfrac23\log q$, so the recent lines are not capacity-limited and the argument does not close. We report that negative outcome with the rest.
+A further section changes the unit from the sector to the **belt** between consecutive prime gates $q^2$ and $r^2$. The belt holds exactly $(r^2-q^2)/6-1$ cells and so grows like $qg$ with $g = r-q$ (Theorem 16), while the line born at its left end can strike only $\lfloor 2g/3\rfloor$ of them — **a count independent of $q$** (Verified Law 17, proved under $g^2\lt 2q$). Measured, the new line closes nothing at all in about three quarters of belts. A deterministic ceiling for a whole age layer follows (Proposition 1), generous by one to two orders of magnitude; but summed over the full pyramid of layers it exceeds the belt by a factor $\sim\tfrac23\log q$, so the recent lines are not capacity-limited and the argument does not close. We report that negative outcome with the rest.
 
 **No progress toward the twin-prime conjecture is claimed.** Every statement here is exact; none of them is a lower bound on anything.
 
@@ -82,7 +82,7 @@ Gaps $2$ and $4$ have **divergent** reciprocal sums (growing like $\log\log N$),
 
 ### 2.3 Runs and the cap at four
 
-> **Theorem 3.** On a single rail, no five survivors with $x > 5$ can lie in arithmetic progression with common difference $6$; and $5, 11, 17, 23, 29$ is the only exception.
+> **Theorem 3.** On a single rail, no five survivors with $x \gt  5$ can lie in arithmetic progression with common difference $6$; and $5, 11, 17, 23, 29$ is the only exception.
 
 *Proof.* Since $6 \equiv 1 \pmod 5$, the five terms $x, x+6, \dots, x+24$ run through all residues modulo $5$, so exactly one of them is divisible by $5$. If that term exceeds $5$ it is an odd multiple of $5$ at least $25$, hence lies on $L_5$ and is struck. The term can fail to be struck only when it equals $5$ itself, which forces $x = 5$. $\blacksquare$
 
@@ -112,8 +112,8 @@ Gaps $2$ and $4$ have **divergent** reciprocal sums (growing like $\log\log N$),
 
 ### 3.1 A surviving cell is a twin pair
 
-Let $u<v$ be consecutive integers coprime to $6$. Every survivor of all lines $\le u$ inside $(u^2, v^2)$ is necessarily prime, since a composite $x < v^2$ has a prime factor $\le \sqrt{x} < v$, and there is no prime strictly between $u$ and $v$. Hence
-$$\boxed{ \text{a surviving } NN \text{ cell in } (u^2,v^2)  =  \text{a twin prime pair.} } \tag{3.1}$$
+Let $u\lt v$ be consecutive integers coprime to $6$. Every survivor of all lines $\le u$ inside $(u^2, v^2)$ is necessarily prime, since a composite $x \lt  v^2$ has a prime factor $\le \sqrt{x} \lt  v$, and there is no prime strictly between $u$ and $v$. Hence
+$$\boxed{ \text{a surviving } NN \text{ cell in } (u^2,v^2)  =  \text{a twin prime pair.} } \qquad\text{(3.1)}$$
 
 ### 3.2 Theorem 4: only six cells in a sector can be open without being a twin
 
@@ -148,7 +148,7 @@ No other composite can inhabit an open cell of that sector.
 At $M = 999$ both $1001 = 7\cdot11\cdot13$ and $1003 = 17\cdot59$ are composite, so $E_M$ is empty and **all $93$ open cells of that sector are twin pairs** — as measured.
 
 **What this buys, stated precisely.** Writing $C_M$ for the number of open cells, one has $T_M \ge C_M - |E_M| \ge C_M - 6$, so a twin follows from $C_M \ge 7$. Theorem 4 replaces that by the much weaker requirement
-$$S_M \not\subseteq E_M, \tag{3.2}$$
+$$S_M \not\subseteq E_M, \qquad\text{(3.2)}$$
 where $S_M$ is the set of open indices: **a single open cell suffices, provided it is not at one of six named places.** And the six places are fixed by the geometry of the square — they are not chosen by the lines, whose phases are periodic and unrelated to $M$.
 
 **And what it does not buy.** $C_M$ exceeds the twin count of the sector by at most six. Any lower bound on $C_M$ is therefore a lower bound on twins, and (3.2) is an exact reformulation rather than a route. We record it because it is the sharpest form the framework has produced of the twin criterion, not because it weakens the problem.
@@ -160,7 +160,7 @@ and $C \equiv 3 \pmod 4$ always (zero failures over 427 consecutive prime pairs)
 
 ### 3.4 Local deviations
 
-$$\varepsilon_r(u) = D_r(u) - \frac{2 N_{r^-}(u)}{r}. \tag{3.3}$$
+$$\varepsilon_r(u) = D_r(u) - \frac{2 N_{r^-}(u)}{r}. \qquad\text{(3.3)}$$
 
 Inside a sector, line $r$ deletes at $s \equiv -u^2/6$ and $s \equiv (2-u^2)/6 \pmod r$, and the gap between the two positions is exactly $3^{-1} \bmod r$ (zero failures among 85). **Every ruler's phase is therefore a function of the single quantity $u^2$**, and under $u \mapsto u+6$ the phase moves *quadratically*, since $u^2 \mapsto u^2 + 12u + 36$. This quadratic motion is what makes cancellation possible at all.
 
@@ -168,13 +168,13 @@ Inside a sector, line $r$ deletes at $s \equiv -u^2/6$ and $s \equiv (2-u^2)/6 \
 
 The sector $[p^2,(p+2)^2)$ is where the line $L_p$ is born. Index gap-2 pairs by their offset from the centre $C = (p+1)^2$, writing $P(j) = (C+2j-1,\ C+2j+1)$ with $-p \le j \le p$, so the window holds exactly $2p+1$ pair slots. Let $T_p^-$ count the surviving pairs before $L_p$ is switched on, $T_p^+$ after, and $D_p = T_p^- - T_p^+$.
 
-$L_p$ has exactly three strikes in this window: $p^2$, $p(p+2)$ and $p(p+4)$, since $p(p+6) > (p+2)^2$.
+$L_p$ has exactly three strikes in this window: $p^2$, $p(p+2)$ and $p(p+4)$, since $p(p+6) \gt  (p+2)^2$.
 
-> **Theorem 5.** $D_p \in \lbrace 0,1\rbrace$ for every prime $p > 3$.
+> **Theorem 5.** $D_p \in \lbrace 0,1\rbrace$ for every prime $p \gt  3$.
 
 *Proof.* Three strikes, and each is disposed of by the grid $L_3$.
 
-1. **$p^2$.** Of the two pairs it meets, only $(p^2, p^2+2)$ lies in the window — the other has index $-p-1$. For $p>3$, $p^2 \equiv 1 \pmod 3$, so $p^2+2 \equiv 0$: **that pair is already dead.**
+1. **$p^2$.** Of the two pairs it meets, only $(p^2, p^2+2)$ lies in the window — the other has index $-p-1$. For $p\gt 3$, $p^2 \equiv 1 \pmod 3$, so $p^2+2 \equiv 0$: **that pair is already dead.**
 2. **The strike divisible by $3$.** One of $p+2, p+4$ is $\equiv 3 \pmod 6$, so one of $p(p+2), p(p+4)$ lies on $L_3$ and was struck before $L_p$ existed; both pairs it meets were already dead.
 3. **The surviving strike.** Call it $H_p = p(p+2)$ when $p \equiv 5 \pmod 6$ and $p(p+4)$ when $p \equiv 1 \pmod 6$. In either case $H_p \equiv 5 \pmod 6$, so $H_p - 2 \equiv 3 \pmod 6$ and the pair $(H_p-2, H_p)$ is **also already dead.**
 
@@ -183,9 +183,9 @@ Only $(H_p, H_p+2)$ remains. $\blacksquare$
 > **Corollary 2.** $D_p = 1$ if and only if **two** primality conditions hold together:
 > $$p \equiv 5 \ (6): \quad p+2 \ \text{prime} \ \text{ and } \ p(p+2)+2 \ \text{prime}; \qquad p \equiv 1 \ (6): \quad p+4 \ \text{prime} \ \text{ and } \ p(p+4)+2 \ \text{prime}.$$
 
-*Proof.* $H_p$ survives the older lines iff its cofactor ($p+2$ or $p+4$) has no prime factor below $p$; being less than $2p$, that means the cofactor is prime. And $H_p+2 < (p+2)^2$ is not divisible by $p$, so if composite its least prime factor is below $p$ and it was struck earlier; hence $H_p+2$ survives iff it is prime. $\blacksquare$
+*Proof.* $H_p$ survives the older lines iff its cofactor ($p+2$ or $p+4$) has no prime factor below $p$; being less than $2p$, that means the cofactor is prime. And $H_p+2 \lt  (p+2)^2$ is not divisible by $p$, so if composite its least prime factor is below $p$ and it was struck earlier; hence $H_p+2$ survives iff it is prime. $\blacksquare$
 
-*Verification.* Corollary 2 predicts $D_p$ from two primality tests alone; checked against the directly computed $D_p$ for every prime $5 \le p < 4000$, with **zero mismatches**. Examples: $p=5$ gives $7$ and $37$ both prime, so $D_5=1$; $p=11$ gives $13$ prime but $145 = 5\cdot29$ composite, so $D_{11}=0$; $p=13$ gives $17$ and $223$ both prime, so $D_{13}=1$.
+*Verification.* Corollary 2 predicts $D_p$ from two primality tests alone; checked against the directly computed $D_p$ for every prime $5 \le p \lt  4000$, with **zero mismatches**. Examples: $p=5$ gives $7$ and $37$ both prime, so $D_5=1$; $p=11$ gives $13$ prime but $145 = 5\cdot29$ composite, so $D_{11}=0$; $p=13$ gives $17$ and $223$ both prime, so $D_{13}=1$.
 
 **What this does and does not buy.** Since $T_p^+ = T_p^- - D_p$ and every survivor in the window is prime (the cofactor argument of §5.2), $T_p^+$ *is* the number of twin pairs in $[p^2,(p+2)^2)$. Theorem 5 therefore says:
 
@@ -203,7 +203,7 @@ Let $B$ count the bridges surviving a line set, over a full cycle of roots.
 
 > **Theorem 6.** $B' = \big(q - 2 - \chi_q(2)\big) B$, where $\chi_q(2)$ is the Legendre symbol: $+1$ for $q \equiv \pm1 \pmod 8$ and $-1$ for $q \equiv \pm3 \pmod 8$.
 
-*Proof.* The bridge at root $r$ dies under $q$ when $q \mid r^2$, i.e. $r \equiv 0$ — one class — or when $r^2 \equiv 2 \pmod q$, which has $1+\chi_q(2)$ solutions. The two conditions are disjoint for $q>2$, so $2+\chi_q(2)$ classes are lost. $\blacksquare$
+*Proof.* The bridge at root $r$ dies under $q$ when $q \mid r^2$, i.e. $r \equiv 0$ — one class — or when $r^2 \equiv 2 \pmod q$, which has $1+\chi_q(2)$ solutions. The two conditions are disjoint for $q\gt 2$, so $2+\chi_q(2)$ classes are lost. $\blacksquare$
 
 *Verification.* $B = 2,\ 8,\ 32,\ 320,\ 3840,\ 53760,\ 967680$ for the line sets up to $3, 5, 7, 11, 13, 17, 19$, against $T = 1,\ 3,\ 15,\ 135,\ 1485,\ 22275,\ 378675$. Brute-forced from the definition for $\lbrace 3\rbrace$, $\lbrace 3,5\rbrace$, $\lbrace 3,5,7\rbrace$, $\lbrace 3,5,7,11\rbrace$: exact.
 
@@ -231,7 +231,7 @@ And the bias, though real, is not usable: $T-B \approx -1.56 T$ is a fixed numbe
 One may ask directly whether windows anchored at squares are systematically poorer than windows placed anywhere. The answer is an identity rather than an experiment.
 
 For a window starting at $r^2$, the pair at offset $j$ survives $q$ exactly when $r^2 \not\equiv -2j$ and $r^2 \not\equiv -2j-2 \pmod q$. Writing $\rho_q(a) = \mathrm{card}\lbrace r : r^2 \equiv a\rbrace$ and $\nu_q(j) = \rho_q(-2j) + \rho_q(-2j-2)$ — the two conditions cannot hold at once — the average over **all square phases** is exactly
-$$\mu_{\square}(L)  =  \sum_{j<L}\ \prod_{q} \frac{q - \nu_q(j)}{q}. \tag{3.4}$$
+$$\mu_{\square}(L)  =  \sum_{j\lt L}\ \prod_{q} \frac{q - \nu_q(j)}{q}. \qquad\text{(3.4)}$$
 
 Computed against the naive density prediction $E = L\prod(q-2)/q$, and against the restricted average $\mu^{\times}$ over roots that are themselves coprime to every old line:
 
@@ -305,16 +305,16 @@ Both tend to zero: distance-$6$ pairs become rarer, yet a growing share of those
 ### 4.3 Theorem 10 (tail compression)
 
 Inside $(P^2,9P^2)$, after the lines up to $P$ have acted, every surviving composite has the form $n=qr$ with
-$$P<q<3P,\qquad q\le r<\frac{9P^2}{q}<9P.$$
-Indeed three factors above $P$ would give $n>P^3>9P^2$ for $P>9$, and the smaller of the two remaining factors is below $3P$. Consequently the number of genuinely new strikes contributed later by a line $q$ with $P<q<3P$ is
-$$E_P(q)=\pi(9P^2/q)-\pi(q-1)<2(3P-q)+1,$$
+$$P\lt q\lt 3P,\qquad q\le r\lt \frac{9P^2}{q}\lt 9P.$$
+Indeed three factors above $P$ would give $n\gt P^3\gt 9P^2$ for $P\gt 9$, and the smaller of the two remaining factors is below $3P$. Consequently the number of genuinely new strikes contributed later by a line $q$ with $P\lt q\lt 3P$ is
+$$E_P(q)=\pi(9P^2/q)-\pi(q-1)\lt 2(3P-q)+1,$$
 so a line approaching $3P$ loses power because the available cofactor interval contracts.
 
 A related compression occurs among the **late lines in the sweep up to $P$ itself**:
 
-> **Theorem 10.** For $P \ge 243$ and $P/3 < q < P$, every new strike of $q$ inside the window has the form $x = qr$ with $r$ **prime**.
+> **Theorem 10.** For $P \ge 243$ and $P/3 \lt  q \lt  P$, every new strike of $q$ inside the window has the form $x = qr$ with $r$ **prime**.
 
-*Proof.* The cofactor satisfies $r < 9P^2/q < 27P$. If $r$ were composite, all its prime factors would be $\ge q$ (it survived the smaller lines), so $r \ge q^2 > P^2/9$. The contradiction holds precisely when $P^2/9 \ge 27P$, i.e. $P \ge 243$. $\blacksquare$
+*Proof.* The cofactor satisfies $r \lt  9P^2/q \lt  27P$. If $r$ were composite, all its prime factors would be $\ge q$ (it survived the smaller lines), so $r \ge q^2 \gt  P^2/9$. The contradiction holds precisely when $P^2/9 \ge 27P$, i.e. $P \ge 243$. $\blacksquare$
 
 **Finite check around the threshold.** Direct enumeration of new strikes with composite cofactor:
 
@@ -322,9 +322,9 @@ A related compression occurs among the **late lines in the sweep up to $P$ itsel
 |---|---|---|---|---|---|---|---|---|---|
 | anomalies | 26 | 9 | 6 | 5 | **0** | 0 | 0 | 0 | 0 |
 
-The enumeration exhibits anomalies at smaller $P$ and none in the tested cases from $241$ onward; this is consistent with, but stronger numerically than, the proved sufficient threshold $243$. The sharper pointwise condition is $q^3 > 9P^2$, i.e. $q > 9^{1/3}P^{2/3}$; and the two conditions cross exactly at
+The enumeration exhibits anomalies at smaller $P$ and none in the tested cases from $241$ onward; this is consistent with, but stronger numerically than, the proved sufficient threshold $243$. The sharper pointwise condition is $q^3 \gt  9P^2$, i.e. $q \gt  9^{1/3}P^{2/3}$; and the two conditions cross exactly at
 $$\frac{P}{3} = 9^{1/3}P^{2/3} \iff \frac{P^3}{27} = 9P^2 \iff P = 243,$$
-so $243$ is the point at which the constraint $q > P/3$ becomes the binding one.
+so $243$ is the point at which the constraint $q \gt  P/3$ becomes the binding one.
 
 ## 5. Clocks, and primality as a zero-test
 
@@ -337,22 +337,22 @@ so $243$ is the point at which the constraint $q > P/3$ becomes the binding one.
 *Verification.* Zero failures among $4{,}983$ instances, and zero for the insertion rule.
 
 Hence, writing $\Phi(n) = (\phi_3, \phi_5, \phi_7,\dots)$, the transition $n \mapsto n+2$ acts as
-$$\Phi  \longmapsto  \Phi - 1, \tag{5.1}$$
+$$\Phi  \longmapsto  \Phi - 1, \qquad\text{(5.1)}$$
 each component on its own circle, and the whole system evolves by three small numbers:
 $$\text{step } +4, \qquad \text{first square gap } +8, \qquad \text{all clocks } -1,$$
 with one clock inserted at $p-1$ whenever $p$ is prime. The system is *shift, zero-test, insert*; nothing is rebuilt.
 
 > **Corollary 4.** $p$ is composite if and only if some old clock reads $0$ at its birth. Equivalently, **a prime is a step at which no clock lands on zero.**
 
-*Verification.* Zero failures over all odd $p < 2000$.
+*Verification.* Zero failures over all odd $p \lt  2000$.
 
 > **Corollary 5.** The clock of $L_3$ cycles $2 \to 1 \to 0$, so the two non-zero states are exactly the cell $(6a-1, 6a+1)$. **The cell, taken as a definition in [I, §3], is a consequence.**
 
 ### 5.2 Theorem 12 (surviving cofactors are prime)
 
-> **Theorem 12.** For $p \ge 11$ and $p < t \le 9p$, a cofactor $t$ surviving all lines below $p$ is prime.
+> **Theorem 12.** For $p \ge 11$ and $p \lt  t \le 9p$, a cofactor $t$ surviving all lines below $p$ is prime.
 
-*Proof.* $t \le 9p < p^2$. A composite $t$ surviving all lines $<p$ would need two prime factors $\ge p$, giving $t \ge p^2 > 9p$. $\blacksquare$
+*Proof.* $t \le 9p \lt  p^2$. A composite $t$ surviving all lines $\lt p$ would need two prime factors $\ge p$, giving $t \ge p^2 \gt  9p$. $\blacksquare$
 
 *Verification.* Zero violations at $p = 11,13,17,101,499$.
 
@@ -372,14 +372,14 @@ The "new" cofactors are exactly $13,17,19,23,\dots,97$, all prime, as Theorem 12
 
 Theorem 12 is the case that arises inside one sector. Read along the whole row of $p$ it has a general form, and the general form is worth stating because it makes the twin condition geometric.
 
-Call a cell of the row **original** if no line below $p$ owns it. Everything before $p^2$ is inherited — a strike $p m$ with $m < p$ carries the smallest prime factor of $m$, which is below $p$ — so $p^2$ is the first original cell on the row. Past it:
+Call a cell of the row **original** if no line below $p$ owns it. Everything before $p^2$ is inherited — a strike $p m$ with $m \lt  p$ carries the smallest prime factor of $m$, which is below $p$ — so $p^2$ is the first original cell on the row. Past it:
 
-> **Theorem 13.** For $p$ prime and $p \le p+2j < p^2$,
+> **Theorem 13.** For $p$ prime and $p \le p+2j \lt  p^2$,
 > $$p (p+2j) \ \text{ is original with respect to the lines below } p \quad\Longleftrightarrow\quad p+2j \ \text{ is prime}.$$
 
 *Proof.* If $p+2j$ is composite and below $p^2$ its least prime factor is below $p$, so that line already owns the cell. If $p+2j$ is prime it has no factor below $p$ at all, and $p$ itself begins at $p^2$. $\blacksquare$
 
-*Verification.* Zero failures over $1{,}782{,}933$ instances: every prime $p < 400$ and every $j$ with $p+2j < p^2$.
+*Verification.* Zero failures over $1{,}782{,}933$ instances: every prime $p \lt  400$ and every $j$ with $p+2j \lt  p^2$.
 
 **So a row is a reader.** The row of $p$ carries, in the originality of its cells, the primality of every odd number from $p$ up to $p^2$ — one bit per cell, with no change to the definition of a prime. Two consequences are worth recording.
 
@@ -391,7 +391,7 @@ Writing $\mathsf O$ for original and $\mathsf I$ for inherited, the row crosses 
 $$p (p+2)  =  (p+1)^2 - 1,$$
 so every twin test sits one unit below an even square: $35 = 36-1$, $143 = 144-1$, $323 = 324-1$, $899 = 900-1$. **That is [I, Thm 5] read along the row instead of across the window** — the cell $(n^2-1,\ n^2+1)$ with $n = p+1$, whose lower member $(n-1)(n+1)$ is composite by construction. The two statements are the same fact.
 
-**And the reformulation is exact, which is precisely why it is not progress.** Writing $\sigma(p)$ for the smallest line owning $p(p+2)$, one has $\sigma(p) = \mathrm{spf}(p+2) \le \sqrt{p+2}$ when $p+2$ is composite, and $\sigma(p) = \infty$ exactly when $(p,p+2)$ is a twin. Proving $\sigma(p) = \infty$ infinitely often is proving the twin conjecture, in the same words. What the row picture adds is a suggestion — that if twins were finite, every new diagonal point would need its shadow claimed by some line below $\sqrt p$ — and the suggestion does not survive measurement: over $6{,}835$ composite cases with $p < 200{,}000$ the claimant is at most $13$ in $63.6$% of them and at most $100$ in $89.9$%, the counts being $5$: $2248$, $7$: $1125$, $11$: $557$, $13$: $415$, $17$: $303$. **The $\sqrt p$ bound is nowhere near tight; the shadows are claimed by the smallest lines, not by a delicate conspiracy of many.**
+**And the reformulation is exact, which is precisely why it is not progress.** Writing $\sigma(p)$ for the smallest line owning $p(p+2)$, one has $\sigma(p) = \mathrm{spf}(p+2) \le \sqrt{p+2}$ when $p+2$ is composite, and $\sigma(p) = \infty$ exactly when $(p,p+2)$ is a twin. Proving $\sigma(p) = \infty$ infinitely often is proving the twin conjecture, in the same words. What the row picture adds is a suggestion — that if twins were finite, every new diagonal point would need its shadow claimed by some line below $\sqrt p$ — and the suggestion does not survive measurement: over $6{,}835$ composite cases with $p \lt  200{,}000$ the claimant is at most $13$ in $63.6$% of them and at most $100$ in $89.9$%, the counts being $5$: $2248$, $7$: $1125$, $11$: $557$, $13$: $415$, $17$: $303$. **The $\sqrt p$ bound is nowhere near tight; the shadows are claimed by the smallest lines, not by a delicate conspiracy of many.**
 
 
 ## 6. Inheritance across sectors, and the capacity of a single line
@@ -400,7 +400,7 @@ Sections 2–5 treat one sector at a time. This section treats the *sequence* of
 
 ### 6.1 Theorem 14: the sector inheritance law
 
-Fix any finite set of lines $p_1 < \dots < p_r$ above $3$, and put
+Fix any finite set of lines $p_1 \lt  \dots \lt  p_r$ above $3$, and put
 $$Q = \prod_i p_i, \qquad S = \prod_i (p_i - 2),$$
 so that $S$ cells survive that set in each cycle of $Q$ consecutive cells. Let $B(M)$ be the number of cells of the sector at $M$ that survive those lines.
 
@@ -420,7 +420,7 @@ Each survivor of the fixed set appears in the new tail exactly twelve times, at 
 $$x,\ x+Q,\ x+2Q,\ \dots,\ x+11Q,$$
 which we call a **family**. A new line $q$ closes a cell $c$ when $c \equiv \pm 6^{-1} \pmod q$, so on a family it closes the copies $t$ solving $x + tQ \equiv \pm 6^{-1}$. There are two such $t$ modulo $q$, and their separation does not depend on $x$:
 
-> **Theorem 15.** Put $\Delta_q \equiv (3Q)^{-1} \pmod q$ and $d_q = \min(\Delta_q,\ q - \Delta_q)$. Then a line $q > 11$ closes at most two copies of any family, and **at most one** whenever $d_q > 11$.
+> **Theorem 15.** Put $\Delta_q \equiv (3Q)^{-1} \pmod q$ and $d_q = \min(\Delta_q,\ q - \Delta_q)$. Then a line $q \gt  11$ closes at most two copies of any family, and **at most one** whenever $d_q \gt  11$.
 
 *Proof.* The two solutions differ by $2\cdot 6^{-1} Q^{-1} = (3Q)^{-1}$, whose least absolute representative is $\pm d_q$. Two copies lie in the family only if two values of $t \in \lbrace 0,\dots,11\rbrace$ differ by $d_q$, which needs $d_q \le 11$. $\blacksquare$
 
@@ -428,9 +428,9 @@ which we call a **family**. A new line $q$ closes a cell $c$ when $c \equiv \pm 
 
 ### 6.3 Corollary 6: the exceptional lines are finite in number
 
-> **Corollary 6.** A line $q$ can close two copies of a family only if $q \mid 3Qr \pm 1$ for some $1 \le r \le 11$. Consequently every $q > 33Q + 1$ closes **at most one** copy of every family.
+> **Corollary 6.** A line $q$ can close two copies of a family only if $q \mid 3Qr \pm 1$ for some $1 \le r \le 11$. Consequently every $q \gt  33Q + 1$ closes **at most one** copy of every family.
 
-*Proof.* $d_q \le 11$ means $\Delta_q \equiv \pm r$ with $r \le 11$, i.e. $3Qr \equiv \pm 1 \pmod q$; and $0 < 3Qr \mp 1 \le 33Q+1$, so $q$ cannot divide it once $q$ exceeds that bound. $\blacksquare$
+*Proof.* $d_q \le 11$ means $\Delta_q \equiv \pm r$ with $r \le 11$, i.e. $3Qr \equiv \pm 1 \pmod q$; and $0 \lt  3Qr \mp 1 \le 33Q+1$, so $q$ cannot divide it once $q$ exceeds that bound. $\blacksquare$
 
 For $Q = 385$ the threshold is $12{,}706$. This is a genuinely local statement: it names, for each family, a bound on what a *specific* line can do, whereas $2/q$ only bounds a total.
 
@@ -439,11 +439,11 @@ For $Q = 385$ the threshold is $12{,}706$. This is a genuinely local statement: 
 
 ## 7. The gate belt: what a line can do between its own square and the next
 
-Sections 3–6 work inside a sector bounded by consecutive odd squares. This section changes the unit: since every prime $q>3$ has $q^2 \equiv 1 \pmod 6$, each prime has a **gate** $G_q$ with $q^2 = 6G_q+1$, and the cell $C_{G_q} = (q^2-2, q^2)$ is closed by $q$ itself. Consecutive primes $q<r$ therefore delimit a **belt** of cells $C_{G_q+1},\dots,C_{G_r-1}$ between two gates that are certainly closed. The belts tile the cell axis.
+Sections 3–6 work inside a sector bounded by consecutive odd squares. This section changes the unit: since every prime $q\gt 3$ has $q^2 \equiv 1 \pmod 6$, each prime has a **gate** $G_q$ with $q^2 = 6G_q+1$, and the cell $C_{G_q} = (q^2-2, q^2)$ is closed by $q$ itself. Consecutive primes $q\lt r$ therefore delimit a **belt** of cells $C_{G_q+1},\dots,C_{G_r-1}$ between two gates that are certainly closed. The belts tile the cell axis.
 
 ### 7.1 Theorem 16: the size of a belt
 
-> **Theorem 16.** For consecutive primes $q<r$ with $g = r-q$, the belt holds exactly
+> **Theorem 16.** For consecutive primes $q\lt r$ with $g = r-q$, the belt holds exactly
 > $$G(q,r)  =  \frac{r^2-q^2}{6}-1  =  \frac{g(2q+g)}{6}-1$$
 > cells, so its size grows like $qg$.
 
@@ -453,13 +453,13 @@ Sections 3–6 work inside a sector bounded by consecutive odd squares. This sec
 
 ### 7.2 Verified Law 17: the new line's reach depends on the gap, not on its size
 
-> **Verified Law 17 (conditional).** Suppose $g^2 < 2q$. Then, within its own belt, the number of cells the line $L_q$ can strike at all is
+> **Verified Law 17 (conditional).** Suppose $g^2 \lt  2q$. Then, within its own belt, the number of cells the line $L_q$ can strike at all is
 > $$H_q  =  \left\lfloor \frac{2g}{3}\right\rfloor,$$
 > **independent of $q$.**
 
-*Proof under the hypothesis.* If $g^2 < 2q$ the line completes no extra lap before the next gate, so it reaches only the cofactors $q+2, q+4, \dots, q+2g$, giving $g$ candidate strikes; one in every three falls on $L_3$ and so touches no cell of the grid, leaving $\lfloor 2g/3 \rfloor$. $\blacksquare$
+*Proof under the hypothesis.* If $g^2 \lt  2q$ the line completes no extra lap before the next gate, so it reaches only the cofactors $q+2, q+4, \dots, q+2g$, giving $g$ candidate strikes; one in every three falls on $L_3$ and so touches no cell of the grid, leaving $\lfloor 2g/3 \rfloor$. $\blacksquare$
 
-**We do not call this a theorem, because the hypothesis is not available.** $g^2 < 2q$ is far weaker than Cramér's conjecture $g = O(\log^2 q)$, which would give it at once — but it is **stronger than anything currently proved, and stronger than the Riemann hypothesis supplies**: RH gives only $g \ll \sqrt q \log q$, hence $g^2 \ll q\log^2 q$, which does not suffice. **Verified over $17{,}981$ belts, every consecutive prime pair with $q < 200{,}000$: no failure.**
+**We do not call this a theorem, because the hypothesis is not available.** $g^2 \lt  2q$ is far weaker than Cramér's conjecture $g = O(\log^2 q)$, which would give it at once — but it is **stronger than anything currently proved, and stronger than the Riemann hypothesis supplies**: RH gives only $g \ll \sqrt q \log q$, hence $g^2 \ll q\log^2 q$, which does not suffice. **Verified over $17{,}981$ belts, every consecutive prime pair with $q \lt  200{,}000$: no failure.**
 
 **The consequence is worth stating plainly.** The belt has $\sim qg/6$ cells and the line born at its left end can touch $\sim 2g/3$ of them. **For a twin gap $g=2$ the line touches exactly one cell, however large $q$ is** — one cell out of $\sim q/3$. A line at $q \approx 10^6$ entering a belt of some hundred thousand cells has a single strike available before the next gate opens.
 
@@ -479,7 +479,7 @@ Raw reach is not closing power: a strike may land on a cell an older line has al
 | $89\to97$ | 247 | 5 | **0** | 21 |
 | $101\to103$ | 67 | 1 | **0** | 7 |
 
-*Measured over every consecutive prime pair below $5{,}000$:* $K_q = 0$ in $71.1$% of belts with $q<1000$ and $76.8$% of belts with $1000<q<5000$; mean $K_q$ falls from $0.331$ to $0.259$; the maximum ever observed is $3$. **A new line typically arrives at its own gate to find that the work has already been done.**
+*Measured over every consecutive prime pair below $5{,}000$:* $K_q = 0$ in $71.1$% of belts with $q\lt 1000$ and $76.8$% of belts with $1000\lt q\lt 5000$; mean $K_q$ falls from $0.331$ to $0.259$; the maximum ever observed is $3$. **A new line typically arrives at its own gate to find that the work has already been done.**
 
 **A monotone version of this is false, and we record it because it is the natural guess.** It is not the case that a newer line always closes fewer cells than every older one: in the belt $31\to37$ the first closures are $17:1$, $19:3$, $23:2$, $29:3$, so $29$ — newer than $19$ and $23$ — closes more than both. **The weakness is collective, not line by line.**
 
@@ -560,7 +560,7 @@ Each individual condition admits half the primes (measured over primes below $10
 
 Eligibility asks which primes can own a track at **some** $a$. The sharper question is which can own two tracks at the **same** $a$, and the answer is finite.
 
-> **Theorem 19.** A prime $r > 3$ can close two of $A,B,C,D$ in the same window only if it divides the resultant of the corresponding pair of quadratics. The complete list is
+> **Theorem 19.** A prime $r \gt  3$ can close two of $A,B,C,D$ in the same window only if it divides the resultant of the corresponding pair of quadratics. The complete list is
 >
 > | pair | admissible primes |
 > |---|---|
@@ -571,9 +571,9 @@ Eligibility asks which primes can own a track at **some** $a$. The sharper quest
 > | $B$ & $D$ | $7,\ 19,\ 89,\ 97$ |
 > | $C$ & $D$ | **none** |
 >
-> so the union is the nine primes $\lbrace 5,7,11,13,19,37,73,89,97\rbrace$, and **every $r > 97$ closes at most one of the four cells in any single window.**
+> so the union is the nine primes $\lbrace 5,7,11,13,19,37,73,89,97\rbrace$, and **every $r \gt  97$ closes at most one of the four cells in any single window.**
 
-*Proof of the two empty entries.* The differences between a member of $A$ and a member of $B$ are $4$, $6$ and $8$; a prime dividing one member of each would divide one of these, impossible for $r>3$. The same three differences occur between $C$ and $D$. $\blacksquare$
+*Proof of the two empty entries.* The differences between a member of $A$ and a member of $B$ are $4$, $6$ and $8$; a prime dividing one member of each would divide one of these, impossible for $r\gt 3$. The same three differences occur between $C$ and $D$. $\blacksquare$
 
 *Proof of the rest.* Two quadratics with the same leading coefficient differ by a linear form, so a common root modulo $r$ forces a linear congruence in $a$; substituting it back leaves a fixed integer that $r$ must divide. For $A$ lower against $C$ lower, for instance, $24a \equiv 18$ gives $4a \equiv 3$ and then $r \mid 65$. Each entry above was computed as the resultant and then checked for a genuine common root. $\blacksquare$
 
@@ -590,7 +590,7 @@ Theorem 19 is sharp, and it is sharp for one line. The next statement shows that
 
 > **Proposition 2.** Let $k$ tracks be given, each a pair of quadratics in $a$, and let $N$ be any bound. Then there is an arithmetic progression of $a$ — infinite, explicit, and computable — along which all $k$ tracks are closed simultaneously, every closing line exceeding $N$ and all $k$ of them distinct. Any finite number of further congruence conditions may be imposed at the same time.
 
-*Proof.* For each track choose a prime $r_i > N$, distinct from the others, whose discriminant condition (Theorem 18) is satisfied, and a root $a_i$ of one of its members modulo $r_i$. The $k$ conditions $a \equiv a_i \pmod{r_i}$ have pairwise coprime moduli, so the Chinese remainder theorem combines them into a single class modulo $\prod r_i$. Further conditions on coprime moduli are appended the same way. $\blacksquare$
+*Proof.* For each track choose a prime $r_i \gt  N$, distinct from the others, whose discriminant condition (Theorem 18) is satisfied, and a root $a_i$ of one of its members modulo $r_i$. The $k$ conditions $a \equiv a_i \pmod{r_i}$ have pairwise coprime moduli, so the Chinese remainder theorem combines them into a single class modulo $\prod r_i$. Further conditions on coprime moduli are appended the same way. $\blacksquare$
 
 **The contrast with Theorem 19 is the whole point.** There the same line had to satisfy two conditions *at the same $a$*, which is a genuine constraint and collapsed an infinite set to nine primes. Here the conditions sit on different moduli, and the shared variable costs nothing.
 
@@ -612,7 +612,7 @@ We state this as a proposition rather than a remark because it is the reason to 
 
 **Proved here.** The gap alphabet and the ladder (Theorems 1–3, Corollary 1); the belt size and the layer ceiling (Theorem 16, Proposition 1); the character conditions on the four outer tracks, the nine-element simultaneity set, and the construction that shows it obstructs nothing (Theorems 17, 18, Proposition 2); the six exception positions (Theorem 4); the single-kill bound in a line's own first window and its characterisation (Theorem 5, Corollary 2); the bridge law and the summation identity over a cycle of windows (Theorems 6, 7); the exact minimum cover and the propagation and compression laws (Theorems 8–10, Corollaries 3–5); the shift law, the primality of surviving cofactors, and the originality law on a row (Theorems 11, 12, 13); and the sector inheritance and single-line capacity laws (Theorems 13, 14, Corollary 6).
 
-**Verified but not proved.** Verified Law 17 (the reach $\lfloor 2g/3\rfloor$), proved under $g^2 < 2q$ — a hypothesis weaker than Cramér but stronger than the Riemann hypothesis supplies; checked on $17{,}981$ belts with $q < 200{,}000$ without failure.
+**Verified but not proved.** Verified Law 17 (the reach $\lfloor 2g/3\rfloor$), proved under $g^2 \lt  2q$ — a hypothesis weaker than Cramér but stronger than the Riemann hypothesis supplies; checked on $17{,}981$ belts with $q \lt  200{,}000$ without failure.
 
 **Not here.** Every one of these is an *exact* statement — an identity, a cap, or an explicit list. None is a lower bound, and a lower bound is what the twin conjecture needs. Each of the criteria above turns out, on inspection, to require a lower bound on a quantity that exceeds the twin count of a sector by at most a constant; the criteria are therefore exact reformulations rather than routes.
 

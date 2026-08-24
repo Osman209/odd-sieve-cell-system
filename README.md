@@ -207,7 +207,12 @@ it was read as noise.
 **Reviewing the source is not reviewing the page.** Every paper here passed several content audits
 and would still have been published with hundreds of broken formulas, because no audit had looked
 at the rendered page. Two of the failure modes are silent: a stripped `\{` prints mathematics that
-is simply wrong, with no error box anywhere.
+is simply wrong, with no error box anywhere. **And a checker is not the page either.** After the
+first push, two further modes appeared on GitHub that this repository's own checker had passed —
+a raw `<` inside math, which is scanned as an HTML tag and swallows the rest of the formula, and
+`\tag{}` inside a display, which GitHub lays out as a table whose body collapses to one glyph per
+line. Both are now tested for; both were found by opening the page and reading it. A check that has
+never failed has not been tested.
 
 ---
 
