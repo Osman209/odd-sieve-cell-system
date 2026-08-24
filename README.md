@@ -1,5 +1,7 @@
 # The Cell System
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22085627.svg)](https://doi.org/10.5281/zenodo.22085627)
+
 [**Read the papers online — https://osman209.github.io/odd-sieve-cell-system/**](https://osman209.github.io/odd-sieve-cell-system/)
 
 A coordinate system for the odd sieve: what it proves, what it only measures, and the
@@ -281,6 +283,7 @@ The two programmes are independent; nothing here depends on anything there.
 ```
 Osman, M. (2026). The Cell System: a coordinate system for the odd sieve —
 what it proves, what it measures, and where it stops. Zenodo.
+https://doi.org/10.5281/zenodo.22085627
 ```
 
 Repository: <https://github.com/Osman209/odd-sieve-cell-system>
