@@ -1,0 +1,46 @@
+{
+  "title": "The Cell System: a coordinate system for the odd sieve — what it proves, what it measures, and where it stops",
+  "upload_type": "publication",
+  "publication_type": "workingpaper",
+  "description": "<p>Seven documents on the elementary sieve of the odd numbers, developed as a coordinate system of lines and cells.</p><p>Papers I&ndash;IV build the construction and prove what it decides. Paper V derives the point at which it stops <em>from inside the construction</em> rather than quoting it: the framework reproduces Buchstab's identity, the Hardy&ndash;Littlewood singular series and the sifting limit without importing them, and then halts exactly where the field halts. It measures how much of the difficulty can be localised first &mdash; to a set of density 10<sup>-3</sup> &mdash; and shows that the quantity a weighted sieve argument evaluates transfers from cycle to window with a relative error of 0.36%, so the computation is not the obstruction. Paper 0 is independent of the rest and concerns no prime numbers: an exact five-term histogram for the increments of floor(2j&sup2;/n), with no error term.</p><p>Statements that are only measured are labelled as such and listed together; results produced and then retracted during the work are kept rather than deleted. <strong>No progress toward the twin-prime conjecture is claimed, and no new bound.</strong> Priority is not claimed for any result.</p><p>Four verification scripts regenerate every number printed, each exiting non-zero when the claim it supports fails.</p>",
+  "creators": [
+    {
+      "name": "Osman, Mohamed",
+      "orcid": "0009-0004-5912-999X"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "version": "1.0.0",
+  "language": "eng",
+  "access_right": "open",
+  "keywords": [
+    "sieve methods",
+    "twin primes",
+    "almost primes",
+    "singular series",
+    "Hardy-Littlewood k-tuple conjecture",
+    "Buchstab function",
+    "parity obstruction",
+    "sifting limit",
+    "Richert weights",
+    "Jacobsthal function",
+    "primes between consecutive squares",
+    "floor functions",
+    "quadratic staircase",
+    "elementary number theory",
+    "reproducible research",
+    "negative results"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.21638887",
+      "relation": "isSupplementTo",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/Osman209/odd-sieve-cell-system",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

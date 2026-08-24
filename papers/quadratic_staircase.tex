@@ -1,0 +1,689 @@
+\documentclass[11pt,reqno]{amsart}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[margin=1.1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue]{hyperref}
+\usepackage{microtype}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+
+\theoremstyle{remark}
+\newtheorem*{verification}{Verification}
+\newtheorem*{remark}{Remark}
+\newtheorem*{rangeofstatement}{Range of the statement}
+
+\numberwithin{equation}{section}
+
+\newcommand{\fl}[1]{\left\lfloor #1 \right\rfloor}
+
+\begin{document}
+
+\title[An exact histogram for a quadratic staircase]
+      {An Exact Histogram for a Quadratic Staircase}
+
+\subjclass[2020]{Primary 11B57; Secondary 11A07, 11K31}
+\keywords{Floor function, quadratic residues, exact multiplicities,
+          Sturmian words, Beatty and step sequences,
+          three-distance theorem, equidistribution}
+
+\author{Mohamed Osman}
+\address{Independent researcher}
+\email{mohamedosmannn2999@gmail.com}
+\urladdr{ORCID: 0009-0004-5912-999X}
+
+\date{\today}
+
+\begin{abstract}
+For odd $n$ let
+\[
+  W_j \;=\; \fl{\frac{2(j+1)^2}{n}} - \fl{\frac{2j^2}{n}},
+  \qquad j = 0,1,\dots,n-1 .
+\]
+We prove that $W_j \in \{0,1,2,3,4\}$ for every odd $n$ and every $j$ in this
+range, and that the five values occur with multiplicities determined by the
+single integer $A = \fl{(n+7)/8}$:
+\[
+  \#\{W{=}0\} = \#\{W{=}4\} = A, \qquad \#\{W{=}2\} = 2A-1, \qquad
+  \#\{W{=}1\} = \#\{W{=}3\} = \tfrac{n+1}{2} - 2A .
+\]
+The proof is a tiling argument and carries no error term. This is worth
+emphasising: a probabilistic model of the same count, assuming
+$2j^2 \bmod n$ equidistributed, returns the same answer, and sums of this
+shape normally carry an error of size $\sqrt{n}\log n$ or $n^{1/3}$. None
+appears, and the residues $2j^2 \bmod n$ never enter the argument.
+
+A companion compression is proved for the symmetric pairs (Theorems~3 and~4):
+a pair collapses to a single element of $\{0,1,2\}$, and its census is again
+governed by one integer.
+
+We then prove the corresponding statement about the residues themselves, which
+the histogram deliberately avoids: for odd $n \ge 51$ the sequence
+$2j^2 \bmod n$ has exactly $2A$ interior local maxima (Theorem~5). The proof
+combines a palindrome symmetry, a transition count that replaces the two
+conditions defining a maximum by one, the observation that the relevant
+\emph{pairs} of intervals tile once separated by parity, and a small arithmetic
+coincidence: the four residues $8x \bmod n$ that arise are always
+$\pm1,\pm3,\pm5,\pm7$ in some order, so their squares always sum to $84$.
+
+Nothing in this paper concerns prime numbers.
+\end{abstract}
+
+\maketitle
+
+% running head: short title only, no author name on any page
+\markboth{An exact histogram for a quadratic staircase}%
+        {An exact histogram for a quadratic staircase}
+
+\begin{center}
+\emph{Preprint. Not submitted. Circulated for comment.}
+\end{center}
+
+\bigskip
+
+\section{The object}
+
+Throughout, $n \ge 3$ is odd and $j$ runs over $0,1,\dots,n-1$. Set
+\[
+  F(x) = \fl{\frac{2x^2}{n}}, \qquad W_j = F(j+1)-F(j), \qquad
+  r_j = 2j^2 \bmod n .
+\]
+$F$ is a staircase under the parabola $2x^2/n$; $W_j$ is its increment, and
+$r_j$ is the residue left over. The two are linked by $2j^2 = nF(j) + r_j$, but
+--- and this is the point of Section~\ref{sec:mult} --- the histogram of $W$ can
+be determined without ever computing an $r_j$.
+
+Two elementary remarks fix the scale. The total rise is
+\[
+  \sum_{j=0}^{n-1} W_j = F(n)-F(0) = 2n,
+\]
+so the mean increment is exactly $2$; and $W_j$ counts the multiples of $n$ in
+the interval
+\begin{equation}\label{eq:interval}
+  I_j = \bigl(2j^2,\ 2(j+1)^2\bigr], \qquad |I_j| = 4j+2 .
+\end{equation}
+The intervals $I_0, I_1, \dots$ tile $(0,\infty)$. That is the only structural
+fact the histogram needs.
+
+\section{The range}
+
+\begin{theorem}\label{thm:range}
+For every odd $n$ and every $0 \le j \le n-1$,
+\[
+  W_j \in \{0,1,2,3,4\}.
+\]
+\end{theorem}
+
+\begin{proof}
+The two arguments of the floor differ by
+\[
+  \frac{2(j+1)^2}{n}-\frac{2j^2}{n} \;=\; \frac{4j+2}{n},
+\]
+which is positive and, for $j \le n-1$, strictly less than $4$. A difference of
+floors of two reals differing by less than $4$ lies in $\{0,1,2,3,4\}$.
+\end{proof}
+
+\begin{verification}
+Zero violations over every odd $n \le 20{,}001$.
+\end{verification}
+
+The restriction $j \le n-1$ is real: for $j$ in the range $[rn,(r+1)n)$ the same
+computation gives $W_j \in \{4r,\dots,4r+4\}$, so the bound moves up in steps of
+four. Everything below concerns $0 \le j \le n-1$, which we call the
+\emph{first cycle}.
+
+Two further symmetries, both immediate from~\eqref{eq:interval}, will be used:
+\begin{equation}\label{eq:sym}
+  W_j + W_{n-1-j} = 4, \qquad W_{(n-1)/2} = 2 .
+\end{equation}
+
+\section{The exact multiplicities}\label{sec:mult}
+
+\begin{theorem}\label{thm:mult}
+Let $n \ge 3$ be odd and $A = \fl{(n+7)/8}$. Over the first cycle,
+\[
+  \#\{W{=}0\} = \#\{W{=}4\} = A, \qquad \#\{W{=}2\} = 2A-1, \qquad
+  \#\{W{=}1\} = \#\{W{=}3\} = \frac{n+1}{2}-2A,
+\]
+and no other value occurs.
+\end{theorem}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{r l r}
+\toprule
+$n$ & $(\#0,\ \#1,\ \#2,\ \#3,\ \#4)$ & $A$ \\
+\midrule
+$11$     & $(2,\ 2,\ 3,\ 2,\ 2)$                       & $2$ \\
+$101$    & $(13,\ 25,\ 25,\ 25,\ 13)$                  & $13$ \\
+$1{,}009$  & $(127,\ 251,\ 253,\ 251,\ 127)$           & $127$ \\
+$19{,}997$ & $(2500,\ 4999,\ 4999,\ 4999,\ 2500)$      & $2500$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{verification}
+Zero exceptions for every odd $n \le 200{,}001$.
+\end{verification}
+
+\begin{proof}
+By~\eqref{eq:interval}, $W_j$ counts the multiples of $n$ in $I_j$, an interval
+of length exactly $4j+2$. Hence:
+\begin{itemize}
+  \item if $4j+2 < n$, the interval is shorter than $n$ and holds
+        \emph{at most one} multiple, so $W_j \in \{0,1\}$;
+  \item if $4j+2 \ge n$, it is at least as long and holds
+        \emph{at least one}, so $W_j \ge 1$.
+\end{itemize}
+
+\emph{The count of zeros.} Consequently $W_j = 0$ forces $j < m := \fl{(n+1)/4}$.
+On that range the intervals $I_0,\dots,I_{m-1}$ tile $(0,\,2m^2]$ exactly and
+each holds at most one multiple, so the number of \emph{occupied} intervals
+equals the number of multiples in the range, namely $\fl{2m^2/n}$. Therefore
+\begin{equation}\label{eq:N0}
+  N_0 \;=\; m - \fl{\frac{2m^2}{n}} .
+\end{equation}
+Write $n = 8t+r$ with $r \in \{1,3,5,7\}$; then $m = 2t+\varepsilon$ with
+$\varepsilon = 0,1,1,2$ respectively. We claim the quotient in~\eqref{eq:N0} is
+$q = t+\varepsilon-1$:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c c c c c}
+\toprule
+$r$ & $m$ & $q$ & $2m^2-nq$ & check \\
+\midrule
+$1$ & $2t$   & $t-1$ & $7t+1$ & $< 8t+1$ \\
+$3$ & $2t+1$ & $t$   & $5t+2$ & $< 8t+3$ \\
+$5$ & $2t+1$ & $t$   & $3t+2$ & $< 8t+5$ \\
+$7$ & $2t+2$ & $t+1$ & $t+1$  & $< 8t+7$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Each remainder is a positive linear function of $t$ strictly below $n$, so the
+quotient is as claimed and
+\begin{equation}\label{eq:A}
+  N_0 = (2t+\varepsilon)-(t+\varepsilon-1) = t+1 = \fl{\frac{n+7}{8}} = A .
+\end{equation}
+
+\emph{The remaining four.} Put $H = (n-1)/2$. For $0 \le j < H$ the interval
+$I_j$ has length $4j+2 < 2n$, so $W_j \in \{0,1,2\}$. These $H$ intervals tile
+$(0,\,2H^2]$, which contains
+\[
+  \fl{\frac{2H^2}{n}} = H-1
+\]
+multiples of $n$. Writing $N_i^- = \#\{0 \le j < H : W_j = i\}$, we have
+$N_0^- = A$ together with
+\[
+  N_0^- + N_1^- + N_2^- = H, \qquad N_1^- + 2N_2^- = H-1,
+\]
+and subtracting gives $N_2^- = A-1$. The central index $j = H$ has $W_H = 2$
+by~\eqref{eq:sym}. Finally the symmetry $W_j + W_{n-1-j} = 4$ pairs $W{=}0$ with
+$W{=}4$ and $W{=}1$ with $W{=}3$, while $W{=}2$ pairs with itself. Therefore
+\[
+  N_4 = N_0 = A, \qquad N_2 = 2(A-1)+1 = 2A-1,
+\]
+and the remaining $n - (N_0+N_2+N_4)$ indices split equally:
+\[
+  N_1 = N_3 = \frac{n+1}{2}-2A . \qedhere
+\]
+\end{proof}
+
+\subsection{Why the count has no error term}
+
+A probabilistic model, assuming $2j^2 \bmod n$ equidistributed, estimates $N_0$
+by
+\[
+  \sum_{j < (n-2)/4} \frac{n-4j-2}{n} \;\approx\; \frac{n}{8},
+\]
+the correct answer, with deviation never exceeding $0.889$ for odd
+$n \le 20{,}001$. Sums of this shape normally carry an error of size
+$\sqrt{n}\,\log n$ (character sums) or $n^{1/3}$ (lattice points).
+
+The reason none appears here is that the indicators are not independent: the
+intervals tile, and the tiling is exact. The residues $2j^2 \bmod n$ never enter
+the argument. Theorem~\ref{thm:maxima} is the statement about those residues,
+and it is a good deal harder.
+
+\section{Pairs}
+
+Index the symmetric pairs $\{j,\,n-1-j\}$ by $R = 1,3,\dots,n-2$.
+
+\begin{theorem}\label{thm:pairs}
+With
+\[
+  d_n(R) = \fl{\tfrac12 + \frac{(R+2)^2}{2n}} - \fl{\tfrac12 + \frac{R^2}{2n}},
+\]
+one has $d_n(R) \in \{0,1,2\}$, and the corresponding pair of increments is
+$(W_L, W_R) = (2-d,\ 2+d)$.
+\end{theorem}
+
+\begin{proof}
+The two arguments of the floor differ by
+\[
+  \frac{(R+2)^2-R^2}{2n} = \frac{2(R+1)}{n},
+\]
+which for $1 \le R \le n-2$ lies strictly between $0$ and $2$; hence the
+difference of floors is $0$, $1$ or $2$. Substituting the pair parametrisation
+into the definition of $W$ gives $W_R = 2+d_n(R)$, and~\eqref{eq:sym} then gives
+$W_L = 2-d_n(R)$.
+\end{proof}
+
+\begin{verification}
+Zero failures over every odd $n < 600$ and every odd $R$ with $1 \le R \le n-2$.
+\end{verification}
+
+\begin{theorem}\label{thm:paircensus}
+Let $N_d = \#\{R : d_n(R) = d\}$. Then $N_2 = N_0+1$.
+\end{theorem}
+
+\begin{proof}
+There are $(n-1)/2$ odd values $R = 1,3,\dots,n-2$, and the definition of
+$d_n(R)$ telescopes along them:
+\[
+  \sum_R d_n(R) = \fl{\tfrac12 + \frac{n^2}{2n}} - \fl{\tfrac12 + \frac{1}{2n}}
+                = \frac{n+1}{2}.
+\]
+Hence
+\[
+  N_0+N_1+N_2 = \frac{n-1}{2}, \qquad N_1+2N_2 = \frac{n+1}{2},
+\]
+and subtracting gives $N_2-N_0 = 1$.
+\end{proof}
+
+\begin{verification}
+Zero failures over all odd $n < 2000$.
+\end{verification}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{r r r r}
+\toprule
+$n$ & $N_0$ & $N_1$ & $N_2$ \\
+\midrule
+$11$  & $1$  & $2$   & $2$ \\
+$13$  & $1$  & $3$   & $2$ \\
+$31$  & $3$  & $8$   & $4$ \\
+$101$ & $12$ & $25$  & $13$ \\
+$499$ & $62$ & $124$ & $63$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+As in Theorem~\ref{thm:mult}, the whole census is governed by one integer.
+
+\section{The number of local maxima of \texorpdfstring{$2j^2 \bmod n$}{2j\textasciicircum 2 mod n}}
+
+Theorem~\ref{thm:mult} counts the values of $W$. The companion question concerns
+their \emph{arrangement}, and its sharpest form is the number of local maxima of
+the residue sequence itself.
+
+\begin{theorem}\label{thm:maxima}
+Let $n \ge 51$ be odd and $A = \fl{(n+7)/8}$. Then $r_j = 2j^2 \bmod n$,
+$j = 0,\dots,n-1$, has exactly $2A$ interior local maxima.
+\end{theorem}
+
+\begin{rangeofstatement}
+The proof below needs $n \ge 51$, where the interval structure of Step~4 is in
+its generic configuration. Computation shows the conclusion is in fact true for
+\emph{every} odd $n$ except five: $n = 3,\,5,\,7,\,9,\,49$. Checked exhaustively
+for all odd $n \le 200{,}001$.
+\end{rangeofstatement}
+
+Throughout put
+\[
+  \varepsilon_j = [\,r_{j+1} < r_j\,], \qquad
+  q_j = \fl{\frac{4j+2}{n}}, \qquad
+  \Phi(x) = \fl{\frac{2x^2}{n}} + \fl{\frac{2(x-1)^2}{n}}, \qquad
+  H = \frac{n-1}{2},
+\]
+so that $\varepsilon_j = W_j - q_j$, and $j$ is a local maximum exactly when
+$\varepsilon_{j-1} = 0$ and $\varepsilon_j = 1$.
+
+\subsection{Step 1: the palindrome}
+
+Since $2(n-j)^2 \equiv 2j^2$, we have $r_j = r_{n-j}$ for $1 \le j \le n-1$.
+Maxima therefore occur in mirror pairs $j \leftrightarrow n-j$, with no fixed
+point because $n$ is odd. Also $r_{H+1} = r_{n-H-1} = r_H$, so
+\[
+  \varepsilon_0 = 0 \quad (\text{since } r_1 = 2 > 0 = r_0), \qquad
+  \varepsilon_H = 0,
+\]
+and no maximum straddles the middle. Hence the total is twice the number of
+maxima in $1 \le j \le H$.
+
+\subsection{Step 2: maxima are exactly the mixed pairs}
+
+In any $0$--$1$ word the numbers of ascents and descents differ by the boundary
+values; applied to $\varepsilon_0,\dots,\varepsilon_H$ with both ends $0$, the
+two are equal. Therefore
+\[
+  \#\{j \le H : \varepsilon_{j-1}=0,\ \varepsilon_j=1\}
+  = \tfrac12\,\#\{j \le H : \varepsilon_{j-1} \ne \varepsilon_j\},
+\]
+and combining with Step~1,
+\[
+  \#\{\text{local maxima}\}
+  \;=\; \#\{\,1 \le j \le H \;:\; \varepsilon_{j-1} \ne \varepsilon_j\,\}.
+\]
+
+\subsection{Step 3: a mixed pair is one condition on one interval}
+
+Since $\varepsilon_{j-1}+\varepsilon_j = (W_{j-1}+W_j) - (q_{j-1}+q_j)$, the
+pair at $j$ is mixed if and only if
+\[
+  P_j := \bigl(2(j-1)^2,\ 2(j+1)^2\bigr]
+  \quad\text{contains exactly } q_{j-1}+q_j+1 \text{ multiples of } n.
+\]
+$P_j$ has length exactly $8j$. No residue occurs in this condition.
+
+\subsection{Step 4: the pair intervals tile, by parity}
+
+Consecutive $P_j$ overlap, but each parity subfamily tiles exactly:
+\[
+  P_{2s+1} = \bigl(8s^2,\ 8(s+1)^2\bigr], \qquad
+  P_{2s}   = \bigl(2(2s-1)^2,\ 2(2s+1)^2\bigr],
+\]
+of lengths $8(2s+1)$ and $16s$. Since $8j < 4n$ on $j \le H$, each $P_j$ carries
+$L_j$ or $L_j+1$ multiples with $L_j = \fl{8j/n} \in \{0,1,2,3\}$, and over any
+block of consecutive $j$ of one parity the total telescopes. Set
+$\mathrm{off}_j = (q_{j-1}+q_j)-L_j$; then $j$ is mixed if and only if $P_j$
+carries the \emph{larger} count when $\mathrm{off}_j = 0$, and the
+\emph{smaller} when $\mathrm{off}_j = -1$.
+
+Both $L_j$ and $\mathrm{off}_j$ are explicit step functions of $j$, with jumps
+only at
+\[
+  1 < \ell_1 = \left\lceil \tfrac{n}{8}\right\rceil
+    \le \beta_1 = \left\lceil \tfrac{n-2}{4}\right\rceil
+    \le \ell_2 = \left\lceil \tfrac{n}{4}\right\rceil
+    \le \beta_2 = \left\lceil \tfrac{n+2}{4}\right\rceil
+    < \ell_3 = \left\lceil \tfrac{3n}{8}\right\rceil < H < H+1,
+\]
+giving \emph{seven} intervals with
+$(L,\mathrm{off}) = (0,0),(1,-1),(1,0),(2,-1),(2,0),(3,-1),(3,0)$ in order. The
+last is the single point $j = H$, where $4H+2 = 2n$ forces $q_H = 2$. Combining
+the two parities, an interval $[\alpha,\beta)$ has $\beta-\alpha$ tiles whose
+multiples total $\Phi(\beta)-\Phi(\alpha)$, independently of which parity starts
+it. Its contribution to the mixed count is $G-LC$ if $\mathrm{off}=0$ and
+$(L+1)C-G$ if $\mathrm{off}=-1$, with $G = \Phi(\beta)-\Phi(\alpha)$ and
+$C = \beta-\alpha$.
+
+Summing the seven intervals and telescoping the $\Phi$'s (note $\Phi(1)=0$):
+\begin{equation}\label{eq:mixed}
+  \#\text{mixed} = 2\bigl[\Phi(\ell_1)-\Phi(\beta_1)+\Phi(\ell_2)-\Phi(\beta_2)
+                    +\Phi(\ell_3)-\Phi(H)\bigr] + \Phi(H+1) + \Sigma_C,
+\end{equation}
+\[
+  \Sigma_C = 2(\beta_1-\ell_1)-(\ell_2-\beta_1)+3(\beta_2-\ell_2)
+             -2(\ell_3-\beta_2)+4(H-\ell_3)-3 .
+\]
+
+\begin{verification}
+Equation~\eqref{eq:mixed}: zero failures against the direct count for every odd
+$9 \le n \le 20{,}001$.
+\end{verification}
+
+\subsection{Step 5: evaluating the seven \texorpdfstring{$\Phi$}{Phi}'s}
+
+Two are immediate: $\Phi(H+1) = n-1$ and $\Phi(H) = n-5$. Three more are linear;
+writing $n = 8t+r$ with $r \in \{1,3,5,7\}$,
+\[
+  -\Phi(\beta_1)+\Phi(\ell_2)-\Phi(\beta_2) = -2t + c_r,
+  \qquad c_r = 3,\,-1,\,1,\,-3 .
+\]
+The remaining two are the content, and they are handled together.
+
+\begin{lemma}
+For odd $n = 8t+r \ge 51$,
+\[
+  \Phi\bigl(\lceil n/8\rceil\bigr) + \Phi\bigl(\lceil 3n/8\rceil\bigr)
+  = \frac{5n-k_r}{8},
+  \qquad k_r = 13,\,7,\,25,\,19 \ \text{ for } r = 1,3,5,7 .
+\]
+\end{lemma}
+
+\begin{proof}
+Put $m = \lceil 3r/8\rceil \in \{1,2,2,3\}$, so $\lceil n/8\rceil = t+1$ and
+$\lceil 3n/8\rceil = 3t+m$; the four arguments are
+$x \in \{t,\ t+1,\ 3t+m-1,\ 3t+m\}$. Because $8t \equiv -r \pmod n$,
+\[
+  8x \equiv e_x \pmod n, \qquad e_x = -r,\ 8-r,\ 8m-8-3r,\ 8m-3r,
+\]
+and in every one of the four cases $\{|e_x|\}$ is a permutation of
+$\{1,3,5,7\}$ --- for instance $r=1,m=1$ gives $(-1,7,-3,5)$ and $r=7,m=3$ gives
+$(-7,1,-5,3)$. Since $32 \cdot 2x^2 = (8x)^2$,
+\[
+  32\bigl(2x^2 \bmod n\bigr) \equiv e_x^2 \pmod n,
+  \qquad \sum_x e_x^2 = 1+9+25+49 = 84 .
+\]
+Writing $32(2x^2 \bmod n) = e_x^2 + a_x n$ with $a_x \in [0,32)$ determined by
+$e_x^2 + a_x n \equiv 0 \pmod{32}$, a check of the sixteen classes
+$n \bmod 32$ gives $\sum_x a_x = 80-4r$ in every case, whence
+\[
+  \sum_x \bigl(2x^2 \bmod n\bigr) = \frac{84+(80-4r)n}{32}
+  = \frac{(20-r)n+21}{8}.
+\]
+On the other hand $\sum_x 2x^2 = 40t^2+(24m-8)t+(4m^2-4m+4)$ exactly, and
+dividing the difference by $n = 8t+r$ gives $5t+s_r$ with
+$s_r = -1,1,0,2$, which is $(5n-k_r)/8$.
+\end{proof}
+
+\begin{verification}
+The Lemma: zero failures for every odd $n \le 300{,}001$ apart from
+$n = 3,5,7,9,17,25,49$, where the interval structure of Step~4 degenerates.
+\end{verification}
+
+\subsection{Step 6: assembly}
+
+Substituting $\ell_1 = t+1$, $\beta_1 = 2t+\lceil\frac{r-2}{4}\rceil$,
+$\ell_2 = 2t+\lceil\frac{r}{4}\rceil$,
+$\beta_2 = 2t+\lceil\frac{r+2}{4}\rceil$, $\ell_3 = 3t+m$,
+$H = 4t+\frac{r-1}{2}$ into~\eqref{eq:mixed} together with the Lemma gives, in
+each of the four residue classes,
+\[
+  \#\text{mixed} \;=\; 2t+2 \;=\; 2A. \qquad\qquad \blacksquare
+\]
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l c c c c}
+\toprule
+$n$ & $8t+1$ & $8t+3$ & $8t+5$ & $8t+7$ \\
+\midrule
+$\#$mixed & $2t+2$ & $2t+2$ & $2t+2$ & $2t+2$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Remark: what made it work}
+
+A local maximum is \emph{two} consecutive conditions, while
+Theorem~\ref{thm:mult} counts $j$ satisfying \emph{one}; and while the intervals
+$I_j$ tile, consecutive $P_j$ overlap. The apparent obstruction dissolves in two
+moves. Steps~2 and~3 convert the two conditions into one --- a condition on the
+count of multiples in the single interval $P_j$ --- and Step~4 observes that the
+$P_j$ tile perfectly once separated by parity. The elementary weight
+$\sum_j \varepsilon_j = (n-1)/2$, which follows from $\gcd(4,n)=1$ because the
+increments $(4j+2) \bmod n$ then run over every residue, is thereby joined by a
+second weight, of pairs rather than of single terms, and the same tiling carries
+both.
+
+The one place where genuine arithmetic enters is the Lemma, and it enters
+through a small coincidence worth naming: the four numbers $8x \bmod n$ attached
+to $\lceil n/8\rceil$ and $\lceil 3n/8\rceil$ are, up to sign, always
+$1,3,5,7$ --- so their squares always sum to $84$, whatever $n$ is.
+
+\section{Placement}
+
+Since $r_j = 2j^2 \bmod n$ is $n\{j^2\alpha\}$ with $\alpha = 2/n$
+\emph{rational}, the natural comparisons are these.
+
+\medskip\noindent
+\textbf{The linear analogue, and what it names.} Replace $j^2$ by $j$. The
+difference sequence $u_j = \lfloor (j+1)\alpha\rfloor - \lfloor j\alpha\rfloor$
+then takes values in $\{0,1\}$ and is the characteristic \emph{Sturmian} word of
+slope $\alpha$; the exact frequencies of its factors are classical, and they are
+read off from the three-distance theorem of S\'os, \'Swierczkowski and
+Sur\'anyi~\cite{sos} --- see Alessandri and Berth\'e~\cite{ab} for that
+connection made explicit. In these terms Theorem~\ref{thm:range} says that $W_j$
+is obtained from the same expression with $j$ replaced by $j^2$, over the
+alphabet $\{0,1,2,3,4\}$ instead of $\{0,1\}$, and Theorem~\ref{thm:mult} is
+its letter census.
+
+\emph{The analogy is one of form only, and it is worth saying how far it fails.}
+A Sturmian word is defined by its properties --- a two-letter alphabet, factor
+complexity $p(m) = m+1$ for every $m$, aperiodicity, and imbalance at most $1$
+--- and not by the displayed formula, which merely characterises it in the
+irrational linear case. The word $W$ has none of those properties. It is
+periodic; its alphabet has five letters; and its factor complexity, measured on
+the first cycle, stabilises for large $n$ at
+\[
+  p(1),\dots,p(8) \;=\; 5,\ 14,\ 31,\ 56,\ 97,\ 146,\ 219,\ 308
+\]
+(identical at $n = 4001,\ 10007,\ 20011$), against the Sturmian
+$2,3,4,5,6,7,8,9$; its maximum imbalance grows with $n$, measured at
+$3,\ 25,\ 39$ for $n = 11,\ 101,\ 1009$, against the Sturmian value $1$. We
+found no closed form for the complexity. The point of the comparison is
+therefore the name of the object and nothing more --- and it is doubly a
+comparison rather than a specialisation, since the linear word at a
+\emph{rational} slope is periodic and so is not Sturmian either.
+
+The comparison is worth making because of the one place the two cases part.
+For \emph{rational} $\alpha$ the linear word is periodic and its letter
+frequencies are immediate. Here the slope is the rational $2/n$, the word is
+likewise periodic --- and the multiplicities are not immediate at all: they are
+the content of Theorem~\ref{thm:mult}.
+
+Differences of floor functions are of course studied in their own right, and it
+is worth saying precisely how the nearest such work differs from the present
+object. O'Bryant~\cite{ob} obtains generating functions for sequences
+$\lfloor a n/x\rfloor - \lfloor b n/x\rfloor$ and, from them, Beatty-type
+partition theorems for $\lfloor 2nx\rfloor - \lfloor nx\rfloor$. That
+difference is taken between two dilates of one \emph{linear} sequence at a
+common index, and the method requires $x$ irrational, since it runs over the
+discontinuities of a step function. Ours is the first difference \emph{along
+the index} of a \emph{quadratic} staircase at a \emph{rational} parameter, and
+what is counted is the multiplicity of each letter rather than a partition of
+the integers. We have not located the quadratic case there or elsewhere, and we
+state the difference rather than the resemblance because it is the difference
+that leaves the question open. Likewise we do not claim the three-distance
+theorem as a template: what the linear case supplies is the name of the family,
+not the argument.
+
+\medskip\noindent
+\textbf{The quadratic literature runs the other way.} For irrational $\alpha$
+the fine-scale statistics of $\{j^2\alpha\}$ --- pair correlation and spacings
+--- are known only for almost every $\alpha$ and only as limiting laws;
+see Heath-Brown~\cite{hb}. That is a statement about a \emph{continuum} of
+$\alpha$ and about a limiting distribution. A theorem of the present kind --- a
+finite set of values with explicit multiplicities and no error term --- is
+possible only because the orbit here is finite and periodic.
+
+\medskip\noindent
+\textbf{The nearest relative} is the literature on spacings of quadratic
+residues modulo $q$, for instance Kurlberg~\cite{kurlberg}. The results there
+are again distributional; Theorems~\ref{thm:mult}, \ref{thm:paircensus}
+and~\ref{thm:maxima} are exact identities for a single explicit sequence.
+
+\medskip
+We are not aware of the multiplicities of Theorem~\ref{thm:mult}, the pair
+census of Theorem~\ref{thm:paircensus}, or the count of
+Theorem~\ref{thm:maxima} in the literature, and would be glad to be corrected.
+
+\appendix
+
+\section{Sample data}
+
+\noindent\textbf{The increments $W_j$, $n = 7$:} $0,\,1,\,1,\,2,\,3,\,3,\,4$.
+Here $A = \fl{14/8} = 1$, and Theorem~\ref{thm:mult} predicts
+$\#\{0\}=\#\{4\}=1$, $\#\{2\}=2A-1=1$, $\#\{1\}=\#\{3\}=(n+1)/2-2A=2$ ---
+exactly what the list shows. (Note that $n=7$ is one of the five small
+exceptions to Theorem~\ref{thm:maxima}; the histogram of
+Theorem~\ref{thm:mult} has no exceptions at all.)
+
+\medskip\noindent\textbf{The residues $r_j = 2j^2 \bmod 17$:}
+$0,\,2,\,8,\,1,\,15,\,16,\,4,\,13,\,9,\,9,\,13,\,4,\,16,\,15,\,1,\,8,\,2$.
+Interior local maxima at $j = 2,5,7,10,12,15$ --- six of them, and
+$2A = 2\fl{24/8} = 6$.
+
+\medskip\noindent\textbf{The seven intervals of Step~4, $n = 101$}
+($t = 12$, $r = 5$, $H = 50$): the boundaries are
+\[
+  1,\quad \ell_1 = 13,\quad \beta_1 = 25,\quad \ell_2 = 26,\quad
+  \beta_2 = 26,\quad \ell_3 = 38,\quad H = 50,\quad H+1 = 51,
+\]
+so the fourth interval $[\ell_2,\beta_2)$ is empty here and five of the seven
+carry indices, with $(L,\mathrm{off}) = (0,0)$ on $[1,13)$, $(1,-1)$ on
+$[13,25)$, $(1,0)$ at $j=25$, $(2,0)$ on $[26,38)$, $(3,-1)$ on $[38,50)$ and
+$(3,0)$ at $j=50$.
+
+\section{Note on method}
+
+Two details were found by failure rather than by design and are recorded so that
+a reader reconstructing the argument does not lose time on them.
+
+\medskip\noindent\textbf{The constant $2$ in the increment.} The author met this
+staircase first in a setting where the quantity of interest is $2+W_j$ rather
+than $W_j$; dropping the additive constant breaks the formula in $57$ of $78$
+tested cases. The constant is an artefact of that setting and not of the
+staircase, but it is easy to mislay.
+
+\medskip\noindent\textbf{The seventh interval.} A first version
+of~\eqref{eq:mixed} used six intervals and failed for essentially every $n$. The
+omission is the single point $j = H$, where $4H+2 = 2n$ forces $q_H = 2$ rather
+than $1$; with it restored the identity holds with zero failures on the whole
+tested range.
+
+\section*{Reproducibility}
+
+Every count reported above --- the range of $W_j$, the five multiplicities, the
+pair census, the seven-interval identity~\eqref{eq:mixed}, the Lemma of Step~5,
+and the number of local maxima --- is regenerated by a single script that exits
+with a non-zero status if any check fails. It is available from the author on
+request.
+
+\section*{Acknowledgement of assistance}
+
+The numerical verification and part of the drafting of this note were carried
+out with the assistance of an AI language model; the objects, the questions, the
+proofs, and responsibility for every claim are the author's.
+
+\begin{thebibliography}{9}
+
+\bibitem{ab}
+P. Alessandri and V. Berth\'e,
+\emph{Three distance theorems and combinatorics on words},
+Enseign. Math. (2) \textbf{44} (1998), 103--132.
+
+\bibitem{hb}
+D.~R. Heath-Brown,
+\emph{Pair correlation for fractional parts of $\alpha n^2$},
+Math. Proc. Cambridge Philos. Soc. \textbf{148} (2010), 385--407.
+
+\bibitem{kurlberg}
+P. Kurlberg,
+\emph{The distribution of spacings between quadratic residues, II},
+Israel J. Math. \textbf{120} (2000), part A, 205--224.
+
+\bibitem{ob}
+K. O'Bryant,
+\emph{A generating function technique for Beatty sequences and other step
+sequences},
+J. Number Theory \textbf{94} (2002), no.~2, 299--319.
+
+\bibitem{sos}
+V.~T. S\'os,
+\emph{On the distribution mod 1 of the sequence $n\alpha$},
+Ann. Univ. Sci. Budapest, E\"otv\"os Sect. Math. \textbf{1} (1958), 127--134.
+
+\end{thebibliography}
+
+\end{document}

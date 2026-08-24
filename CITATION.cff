@@ -1,0 +1,54 @@
+cff-version: 1.2.0
+title: >-
+  The Cell System: a coordinate system for the odd sieve — what it
+  proves, what it measures, and where it stops
+message: >-
+  If you use this work, please cite the archived release rather than
+  the repository branch.
+type: software
+authors:
+  - given-names: Mohamed
+    family-names: Osman
+    email: mohamedosmannn2999@gmail.com
+    orcid: "https://orcid.org/0009-0004-5912-999X"
+version: 1.0.0
+date-released: "2026-08-24"
+license: CC-BY-4.0
+repository-code: "https://github.com/Osman209/odd-sieve-cell-system"
+url: "https://osman209.github.io/odd-sieve-cell-system/"
+abstract: >-
+  Seven documents on the elementary sieve of the odd numbers, developed
+  as a coordinate system of lines and cells. Papers I-IV build the
+  construction and prove what it decides; Paper V derives the point at
+  which it stops from inside the construction rather than quoting it,
+  and measures how much of the difficulty the framework can localise
+  before failing to cross it. Statements that are only measured are
+  labelled as such and listed together, and withdrawn results are kept
+  rather than deleted. No progress toward the twin-prime conjecture is
+  claimed, and no new bound. Four verification scripts regenerate every
+  number printed, each exiting non-zero when its claim fails.
+keywords:
+  - sieve methods
+  - twin primes
+  - almost primes
+  - singular series
+  - Buchstab function
+  - parity obstruction
+  - sifting limit
+  - Richert weights
+  - floor functions
+  - quadratic staircase
+  - elementary number theory
+  - reproducible research
+  - negative results
+references:
+  - type: software
+    title: >-
+      Prime Number Studies: independent re-derivations, measurements and
+      negative results around the division table
+    authors:
+      - given-names: Mohamed
+        family-names: Osman
+        orcid: "https://orcid.org/0009-0004-5912-999X"
+    doi: 10.5281/zenodo.21638887
+    year: 2026
