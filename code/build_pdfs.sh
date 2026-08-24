@@ -8,7 +8,7 @@ set -e
 cd "$(dirname "$0")/.."
 for f in papers/*.md; do
   b=$(basename "$f" .md)
-  pandoc "$f" -o "docs/$b.pdf" --pdf-engine=pdflatex -H code/pdf_header.tex \
+  pandoc "$f" -o "docs/papers/$b.pdf" --pdf-engine=pdflatex -H code/pdf_header.tex \
     -V fontsize=11pt -V colorlinks=true -V linkcolor=blue -V urlcolor=blue
-  echo "docs/$b.pdf"
+  echo "docs/papers/$b.pdf"
 done

@@ -57,7 +57,7 @@ names the source. The table below is the map.
 ```
 papers/   seven documents, plus one standalone preprint in LaTeX and PDF
 code/     four verification scripts, plus the rendering checker
-docs/     the GitHub Pages site: a web page and a typeset PDF for every paper
+docs/     the GitHub Pages site: a landing page per paper, with its PDF
 ```
 
 ### `papers/overview_the_cell_system.md`
@@ -157,6 +157,17 @@ the subtracted expectation is of size `C`, so an unclosed tail in the prime boun
 `C` — two runs differing only in that bound disagreed by `0.1` at `C = 1.6×10⁶`, which is larger
 than several of the effects being measured. The script closes that tail analytically, and a
 reproduction that does not will not match.
+
+### Rebuilding the site and the PDFs
+
+`code/build_site.py` regenerates `docs/` — the landing page and one abstract page per paper,
+each carrying Google Scholar citation meta tags. The paper pages hold the abstract only; the
+full text is the PDF and the Markdown in `papers/`, which keeps the site clear of the
+LaTeX-rendering problems a Markdown-serving theme would introduce.
+
+```
+python3 code/build_site.py
+```
 
 ### Rebuilding the PDFs
 
