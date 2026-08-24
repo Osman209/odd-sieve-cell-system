@@ -87,28 +87,14 @@ PAPERS = [
     dict(
         slug="paper_IV_twin_criterion",
         title="The Twin Criterion",
-        sub="What the framework proves outright about gap-two pairs",
-        abs="The six exceptional positions in a sector; the belt between consecutive prime squares and "
-            "its reach; the birth of a line and what it can remove on its own first window. One "
-            "statement is proved under a stated hypothesis and verified numerically beyond it, and is "
-            "labelled that way wherever it appears. Nothing here decides the twin-prime conjecture, and "
-            "the paper says at each step which local statement fails to bind.",
+        sub="What the framework proves outright about gap-two pairs, and how far a residue argument can compress the exceptions",
+        abs="The six exceptional positions in a sector; the belt between consecutive prime squares and its reach; the birth of a line and what it can remove on its own first window. The six positions are exact quadratics in the sector index, so the phases of the lines 5 and 7 depend on one residue class alone and the scan over them is a proof rather than a sample: those two lines cut six open positions to three, and three occur only when (M+2, M+4) is itself a twin, so a twin follows from three open cells rather than seven. Section 3.8 carries this over a full period of 35 tiling sectors, where the budget falls to 31, and shows that no finite set of lines lowers it further: of the 28 maximal configurations, 27 are killed by a fixed prime divisor once the quadratic partner conditions are included, and the survivor - 59 polynomials of total degree 90 - is admissible at every prime, so the residues can be chosen simultaneously against any finite list. The order in which the lines are born adds nothing either. One statement is proved under a stated hypothesis and verified numerically beyond it, and is labelled that way wherever it appears.",
     ),
     dict(
         slug="paper_V_where_the_framework_stops",
         title="Where the Framework Stops",
         sub="The obstruction derived from inside the construction, and how much of the difficulty it can localise first",
-        abs="Two test cases are followed to their end — almost-primes between consecutive squares, and "
-            "Jacobsthal's function — and both land on the same wall. The construction produces "
-            "Buchstab's identity, the Hardy-Littlewood singular series and the sifting limit without "
-            "importing any of them, which is the finding: the framework has no blind spot of its own, "
-            "and reaches the field's barrier in its own vocabulary. Section 7.6 measures the transfer "
-            "in three layers — the mean is exact, the state totals move by the two-dimensional Buchstab "
-            "factor e^(2 gamma)/4 confirmed to three decimals at X = 10^10, and the shape carries a "
-            "residual that saturates — and shows that the quantity a weighted sieve argument actually "
-            "evaluates transfers with a relative error of 0.36 per cent, so the computation is not the "
-            "obstruction by a wide margin. A claim withdrawn during the work is recorded in place "
-            "rather than quietly replaced.",
+        abs="Two test cases are followed to their end - almost-primes between consecutive squares, and Jacobsthal's function - and both land on the same wall. The construction produces Buchstab's identity, the Hardy-Littlewood singular series and the sifting limit without importing any of them, which is the finding: the framework has no blind spot of its own, and reaches the field's barrier in its own vocabulary. Section 7.6 measures the transfer in three layers - the mean is exact, the state totals move by the two-dimensional Buchstab factor e^(2 gamma)/4 confirmed to three decimals at X = 10^10, and the shape carries a residual that saturates - and shows that the quantity a weighted sieve argument actually evaluates transfers with a relative error of 0.36 per cent, so the computation is not the obstruction by a wide margin. Section 7.7 identifies the correlation series as a Hardy-Littlewood quadruple normalised by the square of the twin constant, and measures the order of its sum as quadratic in the logarithm, which turns the observed sub-Poisson dispersion from a number into a consequence. Section 7.8 records what the exception budget of Paper IV means: the local route is closed by proof, and the whole remaining difficulty is a lower bound on the survivor count, exceeded by a factor of six thousand in measurement and still unproved. A claim withdrawn during the work is recorded in place rather than quietly replaced.",
     ),
 ]
 
