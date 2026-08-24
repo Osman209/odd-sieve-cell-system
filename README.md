@@ -7,7 +7,7 @@
 A coordinate system for the odd sieve: what it proves, what it only measures, and the
 point at which it stops — derived from inside the construction rather than quoted.
 
-Seven documents and four verification scripts. **Start with the overview.**
+Seven documents and five verification scripts. **Start with the overview.**
 
 ---
 
@@ -58,7 +58,7 @@ names the source. The table below is the map.
 
 ```
 papers/   seven documents, plus one standalone preprint in LaTeX and PDF
-code/     four verification scripts, plus the rendering checker
+code/     five verification scripts, plus the rendering checker and the site build
 docs/     the GitHub Pages site: a landing page per paper, with its PDF
 ```
 
@@ -143,6 +143,7 @@ python3 code/verify_central_pair.py                          # Paper I §5 — t
 python3 code/verify_cell_transfer.py                         # Paper III §6, Paper V §6.5, Appendix B
 python3 code/verify_transfer_layers.py --fast                # Paper V §7.6 — the three transfer layers
 python3 code/verify_singular_series_order.py --hm 1616615    # Paper V §7.6 — checksum at Q₆
+python3 code/verify_exception_dichotomy.py --fast            # Paper IV §3.2 — Corollary 7
 ```
 
 Full runs:
