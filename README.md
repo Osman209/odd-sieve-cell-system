@@ -232,7 +232,7 @@ never failed has not been tested.
 
 ## On the use of AI assistance
 
-The verification scripts in `code/` and `harness/`, and much of the prose in `papers/`,
+The verification scripts in `code/`, and much of the prose in `papers/`,
 were written with the assistance of **Claude (Anthropic)**, used as a working collaborator
 throughout: drafting and rewriting code, running the computations, drafting and editing
 text, searching the literature, and — most usefully — auditing the papers against their own
