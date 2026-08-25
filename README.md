@@ -144,6 +144,7 @@ python3 code/verify_cell_transfer.py                         # Paper III §6, Pa
 python3 code/verify_transfer_layers.py --fast                # Paper V §7.6 — the three transfer layers
 python3 code/verify_singular_series_order.py --hm 1616615    # Paper V §7.6 — checksum at Q₆
 python3 code/verify_exception_dichotomy.py --fast            # Paper IV §3.2 — Corollary 7
+python3 code/verify_line_routes.py --fast                    # Paper V §6.7 — the five closed routes
 ```
 
 Full runs:
@@ -152,6 +153,7 @@ Full runs:
 python3 code/verify_transfer_layers.py           # to X = 10⁹,  ~10 min
 python3 code/verify_transfer_layers.py --deep    # adds X = 10¹⁰, ~35 min
 python3 code/verify_singular_series_order.py     # to Q₇ = 37,182,145, ~2 min
+python3 code/verify_line_routes.py               # all three windows, ~3 min
 ```
 
 `verify_singular_series_order.py` uses a segmented sieve so that it reaches the seventh primorial
