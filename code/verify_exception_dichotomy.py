@@ -200,6 +200,26 @@ def main():
     check("18. C_M is never zero", minC > 0, True)
     print(f"       ({sect} sectors, {cells} open cells, min C_M = {minC})")
 
+    print("\n--- [IV, Prop 1]: the forbidden-class counts of the five types ---")
+    from sympy import legendre_symbol
+    bad = 0
+    tested = 0
+    for q in [int(x) for x in primes_upto(3000) if x > 17]:
+        tested += 1
+        F = {k: set() for k in "ACDEF"}
+        for t in range(q):
+            if (t + 2) % q == 0 or ((t + 2) ** 2 - 2) % q == 0: F["A"].add(t)
+            if (t + 4) % q == 0 or ((t + 4) ** 2 - 2) % q == 0: F["C"].add(t)
+            if (t + 2) % q == 0 or (t + 8) % q == 0 or ((t + 5) ** 2 - 11) % q == 0: F["D"].add(t)
+            if (t + 2) % q == 0 or (t + 10) % q == 0 or ((t + 6) ** 2 - 14) % q == 0: F["E"].add(t)
+            if (t + 4) % q == 0 or (t + 8) % q == 0 or ((t + 6) ** 2 - 2) % q == 0: F["F"].add(t)
+        want = {"A": 2 + legendre_symbol(2, q), "C": 2 + legendre_symbol(2, q),
+                "D": 3 + legendre_symbol(11, q), "E": 3 + legendre_symbol(14, q),
+                "F": 3 + legendre_symbol(2, q)}
+        if {k: len(v) for k, v in F.items()} != want: bad += 1
+    check("19. primes tested for the omega formula", tested, 423)
+    check("20. omega disagreements with the character formula", bad, 0)
+
     if a.force_fail:
         check("99. forced failure gate", 1, 0)
 

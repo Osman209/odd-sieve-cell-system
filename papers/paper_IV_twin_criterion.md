@@ -10,9 +10,9 @@ This paper collects what the cell coordinates prove outright about the twin prob
 
 The gap between consecutive odd composites takes only the values $2$, $4$ and $6$, and gap $6$ *is* a twin pair (Theorem 1), so the twin conjecture becomes the statement that the maximal possible gap is attained infinitely often — a cap that is free and proved. The ladder below it is complete: gap $2$ occurs infinitely often with no prime input, gap $4$ with one use of Dirichlet, and gap $6$ needs two primes simultaneously (Theorem 2). No five survivors lie in arithmetic progression at spacing $6$ on one rail, beyond a single small exception, and the full-cycle run counts are $\prod(q-k)$ (Theorem 3, Corollary 1).
 
-Inside a single sector the criterion sharpens as far as the framework can take it: after switching on every line $p \le M$, **at most six cells can be open without being a twin pair, and their positions are given by an explicit formula in $M$** (Theorem 4). The lines $5$ and $7$ alone cut six to three, and no further small line lowers that; but the three occur only when $(M+2,M+4)$ is itself a twin, so a twin follows from three open cells rather than seven (Corollary 7). Taken over a whole period of $35$ sectors the budget falls to $31$, and §3.8 shows that no finite set of lines lowers it further: one configuration survives every residue argument, and it is admissible at every prime. A twin therefore follows from one open cell that avoids six named places — the places being fixed by the geometry of the square rather than chosen by the lines.
+Inside a single sector the criterion sharpens as far as the framework can take it: after switching on every line $p \le M$, **at most six cells can be open without being a twin pair, and their positions are given by an explicit formula in $M$** (Theorem 4). The lines $5$ and $7$ alone cut six to three, and no further small line lowers that; but the three occur only when $(M+2,M+4)$ is itself a twin, so a twin follows from three open cells rather than seven (Corollary 2). Taken over a whole period of $35$ sectors the budget falls to $31$, and §3.3 shows that no finite set of lines lowers it further: one configuration survives every residue argument, and it is admissible at every prime. A twin therefore follows from one open cell that avoids six named places — the places being fixed by the geometry of the square rather than chosen by the lines.
 
-The closing budget is exact: the distance-$6$ graph has minimum deletion cover $\tau = T-U+Q$ (Theorem 8), the four-state census transports under a new line (Theorem 9), and the late lines of a sweep compress (Theorem 10). The clock coordinate turns primality into a zero-test (Theorem 11) and forces every surviving cofactor in a range to be prime (Theorem 12). Read along a whole row that becomes a general law: for $p \le p+2j \lt  p^2$ the cell $p(p+2j)$ is **original** — owned by no smaller line — exactly when $p+2j$ is prime (Theorem 13), so a row carries the primality of every odd number up to $p^2$ in one bit per cell, the twin condition becomes "originality survives one step past the diagonal", and the cell it tests is $(p+1)^2-1$, which is [I, Thm 5] read along the row. Finally, across the *sequence* of sectors, a fixed set of lines leaves exactly $12S$ fresh open cells each time its cycle returns to the same phase (Theorem 14); a later line closes at most two of the twelve copies of any surviving class and at most one beyond an explicit threshold (Theorem 15, Corollary 6).
+The closing budget is exact: the distance-$6$ graph has minimum deletion cover $\tau = T-U+Q$ (Theorem 8), the four-state census transports under a new line (Theorem 9), and the late lines of a sweep compress (Theorem 10). The clock coordinate turns primality into a zero-test (Theorem 11) and forces every surviving cofactor in a range to be prime (Theorem 12). Read along a whole row that becomes a general law: for $p \le p+2j \lt  p^2$ the cell $p(p+2j)$ is **original** — owned by no smaller line — exactly when $p+2j$ is prime (Theorem 13), so a row carries the primality of every odd number up to $p^2$ in one bit per cell, the twin condition becomes "originality survives one step past the diagonal", and the cell it tests is $(p+1)^2-1$, which is [I, Thm 5] read along the row. Finally, across the *sequence* of sectors, a fixed set of lines leaves exactly $12S$ fresh open cells each time its cycle returns to the same phase (Theorem 14); a later line closes at most two of the twelve copies of any surviving class and at most one beyond an explicit threshold (Theorem 15, Corollary 7).
 
 A last section takes the four cells nearest the window's ends and turns them into four **tracks** as $a$ runs, each member a quadratic in $a$; a prime can own a track only if the corresponding discriminant is a quadratic residue (Theorem 18), which makes the four tracks unequal — Bateman–Horn gives them densities $0.41$, $0.73$, $1.10$ and $1.43$ times that of a generic cell, so the last is three and a half times richer in twins than the first. And where eligibility admits three quarters of the primes for one track and a quarter for all four, **simultaneous double duty inside one window admits exactly nine primes, so every $r \gt  97$ can close at most one of the four** (Theorem 19). That constraint is sharp for a single line and empty for four: assigning a distinct line to each track and combining the congruences produces an explicit infinite progression along which all four cells are closed, $q$ is prime and $q+2$ is composite (Proposition 3), so **no fixed number of named cells can force a twin.** The same coordinates make the operative threshold visible: a line whose modulus reaches the window's own length cannot wrap inside it and has a total budget of two, so at $a = 1667$ the $857$ lines below $N$ close $6{,}500$ cells while the $370$ above it close $20$.
 
@@ -159,7 +159,7 @@ writing $A,\dots,F$ for the six positions in the order listed above. The collaps
 
 The pair is special. Line $5$ alone leaves four open; adding $7$ gives three; and **adding $11$, then $13$, changes nothing at all** — the same bound and the same four patterns. The reason is structural rather than numerical: a larger line can choose a phase striking none of the six, and the Chinese remainder theorem then combines that phase freely with the phase of $5$ and $7$ that leaves three. **So the route "add more small lines until the six are closed" is shut**, and we record it so that it is not attempted again in another notation.
 
-> **Corollary 7 (the dichotomy).** Suppose $(M+2, M+4)$ is not a twin pair. Then $|S_M \cap E_M| \le 2$, and consequently
+> **Corollary 2 (the dichotomy).** Suppose $(M+2, M+4)$ is not a twin pair. Then $|S_M \cap E_M| \le 2$, and consequently
 > $$C_M \ge 3 \quad\Longrightarrow\quad \text{the sector contains a twin, or } (M+2,M+4) \text{ is one.}$$
 
 *Proof.* By Theorem 4 each of $A, D, E$ is present only if $M+2$ is prime and each of $C, F$ only if $M+4$ is prime, while $B$ carries $(M+2)(M+4)$ and so requires both. If the open set met both groups, $M+2$ and $M+4$ would both be prime and $(M+2,M+4)$ would be the twin. So under the hypothesis the open set lies inside $\lbrace A,D,E\rbrace$ or inside $\lbrace C,F\rbrace$, and $B$ is closed. Each of the four maximal patterns above meets both groups, hence none survives; inspecting the $35$ classes, the patterns that do survive are $\varnothing$, $\lbrace A\rbrace$, $\lbrace C\rbrace$, $\lbrace F\rbrace$, $\lbrace A,D\rbrace$, $\lbrace A,E\rbrace$ and $\lbrace C,F\rbrace$, all of size at most two. $\blacksquare$
@@ -168,20 +168,92 @@ The pair is special. Line $5$ alone leaves four open; adding $7$ gives three; an
 
 **Five residue classes in which the two lines close all six.** Of the $35$ classes, five leave nothing open: $n \equiv 0, 8, 23, 25, 33 \pmod{35}$, that is
 $$M \equiv 3,\ 51,\ 141,\ 153,\ 201 \pmod{210}.$$
-There $S_M \cap E_M = \varnothing$ from the lines $5$ and $7$ alone, so **every** open cell is a twin. Condition (3.2) remains the weakest form of the criterion — it asks for no count at all — but in these classes it becomes *equivalent* to the bare $C_M \ge 1$, and Corollary 7 lowers the sufficient count in a general sector from $C_M \ge 7$ to $C_M \ge 3$. The improvement is to the numerical threshold, not to the criterion. Measured over the $713$ such sectors below $M = 30{,}000$: $444{,}958$ open cells and **not one of them fails to be a twin**, against $155$ non-twin survivors in the $428$ ordinary sectors below $M = 3000$ alone. And the restriction costs nothing in the count itself — the survivor density in these five classes, against all other classes, is $0.934$ up to $M = 4000$, $0.997$ up to $12000$ and $1.000$ up to $30000$; fixing the phases of $5$ and $7$ changes which cells die, not how many.
+There $S_M \cap E_M = \varnothing$ from the lines $5$ and $7$ alone, so **every** open cell is a twin. Condition (3.2) remains the weakest form of the criterion — it asks for no count at all — but in these classes it becomes *equivalent* to the bare $C_M \ge 1$, and Corollary 2 lowers the sufficient count in a general sector from $C_M \ge 7$ to $C_M \ge 3$. The improvement is to the numerical threshold, not to the criterion. Measured over the $713$ such sectors below $M = 30{,}000$: $444{,}958$ open cells and **not one of them fails to be a twin**, against $155$ non-twin survivors in the $428$ ordinary sectors below $M = 3000$ alone. And the restriction costs nothing in the count itself — the survivor density in these five classes, against all other classes, is $0.934$ up to $M = 4000$, $0.997$ up to $12000$ and $1.000$ up to $30000$; fixing the phases of $5$ and $7$ changes which cells die, not how many.
 
 **And what it does not buy.** $C_M$ exceeds the twin count of the sector by at most six. Any lower bound on $C_M$ is therefore a lower bound on twins, and (3.2) is an exact reformulation rather than a route. We record it because it is the sharpest form the framework has produced of the twin criterion, not because it weakens the problem.
 
-### 3.3 Raw cell count and main term
+### 3.3 The exception budget over a full period, and the limit of local arguments
 
-$$C = \frac{v^2-u^2}{6}-1, \qquad C_- = 4n-1  (u=6n-1), \qquad C_+ = 8n+3  (u=6n+1),$$
-and $C \equiv 3 \pmod 4$ always (zero failures over 427 consecutive prime pairs) — an exact property which nevertheless supplies no protective invariant, since a single line's deletion count has no fixed parity. The main term is $M = C P_2$.
+Corollary 2 bounds the exceptions in one sector. Consecutive sectors are not independent, and taking a whole period of them together lowers the bound further — up to a point that can be identified exactly.
 
-### 3.4 Local deviations
+**The sectors tile:** $(M^2,(M+6)^2)$ is followed immediately by $((M+6)^2,(M+12)^2)$, so a prime forced near the top of one is forced near the bottom of the next. Taking the $35$ sectors of one full period together — the window $(M_0^2,(M_0+210)^2)$ with $M_0 = 210k+3$ — and writing each exceptional position's requirement as a set of offsets that must be prime ($A$ needs $M+2$; $C$ needs $M+4$; $D$ needs $M+2,M+8$; $E$ needs $M+2,M+10$; $F$ needs $M+4,M+8$), the twinless hypothesis forbids any two forced offsets differing by $2$ across the whole window, not merely within a sector.
 
-$$\varepsilon_r(u) = D_r(u) - \frac{2 N_{r^-}(u)}{r}. \qquad\text{(3.3)}$$
+Summing the per-phase caps independently gives $5\cdot0+20\cdot1+10\cdot2 = 40$. The coupling costs three of those: three pairs of adjacent phases cannot both attain their caps, because the offsets clash across the join — for instance a phase reaching two via $\lbrace C,F\rbrace$ forces $M+8$, and its successor reaching two the same way forces $M'+4 = M+10$. **A fourth adjacent pair with the same caps does not clash**, which is the point: the obstruction is arithmetic in the offsets, not a consequence of adjacency. Hence $37$, and with the lines $11,13,17$ admitted as well, an exhaustive scan over all $5\cdot7\cdot11\cdot13\cdot17/35 = 2431$ alignments gives
 
-Inside a sector, line $r$ deletes at $s \equiv -u^2/6$ and $s \equiv (2-u^2)/6 \pmod r$, and the gap between the two positions is exactly $3^{-1} \bmod r$ (zero failures among 85). **Every ruler's phase is therefore a function of the single quantity $u^2$**, and under $u \mapsto u+6$ the phase moves *quadratically*, since $u^2 \mapsto u^2 + 12u + 36$. This quadratic motion is what makes cancellation possible at all.
+$$\sum_{i=0}^{34}\bigl|S_{M_i}\cap E_{M_i}\bigr| \le 31 \qquad\text{(no twin in the window)},$$
+
+the ceiling $31$ being attained in $9$ of the $2431$ alignments, and the distribution of the $2431$ values peaking at $26$.
+
+**That ceiling cannot be lowered by any finite set of lines, and this is a theorem rather than a report of failed attempts.** The $9$ extremal alignments carry $28$ distinct maximal configurations between them. Each configuration demands not only that certain $M_0+a$ be prime — $27$ to $30$ of them — but also that the *partner* member of each of the $31$ cells survive, and those partners are quadratics in $n$: $36n^2+60n+23$ for $A$, $36n^2+84n+47$ for $C$, $36n^2+96n+53$ for $D$, $36n^2+108n+67$ for $E$, $36n^2+108n+79$ for $F$ (verified against the definition for $n \lt 3000$). Testing the full linear-and-quadratic systems for a fixed prime divisor kills **$27$ of the $28$**: $q=23$ disposes of fourteen, $q=31$ of ten, $q=19$ of three. One survives, at $M_0 \equiv 448353 \pmod{510510}$, with $28$ linear and $31$ quadratic conditions — $59$ polynomials of total degree $90$. Every prime $q \le 90$ leaves at least one admissible residue (the tightest are $q=19$ and $q=31$, with exactly one each), and for $q \gt 90$ a residue survives automatically since $90$ polynomials of that total degree have at most $90$ roots. **The system is therefore admissible at every prime, so by the Chinese remainder theorem the residues can be chosen simultaneously against any finite list of further lines: no residue-based argument, however many primes it uses, reaches $30$.**
+
+**Nor does the order in which the lines are born supply the missing constraint.** One might hope that a line $M_0+a$, forced prime by one exceptional cell, strikes another of the $31$ once it is born. Modulo $p = M_0+a$ one has $M_0 \equiv -a$, so a member $(M_0+u)(M_0+v)+e$ with $e \in \lbrace 0,\pm2\rbrace$ reduces to the integer $(u-a)(v-a)+e$, and $|u|,|v|,|a| \lt 216$ while $p \asymp M_0$; the line divides the member only if that small integer is exactly zero. Excluding the cell's own factors, this needs $|u-a| \cdot |v-a| = 2$, hence $|u-v| \in \lbrace 1,3\rbrace$. **But $u$ and $v$ are the offsets $6i+d$ with $d \in \lbrace 2,4,8,10\rbrace$, so $|u-v|$ is even, and the collision is impossible.** The check finds none, for the $28$ lines or for any $M_0+b$ with $b \le 216$. The timing of the lines carries no information the residues did not already carry, and the escapee's survival is equivalent to the simultaneous primality of its $59$ irreducible polynomials — precisely the setting of Schinzel's Hypothesis H [V, ref. 27], which predicts infinitely many $t$ realising it. **Proving the configuration impossible would mean contradicting that prediction for a specific family, which is not a weakening of the twin problem but an apparent strengthening of it.**
+
+### 3.4 Blocks of consecutive periods, and why lengthening the block does not help
+
+Section 3.3 bounds the exceptions over one period of $35$ sectors. Consecutive periods are coupled in the same way that consecutive sectors are, so the same question can be asked of a block of $L$ periods — $35L$ sectors — and the answer moves. Write $B_L$ for the maximum of $\sum_i |S_{M_i} \cap E_{M_i}|$ over such a block under the twinless hypothesis, so that $B_1 = 31$ is the content of §3.3 and
+
+$$\sum_i C_{M_i} \gt  B_L \implies \text{a twin in the block}.$$
+
+**How $B_L$ is computed, and a trap that is worth naming.** The natural procedure — enumerate the maximal configurations of each residue class and test each for a fixed prime divisor — is *not* sound for this purpose. A residue class whose maximum is $m$ also carries configurations of size $m-1$, $m-2$ and so on, obtained by deleting cells; deleting a cell removes conditions and can only make admissibility easier. Those sub-configurations are never enumerated, so "every configuration at level $\ell$ dies" establishes nothing about level $\ell$. The sound procedure reverses the order: fix a residue for each prime $q$, switch the line $q$ on *inside* the transfer recursion, and read off the maximum. That maximum is by construction the largest admissible configuration at those residues, and the maximisation over residues is $B_L$. It is also faster by orders of magnitude.
+
+**Values.** By that procedure, maximising over the residues of every prime up to the stated bound:
+
+$$B_1 = 31, \qquad B_3 = 67, \qquad B_5 = 100, \qquad B_7 = 138, \qquad B_9 = 163.$$
+
+The first three are certain: $B_1$ is §3.3; $B_3$ and $B_5$ are stable under every prime tested and $B_5$ was obtained twice, once by the sound procedure and once by exhaustive enumeration with an independent admissibility test, which agree. $B_7$ and $B_9$ are stable across twelve and eight consecutive primes respectively but were computed with pruning, so they are lower bounds with strong stability rather than certified maxima.
+
+The extremal configuration at $L=3$ carries $66$ linear and $67$ quadratic conditions — $133$ polynomials of total degree $200$ — and every prime $q \le 200$ leaves it an admissible residue, so §3.3's conclusion transfers: no finite set of lines lowers $67$ either. Two features of the optimum are worth recording. First, it does *not* preserve the single-window maximum in the middle: the three windows contribute $20, 26, 21$, so the block optimum spends $31 - 26 = 5$ of the central window's capacity to gain elsewhere. Second, the killing is concentrated: across every level from $144$ down to $138$ at $L = 7$, the primes $29$ and $37$ account for about ninety per cent of the eliminated configurations, the remainder falling to $43$, $53$, $71$, $73$, $79$ and $97$.
+
+In requirement per sector, $(B_L+1)/35L$ reads $0.914$, $0.648$, $0.577$, $0.567$, $0.521$. It falls, and the next paragraph says why, and how far.
+
+**The quadratic shadow, and the order of $B_L$.** Each exceptional cell carries, besides its linear primality conditions, the condition that the *other* member of the cell survive. Those partners are
+
+$$Q_A = (M+2)^2-2, \quad Q_C = (M+4)^2-2, \quad Q_D = (M+5)^2-11, \quad Q_E = (M+6)^2-14, \quad Q_F = (M+6)^2-2,$$
+
+so each type forbids, modulo a prime $q \gt  17$, a number of residue classes that is exactly
+
+$$\omega_A = \omega_C = 2+\chi_2(q), \qquad \omega_D = 3+\chi_{11}(q), \qquad \omega_E = 3+\chi_{14}(q), \qquad \omega_F = 3+\chi_2(q),$$
+
+with $\chi_d(q)$ the Legendre symbol. The linear conditions supply one forbidden class for $A$ and $C$ and two for $D$, $E$ and $F$; the partner supplies two more exactly when the relevant $d$ is a quadratic residue. Since the quadratic characters are non-principal, each $\omega$ has mean value $2$ for $A$ and $C$ and $3$ for $D$, $E$ and $F$.
+
+> **Proposition 1.** Let a block of $N = 35L$ consecutive sectors carry an admissible configuration of exceptional cells under the twinless hypothesis, and for $X \in \lbrace A,C,D,E,F\rbrace$ let $I_X$ be the set of sector indices carrying a cell of type $X$. Then
+> $$|I_A|, |I_C| \ll \frac{N}{\log^2 N}, \qquad |I_D|, |I_E|, |I_F| \ll \frac{N}{\log^3 N},$$
+> and consequently
+> $$B_L \ll \frac{L}{\log^2 L}.$$
+
+*Proof.* **Step 1: each type forbids an exact number of residue classes.** Fix a prime $q \gt  17$. Admissibility at $q$ means that some residue may be assigned to $M_0$ modulo $q$ at which no polynomial of the configuration vanishes; fix that residue and write $t \equiv M_i \pmod q$. Since $6$ is invertible modulo $q$, the map $i \mapsto t$ is a bijection of $\mathbb{Z}/q$, so it suffices to count forbidden values of $t$.
+
+A cell of type $A$ at index $i$ carries the linear condition that $M_i+2$ be prime and the quadratic condition that its partner $(M_i+2)^2-2$ survive. Modulo $q$ these forbid $t \equiv -2$, one class, and $(t+2)^2 \equiv 2$, which has $1+\chi_2(q)$ solutions with $\chi_d(q)$ the Legendre symbol. The two never coincide, since $t \equiv -2$ would give $0 \equiv 2$. Hence exactly $2+\chi_2(q)$ classes, and the same count for $C$ with $-2$ replaced by $-4$.
+
+A cell of type $D$ carries two linear conditions, on $M_i+2$ and $M_i+8 = M_{i+1}+2$, and the partner $(M_i+5)^2-11$. The linear classes $t \equiv -2, -8$ are distinct for $q \gt  3$, and $(t+5)^2 \equiv 11$ contributes $1+\chi_{11}(q)$ further classes, disjoint from them because either substitution gives $9 \equiv 11$, impossible for $q \gt  2$. Hence exactly $3+\chi_{11}(q)$. The same computation for $E$, whose offsets are $-2, -10$ and whose partner is $(M_i+6)^2-14$, gives $3+\chi_{14}(q)$; and for $F$, with offsets $-4, -8$ and partner $(M_i+6)^2-2$, gives $3+\chi_2(q)$. In every case the overlap check reduces to $16 \equiv 14$ or $4 \equiv 2$, impossible for $q \gt  2$. Write $\omega_X(q)$ for these counts.
+
+*Verification.* Computed directly for all $423$ primes $19 \le q \lt  3000$: zero disagreement with $\omega_A = \omega_C = 2+\chi_2$, $\omega_D = 3+\chi_{11}$, $\omega_E = 3+\chi_{14}$, $\omega_F = 3+\chi_2$.
+
+**Step 2: the sifting dimension is the mean of $\omega_X$.** $I_X$ is contained in $\lbrace 0,1,\dots,N-1\rbrace$ and avoids $\omega_X(q)$ classes modulo every prime $q \gt  17$; the primes $q \le 17$ contribute a bounded factor and are ignored. Since $\chi_2$, $\chi_{11}$ and $\chi_{14}$ are real non-principal characters — of conductors $8$, $44$ and $56$ — the series $\sum_q \chi_d(q)/q$ converges, by the non-vanishing of $L(1,\chi_d)$. Hence
+
+$$\prod_{17 \lt  q \lt  z}\Bigl(1-\frac{\omega_X(q)}{q}\Bigr) = \prod_{17 \lt  q \lt  z}\Bigl(1-\frac{\kappa_X}{q}\Bigr)\cdot\prod_{17 \lt  q \lt  z}\frac{1-\omega_X(q)/q}{1-\kappa_X/q}  \asymp  \frac{1}{(\log z)^{\kappa_X}},$$
+
+with $\kappa_A = \kappa_C = 2$ and $\kappa_D = \kappa_E = \kappa_F = 3$, the second product converging because its logarithm is $-\sum_q \chi_d(q)/q + O(\sum_q q^{-2})$.
+
+**Step 3: the upper-bound sieve.** Selberg's sieve applied to the interval $\lbrace 0,\dots,N-1\rbrace$ with the removed classes of Step 1 gives, for any $z$,
+
+$$|I_X|  \le  N \prod_{q \lt  z}\Bigl(1-\frac{\omega_X(q)}{q}\Bigr)\bigl(1+o(1)\bigr)  +  O(z^2).$$
+
+Taking $z = N^{1/3}$ makes the error $O(N^{2/3})$ and, by Step 2, the main term $\ll N/(\log N)^{\kappa_X}$. This is the stated bound for each $I_X$.
+
+**Step 4: summation.** Under the twinless hypothesis the type $B$ is empty, since it requires both $M+2$ and $M+4$ prime. A sector carries at most one cell of any given type, so the number of exceptional cells in the block is exactly $\sum_X |I_X|$, which by Step 3 is $\ll N/(\log N)^2$. With $N = 35L$ this is $\ll L/\log^2 L$. $\blacksquare$
+
+**This is a computation, not a new tool, and it should be read as one.** Reading the sieve dimension off the number of roots of the defining polynomials modulo each prime is the standard definition of dimension — the condition $\sum_{q \lt  s}(\log q)/f(q) = \kappa\log s + O(1)$ of Halberstam and Richert — and the passage from a dimension-$\kappa$ sifting density to an upper bound of order $N/(\log N)^{\kappa}$ is the standard Selberg estimate; see [V, ref. 8] for the higher-dimensional theory and [V, ref. 12] for the sieve itself. The twin problem in this language is the case $\rho(q) = 2$, dimension $2$. What is particular to the present setting is only the input: that the exceptional cells of Theorem 4 have the five partners above, so that the quadratic characters $\chi_2$, $\chi_{11}$ and $\chi_{14}$ appear and split the five types into dimensions $2,2,3,3,3$. The conclusion then follows by quoting the standard machinery, and we claim nothing for the machinery.
+
+*Two remarks on the shape of this.* The bound is an **upper-bound sieve only**, and upper bounds in a fixed dimension are the direction in which sieve methods have no parity obstruction; nothing here bears on the lower-bound side. And the two-sector types are smaller than the one-sector types by a full logarithm, so in a long block almost every exception is of type $A$ or $C$ — a block that is longer is structurally *simpler*, not more complicated.
+
+The first consequence is the one that matters here: **the density of exceptions tends to zero**, so the requirement per sector is not bounded below by any positive constant.
+
+**And the bound is numerically empty over every computable range.** Taking $\rho^{*}(D) \sim D/\log D$ for the largest admissible set in an interval of diameter $D$, the crude form $B_L \le 2\rho^{*}(210L)-1$ gives, per sector, $2.22$ at $L=1$, $1.59$ at $L=9$, $1.06$ at $L=401$, $0.82$ at $L=10^4$ and $0.51$ at $L=10^8$: it does not fall below $1$ until $L \approx 400$ and does not reach $1/2$ until $L \approx 10^8$. The measured values are far below it everywhere in range, so the observed decrease is not this bound taking effect. Nor do the data identify the exponent: over $1 \le L \le 101$ the quantity $B_L\log^2(210L)/(210L)$ reads $4.22, 4.42, 4.61, 4.99, 4.91, 5.80, 6.68, 7.37$ — rising, not settling — while $B_L\log(210L)/(210L)$ reads $0.789, 0.685, 0.663, 0.685, 0.651, 0.691, 0.720, 0.740$. On this range $\log D$ varies only from $5.3$ to $10.0$, and the two laws are not separated by it.
+
+**What the whole calculation does not buy, stated exactly.** Since $B_L = o(L)$, the criterion no longer asks for a survivor every sector or every second sector: it suffices to prove $\sum_i C_{M_i} \ge \varepsilon L$ for any fixed $\varepsilon \gt  0$, that is, that a positive proportion of sectors contains at least one open cell. Measured at $M_0 = 448{,}353$, the survivor total is $366{,}120$, $1{,}100{,}106$ and $3{,}304{,}035$ over $L = 1, 3, 9$ — that is $10{,}461$, $10{,}477$ and $10{,}489$ per sector, flat — so the inequality holds by a factor of $11{,}810$, $16{,}419$ and $20{,}270$, widening with $L$. The survivor total is linear in $L$ with a large constant; its logarithm is $\log M_0$, not $\log L$, so no amount of lengthening changes its shape.
+
+> **The reduction is therefore real and it is not a route.** What is now required of the survivor side is not a rate of growth but an *existence* statement: one open cell in a positive proportion of sectors. By Theorem 4 an open cell is a twin pair unless it sits at one of six named places, and [V, §6.7] measures that discrepancy at $0$, $1$ and $3$ over three full periods. So "prove $\sum_i C_{M_i} \ge \varepsilon L$" is "prove that a positive proportion of sectors contains a twin", and shrinking the right-hand side from $32$ to $O(L/\log^2 L)$ changes the number on the right while leaving the missing ingredient on the left exactly as it was.
 
 ### 3.5 Theorem 5: a new line kills at most one pair in its own first window
 
@@ -199,18 +271,18 @@ $L_p$ has exactly three strikes in this window: $p^2$, $p(p+2)$ and $p(p+4)$, si
 
 Only $(H_p, H_p+2)$ remains. $\blacksquare$
 
-> **Corollary 2.** $D_p = 1$ if and only if **two** primality conditions hold together:
+> **Corollary 3.** $D_p = 1$ if and only if **two** primality conditions hold together:
 > $$p \equiv 5 \ (6): \quad p+2 \ \text{prime} \ \text{ and } \ p(p+2)+2 \ \text{prime}; \qquad p \equiv 1 \ (6): \quad p+4 \ \text{prime} \ \text{ and } \ p(p+4)+2 \ \text{prime}.$$
 
 *Proof.* $H_p$ survives the older lines iff its cofactor ($p+2$ or $p+4$) has no prime factor below $p$; being less than $2p$, that means the cofactor is prime. And $H_p+2 \lt  (p+2)^2$ is not divisible by $p$, so if composite its least prime factor is below $p$ and it was struck earlier; hence $H_p+2$ survives iff it is prime. $\blacksquare$
 
-*Verification.* Corollary 2 predicts $D_p$ from two primality tests alone; checked against the directly computed $D_p$ for every prime $5 \le p \lt  4000$, with **zero mismatches**. Examples: $p=5$ gives $7$ and $37$ both prime, so $D_5=1$; $p=11$ gives $13$ prime but $145 = 5\cdot29$ composite, so $D_{11}=0$; $p=13$ gives $17$ and $223$ both prime, so $D_{13}=1$.
+*Verification.* Corollary 3 predicts $D_p$ from two primality tests alone; checked against the directly computed $D_p$ for every prime $5 \le p \lt  4000$, with **zero mismatches**. Examples: $p=5$ gives $7$ and $37$ both prime, so $D_5=1$; $p=11$ gives $13$ prime but $145 = 5\cdot29$ composite, so $D_{11}=0$; $p=13$ gives $17$ and $223$ both prime, so $D_{13}=1$.
 
 **What this does and does not buy.** Since $T_p^+ = T_p^- - D_p$ and every survivor in the window is prime (the cofactor argument of §5.2), $T_p^+$ *is* the number of twin pairs in $[p^2,(p+2)^2)$. Theorem 5 therefore says:
 
 $$\boxed{ T_p^- \ \text{is the twin count of the window, up to an error of } 0 \text{ or } 1, \text{ and the error is characterised.} }$$
 
-That is the strongest local statement in this paper, and it is worth being explicit that it is not a reduction. $T_p^-$ and $T_p^+$ differ by at most one, so proving anything about $T_p^-$ is proving it about the twin count. In particular the sufficient condition "$T_p^- \ge 2$" is *stronger* than the conclusion "$T_p^+ \ge 1$", not weaker. What Corollary 2 adds is that even the discrepancy between the two is governed by a twin-like coincidence — two simultaneous primality conditions — so the error term is of the same nature as the quantity.
+That is the strongest local statement in this paper, and it is worth being explicit that it is not a reduction. $T_p^-$ and $T_p^+$ differ by at most one, so proving anything about $T_p^-$ is proving it about the twin count. In particular the sufficient condition "$T_p^- \ge 2$" is *stronger* than the conclusion "$T_p^+ \ge 1$", not weaker. What Corollary 3 adds is that even the discrepancy between the two is governed by a twin-like coincidence — two simultaneous primality conditions — so the error term is of the same nature as the quantity.
 
 ### 3.6 Theorem 6: the bridge pair, and the only law that knows about squares
 
@@ -250,7 +322,7 @@ And the bias, though real, is not usable: $T-B \approx -1.56 T$ is a fixed numbe
 One may ask directly whether windows anchored at squares are systematically poorer than windows placed anywhere. The answer is an identity rather than an experiment.
 
 For a window starting at $r^2$, the pair at offset $j$ survives $q$ exactly when $r^2 \not\equiv -2j$ and $r^2 \not\equiv -2j-2 \pmod q$. Writing $\rho_q(a) = \mathrm{card}\lbrace r : r^2 \equiv a\rbrace$ and $\nu_q(j) = \rho_q(-2j) + \rho_q(-2j-2)$ — the two conditions cannot hold at once — the average over **all square phases** is exactly
-$$\mu_{\square}(L)  =  \sum_{j\lt L}\ \prod_{q} \frac{q - \nu_q(j)}{q}. \qquad\text{(3.4)}$$
+$$\mu_{\square}(L)  =  \sum_{j\lt L}\ \prod_{q} \frac{q - \nu_q(j)}{q}. \qquad\text{(3.3)}$$
 
 Computed against the naive density prediction $E = L\prod(q-2)/q$, and against the restricted average $\mu^{\times}$ over roots that are themselves coprime to every old line:
 
@@ -265,64 +337,22 @@ Computed against the naive density prediction $E = L\prod(q-2)/q$, and against t
 
 $\mu_{\square}$ agrees with $E$ to within about $1$% from $p = 29$ onward, and restricting the roots changes nothing.
 
-> **The square-phase mean has the exact expression (3.4); numerically it tracks the generic density prediction closely, the two differing by about $1$% or less from $p = 29$ onward in the sample above.** So the exact quantity is available in closed form, and on the tested range it shows no bias at the level of the mean — which replaces the earlier control experiment with a computation, though not with a proof that the two agree in the limit. Individual windows are of course far from the mean — $T_{53}^- = 2$ against $\mu_{\square} = 5.43$ — but the scatter is governed by the correlation function of [II, Thm 4], not by any property of squares.
+> **The square-phase mean has the exact expression (3.3); numerically it tracks the generic density prediction closely, the two differing by about $1$% or less from $p = 29$ onward in the sample above.** So the exact quantity is available in closed form, and on the tested range it shows no bias at the level of the mean — which replaces the earlier control experiment with a computation, though not with a proof that the two agree in the limit. Individual windows are of course far from the mean — $T_{53}^- = 2$ against $\mu_{\square} = 5.43$ — but the scatter is governed by the correlation function of [II, Thm 4], not by any property of squares.
 
-### 3.8 The exception budget over a full period, and the limit of local arguments
+### 3.8 Raw cell count and main term
 
-Corollary 7 bounds the exceptions in one sector. Consecutive sectors are not independent, and taking a whole period of them together lowers the bound further — up to a point that can be identified exactly.
+*Bookkeeping used by the sections above.*
 
-**The sectors tile:** $(M^2,(M+6)^2)$ is followed immediately by $((M+6)^2,(M+12)^2)$, so a prime forced near the top of one is forced near the bottom of the next. Taking the $35$ sectors of one full period together — the window $(M_0^2,(M_0+210)^2)$ with $M_0 = 210k+3$ — and writing each exceptional position's requirement as a set of offsets that must be prime ($A$ needs $M+2$; $C$ needs $M+4$; $D$ needs $M+2,M+8$; $E$ needs $M+2,M+10$; $F$ needs $M+4,M+8$), the twinless hypothesis forbids any two forced offsets differing by $2$ across the whole window, not merely within a sector.
+$$C = \frac{v^2-u^2}{6}-1, \qquad C_- = 4n-1  (u=6n-1), \qquad C_+ = 8n+3  (u=6n+1),$$
+and $C \equiv 3 \pmod 4$ always (zero failures over 427 consecutive prime pairs) — an exact property which nevertheless supplies no protective invariant, since a single line's deletion count has no fixed parity. The main term is $M = C P_2$.
 
-Summing the per-phase caps independently gives $5\cdot0+20\cdot1+10\cdot2 = 40$. The coupling costs three of those: three pairs of adjacent phases cannot both attain their caps, because the offsets clash across the join — for instance a phase reaching two via $\lbrace C,F\rbrace$ forces $M+8$, and its successor reaching two the same way forces $M'+4 = M+10$. **A fourth adjacent pair with the same caps does not clash**, which is the point: the obstruction is arithmetic in the offsets, not a consequence of adjacency. Hence $37$, and with the lines $11,13,17$ admitted as well, an exhaustive scan over all $5\cdot7\cdot11\cdot13\cdot17/35 = 2431$ alignments gives
+### 3.9 Local deviations
 
-$$\sum_{i=0}^{34}\bigl|S_{M_i}\cap E_{M_i}\bigr| \le 31 \qquad\text{(no twin in the window)},$$
+*Bookkeeping used by the sections above.*
 
-the ceiling $31$ being attained in $9$ of the $2431$ alignments, and the distribution of the $2431$ values peaking at $26$.
+$$\varepsilon_r(u) = D_r(u) - \frac{2 N_{r^-}(u)}{r}. \qquad\text{(3.4)}$$
 
-**That ceiling cannot be lowered by any finite set of lines, and this is a theorem rather than a report of failed attempts.** The $9$ extremal alignments carry $28$ distinct maximal configurations between them. Each configuration demands not only that certain $M_0+a$ be prime — $27$ to $30$ of them — but also that the *partner* member of each of the $31$ cells survive, and those partners are quadratics in $n$: $36n^2+60n+23$ for $A$, $36n^2+84n+47$ for $C$, $36n^2+96n+53$ for $D$, $36n^2+108n+67$ for $E$, $36n^2+108n+79$ for $F$ (verified against the definition for $n \lt 3000$). Testing the full linear-and-quadratic systems for a fixed prime divisor kills **$27$ of the $28$**: $q=23$ disposes of fourteen, $q=31$ of ten, $q=19$ of three. One survives, at $M_0 \equiv 448353 \pmod{510510}$, with $28$ linear and $31$ quadratic conditions — $59$ polynomials of total degree $90$. Every prime $q \le 90$ leaves at least one admissible residue (the tightest are $q=19$ and $q=31$, with exactly one each), and for $q \gt 90$ a residue survives automatically since $90$ polynomials of that total degree have at most $90$ roots. **The system is therefore admissible at every prime, so by the Chinese remainder theorem the residues can be chosen simultaneously against any finite list of further lines: no residue-based argument, however many primes it uses, reaches $30$.**
-
-**Nor does the order in which the lines are born supply the missing constraint.** One might hope that a line $M_0+a$, forced prime by one exceptional cell, strikes another of the $31$ once it is born. Modulo $p = M_0+a$ one has $M_0 \equiv -a$, so a member $(M_0+u)(M_0+v)+e$ with $e \in \lbrace 0,\pm2\rbrace$ reduces to the integer $(u-a)(v-a)+e$, and $|u|,|v|,|a| \lt 216$ while $p \asymp M_0$; the line divides the member only if that small integer is exactly zero. Excluding the cell's own factors, this needs $|u-a| \cdot |v-a| = 2$, hence $|u-v| \in \lbrace 1,3\rbrace$. **But $u$ and $v$ are the offsets $6i+d$ with $d \in \lbrace 2,4,8,10\rbrace$, so $|u-v|$ is even, and the collision is impossible.** The check finds none, for the $28$ lines or for any $M_0+b$ with $b \le 216$. The timing of the lines carries no information the residues did not already carry, and the escapee's survival is equivalent to the simultaneous primality of its $59$ irreducible polynomials — precisely the setting of Schinzel's Hypothesis H [V, ref. 27], which predicts infinitely many $t$ realising it. **Proving the configuration impossible would mean contradicting that prediction for a specific family, which is not a weakening of the twin problem but an apparent strengthening of it.**
-
-### 3.9 Blocks of consecutive periods, and why lengthening the block does not help
-
-Section 3.8 bounds the exceptions over one period of $35$ sectors. Consecutive periods are coupled in the same way that consecutive sectors are, so the same question can be asked of a block of $L$ periods — $35L$ sectors — and the answer moves. Write $B_L$ for the maximum of $\sum_i |S_{M_i} \cap E_{M_i}|$ over such a block under the twinless hypothesis, so that $B_1 = 31$ is the content of §3.8 and
-
-$$\sum_i C_{M_i} \gt  B_L \implies \text{a twin in the block}.$$
-
-**How $B_L$ is computed, and a trap that is worth naming.** The natural procedure — enumerate the maximal configurations of each residue class and test each for a fixed prime divisor — is *not* sound for this purpose. A residue class whose maximum is $m$ also carries configurations of size $m-1$, $m-2$ and so on, obtained by deleting cells; deleting a cell removes conditions and can only make admissibility easier. Those sub-configurations are never enumerated, so "every configuration at level $\ell$ dies" establishes nothing about level $\ell$. The sound procedure reverses the order: fix a residue for each prime $q$, switch the line $q$ on *inside* the transfer recursion, and read off the maximum. That maximum is by construction the largest admissible configuration at those residues, and the maximisation over residues is $B_L$. It is also faster by orders of magnitude.
-
-**Values.** By that procedure, maximising over the residues of every prime up to the stated bound:
-
-$$B_1 = 31, \qquad B_3 = 67, \qquad B_5 = 100, \qquad B_7 = 138, \qquad B_9 = 163.$$
-
-The first three are certain: $B_1$ is §3.8; $B_3$ and $B_5$ are stable under every prime tested and $B_5$ was obtained twice, once by the sound procedure and once by exhaustive enumeration with an independent admissibility test, which agree. $B_7$ and $B_9$ are stable across twelve and eight consecutive primes respectively but were computed with pruning, so they are lower bounds with strong stability rather than certified maxima.
-
-The extremal configuration at $L=3$ carries $66$ linear and $67$ quadratic conditions — $133$ polynomials of total degree $200$ — and every prime $q \le 200$ leaves it an admissible residue, so §3.8's conclusion transfers: no finite set of lines lowers $67$ either. Two features of the optimum are worth recording. First, it does *not* preserve the single-window maximum in the middle: the three windows contribute $20, 26, 21$, so the block optimum spends $31 - 26 = 5$ of the central window's capacity to gain elsewhere. Second, the killing is concentrated: across every level from $144$ down to $138$ at $L = 7$, the primes $29$ and $37$ account for about ninety per cent of the eliminated configurations, the remainder falling to $43$, $53$, $71$, $73$, $79$ and $97$.
-
-In requirement per sector, $(B_L+1)/35L$ reads $0.914$, $0.648$, $0.577$, $0.567$, $0.521$. It falls, and the next paragraph says why, and how far.
-
-**The quadratic shadow, and the order of $B_L$.** Each exceptional cell carries, besides its linear primality conditions, the condition that the *other* member of the cell survive. Those partners are
-
-$$Q_A = (M+2)^2-2, \quad Q_C = (M+4)^2-2, \quad Q_D = (M+5)^2-11, \quad Q_E = (M+6)^2-14, \quad Q_F = (M+6)^2-2,$$
-
-so each type forbids, modulo a prime $q \gt  17$, a number of residue classes that is exactly
-
-$$\omega_A = \omega_C = 2+\chi_2(q), \qquad \omega_D = 3+\chi_{11}(q), \qquad \omega_E = 3+\chi_{14}(q), \qquad \omega_F = 3+\chi_2(q),$$
-
-with $\chi_d(q)$ the Legendre symbol. The linear conditions supply one forbidden class for $A$ and $C$ and two for $D$, $E$ and $F$; the partner supplies two more exactly when the relevant $d$ is a quadratic residue. Since the quadratic characters are non-principal, each $\omega$ has mean value $2$ for $A$ and $C$ and $3$ for $D$, $E$ and $F$.
-
-> **Proposition 1.** Write $I_X$ for the set of sector indices carrying an exceptional cell of type $X$ in an admissible configuration on a block of $35L$ sectors. Each $I_X$ is a set sifted by $\omega_X(q)$ classes modulo every prime, of sieve dimension $2$ for $X = A, C$ and $3$ for $X = D, E, F$. Hence, by the upper-bound sieve in the corresponding dimension,
-> $$|I_A|, |I_C| \ll \frac{L}{\log^2 L}, \qquad |I_D|, |I_E|, |I_F| \ll \frac{L}{\log^3 L}, \qquad\text{so}\qquad B_L \ll \frac{L}{\log^2 L}.$$
-
-*Proof.* Admissibility at $q$ means a residue exists at which no polynomial of the configuration vanishes; fixing that residue, the sector indices of type $X$ must avoid the $\omega_X(q)$ classes above, for every $q$. The indices lie in an interval of length $35L$, and a set sifted by $\kappa$ classes per prime in an interval of length $N$ has at most $O(N/\log^{\kappa} N)$ elements. Under the twinless hypothesis the type $B$ is empty, and $B_L$ is the sum of the five. $\blacksquare$
-
-Two consequences. **The density of exceptions tends to zero**, so the requirement per sector is not bounded below by any positive constant. And **the two-sector types are rarer than the one-sector types by a full logarithm**, so in a long block almost all exceptions are of type $A$ or $C$ — the block simplifies rather than complicating as it lengthens.
-
-**And the bound is numerically empty over every computable range.** Taking $\rho^{*}(D) \sim D/\log D$ for the largest admissible set in an interval of diameter $D$, the crude form $B_L \le 2\rho^{*}(210L)-1$ gives, per sector, $2.22$ at $L=1$, $1.59$ at $L=9$, $1.06$ at $L=401$, $0.82$ at $L=10^4$ and $0.51$ at $L=10^8$: it does not fall below $1$ until $L \approx 400$ and does not reach $1/2$ until $L \approx 10^8$. The measured values are far below it everywhere in range, so the observed decrease is not this bound taking effect. Nor do the data identify the exponent: over $1 \le L \le 101$ the quantity $B_L\log^2(210L)/(210L)$ reads $4.22, 4.42, 4.61, 4.99, 4.91, 5.80, 6.68, 7.37$ — rising, not settling — while $B_L\log(210L)/(210L)$ reads $0.789, 0.685, 0.663, 0.685, 0.651, 0.691, 0.720, 0.740$. On this range $\log D$ varies only from $5.3$ to $10.0$, and the two laws are not separated by it.
-
-**What the whole calculation does not buy, stated exactly.** Since $B_L = o(L)$, the criterion no longer asks for a survivor every sector or every second sector: it suffices to prove $\sum_i C_{M_i} \ge \varepsilon L$ for any fixed $\varepsilon \gt  0$, that is, that a positive proportion of sectors contains at least one open cell. Measured at $M_0 = 448{,}353$, the survivor total is $366{,}120$, $1{,}100{,}106$ and $3{,}304{,}035$ over $L = 1, 3, 9$ — that is $10{,}461$, $10{,}477$ and $10{,}489$ per sector, flat — so the inequality holds by a factor of $11{,}810$, $16{,}419$ and $20{,}270$, widening with $L$. The survivor total is linear in $L$ with a large constant; its logarithm is $\log M_0$, not $\log L$, so no amount of lengthening changes its shape.
-
-> **The reduction is therefore real and it is not a route.** What is now required of the survivor side is not a rate of growth but an *existence* statement: one open cell in a positive proportion of sectors. By Theorem 4 an open cell is a twin pair unless it sits at one of six named places, and [V, §6.7] measures that discrepancy at $0$, $1$ and $3$ over three full periods. So "prove $\sum_i C_{M_i} \ge \varepsilon L$" is "prove that a positive proportion of sectors contains a twin", and shrinking the right-hand side from $32$ to $O(L/\log^2 L)$ changes the number on the right while leaving the missing ingredient on the left exactly as it was.
+Inside a sector, line $r$ deletes at $s \equiv -u^2/6$ and $s \equiv (2-u^2)/6 \pmod r$, and the gap between the two positions is exactly $3^{-1} \bmod r$ (zero failures among 85). **Every ruler's phase is therefore a function of the single quantity $u^2$**, and under $u \mapsto u+6$ the phase moves *quadratically*, since $u^2 \mapsto u^2 + 12u + 36$. This quadratic motion is what makes cancellation possible at all.
 
 ## 4. The closing budget: $\tau$ against $S$
 
@@ -369,7 +399,7 @@ Let $G = T - D$ count genuine gap-$6$ pairs, $D$ those with a survivor between. 
 | $\lbrace 5,7,11\rbrace$ | 480 | 270 | 128 | 142 |
 | $\lbrace 5,7,11,13\rbrace$ | 5,760 | 2,970 | 1,280 | 1,690 |
 
-> **Corollary 3.** On the full cycle, $\dfrac{T}{V} = \rho_p = \prod_{5\le s\le p}\dfrac{s-2}{s-1}$ and $\dfrac{D}{T} = \theta_p = \dfrac{2}{3}\prod_{7\le s\le p}\dfrac{s-3}{s-2}$ — **exact identities, not estimates.**
+> **Corollary 4.** On the full cycle, $\dfrac{T}{V} = \rho_p = \prod_{5\le s\le p}\dfrac{s-2}{s-1}$ and $\dfrac{D}{T} = \theta_p = \dfrac{2}{3}\prod_{7\le s\le p}\dfrac{s-3}{s-2}$ — **exact identities, not estimates.**
 
 | $p$ | 23 | 53 | 101 | 199 | 499 | 997 |
 |---|---|---|---|---|---|---|
@@ -418,11 +448,11 @@ each component on its own circle, and the whole system evolves by three small nu
 $$\text{step } +4, \qquad \text{first square gap } +8, \qquad \text{all clocks } -1,$$
 with one clock inserted at $p-1$ whenever $p$ is prime. The system is *shift, zero-test, insert*; nothing is rebuilt.
 
-> **Corollary 4.** $p$ is composite if and only if some old clock reads $0$ at its birth. Equivalently, **a prime is a step at which no clock lands on zero.**
+> **Corollary 5.** $p$ is composite if and only if some old clock reads $0$ at its birth. Equivalently, **a prime is a step at which no clock lands on zero.**
 
 *Verification.* Zero failures over all odd $p \lt  2000$.
 
-> **Corollary 5.** The clock of $L_3$ cycles $2 \to 1 \to 0$, so the two non-zero states are exactly the cell $(6a-1, 6a+1)$. **The cell, taken as a definition in [I, §3], is a consequence.**
+> **Corollary 6.** The clock of $L_3$ cycles $2 \to 1 \to 0$, so the two non-zero states are exactly the cell $(6a-1, 6a+1)$. **The cell, taken as a definition in [I, §3], is a consequence.**
 
 ### 5.2 Theorem 12 (surviving cofactors are prime)
 
@@ -502,9 +532,9 @@ which we call a **family**. A new line $q$ closes a cell $c$ when $c \equiv \pm 
 
 *Verification.* For $Q = 385$, brute force over all $x$ and all $q$ from $13$ to $101$ reproduces the predicted capacity with **zero mismatches**. Sample values of $d_q$: $13{:}6$, $17{:}1$, $19{:}5$, $23{:}9$, $31{:}4$, $37{:}14$, $53{:}24$, $83{:}12$, $101{:}39$.
 
-### 6.3 Corollary 6: the exceptional lines are finite in number
+### 6.3 Corollary 7: the exceptional lines are finite in number
 
-> **Corollary 6.** A line $q$ can close two copies of a family only if $q \mid 3Qr \pm 1$ for some $1 \le r \le 11$. Consequently every $q \gt  33Q + 1$ closes **at most one** copy of every family.
+> **Corollary 7.** A line $q$ can close two copies of a family only if $q \mid 3Qr \pm 1$ for some $1 \le r \le 11$. Consequently every $q \gt  33Q + 1$ closes **at most one** copy of every family.
 
 *Proof.* $d_q \le 11$ means $\Delta_q \equiv \pm r$ with $r \le 11$, i.e. $3Qr \equiv \pm 1 \pmod q$; and $0 \lt  3Qr \mp 1 \le 33Q+1$, so $q$ cannot divide it once $q$ exceeds that bound. $\blacksquare$
 
@@ -596,66 +626,68 @@ $$\frac{\sum_s C_s}{G}  \sim  \frac23\log q$$
 Paper I, §4, indexes the window by its own cell numbers: it is the interval $c_0,\dots,c_0+N-1$ with $c_0 = 6a^2-2a+1$ and $N = 4a-1$, where $n = 6a$ and the window is $[(n-1)^2,(n+1)^2]$. This section uses that indexing to study the four cells nearest its two ends.
 
 
+*A note on notation.* The four cells of this section are written $T_1,\dots,T_4$ and are **not** the exception types $A, C, D, E, F$ of §3.3 and §3.4; the two families are unrelated, and the letters are kept apart on purpose.
+
 ### 8.1 The four tracks, their character conditions and their densities
 
 The window's template [I, §4.2] singles out four cells near its two ends. Writing $q = 6a-1$ they are
-$$A = (q^2{+}4,\ q^2{+}6), \quad B = (q^2{+}10,\ q^2{+}12), \quad C = ((q{+}2)^2{-}14,\ (q{+}2)^2{-}12), \quad D = ((q{+}2)^2{-}8,\ (q{+}2)^2{-}6),$$
+$$T_1 = (q^2{+}4,\ q^2{+}6), \quad T_2 = (q^2{+}10,\ q^2{+}12), \quad T_3 = ((q{+}2)^2{-}14,\ (q{+}2)^2{-}12), \quad T_4 = ((q{+}2)^2{-}8,\ (q{+}2)^2{-}6),$$
 and as $a$ runs they trace four **tracks**. Substituting $q = 6a-1$ makes every member a quadratic in $a$:
 
 | cell | lower member | upper member |
 |---|---|---|
-| $A$ | $36a^2-12a+5$ | $36a^2-12a+7$ |
-| $B$ | $36a^2-12a+11$ | $36a^2-12a+13$ |
-| $C$ | $36a^2+12a-13$ | $36a^2+12a-11$ |
-| $D$ | $36a^2+12a-7$ | $36a^2+12a-5$ |
+| $T_1$ | $36a^2-12a+5$ | $36a^2-12a+7$ |
+| $T_2$ | $36a^2-12a+11$ | $36a^2-12a+13$ |
+| $T_3$ | $36a^2+12a-13$ | $36a^2+12a-11$ |
+| $T_4$ | $36a^2+12a-7$ | $36a^2+12a-5$ |
 
 *Verification.* Exact for $a = 1,\dots,399$.
 
 > **Theorem 18 (which lines can ever own a track).** A prime $r$ divides $36a^2+Ba+C$ for some $a$ exactly when the discriminant $B^2-144C$ is a quadratic residue modulo $r$. For the eight members the discriminants are $144k$ with
-> $$k  =  -4,\ -6 \ (A); \qquad -10,\ -12 \ (B); \qquad 14,\ 12 \ (C); \qquad 8,\ 6 \ (D),$$
-> so the conditions read $r \equiv 1 \pmod 4$ and $(-6 | r) = 1$ for $A$; $(-10 | r)=1$ and $r \equiv 1 \pmod 3$ for $B$; $(14 | r)=1$ and $(3 | r)=1$ for $C$; $r \equiv \pm1 \pmod 8$ and $(6 | r)=1$ for $D$.
+> $$k  =  -4,\ -6 \ (T_1); \qquad -10,\ -12 \ (T_2); \qquad 14,\ 12 \ (T_3); \qquad 8,\ 6 \ (T_4),$$
+> so the conditions read $r \equiv 1 \pmod 4$ and $(-6 | r) = 1$ for $T_1$; $(-10 | r)=1$ and $r \equiv 1 \pmod 3$ for $T_2$; $(14 | r)=1$ and $(3 | r)=1$ for $T_3$; $r \equiv \pm1 \pmod 8$ and $(6 | r)=1$ for $T_4$.
 
 *Verification.* Every prime factor of every member for $a = 1,\dots,400$ — $4{,}209$ checks — satisfies its condition; no violation.
 
-Each individual condition admits half the primes (measured over primes below $10^5$: $49.7$–$50.0$%), but a cell falls to a strike on **either** member, so the union admits three quarters: measured $75.0,\ 74.8,\ 75.0,\ 75.0$% for $A,B,C,D$. Requiring eligibility for all four at once cuts this to **exactly a quarter** — the eight discriminants reduce to the five independent characters $(-1),(2),(3),(5),(7)$, giving $32$ sign patterns of which $8$ pass; measured $24.84$% against the naive independent guess $(3/4)^4 = 31.6$%.
+Each individual condition admits half the primes (measured over primes below $10^5$: $49.7$–$50.0$%), but a cell falls to a strike on **either** member, so the union admits three quarters: measured $75.0,\ 74.8,\ 75.0,\ 75.0$% for $T_1,T_2,T_3,T_4$. Requiring eligibility for all four at once cuts this to **exactly a quarter** — the eight discriminants reduce to the five independent characters $(-1),(2),(3),(5),(7)$, giving $32$ sign patterns of which $8$ pass; measured $24.84$% against the naive independent guess $(3/4)^4 = 31.6$%.
 
 **The four tracks are not equivalent.** Each is a pair of quadratics, so its twin density is governed by a Bateman–Horn constant $S = \prod_r (1-\nu_r/r)/(1-1/r)^2$, where $\nu_r$ counts the roots of the pair modulo $r$. The correct baseline is a generic cell $(6c-1,6c+1)$, whose constant is $12C_2 = 7.9219$ — **not** the twin constant $2C_2 = 1.320$, which is for pairs $(n,n+2)$ over all $n$ and counts the even $n$ a cell never has.
 
 | track | $\nu_5$ | $\nu_7$ | $\nu_{11}$ | $S$ | $S/12C_2$ |
 |---|---|---|---|---|---|
-| $A$ | **4** | 2 | 2 | $3.230$ | $0.408$ |
-| $B$ | 1 | 4 | 2 | $5.797$ | $0.732$ |
-| $C$ | 2 | 1 | 4 | $8.739$ | $1.103$ |
-| $D$ | 2 | 2 | **0** | $11.324$ | $1.429$ |
+| $T_1$ | **4** | 2 | 2 | $3.230$ | $0.408$ |
+| $T_2$ | 1 | 4 | 2 | $5.797$ | $0.732$ |
+| $T_3$ | 2 | 1 | 4 | $8.739$ | $1.103$ |
+| $T_4$ | 2 | 2 | **0** | $11.324$ | $1.429$ |
 
 *Verification.* Predicted density $S/\log^2(36a^2)$ against measured, for $a = 12{,}000,\dots,30{,}000$: $0.0059/0.0062$, $0.0105/0.0100$, $0.0158/0.0156$, $0.0205/0.0214$.
 
-**So track $D$ is $3.5$ times richer in twins than track $A$**, and the reason is visible in the table: $\nu_{11} = 0$ for $D$ — eleven never divides either of its members — while $\nu_5 = 4$ for $A$, the maximum, five dividing both members with two roots each. *(This is directly usable: a search for twin pairs near squares is three and a half times more productive on the $D$ track than on the $A$ track.)*
+**So track $T_4$ is $3.5$ times richer in twins than track $T_1$**, and the reason is visible in the table: $\nu_{11} = 0$ for $T_4$ — eleven never divides either of its members — while $\nu_5 = 4$ for $T_1$, the maximum, five dividing both members with two roots each. *(This is directly usable: a search for twin pairs near squares is three and a half times more productive on the $T_4$ track than on the $T_1$ track.)*
 
 ### 8.2 Theorem 19: simultaneity, and why it is the sharp question
 
 Eligibility asks which primes can own a track at **some** $a$. The sharper question is which can own two tracks at the **same** $a$, and the answer is finite.
 
-> **Theorem 19.** A prime $r \gt  3$ can close two of $A,B,C,D$ in the same window only if it divides the resultant of the corresponding pair of quadratics. The complete list is
+> **Theorem 19.** A prime $r \gt  3$ can close two of $T_1,T_2,T_3,T_4$ in the same window only if it divides the resultant of the corresponding pair of quadratics. The complete list is
 >
 > | pair | admissible primes |
 > |---|---|
-> | $A$ & $B$ | **none** |
-> | $A$ & $C$ | $5,\ 11,\ 13,\ 73$ |
-> | $A$ & $D$ | $5,\ 7$ |
-> | $B$ & $C$ | $5,\ 7,\ 11,\ 13,\ 37$ |
-> | $B$ & $D$ | $7,\ 19,\ 89,\ 97$ |
-> | $C$ & $D$ | **none** |
+> | $T_1$ & $T_2$ | **none** |
+> | $T_1$ & $T_3$ | $5,\ 11,\ 13,\ 73$ |
+> | $T_1$ & $T_4$ | $5,\ 7$ |
+> | $T_2$ & $T_3$ | $5,\ 7,\ 11,\ 13,\ 37$ |
+> | $T_2$ & $T_4$ | $7,\ 19,\ 89,\ 97$ |
+> | $T_3$ & $T_4$ | **none** |
 >
 > so the union is the nine primes $\lbrace 5,7,11,13,19,37,73,89,97\rbrace$, and **every $r \gt  97$ closes at most one of the four cells in any single window.**
 
-*Proof of the two empty entries.* The differences between a member of $A$ and a member of $B$ are $4$, $6$ and $8$; a prime dividing one member of each would divide one of these, impossible for $r\gt 3$. The same three differences occur between $C$ and $D$. $\blacksquare$
+*Proof of the two empty entries.* The differences between a member of $T_1$ and a member of $T_2$ are $4$, $6$ and $8$; a prime dividing one member of each would divide one of these, impossible for $r\gt 3$. The same three differences occur between $T_3$ and $T_4$. $\blacksquare$
 
-*Proof of the rest.* Two quadratics with the same leading coefficient differ by a linear form, so a common root modulo $r$ forces a linear congruence in $a$; substituting it back leaves a fixed integer that $r$ must divide. For $A$ lower against $C$ lower, for instance, $24a \equiv 18$ gives $4a \equiv 3$ and then $r \mid 65$. Each entry above was computed as the resultant and then checked for a genuine common root. $\blacksquare$
+*Proof of the rest.* Two quadratics with the same leading coefficient differ by a linear form, so a common root modulo $r$ forces a linear congruence in $a$; substituting it back leaves a fixed integer that $r$ must divide. For $T_1$ lower against $T_3$ lower, for instance, $24a \equiv 18$ gives $4a \equiv 3$ and then $r \mid 65$. Each entry above was computed as the resultant and then checked for a genuine common root. $\blacksquare$
 
-**The contrast is the point.** Eligibility for one cell admits three quarters of all primes; for all four at once, a quarter — both infinite. **Simultaneous double duty admits nine primes and no more.** The character condition loses the shared variable $a$; restoring it collapses an infinite set to a finite one, and this is the sharpest local statement in the paper after Corollary 6.
+**The contrast is the point.** Eligibility for one cell admits three quarters of all primes; for all four at once, a quarter — both infinite. **Simultaneous double duty admits nine primes and no more.** The character condition loses the shared variable $a$; restoring it collapses an infinite set to a finite one, and this is the sharpest local statement in the paper after Corollary 7.
 
-**And, as with every local statement here, it does not bind.** Closing all four cells requires at least two lines — a special prime may serve $A$ & $C$ and another $B$ & $D$ — and at most four. Measured over $a = 3000,\dots,10000$: of $7{,}000$ windows, $6{,}512$ have all four closed, using two distinct lines in $973$ cases, three in $4{,}748$ and four in $791$, so one of the nine special primes does double duty in $5{,}721$ of them. Against this, the lines available number $\pi(q) = 428$, $2{,}062$ and $6{,}055$ at $a = 500$, $3000$, $10000$. **Four out of six thousand is free.**
+**And, as with every local statement here, it does not bind.** Closing all four cells requires at least two lines — a special prime may serve $T_1$ & $T_3$ and another $T_2$ & $T_4$ — and at most four. Measured over $a = 3000,\dots,10000$: of $7{,}000$ windows, $6{,}512$ have all four closed, using two distinct lines in $973$ cases, three in $4{,}748$ and four in $791$, so one of the nine special primes does double duty in $5{,}721$ of them. Against this, the lines available number $\pi(q) = 428$, $2{,}062$ and $6{,}055$ at $a = 500$, $3000$, $10000$. **Four out of six thousand is free.**
 
 ---
 
@@ -671,10 +703,10 @@ Theorem 19 is sharp, and it is sharp for one line. The next statement shows that
 **The contrast with Theorem 19 is the whole point.** There the same line had to satisfy two conditions *at the same $a$*, which is a genuine constraint and collapsed an infinite set to nine primes. Here the conditions sit on different moduli, and the shared variable costs nothing.
 
 *Explicit instance, with every step verified.* Take
-$$101 \mid A^-, \ a \equiv 54; \qquad 103 \mid B^-,\ a \equiv 15; \qquad 107 \mid C^-,\ a \equiv 73; \qquad 113 \mid D^-,\ a \equiv 77,$$
+$$101 \mid T_1^-, \ a \equiv 54; \qquad 103 \mid T_2^-,\ a \equiv 15; \qquad 107 \mid T_3^-,\ a \equiv 73; \qquad 113 \mid T_4^-,\ a \equiv 77,$$
 four distinct lines, all above $97$. The Chinese remainder theorem gives
 $$a \equiv 107{,}106{,}110 \pmod{125{,}782{,}673},$$
-and along this progression $A$, $B$, $C$ and $D$ are all closed. Adjoining the further condition $5 \mid q+2$, i.e. $a \equiv 4 \pmod 5$ — which makes the new line's own central strike $q(q+2)$ inherited rather than new, so that the centre is not a twin either — gives
+and along this progression $T_1$, $T_2$, $T_3$ and $T_4$ are all closed. Adjoining the further condition $5 \mid q+2$, i.e. $a \equiv 4 \pmod 5$ — which makes the new line's own central strike $q(q+2)$ inherited rather than new, so that the centre is not a twin either — gives
 $$a \equiv 484{,}454{,}129 \pmod{628{,}913{,}365}, \qquad\text{i.e.}\qquad q \equiv 2{,}906{,}724{,}773 \pmod{3{,}773{,}480{,}190}.$$
 The residue and the modulus are coprime, so by Dirichlet's theorem the progression contains infinitely many primes $q$. **Along it, $q$ is prime, $q+2$ is composite, and all four named cells are closed — permanently and by construction.**
 
@@ -686,9 +718,9 @@ We state this as a proposition rather than a remark because it is the reason to 
 
 ## 9. What this paper establishes, and what it does not
 
-**Proved here.** The gap alphabet and the ladder (Theorems 1–3, Corollary 1); the dichotomy that three open exception positions occur only when $(M+2,M+4)$ is itself a twin (Corollary 7); the exception budget of $31$ over a full period, and the proof that no finite set of lines lowers it (§3.8); the block budgets $B_3 = 67$ and $B_5 = 100$, and the sieve dimensions of the five exception types together with the resulting order $B_L \ll L/\log^2 L$ (Proposition 1, §3.9); the belt size and the layer ceiling (Theorem 16, Proposition 2); the character conditions on the four outer tracks, the nine-element simultaneity set, and the construction that shows it obstructs nothing (Theorems 18, 19, Proposition 3); the six exception positions (Theorem 4); the single-kill bound in a line's own first window and its characterisation (Theorem 5, Corollary 2); the bridge law and the summation identity over a cycle of windows (Theorems 6, 7); the exact minimum cover and the propagation and compression laws (Theorems 8–10, Corollaries 3–5); the shift law, the primality of surviving cofactors, and the originality law on a row (Theorems 11, 12, 13); and the sector inheritance and single-line capacity laws (Theorems 14, 15, Corollary 6).
+**Proved here.** The gap alphabet and the ladder (Theorems 1–3, Corollary 1); the dichotomy that three open exception positions occur only when $(M+2,M+4)$ is itself a twin (Corollary 2); the exception budget of $31$ over a full period, and the proof that no finite set of lines lowers it (§3.3); the block budgets $B_3 = 67$ and $B_5 = 100$, and the sieve dimensions of the five exception types together with the resulting order $B_L \ll L/\log^2 L$ (Proposition 1, §3.4); the belt size and the layer ceiling (Theorem 16, Proposition 2); the character conditions on the four outer tracks, the nine-element simultaneity set, and the construction that shows it obstructs nothing (Theorems 18, 19, Proposition 3); the six exception positions (Theorem 4); the single-kill bound in a line's own first window and its characterisation (Theorem 5, Corollary 3); the bridge law and the summation identity over a cycle of windows (Theorems 6, 7); the exact minimum cover and the propagation and compression laws (Theorems 8–10, Corollaries 3–5); the shift law, the primality of surviving cofactors, and the originality law on a row (Theorems 11, 12, 13); and the sector inheritance and single-line capacity laws (Theorems 14, 15, Corollary 7).
 
-**Stated but not yet audited by the verification script.** `verify_exception_dichotomy.py` covers the closed forms of the six positions, the $\lbrace 5,7\rbrace$ table and Corollary 7. The block values $B_7 = 138$ and $B_9 = 163$ of §3.9 were computed with pruning and are stable across twelve and eight consecutive primes respectively; they should be read as lower bounds with strong stability, not as certified maxima, and the same applies to the values quoted there for $L = 21, 51, 101$. The sector-coupling budget of §3.8, the admissibility of the surviving configuration and the emptiness of the timing table are exhaustive finite computations, and each is a proof, but they are not yet in the script; until they are, they should be read as stated rather than audited.
+**Stated but not yet audited by the verification script.** `verify_exception_dichotomy.py` covers the closed forms of the six positions, the $\lbrace 5,7\rbrace$ table, Corollary 2, and Step 1 of Proposition 1 (the forbidden-class counts, over all $423$ primes below $3000$). The block values $B_7 = 138$ and $B_9 = 163$ of §3.4 were computed with pruning and are stable across twelve and eight consecutive primes respectively; they should be read as lower bounds with strong stability, not as certified maxima, and the same applies to the values quoted there for $L = 21, 51, 101$. The sector-coupling budget of §3.3, the admissibility of the surviving configuration and the emptiness of the timing table are exhaustive finite computations, and each is a proof, but they are not yet in the script; until they are, they should be read as stated rather than audited.
 
 **Verified but not proved.** Verified Law 17 (the reach $\lfloor 2g/3\rfloor$), proved under $g^2 \lt  2q$ — a hypothesis weaker than Cramér but stronger than the Riemann hypothesis supplies; checked on $17{,}981$ belts with $q \lt  200{,}000$ without failure.
 

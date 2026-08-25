@@ -42,6 +42,8 @@ Throughout, a statement labelled *measured* is a numerical finding with its cont
 
 ## 2. Why capacity, resonance and parity separately do not suffice
 
+*This section is a preview: each of the four items below is a route that fails on its own, and the three that fail in an instructive way are taken up in full afterwards — the deletion budget in §3, the pigeonhole constraint in §4, and the inheritance laws in §5. Nothing here is used later except as a signpost.*
+
 
 **(a) Capacity.** The old lines *are* able to cover a window longer than the square window: at $p=71$ a fully closed run of 67 cells exists elsewhere, against a window of 47. **The argument "the lines are too few" is therefore dead; only the phase at $p^2$ can protect a twin.**
 
@@ -59,7 +61,7 @@ with both extrema attained exactly (at $|I| = 868$, offset $2069$, and at $|I| =
 
 ## 3. The closing budget, and how far it misses
 
-### 3.1 $\Delta_q$: the Buchstab factor [5] decomposed into internal quantities
+### 3.1 $\Delta_q$: the Buchstab factor decomposed into internal quantities
 
 Periodically a line should delete the fraction $2/q$ of the surviving pairs. Write the actual deletion as
 $$E_q = \frac{2}{q}T_{q^-} + \Delta_q, \qquad\text{so}\qquad T_q = \Big(1-\frac2q\Big)T_{q^-} - \Delta_q, \qquad\text{(4.1)}$$
@@ -154,9 +156,9 @@ The provable bound and the truth differ by two to three orders of magnitude. **T
 
 ## 5. Why the three laws do not close the problem
 
-They give a supply-and-demand comparison, and the comparison goes the wrong way. Take the fixed set $\lbrace 5,7,11\rbrace$, so $Q = 385$, $S = 135$, and consider the sector at $M = 2319$: $4{,}644$ cells, of which the tail of $4{,}620$ carries exactly $1{,}620$ cells open after $5, 7, 11$ — [IV, Thm 13] confirmed.
+They give a supply-and-demand comparison, and the comparison goes the wrong way. Take the fixed set $\lbrace 5,7,11\rbrace$, so $Q = 385$, $S = 135$, and consider the sector at $M = 2319$: $4{,}644$ cells, of which the tail of $4{,}620$ carries exactly $1{,}620$ cells open after $5, 7, 11$ — [IV, Thm 14] confirmed.
 
-[IV, Thm 14] says no single later line can close more than two of any family's twelve copies, so **at least six distinct lines** must cooperate to erase one family. But the lines are not scarce:
+[IV, Thm 15] says no single later line can close more than two of any family's twelve copies, so **at least six distinct lines** must cooperate to erase one family. But the lines are not scarce:
 
 | | |
 |---|---|
@@ -169,7 +171,7 @@ Running the lines in order leaves $157$ of the $1{,}620$ open, and those $157$ a
 
 **And no family is protected.** Distributing the $157$ survivors over the $135$ families gives $38$ families wiped out entirely, $51$ with one survivor, $37$ with two, $5$ with three, $3$ with four and $1$ with five — never more than five of twelve. Against a null in which the twelve copies of each family survive independently with probability $p = 157/1620$, the binomial prediction is $39.7,\ 51.2,\ 30.2,\ 10.8,\ 2.6,\ 0.4$. A second sector ($M = 4629$, $125$ survivors) gives observed $54,\ 47,\ 25,\ 8,\ 1$ against predicted $51.5,\ 51.7,\ 23.8,\ 6.6,\ 1.2$.
 
-> **The constraint binds one line at a time and dissolves in aggregate.** Each line is restricted to one copy per family beyond the finite exceptional set, yet three hundred such lines erase the families at a rate indistinguishable from independent chance. This is the pattern of §7.5 again, met in the sharpest local form the framework has produced: an exact per-gap restriction, and no aggregate consequence.
+> **The constraint binds one line at a time and dissolves in aggregate.** Each line is restricted to one copy per family beyond the finite exceptional set, yet three hundred such lines erase the families at a rate indistinguishable from independent chance. This is the pattern of §7.8 again, met in the sharpest local form the framework has produced: an exact per-gap restriction, and no aggregate consequence.
 
 ---
 
@@ -314,7 +316,7 @@ For the target $\Omega \le 1$, by contrast, Corollary 1 gives $-f_1(s)$ on the s
 
 Sections 6.1–6.6 argue that the obstruction is the distinction between $\Omega=1$ and $\Omega=2$ inside the sifted set. That argument is analytic. This section reports what happens when one instead asks the line geometry itself for the missing information, in a single explicit window, and follows each of the five natural routes to the point where it stops. Every number below is **measured**, not proved.
 
-**The window.** We take the phase of the surviving configuration of [IV, §3.8],
+**The window.** We take the phase of the surviving configuration of [IV, §3.3],
 $$M_0 = 448{,}353, \qquad X = (M_0+210)^2 = 201{,}208{,}764{,}969,$$
 which carries $N = 31{,}392{,}060$ cells. The cut is the largest prime with $z^3 \lt  X$, namely $z = 5857$, since $5857^3 = 200{,}921{,}157{,}793$ and $5861^3 = 201{,}333{,}092{,}381$. After sieving to $z$, Theorem 1 applies and each surviving endpoint is $P$ or $P_2$. Writing the four states of a surviving cell by the status of its two endpoints:
 $$R = 1{,}049{,}024, \quad H = 857{,}695, \quad C_{\square} = 174{,}791, \quad T = 366{,}120,$$
@@ -377,9 +379,9 @@ No fixed $C$ exists.
 
 We record this because the shape of the fallacy is exactly the shape of the correct statement. Every criterion in Paper IV and every measurement in §§2–5 above reduces, on inspection, to a ratio that would have to stay bounded; §6 is written to name that ratio rather than to assume it. **The discipline the whole framework has tried to keep is this: when a construction reduces to an unknown quantity, the useful thing to do is to identify the quantity, not to give it a name and a positive sign.**
 
-## 7. Scope: two test cases
+## 7. Scope: two test cases, the sharpest form of the requirement, and the pattern of the whole
 
-The examples above suggest a useful organising pattern, which we state explicitly as a summary of the tested cases rather than as a universal classification.
+The examples above suggest a useful organising pattern, which we state explicitly as a summary of the tested cases rather than as a universal classification. The section then runs two test cases whose answers are known independently (§7.2–§7.4 and §7.5–§7.6), states in §7.7 the narrowest form the twin requirement takes, and closes in §7.8 with the pattern common to every route examined in this paper.
 
 ### 7.1 The pattern seen in the test cases
 
@@ -434,15 +436,7 @@ The counting condition that saturation feeds is $\sum_p \lceil L/p\rceil \ge L$.
 
 The bound exceeds the truth by factors of $400$ to $4000$ already at small $k$. **This is the same failure recorded in §4 and §2(b): the framework's local statements are exact, and its summation over lines destroys them.**
 
-### 7.5 The pattern of the whole work
-
-$$\boxed{ \text{Across the tested routes, the local laws are much sharper than the available summed bounds.} }$$
-
-The routes examined here exhibit this repeatedly: the pigeonhole constraint (§4), the deletion budget (§2(b)), the criterion $K\lt G$ (§3.3), the collective cancellation [III, §4], and the covering condition for Jacobsthal (§7.4). In each case a sharp local law is followed by a summation — or, equivalently, a passage from cycle to short window — whose loss exceeds the margin available. **[II, §5.2] isolates why with unusual clarity: making the layers disjoint removes the double-counting entirely, so the summed bound stops diverging and stays below $1$ for every depth — yet it then returns exactly $\prod(1-1/q)$. The interference was never in the intersections; it lives in the size of each layer, which already contains the product of all the layers before it.** **We therefore treat this as the recurring limitation revealed by the present tests, rather than as a theorem excluding every possible summation method.**
-
-
-
-### 7.6 A second test case: almost-primes between squares
+### 7.5 A second test case: almost-primes between squares
 
 The pattern in §7.1 suggests a second family of test problems, structurally closer than Jacobsthal: statements of the form *every interval $(n^2,(n+1)^2)$ contains an integer with $\Omega(m) \le k$*. These are natural here because **$\Omega$ is precisely inheritance depth**: a point of multiplicative depth $k$ is a point at which $k$ layers of inheritance met.
 
@@ -510,7 +504,7 @@ $$s  =  \frac{\log(2Y^2)}{\log(Y/2)}  \longrightarrow  2 ,$$
 
 i.e. the critical point once more. **The reduction is genuine and sharp — it removes every degree of freedom but one — and the one it leaves is exactly the lower bound the framework cannot supply, at exactly the value of $s$ at which it never can.** This is §7.1's pattern in its most compressed form: the framework can localise the difficulty to a set of density $10^{-3}$ and still not cross it.
 
-### 7.7 The correlation of the survivor count, and the order of its sum
+### 7.6 The correlation of the survivor count, and the order of its sum
 
 **The variance of the survivor count, and where that question already stands.** The measurements above concern the mean; one may also ask for the second moment of $B(a)$, the number of cells of $(a^2,(a+2)^2)$ surviving all lines $p \le a/2$. Expanding the square introduces the correlation of the survivor indicator at cell-distance $h$, and **that correlation is already transported exactly by [II, Thm 4]**; nothing new is needed here beyond a change of coordinates, which we record because the resulting form is the one the present section uses.
 
@@ -554,9 +548,9 @@ A direct evaluation at $a = 100001$ from the exact truncated series ($C = 66{,}6
 
 **A methodological caution that cost two false readings here.** The subtracted term $W(C) e_k(\lbrace \lambda_p\rbrace )$ is of size $C$, so an unclosed tail in the expectation is amplified by $C$: two computations differing only in the prime bound used for $G$ and $e_k$ disagreed by $0.1$ at $C = 1.6\times10^6$, an amount larger than several of the effects under discussion, and the disagreement was traced exactly to $4/(P\log P)$ summed over the missing primes. Any reproduction must close that tail analytically or fix the bound; the accompanying script does the former.
 
-### 7.8 The narrowest form of the requirement, and why it is still the wall
+### 7.7 The narrowest form of the requirement, and why it is still the wall
 
-**The narrowest the requirement gets, and what that shows.** Paper IV, §3.2, reduces a twin in a sector to a single open cell avoiding six named positions. Two further facts sharpen that as far as the construction can. First, the lines $5$ and $7$ alone cut the six to three, and no further small line lowers it — a larger line can pick a phase striking none of the six, and the Chinese remainder theorem combines that freely with the phase of $5$ and $7$ that leaves three. Second, three open positions occur **only** when $(M+2,M+4)$ is itself a twin [IV, Cor. 7], so under the negation the count is at most two. And in five residue classes,
+**The narrowest the requirement gets, and what that shows.** Paper IV, §3.2, reduces a twin in a sector to a single open cell avoiding six named positions. Two further facts sharpen that as far as the construction can. First, the lines $5$ and $7$ alone cut the six to three, and no further small line lowers it — a larger line can pick a phase striking none of the six, and the Chinese remainder theorem combines that freely with the phase of $5$ and $7$ that leaves three. Second, three open positions occur **only** when $(M+2,M+4)$ is itself a twin [IV, Cor. 2], so under the negation the count is at most two. And in five residue classes,
 $$M \equiv 3,\ 51,\ 141,\ 153,\ 201 \pmod{210},$$
 those two lines close all six, so there **every** open cell is a twin: the requirement becomes the bare $C_M \ge 1$.
 
@@ -564,7 +558,7 @@ That is the weakest *numerical* requirement the twin statement takes anywhere in
 
 That last sentence names a standard device rather than an observation of ours. Passing to a residue class modulo a primorial to remove the local bias at the small primes, at no asymptotic cost, is the **$W$-trick**, and the modulus here is $210 = 2\cdot3\cdot5\cdot7$. In the analytic literature the compensating factor $\phi(W)/W$ is inserted by hand and the absence of cost is known; here it is not assumed but measured, and the three ratios above are that measurement. The device is standard — see its use in Tao and Teräväinen [29], and in the quantitative polynomial Szemerédi work of Krause, Mousavi, Tao and Teräväinen [19] — and we record the identification because the same thing has happened repeatedly here: an object built from inside the construction turns out to have a name. And $C_M$ is nowhere near zero: its minimum over those sectors is $10$ below $M = 3000$ and $520$ for $M$ near $2\times10^4$, against $497$ in the ordinary classes.
 
-**That calculation has been carried out, and it closes the local route.** Coupling consecutive sectors and admitting the lines $11,13,17$ bounds the exception budget over a full $210$-window by $31$ under the twinless hypothesis, and that ceiling cannot be lowered by any finite set of lines: of the $28$ maximal configurations, $27$ are killed by a fixed prime divisor once the quadratic partner conditions are included, and the survivor is admissible at every prime, so the residues can be chosen simultaneously against any finite list. The order in which the lines are born adds nothing either. The calculation, with its verifications, is [IV, §3.8]; here we record only what it means.
+**That calculation has been carried out, and it closes the local route.** Coupling consecutive sectors and admitting the lines $11,13,17$ bounds the exception budget over a full $210$-window by $31$ under the twinless hypothesis, and that ceiling cannot be lowered by any finite set of lines: of the $28$ maximal configurations, $27$ are killed by a fixed prime divisor once the quadratic partner conditions are included, and the survivor is admissible at every prime, so the residues can be chosen simultaneously against any finite list. The order in which the lines are born adds nothing either. The calculation, with its verifications, is [IV, §3.3]; here we record only what it means.
 
 **The upper-bound side of the argument is therefore finished, and the whole difficulty sits in the other half.** One does not need to kill the escapee: if $\sum_{i} C_{M_i} \ge 32$ can be established, the thirty-second survivor has no room inside $E$ and is a twin. Measured, that requirement is met with enormous room — $B_k := \sum_i C_{M_i}$ is $1{,}337$ at $k=1$, $29{,}579$ at $k=100$ and $196{,}948$ at $k=1000$, with $B_k\log^2 M_0/M_0$ flat at about $139$ from $k = 20$ onward, and the minimum over a band of sixty consecutive $k$ never below $1{,}337$. **The requirement is exceeded by a factor of six thousand and rising, and remains unproved.**
 
@@ -576,18 +570,22 @@ That last sentence names a standard device rather than an observation of ours. P
 
 **What does remain** is the numerical optimisation itself, and the fact that at $k=2$ even that is not enough: Campbell records that reaching $\Omega \le 2$ appears to lie beyond an argument using only Type I information, however large $n$ is taken. That is the fourth deficit of §7.1, met in a test problem where the first three do not bite.
 
+### 7.8 The pattern of the whole work
 
+$$\boxed{ \text{Across the tested routes, the local laws are much sharper than the available summed bounds.} }$$
+
+The routes examined here exhibit this repeatedly: the pigeonhole constraint (§4), the deletion budget (§2(b)), the criterion $K\lt G$ (§3.3), the collective cancellation [III, §4], and the covering condition for Jacobsthal (§7.4). In each case a sharp local law is followed by a summation — or, equivalently, a passage from cycle to short window — whose loss exceeds the margin available. **[II, §5.2] isolates why with unusual clarity: making the layers disjoint removes the double-counting entirely, so the summed bound stops diverging and stays below $1$ for every depth — yet it then returns exactly $\prod(1-1/q)$. The interference was never in the intersections; it lives in the size of each layer, which already contains the product of all the layers before it.** **We therefore treat this as the recurring limitation revealed by the present tests, rather than as a theorem excluding every possible summation method.**
 
 ## 8. Conclusion
 
 ### 8.1 What an external ingredient would have to supply
 
-Taking §7.5 and §7.6 together, the deficits exposed by these tests can be organised into four categories, each corresponding to a standard class of tools.
+Taking §7.5 and §7.8 together, the deficits exposed by these tests can be organised into four categories, each corresponding to a standard class of tools.
 
 | deficit | what is missing | standard remedy |
 |---|---|---|
-| **Summation** (§7.5) | control of the aggregate when local laws are summed over lines | large-sieve inequalities; Buchstab iteration with sign selection (Rosser–Iwaniec [16], Harman [13]) |
-| **Factor size** (§7.6) | a weight sensitive to *how large* the factors are, not only to how many there are | Richert's logarithmic weights; internally, the per-bin refinement of [II, §4.3] — **carried out there, and it closes** |
+| **Summation** (§7.8) | control of the aggregate when local laws are summed over lines | large-sieve inequalities; Buchstab iteration with sign selection (Rosser–Iwaniec [16], Harman [13]) |
+| **Factor size** (§7.5) | a weight sensitive to *how large* the factors are, not only to how many there are | Richert's logarithmic weights; internally, the per-bin refinement of [II, §4.3] — **carried out there, and it closes** |
 | **Window transfer** ([III, §6]) | passage from a cycle statement to a short window at $s\approx2$ | Buchstab's function; the beta-sieve; Richert weights *in application* |
 | **Bilinearity** ([III, §5.4], §7.2) | information about $n$ *as a product*, with independent weights on the factors | Type II sums; bilinear forms; dispersion |
 
@@ -619,7 +617,7 @@ What the series adds is not a new tool but a change of type. Several quantities 
 2. **Exactness on the cycle, not automatically on the window.** Paper II is exact over a cycle of length $\prod q$. Paper III shows numerically that many soft statistics transfer well, but the short-window statements are partly empirical.
 3. **Section 4 is not about twins.** Its graph joins survivors at distance $6$, so its conclusion concerns prime pairs $(p, p+6)$. The caution is stated at the head of §4 and repeated here because the phrase "gap 6" carries two meanings in this subject.
 4. **No explicit constants.** The framework produces exact identities and measured ratios, not explicit numerical bounds valid from a stated point onward. The published results on almost-primes between squares are explicit-constant work, and the framework has no machinery for it.
-5. **Several statements are measured, not proved,** and are labelled as such: the stability of $T/M \approx 0.80$ [III, §3.2], the saturation law of §7.3, the transfer curve [III, §6], and — in §7.7 — the quadratic order of the singular-series sum together with its coefficient $0.0329$, for which we have no closed form and no proof. The exception-budget results quoted in §7.8 are of a different kind and should not be read as measurements: the ceiling of $31$, the admissibility of the surviving configuration and the emptiness of the timing table are finite exhaustive computations over stated residue classes, and each is a proof. They are carried out in [IV, §3.8]. The script `verify_exception_dichotomy.py` covers the closed forms, the $\lbrace 5,7\rbrace$ table and [IV, Cor. 7]; the sector-coupling budget, the admissibility of the escapee and the timing table are not yet in it, and until they are they should be treated as stated but unaudited.
+5. **Several statements are measured, not proved,** and are labelled as such: the stability of $T/M \approx 0.80$ [III, §3.2], the saturation law of §7.3, the transfer curve [III, §6], and — in §7.6 — the quadratic order of the singular-series sum together with its coefficient $0.0329$, for which we have no closed form and no proof. The exception-budget results quoted in §7.7 are of a different kind and should not be read as measurements: the ceiling of $31$, the admissibility of the surviving configuration and the emptiness of the timing table are finite exhaustive computations over stated residue classes, and each is a proof. They are carried out in [IV, §3.3]. The script `verify_exception_dichotomy.py` covers the closed forms, the $\lbrace 5,7\rbrace$ table and [IV, Cor. 2]; the sector-coupling budget, the admissibility of the escapee and the timing table are not yet in it, and until they are they should be treated as stated but unaudited.
 6. **Priority is not claimed for any result in these papers.**
 7. **Negative claims deserve the same suspicion as positive ones.** We recorded one impossibility claim — that the framework could not carry analytic weights — which proved to be an artefact of insufficient refinement; Paper II removes it in two stages. Appendix B lists five further withdrawn results. **The rate at which this structure produces plausible but spurious signals is itself among the findings.**
 
