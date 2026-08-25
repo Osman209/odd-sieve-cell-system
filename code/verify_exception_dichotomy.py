@@ -200,6 +200,78 @@ def main():
     check("18. C_M is never zero", minC > 0, True)
     print(f"       ({sect} sectors, {cells} open cells, min C_M = {minC})")
 
+    print("\n--- [IV, 3.3]: the exception budget over a full period ---")
+    QUADS = {"A": lambda n: 6*n*n+10*n+4, "B": lambda n: 6*n*n+12*n+6,
+             "C": lambda n: 6*n*n+14*n+8, "D": lambda n: 6*n*n+16*n+9,
+             "E": lambda n: 6*n*n+18*n+11, "F": lambda n: 6*n*n+18*n+13}
+    # P_i = "M_i + 2 prime", Q_i = "M_i + 4 prime"; M_i+8 = M_{i+1}+2 and M_i+10 = M_{i+1}+4
+    NEED = {"A": (("P", 0),), "B": (("P", 0), ("Q", 0)), "C": (("Q", 0),),
+            "D": (("P", 0), ("P", 1)), "E": (("P", 0), ("Q", 1)), "F": (("Q", 0), ("P", 1))}
+    ST = ("N", "P", "Q")          # the twinless hypothesis forbids P and Q at the same sector
+
+    def open6(n, lines):
+        out = set()
+        for k in KEYS:
+            m = QUADS[k](n); a, b = 6*m - 1, 6*m + 1
+            if all(a % p and b % p for p in lines): out.add(k)
+        return out
+
+    def hits(O, s0, s1):
+        return sum(1 for k in O
+                   if all((s0 if d == 0 else s1) == v for v, d in NEED[k]))
+
+    def budget(Os):
+        NEG = -10**9
+        dp = {s: 0 for s in ST}
+        for O in Os:
+            nd = {s: NEG for s in ST}
+            for s0, v in dp.items():
+                if v == NEG: continue
+                for s1 in ST:
+                    w = v + hits(O, s0, s1)
+                    if w > nd[s1]: nd[s1] = w
+            dp = nd
+        return max(dp.values())
+
+    caps = [max(max(hits(open6(c, (5, 7)), s0, s1) for s1 in ST) for s0 in ST)
+            for c in range(35)]
+    from collections import Counter
+    check("21. per-phase caps with the lines 5 and 7", dict(sorted(Counter(caps).items())),
+          {0: 5, 1: 20, 2: 10})
+    check("22. their sum, before the coupling", sum(caps), 40)
+    check("23. after the coupling across sector joins",
+          budget([open6(c, (5, 7)) for c in range(35)]), 37)
+
+    vals = []
+    for phase in range(2431):
+        n0 = next(phase + 2431*t for t in range(35) if (phase + 2431*t) % 35 == 0)
+        vals.append(budget([open6(n0 + i, (5, 7, 11, 13, 17)) for i in range(35)]))
+    mx = max(vals)
+    check("24. the ceiling over all 2431 alignments", mx, 31)
+    check("25. alignments attaining it", vals.count(mx), 9)
+    check("26. the distribution peaks at", Counter(vals).most_common(1)[0][0], 26)
+    extremal = []
+    for idx, v in enumerate(vals):
+        if v == mx:
+            n0 = next(idx + 2431*t for t in range(35) if (idx + 2431*t) % 35 == 0)
+            extremal.append((6*n0 + 3) % 510510)
+    check("27. the escapee's alignment is among them", 448353 in extremal, True)
+
+    # the partner quadratics of [IV, Prop 1], against the definition
+    PARTNER = {"A": (36, 60, 23), "C": (36, 84, 47), "D": (36, 96, 53),
+               "E": (36, 108, 67), "F": (36, 108, 79)}
+    COMP = {"A": lambda n: (6*n+5)**2, "C": lambda n: (6*n+7)**2,
+            "D": lambda n: (6*n+5)*(6*n+11), "E": lambda n: (6*n+5)*(6*n+13),
+            "F": lambda n: (6*n+7)*(6*n+11)}
+    bad = 0
+    for n in range(1, 3000):
+        for k, (A_, B_, C_) in PARTNER.items():
+            m = QUADS[k](n); lo, hi = 6*m - 1, 6*m + 1
+            comp = COMP[k](n)
+            part = lo if comp == hi else hi
+            if comp not in (lo, hi) or part != A_*n*n + B_*n + C_: bad += 1
+    check("28. partner quadratics against the definition, n < 3000", bad, 0)
+
     print("\n--- [IV, Prop 1]: the forbidden-class counts of the five types ---")
     from sympy import legendre_symbol
     bad = 0
