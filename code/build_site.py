@@ -18,7 +18,7 @@ REPO = "https://github.com/Osman209/odd-sieve-cell-system"
 SITE = "https://osman209.github.io/odd-sieve-cell-system"
 ORCID = "0009-0004-5912-999X"
 DOI = "10.5281/zenodo.22085627"
-DATE = "2026-08-24"
+DATE = "2026-08-25"
 
 CSS = """<style>body{max-width:52rem;margin:2.5rem auto;padding:0 1.2rem;font:16px/1.6 Georgia,"DejaVu Serif",serif;color:#1a1a1a}
 h1{font-size:1.6rem;line-height:1.3;margin-bottom:.2rem}h2{font-size:1.05rem;font-weight:400;color:#555;margin-top:0}
@@ -146,7 +146,7 @@ def index():
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Cell System &mdash; Mohamed Osman</title>
-<meta name="description" content="A coordinate system for the odd sieve: what it proves, what it measures, and where it stops. Seven documents, four verification scripts. No twin-prime claim.">
+<meta name="description" content="A coordinate system for the odd sieve: what it proves, what it measures, and where it stops. Seven documents, six verification scripts. No twin-prime claim.">
 {CSS}</head><body>
 <h1>The Cell System</h1>
 <h2>A coordinate system for the odd sieve &mdash; what it proves, what it measures, and where it stops</h2>

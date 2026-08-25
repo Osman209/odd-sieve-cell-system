@@ -7,7 +7,7 @@
 A coordinate system for the odd sieve: what it proves, what it only measures, and the
 point at which it stops — derived from inside the construction rather than quoted.
 
-Seven documents and five verification scripts. **Start with the overview.**
+Seven documents and six verification scripts. **Start with the overview.**
 
 ---
 
@@ -58,7 +58,7 @@ names the source. The table below is the map.
 
 ```
 papers/   seven documents, plus one standalone preprint in LaTeX and PDF
-code/     five verification scripts, plus the rendering checker and the site build
+code/     six verification scripts, plus the rendering checker and the site build
 docs/     the GitHub Pages site: a landing page per paper, with its PDF
 ```
 
@@ -105,19 +105,22 @@ to `0.4%`. §6 gives the correlation ladder that the singular series of Paper V 
 
 What survives the move from an exact periodic law to a short interval. Soft weights transfer
 almost exactly; sharp indicators do not. The distinction is measured rather than asserted, and
-it governs everything in Paper V §7.6.
+it governs everything in Paper V §7.5.
 
 ### `papers/paper_IV_twin_criterion.md`
 
 What the framework proves outright: the six exceptional positions, the belt between consecutive
-prime squares, the birth of a line and what it can remove on its first window. One statement
+prime squares, the birth of a line and what it can remove on its first window. §3.3 carries the
+exception count over a full period of 35 sectors, where the ceiling is 31 and no finite set of
+lines lowers it; §3.4 lengthens the block, giving ceilings 67, 100, 138 and 163 at 3, 5, 7 and 9
+periods and an order of `L/log²L` from the sieve dimensions of the five exception types. One statement
 (Verified Law 17) is proved under a stated hypothesis and verified numerically beyond it, and
 is labelled that way wherever it appears.
 
 ### `papers/paper_V_where_the_framework_stops.md`
 
 The obstruction, derived rather than quoted. Two test cases are followed to their end — squares
-and almost-primes, and Jacobsthal's function — and both land on the same wall. §7.6 measures the
+and almost-primes, and Jacobsthal's function — and both land on the same wall. §7.5 measures the
 transfer in three layers: the mean is exact; the state totals move by the two-dimensional
 Buchstab factor `e^{2γ}/4`, confirmed to three decimals at `X = 10¹⁰`; the shape carries a
 residual that saturates. It then shows that the quantity a weighted sieve argument actually
@@ -141,9 +144,9 @@ pip install numpy scipy sympy
 
 python3 code/verify_central_pair.py                          # Paper I §5 — the central factor
 python3 code/verify_cell_transfer.py                         # Paper III §6, Paper V §6.5, Appendix B
-python3 code/verify_transfer_layers.py --fast                # Paper V §7.6 — the three transfer layers
+python3 code/verify_transfer_layers.py --fast                # Paper V §7.5 — the three transfer layers
 python3 code/verify_singular_series_order.py --hm 1616615    # Paper V §7.6 — checksum at Q₆
-python3 code/verify_exception_dichotomy.py --fast            # Paper IV §3.2 — Corollary 7
+python3 code/verify_exception_dichotomy.py --fast            # Paper IV §3.2, §3.3 — Corollary 2 and the period budget
 python3 code/verify_line_routes.py --fast                    # Paper V §6.7 — the five closed routes
 ```
 
