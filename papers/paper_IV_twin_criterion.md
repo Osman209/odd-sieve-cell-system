@@ -484,7 +484,7 @@ Sections 3–6 work inside a sector bounded by consecutive odd squares. This sec
 
 *Proof.* Both $q^2$ and $r^2$ are $\equiv 1 \pmod 6$, so the cells strictly between the two gates are exactly the $(r^2-q^2)/6 - 1$ complete cells of $L_3$ in the interval. $\blacksquare$
 
-*Verification.* $G = 3, 11, 7, 19, 11, 27, 51, 19, 67, 247, 67, 667, 4011$ for the belts $5\to7$ through $997\to1009$; each reproduces from the formula.
+*Verification.* $G = 3, 11, 7, 19, 11, 27, 51, 19, 67$ for the nine consecutive belts $5\to7, 7\to11, \dots, 31\to37$, and $247, 67, 667, 4011$ for $89\to97$, $101\to103$, $499\to503$ and $997\to1009$; each reproduces from the formula.
 
 ### 7.2 Verified Law 17: the new line's reach depends on the gap, not on its size
 
@@ -578,7 +578,7 @@ and as $a$ runs they trace four **tracks**. Substituting $q = 6a-1$ makes every 
 
 Each individual condition admits half the primes (measured over primes below $10^5$: $49.7$–$50.0$%), but a cell falls to a strike on **either** member, so the union admits three quarters: measured $75.0,\ 74.8,\ 75.0,\ 75.0$% for $A,B,C,D$. Requiring eligibility for all four at once cuts this to **exactly a quarter** — the eight discriminants reduce to the five independent characters $(-1),(2),(3),(5),(7)$, giving $32$ sign patterns of which $8$ pass; measured $24.84$% against the naive independent guess $(3/4)^4 = 31.6$%.
 
-**The four tracks are not equivalent.** Each is a pair of quadratics, so its twin density is governed by a Bateman–Horn constant $S = \prod_r (1-\nu_r/r)/(1-1/r)^2$, where $\nu_r$ counts the roots of the pair modulo $r$. The correct baseline is a generic cell $(6c-1,6c+1)$, whose constant is $12C_2 = 7.9220$ — **not** the twin constant $2C_2 = 1.320$, which is for pairs $(n,n+2)$ over all $n$ and counts the even $n$ a cell never has.
+**The four tracks are not equivalent.** Each is a pair of quadratics, so its twin density is governed by a Bateman–Horn constant $S = \prod_r (1-\nu_r/r)/(1-1/r)^2$, where $\nu_r$ counts the roots of the pair modulo $r$. The correct baseline is a generic cell $(6c-1,6c+1)$, whose constant is $12C_2 = 7.9219$ — **not** the twin constant $2C_2 = 1.320$, which is for pairs $(n,n+2)$ over all $n$ and counts the even $n$ a cell never has.
 
 | track | $\nu_5$ | $\nu_7$ | $\nu_{11}$ | $S$ | $S/12C_2$ |
 |---|---|---|---|---|---|
