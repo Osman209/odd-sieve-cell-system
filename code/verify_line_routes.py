@@ -215,7 +215,7 @@ def main():
     check("19. raw strikes available to them", raw, 25353670)
     check("20. strikes landing on a rough cell", onrough, 857712)
     check("21. capacity minus output", onrough - W.H, 17)
-    check("22. the ceiling the target needs, R - 32", W.R - 32, 1048992)
+    check("22. the ceiling a single twin needs, R - 1", W.R - 1, 1049023)
     check("23. the vacuous point q = L/z", round(cut), 32159)
     check("24. lines above it", nabove, 34145)
     check("25. P2 endpoints they own", above, 509602)
@@ -285,8 +285,8 @@ def main():
         check(f"43.{i} T in window {i}", w.T, want_T[i])
         close(f"44.{i} C against independence", w.Csq / (w.R * hL * hR), 1.0, 0.005)
         close(f"45.{i} T against independence", w.T / (w.R * (1 - hL) * (1 - hR)), 1.0, 0.005)
-        close(f"46.{i} tolerance with C discarded", (w.R - 32) / w.H, 1.223, 0.001)
-        close(f"47.{i} tolerance with C kept", (w.R - 32 + w.Csq) / w.H, 1.427, 0.001)
+        close(f"46.{i} tolerance with C discarded", (w.R - 1) / w.H, 1.223, 0.001)
+        close(f"47.{i} tolerance with C kept", (w.R - 1 + w.Csq) / w.H, 1.427, 0.001)
 
     if a.force_fail:
         check("99. forced failure gate", 1, 0)
