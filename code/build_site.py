@@ -146,7 +146,7 @@ def index():
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Cell System &mdash; Mohamed Osman</title>
-<meta name="description" content="A coordinate system for the odd sieve: what it proves, what it measures, and where it stops. Seven documents, six verification scripts. No twin-prime claim.">
+<meta name="description" content="A coordinate system for the odd sieve: what it proves, what it measures, and where it stops. Seven documents, seven verification scripts. No twin-prime claim.">
 {CSS}</head><body>
 <h1>The Cell System</h1>
 <h2>A coordinate system for the odd sieve &mdash; what it proves, what it measures, and where it stops</h2>

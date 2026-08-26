@@ -10,9 +10,9 @@ Working in the cell coordinates of Paper I, we study the fixed periodic structur
 
 The four counts are a *census*, however, not a simulator: we give a two-cell counterexample showing that the final state does not determine the history, so no automaton on the four states can run the process forward. Exactness and blindness turn out to be the same property here — the linear update closes precisely because it forgets which line owns each strike.
 
-The law then **refines**. Tracking, in addition, the *inheritance depth* of each cell — the number of old lines dividing either member — the transport remains exact, in a finite state space of size $O(\pi(z))$, with closed generating function $\prod_q\big((q-2)+xu+xv\big)$ (Theorem 2). Consequently $\sum f(\Omega_{\le z})$ is computable exactly on the cycle for an arbitrary $f$, nonlinear truncations included (Corollary 1).
+The law then **refines**. Tracking, in addition, the *inheritance depth* of each cell — the number of old lines dividing either member — the transport remains exact, in a finite state space of size $O(\pi(z))$, with closed generating function $\prod_q\big((q-2)+xu+xv\big)$ (Theorem 2). Resolving the inert block further, so that the strike a line spends on the grid of $3$ is marked separately, gives $\prod_q\big((q-3)+u+v+w\big)$ and splits the open cells by that channel without changing their number (Corollary 1) — a finer bookkeeping of the same residues, carrying, as we measure, no information about which open cells are twin pairs. Consequently $\sum f(\Omega_{\le z})$ is computable exactly on the cycle for an arbitrary $f$, nonlinear truncations included (Corollary 3).
 
-That is still not enough for Richert's logarithmic weight, which depends on the *sizes* of the factors and not only on their number; we exhibit the gap explicitly. The repair is to mark each line by the bin of its size, and it closes: the refined product transports the joint per-bin census exactly (Corollary 2), at a cost polynomial in $\pi(z)$ for fixed resolution, and eight bins reproduce Richert's weight to $0.4$%.
+That is still not enough for Richert's logarithmic weight, which depends on the *sizes* of the factors and not only on their number; we exhibit the gap explicitly. The repair is to mark each line by the bin of its size, and it closes: the refined product transports the joint per-bin census exactly (Corollary 4), at a cost polynomial in $\pi(z)$ for fixed resolution, and eight bins reproduce Richert's weight to $0.4$%.
 
 Finally we record a second exact structure on the same cycle: assigning each integer to its smallest striking line partitions the strip into **disjoint** ownership layers, so the survivor count is a plain difference with no inclusion–exclusion (Theorem 3) — and we show precisely what this costs, namely that the repaired sum returns the sieve product and nothing more.
 
@@ -130,6 +130,27 @@ each matching the direct census exactly. Setting $x = 1$ recovers Theorem 1.
 
 2. **Hence any weight of the form $w = f(\Omega_{\le z})$ is computable exactly on the cycle, for an arbitrary $f$ — including a truncation such as $\max(0, \cdot )$.** Nonlinearity is harmless once one carries the distribution rather than its mean. The restriction to be kept in mind is that $x$ marks *that* a line struck and not *which*: a weight depending on the sizes of the factors is not of this form. We return to both points in §4.
 
+**A third channel, and where the missing strike goes.** Of the $p$ residues of a line, (3.2) marks two — one per rail — and gathers the remaining $p-2$ as inert. But a line has a third strike inside every unit of the grid: the position $6j+3$, which lies on $L_3$ and is therefore already closed. Marking that strike by a variable $w$ of its own splits the inert block and gives
+$$\prod_{5\le q\le z}\big((q-3) + u + v + w\big). \qquad\text{(3.3)}$$
+This is (3.2) with $x$ set to $1$ and $q-2$ resolved into $(q-3) + w$; the cell counts are unchanged, so it refines Theorem 1 rather than correcting it.
+
+> **Corollary 1.** The number of cells struck on neither rail is $\prod(q-2)$ as before, and its splitting by the number $k$ of lines that spend their strike on the $L_3$ position is read off from $\prod\big((q-3)+w\big)$.
+
+*Verification.* Expansion of (3.3) reproduces the full census — every triple (left strikes, right strikes, $L_3$ strikes) — for the line sets $\lbrace 5,7\rbrace$, $\lbrace 5,7,11\rbrace$ and $\lbrace 5,7,11,13\rbrace$, with no discrepancy. For $\lbrace 5,7\rbrace$ the open cells number $15 = 8+6+1$, which is the expansion of $(2+w)(4+w)$; growing the set gives $3, 15, 135, 1485, 22275$ open cells with the factor $q-2$ at every step, and the leading term $\prod(q-3)$ counts those where no line spent a strike on $L_3$ at all.
+
+*The channel carries no information about primality, and this is worth stating so it is not looked for.* Among the cells left open by the lines $5$ through $19$, the proportion that are twin pairs, taken separately for each value of $k$, is $0.996$, $1.010$, $0.984$ and $0.978$ times the overall rate — every ratio within three per cent of one, over $234{,}237$ cells. The refinement is a finer bookkeeping of the same residues, not a new discriminant.
+
+**The same test one layer up.** [I, Cor 2] reads the fate of a cell $C_j$ through the phase $u_p(j) = jc^{-1}$, closure being $u = \pm 1$. The centre of the diamond of two cells $C_a, C_b$ is the cell of index $6ab$, and since $36 \equiv c^{-2} \pmod p$ its phase is the product $u_p(a)u_p(b)$. So the same two gates decide one layer up, and the local count is again exact.
+
+> **Corollary 2.** Of the $(p-2)^2$ ordered pairs of phases open to a line $p$, exactly $2(p-3)$ have product $\pm 1$. Hence the number of open pairs whose diamond centre is also open to $p$ is
+> $$(p-2)^2 - 2(p-3) = (p-3)^2 + 1.$$
+
+*Proof.* For $u \ne 0, \pm 1$ the two dangerous partners are $u^{-1}$ and $-u^{-1}$; both are open, since $u^{-1} = \pm 1$ would force $u = \pm 1$, and they are distinct. There are $p-3$ such $u$, and $u = 0$ has no dangerous partner. $\blacksquare$
+
+*Verified:* $5, 17, 65, 101, 197, 257$ at $p = 5, 7, 11, 13, 17, 19$, by direct enumeration.
+
+*A caution that belongs with it.* The count is **conditional** — it is a count over pairs of cells already open to $p$, not a density on the cycle — and the phase computation nowhere uses primality, so like the third channel above it is finer bookkeeping of residues. In particular a law of the shape "the centre dies unless $p \mid ab$" is false as stated: the birth index of [I, Cor 1] is an exception, and at $p = 5$ it accounts for every one of the $49$ failures among $11{,}175$ pairs of twin indices.
+
 **A negative control worth recording.** The obvious cheaper refinement — binning cells by the *value* of a log-weight into a fixed number of bins — does **not** close: prediction error $0$%, $24$%, $14$%, $10$% at $p = 7, 11, 13, 17$. The exactness depends on refining by a quantity that changes by exactly one under a strike, which the depth $j$ does and a binned weight does not.
 
 ---
@@ -146,7 +167,7 @@ with $z = X^{1/k_1}$ and $y = X^{1/k_2}$; the mechanism is that $w(a) \gt  0$ fo
 
 It is tempting to conclude that the framework cannot carry such a weight, since its objects are binary or counts. **That conclusion is half false, and Theorem 2 says which half.** The refined law transports the *full distribution* of inheritance depth, in a finite state space of size $O(\pi(z))$, exactly. Consequently:
 
-> **Corollary 1.** On the full cycle, $\sum_{\text{cells}} f(\Omega_{\le z})$ is computable exactly for an arbitrary function $f$, including a truncation $\max(0,\cdot)$, by reading the coefficients of (3.2).
+> **Corollary 3.** On the full cycle, $\sum_{\text{cells}} f(\Omega_{\le z})$ is computable exactly for an arbitrary function $f$, including a truncation $\max(0,\cdot)$, by reading the coefficients of (3.2).
 
 **So nonlinearity is harmless once one carries the distribution rather than its mean.** The earlier obstruction we recorded — that a truncation cannot be tracked — was an artefact of following only the four totals.
 
@@ -161,7 +182,7 @@ The cheap repair is to bin cells by the value of a log-weight into a fixed numbe
 
 The obstruction identified in §4.1 is that the marker $x$ in (3.2) records *that* a line struck and never *which*. The repair is to mark by size.
 
-> **Corollary 2.** Let $\beta$ assign to each line a bin. Then on the full cycle
+> **Corollary 4.** Let $\beta$ assign to each line a bin. Then on the full cycle
 > $$\prod_{5\le q\le z}\big((q-2) + x_{\beta(q)}u + x_{\beta(q)}v\big) \qquad\text{(4.1)}$$
 > transports the **joint distribution of the per-bin strike counts on each rail**, exactly.
 
@@ -182,7 +203,7 @@ The obstruction identified in §4.1 is that the marker $x$ in (3.2) records *tha
 |---|---|---|---|---|---|
 | relative error | $+40.5$% | $+8.2$% | $+2.0$% | $+0.39$% | $+0.10$% |
 
-The $+40.5$% in the first column is exactly the error of ignoring the sizes, i.e. the gap left by Corollary 1; eight bins close it to $0.4$%.
+The $+40.5$% in the first column is exactly the error of ignoring the sizes, i.e. the gap left by Corollary 3; eight bins close it to $0.4$%.
 
 $$\boxed{ \text{The } \textit{factor-size} \text{ deficit is removable: exact at every resolution, polynomial in } \pi(z),\ 0.4\text{ per cent} \text{ at } B=8. }$$
 
@@ -283,11 +304,11 @@ For a window of $L$ consecutive pair slots placed at $s$, write $N_s(L) = \sum_{
 $$\mathrm{Var}(N_L)  =  \frac{LT + 2\sum_{h=1}^{L-1}(L-h) C(h)}{M}  -  \Big(\frac{LT}{M}\Big)^{2}, \qquad\text{(6.1)}$$
 with no sampling and no independence assumption anywhere.
 
-> **Corollary 3.** There is no function $f$ with $\mathrm{Var}' = f(\mathrm{Var}, q)$.
+> **Corollary 5.** There is no function $f$ with $\mathrm{Var}' = f(\mathrm{Var}, q)$.
 
 *Proof.* By Theorem 4 the entry of $q$ multiplies $C(h)$ by a factor depending on $h \bmod q$. Two line sets with the same variance but different distributions of $C(h)$ across the residue classes of $h$ therefore acquire different variances. $\blacksquare$
 
-*Verification.* The variance of the deviations across square-anchored windows, for the line sets $\lbrace 3\rbrace$, $\lbrace 3,5\rbrace$, $\lbrace 3,5,7\rbrace$, $\lbrace 3,5,7,11\rbrace$, is $0.0741$, $0.1689$, $1.1316$, $2.2880$ — successive ratios $2.28$, $6.70$, $2.02$, with no pattern, as Corollary 3 requires.
+*Verification.* The variance of the deviations across square-anchored windows, for the line sets $\lbrace 3\rbrace$, $\lbrace 3,5\rbrace$, $\lbrace 3,5,7\rbrace$, $\lbrace 3,5,7,11\rbrace$, is $0.0741$, $0.1689$, $1.1316$, $2.2880$ — successive ratios $2.28$, $6.70$, $2.02$, with no pattern, as Corollary 5 requires.
 
 **So the minimal object that closes the second moment is the function $C(h)$, not a number.** The four-state census of §2 is exact because a single window count is a linear functional of $A$; a variance is a quadratic one, and quadratic functionals need the correlation itself.
 
@@ -305,7 +326,7 @@ where $\nu_q(H)$ is the number of distinct residues modulo $q$ that the pattern 
 
 ## 7. What is exact here, and what is not
 
-**Exact on the cycle, with proof:** the four-state update and its closed solution (Theorem 1); the refined law and its generating function (Theorem 2); arbitrary weights in $\Omega_{\le z}$ (Corollary 1); the refinement by line size at any resolution (Corollary 2); the disjointness of the ownership layers and the resulting inclusion–exclusion-free count (Theorem 3).
+**Exact on the cycle, with proof:** the four-state update and its closed solution (Theorem 1); the refined law and its generating function (Theorem 2); arbitrary weights in $\Omega_{\le z}$ (Corollary 3); the refinement by line size at any resolution (Corollary 4); the disjointness of the ownership layers and the resulting inclusion–exclusion-free count (Theorem 3).
 
 **Measured, not proved:** the cost table and the bin-resolution table of §4.3, which are computations rather than theorems, and the $24$% negative control of §4.2.
 
@@ -322,5 +343,5 @@ where $\nu_q(H)$ is the number of distinct residues modulo $q$ that the pattern 
 
 The companion papers are cited as [0], [I], [III], [IV].
 
-1. J. Friedlander and H. Iwaniec, *Opera de Cribro*, AMS Colloquium Publications **57**, 2010. — *the Mertens products of §2.3 and the standard form of the weighted sieve against which Corollary 2 is compared.*
-2. H.-E. Richert, *Selberg's sieve with weights*, Mathematika **16** (1969), 1–22. — *the weight $w(a)$ discussed in §4; it depends on the sizes of the prime factors, which is precisely what Corollary 1 does not transport and Corollary 2 repairs.*
+1. J. Friedlander and H. Iwaniec, *Opera de Cribro*, AMS Colloquium Publications **57**, 2010. — *the Mertens products of §2.3 and the standard form of the weighted sieve against which Corollary 4 is compared.*
+2. H.-E. Richert, *Selberg's sieve with weights*, Mathematika **16** (1969), 1–22. — *the weight $w(a)$ discussed in §4; it depends on the sizes of the prime factors, which is precisely what Corollary 3 does not transport and Corollary 4 repairs.*
