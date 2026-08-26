@@ -144,6 +144,55 @@ def main():
     print(f"     twin rate by number of strikes spent on the line-3 slot, relative to base: {devs}")
     check("14. every ratio within 3% of one", all(abs(d - 1) <= 0.03 for d in devs), True)
 
+    print("\n--- [I, 3.6]: the gap around a k-line coincidence ---")
+    bad = 0; tested = 0
+    for lines in ([5,7],[5,7,11],[5,11,13],[7,11,13,17]):
+        P = 1
+        for q in lines: P *= q
+        for x in range(0, 40*P, 6):
+            if all(x % q in (1, q-1) for q in lines):
+                d = x - 3*P; tested += 1
+                if d != 0 and abs(d)**2 < P + 1: bad += 1
+    check("15. images tested around a coincidence", tested > 0, True)
+    check("16. every image at distance >= sqrt(P+1)", bad, 0)
+
+    print("\n--- [IV, 3.10]: the balanced window is one word and a rotation ---")
+    from collections import Counter
+    pp, qq, rr = 1009, 1013, 52
+    check("17. the bundle condition 52*1013 < 53*1009", 52*1013 < 53*1009, True)
+    SM = (3, 5, 7)
+    words = []
+    for t in range(12):
+        A = pp*qq*(2*t + 1)
+        words.append(tuple(tuple(x for x in SM if (A + 2*j*pp) % x == 0)
+                           for j in range(-rr, rr + 1)))
+    keys = [(), (3,), (5,), (7,), (3,5), (3,7), (5,7), (3,5,7)]
+    cens = {tuple(Counter(w).get(k, 0) for k in keys) for w in words}
+    check("18. the incidence census is the same in every window", len(cens), 1)
+    check("19. and equals the 3-5-7 fingerprint", list(cens)[0], (48,24,12,8,6,4,2,1))
+    n = len(words[0])
+    rot = {words[0][k:] + words[0][:k] for k in range(n)}
+    check("20. every window's word is a rotation of the first",
+          all(w in rot for w in words), True)
+
+    print("\n--- [IV, 3.10]: ownership and the cofactor ---")
+    from sympy import factorint
+    check("21. 10387 = 13*17*47 inside [101^2,103^2)",
+          (dict(factorint(10387)), 101**2 <= 10387 < 103**2),
+          ({13:1, 17:1, 47:1}, True))
+    check("22. 1009091 = 97*101*103 inside [997^2,1009^2)",
+          (dict(factorint(1009091)), 997**2 <= 1009091 < 1009**2),
+          ({97:1, 101:1, 103:1}, True))
+    bad = 0
+    for P2, Q2 in ((101, 103), (499, 503)):
+        for x in primerange(5, P2 + 1):
+            if x**3 < Q2*Q2: continue
+            for m in range(max(2, P2*P2//x), Q2*Q2//x + 1):
+                N = x*m
+                if N < P2*P2 or N >= Q2*Q2 or min(factorint(N)) != x: continue
+                if not isprime(m): bad += 1
+    check("23. clean owner: p^3 >= Q^2 forces a prime cofactor", bad, 0)
+
     if a.force_fail: FAIL.append("forced")
     print("\n" + "=" * 62)
     if FAIL:

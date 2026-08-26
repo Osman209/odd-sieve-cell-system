@@ -12,7 +12,7 @@ The primitive object is not the prime but the **line** $L_m(k) = m(m+2k)$, the o
 
 Every line then acts on the cells by a single map (Theorem 2), from which the mirror symmetry of a line's fingerprint is seen to be *inherited from the cell* rather than intrinsic to the line: multiplication transports it. The two cell positions a line closes are $\pm 6^{-1}$ modulo that line, always distinct, so exactly two of every $p$ cells lose a member (Theorem 3) — the factor $(p-2)$ of the sieve product, read as a geometric statement rather than a density.
 
-Two further readings of the same coordinates are recorded. In the **diamond coordinates** $S = a+b$, $D = a-b$ every line is a level set of $S-D$, the squares are the single axis $D = 0$, a line's birth is where its diagonal meets that axis, and the fingerprint law — the alternating gaps $2a,\ p-2a$ with which a line meets the cell axis — is the projection of that one straight line (Corollary 3). And at a square front the additive coordinate of a product changes from a *difference* of the two factors' distances to a *sum* of them, according to whether the factors straddle the square or both exceed it (§3.7).
+Two further readings of the same coordinates are recorded. In the **diamond coordinates** $S = a+b$, $D = a-b$ every line is a level set of $S-D$, the squares are the single axis $D = 0$, a line's birth is where its diagonal meets that axis, and the fingerprint law — the alternating gaps $2a,\ p-2a$ with which a line meets the cell axis — is the projection of that one straight line (Corollary 4). And at a square front the additive coordinate of a product changes from a *difference* of the two factors' distances to a *sum* of them, according to whether the factors straddle the square or both exceed it (§3.7).
 
 Finally the same coordinates are applied to the natural window $[(6a-1)^2,(6a+1)^2]$ (§4). It turns out to be exactly an interval of consecutive **cell indices**, starting at $6a^2-2a+1$ and of length $4a-1$, on which every line is simply two arithmetic progressions (Theorem 4); its midpoint cell is $(n^2-1, n^2+1)$ with $n^2-1 = (n-1)(n+1)$, hence **never a twin** (Theorem 5); and indexing by each line's strike number makes $t = k-6j$ invariant under the passage to the next window, in which coordinate two further laws are exact — only the newly born pair of lines has both its members inside the window, every older pair crossing in two disjoint passes (Theorem 6), and the role of a strike is decided by $t \bmod 3$ alone (Theorem 7).
 
@@ -35,7 +35,8 @@ A second, independent ownership question about the same object is settled in §5
 | **Theorem 3** | A line closes exactly the two cell positions $j \equiv \pm 6^{-1}$, always distinct; hence exactly two of every $p$ cells lose a member, one per rail. | §3.5 |
 | **Corollary 1** | Among twin pairs the forbidden position $u=-1$ is never occupied, and $u=+1$ only at the line's own birth index — so $+1$ is birth first and closure thereafter, $-1$ closure always. | §3.5 |
 | **Corollary 2** | For distinct twin pairs $C_a, C_b$, none of the four primes $6a\pm1, 6b\pm1$ reaches the centre $C_{6ab}$ of their diamond: a killer must come from a third row. | §3.6 |
-| **Corollary 3** | The strikes of $L_p$ on the cell axis are two interleaved progressions of step $p$ with alternating gaps $2a,\ p-2a$ — the projection of the single straight line $S-D = 2a$ in the diamond coordinates. | §3.6 |
+| **Corollary 3** | Around a $k$-line coincidence on $L_3$ at $3P$, every image cell lies at distance $\ge \sqrt{P+1}$: the fan-out grows in number and is pushed away at the same time. | §3.6 |
+| **Corollary 4** | The strikes of $L_p$ on the cell axis are two interleaved progressions of step $p$ with alternating gaps $2a,\ p-2a$ — the projection of the single straight line $S-D = 2a$ in the diamond coordinates. | §3.6 |
 
 | **Theorem 4** | The window $[(6a-1)^2,(6a+1)^2]$ is exactly the interval of cell indices $c_0,\dots,c_0+N-1$ with $c_0 = 6a^2-2a+1$ and $N = 4a-1$; on it every line is two arithmetic progressions. | §4.1 |
 | **Theorem 5** | Its midpoint cell is $(n^2-1, n^2+1)$ with $n^2-1 = (n-1)(n+1)$, so **the midpoint is never a twin pair.** | §4.2 |
@@ -43,8 +44,8 @@ A second, independent ownership question about the same object is settled in §5
 | **Theorem 7** | The role of a strike — upper rail, lower rail, or wasted on $L_3$ — is decided by $t \bmod 3$ alone. | §4.4 |
 
 | **Theorem 8** | $L_m$ holds the centre of its strikes — it stays the largest divisor below the square root — for exactly $a+b+2$ steps, where $(a,b)$ is the central pair of $m$; the displacing divisor is $m+2a$. | §5.3 |
-| **Corollary 4** | The first loss is a handover with its index named: $L_m(a+b+2) = L_{m+2a}(b-a)$. At a square it lands on the new line's birth; at a prime it reads $L_p(p+3) = L_{p+2}(p-1)$. | §5.4 |
-| **Corollary 5** | $T(m) = m+2a = a(b+2)$, so a composite hands over to a composite: under iteration of $T$ the primes are a transient set. | §5.5 |
+| **Corollary 5** | The first loss is a handover with its index named: $L_m(a+b+2) = L_{m+2a}(b-a)$. At a square it lands on the new line's birth; at a prime it reads $L_p(p+3) = L_{p+2}(p-1)$. | §5.4 |
+| **Corollary 6** | $T(m) = m+2a = a(b+2)$, so a composite hands over to a composite: under iteration of $T$ the primes are a transient set. | §5.5 |
 
 Everything in this paper is proved. The histogram results — Theorems 4, 5, 6, 7 and 8 of the earliest version — are now Paper 0, where they are stated for all odd $n$ and without reference to primes; Theorem 8 above is a new statement and unrelated to them.
 
@@ -275,6 +276,14 @@ Writing $u = S-D = 2b$ and $v = S+D = 2a$ gives $M = \tfrac{3}{2}uv$: a fixed li
 
 *Verified.* Zero strikes over all $6{,}320$ ordered pairs of distinct twin indices below $500$. The self-diamond is the opposite case: at $a = b$ the identity $36a^2-1 = (6a-1)(6a+1)$ closes the centre with the generators themselves.
 
+**A gap around a common strike.** The same coordinates give a lower bound on how far the images of a multi-line coincidence must sit from it. Let $S$ be a set of $k$ primes above $3$ and $P = \prod_{r\in S} r$. A cell whose two members are struck by the lines of $S$, split in any way between the rails, has centre $x = 6j$ with $x \equiv \pm1 \pmod r$ for every $r \in S$, hence $x^2 \equiv 1 \pmod P$: the $2^k$ ways of splitting are exactly the square roots of $1$ modulo $P$.
+
+> **Corollary 3.** Let $x = 3P + d$ be the centre of such a cell. Then $|d| \ge \sqrt{P+1}$.
+
+*Proof.* From $x^2 \equiv 1 \pmod P$ and $x \equiv d \pmod P$ one gets $P \mid d^2-1$. The centre of a cell is divisible by $6$ while $3P \equiv 3 \pmod 6$, so $d \equiv 3 \pmod 6$ and in particular $d \ne \pm1$; hence $d^2-1 \ne 0$ and $|d^2-1| \ge P$. $\blacksquare$
+
+So the more lines meet at a point of $L_3$, the larger the fan-out is in number and the further its images are pushed from the meeting point — the two effects work against each other, which is worth knowing before treating a high coincidence as a local source of open cells.
+
 *What it is and is not.* Read arithmetically the statement is small — $6a-1$ divides $36ab-1 = 6b(6a-1) + (6b-1)$ only if it divides $6b-1$, impossible for distinct primes. What the coordinates add is the reason it is not a coincidence: the phase of a row at its own line is $+1$, and multiplying by $+1$ cannot move an admissible phase onto a forbidden one. A killer of the centre, if there is one, must therefore come from a third row.
 
 
@@ -307,7 +316,7 @@ Three readings of the same picture, and they are the three facts above:
 
 **The corollary.** Fix the line $p = 6a+\sigma$ and let it act on the cell axis. By Theorem 2 its strikes sit at $c = pb - a$ and $c = pb + a$ for $b = a, a+1, \dots$, so:
 
-> **Corollary 3.** The strikes of $L_p$ on the cell axis form two interleaved arithmetic progressions of common difference $p$, and the gaps between consecutive strikes alternate
+> **Corollary 4.** The strikes of $L_p$ on the cell axis form two interleaved arithmetic progressions of common difference $p$, and the gaps between consecutive strikes alternate
 > $$2a, \quad p-2a.$$
 > Explicitly, $p = 6a-1$ gives $(2a,\ 4a-1)$ and $p = 6a+1$ gives $(4a+1,\ 2a)$.
 
@@ -488,11 +497,11 @@ Over all factorisations $m = g m_1$ the sum $g+m_1$ is least for the central pai
 
 *Verification.* Over every odd $3 \le m \lt  4000$, the first $k$ at which the largest divisor of $m(m+2k)$ below the square root exceeds $m$ equals $a+b+2$: **zero exceptions**. Over every even $4 \le m \lt  600$ the equality fails in all $298$ cases, while the weaker floor above is never breached. The Lemma was checked separately: the two formulations agree on all $39{,}800$ pairs $(m,n)$ with $m \lt  400$ odd and $m \lt  n \lt  m+400$.
 
-### 5.4 Corollary 4 (the handover)
+### 5.4 Corollary 5 (the handover)
 
 The regrouping in Theorem 8 is symmetric: $ab(a+2)(b+2) = \big[a(b+2)\big]\big[b(a+2)\big]$, and the two new factors are $m+2a$ and $m+2b$, differing by $2(b-a)$. Writing $T(m) = m+2a$ for the displacing divisor:
 
-> **Corollary 4.** $L_m(a+b+2)  =  L_{T(m)}(b-a)$ with $T(m) = m+2a$.
+> **Corollary 5.** $L_m(a+b+2)  =  L_{T(m)}(b-a)$ with $T(m) = m+2a$.
 
 So the first loss is not merely a coincidence of two lines at one integer: it names the receiving line **and its strike index**. Two special cases:
 
@@ -503,9 +512,9 @@ So the first loss is not merely a coincidence of two lines at one integer: it na
  $$L_p(p+3)  =  L_{p+2}(p-1)  =  3p(p+2).$$
  For $p=5$: $L_5(8) = 105 = L_7(4)$.
 
-### 5.5 Corollary 5 (the composites absorb)
+### 5.5 Corollary 6 (the composites absorb)
 
-> **Corollary 5.** $T(m) = m+2a = a(b+2)$. Hence if $m$ is composite then $T(m)$ is composite.
+> **Corollary 6.** $T(m) = m+2a = a(b+2)$. Hence if $m$ is composite then $T(m)$ is composite.
 
 *Proof.* $a \gt  1$ and $b+2 \gt  1$. $\blacksquare$
 
