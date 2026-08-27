@@ -26,6 +26,80 @@ A further section changes the unit from the sector to the **belt** between conse
 
 ---
 
+## Summary of the main results
+
+*Grouped by section. Each line is informal; the precise statement and its proof are in the section named on the right. One result is labelled **Verified Law**: it is checked exactly on a stated finite range and is **not** proved.*
+
+**§2 — The gap alphabet, and the ladder of proofs**
+
+| Result | What it says | Section |
+|---|---|---|
+| **Theorem 1** | The gap between consecutive odd composites takes only the values $2$, $4$ or $6$. | §2.1 |
+| **Theorem 2** | Gaps $2$ and $4$ occur infinitely often with no prime input; gap $6$ infinitely often is *equivalent* to the twin conjecture. | §2.2 |
+| **Theorem 3** | On one rail, no five survivors above $5$ lie in arithmetic progression of step $6$. | §2.3 |
+| **Corollary 1** | The run counts $G_k$ at spacing $6$ obey the stated relation, capping runs at four. | §2.3 |
+
+**§3 — The twin problem inside the framework**
+
+| Result | What it says | Section |
+|---|---|---|
+| ***The pivot*** | Inside $(u^2,v^2)$ with every line up to $u$ switched on, **a cell that survives *is* a twin pair** — no primality test is needed. Everything downstream rests on this. | §3.1 |
+| **Theorem 4** | At most **six** cells of a sector can be open without being twin pairs, with their positions given explicitly in $M$. | §3.2 |
+| **Corollary 2** | The dichotomy: if the central pair is not twin, those seven open cells reduce to three. | §3.2 |
+| **Proposition 1** | The admissible exceptional configurations in a block of $N = 35L$ sectors number $B_L \ll L/\log^2 L$, by the Selberg sieve. | §3.4 |
+| **Theorem 5** | A newly born line closes **at most one** twin cell in its own first window: $D_p \in \lbrace 0,1\rbrace$. | §3.5 |
+| **Corollary 3** | $D_p = 1$ exactly when two primality conditions hold together, so the error term is itself twin-like. | §3.5 |
+| **Theorem 6** | The bridge pair: $B' = (q-2-\chi_q(2))B$ — the only law here that knows the window is anchored at a square. | §3.6 |
+| **Theorem 7** | The summation identity over $M$ consecutive square windows. | §3.6 |
+| **Proposition 2** | A window synchronised with its lines: the primes dividing $p+1$ give four **exact** identities with no edge term. Not twin-specific, and not a reduction. | §3.6 |
+| **Proposition 3** | The three mirror channels: the first is empty exactly for a twin, the second is the synchronised set, the third is not empty in general. | §3.6 |
+| ***Recorded, not used*** | §3.10: two constructions that do not help — the balanced window, and ownership through the cofactor — kept so they are not retried. | §3.10 |
+
+**§4 — The closing budget: $\tau$ against $S$**
+
+| Result | What it says | Section |
+|---|---|---|
+| **Theorem 8** | The exact minimum cover: the least number of deletions destroying every distance-$6$ edge. | §4.1 |
+| **Theorem 9** | The propagation law for a new line on the full cycle. | §4.2 |
+| **Corollary 4** | $T/V = \rho_p = \prod_{5 \le s \le p}(s-2)/(s-1)$ on the full cycle. | §4.2 |
+| **Theorem 10** | Tail compression: for $P \ge 243$ and $P/3 \lt  q \lt  P$, every new strike of $q$ in the window is constrained. | §4.3 |
+
+**§5 — Clocks, and primality as a zero-test**
+
+| Result | What it says | Section |
+|---|---|---|
+| **Theorem 11** | The shift law $\phi_q(p+2) = \phi_q(p) - 1 \pmod q$ for every old line. | §5.1 |
+| **Corollary 5** | $p$ is composite **iff** some old clock reads $0$ at its birth. | §5.1 |
+| **Corollary 6** | The clock of $L_3$ cycles $2 \to 1 \to 0$, so its two non-zero states are exactly the two rails. | §5.1 |
+| **Theorem 12** | Surviving cofactors are prime, for $p \ge 11$ and $p \lt  t \le 9p$. | §5.2 |
+| **Theorem 13** | A row reads primality off originality — a recoding of trial division, not a new test. | §5.3 |
+
+**§6 — Inheritance across sectors, and the capacity of one line**
+
+| Result | What it says | Section |
+|---|---|---|
+| **Theorem 14** | The sector inheritance law $B(M + 6Q) = B(M) + 12S$. | §6.1 |
+| **Theorem 15** | The capacity of one new line on one family, through $\Delta_q \equiv (3Q)^{-1} \pmod q$. | §6.2 |
+| **Corollary 7** | The lines that can close two copies of a family are finite in number. | §6.3 |
+
+**§7 — The gate belt: what a line can do between its own square and the next**
+
+| Result | What it says | Section |
+|---|---|---|
+| **Theorem 16** | The exact size of a belt between the squares of consecutive primes. | §7.1 |
+| **Verified Law 17** | *Conditional on $g^2 \lt  2q$*, and **verified rather than proved**: a new line's reach depends on the gap, not on its size. | §7.2 |
+| **Proposition 4** | In a belt of length $L$, any line $s$ makes at most $\lceil L/2s \rceil$ strikes — the layer ceiling. | §7.4 |
+
+**§8 — Four named cells inside the window**
+
+| Result | What it says | Section |
+|---|---|---|
+| **Theorem 18** | Which lines can ever own a track: for $r \gt  3$, by the quadratic character of the discriminant. | §8.1 |
+| **Theorem 19** | Simultaneity: a prime closes two of the four tracks in one window only under a stated congruence. | §8.2 |
+| **Proposition 5** | And why Theorem 19 obstructs nothing — $k$ tracks always admit a simultaneous solution. | §8.3 |
+
+---
+
 ## 1. Setting
 
 We use Papers I–III as follows and import nothing else.

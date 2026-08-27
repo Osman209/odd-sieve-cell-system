@@ -26,6 +26,48 @@ Two test cases, chosen because their answers are known independently — Jacobst
 
 ---
 
+## Summary of the main results
+
+*Grouped by section. Each line is informal; the precise statement and its proof are in the section named on the right. Entries in italics are measurements or discussions rather than theorems, and one proposition is labelled measured.*
+
+**§§2–5 — The budget, and why the separate laws do not close it**
+
+| Result | What it says | Section |
+|---|---|---|
+| ***Discussion*** | Capacity, resonance and parity each fail on their own; the closing budget is decomposed into internal quantities and misses by a conditional $0.73$%. | §2–3 |
+| **Proposition 1** | In any contiguous block of length $H$, each residue of a period-$q$ ruler occurs the stated number of times — a deterministic local constraint, and its weakness. | §4 |
+| ***Discussion*** | Why the three laws together still do not close the problem. | §5 |
+
+**§6 — The obstruction, derived from inside. **This is the core of the paper.****
+
+| Result | What it says | Section |
+|---|---|---|
+| **Theorem 1** | **The depth cut.** With $z^3$ above the window, every surviving endpoint is prime or a product of exactly two primes above $z$. | §6.1 |
+| **Theorem 2** | **Unique owner.** A surviving composite lies on the line of its smaller factor only, so it is owed exactly one strike. | §6.1 |
+| **Theorem 3** | **Monotone deficit.** Advancing the cut changes $R-C$ by $-\sum(k-1)$, so it never rises and a crossing never reverses. At the final cut $R-C = -T$ — hence the crossing is *equivalent* to a twin existing, and only the non-reversal is new. | §6.1 |
+| **Theorem 4** | **The exact twin count** $T = C - R + S$, with no error term. | §6.2 |
+| **Theorem 5** | **The pair-overlap bound** $T \ge C - R + \tfrac23 A + \tfrac19 B$, both coefficients extremal. The one place in this work where overlap is a *resource* and the estimates run the other way. | §6.2 |
+| **Theorem 6** | **The parity identity** $2(R-C) = \sum (-1)^{\Omega(n)}$ over the surviving endpoints. The inequality $R \lt  C$ *is* the statement that a Liouville sum over the sifted set is negative. | §6.3 |
+| **Theorem 7** | The classical Buchstab upper bound for the composite part is **exactly twice** the corresponding lower bound: $I(s) = 2f_1(s)$ on $2 \le s \le 4$. | §6.4 |
+| **Corollary 1** | Hence the naive balance is $-f_1(s)$ identically: the loss is a factor of two, not a discrepancy to be tightened away. | §6.4 |
+| ***Closed routes*** | The two constraints on the cut are incompatible (§6.5); switching the cut cannot repair it (§6.6); five routes through the line geometry, each closed by measurement (§6.7); and the trap the section exists to avoid (§6.8). | §6.5–6.8 |
+
+**§7 — Scope: two test cases, and the narrowest form of the requirement**
+
+| Result | What it says | Section |
+|---|---|---|
+| **Proposition 2** | *Measured, not proved.* Saturation of extremal runs in the first test case, Jacobsthal's function — and §7.4 explains why it yields no bound. | §7.3 |
+| ***Second test case*** | Almost-primes between squares, with the correlation of the survivor count and the order of its sum. | §7.5–7.6 |
+| ***The narrowest form*** | The requirement reduced as far as the construction can take it — and why it is still the wall. | §7.7 |
+
+**§8 — Conclusion**
+
+| Result | What it says | Section |
+|---|---|---|
+| ***What is required*** | What an external ingredient would have to supply; why this stopping point is the right one; that this is not a new sieve; the limitations; and what the framework does not presently supply. | §8 |
+
+---
+
 ## 1. Setting
 
 We use Papers 0–IV as follows and import nothing else.
