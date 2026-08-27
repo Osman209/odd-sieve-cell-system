@@ -197,6 +197,20 @@ $$z^3  \gt   U. \qquad\text{(6.1)}$$
 
 Together these remove, at one stroke, everything the earlier sections had to track: the multiplicative depth beyond two, and the overlap of several lines on one endpoint. **After the cut there is exactly one kind of composite left, and exactly one line responsible for each.**
 
+
+**Moving the cut, and why the crossing never reverses.** Write $D(z) = R(z) - C(z)$ for the deficit at cut $z$, where $C(z)$ counts surviving cells and $R(z)$ the composite endpoints inside them, equivalently the strikes still owed by the lines above $z$. Advance the cut to the next prime $r$, and let $A_r$ be the surviving cells that $r$ closes; for $X \in A_r$ let $k(X) \ge 1$ be the number of lines in $(z, P]$ that would have struck it, $r$ included.
+
+> **Theorem 3 (monotone deficit).** $D(r)  =  D(z)  -  \sum_{X \in A_r}\bigl(k(X)-1\bigr) \ \le\ D(z).$
+
+*Proof.* A surviving cell outside $A_r$ is by definition not struck by $r$, so it loses none of its owed strikes; hence $R(z)-R(r) = \sum_{X \in A_r} k(X)$, while $C(z)-C(r) = |A_r|$. Subtracting gives the identity, and $k \ge 1$ gives the inequality. $\blacksquare$
+
+*Verified.* Non-increasing at every one of the $169$ successive cuts for the sector of $P = 1009$ and every one of the $304$ for $P = 2003$, with no exception.
+
+*What drives it down.* A cell whose only future striker is $r$ contributes $k-1 = 0$ and moves $D$ not at all; cells carrying two or more owed strikes are the whole of the decrease. So here — unlike everywhere else in this work — the piling of several lines on one cell pushes the inequality in the direction one wants, because closing such a cell discards more owed strikes than it discards cells.
+
+**And the reading that must go with it.** Take the cut to its end, $z = P$. No lines remain above it, so $R(P) = 0$, and every surviving cell is a twin, so $C(P) = T$. Hence
+$$D(P)  =  -T,$$
+verified exactly: at $P = 1009$ the last cut gives $C = 54$, $R = 0$, $D = -54$ against $54$ twins; at $P = 2003$ it gives $D = -205$ against $205$. Since $D$ is non-increasing and ends at $-T$, the existence of a cut with $R \lt  C$ is **equivalent** to $T \gt  0$. The crossing is therefore not evidence for a twin: it is the same statement in another coordinate. What Theorem 6 does buy is that the crossing cannot reverse, so it suffices to establish $R \lt  C$ at a single convenient cut rather than at all of them.
 ### 6.2 The exact twin count
 
 Write, for the window after the cut,
@@ -208,24 +222,36 @@ Write, for the window after the cut,
 | $S$ | cells with both endpoints composite |
 | $T$ | cells with both endpoints prime, i.e. twin pairs |
 
-> **Theorem 3.** $T  =  C - R + S.$
+> **Theorem 4.** $T  =  C - R + S.$
 
 *Proof.* Classify the surviving cells by state: $C = T + (\text{one member composite}) + S$, while $R = (\text{one member composite}) + 2S$. Subtracting eliminates the middle class. $\blacksquare$
 
 *Verification.* Exact on every window tested. At $M = 999$ with the core taken to $P = (M+6)^{2/3} \approx 100$: $C = 234$, $R = 175$, $S = 34$, and $C-R+S = 93$, which is the true number of twin pairs in $(999^2, 1005^2)$. Over a sweep of $56$ windows with $M$ prime between $101$ and $2500$ and $h \in \lbrace M/2, M\rbrace$, the identity held without exception, with $R/C \in [0.711,\ 0.785]$ and $T/C \in [0.370,\ 0.410]$.
 
+
+**A quantitative model for the three counts, and the step it does not license.** Take the cut at the boundary of (6.1), $z = Q^{2/3}$ in a sector $(P^2,Q^2)$, and put
+$$h  =  \sum_{z \lt  q \le P}\frac1q  \longrightarrow  \log\tfrac32  =  0.405465\ldots,$$
+the limit because $\log P/\log z \to 3/2$. If the owed strikes fell on the surviving cells independently, one would get
+$$\frac RC \to 2h = 0.810930, \qquad \frac SC \to h^2 = 0.164402, \qquad \frac TC \to (1-h)^2 = 0.353472 .$$
+*Measured* over the 816 sectors with $5 \le P \lt  6300$: mean $R/C = 0.797$, rising toward $2h$ with $P$ ($0.748, 0.786, 0.798, 0.805$ by range), and $T/C \approx 0.35$ throughout. Sample sectors: $1009\to1013$ gives $C=146$, $R=110$, $S=18$, $T=54$; $2003\to2011$ gives $512, 396, 89, 205$; $6229\to6247$ gives $2729, 2229, 454, 954$.
+
+**The model is good and the inference from it is invalid, which is the point of recording it.** The temptation is to argue that $2h \lt  1$ forces $R \lt  C$. It does not: $2h$ is an average over a long range, while a sector is a short interval, and the two are not interchangeable. The counterexample is small and explicit. In the sector $29^2 \to 31^2$ the cut is $z = 31^{2/3} = 9.87$ and $2h = 0.7145 \lt  1$, yet
+$$C = 8, \qquad R = 8, \qquad S = 2, \qquad T = 2,$$
+so $R = C$ exactly, with Theorem 2 still holding as $8 - 8 + 2 = 2$. Over $5 \le P \lt  6300$ it is the only sector with $R \ge C$.
+
+*And the margin is not generous.* Writing the requirement as $R - 2hC \lt  (1-2h)C \approx 0.189 C$, the fraction of that margin actually consumed has mean $0.064$ and median $0.069$, but reaches $1.000$ at $P=29$, $0.873$ at $P=809$, $0.782$ at $P=599$, $0.723$ at $P=1487$ and $0.564$ at $P=3539$. The worst case falls with $P$, slowly. Equivalently, since $R = 2C(1-\rho)$ with $\rho$ the proportion of surviving endpoints that are prime, the inequality $R \lt  C$ **is** $\rho \gt  1/2$: what has to be proved is that more than half of the $z$-rough numbers in $(P^2,Q^2)$ are prime, for every $P$ and not on average. Any argument that assumes $\rho \gt  1/2$ to derive $R \lt  C$ has assumed its conclusion.
 ### 6.3 The parity identity
 
 By Theorem 1 every surviving endpoint has $\Omega(n) \in \lbrace 1,2\rbrace$, so $(-1)^{\Omega(n)}$ is $-1$ on the primes and $+1$ on the semiprimes. Writing $P$ for the number of prime endpoints, one has $P + R = 2C$ and hence $P = 2C-R$, so
 
 $$\sum_{\text{endpoints of surviving cells}} (-1)^{\Omega(n)}  =  R - P  =  2(R-C).$$
 
-> **Theorem 4.** With the cut (6.1) in force,
+> **Theorem 5.** With the cut (6.1) in force,
 > $$\boxed{ 2 (R-C)  =  \sum_{\text{endpoints of surviving cells}} (-1)^{\Omega(n)} }$$
 > and consequently
 > $$R \lt  C \quad\Longleftrightarrow\quad \sum (-1)^{\Omega(n)} \lt  0 .$$
 
-**This is the point of the paper.** The inequality $R\lt C$ is what every criterion in Paper IV eventually reduces to. Theorem 4 says it is *identical* to the statement that a Liouville sum over the sifted set is negative. The parity problem is therefore not an external obstacle that the framework happens to run into; **it is what the framework reduces to.**
+**This is the point of the paper.** The inequality $R\lt C$ is what every criterion in Paper IV eventually reduces to. Theorem 5 says it is *identical* to the statement that a Liouville sum over the sifted set is negative. The parity problem is therefore not an external obstacle that the framework happens to run into; **it is what the framework reduces to.**
 
 Two remarks make the shape of this clearer.
 
@@ -241,7 +267,7 @@ $$(sF)' = f(s-1), \qquad (sf)' = F(s-1), \qquad sF(s) = 2e^{\gamma} \ \ (1\le s\
 The lower bound for the survivor count carries $f_1(s)$; the Buchstab upper bound for the composite part is, after the substitution that removes both $\theta$ and the depth,
 $$I(s)  =  \int_1^{s-1} \frac{F_1(v)}{s-v} dv .$$
 
-> **Theorem 5.** $I(s) = 2 f_1(s)$ for $2 \le s \le 4$.
+> **Theorem 6.** $I(s) = 2 f_1(s)$ for $2 \le s \le 4$.
 >
 > *(Beyond $s = 4$ the equality fails and the excess is in our favour, but we do not prove that: computed from the delay system, $I(s)/2f_1(s) = 1.011,\ 1.044,\ 1.076,\ 1.079$ at $s = 5, 6, 8, 12$. **Measured, not proved**, and nothing below uses it.)*
 
@@ -297,7 +323,7 @@ $$\boxed{ u \lt  2e^{\gamma} = 3.5621 \quad\text{and}\quad s \gt  \beta_2 = 4.26
 
 The window is empty, and it stays empty under the dimension-versus-level trade: taking $\kappa = 1$ with $\theta = 1/2$ (Chen's setting) requires $u \gt  \beta_1/\theta = 4$, exactly what $\kappa=2$ with $\theta=1$ requires. **The trade between dimension and level of distribution is neutral for this problem.**
 
-*A caution about the last paragraph.* This comparison uses only leading-order densities; it ignores the sieve efficiency factors $f_{\kappa}$, which vanish as $s \to \beta_{\kappa}$, and $F_{\kappa} \gt  1$ in the upper bound. Including them makes the requirement strictly harder — the tell is that the row $\kappa=1$, $\theta=1$ (Elliott–Halberstam) gives $u\gt 2$, which lies inside the window, and Elliott–Halberstam is known not to give twin primes. The comparison above is therefore a diagnostic, not a criterion, and Theorem 5 is the criterion.
+*A caution about the last paragraph.* This comparison uses only leading-order densities; it ignores the sieve efficiency factors $f_{\kappa}$, which vanish as $s \to \beta_{\kappa}$, and $F_{\kappa} \gt  1$ in the upper bound. Including them makes the requirement strictly harder — the tell is that the row $\kappa=1$, $\theta=1$ (Elliott–Halberstam) gives $u\gt 2$, which lies inside the window, and Elliott–Halberstam is known not to give twin primes. The comparison above is therefore a diagnostic, not a criterion, and Theorem 6 is the criterion.
 
 ### 6.6 Why switching cannot repair it
 
@@ -320,7 +346,7 @@ Sections 6.1–6.6 argue that the obstruction is the distinction between $\Omega
 $$M_0 = 448{,}353, \qquad X = (M_0+210)^2 = 201{,}208{,}764{,}969,$$
 which carries $N = 31{,}392{,}060$ cells. The cut is the largest prime with $z^3 \lt  X$, namely $z = 5857$, since $5857^3 = 200{,}921{,}157{,}793$ and $5861^3 = 201{,}333{,}092{,}381$. After sieving to $z$, Theorem 1 applies and each surviving endpoint is $P$ or $P_2$. Writing the four states of a surviving cell by the status of its two endpoints:
 $$R = 1{,}049{,}024, \quad H = 857{,}695, \quad C_{\square} = 174{,}791, \quad T = 366{,}120,$$
-where $R$ is the surviving cells, $H$ the $P_2$ endpoints among them (a cell with both endpoints composite contributing two), $C_{\square}$ the cells with both endpoints $P_2$, and $T$ the twins. These are the $C$, $R$, $S$, $T$ of Theorem 3 in the letters this section uses, and $T = R - H + C_{\square}$ holds exactly.
+where $R$ is the surviving cells, $H$ the $P_2$ endpoints among them (a cell with both endpoints composite contributing two), $C_{\square}$ the cells with both endpoints $P_2$, and $T$ the twins. These are the $C$, $R$, $S$, $T$ of Theorem 4 in the letters this section uses, and $T = R - H + C_{\square}$ holds exactly.
 
 Two side measurements fix the scale. The prime share among the $2R$ endpoints is $1{,}240{,}353/2{,}098{,}048 = 0.591196$ against the limit $1/(1+\log 2) = 0.590616$ of §6.5 — agreement to four decimals, because a short window at height $Y$ carries no secondary term in the prime count, which is the reading §6.5 gives of its own global table. And the survivors of **all** lines up to $M_0$ number $366{,}130$, that is $T$ plus ten composite cells whose two factors both exceed $M_0$; the same measurement at $M_0 + 510{,}510$ and $M_0 + 1{,}021{,}020$ gives $699{,}747 = 699{,}726 + 21$ and $1{,}010{,}762 = 1{,}010{,}734 + 28$. **The survivor count of a square window is the twin count plus a two-digit remainder.**
 
@@ -353,7 +379,7 @@ The relation is nevertheless local. Ordering the cells by $j$, the natural compo
 
 ### 6.8 The trap this section exists to avoid
 
-Theorem 4 is worth restating as a discipline rather than only as a result. The identity
+Theorem 5 is worth restating as a discipline rather than only as a result. The identity
 $$2(R-C)  =  \sum (-1)^{\Omega(n)}$$
 says that the inequality one wants is *equivalent* to a statement nobody knows how to prove. It would have been easy, and would have looked like progress, to write the same content in a form that hides this.
 

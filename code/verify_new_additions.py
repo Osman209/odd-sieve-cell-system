@@ -193,6 +193,53 @@ def main():
                 if not isprime(m): bad += 1
     check("23. clean owner: p^3 >= Q^2 forces a prime cofactor", bad, 0)
 
+    print("\n--- [V, 6.1-6.2]: the cubic cut, the monotone deficit, the counterexample ---")
+    import numpy as np
+    NN = 4_100_000 if a.fast else 20_000_000
+    sv = np.ones(NN + 1, dtype=bool); sv[:2] = False
+    for i in range(2, int(NN**0.5) + 1):
+        if sv[i]: sv[i*i::i] = False
+    allp = [int(x) for x in np.flatnonzero(sv) if x < 8000]
+
+    def counts(P, Q, z):
+        lo, hi = P*P, Q*Q
+        j = np.arange((lo + 5)//6, (hi - 1)//6 + 1)
+        L, R2 = 6*j - 1, 6*j + 1
+        m = (L > lo) & (R2 < hi); L, R2 = L[m], R2[m]
+        for q in allp:
+            if q > z: break
+            k = (L % q != 0) & (R2 % q != 0); L, R2 = L[k], R2[k]
+        pl, pr = sv[L], sv[R2]
+        return len(L), int((~pl).sum() + (~pr).sum()), int(((~pl) & (~pr)).sum()), int((pl & pr).sum())
+
+    C0, R0, S0, T0 = counts(29, 31, 31**(2/3))
+    check("24. the counterexample 29^2->31^2: C, R, S, T", (C0, R0, S0, T0), (8, 8, 2, 2))
+    check("25. there R = C although 2h < 1", R0 == C0, True)
+    check("26. and the identity T = C - R + S still holds", C0 - R0 + S0, T0)
+
+    cases = [(1009, 1013, (146, 110, 18, 54))]
+    if not a.fast: cases.append((2003, 2011, (512, 396, 89, 205)))
+    for P, Q, want in cases:
+        check(f"27. cubic cut at {P}: C, R, S, T", counts(P, Q, Q**(2/3)), want)
+
+    P, Q = 1009, 1013
+    lo, hi = P*P, Q*Q
+    j = np.arange((lo + 5)//6, (hi - 1)//6 + 1)
+    L, R2 = 6*j - 1, 6*j + 1
+    m = (L > lo) & (R2 < hi); L, R2 = L[m], R2[m]
+    alive = np.ones(len(L), bool)
+    lines = [q for q in allp if q <= P]
+    D = []
+    for z in lines:
+        alive &= (L % z != 0) & (R2 % z != 0)
+        Cc = int(alive.sum())
+        Rr = sum(int(((L % q == 0) & alive).sum() + ((R2 % q == 0) & alive).sum())
+                 for q in lines if q > z)
+        D.append(Rr - Cc)
+    check("28. the deficit R-C is non-increasing at every cut", all(D[i+1] <= D[i] for i in range(len(D)-1)), True)
+    Tw = int((sv[L] & sv[R2] & alive).sum())
+    check("29. at the final cut the deficit equals -T", D[-1], -Tw)
+
     if a.force_fail: FAIL.append("forced")
     print("\n" + "=" * 62)
     if FAIL:
