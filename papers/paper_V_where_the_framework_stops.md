@@ -210,7 +210,7 @@ Together these remove, at one stroke, everything the earlier sections had to tra
 
 **And the reading that must go with it.** Take the cut to its end, $z = P$. No lines remain above it, so $R(P) = 0$, and every surviving cell is a twin, so $C(P) = T$. Hence
 $$D(P)  =  -T,$$
-verified exactly: at $P = 1009$ the last cut gives $C = 54$, $R = 0$, $D = -54$ against $54$ twins; at $P = 2003$ it gives $D = -205$ against $205$. Since $D$ is non-increasing and ends at $-T$, the existence of a cut with $R \lt  C$ is **equivalent** to $T \gt  0$. The crossing is therefore not evidence for a twin: it is the same statement in another coordinate. What Theorem 6 does buy is that the crossing cannot reverse, so it suffices to establish $R \lt  C$ at a single convenient cut rather than at all of them.
+verified exactly: at $P = 1009$ the last cut gives $C = 54$, $R = 0$, $D = -54$ against $54$ twins; at $P = 2003$ it gives $D = -205$ against $205$. Since $D$ is non-increasing and ends at $-T$, the existence of a cut with $R \lt  C$ is **equivalent** to $T \gt  0$. The crossing is therefore not evidence for a twin: it is the same statement in another coordinate. What Theorem 7 does buy is that the crossing cannot reverse, so it suffices to establish $R \lt  C$ at a single convenient cut rather than at all of them.
 ### 6.2 The exact twin count
 
 Write, for the window after the cut,
@@ -240,18 +240,37 @@ $$C = 8, \qquad R = 8, \qquad S = 2, \qquad T = 2,$$
 so $R = C$ exactly, with Theorem 2 still holding as $8 - 8 + 2 = 2$. Over $5 \le P \lt  6300$ it is the only sector with $R \ge C$.
 
 *And the margin is not generous.* Writing the requirement as $R - 2hC \lt  (1-2h)C \approx 0.189 C$, the fraction of that margin actually consumed has mean $0.064$ and median $0.069$, but reaches $1.000$ at $P=29$, $0.873$ at $P=809$, $0.782$ at $P=599$, $0.723$ at $P=1487$ and $0.564$ at $P=3539$. The worst case falls with $P$, slowly. Equivalently, since $R = 2C(1-\rho)$ with $\rho$ the proportion of surviving endpoints that are prime, the inequality $R \lt  C$ **is** $\rho \gt  1/2$: what has to be proved is that more than half of the $z$-rough numbers in $(P^2,Q^2)$ are prime, for every $P$ and not on average. Any argument that assumes $\rho \gt  1/2$ to derive $R \lt  C$ has assumed its conclusion.
+
+**The overlap as a resource, and a lower bound that does not need the model at all.** Everything above tries to force $R \lt  C$. There is a better use of the same data. For a surviving cell write $\ell$ and $r$ for the number of lines above the cut that strike its left and its right member. Under (6.1) — indeed under the weaker $z \ge Q^{1/2}$ — no member carries four such factors, since their product would exceed $z^4 \ge Q^2$, so $\ell, r \le 3$. Put
+$$A = \sum \Bigl[\binom{\ell}{2}+\binom{r}{2}\Bigr], \qquad B = \sum \ell r,$$
+the pairs of lines piling on one member and the pairs splitting across the two.
+
+> **Theorem 5 (pair-overlap bound).** For all integers $0 \le \ell, r \le 3$,
+> $$\mathbf 1_{\lbrace \ell = r = 0\rbrace} \ \ge\ 1 - \ell - r + \tfrac23\Bigl[\binom{\ell}{2}+\binom{r}{2}\Bigr] + \tfrac19 \ell r,$$
+> and therefore, summing over the surviving cells,
+> $$T \ \ge\ C - R + \tfrac23 A + \tfrac19 B .$$
+
+*Proof.* Sixteen cases, checked directly; equality holds at $(0,0)$, $(0,1)$, $(1,0)$, $(0,3)$, $(3,0)$ and $(3,3)$. $\blacksquare$
+
+*The coefficients cannot be improved in this shape.* Seeking $T \ge C - R + aA + bB$, the case $(3,0)$ gives $1-3+3a \le 0$, so $a \le 2/3$; taking $a = 2/3$, the case $(3,3)$ gives $1-6+4+9b \le 0$, so $b \le 1/9$.
+
+*What changes, and it is the only place in this work where it changes.* The bound uses the overlap as a **resource**: the more the lines pile up, the larger $A$ and $B$, and the better the bound. Consequently the estimates one needs run in the opposite direction from everywhere else — an upper bound for $R$ and lower bounds for $A$ and $B$. In the free model $R/C \sim 2h$ and $A/C \sim B/C \sim h^2$ give $T/C \gtrsim 1 - 2h + \tfrac79 h^2$, whose root is $h_c = (9-3\sqrt2)/7 = 0.679623$, i.e. a cut exponent $\alpha_c = e^{-h_c} = 0.50681$ against $0.60653$ for $R \lt  C$ alone.
+
+*And the model overstates $A$, which is the honest limit of this.* Measured against the correct truncated model $2e_2$ with $e_2 = \tfrac12(h^2 - \sum 1/q^2)$, the ratio $A_{\text{measured}}/A_{\text{model}}$ is $0.18$–$0.37$ at $\alpha = 0.60$, $0.50$–$0.67$ at $0.55$, $0.62$–$0.79$ at $0.53$ and $0.76$–$0.90$ at $0.50$ — never reaching one, and rising only as $\alpha$ falls, because two lines on the *same* member is a tail event that the cap $\ell \le 3$ truncates. $B$ by contrast matches, at $0.90$–$1.15$ throughout. Using the measured ratios the effective threshold is near $\alpha \approx 0.54$, not $0.507$, and direct evaluation agrees: the bound reads $+8.6$, $+9.6$, $+1.9$ at $\alpha = 0.53$ for $P = 1009, 2003, 6229$, and turns negative at $0.52$.
+
+*The quantity to press on is therefore $A$*, and it is the first in this work with a classical shape of its own: it counts semiprimes $q_1q_2$ with both factors above $z$ inside a short interval. A lower bound for $A$, together with an upper bound for $R$, would close the inequality at a fixed exponent — and neither is supplied here.
 ### 6.3 The parity identity
 
 By Theorem 1 every surviving endpoint has $\Omega(n) \in \lbrace 1,2\rbrace$, so $(-1)^{\Omega(n)}$ is $-1$ on the primes and $+1$ on the semiprimes. Writing $P$ for the number of prime endpoints, one has $P + R = 2C$ and hence $P = 2C-R$, so
 
 $$\sum_{\text{endpoints of surviving cells}} (-1)^{\Omega(n)}  =  R - P  =  2(R-C).$$
 
-> **Theorem 5.** With the cut (6.1) in force,
+> **Theorem 6.** With the cut (6.1) in force,
 > $$\boxed{ 2 (R-C)  =  \sum_{\text{endpoints of surviving cells}} (-1)^{\Omega(n)} }$$
 > and consequently
 > $$R \lt  C \quad\Longleftrightarrow\quad \sum (-1)^{\Omega(n)} \lt  0 .$$
 
-**This is the point of the paper.** The inequality $R\lt C$ is what every criterion in Paper IV eventually reduces to. Theorem 5 says it is *identical* to the statement that a Liouville sum over the sifted set is negative. The parity problem is therefore not an external obstacle that the framework happens to run into; **it is what the framework reduces to.**
+**This is the point of the paper.** The inequality $R\lt C$ is what every criterion in Paper IV eventually reduces to. Theorem 6 says it is *identical* to the statement that a Liouville sum over the sifted set is negative. The parity problem is therefore not an external obstacle that the framework happens to run into; **it is what the framework reduces to.**
 
 Two remarks make the shape of this clearer.
 
@@ -267,7 +286,7 @@ $$(sF)' = f(s-1), \qquad (sf)' = F(s-1), \qquad sF(s) = 2e^{\gamma} \ \ (1\le s\
 The lower bound for the survivor count carries $f_1(s)$; the Buchstab upper bound for the composite part is, after the substitution that removes both $\theta$ and the depth,
 $$I(s)  =  \int_1^{s-1} \frac{F_1(v)}{s-v} dv .$$
 
-> **Theorem 6.** $I(s) = 2 f_1(s)$ for $2 \le s \le 4$.
+> **Theorem 7.** $I(s) = 2 f_1(s)$ for $2 \le s \le 4$.
 >
 > *(Beyond $s = 4$ the equality fails and the excess is in our favour, but we do not prove that: computed from the delay system, $I(s)/2f_1(s) = 1.011,\ 1.044,\ 1.076,\ 1.079$ at $s = 5, 6, 8, 12$. **Measured, not proved**, and nothing below uses it.)*
 
@@ -323,7 +342,7 @@ $$\boxed{ u \lt  2e^{\gamma} = 3.5621 \quad\text{and}\quad s \gt  \beta_2 = 4.26
 
 The window is empty, and it stays empty under the dimension-versus-level trade: taking $\kappa = 1$ with $\theta = 1/2$ (Chen's setting) requires $u \gt  \beta_1/\theta = 4$, exactly what $\kappa=2$ with $\theta=1$ requires. **The trade between dimension and level of distribution is neutral for this problem.**
 
-*A caution about the last paragraph.* This comparison uses only leading-order densities; it ignores the sieve efficiency factors $f_{\kappa}$, which vanish as $s \to \beta_{\kappa}$, and $F_{\kappa} \gt  1$ in the upper bound. Including them makes the requirement strictly harder — the tell is that the row $\kappa=1$, $\theta=1$ (Elliott–Halberstam) gives $u\gt 2$, which lies inside the window, and Elliott–Halberstam is known not to give twin primes. The comparison above is therefore a diagnostic, not a criterion, and Theorem 6 is the criterion.
+*A caution about the last paragraph.* This comparison uses only leading-order densities; it ignores the sieve efficiency factors $f_{\kappa}$, which vanish as $s \to \beta_{\kappa}$, and $F_{\kappa} \gt  1$ in the upper bound. Including them makes the requirement strictly harder — the tell is that the row $\kappa=1$, $\theta=1$ (Elliott–Halberstam) gives $u\gt 2$, which lies inside the window, and Elliott–Halberstam is known not to give twin primes. The comparison above is therefore a diagnostic, not a criterion, and Theorem 7 is the criterion.
 
 ### 6.6 Why switching cannot repair it
 
@@ -379,7 +398,7 @@ The relation is nevertheless local. Ordering the cells by $j$, the natural compo
 
 ### 6.8 The trap this section exists to avoid
 
-Theorem 5 is worth restating as a discipline rather than only as a result. The identity
+Theorem 6 is worth restating as a discipline rather than only as a result. The identity
 $$2(R-C)  =  \sum (-1)^{\Omega(n)}$$
 says that the inequality one wants is *equivalent* to a statement nobody knows how to prove. It would have been easy, and would have looked like progress, to write the same content in a form that hides this.
 

@@ -5,7 +5,7 @@
    [II, 3]  the line-3 channel in the refined generating function
    [II, 4]  the pair count (p-3)^2+1
 Run: python3 verify_new_additions.py [--fast]"""
-import sys, argparse
+import sys, argparse, math
 from sympy import isprime, primerange, symbols, expand
 
 FAIL = []
@@ -239,6 +239,43 @@ def main():
     check("28. the deficit R-C is non-increasing at every cut", all(D[i+1] <= D[i] for i in range(len(D)-1)), True)
     Tw = int((sv[L] & sv[R2] & alive).sum())
     check("29. at the final cut the deficit equals -T", D[-1], -Tw)
+
+    print("\n--- [V, Thm 5]: the pair-overlap bound ---")
+    from itertools import product as iproduct
+    bad = 0; tight = []
+    for l, r in iproduct(range(4), repeat=2):
+        lhs = 1 if (l == 0 and r == 0) else 0
+        rhs = 1 - l - r + (2/3)*(math.comb(l, 2) + math.comb(r, 2)) + (1/9)*l*r
+        if lhs < rhs - 1e-12: bad += 1
+        if abs(lhs - rhs) < 1e-12: tight.append((l, r))
+    check("30. the pair-overlap inequality over all 16 cases", bad, 0)
+    check("31. its tight cases", sorted(tight),
+          [(0, 0), (0, 1), (0, 3), (1, 0), (3, 0), (3, 3)])
+    check("32. (3,0) forces a <= 2/3", abs(1 - 3 + 3*(2/3)) < 1e-12, True)
+    check("33. then (3,3) forces b <= 1/9", abs(1 - 6 + (2/3)*6 + 9*(1/9)) < 1e-12, True)
+    hc = (9 - 3*math.sqrt(2))/7
+    check("34. 7h^2-18h+9 = 0 at h_c", abs(7*hc*hc - 18*hc + 9) < 1e-12, True)
+    check("35. alpha_c = exp(-h_c) to five places", round(math.exp(-hc), 5), 0.50681)
+
+    print("\n--- [V, 6.2]: the room identity T = C - R + W ---")
+    P, Q = 1009, 1013
+    lo, hi = P*P, Q*Q
+    z = Q**(2/3)
+    j = np.arange((lo + 5)//6, (hi - 1)//6 + 1)
+    L, R2 = 6*j - 1, 6*j + 1
+    m = (L > lo) & (R2 < hi); L, R2 = L[m], R2[m]
+    for q in allp:
+        if q > z: break
+        k = (L % q != 0) & (R2 % q != 0); L, R2 = L[k], R2[k]
+    fut = [q for q in allp if z < q <= P]
+    kk = np.zeros(len(L), np.int64)
+    for q in fut:
+        kk += ((L % q == 0) | (R2 % q == 0))
+    Cc = len(L)
+    Rr = sum(int((L % q == 0).sum() + (R2 % q == 0).sum()) for q in fut)
+    W = int(np.maximum(kk - 1, 0).sum())
+    Tw = int((sv[L] & sv[R2]).sum())
+    check("36. T = C - R + W at the cubic cut", Cc - Rr + W, Tw)
 
     if a.force_fail: FAIL.append("forced")
     print("\n" + "=" * 62)
