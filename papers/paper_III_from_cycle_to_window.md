@@ -88,7 +88,6 @@ For those rulers the local question changes from counting to presence/absence, a
 **Composites are phase collisions.** If $\delta_{q_1}(j) = \delta_{q_2}(j) = s$, both lines mark slot $s$, i.e. the integer there carries both factors. Verified at $p=11$, sector 2: the cofactors $21, 23, 25$ give $O_{\lbrace 3,7\rbrace },  N,  O_{\lbrace 5\rbrace }$ — and $21 = 3\times 7$ appears precisely because the two rulers' phases coincided.
 
 
-
 ## 3. Moving depth
 
 ### 3.1 Setup
@@ -140,7 +139,6 @@ Define the clock vector here by $\Phi_z(p)=(\phi_3(p),\phi_5(p),\dots,\phi_z(p))
 The survivor pattern of the lines up to $z$ has period exactly $\prod q$ and, by [II, Thm 1], exactly $\prod(q-2)$ surviving cells in it. **Any “compressed law for the next survivor” — a rule carrying a state materially smaller than the cycle — would therefore be a compression of the cycle itself.** We record this as an observation rather than a theorem, but it is the reason any “successor tower” for the sieved strip is a re-description and not a reduction.
 
 ---
-
 
 
 ## 4. Decomposing the deviations
@@ -198,7 +196,6 @@ Since $P_z \asymp 1/\log^2 z$, the total $L^2$ energy of *all* lines is $O(\log^
 ---
 
 
-
 ## 5. The decisive $L^2$ question
 
 ### 5.1 Statement
@@ -241,7 +238,6 @@ where $S_r(V)$ is the centred partial sum since the line's birth and $N_r(V)$ th
 The tested data do not support a small uniform constant: the worst ratio $\max|S_r|/\sqrt{N_r}$ rises from $4.25$ at $U=4199$ to $5.75$ at $U=7199$. This does **not** refute the existence of some larger eventual constant. The polylogarithmic form is **beyond what computation can settle here**: each sector costs $O(u)$ work, so distinguishing $\sqrt N \log^A$ from $\sqrt N \log^{A+1}$ would require $U$ in the millions.
 
 ---
-
 
 
 ## 6. Transferring the depth distribution to a window
@@ -321,6 +317,10 @@ $$\boxed{ \text{The transfer fails in the one-point density and holds in the cor
 $$\boxed{ \text{The exact cycle laws are proved; the short-window transfer remains partly empirical.} }$$
 
 The applications of that statement, and the problems it does and does not decide, are Paper IV.
+
+---
+
+**No progress toward the twin-prime conjecture is claimed, and no new bound.** Priority is not claimed for any result.
 
 ---
 

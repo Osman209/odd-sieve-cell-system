@@ -90,8 +90,6 @@ We use Papers 0–IV as follows and import nothing else.
 
 ---
 
----
-
 ## 2. The obstruction, derived from inside
 
 This section states the obstruction first, because everything else in this paper is an instance of it. Cutting the sieve at a depth that removes every complication except one leaves a single distinction standing, and §3 shows that no purely sieve-theoretic tool crosses it. Sections 4 to 7 then take the four routes the framework itself suggested, one at a time, and show each of them arriving at exactly this point — they are the anatomy of the wall, not a sequence of separate failures, and a reader who takes the identity of §2.3 on trust may stop at the end of §3.
@@ -109,7 +107,7 @@ $$z^3  \gt   U. \qquad\text{(2.1)}$$
 
 *Proof.* $qr \ge q^2$, so $n \in L_q$. And $qr \lt  r^2$, so $L_r$ has not yet begun at $n$. $\blacksquare$
 
-Together these remove, at one stroke, everything the earlier sections had to track: the multiplicative depth beyond two, and the overlap of several lines on one endpoint. **After the cut there is exactly one kind of composite left, and exactly one line responsible for each.**
+Together these remove, at one stroke, the two things a sieve at ordinary depth has to track: the multiplicative depth beyond two, and the overlap of several lines on one endpoint. **After the cut there is exactly one kind of composite left, and exactly one line responsible for each.**
 
 
 **Moving the cut, and why the crossing never reverses.** Write $D(z) = R(z) - C(z)$ for the deficit at cut $z$, where $C(z)$ counts surviving cells and $R(z)$ the composite endpoints inside them, equivalently the strikes still owed by the lines above $z$. Advance the cut to the next prime $r$, and let $A_r$ be the surviving cells that $r$ closes; for $X \in A_r$ let $k(X) \ge 1$ be the number of lines in $(z, P]$ that would have struck it, $r$ included.
@@ -247,17 +245,17 @@ Since $\omega(u) \to e^{-\gamma}$ rapidly, the numerical threshold is $u^{*} \ap
 $$u \omega(u)\big|_{u=3}  =  1+\log 2, \qquad \frac RC  \longrightarrow  2\Big(1-\frac{1}{1+\log 2}\Big)  =  0.818768 .$$
 The same number arrives without Buchstab at all: a $z$-rough $n \le x$ with $z = x^{1/3}$ is prime or a product of two primes $x^{\alpha}, x^{1-\alpha}$ with $\alpha \in (1/3,1/2)$, and counting the latter gives $\frac{x}{\log x}\int_{1/3}^{1/2}\frac{\mathrm{d}\alpha}{\alpha(1-\alpha)} = \frac{x}{\log x}\log 2$, so $\Phi(x,x^{1/3}) \sim (1+\log 2) x/\log x$ and the prime proportion tends to $1/(1+\log 2) = 0.590616$. **So at the cut this paper actually uses, the heuristic of this subsection is a consequence of the prime number theorem and not of any sieve estimate.**
 
-*Measured*, at $M = h = 1009$ with the cut at $U^{\alpha}$:
+*Measured*, at $M = h = 1009$ with the cut at $U^{\alpha}$; the predicted row is $2(1-1/u\omega(u))$:
 
 | $\alpha$ | 0.20 | 0.25 | 0.28 | $1/3$ | 0.38 | 0.42 |
 |---|---|---|---|---|---|---|
 | $u$ | 5.08 | 4.02 | 3.58 | 3.00 | 2.63 | 2.38 |
-| $R/C$ measured | 1.2025 | 1.0369 | 0.9453 | 0.7559 | 0.5806 | 0.4003 |
-| $2(1-1/u\omega(u))$ | 1.2988 | 1.1139 | 1.0040 | 0.8188 | 0.6564 | 0.4872 |
+| $R/C$, measured | 1.2025 | 1.0369 | 0.9453 | 0.7559 | 0.5806 | 0.4003 |
+| $R/C$, predicted | 1.2988 | 1.1139 | 1.0040 | 0.8188 | 0.6564 | 0.4872 |
 
 *(The prediction row is now complete and recomputed at the same $u$ from the delay system; the $\alpha = 0.25$ entry was printed as $1.110$ in an earlier version and is $1.1139$.)*
 
-*The prediction sits systematically above the measurement, and the gap is a finite-size effect that closes exactly.* Taking the global window — every cell $6n\pm1 \le X$, cut at $z = X^{1/3}$, so $u = 3$ throughout — and classifying each surviving endpoint by Theorem 1:
+*The prediction sits systematically above the measurement, and the gap is a finite-size effect that closes exactly.* Taking the global window — every cell $6n\pm1 \le X$, cut at $z = X^{1/3}$, so $u = 3$ throughout — and classifying each surviving endpoint by Theorem 1, with $\Phi$ written for $\Phi(x,x^{1/3})$ in the last row:
 
 | $X$ | $10^6$ | $10^7$ | $10^8$ | $10^9$ | $4\times10^9$ | limit |
 |---|---|---|---|---|---|---|
@@ -265,7 +263,7 @@ The same number arrives without Buchstab at all: a $z$-rough $n \le x$ with $z =
 | $T$ | 8,168 | 58,979 | 440,311 | 3,424,505 | 11,944,437 | — |
 | $R/C$ | 0.7038 | 0.7208 | 0.7355 | 0.7527 | 0.7575 | **0.8188** |
 | $T/C$ | 0.4231 | 0.4127 | 0.4016 | 0.3902 | 0.3871 | **0.3488** |
-| $\Phi(x,x^{1/3})\log x/x$ | 1.6683 | 1.6753 | 1.6783 | 1.6893 | — | $1+\log2 = 1.6931$ |
+| $\Phi\log x/x$ | 1.6683 | 1.6753 | 1.6783 | 1.6893 | — | $1+\log2 = 1.6931$ |
 
 The prime proportion among surviving endpoints is the quotient of two finite-size quantities, $\big[\pi(x)\log x/x\big]\big/\big[\Phi(x,x^{1/3})\log x/x\big]$; at $X = 10^9$ that reads $1.0537/1.6893 = 0.6237$ against the directly measured $0.6237$. **The whole distance from the prediction is the secondary term of the prime number theorem, and the numerator is what carries it.** The limiting value of $T/C$ shown above is $1/(1+\log 2)^2 = 0.3488$, i.e. the two endpoints treated as independent; the measured departure from independence, $\big(T\cdot S\big)/\big(\text{one-composite halves}\big)$, reads $1.0633,\ 1.0694,\ 1.0354,\ 1.0237,\ 1.0203$ across the same five heights — decreasing, consistent with independence, and **not established by it**, since that residual is the only place a twin excess could live.
 
@@ -292,25 +290,25 @@ For the target $\Omega \le 1$, by contrast, Corollary 1 gives $-f_1(s)$ on the s
 
 ### 3.4 Five routes through the line geometry, closed by measurement
 
-Sections 6.1–6.6 argue that the obstruction is the distinction between $\Omega=1$ and $\Omega=2$ inside the sifted set. That argument is analytic. This section reports what happens when one instead asks the line geometry itself for the missing information, in a single explicit window, and follows each of the five natural routes to the point where it stops. Every number below is **measured**, not proved.
+Sections 2.1–3.3 argue that the obstruction is the distinction between $\Omega=1$ and $\Omega=2$ inside the sifted set. That argument is analytic. This section reports what happens when one instead asks the line geometry itself for the missing information, in a single explicit window, and follows each of the five natural routes to the point where it stops. Every number below is **measured**, not proved.
 
 **The window.** We take the phase of the surviving configuration of [IV, §3.3],
 $$M_0 = 448{,}353, \qquad X = (M_0+210)^2 = 201{,}208{,}764{,}969,$$
 which carries $N = 31{,}392{,}060$ cells. The cut is the largest prime with $z^3 \lt  X$, namely $z = 5857$, since $5857^3 = 200{,}921{,}157{,}793$ and $5861^3 = 201{,}333{,}092{,}381$. After sieving to $z$, Theorem 1 applies and each surviving endpoint is $P$ or $P_2$. Writing the four states of a surviving cell by the status of its two endpoints:
-$$R = 1{,}049{,}024, \quad H = 857{,}695, \quad C_{\square} = 174{,}791, \quad T = 366{,}120,$$
-where $R$ is the surviving cells, $H$ the $P_2$ endpoints among them (a cell with both endpoints composite contributing two), $C_{\square}$ the cells with both endpoints $P_2$, and $T$ the twins. These are the $C$, $R$, $S$, $T$ of Theorem 4 in the letters this section uses, and $T = R - H + C_{\square}$ holds exactly.
+$$C = 1{,}049{,}024, \quad R = 857{,}695, \quad S = 174{,}791, \quad T = 366{,}120,$$
+in the letters of Theorem 4: $C$ the surviving cells, $R$ the $P_2$ endpoints among them (a cell with both endpoints composite contributing two), $S$ the cells with both endpoints $P_2$, and $T$ the twins. The identity $T = C - R + S$ holds exactly.
 
 Two side measurements fix the scale. The prime share among the $2R$ endpoints is $1{,}240{,}353/2{,}098{,}048 = 0.591196$ against the limit $1/(1+\log 2) = 0.590616$ of §3.2 — agreement to four decimals, because a short window at height $Y$ carries no secondary term in the prime count, which is the reading §3.2 gives of its own global table. And the survivors of **all** lines up to $M_0$ number $366{,}130$, that is $T$ plus ten composite cells whose two factors both exceed $M_0$; the same measurement at $M_0 + 510{,}510$ and $M_0 + 1{,}021{,}020$ gives $699{,}747 = 699{,}726 + 21$ and $1{,}010{,}762 = 1{,}010{,}734 + 28$. **The survivor count of a square window is the twin count plus a two-digit remainder.**
 
 **Route 1: prime gaps.** Each $P_2$ endpoint has a unique smallest factor $q \in (z, \sqrt{X}]$. Classify $q$ by its gap to the next prime and compare the observed count in each class against the count predicted by the cofactor interval $L/q$ and the prime density at $X/q$. Over twenty-nine gap classes from $2$ to $60$ the ratio is flat at $0.171$ to $0.176$, and the largest standardised residual anywhere is $1.59$ — smaller than one expects by chance from twenty-nine classes. A control is required here and it passes: the mean gap rises from $10.16$ to $12.92$ across octiles of $q$, so gap classes are confounded with $q$, and the same ratio binned by $q$ instead is flat to four decimals ($1.0004$, $0.9995$, $1.0021$, $0.9969$, $0.9926$, $1.0052$, $1.0059$, $0.9943$). The gap after $q$ is a function of the small factor alone, and the count of endpoints it owns is a prime count in the interval $(\mathrm{lo}/q, \mathrm{hi}/q)$; nothing links the two.
 
-**Route 2: line capacity.** The $36{,}824$ lines in $(z, \sqrt{X}]$ have $25{,}353{,}670$ raw strikes available inside the window, against the ceiling $R - 1 = 1{,}049{,}023$ that a single twin needs — larger by a factor of $24.2$, the usual outcome. Restricting the count to strikes that land on an endpoint of one of the $R$ rough cells gives $857{,}712$, against $H = 857{,}695$: a difference of **seventeen**, the endpoints whose two prime factors both lie below $\sqrt{X}$ and which are therefore counted twice. So the restricted capacity is not an upper bound on the output; it **equals** the output. That is Theorem 2 read as a statement about capacity — a surviving composite has exactly one responsible line, so there is no slack between what the lines can do and what they do.
+**Route 2: line capacity.** The $36{,}824$ lines in $(z, \sqrt{X}]$ have $25{,}353{,}670$ raw strikes available inside the window, against the ceiling $C - 1 = 1{,}049{,}023$ that a single twin needs — larger by a factor of $24.2$, the usual outcome. Restricting the count to strikes that land on an endpoint of one of the $R$ rough cells gives $857{,}712$, against $H = 857{,}695$: a difference of **seventeen**, the endpoints whose two prime factors both lie below $\sqrt{X}$ and which are therefore counted twice. So the restricted capacity is not an upper bound on the output; it **equals** the output. That is Theorem 2 read as a statement about capacity — a surviving composite has exactly one responsible line, so there is no slack between what the lines can do and what they do.
 
 Two further quantities locate why no upper bound is available here. First, the cofactor interval $L/q$ equals the sieving depth $z$ at $q = L/z = 32{,}159$; above that point the interval to be sifted is shorter than the sieve limit and no sieve estimate applies at all. Of the $36{,}824$ lines, $34{,}145$ lie above it, and they own $509{,}602$ of the $P_2$ endpoints — $59.4$ per cent of $H$. This is the vacuous region of §3.3, and the measurement supplies the number that section states qualitatively: for $\Omega \le 2$ Chen's switching principle need only show the vacuous region is small, and here it is not small, it is the majority. Second, dropping the partner condition — counting rough $P_2$ endpoints without requiring the other member of the cell to be rough — raises the count from $857{,}695$ to $4{,}997{,}471$, which is $4.76$ times the ceiling. The partner condition supplies a factor $0.1716$ and it is the whole of the margin; any bound that does not see both members of the cell at once fails by a factor of five before the sieve constant is reached. A Brun–Titchmarsh bound on the cofactor, which does not see it, gives $24{,}119{,}320$.
 
-**Route 3: the two endpoints.** Under independence one would predict $C_{\square} = R \cdot h_L h_R$ with $h_L, h_R$ the two $P_2$ shares. Measured against that prediction, over the same three windows, $C_{\square}$ gives $0.99701$, $0.99847$, $1.00125$ and $T$ gives $0.99857$, $0.99927$, $1.00060$. **The deviation from independence is under three parts in a thousand and changes sign between windows.** The shares themselves are stable at $0.4086$ to $0.4093$, against $1 - 1/(1+\log 2) = 0.40938$.
+**Route 3: the two endpoints.** Under independence one would predict $S = C \cdot h_L h_R$ with $h_L, h_R$ the two $P_2$ shares. Measured against that prediction, over the same three windows, $S$ gives $0.99701$, $0.99847$, $1.00125$ and $T$ gives $0.99857$, $0.99927$, $1.00060$. **The deviation from independence is under three parts in a thousand and changes sign between windows.** The shares themselves are stable at $0.4086$ to $0.4093$, against $1 - 1/(1+\log 2) = 0.40938$.
 
-This also settles the status of the weaker requirement recorded in §2.3. In the letters above it reads $H - C_{\square} \lt  R$; but $H - C_{\square} = R - T$ identically, so the requirement is $T \gt  0$ — it is not a weaker route to the conclusion, it is the conclusion. What $C_{\square}$ does buy is quantitative and worth recording: discarding it via $C_{\square} \ge 0$ leaves an upper bound on $H$ a tolerance of $(R-1)/H = 1.2231$, while keeping it raises the tolerance to $1.4269$ — measured as $1.2231, 1.2230, 1.2225$ and $1.4269, 1.4271, 1.4273$ across the three windows. Roughly half the available margin sits in $C_{\square}$, and a lower bound on it is a lower bound on pairs $(n, n+2)$ with all four prime factors above $X^{1/3}$, which is the same dimension and the same sieve variable as $T$.
+This also settles the status of the weaker requirement recorded in §2.3. In these letters it reads $R - S \lt  C$; but $R - S = C - T$ identically, so the requirement is $T \gt  0$ — it is not a weaker route to the conclusion, it is the conclusion. What $S$ does buy is quantitative and worth recording: discarding it via $S \ge 0$ leaves an upper bound on $R$ a tolerance of $(C-1)/R = 1.2231$, while keeping it raises the tolerance to $1.4269$ — measured as $1.2231, 1.2230, 1.2225$ and $1.4269, 1.4271, 1.4273$ across the three windows. Roughly half the available margin sits in $S$, and a lower bound on it is a lower bound on pairs $(n, n+2)$ with all four prime factors above $X^{1/3}$, which is the same dimension and the same sieve variable as $T$.
 
 **Route 4: the two small factors.** Each of the $174{,}791$ cells of type $P_2P_2$ carries a factorisation of both members,
 $$6j-1 = pq, \qquad 6j+1 = rs,$$
@@ -373,8 +371,6 @@ with both extrema attained exactly (at $|I| = 868$, offset $2069$, and at $|I| =
 **(c) Resonance alone.** No correlation was measured between boundary resonance ($r \mid q^2-p^2$) and survival.
 
 **(d) Parity.** The sieve counts *rough* integers and does not separate a prime from a semiprime. We measured this directly on the relevant quantity: after conditioning on the size of the rough part in bins of width $0.02$ in $\log$, with permutation performed within bins, the slope of $\mathbf{P}(\Omega_{\gt P} \text{ odd})$ against $\Omega_{\le P}$ is $-0.0013$ against a null of s.d. $0.0012$, i.e. $z = -1.11$. Over $1.5\times10^6$ samples we therefore detect **no statistically significant dependence** between the two axes under this control.
-
----
 
 ---
 
@@ -471,8 +467,6 @@ The provable bound and the truth differ by two to three orders of magnitude. **T
 
 ---
 
----
-
 ## 7. Why the three laws do not close the problem
 
 They give a supply-and-demand comparison, and the comparison goes the wrong way. Take the fixed set $\lbrace 5,7,11\rbrace$, so $Q = 385$, $S = 135$, and consider the sector at $M = 2319$: $4{,}644$ cells, of which the tail of $4{,}620$ carries exactly $1{,}620$ cells open after $5, 7, 11$ — [IV, Thm 11] confirmed.
@@ -491,11 +485,6 @@ Running the lines in order leaves $157$ of the $1{,}620$ open, and those $157$ a
 **And no family is protected.** Distributing the $157$ survivors over the $135$ families gives $38$ families wiped out entirely, $51$ with one survivor, $37$ with two, $5$ with three, $3$ with four and $1$ with five — never more than five of twelve. Against a null in which the twelve copies of each family survive independently with probability $p = 157/1620$, the binomial prediction is $39.7,\ 51.2,\ 30.2,\ 10.8,\ 2.6,\ 0.4$. A second sector ($M = 4629$, $125$ survivors) gives observed $54,\ 47,\ 25,\ 8,\ 1$ against predicted $51.5,\ 51.7,\ 23.8,\ 6.6,\ 1.2$.
 
 > **The constraint binds one line at a time and dissolves in aggregate.** Each line is restricted to one copy per family beyond the finite exceptional set, yet three hundred such lines erase the families at a rate indistinguishable from independent chance. This is the pattern of §8.8 again, met in the sharpest local form the framework has produced: an exact per-gap restriction, and no aggregate consequence.
-
----
-
-
----
 
 ---
 
@@ -678,7 +667,7 @@ That is the weakest *numerical* requirement the twin statement takes anywhere in
 
 That last sentence names a standard device rather than an observation of ours. Passing to a residue class modulo a primorial to remove the local bias at the small primes, at no asymptotic cost, is the **$W$-trick**, and the modulus here is $210 = 2\cdot3\cdot5\cdot7$. In the analytic literature the compensating factor $\phi(W)/W$ is inserted by hand and the absence of cost is known; here it is not assumed but measured, and the three ratios above are that measurement. The device is standard — see its use in Tao and Teräväinen [29], and in the quantitative polynomial Szemerédi work of Krause, Mousavi, Tao and Teräväinen [19] — and we record the identification because the same thing has happened repeatedly here: an object built from inside the construction turns out to have a name. And $C_M$ is nowhere near zero: its minimum over those sectors is $10$ below $M = 3000$ and $520$ for $M$ near $2\times10^4$, against $497$ in the ordinary classes.
 
-**That calculation has been carried out, and it closes the local route.** Coupling consecutive sectors and admitting the lines $11,13,17$ bounds the exception budget over a full $210$-window by $31$ under the twinless hypothesis, and that ceiling cannot be lowered by any finite set of lines: of the $28$ maximal configurations, $27$ are killed by a fixed prime divisor once the quadratic partner conditions are included, and the survivor is admissible at every prime, so the residues can be chosen simultaneously against any finite list. The order in which the lines are born adds nothing either. The calculation, with its verifications, is [IV, §3.3]; here we record only what it means.
+**That calculation has been carried out, and it closes the local route.** Coupling consecutive sectors and admitting the lines $11,13,17$ bounds the exception budget over a full $210$-window by $31$ under the twinless hypothesis, and that ceiling cannot be lowered by any finite set of lines: of the $28$ maximal configurations, $27$ are killed by a fixed prime divisor once the quadratic partner conditions are included, and the survivor is admissible at every prime, so the residues can be chosen simultaneously against any finite list — the setting of Schinzel's Hypothesis H [27]. The order in which the lines are born adds nothing either. The calculation, with its verifications, is [IV, §3.3]; here we record only what it means.
 
 **The upper-bound side of the argument is therefore finished, and the whole difficulty sits in the other half.** One does not need to kill the escapee: if $\sum_{i} C_{M_i} \ge 32$ can be established, the thirty-second survivor has no room inside $E$ and is a twin. Measured, that requirement is met with enormous room — $B_k := \sum_i C_{M_i}$ is $1{,}337$ at $k=1$, $29{,}579$ at $k=100$ and $196{,}948$ at $k=1000$, with $B_k\log^2 M_0/M_0$ flat at about $139$ from $k = 20$ onward, and the minimum over a band of sixty consecutive $k$ never below $1{,}337$. **The requirement is exceeded by a factor of six thousand and rising, and remains unproved.**
 

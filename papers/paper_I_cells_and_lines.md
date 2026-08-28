@@ -160,7 +160,6 @@ With $L_2$ admitted, gaps between consecutive struck numbers lie in $\lbrace 1,2
 ---
 
 
-
 ## 3. Cells
 
 ### 3.1 Definition
@@ -246,7 +245,6 @@ $$(p-2) = (p \text{ cells per cycle}) - (2 \text{ branches}).$$
 *Why it is worth stating.* The birth index is a permanent exception to any law phrased over residue classes, because at $j = c$ the line meets itself rather than a multiple of itself. Written as $S_p = \mathbb{F}_p \setminus \lbrace \pm 1\rbrace$ the set is wrong by one point, and that point is where several natural-looking laws about rows break — and, being the smallest index, also where their most convincing examples come from.
 
 ---
-
 
 
 ### 3.6 The diamond coordinates, and the fingerprint as a projection
@@ -416,7 +414,7 @@ Theorem 4 makes one thing immediate that the outside indexing hides. **A line's 
 
 ### 4.4 The shared index, and two laws in it
 
-Sections 8.1–8.3 index the window by position. This one indexes it by the *strike number* of each line, which turns two facts that were previously counted into consequences of the coordinate.
+Sections 4.1–4.3 index the window by position. This one indexes it by the *strike number* of each line, which turns two facts that were previously counted into consequences of the coordinate.
 
 Keep $n = 6a$, and call **layer $j$** the pair of lines
 $$p = n-6j-1, \qquad s = n-6j+1,$$
@@ -530,8 +528,10 @@ $$\ell(m) = m+3 \iff a+b = ab+1 \iff (a-1)(b-1) = 0 \iff a = 1 .$$
 *Placement.* The central pair is classical: $a$ and $b$ are the *middle divisors* $\rho_1(m) = \max\lbrace d \mid m: d \le \sqrt m\rbrace$ and $\rho_2(m) = m/\rho_1(m)$, whose average orders were determined by Tenenbaum [3]; $a+b$ is the least semiperimeter of an integral rectangle of area $m$, studied under that name by Martin [4], who also records that it equals $m+1$ exactly for $m$ prime — the display above, in other words, is already in the literature. The reformulation of §5.2 places the question inside the study of divisors of an integer in a short interval. A targeted search did not find the identity $\ell(m) = a+b+2$ itself recorded; it is elementary enough that it may well be folklore, and no priority is claimed for it. What the section adds here is that it is the exact answer to an ownership question this framework asks anyway, and that the two steps of $2$ come from the odd lattice.
 
 ---
-
 ---
+
+**No progress toward the twin-prime conjecture is claimed, and no new bound.** Priority is not claimed for any result.
+
 ---
 
 ## Appendix A — Fingerprint and sector tables
@@ -554,7 +554,6 @@ $H_j = 2 + W_j$ over the first cycle (the histogram of these values is [0, Thm 2
 | 13 | 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6 |
 
 
-
 ## Appendix B — The mod-24 identity card
 
 Combining $p \bmod 6$ (which strike carries the $L_3$-meeting) with $p \bmod 8$ (whether $D = 2$ is reachable, i.e. whether $2$ is a quadratic residue):
@@ -564,7 +563,6 @@ Combining $p \bmod 6$ (which strike carries the $L_3$-meeting) with $p \bmod 8$ 
 | reaches $D=2$ | yes | no | yes | no | no | yes | no | yes |
 
 Zero failures over 428 primes. Writing $D_j = 2h_j$ one has $h_j \equiv 2j^2 \pmod p$, so a line's reachable distances to squares are exactly twice the squares mod $p$; the number of distinct values is $(p+1)/2$, which is the true source of $D_j = D_{p-j}$. Note that $D = 4$ is reachable by **every** line, since $2j^2 \equiv 2$ means $j^2 \equiv 1$.
-
 
 
 ## Appendix C — The triple $T(a)$
@@ -582,7 +580,6 @@ arising from $(6a-1)^2$, $(6a-1)(6a+1)$ and $(6a+1)^2$, with spacing $2a$.
 Moreover $p_+^2 - p_-^2 = 2p_- + 2p_+$ exactly, so the two lines' steps fill the square gap without remainder: $49-25 = 24 = 10+14$; $169-121 = 48 = 22+26$; $361-289 = 72 = 34+38$.
 
 **Caveat.** The law holds for every $a$, twin or not; at $a=4$ the member $25$ is composite. The geometric law therefore does not distinguish twins, and the distinction reverts to whether the outer squares are births or inherited — a question about the older lines.
-
 
 
 ---

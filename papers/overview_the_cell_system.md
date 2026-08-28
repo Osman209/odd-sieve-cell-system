@@ -16,7 +16,7 @@ The framework then stops, and it stops in the same place every time. We state th
 $$2(R-C)  =  \sum (-1)^{\Omega(n)}$$
 over the endpoints of the surviving cells. The inequality one wants, $R \lt  C$, is therefore precisely the statement that a Liouville sum over the sifted set is negative. **The parity problem is not an obstacle imported from sieve theory; it is what the construction reduces to on its own.**
 
-**No progress toward the twin prime conjecture is claimed, and no new bound.**
+**No progress toward the twin-prime conjecture is claimed, and no new bound.**
 
 ---
 

@@ -156,7 +156,6 @@ This is (3.2) with $x$ set to $1$ and $q-2$ resolved into $(q-3) + w$; the cell 
 ---
 
 
-
 ## 4. Weights on the cycle
 
 ### 4.1 What Theorem 2 gives, and what it does not
@@ -208,7 +207,6 @@ The $+40.5$% in the first column is exactly the error of ignoring the sizes, i.e
 $$\boxed{ \text{The } \textit{factor-size} \text{ deficit is removable: exact at every resolution, polynomial in } \pi(z),\ 0.4\text{ per cent} \text{ at } B=8. }$$
 
 
-
 ## 5. Ownership layers
 
 This section changes the bookkeeping object. Sections 2–4 count **cells** and therefore carry the two-rail factor $1-2/q$. Here we assign an owner to each **individual odd integer**, so the corresponding one-point density is $1-1/q$. The ownership decomposition is exact on a full CRT cycle and removes inclusion–exclusion by construction.
@@ -231,7 +229,6 @@ Thus $O(25) = O(35) = 5$, $O(45) = 3$, $O(49) = 7$, and $O(105) = 3$ — priorit
 *Verification.* $E_5 = \lbrace 25, 35, 55, 65, 85, 95, 115, 125, \dots\rbrace$ and $E_7 = \lbrace 49, 77, 91, 119, 133, 161, 203, 217, \dots\rbrace$ agree exactly, term by term, with $\lbrace n : O(n) = 5\rbrace$ and $\lbrace n : O(n) = 7\rbrace$.
 
 **A genuine structural gain, and a precise accounting of what it costs.** The $2^{\pi(z)}$ intersection terms vanish by construction — the difficulty does not disappear, it moves: evaluating $\mathrm{card}E_q(I)$ requires knowing how many earlier survivors the layer copies, i.e. the *shape* of $S_{\lt q}$. **Each layer is a scaled copy of the previous survivor strip**, which is the same statement as the observation that all lines read a common word on a common strip.
-
 
 
 ### 5.2 Why disjointness repairs the union bound but not the estimate
@@ -268,7 +265,6 @@ $$\sum_{q\le z} \frac{|E_q|}{|I|}  =  1 - \prod_{q\le z}\Big(1-\frac1q\Big), \qq
 | inclusion–exclusion | $\prod(1-1/q)$ |
 
 **The layered form is the cleanest of the three and the only one whose bound never exceeds $1$, but it is not stronger.** Evaluating $|E_q(I)|$ requires $|S_{\lt q}|$ on the interval $I/q$ — the same problem one level down. That recursion is Legendre's, and its shape and its limitations are classical.
-
 
 
 ---
@@ -336,6 +332,7 @@ where $\nu_q(H)$ is the number of distinct residues modulo $q$ that the pattern 
 
 ---
 
+**No progress toward the twin-prime conjecture is claimed, and no new bound.** Priority is not claimed for any result.
 
 ---
 

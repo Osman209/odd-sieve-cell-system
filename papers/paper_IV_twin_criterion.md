@@ -258,7 +258,7 @@ the ceiling $31$ being attained in $9$ of the $2431$ alignments, and the distrib
 
 **That ceiling cannot be lowered by any finite set of lines, and this is a theorem rather than a report of failed attempts.** The scope is worth being exact about, since the budget is a maximum over residues: what is proved is that for every finite set of lines there is a choice of residues at which the extremal configuration survives them all, so no residue-based argument brings the ceiling below $31$. It is *not* a claim that an integer $M_0$ realising the configuration exists, still less that infinitely many do — that would require all $133$ polynomials to be simultaneously prime, which is Hypothesis H and is not assumed anywhere here. The $9$ extremal alignments carry $28$ distinct maximal configurations between them. Each configuration demands not only that certain $M_0+a$ be prime — $27$ to $30$ of them — but also that the *partner* member of each of the $31$ cells survive, and those partners are quadratics in $n$: $36n^2+60n+23$ for $A$, $36n^2+84n+47$ for $C$, $36n^2+96n+53$ for $D$, $36n^2+108n+67$ for $E$, $36n^2+108n+79$ for $F$ (verified against the definition for $n \lt 3000$). Testing the full linear-and-quadratic systems for a fixed prime divisor kills **$27$ of the $28$**: $q=23$ disposes of fourteen, $q=31$ of ten, $q=19$ of three. One survives, at $M_0 \equiv 448353 \pmod{510510}$, with $28$ linear and $31$ quadratic conditions — $59$ polynomials of total degree $90$. Every prime $q \le 90$ leaves at least one admissible residue (the tightest are $q=19$ and $q=31$, with exactly one each), and for $q \gt 90$ a residue survives automatically since $90$ polynomials of that total degree have at most $90$ roots. **The system is therefore admissible at every prime, so by the Chinese remainder theorem the residues can be chosen simultaneously against any finite list of further lines: no residue-based argument, however many primes it uses, reaches $30$.**
 
-**Nor does the order in which the lines are born supply the missing constraint.** One might hope that a line $M_0+a$, forced prime by one exceptional cell, strikes another of the $31$ once it is born. Modulo $p = M_0+a$ one has $M_0 \equiv -a$, so a member $(M_0+u)(M_0+v)+e$ with $e \in \lbrace 0,\pm2\rbrace$ reduces to the integer $(u-a)(v-a)+e$, and $|u|,|v|,|a| \lt 216$ while $p \asymp M_0$; the line divides the member only if that small integer is exactly zero. Excluding the cell's own factors, this needs $|u-a| \cdot |v-a| = 2$, hence $|u-v| \in \lbrace 1,3\rbrace$. **But $u$ and $v$ are the offsets $6i+d$ with $d \in \lbrace 2,4,8,10\rbrace$, so $|u-v|$ is even, and the collision is impossible.** The check finds none, for the $28$ lines or for any $M_0+b$ with $b \le 216$. The timing of the lines carries no information the residues did not already carry, and the escapee's survival is equivalent to the simultaneous primality of its $59$ irreducible polynomials — precisely the setting of Schinzel's Hypothesis H [V, ref. 27], which predicts infinitely many $t$ realising it. **Proving the configuration impossible would mean contradicting that prediction for a specific family, which is not a weakening of the twin problem but an apparent strengthening of it.**
+**Nor does the order in which the lines are born supply the missing constraint.** One might hope that a line $M_0+a$, forced prime by one exceptional cell, strikes another of the $31$ once it is born. Modulo $p = M_0+a$ one has $M_0 \equiv -a$, so a member $(M_0+u)(M_0+v)+e$ with $e \in \lbrace 0,\pm2\rbrace$ reduces to the integer $(u-a)(v-a)+e$, and $|u|,|v|,|a| \lt 216$ while $p \asymp M_0$; the line divides the member only if that small integer is exactly zero. Excluding the cell's own factors, this needs $|u-a| \cdot |v-a| = 2$, hence $|u-v| \in \lbrace 1,3\rbrace$. **But $u$ and $v$ are the offsets $6i+d$ with $d \in \lbrace 2,4,8,10\rbrace$, so $|u-v|$ is even, and the collision is impossible.** The check finds none, for the $28$ lines or for any $M_0+b$ with $b \le 216$. The timing of the lines carries no information the residues did not already carry, and the escapee's survival is equivalent to the simultaneous primality of its $59$ irreducible polynomials — precisely the setting of Schinzel's Hypothesis H [4], which predicts infinitely many $t$ realising it. **Proving the configuration impossible would mean contradicting that prediction for a specific family, which is not a weakening of the twin problem but an apparent strengthening of it.**
 
 ### 3.4 Blocks of consecutive periods, and why lengthening the block does not help
 
@@ -316,7 +316,7 @@ Taking $z = N^{1/3}$ makes the error $O(N^{2/3})$ and, by Step 2, the main term 
 
 **Step 4: summation.** Under the twinless hypothesis the type $B$ is empty, since it requires both $M+2$ and $M+4$ prime. A sector carries at most one cell of any given type, so the number of exceptional cells in the block is exactly $\sum_X |I_X|$, which by Step 3 is $\ll N/(\log N)^2$. With $N = 35L$ this is $\ll L/\log^2 L$. $\blacksquare$
 
-**This is a computation, not a new tool, and it should be read as one.** Reading the sieve dimension off the number of roots of the defining polynomials modulo each prime is the standard definition of dimension — the condition $\sum_{q \lt  s}(\log q)/f(q) = \kappa\log s + O(1)$ of Halberstam and Richert — and the passage from a dimension-$\kappa$ sifting density to an upper bound of order $N/(\log N)^{\kappa}$ is the standard Selberg estimate; see [V, ref. 8] for the higher-dimensional theory and [V, ref. 12] for the sieve itself. The twin problem in this language is the case $\rho(q) = 2$, dimension $2$. What is particular to the present setting is only the input: that the exceptional cells of Theorem 4 have the five partners above, so that the quadratic characters $\chi_2$, $\chi_{11}$ and $\chi_{14}$ appear and split the five types into dimensions $2,2,3,3,3$. The conclusion then follows by quoting the standard machinery, and we claim nothing for the machinery.
+**This is a computation, not a new tool, and it should be read as one.** Reading the sieve dimension off the number of roots of the defining polynomials modulo each prime is the standard definition of dimension — the condition $\sum_{q \lt  s}(\log q)/f(q) = \kappa\log s + O(1)$ of Halberstam and Richert [3] — and the passage from a dimension-$\kappa$ sifting density to an upper bound of order $N/(\log N)^{\kappa}$ is the standard Selberg estimate; see [2] for the higher-dimensional theory and [3] for the sieve itself. The twin problem in this language is the case $\rho(q) = 2$, dimension $2$. What is particular to the present setting is only the input: that the exceptional cells of Theorem 4 have the five partners above, so that the quadratic characters $\chi_2$, $\chi_{11}$ and $\chi_{14}$ appear and split the five types into dimensions $2,2,3,3,3$. The conclusion then follows by quoting the standard machinery, and we claim nothing for the machinery.
 
 *Two remarks on the shape of this.* The bound is an **upper-bound sieve only**, and upper bounds in a fixed dimension are the direction in which sieve methods have no parity obstruction; nothing here bears on the lower-bound side. And the two-sector types are smaller than the one-sector types by a full logarithm, so in a long block almost every exception is of type $A$ or $C$ — a block that is longer is structurally *simpler*, not more complicated.
 
@@ -394,12 +394,12 @@ And the bias, though real, is not usable: $T-B \approx -1.56 T$ is a fixed numbe
 
 One may ask directly whether windows anchored at squares are systematically poorer than windows placed anywhere. The answer is an identity rather than an experiment.
 
-For a window starting at $r^2$, the pair at offset $j$ survives $q$ exactly when $r^2 \not\equiv -2j$ and $r^2 \not\equiv -2j-2 \pmod q$. Writing $\rho_q(a) = \mathrm{card}\lbrace r : r^2 \equiv a\rbrace$ and $\nu_q(j) = \rho_q(-2j) + \rho_q(-2j-2)$ — the two conditions cannot hold at once — the average over **all square phases** is exactly
-$$\mu_{\square}(L)  =  \sum_{j\lt L}\ \prod_{q} \frac{q - \nu_q(j)}{q}. \qquad\text{(3.3)}$$
+For a window starting at $r^2$, the pair at offset $j$ survives $q$ exactly when $r^2 \not\equiv -2j$ and $r^2 \not\equiv -2j-2 \pmod q$. Writing $\rho_q(a) = \mathrm{card}\lbrace r : r^2 \equiv a\rbrace$ and $\nu_q(j) = \rho_q(-2j) + \rho_q(-2j-2)$ — the two conditions cannot hold at once — the average over **all square phases** is exactly, writing $\mu_{\mathrm{sq}}$ for it,
+$$\mu_{\mathrm{sq}}(L)  =  \sum_{j\lt L}\ \prod_{q} \frac{q - \nu_q(j)}{q}. \qquad\text{(3.3)}$$
 
-Computed against the naive density prediction $E = L\prod(q-2)/q$, and against the restricted average $\mu^{\times}$ over roots that are themselves coprime to every old line:
+Computed against the naive density prediction $E = L\prod(q-2)/q$, and against the restricted average $\mu_{\mathrm{cop}}$ over roots that are themselves coprime to every old line:
 
-| $p$ | $T_p^-$ (actual) | $\mu_{\square}$ | $\mu^{\times}$ | $E = L\delta$ |
+| $p$ | $T_p^-$ (actual) | $\mu_{\mathrm{sq}}$ | $\mu_{\mathrm{cop}}$ | $E = L\delta$ |
 |---|---|---|---|---|
 | 11 | 2 | 2.943 | 2.833 | 3.286 |
 | 29 | 2 | 4.149 | 4.201 | 4.206 |
@@ -408,9 +408,9 @@ Computed against the naive density prediction $E = L\prod(q-2)/q$, and against t
 | 499 | 13 | 21.237 | 21.319 | 21.274 |
 | 997 | 38 | 34.591 | 34.534 | 34.608 |
 
-$\mu_{\square}$ agrees with $E$ to within about $1$% from $p = 29$ onward, and restricting the roots changes nothing.
+$\mu_{\mathrm{sq}}$ agrees with $E$ to within about $1$% from $p = 29$ onward, and restricting the roots changes nothing.
 
-> **The square-phase mean has the exact expression (3.3); numerically it tracks the generic density prediction closely, the two differing by about $1$% or less from $p = 29$ onward in the sample above.** So the exact quantity is available in closed form, and on the tested range it shows no bias at the level of the mean — which replaces the earlier control experiment with a computation, though not with a proof that the two agree in the limit. Individual windows are of course far from the mean — $T_{53}^- = 2$ against $\mu_{\square} = 5.43$ — but the scatter is governed by the correlation function of [II, Thm 4], not by any property of squares.
+> **The square-phase mean has the exact expression (3.3); numerically it tracks the generic density prediction closely, the two differing by about $1$% or less from $p = 29$ onward in the sample above.** So the exact quantity is available in closed form, and on the tested range it shows no bias at the level of the mean — which replaces the earlier control experiment with a computation, though not with a proof that the two agree in the limit. Individual windows are of course far from the mean — $T_{53}^- = 2$ against $\mu_{\mathrm{sq}} = 5.43$ — but the scatter is governed by the correlation function of [II, Thm 4], not by any property of squares.
 
 ### 3.8 Two constructions that do not help, recorded so they are not retried
 
@@ -423,8 +423,6 @@ For $r = 1$ that is $p_{\max} \lt  2p_{\min}$ — the lines $11,13,17,19$ with $
 **Ownership and the cofactor.** Writing a strike in a sector $[P^2,Q^2)$ as $N = pm$, it is new for $p$ exactly when $\mathrm{spf}(m) \ge p$, and the higher lines that return to it are exactly the primes $q$ with $p \lt  q \le P$ and $q \mid m$. Two consequences are clean: if $q \gt  p$ shares a new point of $p$ then $p^2q \lt  Q^2$, and conversely $P^2 \le p^2q \lt  Q^2$ makes $p^2q$ a guaranteed shared point. And if $p^3 \ge Q^2$ then $m \lt  Q^2/p \le p^2$ while $m$ has no factor below $p$, so $m$ is prime: in that layer every new strike is a product of exactly two primes (verified with no exception in the sectors $101\to103$, $499\to503$, $997\to1009$).
 
 *Why this too changes nothing.* The condition $p^2q_1q_2\cdots \lt  Q^2$ is **not** a bound on interaction depth, and the derived layers $Q^{1/2}, Q^{2/5}, \dots$ do not exist: $10387 = 13\cdot17\cdot47$ sits inside $[101^2,103^2)$ and $1009091 = 97\cdot101\cdot103$ inside $[997^2,1009^2)$. More to the point, even in the clean layer the question "is this strike new?" becomes "is the cofactor prime?", and for smaller $p$ it becomes "is the cofactor free of prime factors below $p$?" — which is Buchstab's decomposition in the vocabulary of lines. The numbers say the same: of the raw strikes of the clean layer, the new ones are $29$ of $73$, $1158$ of $4756$ and $1492$ of $7938$ in those three sectors — 40, 24 and 19 per cent and falling. Even where no higher line can return, most strikes are still repeats from below.
-
----
 
 ---
 
@@ -562,8 +560,6 @@ For $Q = 385$ the threshold is $12{,}706$. This is a genuinely local statement: 
 
 ---
 
----
-
 ## 6. The gate belt: what a line can do between its own square and the next
 
 Sections 3–5 work inside a sector bounded by consecutive odd squares. This section changes the unit: since every prime $q\gt 3$ has $q^2 \equiv 1 \pmod 6$, each prime has a **gate** $G_q$ with $q^2 = 6G_q+1$, and the cell $C_{G_q} = (q^2-2, q^2)$ is closed by $q$ itself. Consecutive primes $q\lt r$ therefore delimit a **belt** of cells $C_{G_q+1},\dots,C_{G_r-1}$ between two gates that are certainly closed. The belts tile the cell axis.
@@ -642,8 +638,6 @@ $$\frac{\sum_s C_s}{G}  \sim  \frac23\log q$$
 
 ---
 
----
-
 ## 7. Four named cells inside the window
 
 Paper I, §4, indexes the window by its own cell numbers: it is the interval $c_0,\dots,c_0+N-1$ with $c_0 = 6a^2-2a+1$ and $N = 4a-1$, where $n = 6a$ and the window is $[(n-1)^2,(n+1)^2]$. This section uses that indexing to study the four cells nearest its two ends.
@@ -674,7 +668,7 @@ and as $a$ runs they trace four **tracks**. Substituting $q = 6a-1$ makes every 
 
 Each individual condition admits half the primes (measured over primes below $10^5$: $49.7$–$50.0$%), but a cell falls to a strike on **either** member, so the union admits three quarters: measured $75.0,\ 74.8,\ 75.0,\ 75.0$% for $T_1,T_2,T_3,T_4$. Requiring eligibility for all four at once cuts this to **exactly a quarter** — the eight discriminants reduce to the five independent characters $(-1),(2),(3),(5),(7)$, giving $32$ sign patterns of which $8$ pass; measured $24.84$% against the naive independent guess $(3/4)^4 = 31.6$%.
 
-**The four tracks are not equivalent.** Each is a pair of quadratics, so its twin density is governed by a Bateman–Horn constant $S = \prod_r (1-\nu_r/r)/(1-1/r)^2$, where $\nu_r$ counts the roots of the pair modulo $r$. The correct baseline is a generic cell $(6c-1,6c+1)$, whose constant is $12C_2 = 7.9219$ — **not** the twin constant $2C_2 = 1.320$, which is for pairs $(n,n+2)$ over all $n$ and counts the even $n$ a cell never has.
+**The four tracks are not equivalent.** Each is a pair of quadratics, so its twin density is governed by a Bateman–Horn constant [1] $S = \prod_r (1-\nu_r/r)/(1-1/r)^2$, where $\nu_r$ counts the roots of the pair modulo $r$. The correct baseline is a generic cell $(6c-1,6c+1)$, whose constant is $12C_2 = 7.9219$ — **not** the twin constant $2C_2 = 1.320$, which is for pairs $(n,n+2)$ over all $n$ and counts the even $n$ a cell never has.
 
 | track | $\nu_5$ | $\nu_7$ | $\nu_{11}$ | $S$ | $S/12C_2$ |
 |---|---|---|---|---|---|
@@ -736,8 +730,6 @@ The residue and the modulus are coprime, so by Dirichlet's theorem the progressi
 > **So no fixed number of named cells can force a twin.** Whatever finite list of tracks one selects, one distinct line may be assigned to each and the conditions combined; the construction is immune to how large the tracks' moduli are required to be, and it survives the addition of any finite list of side conditions. **An argument of this shape can only begin to bite when the number of cells grows with the window**, so that the number of conditions grows too and the assignment of a private line to each ceases to be free.
 
 We state this as a proposition rather than a remark because it is the reason to stop, and knowing why one stops is worth more than another negative measurement.
-
----
 
 ---
 
@@ -860,4 +852,9 @@ so $243$ is the point at which the constraint $q \gt  P/3$ becomes the binding o
 
 ## References
 
-The companion papers are cited as [0], [I], [II], [III], [V]. This paper imports only their definitions and proves everything else; the external literature is discussed in Paper V, where the framework is compared with it.
+The companion papers are cited as [0], [I], [II], [III], [V]. This paper imports only their definitions and proves everything else. The four works below are the only external ones it needs; the fuller comparison with the literature is in Paper V.
+
+1. P. T. Bateman and R. A. Horn, *A heuristic asymptotic formula concerning the distribution of prime numbers*, Math. Comp. **16** (1962), 363–367.
+2. H. G. Diamond and H. Halberstam, *A higher-dimensional sieve method*, Cambridge Tracts in Mathematics **177**, Cambridge University Press, 2008.
+3. H. Halberstam and H.-E. Richert, *Sieve Methods*, Academic Press, 1974.
+4. A. Schinzel and W. Sierpiński, *Sur certaines hypothèses concernant les nombres premiers*, Acta Arith. **4** (1958), 185–208; erratum, ibid. **5** (1959), 259.

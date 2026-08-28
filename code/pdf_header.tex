@@ -8,6 +8,18 @@
 \providecommand{\gt}{>}
 
 \usepackage{booktabs,longtable,array}
+\usepackage{needspace}
+\usepackage{etoolbox}
+% Page breaks inside a small table or an ASCII figure make them unreadable.
+% Two rules, applied here rather than in the markdown so that the sources stay
+% clean for GitHub:
+%   - every verbatim block is wrapped in a minipage, so it cannot be split;
+%   - every table reserves ten lines before it starts, so a short table moves
+%     whole to the next page instead of leaving its head stranded.  A table
+%     genuinely longer than that still splits, which is what one wants.
+\BeforeBeginEnvironment{verbatim}{\par\needspace{4\baselineskip}\begin{minipage}{\linewidth}}
+\AfterEndEnvironment{verbatim}{\end{minipage}\par}
+\BeforeBeginEnvironment{longtable}{\needspace{10\baselineskip}}
 \usepackage[margin=1in]{geometry}
 \usepackage{newunicodechar}
 \newunicodechar{✓}{\ensuremath{\checkmark}}

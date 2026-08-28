@@ -19,7 +19,7 @@ repository-code: "https://github.com/Osman209/odd-sieve-cell-system"
 url: "https://osman209.github.io/odd-sieve-cell-system/"
 abstract: >-
   Seven documents on the elementary sieve of the odd numbers, developed
-  as a coordinate system of lines and cells. Papers I-IV build the
+  as a coordinate system of lines and cells. Papers 0-IV build the
   construction and prove what it decides; Paper V derives the point at
   which it stops from inside the construction rather than quoting it,
   and measures how much of the difficulty the framework can localise
