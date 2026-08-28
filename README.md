@@ -14,7 +14,7 @@ Seven documents and seven verification scripts. **Start with the overview.**
 ## What this is, and what it is not
 
 **No progress toward the twin-prime conjecture is claimed, and no new bound on anything.**
-Papers I–IV build a construction and prove what it decides; Paper V exists to establish the
+Papers 0–IV build a construction and prove what it decides; Paper V exists to establish the
 opposite of a result — that the construction reaches the field's known barrier in its own
 vocabulary, and to say precisely where.
 
@@ -38,9 +38,11 @@ names the source. The table below is the map.
 **What the repository offers instead of a new result:**
 
 1. **A construction followed honestly to its end.** An elementary coordinate system of lines
-   and cells, developed until it produces Buchstab's identity, the singular series and the
-   sifting limit `β₁ = 2` *without importing them* — and then stops exactly where the field
-   stops. That the framework has no blind spot of its own is the finding.
+   and cells, developed until it produces Buchstab's decomposition, the Hardy–Littlewood
+   singular series and the exact factor-of-two loss `I(s) = 2f₁(s)` *without importing them*
+   — and then stops exactly where the field stops. (The sifting limits `β₁`, `β₂` are quoted
+   from the literature, not derived here.) That the framework has no blind spot of its own is
+   the finding.
 2. **The obstruction stated from inside.** Paper V derives the barrier in the construction's
    own terms rather than citing it, and measures how much of the difficulty the framework
    can localise before failing to cross it — a set of density `10⁻³`, and still no crossing.
@@ -105,22 +107,29 @@ to `0.4%`. §6 gives the correlation ladder that the singular series of Paper V 
 
 What survives the move from an exact periodic law to a short interval. Soft weights transfer
 almost exactly; sharp indicators do not. The distinction is measured rather than asserted, and
-it governs everything in Paper V §7.5.
+it governs everything in Paper V §8.5.
 
 ### `papers/paper_IV_twin_criterion.md`
 
-What the framework proves outright: the six exceptional positions, the belt between consecutive
-prime squares, the birth of a line and what it can remove on its first window. §3.3 carries the
+What the framework proves outright: the six exceptional positions, the clock coordinate, the
+sector inheritance laws, the belt between consecutive prime squares, and the four named tracks.
+The line runs gap alphabet → twin criterion → clocks and originality → inheritance across sectors
+→ prime-gate belts → named tracks; the distance-6 closing budget, whose object is a prime pair
+`(p, p+6)` rather than a twin pair, is kept as **Appendix B** so that it does not interrupt it. §3.3 carries the
 exception count over a full period of 35 sectors, where the ceiling is 31 and no finite set of
 lines lowers it; §3.4 lengthens the block, giving ceilings 67, 100, 138 and 163 at 3, 5, 7 and 9
 periods and an order of `L/log²L` from the sieve dimensions of the five exception types. One statement
-(Verified Law 17) is proved under a stated hypothesis and verified numerically beyond it, and
+(Verified Law 14) is proved under a stated hypothesis and verified numerically beyond it, and
 is labelled that way wherever it appears.
 
 ### `papers/paper_V_where_the_framework_stops.md`
 
-The obstruction, derived rather than quoted. Two test cases are followed to their end — squares
-and almost-primes, and Jacobsthal's function — and both land on the same wall. §7.5 measures the
+The obstruction, derived rather than quoted — **and stated first**. §2 gives the depth cut, the
+unique-owner theorem, the exact twin count `T = C − R + S` and the parity identity
+`2(R − C) = Σ(−1)^Ω`; §3 shows that no ordinary sieve crosses it; and only then do §§4–7 give the
+routes that were tried before the identity was written, each arriving at the same place. Two test
+cases are followed to their end — squares and almost-primes, and Jacobsthal's function — and both
+land on the same wall. §8.5 measures the
 transfer in three layers: the mean is exact; the state totals move by the two-dimensional
 Buchstab factor `e^{2γ}/4`, confirmed to three decimals at `X = 10¹⁰`; the shape carries a
 residual that saturates. It then shows that the quantity a weighted sieve argument actually
@@ -143,11 +152,11 @@ claim it supports does not hold, and each accepts `--force-fail` to exercise tha
 pip install numpy scipy sympy
 
 python3 code/verify_central_pair.py                          # Paper I §5 — the central factor
-python3 code/verify_cell_transfer.py                         # Paper III §6, Paper V §6.5, Appendix B
-python3 code/verify_transfer_layers.py --fast                # Paper V §7.5 — the three transfer layers
-python3 code/verify_singular_series_order.py --hm 1616615    # Paper V §7.6 — checksum at Q₆
+python3 code/verify_cell_transfer.py                         # Paper III §6, Paper V §3.2, Appendix B
+python3 code/verify_transfer_layers.py --fast                # Paper V §8.5 — the three transfer layers
+python3 code/verify_singular_series_order.py --hm 1616615    # Paper V §8.6 — checksum at Q₆
 python3 code/verify_exception_dichotomy.py --fast            # Paper IV §3.2, §3.3 — Corollary 2 and the period budget
-python3 code/verify_line_routes.py --fast                    # Paper V §6.7 — the five closed routes
+python3 code/verify_line_routes.py --fast                    # Paper V §3.4 — the five closed routes
 python3 code/verify_new_additions.py --fast                   # Paper I 3.5, 3.6 and Paper II 3 — phases, diamond centre, third channel
 ```
 
@@ -262,7 +271,7 @@ Seven documents. Papers I–IV are the construction and what it decides; Paper V
 where it stops, and is the reason the set exists in this form. Paper 0 is independent of the rest
 and can be read on its own.
 
-The open question the work leaves is stated in Paper V §8.1, and it is external: the framework
+The open question the work leaves is stated in Paper V §9.1, and it is external: the framework
 supplies the objects a weighted sieve argument needs, to measured accuracy, and cannot supply the
 rigorous lower bound that argument would consume. Nothing here suggests that bound is close.
 

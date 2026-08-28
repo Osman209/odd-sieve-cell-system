@@ -2,13 +2,13 @@
 """
 verify_central_pair.py — regenerates every claim of [I, §4] (Theorem 4, Corollaries 2-3).
 
-    checks 1-2   the Lemma of §4.2 (the two formulations agree)
+    checks 1-2   the Lemma of §5.2 (the two formulations agree)
     check  3     Theorem 4:  ell(m) = a+b+2  for every odd m in range
     checks 4-5   the parity hypothesis: the law fails for even m, and the
                  weaker floor (m1+1)(g+1) predicted by the same proof holds
     checks 6-8   Corollary 2: the handover, the square case, the prime case
     check  9     Corollary 3: composites hand over to composites
-    check  10    §4.6: ell(m) = m+3 exactly on the primes
+    check  10    §5.6: ell(m) = m+3 exactly on the primes
 
     python3 verify_central_pair.py --fast    # odd m < 1200,  ~20 s
     python3 verify_central_pair.py           # odd m < 4000,  ~4 min
@@ -60,7 +60,7 @@ def main():
     TOP = 1200 if a_.fast else 4000
     print(f"odd range for this run: m < {TOP}\n")
 
-    print("--- [I, §4.2] the Lemma ---")
+    print("--- [I, §5.2] the Lemma ---")
     bad = [(m, n) for m in range(3, 400, 2) for n in range(m + 2, m + 400, 2)
            if loses_by_sqrt(m, n) != loses_by_interval(m, n)]
     report("1.  'largest divisor below sqrt exceeds m'  ==  'a divisor lies in (m,n)'",
@@ -70,7 +70,7 @@ def main():
                              (m < a * (b + 2) < (a + 2) * (b + 2)))(*central_pair(m))
                for m in range(3, TOP, 2)))
 
-    print("\n--- [I, §4.3] Theorem 4 ---")
+    print("\n--- [I, §5.3] Theorem 8 ---")
     bad = []
     for m in range(3, TOP, 2):
         a, b = central_pair(m)
@@ -79,7 +79,7 @@ def main():
     report(f"3.  ell(m) = a+b+2 for every odd 3 <= m < {TOP}",
            not bad, f"{len(bad)} exceptions" + (f": {bad[:6]}" if bad else ""))
 
-    print("\n--- [I, §4.3] the parity hypothesis ---")
+    print("\n--- [I, §5.3] the parity hypothesis ---")
     fails = []
     for m in range(4, 600, 2):
         a, b = central_pair(m)
@@ -96,7 +96,7 @@ def main():
     report("5.  the weaker floor (m1+1)(g+1) is never breached for even m",
            not below, f"{len(below)} breaches")
 
-    print("\n--- [I, §4.4] Corollary 2 ---")
+    print("\n--- [I, §5.4] Corollary 5 ---")
     bad = []
     for m in range(3, TOP, 2):
         a, b = central_pair(m)
@@ -115,12 +115,12 @@ def main():
                     and p * (p + 2 * (p + 3)) == 3 * p * (p + 2))]
     report("8.  primes: L_p(p+3) = L_{p+2}(p-1) = 3p(p+2)", not bad)
 
-    print("\n--- [I, §4.5] Corollary 3 ---")
+    print("\n--- [I, §5.5] Corollary 6 ---")
     bad = [m for m in range(9, 20001, 2)
            if not isprime(m) and isprime(m + 2 * central_pair(m)[0])]
     report("9.  composite m  =>  T(m) composite", not bad, f"{len(bad)} exceptions")
 
-    print("\n--- [I, §4.6] the boundary ---")
+    print("\n--- [I, §5.6] the boundary ---")
     bad = [m for m in range(3, TOP, 2)
            if ((central_pair(m)[0] + central_pair(m)[1] + 2) == m + 3) != isprime(m)]
     report("10. ell(m) = m+3  <=>  m prime", not bad, f"{len(bad)} exceptions")

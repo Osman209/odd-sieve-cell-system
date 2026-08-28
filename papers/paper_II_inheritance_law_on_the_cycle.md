@@ -161,7 +161,7 @@ This is (3.2) with $x$ set to $1$ and $q-2$ resolved into $(q-3) + w$; the cell 
 
 ### 4.1 What Theorem 2 gives, and what it does not
 
-Weighted sieves attach to each surviving element a weight depending on its factorisation, and deduce an almost-prime from the positivity of the weighted sum. The weight that powers the current explicit results between consecutive squares and cubes (see [V, §7.5] for those) is Richert's [2]:
+Weighted sieves attach to each surviving element a weight depending on its factorisation, and deduce an almost-prime from the positivity of the weighted sum. The weight that powers the current explicit results between consecutive squares and cubes (see [V, §8.5] for those) is Richert's [2]:
 $$w(a)  =  \lambda  -  \sum_{\substack{p \mid a \cr  z\le p\lt y}}\Big(1 - \frac{\log p}{\log y}\Big), \qquad \lambda = k+1-k_2,$$
 with $z = X^{1/k_1}$ and $y = X^{1/k_2}$; the mechanism is that $w(a) \gt  0$ forces $\Omega(a) \le k$, so a positive lower bound for $\sum w(a)$ over the sifted set produces an almost-prime. (The constant is $\lambda$, not $1$; with $\lambda = 1$ the weight detects $\Omega \le k_2$ instead.) It is a nonlinear function of the factorisation and, through $\log p/\log y$, of the *sizes* of the factors.
 
@@ -341,7 +341,7 @@ where $\nu_q(H)$ is the number of distinct residues modulo $q$ that the pattern 
 
 ## References
 
-The companion papers are cited as [0], [I], [III], [IV].
+The companion papers are cited as [I] and [V].
 
 1. J. Friedlander and H. Iwaniec, *Opera de Cribro*, AMS Colloquium Publications **57**, 2010. — *the Mertens products of §2.3 and the standard form of the weighted sieve against which Corollary 4 is compared.*
 2. H.-E. Richert, *Selberg's sieve with weights*, Mathematika **16** (1969), 1–22. — *the weight $w(a)$ discussed in §4; it depends on the sizes of the prime factors, which is precisely what Corollary 3 does not transport and Corollary 4 repairs.*

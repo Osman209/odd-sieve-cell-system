@@ -326,7 +326,7 @@ The applications of that statement, and the problems it does and does not decide
 
 ## References
 
-The companion papers are cited as [0], [I], [II], [IV].
+The companion papers are cited as [0] and [II].
 
 1. P. Campbell, *On the existence of integers with at most 3 prime factors between every pair of consecutive squares*, arXiv:2603.10356 (2026). — *the almost-primes computation whose parameters are used in §6; it runs at sieve variable $s = 3.33$.*
 2. J. Friedlander and H. Iwaniec, *Opera de Cribro*, AMS Colloquium Publications **57**, 2010. — *for the Buchstab-type correction at $s=2$ discussed in §3.2, and for the large-sieve inequalities of the kind §5.4 would need.*

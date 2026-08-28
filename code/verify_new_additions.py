@@ -156,7 +156,7 @@ def main():
     check("15. images tested around a coincidence", tested > 0, True)
     check("16. every image at distance >= sqrt(P+1)", bad, 0)
 
-    print("\n--- [IV, 3.10]: the balanced window is one word and a rotation ---")
+    print("\n--- [IV, 3.8]: the balanced window is one word and a rotation ---")
     from collections import Counter
     pp, qq, rr = 1009, 1013, 52
     check("17. the bundle condition 52*1013 < 53*1009", 52*1013 < 53*1009, True)
@@ -175,7 +175,7 @@ def main():
     check("20. every window's word is a rotation of the first",
           all(w in rot for w in words), True)
 
-    print("\n--- [IV, 3.10]: ownership and the cofactor ---")
+    print("\n--- [IV, 3.8]: ownership and the cofactor ---")
     from sympy import factorint
     check("21. 10387 = 13*17*47 inside [101^2,103^2)",
           (dict(factorint(10387)), 101**2 <= 10387 < 103**2),
@@ -193,7 +193,7 @@ def main():
                 if not isprime(m): bad += 1
     check("23. clean owner: p^3 >= Q^2 forces a prime cofactor", bad, 0)
 
-    print("\n--- [V, 6.1-6.2]: the cubic cut, the monotone deficit, the counterexample ---")
+    print("\n--- [V, 2.1-2.2]: the cubic cut, the monotone deficit, the counterexample ---")
     import numpy as np
     NN = 4_100_000 if a.fast else 20_000_000
     sv = np.ones(NN + 1, dtype=bool); sv[:2] = False
@@ -257,7 +257,7 @@ def main():
     check("34. 7h^2-18h+9 = 0 at h_c", abs(7*hc*hc - 18*hc + 9) < 1e-12, True)
     check("35. alpha_c = exp(-h_c) to five places", round(math.exp(-hc), 5), 0.50681)
 
-    print("\n--- [V, 6.2]: the room identity T = C - R + W ---")
+    print("\n--- [V, 2.2]: the room identity T = C - R + W ---")
     P, Q = 1009, 1013
     lo, hi = P*P, Q*Q
     z = Q**(2/3)

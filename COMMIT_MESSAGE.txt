@@ -1,0 +1,63 @@
+Restructure Papers IV and V; fix eleven citation defects; v1.6.0
+
+Paper IV — the distance-6 closing budget is moved out of the twin narrative.
+  * Old section 4 becomes Appendix B, "An auxiliary exact model: the distance-6
+    closing budget", with Theorems B1-B3 and Corollary B1.  Its object is a
+    prime pair (p, p+6), not a twin pair, and it now says so as an introduction
+    rather than as an apology in the middle of the paper.
+  * Old sections 3.8 and 3.9 (bookkeeping) become Appendix A; equation (3.4)
+    becomes (A.1).  Old 3.10 becomes 3.8.
+  * Sections 5-9 shift down to 4-8.  Theorems renumbered 1-13, 15, 16 with
+    Verified Law 14; Corollaries 1-6; Propositions unchanged.
+  * Line: gap alphabet -> twin criterion -> clocks and originality ->
+    inheritance across sectors -> prime-gate belts -> named tracks.
+
+Paper V — the obstruction is stated first.
+  * New order: 1 Setting, 2 The obstruction derived from inside, 3 Why an
+    ordinary sieve cannot cross it, 4-7 the routes that reach the same wall,
+    8 the two test cases, 9 Conclusion.  No theorem number changes: Theorems
+    1-7 and Corollary 1 were all inside the old section 6.
+  * Section 6.7 (five routes closed by measurement) stays attached to the
+    obstruction as 3.4, since it reads Theorems 1, 2 and 4 and the constants of
+    3.2 and 3.3; section 6.8 (the trap) closes the block as 3.5.
+  * Section 1 gains a definitions paragraph and a note that the order of the
+    paper is not the order in which it was found.
+
+Citation and claim defects fixed.
+  * [V] "Theorem 7" -> Theorem 3 (monotone deficit); "Theorem 2" -> Theorem 4
+    (the exact twin count).
+  * [overview] [V, Thms 1-3] -> [V, Thms 1, 2, 4]; "(V, Theorem 4.)" ->
+    Theorem 6; [IV, Thms 14, 15, Cor 6] -> [IV, Thms 11, 12, Cor 6] (Cor 6 was
+    wrong for Cor 7); [IV, Thms 18, 19] -> [IV, Thms 15, 16]; [IV, (3.4)] ->
+    (3.3); three bare theorem numbers repointed.
+  * [IV] section 8 "Theorems 8-10, Corollaries 3-5" -> the correct list; the
+    heading that claimed material was unaudited while listing audited material
+    is split into five accurate paragraphs.
+  * [IV] summary table: Propositions 2 and 3 were listed under 3.6; they are in
+    section 5.  Corollary 2's row was garbled and is rewritten.
+  * [IV] the "maximum exceptions" column is |E_M|, not the number of open
+    non-twin cells; the position B carries (M+2)(M+4) and cannot be an
+    exception when M+4 is composite, so that row's true cap is 3, not 4.
+    Measured maxima over M < 4000 are 0, 2, 2, 3.  Stated in a new remark.
+  * [I] the summary table was split into three blocks, two of them without a
+    header row, so Theorems 4-8 printed with raw pipe characters in the PDF.
+    Fixed; the duplicated horizontal rule after the MSC line removed.
+  * Companion-paper notes in Papers I, II and III listed papers they do not
+    cite and omitted ones they do.
+  * Reference [5] (Buchstab) is now cited in the body of Paper V.
+  * README no longer claims the construction produces the sifting limit
+    beta_1 = 2 without importing it; beta_1 and beta_2 are quoted from the
+    literature.  The claim is replaced by the factor-of-two loss I(s) = 2f_1(s),
+    which the paper does prove.
+  * The overview no longer claims "IV contains only theorems, V only
+    measurements"; Paper IV carries measurements and now tags them.
+
+Abstracts shortened: IV 895 -> 465 words, I 557 -> 411, V 481 -> 465.
+
+Verification scripts: section and statement labels brought up to date
+(verify_exception_dichotomy printed "Corollary 7" for Corollary 2;
+verify_central_pair pointed at [I, section 4.x] for section 5.x).  No
+computation changed.  All seven scripts pass.
+
+Site and PDFs rebuilt; build_site.py abstracts for IV and V rewritten.
+Version 1.6.0.

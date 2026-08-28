@@ -3,7 +3,7 @@
 verify_exception_dichotomy.py — every number in [IV, §3.2] beyond Theorem 4:
 the closed forms of the six exceptional positions, the exhaustiveness of the
 35-class scan, the {5,7} bound of three, the negative result that larger lines
-do not lower it, Corollary 7, and the five residue classes in which the two
+do not lower it, Corollary 2, and the five residue classes in which the two
 lines close all six.
 
   python3 verify_exception_dichotomy.py --fast   # M < 3,000,   ~20 s
@@ -145,7 +145,7 @@ def main():
     m5 = max(len(open_under(6 * (n + 5 * 40) + 3, [5])) for n in range(5))
     check("8.  line 5 alone leaves four", m5, 4)
 
-    print(f"\n--- Corollary 7, over every sector M = 9 .. {top - 1} ---")
+    print(f"\n--- Corollary 2, over every sector M = 9 .. {top - 1} ---")
     P = primes_upto(2 * top)
     mx_tw = mx_no = 0
     n_tw = n_no = 0
@@ -176,7 +176,7 @@ def main():
     check("10. no mixing without the twin, violations", viol_mix, 0)
     check("11. max |S cap E| when (M+2,M+4) is a twin", mx_tw, 3)
     check("12. max |S cap E| when it is not", mx_no, 2)
-    check("13. Corollary 7, violations", viol_dicho, 0)
+    check("13. Corollary 2, violations", viol_dicho, 0)
     check("14. the bound three is attained", att3 > 0, True)
     check("15. the bound two is attained", att2 > 0, True)
 

@@ -8,21 +8,18 @@
 
 We give a coordinate system for the odd integers in which several statements usually carried as estimates become identities.
 
-The primitive object is not the prime but the **line** $L_m(k) = m(m+2k)$, the odd multiples of $m$ from $m^2$ onward. Only prime $m$ contribute anything (Theorem 1, in both directions). The line $L_3$ has step $6$ and therefore leaves exactly two odd numbers between consecutive strikes; it is accordingly not the first sieving line but the **coordinate grid**, and the odd integers compress into cells $C_b = (6b-1, 6b+1)$.
+The primitive object is not the prime but the **line** $L_m(k) = m(m+2k)$, the odd multiples of $m$ from $m^2$ onward; only prime $m$ contribute anything, in both directions (Theorem 1). The line $L_3$ has step $6$ and so leaves exactly two odd numbers between consecutive strikes, which makes it not the first sieving line but the **coordinate grid**: the odd integers compress into cells $C_b = (6b-1,6b+1)$. Every line then acts on the cells by a single map (Theorem 2), from which a line's mirror symmetry is seen to be *inherited from the cell* rather than intrinsic to the line. The two cell positions a line closes are $\pm 6^{-1}$ modulo that line and are always distinct, so exactly two of every $p$ cells lose a member (Theorem 3) — the factor $(p-2)$ of the sieve product, read as geometry rather than as a density. Two further readings of the same picture are recorded: the diamond coordinates, in which the fingerprint law is the projection of a single straight line (Corollary 4), and the change at a square front from a difference of the two factors' distances to a sum of them (§3.7).
 
-Every line then acts on the cells by a single map (Theorem 2), from which the mirror symmetry of a line's fingerprint is seen to be *inherited from the cell* rather than intrinsic to the line: multiplication transports it. The two cell positions a line closes are $\pm 6^{-1}$ modulo that line, always distinct, so exactly two of every $p$ cells lose a member (Theorem 3) — the factor $(p-2)$ of the sieve product, read as a geometric statement rather than a density.
+The same coordinates are then applied to the window $[(6a-1)^2,(6a+1)^2]$ (§4). It is exactly an interval of consecutive **cell indices**, starting at $6a^2-2a+1$ and of length $4a-1$, on which every line is two arithmetic progressions (Theorem 4); its midpoint cell is $(n^2-1,n^2+1)$ and so is never a twin (Theorem 5); and indexing by each line's strike number makes $t = k-6j$ invariant under the passage to the next window, in which coordinate two further laws are exact (Theorems 6, 7).
 
-Two further readings of the same coordinates are recorded. In the **diamond coordinates** $S = a+b$, $D = a-b$ every line is a level set of $S-D$, the squares are the single axis $D = 0$, a line's birth is where its diagonal meets that axis, and the fingerprint law — the alternating gaps $2a,\ p-2a$ with which a line meets the cell axis — is the projection of that one straight line (Corollary 4). And at a square front the additive coordinate of a product changes from a *difference* of the two factors' distances to a *sum* of them, according to whether the factors straddle the square or both exceed it (§3.7).
+Section 5 settles a second, independent ownership question about the same object: a line holds the *centre* of its strikes — it remains the largest divisor below the square root — for exactly $a+b+2$ steps, where $ab = m$ is the central pair of $m$ (Theorem 8). The loss is a handover with its index named, and the two steps of $2$ in the bound are exactly where the odd lattice enters.
 
-Finally the same coordinates are applied to the natural window $[(6a-1)^2,(6a+1)^2]$ (§4). It turns out to be exactly an interval of consecutive **cell indices**, starting at $6a^2-2a+1$ and of length $4a-1$, on which every line is simply two arithmetic progressions (Theorem 4); its midpoint cell is $(n^2-1, n^2+1)$ with $n^2-1 = (n-1)(n+1)$, hence **never a twin** (Theorem 5); and indexing by each line's strike number makes $t = k-6j$ invariant under the passage to the next window, in which coordinate two further laws are exact — only the newly born pair of lines has both its members inside the window, every older pair crossing in two disjoint passes (Theorem 6), and the role of a strike is decided by $t \bmod 3$ alone (Theorem 7).
+This paper uses no analytic sieve estimates: no Mertens constant, no prime-distribution input, no error terms. The exact histogram carried by the square window was separated out as Paper 0, since it concerns no primes at all; it is quoted here where needed and proved there.
 
-A second, independent ownership question about the same object is settled in §5: a line holds the *centre* of its strikes — it remains the largest divisor below the square root — for exactly $a+b+2$ steps, where $ab = m$ is the central pair of $m$ (Theorem 8). The loss is a handover with its index named, $L_m(a+b+2) = L_{m+2a}(b-a)$; at a square it lands on the new line's birth, and the two steps of $2$ in the bound are exactly where the odd lattice enters. This paper contains no analytic sieve estimates: no Mertens constant, no prime-distribution input, no error terms. The exact histogram carried by the square window — the increments of $\lfloor 2j^2/n\rfloor$ and the local maxima of $2j^2 \bmod n$ — was separated out as Paper 0, since it concerns no primes at all; it is quoted here where needed and proved there.
 
 **Keywords:** sieve of Eratosthenes, cell coordinates, difference of squares, integer lattices.
 
 **MSC 2020:** 11N35, 11A41, 11B83.
-
----
 
 ---
 
@@ -38,11 +35,15 @@ A second, independent ownership question about the same object is settled in §5
 | **Corollary 3** | Around a $k$-line coincidence on $L_3$ at $3P$, every image cell lies at distance $\ge \sqrt{P+1}$: the fan-out grows in number and is pushed away at the same time. | §3.6 |
 | **Corollary 4** | The strikes of $L_p$ on the cell axis are two interleaved progressions of step $p$ with alternating gaps $2a,\ p-2a$ — the projection of the single straight line $S-D = 2a$ in the diamond coordinates. | §3.6 |
 
+| | statement | where |
+|---|---|---|
 | **Theorem 4** | The window $[(6a-1)^2,(6a+1)^2]$ is exactly the interval of cell indices $c_0,\dots,c_0+N-1$ with $c_0 = 6a^2-2a+1$ and $N = 4a-1$; on it every line is two arithmetic progressions. | §4.1 |
 | **Theorem 5** | Its midpoint cell is $(n^2-1, n^2+1)$ with $n^2-1 = (n-1)(n+1)$, so **the midpoint is never a twin pair.** | §4.2 |
 | **Theorem 6** | In the shared index $k = 6j+t$ the two members of a layer are $4n+4t$ apart against a window of width $4n$, so only the newly born pair has both members inside; every older pair crosses in two disjoint passes. | §4.4 |
 | **Theorem 7** | The role of a strike — upper rail, lower rail, or wasted on $L_3$ — is decided by $t \bmod 3$ alone. | §4.4 |
 
+| | statement | where |
+|---|---|---|
 | **Theorem 8** | $L_m$ holds the centre of its strikes — it stays the largest divisor below the square root — for exactly $a+b+2$ steps, where $(a,b)$ is the central pair of $m$; the displacing divisor is $m+2a$. | §5.3 |
 | **Corollary 5** | The first loss is a handover with its index named: $L_m(a+b+2) = L_{m+2a}(b-a)$. At a square it lands on the new line's birth; at a prime it reads $L_p(p+3) = L_{p+2}(p-1)$. | §5.4 |
 | **Corollary 6** | $T(m) = m+2a = a(b+2)$, so a composite hands over to a composite: under iteration of $T$ the primes are a transient set. | §5.5 |
@@ -419,7 +420,7 @@ Sections 8.1–8.3 index the window by position. This one indexes it by the *str
 
 Keep $n = 6a$, and call **layer $j$** the pair of lines
 $$p = n-6j-1, \qquad s = n-6j+1,$$
-running them on the shared index $k = 6j+t$. Translating the anchor identity $L_{q-6j}(6j) = q^2-36j^2$ of [IV, Thm 15] into the window coordinate $u$ gives, exactly,
+running them on the shared index $k = 6j+t$. Translating the anchor identity $L_{q-6j}(6j) = q^2-36j^2$ of [IV, Thm 12] into the window coordinate $u$ gives, exactly,
 $$u^-(t) = 2pt - 36j^2, \qquad u^+(t) = 4n - 36j^2 + 2st. \qquad\text{(4.1)}$$
 
 *Verification.* Zero failures over $695{,}968$ checks ($a \lt  120$, all $j$, $t \in [-40,60]$).
@@ -450,7 +451,7 @@ while the two positions shift by $-(72j+36)$ and $-(72j+12)$ — differing by $2
 
 *Verification.* Zero failures over $428{,}340$ checks.
 
-**Two consequences.** First, **exactly one strike in three of every line is spent on $L_3$** — a fact used by counting in [IV, §7.2] and elsewhere, here obtained from the coordinate instead. Measured over the whole window at $a = 1667$, the strikes split $33.32\text{ per cent} / 33.32\text{ per cent} / 33.36$% between $u \equiv 0, 2, 4$.
+**Two consequences.** First, **exactly one strike in three of every line is spent on $L_3$** — a fact used by counting in [IV, §6.2] and elsewhere, here obtained from the coordinate instead. Measured over the whole window at $a = 1667$, the strikes split $33.32\text{ per cent} / 33.32\text{ per cent} / 33.36$% between $u \equiv 0, 2, 4$.
 
 Second, the scheduling is **asymmetric between the rails**: the two members of a layer both act on the upper rail at $t \equiv 0$, but on the lower rail at opposite residues, $t\equiv1$ for the left and $t\equiv2$ for the right.
 
@@ -599,7 +600,7 @@ Verification code and the tables behind every "zero failures" claim accompany th
 
 ## References
 
-The companion papers are cited as [0], [II], [III], [IV], [V].
+The companion papers are cited as [0] and [IV].
 
 1. J. Friedlander and H. Iwaniec, *Opera de Cribro*, AMS Colloquium Publications **57**, 2010. — *used once, in §3.5, to name the classical object of which the geometric statement there is a reading.*
 2. N. J. A. Sloane (ed.), *The On-Line Encyclopedia of Integer Sequences*, sequences A033676, A033677 (the middle divisors) and A063655 (their sum). — *the central pair of §5.1 under its standard names.*

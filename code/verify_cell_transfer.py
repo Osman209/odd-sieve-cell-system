@@ -3,7 +3,7 @@
 verify_cell_transfer.py — regenerates every number added to
 
     paper_III_from_cycle_to_window.md   §6.1  (pattern transfer, Proposition 2)
-    paper_V_where_the_framework_stops.md §6.5 (prediction row, the R/C decades)
+    paper_V_where_the_framework_stops.md §3.2 (prediction row, the R/C decades)
     paper_V_where_the_framework_stops.md Appendix B (the survival-product bullet)
 
 Checks 1-6   : closed forms and the Buchstab prediction row.
@@ -197,7 +197,7 @@ def main():
 
     om = buchstab()
 
-    print("--- [V, 6.5] closed forms ---")
+    print("--- [V, 3.2] closed forms ---")
     check("1.  omega(3) = (1+log2)/3", om(3.0), (1 + math.log(2)) / 3, 1e-7)
     from scipy.integrate import quad
     check("2.  int_{1/3}^{1/2} da/(a(1-a)) = log 2",
@@ -207,12 +207,12 @@ def main():
     check("4.  limit T/C = 1/(1+log2)^2",
           1 / (1 + math.log(2)) ** 2, 0.348827, 1e-5)
 
-    print("\n--- [V, 6.5] the prediction row ---")
+    print("\n--- [V, 3.2] the prediction row ---")
     for uu, want in [(5.08, 1.2988), (4.02, 1.1139), (3.58, 1.0040),
                      (3.00, 0.8188), (2.63, 0.6564), (2.38, 0.4872)]:
         check(f"5.  u={uu}: 2(1-1/u.omega(u))", 2 * (1 - 1 / (uu * om(uu))), want, 5e-4)
 
-    print("\n--- [V, 6.5] the decade table (cut z = X^(1/3)) ---")
+    print("\n--- [V, 3.2] the decade table (cut z = X^(1/3)) ---")
     want = {"1e6": (10 ** 6, 19303, 8168, 0.7038, 0.4231, 1.6683, 1.0633),
             "1e7": (10 ** 7, 142921, 58979, 0.7208, 0.4127, 1.6753, 1.0694),
             "1e8": (10 ** 8, 1096286, 440311, 0.7355, 0.4016, 1.6783, 1.0354),

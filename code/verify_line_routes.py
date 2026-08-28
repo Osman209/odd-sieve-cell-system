@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-verify_line_routes.py — every number in [V, 6.7]: the four-state census at the
+verify_line_routes.py — every number in [V, 3.4]: the four-state census at the
 depth cut, and the five routes through the line geometry that the section
 closes by measurement (prime gaps, line capacity, the two endpoints, the two
 small factors, and the determinant-one relation).
