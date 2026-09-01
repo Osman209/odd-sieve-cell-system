@@ -23,6 +23,8 @@ We then prove the corresponding statement about the residues themselves, which t
 
 Nothing in this paper concerns prime numbers.
 
+**How to read the claims in this paper.** Statements set as Theorems, Propositions and Corollaries are proved, and the proofs are given. Everything else falls into two kinds, and we try to keep them apart. A *measurement* is a computation over a stated finite range; it is labelled with that range, and it supports a claim about that range only. A *reading* is our own judgement about what a measurement or a proof appears to mean, and we mark it as ours rather than stating it as established. In this paper the proportion is heavily weighted to the first kind: everything but the sample tables is proved.
+
 **Keywords:** floor function, quadratic residues, exact multiplicities, three-distance theorem, equidistribution.
 
 **MSC 2020:** 11B57, 11A07, 11K31.
@@ -138,7 +140,7 @@ a concave parabola with its peak at $x = n/4$. So $D$ is the ceiling quantisatio
 
 *Proof.* $f(j+1)-f(j) = (n-4j-2)/n$ has absolute value less than $1$ throughout $0 \le j \lt H$, so the ceiling can move by at most one step and $D$ is unimodal: it rises while $j \lt n/4$ and falls after, giving the separation and leaving only $W \in \lbrace 0,1,2\rbrace$ on this range. A rise into level $m$ happens at the last integer before $f$ crosses the value $m-1$ upward, and a fall out of it at the last integer before $f$ crosses $m-1$ downward; solving $f(x) = m-1$ gives the two roots
 $$x_m^{\pm}  =  \frac{n \pm \sqrt{n^2-8n(m-1)}}{4},$$
-whence the stated floor and ceiling. The peak value of $f$ on the integers is $(n^2-1)/(8n)$, since $n$ is odd and the nearest integer to $n/4$ is at distance $1/4$; its ceiling is $A$. $\square$
+whence the stated floor and ceiling. The peak value of $f$ on the integers is $(n^2-1)/(8n)$, since $n$ is odd and the nearest integer to $n/4$ is at distance $1/4$; its ceiling is $A$. $\blacksquare$
 
 *Verification.* Zero mismatches for $1{,}429$ odd $n$ up to $20{,}001$, and the count $\lvert\lbrace \alpha_m\rbrace\rvert = A$ recovers $N_0 = A$ of Theorem 2 for every odd $n \le 20{,}001$. The separation at the peak has zero violations for odd $n \lt 4{,}000$.
 
@@ -302,6 +304,10 @@ Two details were found by failure rather than by design and are recorded so that
 **The constant $2$ in the increment.** In the application from which this paper was extracted, the increment appears as $H_j = 2+W_j$; dropping the additive constant breaks the formula in $57$ of $78$ tested cases. It is an artefact of that application, not of the staircase, but it is easy to mislay.
 
 **The seventh interval.** A first version of (5.1) used six intervals and failed for essentially every $n$. The omission is the single point $j = H$, where $4H+2 = 2n$ forces $q_H = 2$ rather than $1$; with it restored the identity holds with zero failures on the whole tested range.
+
+---
+
+*The computations and much of the prose in this paper were prepared with AI assistance (Claude, Anthropic), used for drafting and rewriting code and text, running the computations, searching the literature, and auditing the paper against its own scripts. The research direction, the questions asked, the decisions about what to publish and what to withdraw, and the responsibility for every claim are the author's. The full note is in the repository README.*
 
 ---
 

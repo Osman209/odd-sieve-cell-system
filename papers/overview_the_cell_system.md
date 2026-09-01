@@ -46,6 +46,8 @@ Every statement below is tagged:
 | **V** | **verified** exactly on a stated finite range; a complete symbolic proof is *not* supplied |
 | **M** | **measured**; a numerical finding with its controls, not a theorem and not asymptotic |
 
+A fourth kind appears in the papers but carries no tag here, because it is never a result: a **reading** is the authors' judgement about what a proof or a measurement appears to mean — where a route seems to lead, why an attempt seems to fail. Papers IV and V mark theirs as such.
+
 The six papers, and their dependence:
 
 | | title | depends on |
@@ -274,6 +276,12 @@ $$\boxed{ \text{The framework describes motion between the multiplicative layers
 ## 8. What an external ingredient would have to supply
 
 Not a better bound on the number of strikes, nor a sharper local constraint — the framework has produced several of those and they were absorbed. What is needed is an input that distinguishes $\Omega = 1$ from $\Omega = 2$ inside the sifted set. In the published literature the only machinery that has moved that barrier over the integers is the work on correlations of multiplicative functions in the Matomäki–Radziwiłł–Tao line, and the identity of §6 is a Liouville sum, so it is stated in exactly the language that machinery speaks. We record that as the natural next reading, not as a plan.
+
+---
+
+**No progress toward the twin-prime conjecture is claimed, and no new bound.** Priority is not claimed for any result.
+
+*The computations and much of the prose in this paper were prepared with AI assistance (Claude, Anthropic), used for drafting and rewriting code and text, running the computations, searching the literature, and auditing the paper against its own scripts. The research direction, the questions asked, the decisions about what to publish and what to withdraw, and the responsibility for every claim are the author's. The full note is in the repository README.*
 
 ---
 

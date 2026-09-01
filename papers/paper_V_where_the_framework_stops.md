@@ -14,7 +14,7 @@ over the endpoints of the surviving cells (Theorem 6). The inequality one wants,
 
 Section 3 shows that no purely sieve-theoretic tool crosses that line. The classical Buchstab upper bound for the composite part equals *exactly twice* the corresponding lower-bound sieve function throughout the relevant range (Theorem 7), so the loss is a clean factor of two uniform in every parameter; the two natural constraints on the cut are incompatible, $R \lt  C$ requiring the sieve variable below $2e^{\gamma} = 3.5621$ while a positive lower bound in dimension two requires it above $\beta_2 = 4.2664$; switching cannot repair it; and five routes through the line geometry itself are followed in one explicit window and closed by measurement. A closing subsection records the shape of the fallacy the identity is written to avoid, with the counterexample.
 
-Section 4 records, in outline, the routes the framework produced before the identity was written — capacity, resonance and parity separately; the closing budget, which misses by a conditional $0.73$% in the wrong direction; a deterministic local constraint that is real but not binding; and the exact inheritance laws of [IV, §5], whose constraint binds one line at a time and dissolves in aggregate. Each arrives at the same place. Two test cases whose answers are known independently — Jacobsthal's function and almost-primes between squares — then check that the framework reproduces the right shape and supplies no bound (§8).
+Section 4 records, in outline, the routes the framework produced before the identity was written — capacity, resonance and parity separately; the closing budget, which misses by a conditional $0.73$% in the wrong direction; a deterministic local constraint that is real but not binding; and the exact inheritance laws of [IV, §5], whose constraint binds one line at a time and dissolves in aggregate. The full accounts are in Appendix C. Each arrives at the same place. Two test cases whose answers are known independently — Jacobsthal's function and almost-primes between squares — then check that the framework reproduces the right shape and supplies no bound (§8).
 
 **The parity problem is not an obstacle imported from sieve theory; it is what the construction reduces to on its own.** No progress toward the twin-prime conjecture is claimed, and no new bound.
 
@@ -118,7 +118,7 @@ Together these remove, at one stroke, the two things a sieve at ordinary depth h
 
 *Proof.* A surviving cell outside $A_r$ is by definition not struck by $r$, so it loses none of its owed strikes; hence $R(z)-R(r) = \sum_{X \in A_r} k(X)$, while $C(z)-C(r) = |A_r|$. Subtracting gives the identity, and $k \ge 1$ gives the inequality. $\blacksquare$
 
-*Verified.* Non-increasing at every one of the $169$ successive cuts for the sector of $P = 1009$ and every one of the $304$ for $P = 2003$, with no exception.
+*Verification.* Non-increasing at every one of the $169$ successive cuts for the sector of $P = 1009$ and every one of the $304$ for $P = 2003$, with no exception.
 
 *What drives it down.* A cell whose only future striker is $r$ contributes $k-1 = 0$ and moves $D$ not at all; cells carrying two or more owed strikes are the whole of the decrease. So here — unlike everywhere else in this work — the piling of several lines on one cell pushes the inequality in the direction one wants, because closing such a cell discards more owed strikes than it discards cells.
 
@@ -613,44 +613,7 @@ A Type II/bilinear estimate strong enough for the twin-prime correlation. The ca
 
 ---
 
-## References
-
-The companion papers are cited as [0], [I], [II], [III], [IV].
-
-1. M. Bordignon, D. R. Johnston and V. Starichkova, *An explicit version of Chen's theorem and the linear sieve*, Int. J. Number Theory **21** (2025), 2497–2572.
-2. D. Bazzanella, *Primes between consecutive squares*, Arch. Math. (Basel) **75** (2000), no. 1, 29–34.
-3. D. Bazzanella, *Some conditional results on primes between consecutive squares*, Funct. Approx. Comment. Math. **45** (2011), no. 2, 255–263.
-4. V. Brun, *Le crible d'Ératosthène et le théorème de Goldbach*, Skrifter utgit av Videnskapsselskapet i Kristiania I, no. 3, J. Dybwad, Kristiania, 1920.
-5. A. A. Buchstab, *Asymptotic estimates of a general number-theoretic function*, Mat. Sb. **44** (1937), 1239–1246.
-6. P. Campbell, *On the existence of integers with at most 3 prime factors between every pair of consecutive squares*, arXiv:2603.10356 (2026).
-7. J.-R. Chen, *On the distribution of almost primes in an interval*, Scientia Sinica **18** (1975), 611–627.
-8. H. G. Diamond and H. Halberstam, *A higher-dimensional sieve method*, Cambridge Tracts in Mathematics **177**, Cambridge University Press, 2008.
-9. A. W. Dudek and D. R. Johnston, *Almost primes between all squares*, J. Number Theory **278** (2026), 726–745.
-10. K. Ford, B. Green, S. Konyagin, J. Maynard and T. Tao, *Long gaps between primes*, J. Amer. Math. Soc. **31** (2018), 65–105.
-11. C. S. Franze, *Sifting limits for the $\Lambda^2\Lambda^-$ sieve*, J. Number Theory (2011); arXiv:1012.3809.
-12. J. Friedlander and H. Iwaniec, *Opera de Cribro*, AMS Colloquium Publications **57**, 2010.
-13. G. Harman, *Prime-Detecting Sieves*, Princeton University Press, 2007.
-14. H. Iwaniec, *On the error term in the linear sieve*, Acta Arith. **19** (1971), 1–30.
-15. H. Iwaniec, *On the problem of Jacobsthal*, Demonstratio Math. **11** (1978), 225–231.
-16. H. Iwaniec, *Rosser's sieve*, Acta Arith. **36** (1980), 171–202.
-17. E. Jacobsthal, *Über Sequenzen ganzer Zahlen von denen keine zu $n$ teilerfremd ist*, I–III, Norske Vid. Selsk. Forh. Trondheim **33** (1960), 117–139.
-18. D. R. Johnston, J. P. Sorenson, S. N. Thomas and J. E. Webster, *Primes and almost primes between cubes*, arXiv:2601.15564 (2026).
-19. B. Krause, H. Mousavi, T. Tao and J. Teräväinen, *Quantitative bounds for sets lacking polynomial progressions with shifted prime difference*, arXiv:2608.19525 (2026).
-
-20. P. Kuhn, *Neue Abschätzungen auf Grund der Viggo Brunschen Siebmethode*, Proc. 12th Scandinavian Math. Congress (Lund, 1953), 160–168, 1954.
-21. H. Maier and C. Pomerance, *Unusually large gaps between consecutive primes*, Trans. Amer. Math. Soc. **322** (1990), 201–237.
-22. J. Maynard, *Small gaps between primes*, Ann. of Math. **181** (2015), 383–413.
-23. T. T. K. Nguyen, *Finite-window noncovering on primorial wheels: higher-order CRT bounds and shift correlations*, Preprints.org (2026), doi:10.20944/preprints202608.1299.v1. — *A preprint, not peer reviewed; cited as contemporaneous independent work reaching the same finite-window diagnosis from the Goldbach side.*
-24. OEIS Foundation, sequence A048670 (Jacobsthal's function at the primorials).
-25. J. Pintz, *Landau's problems on primes*, J. Théor. Nombres Bordeaux **21** (2009), 357–404.
-26. D. H. J. Polymath, *Variants of the Selberg sieve, and bounded intervals containing many primes*, Res. Math. Sci. **1** (2014), Art. 12.
-27. H.-E. Richert, *Selberg's sieve with weights*, Mathematika **16** (1969), 1–22.
-28. A. Schinzel and W. Sierpiński, *Sur certaines hypothèses concernant les nombres premiers*, Acta Arith. **4** (1958), 185–208; erratum, ibid. **5** (1959), 259.
-
-29. A. Selberg, *On elementary methods in prime number theory and their limitations*, Proc. 11th Scandinavian Math. Congress, Trondheim (1949), 13–22.
-30. T. Tao and J. Teräväinen, *Quantitative bounds for Gowers uniformity of the Möbius and von Mangoldt functions*, J. Eur. Math. Soc. **27** (2025), 1321–1384.
-
-31. Y. Zhang, *Bounded gaps between primes*, Ann. of Math. **179** (2014), 1121–1174.
+---
 
 ## Appendix A — Deviation tables
 
@@ -737,7 +700,7 @@ The relation is nevertheless local. Ordering the cells by $j$, the natural compo
 
 ### C.2 The routes tried before the identity was written
 
-*This appendix reports the routes this framework produced before §2 was written; each of them stops at the identity of §2.3. They are kept, in the order they were tried, because a route closed by measurement seems to us worth more written down than left to be attempted again — with the caveat that a measurement closes a route only on the range measured, and what is offered with each is our reading of why it fails. The four items below are the short ones; the three that fail in an instructive way are taken up in full afterwards — the deletion budget in C.2.1, the pigeonhole constraint in C.2.2, and the inheritance laws in §7.*
+*This appendix reports the routes this framework produced before §2 was written; each of them stops at the identity of §2.3. They are kept, in the order they were tried, because a route closed by measurement seems to us worth more written down than left to be attempted again — with the caveat that a measurement closes a route only on the range measured, and what is offered with each is our reading of why it fails. The four items below are the short ones; the three that fail in an instructive way are taken up in full afterwards — the deletion budget in C.2.1, the pigeonhole constraint in C.2.2, and the inheritance laws in C.2.3.*
 
 
 **(a) Capacity.** The old lines *are* able to cover a window longer than the square window: at $p=71$ a fully closed run of 67 cells exists elsewhere, against a window of 47. **The argument "the lines are too few" is therefore dead; only the phase at $p^2$ can protect a twin.**
@@ -867,3 +830,50 @@ Running the lines in order leaves $157$ of the $1{,}620$ open, and those $157$ a
 ---
 
 ---
+
+---
+
+**No progress toward the twin-prime conjecture is claimed, and no new bound.** Priority is not claimed for any result.
+
+*The computations and much of the prose in this paper were prepared with AI assistance (Claude, Anthropic), used for drafting and rewriting code and text, running the computations, searching the literature, and auditing the paper against its own scripts. The research direction, the questions asked, the decisions about what to publish and what to withdraw, and the responsibility for every claim are the author's. The full note is in the repository README.*
+
+---
+
+## References
+
+The companion papers are cited as [0], [I], [II], [III], [IV].
+
+1. M. Bordignon, D. R. Johnston and V. Starichkova, *An explicit version of Chen's theorem and the linear sieve*, Int. J. Number Theory **21** (2025), 2497–2572.
+2. D. Bazzanella, *Primes between consecutive squares*, Arch. Math. (Basel) **75** (2000), no. 1, 29–34.
+3. D. Bazzanella, *Some conditional results on primes between consecutive squares*, Funct. Approx. Comment. Math. **45** (2011), no. 2, 255–263.
+4. V. Brun, *Le crible d'Ératosthène et le théorème de Goldbach*, Skrifter utgit av Videnskapsselskapet i Kristiania I, no. 3, J. Dybwad, Kristiania, 1920.
+5. A. A. Buchstab, *Asymptotic estimates of a general number-theoretic function*, Mat. Sb. **44** (1937), 1239–1246.
+6. P. Campbell, *On the existence of integers with at most 3 prime factors between every pair of consecutive squares*, arXiv:2603.10356 (2026).
+7. J.-R. Chen, *On the distribution of almost primes in an interval*, Scientia Sinica **18** (1975), 611–627.
+8. H. G. Diamond and H. Halberstam, *A higher-dimensional sieve method*, Cambridge Tracts in Mathematics **177**, Cambridge University Press, 2008.
+9. A. W. Dudek and D. R. Johnston, *Almost primes between all squares*, J. Number Theory **278** (2026), 726–745.
+10. K. Ford, B. Green, S. Konyagin, J. Maynard and T. Tao, *Long gaps between primes*, J. Amer. Math. Soc. **31** (2018), 65–105.
+11. C. S. Franze, *Sifting limits for the $\Lambda^2\Lambda^-$ sieve*, J. Number Theory (2011); arXiv:1012.3809.
+12. J. Friedlander and H. Iwaniec, *Opera de Cribro*, AMS Colloquium Publications **57**, 2010.
+13. G. Harman, *Prime-Detecting Sieves*, Princeton University Press, 2007.
+14. H. Iwaniec, *On the error term in the linear sieve*, Acta Arith. **19** (1971), 1–30.
+15. H. Iwaniec, *On the problem of Jacobsthal*, Demonstratio Math. **11** (1978), 225–231.
+16. H. Iwaniec, *Rosser's sieve*, Acta Arith. **36** (1980), 171–202.
+17. E. Jacobsthal, *Über Sequenzen ganzer Zahlen von denen keine zu $n$ teilerfremd ist*, I–III, Norske Vid. Selsk. Forh. Trondheim **33** (1960), 117–139.
+18. D. R. Johnston, J. P. Sorenson, S. N. Thomas and J. E. Webster, *Primes and almost primes between cubes*, arXiv:2601.15564 (2026).
+19. B. Krause, H. Mousavi, T. Tao and J. Teräväinen, *Quantitative bounds for sets lacking polynomial progressions with shifted prime difference*, arXiv:2608.19525 (2026).
+
+20. P. Kuhn, *Neue Abschätzungen auf Grund der Viggo Brunschen Siebmethode*, Proc. 12th Scandinavian Math. Congress (Lund, 1953), 160–168, 1954.
+21. H. Maier and C. Pomerance, *Unusually large gaps between consecutive primes*, Trans. Amer. Math. Soc. **322** (1990), 201–237.
+22. J. Maynard, *Small gaps between primes*, Ann. of Math. **181** (2015), 383–413.
+23. T. T. K. Nguyen, *Finite-window noncovering on primorial wheels: higher-order CRT bounds and shift correlations*, Preprints.org (2026), doi:10.20944/preprints202608.1299.v1. — *A preprint, not peer reviewed; cited as contemporaneous independent work reaching the same finite-window diagnosis from the Goldbach side.*
+24. OEIS Foundation, sequence A048670 (Jacobsthal's function at the primorials).
+25. J. Pintz, *Landau's problems on primes*, J. Théor. Nombres Bordeaux **21** (2009), 357–404.
+26. D. H. J. Polymath, *Variants of the Selberg sieve, and bounded intervals containing many primes*, Res. Math. Sci. **1** (2014), Art. 12.
+27. H.-E. Richert, *Selberg's sieve with weights*, Mathematika **16** (1969), 1–22.
+28. A. Schinzel and W. Sierpiński, *Sur certaines hypothèses concernant les nombres premiers*, Acta Arith. **4** (1958), 185–208; erratum, ibid. **5** (1959), 259.
+
+29. A. Selberg, *On elementary methods in prime number theory and their limitations*, Proc. 11th Scandinavian Math. Congress, Trondheim (1949), 13–22.
+30. T. Tao and J. Teräväinen, *Quantitative bounds for Gowers uniformity of the Möbius and von Mangoldt functions*, J. Eur. Math. Soc. **27** (2025), 1321–1384.
+
+31. Y. Zhang, *Bounded gaps between primes*, Ann. of Math. **179** (2014), 1121–1174.

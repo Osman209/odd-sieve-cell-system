@@ -22,6 +22,8 @@ Finally we record a second exact structure on the same cycle: assigning each int
 
 **MSC 2020:** 11N35, 11N05, 11Y16.
 
+**How to read the claims in this paper.** Statements set as Theorems, Propositions and Corollaries are proved, and the proofs are given. Everything else falls into two kinds, and we try to keep them apart. A *measurement* is a computation over a stated finite range; it is labelled with that range, and it supports a claim about that range only. A *reading* is our own judgement about what a measurement or a proof appears to mean, and we mark it as ours rather than stating it as established.
+
 ---
 
 ## 1. Setting
@@ -333,6 +335,8 @@ where $\nu_q(H)$ is the number of distinct residues modulo $q$ that the pattern 
 ---
 
 **No progress toward the twin-prime conjecture is claimed, and no new bound.** Priority is not claimed for any result.
+
+*The computations and much of the prose in this paper were prepared with AI assistance (Claude, Anthropic), used for drafting and rewriting code and text, running the computations, searching the literature, and auditing the paper against its own scripts. The research direction, the questions asked, the decisions about what to publish and what to withdraw, and the responsibility for every claim are the author's. The full note is in the repository README.*
 
 ---
 

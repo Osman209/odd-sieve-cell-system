@@ -430,7 +430,7 @@ The right-hand side of (3.5) is the count of $i$-fold intersections $\lvert \big
 
 *Proof.* A cell struck by exactly $m$ lines contributes
 $$\sum_{i=0}^{L}(-1)^i\binom{m}{i}$$
-to the truncated sum. For $m = 0$ that is $1$. For $m \ge 1$ and $L < m$ the partial alternating binomial sum equals $(-1)^L\binom{m-1}{L}$, which is $\le 0$ when $L$ is odd; hence every struck cell contributes at most $0$ and every open cell exactly $1$, giving (3.6). For $L \ge m \ge 1$ the sum is the complete alternating binomial sum $(1-1)^m = 0$, so once $L \ge \max_d m(d)$ every struck cell contributes $0$ and every open cell $1$, and the total is $C_M$ exactly. $\square$
+to the truncated sum. For $m = 0$ that is $1$. For $m \ge 1$ and $L < m$ the partial alternating binomial sum equals $(-1)^L\binom{m-1}{L}$, which is $\le 0$ when $L$ is odd; hence every struck cell contributes at most $0$ and every open cell exactly $1$, giving (3.6). For $L \ge m \ge 1$ the sum is the complete alternating binomial sum $(1-1)^m = 0$, so once $L \ge \max_d m(d)$ every struck cell contributes $0$ and every open cell $1$, and the total is $C_M$ exactly. $\blacksquare$
 
 The inequality itself is the odd Bonferroni truncation and is classical; the multiplicity form (3.5) and the observation that it terminates at $\max_d m(d)$ are what make it usable here. The same evaluation appears independently in Nguyen [7], in the Goldbach setting of symmetric pairs about a multiple of a primorial — see §3.10.
 
@@ -583,7 +583,7 @@ So the first $A(M)$ cells of the later sector repeat the earlier sector's patter
 > where $N_{\varnothing}$, $N_L$, $N_R$, $N_{LR}$ count the cells untouched by $S$, struck on the left only, on the right only, and on both:
 > $$N_{\varnothing} = 4aB - 1, \qquad N_{L} = N_{R} = 4a(A-B), \qquad N_{LR} = 4a(P - 2A + B),$$
 
-*Verified.* At $p = 2309$, where $S = \lbrace 5,7,11\rbrace$, $P = 385$, $a = 1$, $A = 240$, $B = 135$: the direct census of the $1539$ cells gives $539 + 420 + 420 + 160$, matching the four formulas exactly. The identities were then checked over every $p \equiv 5 \pmod 6$ below $2000$ — $59$ of them twin, $273$ not — with no exception.
+*Verification.* At $p = 2309$, where $S = \lbrace 5,7,11\rbrace$, $P = 385$, $a = 1$, $A = 240$, $B = 135$: the direct census of the $1539$ cells gives $539 + 420 + 420 + 160$, matching the four formulas exactly. The identities were then checked over every $p \equiv 5 \pmod 6$ below $2000$ — $59$ of them twin, $273$ not — with no exception.
 
 *Two things it is not.* It is **not** a statement about twins: primality of $p$ and $p+2$ enters nowhere in the derivation, which needs only $6 \mid p+1$. And it is **not** a reduction: the surviving fraction is $U/N = 0.3502$ against $\prod_{r \in S}(1 - 2/r) = 0.3506$ at $p = 2309$, so the drop from $1539$ to $539$ is the ordinary sieve by those three lines and nothing more. What the synchronisation buys is exactness — no edge term — not size.
 
@@ -1079,7 +1079,7 @@ Proposition 6 is stated for a sharp window, and a sharp window pays a boundary e
 
 *Proof.* Periodicity is $a_{s+d} \equiv a_s \pmod d$, which is (4.4) of [I, §4.5]. For the reflection, the two facts needed are
 $$a_{d-2-s} \equiv a_{s+1} \pmod d, \qquad L_s + L_{d-2-s} = 12d .$$
-The first says that — the mirror sector begins, modulo $d$, exactly where $I_s$ ends — while $L_s + L_{d-2-s} = 12(s+1)+12(d-1-s) = 12d$, so the two sectors together cover exactly twelve full periods of $d$ and their errors must cancel. The sector $s = d-1$ has length $12d$ on its own, whence $e_d(d-1) = 0$. $\square$
+The first says that — the mirror sector begins, modulo $d$, exactly where $I_s$ ends — while $L_s + L_{d-2-s} = 12(s+1)+12(d-1-s) = 12d$, so the two sectors together cover exactly twelve full periods of $d$ and their errors must cancel. The sector $s = d-1$ has length $12d$ on its own, whence $e_d(d-1) = 0$. $\blacksquare$
 
 *Verification.* Zero failures over the whole cycle for $d = 5, 7, 11, 13, 35, 55, 77$ and $385$, including the two ingredients of the proof checked separately. **So the word of phase errors along a cycle reads $e_0, e_1, \dots, -e_1, -e_0, 0$: it is odd about its own centre.**
 
@@ -1093,7 +1093,7 @@ the Cesàro weight, which is the Fejér kernel on $\mathbb{Z}/d\mathbb{Z}$: $H\,
 
 *Proof.* Let $c_j$ be the number of $n \lt H$ in the class $j \pmod d$ and $c_j = H/d + \delta_j$. The weighted count is $H/d + H^{-1}\sum_j \delta_j\delta_{j-b}$. Exactly $s$ of the classes have $c_j = q+1$ and the rest have $c_j = q$, and those $s$ classes form a cyclic interval $A$, so $\delta_j = \mathbf 1_A(j) - s/d$ and
 $$\sum_j \delta_j\delta_{j-b}  =  \lvert A \cap (A+b)\rvert - \frac{s^2}{d}.$$
-This is largest at $b = 0$, where $\lvert A\cap A\rvert = s$ and the value is $s - s^2/d = s(d-s)/d$; and $s(d-s)/d \le d/4$, with equality only when $s = d/2$ — so for the odd moduli of this paper the second inequality in (3.7) is always strict. $\square$
+This is largest at $b = 0$, where $\lvert A\cap A\rvert = s$ and the value is $s - s^2/d = s(d-s)/d$; and $s(d-s)/d \le d/4$, with equality only when $s = d/2$ — so for the odd moduli of this paper the second inequality in (3.7) is always strict. $\blacksquare$
 
 **Where this sits.** Smoothing by a Fejér kernel, and the resulting order $O(d/H)$, are classical: [6, Ex. 24.2.1.1(d)] asks for the pointwise estimate $0 \le \Delta_N(x) \le \min\lbrace N, 1/(4N\lVert x\rVert^2)\rbrace$, with the constant $\tfrac14$ arising the same way, from $\sin \pi x \ge 2\lVert x\rVert$. That estimate is not (3.6), though. The left side of (3.7) is an *average* of the kernel over a subgroup of frequencies, $d^{-1}\sum_{h\ne0} e(-hb/d)\Delta_H(h/d)$, not a pointwise value of it; applying the pointwise bound term by term and summing recovers the order but overshoots $d/(4H)$ by a factor of $2.93$, $3.25$ and $3.29$ at $d = 11, 101, 1001$, stable in $H$. **The equality in (3.7) is the part we have not found stated anywhere**, and it explains the near-sharpness of $d/(4H)$ without any measurement: the ratio of the two sides is $4s(d-s)/d^2$, which for odd $d$ is largest at $s = (d\pm1)/2$ and equals $(d^2-1)/d^2$.
 
@@ -1103,7 +1103,7 @@ This is largest at $b = 0$, where $\lvert A\cap A\rvert = s$ and the value is $s
 > $$\lvert E_{d,b}\rvert  \le  \frac{d^4+10d^2-11}{45\,d\,H\,T^2}  \ll  \frac{d^3}{45\,H\,T^2},$$
 > using the exact identity $\sum_{h=1}^{d-1}\csc^4(\pi h/d) = (d^4+10d^2-11)/45$.
 
-*Proof.* Each triangle contributes the square of a Dirichlet kernel to the Fourier expansion of the error, giving $d^{-1}\sum_{h\ne 0} \lvert D_H(h)\rvert^2 H^{-1}\lvert D_T(h)\rvert^2T^{-2}$; bounding $\lvert D_N(h)\rvert \le \csc(\pi h/d)$ and summing by the identity gives the statement. $\square$
+*Proof.* Each triangle contributes the square of a Dirichlet kernel to the Fourier expansion of the error, giving $d^{-1}\sum_{h\ne 0} \lvert D_H(h)\rvert^2 H^{-1}\lvert D_T(h)\rvert^2T^{-2}$; bounding $\lvert D_N(h)\rvert \le \csc(\pi h/d)$ and summing by the identity gives the statement. $\blacksquare$
 
 *The identity is classical*, one of a family of finite cosecant power sums going back to Euler; see [4] for the $\csc^4$ case and its higher analogues. The bound holds with worst ratio $0.8958$ over all $(d,H,T,b)$ we tested. **Taking $H \asymp T \asymp r$ gives $\lvert E\rvert \ll (d/r)^3$, so every modulus $d = o(r)$ loses its phase error without a full cycle modulo $d$ and without any primorial.**
 
@@ -1151,6 +1151,12 @@ for every centre $c$, with $H$ and $T$ polynomial in $P$ rather than in the prim
 ---
 
 ---
+
+---
+
+**No progress toward the twin-prime conjecture is claimed, and no new bound.** Priority is not claimed for any result.
+
+*The computations and much of the prose in this paper were prepared with AI assistance (Claude, Anthropic), used for drafting and rewriting code and text, running the computations, searching the literature, and auditing the paper against its own scripts. The research direction, the questions asked, the decisions about what to publish and what to withdraw, and the responsibility for every claim are the author's. The full note is in the repository README.*
 
 ---
 

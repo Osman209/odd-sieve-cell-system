@@ -23,6 +23,8 @@ This paper uses no analytic sieve estimates: no Mertens constant, no prime-distr
 
 **MSC 2020:** 11N35, 11A41, 11B83.
 
+**How to read the claims in this paper.** Statements set as Theorems, Propositions and Corollaries are proved, and the proofs are given. Everything else falls into two kinds, and we try to keep them apart. A *measurement* is a computation over a stated finite range; it is labelled with that range, and it supports a claim about that range only. A *reading* is our own judgement about what a measurement or a proof appears to mean, and we mark it as ours rather than stating it as established.
+
 ---
 
 ### Summary of the main results
@@ -243,7 +245,7 @@ $$(p-2) = (p \text{ cells per cycle}) - (2 \text{ branches}).$$
 
 > **Corollary 1.** Among cells that are twin pairs, the position $u = -1$ is never occupied, and the position $u = +1$ is occupied at the single index $j = c$ and nowhere else — and there only when $C_c$ is itself a twin pair. In short: $+1$ is birth first and closure thereafter, $-1$ is closure always.
 
-*Verified.* Over the $428$ primes $5 \le p \lt  3000$, against every twin pair with index below $20{,}000$: the set of twin indices at $u = +1$ is exactly $\lbrace c\rbrace$ when $C_c$ is a twin pair and empty otherwise, and no twin index ever sits at $u = -1$. Zero exceptions either way.
+*Verification.* Over the $428$ primes $5 \le p \lt  3000$, against every twin pair with index below $20{,}000$: the set of twin indices at $u = +1$ is exactly $\lbrace c\rbrace$ when $C_c$ is a twin pair and empty otherwise, and no twin index ever sits at $u = -1$. Zero exceptions either way.
 
 *Why it is worth stating.* The birth index is a permanent exception to any law phrased over residue classes, because at $j = c$ the line meets itself rather than a multiple of itself. Written as $S_p = \mathbb{F}_p \setminus \lbrace \pm 1\rbrace$ the set is wrong by one point, and that point is where several natural-looking laws about rows break — and, being the smallest index, also where their most convincing examples come from.
 
@@ -276,7 +278,7 @@ Writing $u = S-D = 2b$ and $v = S+D = 2a$ gives $M = \tfrac{3}{2}uv$: a fixed li
 
 *Proof.* Write $p = 6a-1$ and $c = a$, so $u_p(a) = 1$ in the notation of Corollary 1. Since $36 \equiv c^{-2} \pmod p$, one has $36ab \equiv u_p(a)u_p(b) = u_p(b)$, and $u_p(b) = \pm 1$ would put the index $b$ at a forbidden position of $L_p$, contradicting that $C_b$ is a twin pair. The same argument with $p = 6a+1$, and with $a$ and $b$ exchanged, gives the other three. $\blacksquare$
 
-*Verified.* Zero strikes over all $6{,}320$ ordered pairs of distinct twin indices below $500$. The self-diamond is the opposite case: at $a = b$ the identity $36a^2-1 = (6a-1)(6a+1)$ closes the centre with the generators themselves.
+*Verification.* Zero strikes over all $6{,}320$ ordered pairs of distinct twin indices below $500$. The self-diamond is the opposite case: at $a = b$ the identity $36a^2-1 = (6a-1)(6a+1)$ closes the centre with the generators themselves.
 
 **A gap around a common strike.** The same coordinates give a lower bound on how far the images of a multi-line coincidence must sit from it. Let $S$ be a set of $k$ primes above $3$ and $P = \prod_{r\in S} r$. A cell whose two members are struck by the lines of $S$, split in any way between the rails, has centre $x = 6j$ with $x \equiv \pm1 \pmod r$ for every $r \in S$, hence $x^2 \equiv 1 \pmod P$: the $2^k$ ways of splitting are exactly the square roots of $1$ modulo $P$.
 
@@ -470,7 +472,7 @@ and the two are linked by an exact telescoping:
 
 > **Proposition 2.** $a_{r+1} - a_r = L_r$ for every $r \ge 0$. Hence the sectors $W_r$ partition the cell strip: $W_r$ is precisely the block of indices $[a_r,\ a_{r+1}-1]$, with no gap and no overlap.
 
-*Proof.* $a_{r+1} - a_r = 6(r+1)(r+2) - 6r(r+1) = 6(r+1)\lbrace (r+2)-r\rbrace = 12(r+1) = L_r$. $\square$
+*Proof.* $a_{r+1} - a_r = 6(r+1)(r+2) - 6r(r+1) = 6(r+1)\lbrace (r+2)-r\rbrace = 12(r+1) = L_r$. $\blacksquare$
 
 *Verification.* Exact for every $r \lt 2000$. At $r = 1$: $M = 9$, $a_1 = 14$, $L_1 = 24$, so $W_1 = (81,225)$ is the cells $14,\dots,37$ — from $(83,85)$ to $(221,223)$ — and the next sector starts at $a_2 = 38$.
 
@@ -561,9 +563,6 @@ $$\ell(m) = m+3 \iff a+b = ab+1 \iff (a-1)(b-1) = 0 \iff a = 1 .$$
 ---
 ---
 
-**No progress toward the twin-prime conjecture is claimed, and no new bound.** Priority is not claimed for any result.
-
----
 
 ## Appendix A — Fingerprint and sector tables
 
@@ -623,6 +622,12 @@ One rule was followed throughout: **every deviation was measured against an expl
 - $D$ is **not** monotone. The ascending quantity is the raw $4j^2$; after folding modulo $2p$ the order scrambles. For $p = 7$ the fingerprint reads $0, 4, \mathbf{2}, 8, 8, \mathbf{2}, 4, 0$. Monotonicity holds only for $p = 3, 5$. Note also that $H$ satisfies a *sum* symmetry ($=8$) whereas $D$ satisfies an *equality*.
 
 Verification code and the tables behind every "zero failures" claim accompany the monograph from which this series is drawn. The claims of §5 are regenerated by `verify_central_pair.py`.
+
+---
+
+**No progress toward the twin-prime conjecture is claimed, and no new bound.** Priority is not claimed for any result.
+
+*The computations and much of the prose in this paper were prepared with AI assistance (Claude, Anthropic), used for drafting and rewriting code and text, running the computations, searching the literature, and auditing the paper against its own scripts. The research direction, the questions asked, the decisions about what to publish and what to withdraw, and the responsibility for every claim are the author's. The full note is in the repository README.*
 
 ---
 
