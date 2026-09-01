@@ -41,7 +41,7 @@ The comparison object throughout is a ratio: a quantity measured on the window, 
 A line is nothing but the strip $k = 0,1,2,\dots$, and the squares do not alter it — they cut it into blocks. For $L_7$:
 
 | sector | $k$ | $H$ |
-|---|---|---|
+|--------|---------|------|
 | $(49,81]$ | 1, 2 | 2 |
 | $(81,121]$ | 3, 4, 5 | 3 |
 | $(121,169]$ | 6, 7, 8 | 3 |
@@ -98,7 +98,7 @@ $$T(U) = \sum_{u\le U}(\text{survivors}), \qquad M(U) = \sum_{u\le U} C(u) P(u).
 ### 3.2 The measured ratio
 
 | range of $n$ | 2–50 | 51–150 | 151–300 | 301–600 | 601–1000 | 1001–1600 |
-|---|---|---|---|---|---|---|
+|---------------|---------|---------|---------|---------|----------|-----------|
 | $T/M$ | 0.80567 | 0.81865 | 0.81020 | 0.80320 | 0.79456 | 0.79404 |
 
 $$\boxed{ T/M \approx 0.80,\ \text{stable across three orders of magnitude.} }$$
@@ -130,7 +130,7 @@ This is the first point in the framework at which stacking the lines does not bl
 Define the clock vector here by $\Phi_z(p)=(\phi_3(p),\phi_5(p),\dots,\phi_z(p))$, using (2.2) componentwise. It takes values in a set of size $\prod_{3\le q\le z} q$, while a trajectory of length $N$ visits at most $N$ of them:
 
 | $z$ | lines | states $\prod q$ |
-|---|---|---|
+|------|-------|-------------|
 | 13 | 5 | 15,015 |
 | 31 | 10 | $1.0\times10^{11}$ |
 | 59 | 16 | $9.6\times10^{20}$ |
@@ -189,7 +189,9 @@ Hence $\mathbf E(\Delta_r\mid\mathcal F_{r^-})=0$, so the $\Delta_r$ are marting
 $$\mathbf{E}(Z_z^2)=\frac{P_z}{P_z^2}=\frac1{P_z}.$$
 Thus $\mathrm{Var}(Z_z)=1/P_z-1$, and orthogonality gives $\sum_{r\le z}\mathbf E(\Delta_r^2)=1/P_z-1$. $\blacksquare$
 
-*Verification.* For $\lbrace 5,7,11,13\rbrace$ with $W = 5005$: the individual energies are $0.6666667,  0.6666667,  0.5185185,  0.5185185$, summing to $\mathbf{2.3703703704}$, while $1/P-1 = \mathbf{2.3703703704}$ — agreement to ten digits. All six cross-correlations are $\sim 10^{-17}$, i.e. zero to machine precision.
+*Verification.* For $\lbrace 5,7,11,13\rbrace$ with $W = 5005$: the individual energies are
+$$0.6666667, \qquad 0.6666667, \qquad 0.5185185, \qquad 0.5185185,$$
+summing to $\mathbf{2.3703703704}$, while $1/P-1 = \mathbf{2.3703703704}$ — agreement to ten digits. All six cross-correlations are $\sim 10^{-17}$, i.e. zero to machine precision.
 
 Since $P_z \asymp 1/\log^2 z$, the total $L^2$ energy of *all* lines is $O(\log^2 z)$, not exponential. **The primorial is present as a period, but the size of the $L^2$ error does not carry it.**
 
@@ -211,7 +213,7 @@ The available sector window at depth $U$ has length $\asymp U^2$, while the full
 ### 5.3 Numerical stress test of the bound
 
 | $U$ | lines | $\sum\lvert D_r\rvert^2$ | $X+U^2$ | ratio |
-|---|---|---|---|---|
+|-------|-------|------|------|-------|
 | 300 | 60 | $1.819\times10^5$ | $1.05\times10^5$ | 1.73 |
 | 600 | 107 | $1.310\times10^6$ | $4.20\times10^5$ | 3.12 |
 | 1,200 | 194 | $1.326\times10^7$ | $1.68\times10^6$ | 7.89 |
@@ -251,7 +253,7 @@ The question is whether the depth distribution of [II, Thm 2] transfers from cyc
 *The curve.* Transfer ratio for the weight $\max(0, 1-j/t)$:
 
 | $t$ | 400–800 | 800–1600 | 1600–3200 | 3200–6400 |
-|---|---|---|---|---|
+|---------------------------------|---------|----------|-----------|-----------|
 | 12 (linear on this range) | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
 | 8 | 0.9998 | 0.9997 | 0.9996 | 0.9994 |
 | 5 | 0.9979 | 0.9973 | 0.9975 | 0.9979 |
@@ -279,7 +281,7 @@ so that $J/L = 1$ is exactly the assertion that the cycle law of [II, §6.3] sur
 *Measured*, at $X = 4\times10^{9}$ (all $6.67\times10^{8}$ cells; the $\pm$ column is $1/\sqrt{\text{count}}$):
 
 | $u$ | $z$ | $H$ | count | $J$ | $L$ | $J/L$ | $\pm$ |
-|---|---|---|---|---|---|---|---|
+|------|--------|------|-----------|--------|--------|--------|--------|
 | 4 | 251 | $\lbrace 0,1\rbrace$ | 1,688,188 | 0.3978 | 0.3978 | **1.0000** | 0.0008 |
 | 4 | 251 | $\lbrace 0,1,3\rbrace$ | 142,416 | 0.4207 | 0.4206 | **1.0002** | 0.0026 |
 | 4 | 251 | $\lbrace 0,1,3,5\rbrace$ | 19,817 | 0.7337 | 0.7348 | **0.9985** | 0.0071 |
@@ -300,7 +302,7 @@ so that $J/L = 1$ is exactly the assertion that the cycle law of [II, §6.3] sur
 
 **What this settles, and what it does not.** The experiment shows a sharp distinction inside the tested weight family: soft weights transfer well, whereas the depth-zero indicator carries the large deficit. That indicator is the twin condition in the moving square window. The experiment does not prove a transfer theorem for arbitrary weights or all $t$; it locates the observed loss in this family. Proposition 2 then locates it more precisely still — in the one-point density rather than in the pattern structure — but it too is a measurement on a finite range and proves no transfer theorem.
 
-$$\boxed{ \text{The transfer fails in the one-point density and holds in the correlations, for every pattern tested up to ten integers.} }$$
+$$\boxed{\begin{array}{c}\text{The transfer fails in the one-point density and holds in the}\\ \text{correlations, for every pattern tested up to ten integers.}\end{array}}$$
 
 ---
 

@@ -20,6 +20,15 @@
 \BeforeBeginEnvironment{verbatim}{\par\needspace{4\baselineskip}\begin{minipage}{\linewidth}}
 \AfterEndEnvironment{verbatim}{\end{minipage}\par}
 \BeforeBeginEnvironment{longtable}{\needspace{10\baselineskip}}
+\usepackage{ragged2e}
+% Pandoc gives every column an equal share of the line, which squeezes a wide
+% "what it says" column into four words a line while a narrow "section" column
+% sits half empty.  Ragged-right inside table cells, tighter inter-column glue
+% and a little more row height make the same width read much better.
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\AtBeginEnvironment{longtable}{\RaggedRight\small}
+\AtBeginEnvironment{tabular}{\RaggedRight\small}
 \usepackage[margin=1in]{geometry}
 \usepackage{newunicodechar}
 \newunicodechar{✓}{\ensuremath{\checkmark}}

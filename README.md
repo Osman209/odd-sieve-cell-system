@@ -7,7 +7,7 @@
 A coordinate system for the odd sieve: what it proves, what it only measures, and the
 point at which it stops — derived from inside the construction rather than quoted.
 
-Seven documents and seven verification scripts. **Start with the overview.**
+Seven documents and nine verification scripts. **Start with the overview.**
 
 ---
 
@@ -60,7 +60,7 @@ names the source. The table below is the map.
 
 ```
 papers/   seven documents, plus one standalone preprint in LaTeX and PDF
-code/     seven verification scripts, plus the rendering checker and the site build
+code/     nine verification scripts, plus the rendering checker and the site build
 docs/     the GitHub Pages site: a landing page per paper, with its PDF
 ```
 
@@ -157,6 +157,8 @@ python3 code/verify_transfer_layers.py --fast                # Paper V §8.5 —
 python3 code/verify_singular_series_order.py --hm 1616615    # Paper V §8.6 — checksum at Q₆
 python3 code/verify_exception_dichotomy.py --fast            # Paper IV §3.2, §3.3 — Corollary 2 and the period budget
 python3 code/verify_line_routes.py --fast                    # Paper V §3.4 — the five closed routes
+python3 code/verify_bonferroni_depth.py --fast               # Paper IV §3.9 — the lower bound and its exact order
+python3 code/verify_first_appearance.py --fast               # bad square phases and when they first occur
 python3 code/verify_new_additions.py --fast                   # Paper I 3.5, 3.6 and Paper II 3 — phases, diamond centre, third channel
 ```
 

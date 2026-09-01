@@ -12,6 +12,8 @@ The primitive object is not the prime but the **line** $L_m(k) = m(m+2k)$, the o
 
 The same coordinates are then applied to the window $[(6a-1)^2,(6a+1)^2]$ (§4). It is exactly an interval of consecutive **cell indices**, starting at $6a^2-2a+1$ and of length $4a-1$, on which every line is two arithmetic progressions (Theorem 4); its midpoint cell is $(n^2-1,n^2+1)$ and so is never a twin (Theorem 5); and indexing by each line's strike number makes $t = k-6j$ invariant under the passage to the next window, in which coordinate two further laws are exact (Theorems 6, 7).
 
+Section 4.5 then reads the same coordinates across sectors rather than inside one: the sectors anchored at $M = 6r+3$ have start $a_r = 6r(r+1)+2$ and length $12(r+1)$, and the two are linked by $a_{r+1}-a_r = L_r$ exactly, so the sectors **tile** the cell strip. Since the cell and the two closed classes $n \equiv \pm 6^{-1} \pmod p$ are fixed once and for all, no sector carries a phase of its own — what looks like one is the position of the moving quadratic start inside a strip that never moves.
+
 Section 5 settles a second, independent ownership question about the same object: a line holds the *centre* of its strikes — it remains the largest divisor below the square root — for exactly $a+b+2$ steps, where $ab = m$ is the central pair of $m$ (Theorem 8). The loss is a handover with its index named, and the two steps of $2$ in the bound are exactly where the odd lattice enters.
 
 This paper uses no analytic sieve estimates: no Mertens constant, no prime-distribution input, no error terms. The exact histogram carried by the square window was separated out as Paper 0, since it concerns no primes at all; it is quoted here where needed and proved there.
@@ -26,7 +28,7 @@ This paper uses no analytic sieve estimates: no Mertens constant, no prime-distr
 ### Summary of the main results
 
 | | statement | where |
-|---|---|---|
+|-------------|------------------------------------------------------|-------|
 | **Theorem 1** | A line $L_m$ contributes a position no smaller line already covers **if and only if** $m$ is prime. | §2.4 |
 | **Theorem 2** | The cell map $p(6b+\varepsilon) = 6(pb+a\varepsilon)+\sigma\varepsilon$: a line sends the two members of $C_b$ to the cells $pb-a$ and $pb+a$. **A line's fingerprint symmetry is inherited from the cell, not created by the line.** | §3.2 |
 | **Theorem 3** | A line closes exactly the two cell positions $j \equiv \pm 6^{-1}$, always distinct; hence exactly two of every $p$ cells lose a member, one per rail. | §3.5 |
@@ -36,14 +38,15 @@ This paper uses no analytic sieve estimates: no Mertens constant, no prime-distr
 | **Corollary 4** | The strikes of $L_p$ on the cell axis are two interleaved progressions of step $p$ with alternating gaps $2a,\ p-2a$ — the projection of the single straight line $S-D = 2a$ in the diamond coordinates. | §3.6 |
 
 | | statement | where |
-|---|---|---|
+|---------------|----------------------------------------------------|-------|
 | **Theorem 4** | The window $[(6a-1)^2,(6a+1)^2]$ is exactly the interval of cell indices $c_0,\dots,c_0+N-1$ with $c_0 = 6a^2-2a+1$ and $N = 4a-1$; on it every line is two arithmetic progressions. | §4.1 |
 | **Theorem 5** | Its midpoint cell is $(n^2-1, n^2+1)$ with $n^2-1 = (n-1)(n+1)$, so **the midpoint is never a twin pair.** | §4.2 |
 | **Theorem 6** | In the shared index $k = 6j+t$ the two members of a layer are $4n+4t$ apart against a window of width $4n$, so only the newly born pair has both members inside; every older pair crosses in two disjoint passes. | §4.4 |
 | **Theorem 7** | The role of a strike — upper rail, lower rail, or wasted on $L_3$ — is decided by $t \bmod 3$ alone. | §4.4 |
+| **Proposition 2** | The sectors anchored at $M = 6r+3$ **tile** the cell strip: start $a_r = 6r(r+1)+2$, length $12(r+1)$, and $a_{r+1}-a_r$ is exactly the length. So no sector carries a phase of its own. | §4.5 |
 
 | | statement | where |
-|---|---|---|
+|-------------|------------------------------------------------------|-------|
 | **Theorem 8** | $L_m$ holds the centre of its strikes — it stays the largest divisor below the square root — for exactly $a+b+2$ steps, where $(a,b)$ is the central pair of $m$; the displacing divisor is $m+2a$. | §5.3 |
 | **Corollary 5** | The first loss is a handover with its index named: $L_m(a+b+2) = L_{m+2a}(b-a)$. At a square it lands on the new line's birth; at a prime it reads $L_p(p+3) = L_{p+2}(p-1)$. | §5.4 |
 | **Corollary 6** | $T(m) = m+2a = a(b+2)$, so a composite hands over to a composite: under iteration of $T$ the primes are a transient set. | §5.5 |
@@ -55,7 +58,7 @@ Everything in this paper is proved. The histogram results — Theorems 4, 5, 6, 
 This is one of six papers built on one coordinate system. The division is by mathematical dependence, not by topic:
 
 | | | depends on |
-|---|---|---|
+|-----|-------------------------------------------|--------------------------|
 | **0** | *An exact histogram for a quadratic staircase* | — (no primes occur in it) |
 | **I** | *Cells and lines* (this paper) | — |
 | **II** | *The inheritance law on the cycle* | the cell coordinates of §3 |
@@ -95,7 +98,7 @@ Each begins at its own square, so a line is responsible exactly for what no smal
 **(iii) The moving window.** The odd squares slide across this fixed grid, and the gap between consecutive squares is $4p+8j+4$ — two full line-steps plus a residue that grows by $8$ each time. For $p = 5$ the five sectors of the first cycle are
 
 | sector | $(25,49]$ | $(49,81]$ | $(81,121]$ | $(121,169]$ | $(169,225]$ |
-|---|---|---|---|---|---|
+|-----------------|--------|------------|------------------|-------------|-------------|
 | width | 24 | 32 | 40 | 48 | 56 |
 | strikes of $L_5$ | 35, 45 | 55, 65, 75 | 85, 95, 105, 115 | 125, …, 165 | 175, …, 225 |
 | $H_j$ | **2** | **3** | **4** | **5** | **6** |
@@ -124,7 +127,7 @@ $$L_p(k)  =  p^2 + 2pk  =  p (p+2k), \qquad k = 0,1,2,\dots \qquad\text{(2.1)}$$
 The line begins at $p^2$ and has step $2p$.
 
 | line | strikes |
-|---|---|
+|------|------------------------|
 | $L_3$ | 9, 15, 21, 27, 33, … |
 | $L_5$ | 25, 35, 45, 55, 65, … |
 | $L_7$ | 49, 63, 77, 91, 105, … |
@@ -182,7 +185,7 @@ Write $p = 6a+\sigma$ with $\sigma = \pm 1$.
 **Interpretation.** The line $p$ sends the two members of the factor-cell $C_b$ into the cells centred at $pb-a$ and $pb+a$ — two positions symmetric about $pb$, at distance $2a$.
 
 | $p$ | $\sigma$ | $a$ | image of $C_2 = (11,13)$ |
-|---|---|---|---|
+|------|------|------|---------------|
 | 5 | $-1$ | 1 | $C_9,  C_{11}$ |
 | 7 | $+1$ | 1 | $C_{13},  C_{15}$ |
 | 11 | $-1$ | 2 | $C_{20},  C_{24}$ |
@@ -208,7 +211,7 @@ Hence the "two strikes in a newborn line's first sector" is not an independent o
 Assign to each factor-cell the state of its two members ($N$ = alive, $O$ = already struck), giving $NN$, $NO$, $ON$, $OO$. When line $p$ enters, its genuinely new strikes are exactly the surviving members:
 
 | state | $NN$ | $NO$ | $ON$ | $OO$ |
-|---|---|---|---|---|
+|-------------|------|------|------|------|
 | new strikes | 2 | 1 | 1 | 0 |
 
 *Reason.* If $6b+1$ is divisible by some $r\lt p$, then so is $p(6b+1)$. **The state of the factor-cell is transported by multiplication.** Hence
@@ -224,7 +227,7 @@ A line's cycle in cell coordinates has length $p$ cells, and the line has two br
 $$|R_{Mp}| = (p-2) |R_M| \qquad\Longrightarrow\qquad |R_M| = \prod_{3\lt p\le z}(p-2). \qquad\text{(3.4)}$$
 
 | lines | 5 | 7 | 11 | 13 | 17 |
-|---|---|---|---|---|---|
+|-------|---|----|-----|-------|--------|
 | $\lvert R_M\rvert$ | 3 | 15 | 135 | 1,485 | 22,275 |
 
 Thus $(p-2)$ — the factor of the classical sieve product [1] — is here not a coefficient but the geometric statement
@@ -260,7 +263,7 @@ so the four products land at cell indices $M-S,\ M-D,\ M+D,\ M+S$, on the rails 
 **What the coordinates make visible.** Three of the objects of this paper become coordinate statements:
 
 | | in $(S,D)$ |
-|---|---|
+|---------------------------------|-----------------------------------------|
 | the line of the smaller factor | $S-D = 2b$, a family of **parallel** lines |
 | the squares | $D = 0$ |
 | the birth of a line at its square | the point where $S-D = 2b$ meets $D=0$, i.e. $(S,D) = (2b, 0)$ |
@@ -400,7 +403,7 @@ Theorem 4 makes one thing immediate that the outside indexing hides. **A line's 
 - $\ell \ge N$: the line **does not wrap**, and its entire budget is $2$ — usually already spent by the small lines.
 
 | $a$ | $N$ | lines $\ell\lt N$ | cells they close | lines $\ell \ge N$ | cells they close | twins |
-|---|---|---|---|---|---|---|
+|------|-------|------------|------------------|------------|------------------|-------|
 | 3 | 11 | 2 | 8 | 4 | 1 | 2 |
 | 17 | 67 | 16 | 60 | 9 | **0** | 7 |
 | 167 | 667 | 119 | 629 | 47 | 7 | 31 |
@@ -442,7 +445,7 @@ while the two positions shift by $-(72j+36)$ and $-(72j+12)$ — differing by $2
 > With $(n-1)^2 \equiv 1 \pmod 6$, a strike at $u \equiv 0$ falls on the upper member of a cell, at $u \equiv 4$ on the lower member, and at $u \equiv 2$ on $L_3$ — where it touches no cell at all. Hence:
 
 | $t \bmod 3$ | left line ($p$) | right line ($s$) |
-|---|---|---|
+|------|------------------|-------------------|
 | $0$ | upper rail | upper rail |
 | $1$ | lower rail | wasted on $L_3$ |
 | $2$ | wasted on $L_3$ | lower rail |
@@ -454,6 +457,34 @@ while the two positions shift by $-(72j+36)$ and $-(72j+12)$ — differing by $2
 Second, the scheduling is **asymmetric between the rails**: the two members of a layer both act on the upper rail at $t \equiv 0$, but on the lower rail at opposite residues, $t\equiv1$ for the left and $t\equiv2$ for the right.
 
 **That asymmetry has a testable consequence, and it fails.** If it mattered, cells closed only on the upper rail would differ systematically from cells closed only on the lower. Over $1{,}000$ windows ($a = 200,\dots,1199$) the difference has mean $-1.03$ with standard deviation $20.05$, giving $t = -1.62$, and is positive in $470$ of $1000$ windows. **No effect.** We report it because the asymmetry in $t$ is real and it was the one place in this section from which a statement about twins could have come.
+
+### 4.5 The strip is fixed and the sectors tile it
+
+Theorem 4 says that one sector is a segment of cell indices. Read across sectors it says something stronger, and it is worth stating separately because it removes an object we have been carrying without need.
+
+Take the sectors anchored at the odd multiples of three rather than at twin candidates: put $M = 6r+3$ and
+$$W_r  =  \big(M^2,\ (M+6)^2\big),$$
+so that consecutive $W_r$ meet end to end. Then $M^2+3$ is divisible by $6$, and writing $a_r = (M^2+3)/6$ for the first cell index inside $W_r$,
+$$a_r  =  6r(r+1)+2, \qquad L_r  =  2M+6  =  12(r+1), \qquad\text{(4.2)}$$
+and the two are linked by an exact telescoping:
+
+> **Proposition 2.** $a_{r+1} - a_r = L_r$ for every $r \ge 0$. Hence the sectors $W_r$ partition the cell strip: $W_r$ is precisely the block of indices $[a_r,\ a_{r+1}-1]$, with no gap and no overlap.
+
+*Proof.* $a_{r+1} - a_r = 6(r+1)(r+2) - 6r(r+1) = 6(r+1)\lbrace (r+2)-r\rbrace = 12(r+1) = L_r$. $\square$
+
+*Verification.* Exact for every $r \lt 2000$. At $r = 1$: $M = 9$, $a_1 = 14$, $L_1 = 24$, so $W_1 = (81,225)$ is the cells $14,\dots,37$ — from $(83,85)$ to $(221,223)$ — and the next sector starts at $a_2 = 38$.
+
+**What this removes.** The cell $C_n = (6n-1,6n+1)$ is defined once and for all, and by Theorem 3 each line $p$ closes the two classes $n \equiv \pm 6^{-1} \pmod p$ — also once and for all. Neither depends on the sector. **There is therefore no phase attached to a sector**: what looks like one is only the position of the moving start $a_r$ inside a strip that never moves. The whole of the twin question in these coordinates is
+$$C_r  =  \#\lbrace n \in [a_r,\ a_{r+1}) : n \not\equiv \pm 6^{-1} \pmod p \ \text{ for every } 5 \le p \le M \rbrace, \qquad\text{(4.3)}$$
+one fixed periodic pattern read along one moving quadratic trajectory.
+
+**And the trajectory has an exact displacement law.** From (4.2),
+$$a_s - a_r  =  6\big(s(s+1) - r(r+1)\big)  =  6\,(s-r)(s+r+1), \qquad\text{(4.4)}$$
+so $a_{r+p} \equiv a_r \pmod p$ — the start's motion against a line of step $p$ has period exactly $p$ in $r$ — and if two starts agree modulo every prime of a set $S$ (none of them $2$ or $3$), then $\prod_{p \in S} p$ divides $(s-r)(s+r+1)$. For distinct $r,s \le R$ that product is at most $R(2R+1)$, so **two different starts below $R$ cannot agree modulo more than about $2\log R$ worth of prime mass.** The trajectory is multiplicatively spread.
+
+*What (4.4) does not do, stated here so that it is not attempted again.* It compares two starts. If the start $a_r$ is itself the bad one there is no second start to compare it with: $s = r$ makes the right-hand side zero, every product divides zero, and no contradiction arises. Any displacement law is a two-point statement, and the question — whether one particular $a_r$ lands badly — is a one-point statement. Strengthening the law cannot repair that, because the distance it measures is not there.
+
+---
 
 ## 5. A second sense of ownership: the central factor
 
@@ -539,7 +570,7 @@ $$\ell(m) = m+3 \iff a+b = ab+1 \iff (a-1)(b-1) = 0 \iff a = 1 .$$
 $D_p(j) = 4j^2 \bmod 2p$:
 
 | $p$ | fingerprint |
-|---|---|
+|------|--------------------------------------------------------------------|
 | 3 | 0, 4, 4, 0 |
 | 5 | 0, 4, 6, 6, 4, 0 |
 | 7 | 0, 4, **2**, 8, 8, **2**, 4, 0 |
@@ -548,7 +579,7 @@ $D_p(j) = 4j^2 \bmod 2p$:
 $H_j = 2 + W_j$ over the first cycle (the histogram of these values is [0, Thm 2]):
 
 | $p$ | $H_j$ |
-|---|---|
+|------|--------------------------------------------------------------------|
 | 7 | 2, 3, 3, 4, 5, 5, 6 |
 | 11 | 2, 2, 3, 3, 4, 4, 4, 5, 5, 6, 6 |
 | 13 | 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6 |
@@ -559,7 +590,7 @@ $H_j = 2 + W_j$ over the first cycle (the histogram of these values is [0, Thm 2
 Combining $p \bmod 6$ (which strike carries the $L_3$-meeting) with $p \bmod 8$ (whether $D = 2$ is reachable, i.e. whether $2$ is a quadratic residue):
 
 | $p \bmod 24$ | 1 | 5 | 7 | 11 | 13 | 17 | 19 | 23 |
-|---|---|---|---|---|---|---|---|---|
+|--------------|-----|----|-----|----|----|-----|----|-----|
 | reaches $D=2$ | yes | no | yes | no | no | yes | no | yes |
 
 Zero failures over 428 primes. Writing $D_j = 2h_j$ one has $h_j \equiv 2j^2 \pmod p$, so a line's reachable distances to squares are exactly twice the squares mod $p$; the number of distinct values is $(p+1)/2$, which is the true source of $D_j = D_{p-j}$. Note that $D = 4$ is reachable by **every** line, since $2j^2 \equiv 2$ means $j^2 \equiv 1$.
@@ -572,7 +603,7 @@ $$a  \longmapsto  \big(6a^2-2a,   6a^2,   6a^2+2a\big),$$
 arising from $(6a-1)^2$, $(6a-1)(6a+1)$ and $(6a+1)^2$, with spacing $2a$.
 
 | $a$ | $(6a-1)^2$ | $(6a-1)(6a+1)$ | $(6a+1)^2$ |
-|---|---|---|---|
+|------|------|------|------|
 | 1 | $25 \to C_4$ | $35 \to C_6$ | $49 \to C_8$ |
 | 2 | $121 \to C_{20}$ | $143 \to C_{24}$ | $169 \to C_{28}$ |
 | 3 | $289 \to C_{48}$ | $323 \to C_{54}$ | $361 \to C_{60}$ |

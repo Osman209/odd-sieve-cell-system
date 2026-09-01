@@ -50,7 +50,7 @@ $$A' = (p-2)A, \quad B' = A + (p-1)B, \quad C' = A + (p-1)C, \quad D' = B + C + 
 *Verification* (exact rational arithmetic; the cycle modulus in the cell index is $\prod q$, **not** $6\prod q$):
 
 | lines | $M$ | $(A,B,C,D)$ | predicted |
-|---|---|---|---|
+|-------|-------|------|-----------|
 | $\lbrace 5\rbrace$ | 5 | $(3,1,1,0)$ | — |
 | $\lbrace 5,7\rbrace$ | 35 | $(15,9,9,2)$ | ✓ |
 | $\lbrace 5,7,11\rbrace$ | 385 | $(135,105,105,40)$ | ✓ |
@@ -73,7 +73,7 @@ Since $a+b = 1$ initially, $a+b = P_1$. Also $a' = (1-2/p)a$ with $a=1$ initiall
 *Verification.* All three identities hold with zero error in exact rational arithmetic for every $p$ from $5$ to $199$.
 
 | $p$ | $a$ | $b$ | $a+b$ | $P_1$ | $P_2$ |
-|---|---|---|---|---|---|
+|------|----------|----------|----------|----------|----------|
 | 7 | 0.428571 | 0.257143 | 0.685714 | 0.685714 | 0.428571 |
 | 31 | 0.186275 | 0.272282 | 0.458556 | 0.458556 | 0.186275 |
 | 199 | 0.085574 | 0.226109 | 0.311684 | 0.311684 | 0.085574 |
@@ -192,14 +192,14 @@ The obstruction identified in §4.1 is that the marker $x$ in (3.2) records *tha
 **The cost is polynomial, not exponential.** The state space has size $\prod_b \binom{n_b+2}{2}$, where $n_b$ is the number of lines in bin $b$ — a polynomial of degree $2B$ in $\pi(z)$:
 
 | $z$ | lines | depth only (Thm 2) | $B=2$ | $B=4$ | $B=8$ | unrefined joint, $2^{\pi(z)}$ |
-|---|---|---|---|---|---|---|
+|--------|-------|--------------------|------|------|------|-----------------------|
 | 1,000 | 166 | 167 | $1.9\times10^{6}$ | $9.1\times10^{9}$ | $3.3\times10^{15}$ | $\approx10^{50}$ |
 | 20,000 | 2,260 | 2,261 | $5.0\times10^{9}$ | $8.2\times10^{15}$ | $6.5\times10^{26}$ | $\approx10^{680}$ |
 
 **And the resolution Richert's weight requires is modest.** Measured on $4\times10^{6}$ cells with $X = 2.4\times10^{7}$ and the parameters $k=3$, $k_1 = 8$, $k_2 = 3.17$ (so $z = 8.4$, $y = 212.9$, $\lambda = 0.83$, and $43$ lines in the weight range), comparing $\sum\max(0,w)$ computed from the binned counts against the exact value:
 
 | bins $B$ | 1 (depth only) | 2 | 4 | 8 | 16 |
-|---|---|---|---|---|---|
+|----------------|----------------|-------|-------|-------|-------|
 | relative error | $+40.5$% | $+8.2$% | $+2.0$% | $+0.39$% | $+0.10$% |
 
 The $+40.5$% in the first column is exactly the error of ignoring the sizes, i.e. the gap left by Corollary 3; eight bins close it to $0.4$%.
@@ -240,7 +240,7 @@ The layering of §5.1 was reached by asking a specific question: **the union bou
 **The layered count.** By Theorem 3 the layers are disjoint, so no position is charged twice. On a full CRT cycle the struck fraction is exactly $\sum_q |E_q|/|I|$; on a shorter interval the same disjoint identity holds for counts, but the simple product formula below acquires boundary dependence. Comparing the full-cycle densities:
 
 | $z$ | union bound $\sum_q 1/q$ | layered bound $\sum_q \lvert E_q\rvert/\lvert I\rvert$ | survivors |
-|---|---|---|---|
+|------|------------------|--------------------|-----------|
 | 13 | 0.844 | 0.616 | 0.384 |
 | 101 | **1.313** | 0.762 | 0.238 |
 | 997 | **1.698** | 0.838 | 0.162 |
@@ -259,7 +259,7 @@ $$\sum_{q\le z} \frac{|E_q|}{|I|}  =  1 - \prod_{q\le z}\Big(1-\frac1q\Big), \qq
 **The interference did not disappear; it moved.** It is no longer in the intersections — it is inside the size of each layer. Three routes therefore reach the same place:
 
 | route | result |
-|---|---|
+|---------------------|----------|
 | naive union bound | diverges |
 | **disjoint layers** | $\prod(1-1/q)$ |
 | inclusion–exclusion | $\prod(1-1/q)$ |
