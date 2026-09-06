@@ -45,7 +45,8 @@ This paper uses no analytic sieve estimates: no Mertens constant, no prime-distr
 | **Theorem 5** | Its midpoint cell is $(n^2-1, n^2+1)$ with $n^2-1 = (n-1)(n+1)$, so **the midpoint is never a twin pair.** | §4.2 |
 | **Theorem 6** | In the shared index $k = 6j+t$ the two members of a layer are $4n+4t$ apart against a window of width $4n$, so only the newly born pair has both members inside; every older pair crosses in two disjoint passes. | §4.4 |
 | **Theorem 7** | The role of a strike — upper rail, lower rail, or wasted on $L_3$ — is decided by $t \bmod 3$ alone. | §4.4 |
-| **Proposition 2** | The sectors anchored at $M = 6r+3$ **tile** the cell strip: start $a_r = 6r(r+1)+2$, length $12(r+1)$, and $a_{r+1}-a_r$ is exactly the length. So no sector carries a phase of its own. | §4.5 |
+| **Proposition 1** | Two odd factor pairs whose products lie in the same window $(M^2,(M+2)^2)$ cannot cross: $a \lt c$ forces $b \ge d$, even for different integers. The window is shorter than the smallest diagonal step of the multiplication table. | §2.3 |
+| **Proposition 3** | The sectors anchored at $M = 6r+3$ **tile** the cell strip: start $a_r = 6r(r+1)+2$, length $12(r+1)$, and $a_{r+1}-a_r$ is exactly the length. So no sector carries a phase of its own. | §4.5 |
 
 | | statement | where |
 |-------------|------------------------------------------------------|-------|
@@ -124,7 +125,7 @@ The widths climb by exactly $8$; the strike count climbs $2,3,4,5,6$ **and stops
 ### 2.1 Definition
 
 For odd $p$,
-$$L_p(k)  =  p^2 + 2pk  =  p (p+2k), \qquad k = 0,1,2,\dots \qquad\text{(2.1)}$$
+$$L_p(k)  =  p^2 + 2pk  =  p (p+2k), \qquad k = 0,1,2,\dots$$
 
 The line begins at $p^2$ and has step $2p$.
 
@@ -140,9 +141,30 @@ Any odd multiple of $p$ below $p^2$ has the form $p\cdot s$ with $s\lt p$, hence
 
 ### 2.3 A difference-of-squares identity
 
-$$L_m(k)  =  (m+k)^2 - k^2 \qquad\text{(2.2)}$$
+$$L_m(k)  =  (m+k)^2 - k^2$$
 
 Every strike is a difference of two squares whose roots differ by the fixed amount $m$. This is the first link between lines and squares; it returns in §3.6 and §3.7, and again in Paper 0.
+
+**Why the window is taken between consecutive squares, and not somewhere else.** The choice looks like a convenience — a place where the pivot of [IV, §3.1] holds — but there is a stronger reason, and it is a statement about the multiplication table rather than about primes. Consider the odd factor pairs $(a,b)$, $a \le b$, whose product lands in one window:
+$$M^2 \lt  ab \lt  (M+2)^2 .$$
+
+> **Proposition 1.** If $(a,b)$ and $(c,d)$ are two such pairs, both with product in the same window, then $a \lt  c$ forces $b \ge d$. Two factor pairs in one window cannot cross, **even when they belong to different integers.**
+
+*Proof.* Suppose $a \lt  c$ and $b \lt  d$. All four are odd, so $c \ge a+2$ and $d \ge b+2$, and
+$$cd  \ge  (a+2)(b+2)  =  ab + 2(a+b) + 4 .$$
+Since $ab \gt  M^2$, the arithmetic–geometric mean inequality gives $a+b \ge 2\sqrt{ab} \gt  2M$, so
+$$cd  \gt  M^2 + 4M + 4  =  (M+2)^2 ,$$
+contradicting $cd \lt  (M+2)^2$. $\blacksquare$
+
+*Verification.* Zero crossings among the $36{,}263{,}176$ factor pairs arising over all odd $M \lt  4000$.
+
+**The mechanism is a comparison of two lengths.** The window has height
+$$(M+2)^2 - M^2  =  4M+4,$$
+while the smallest diagonal step available in the multiplication table, $(a,b) \to (a+2,b+2)$, raises the product by
+$$2(a+b)+4  \gt  4M+4$$
+for every pair inside the window — verified with no exception over $19{,}751{,}883$ pairs. **A single diagonal step leaves the window entirely.** That is why the ordering is forced: consecutive squares are close enough together that the factor table has no room to fold back on itself inside them.
+
+One consequence is a change of picture worth stating. Within a window, a line $L_a$ is not an object interacting with other lines; it is one row of a single ordered ladder of factor pairs, its strikes are the products $ab$ with $b$ in that row, and a composite is a label repeated across several rows while a prime is a label appearing only in the row $a=1$. The overlap of lines is repetition of a label, and the largest factor below the square root is the label's last appearance. *(This is a restatement, not a further result: recognising a label as unrepeated is recognising a prime.)*
 
 ### 2.4 Theorem 1 (only primes contribute)
 
@@ -169,7 +191,7 @@ With $L_2$ admitted, gaps between consecutive struck numbers lie in $\lbrace 1,2
 
 ### 3.1 Definition
 
-$$\underbrace{6b-3}_{\text{on } L_3}  \Big|  \underbrace{6b-1,   6b+1}_{\textbf{cell } C_b}  \Big|  \underbrace{6b+3}_{\text{on } L_3} \qquad\text{(3.1)}$$
+$$\underbrace{6b-3}_{\text{on } L_3}  \Big|  \underbrace{6b-1,   6b+1}_{\textbf{cell } C_b}  \Big|  \underbrace{6b+3}_{\text{on } L_3}$$
 
 The cell is symmetric about its centre $6b$; this symmetry is inherited by everything that follows.
 
@@ -178,7 +200,7 @@ The cell is symmetric about its centre $6b$; this symmetry is inherited by every
 Write $p = 6a+\sigma$ with $\sigma = \pm 1$.
 
 > **Theorem 2.** For all $b$ and $\varepsilon = \pm 1$,
-> $$p (6b+\varepsilon)  =  6 (pb + a\varepsilon)  +  \sigma\varepsilon. \qquad\text{(3.2)}$$
+> $$p (6b+\varepsilon)  =  6 (pb + a\varepsilon)  +  \sigma\varepsilon.$$
 
 *Proof.* Direct expansion: $p(6b+\varepsilon) = (6a+\sigma)(6b+\varepsilon) = 36ab + 6a\varepsilon + 6b\sigma + \sigma\varepsilon = 6(pb + a\varepsilon) + \sigma\varepsilon$, using $6ab + b\sigma = b(6a+\sigma) = pb$. $\blacksquare$
 
@@ -200,7 +222,7 @@ Two consequences are immediate. First, **the symmetry of a line's fingerprint is
 Among $p,  p+2,  p+4$ exactly one is divisible by $3$, so every line $p\gt 3$ has the fixed repeating unit
 $$L_3 \to \text{strike} \to \text{strike} \to L_3 \to \cdots$$
 
-> **Proposition 1.** If $p \equiv +1 \pmod 6$ the $L_3$-meeting is the *first* strike $p(p+2)$; if $p \equiv -1 \pmod 6$ it is the *second*, $p(p+4)$.
+> **Proposition 2.** If $p \equiv +1 \pmod 6$ the $L_3$-meeting is the *first* strike $p(p+2)$; if $p \equiv -1 \pmod 6$ it is the *second*, $p(p+4)$.
 
 *Proof.* If $p = 6a+1$ then $p+2 = 6a+3$ is divisible by $3$; if $p = 6a-1$ then $p+4 = 6a+3$ is. $\blacksquare$
 
@@ -217,7 +239,7 @@ Assign to each factor-cell the state of its two members ($N$ = alive, $O$ = alre
 | new strikes | 2 | 1 | 1 | 0 |
 
 *Reason.* If $6b+1$ is divisible by some $r\lt p$, then so is $p(6b+1)$. **The state of the factor-cell is transported by multiplication.** Hence
-$$\text{effect of } L_p  =  (\text{its geometric track})  \cap  (\text{previous survivors}). \qquad\text{(3.3)}$$
+$$\text{effect of } L_p  =  (\text{its geometric track})  \cap  (\text{previous survivors}).$$
 
 The counting form of this law, its closed solution and its refinement by inheritance depth are the subject of Paper II; nothing below depends on them.
 
@@ -226,7 +248,7 @@ The counting form of this law, its closed solution and its refinement by inherit
 ### 3.5 The survivor law as a geometric statement
 
 A line's cycle in cell coordinates has length $p$ cells, and the line has two branches; it therefore closes two cells out of every $p$:
-$$|R_{Mp}| = (p-2) |R_M| \qquad\Longrightarrow\qquad |R_M| = \prod_{3\lt p\le z}(p-2). \qquad\text{(3.4)}$$
+$$|R_{Mp}| = (p-2) |R_M| \qquad\Longrightarrow\qquad |R_M| = \prod_{3\lt p\le z}(p-2).$$
 
 | lines | 5 | 7 | 11 | 13 | 17 |
 |-------|---|----|-----|-------|--------|
@@ -470,14 +492,14 @@ so that consecutive $W_r$ meet end to end. Then $M^2+3$ is divisible by $6$, and
 $$a_r  =  6r(r+1)+2, \qquad L_r  =  2M+6  =  12(r+1), \qquad\text{(4.2)}$$
 and the two are linked by an exact telescoping:
 
-> **Proposition 2.** $a_{r+1} - a_r = L_r$ for every $r \ge 0$. Hence the sectors $W_r$ partition the cell strip: $W_r$ is precisely the block of indices $[a_r,\ a_{r+1}-1]$, with no gap and no overlap.
+> **Proposition 3.** $a_{r+1} - a_r = L_r$ for every $r \ge 0$. Hence the sectors $W_r$ partition the cell strip: $W_r$ is precisely the block of indices $[a_r,\ a_{r+1}-1]$, with no gap and no overlap.
 
 *Proof.* $a_{r+1} - a_r = 6(r+1)(r+2) - 6r(r+1) = 6(r+1)\lbrace (r+2)-r\rbrace = 12(r+1) = L_r$. $\blacksquare$
 
 *Verification.* Exact for every $r \lt 2000$. At $r = 1$: $M = 9$, $a_1 = 14$, $L_1 = 24$, so $W_1 = (81,225)$ is the cells $14,\dots,37$ — from $(83,85)$ to $(221,223)$ — and the next sector starts at $a_2 = 38$.
 
 **What this removes.** The cell $C_n = (6n-1,6n+1)$ is defined once and for all, and by Theorem 3 each line $p$ closes the two classes $n \equiv \pm 6^{-1} \pmod p$ — also once and for all. Neither depends on the sector. **There is therefore no phase attached to a sector**: what looks like one is only the position of the moving start $a_r$ inside a strip that never moves. The whole of the twin question in these coordinates is
-$$C_r  =  \#\lbrace n \in [a_r,\ a_{r+1}) : n \not\equiv \pm 6^{-1} \pmod p \ \text{ for every } 5 \le p \le M \rbrace, \qquad\text{(4.3)}$$
+$$C_r  =  \#\lbrace n \in [a_r,\ a_{r+1}) : n \not\equiv \pm 6^{-1} \pmod p \ \text{ for every } 5 \le p \le M \rbrace,$$
 one fixed periodic pattern read along one moving quadratic trajectory.
 
 **And the trajectory has an exact displacement law.** From (4.2),

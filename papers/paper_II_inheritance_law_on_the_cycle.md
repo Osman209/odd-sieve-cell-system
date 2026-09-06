@@ -65,7 +65,7 @@ The full cycle state — which grows like $\prod q$ — is thus carried by four 
 Write $a = A/M$ and so on.
 
 > **Theorem 1.** The quantity $a+b$ is form-invariant, $(a+b)' = (1-1/p)(a+b)$, and consequently
-> $$\boxed{(a,b,c,d) = \big(P_2,   P_1-P_2,   P_1-P_2,   1-2P_1+P_2\big)} \qquad\text{(2.2)}$$
+> $$\boxed{(a,b,c,d) = \big(P_2,   P_1-P_2,   P_1-P_2,   1-2P_1+P_2\big)}$$
 > where $P_1 = \prod_{5\le q\le P}(1-1/q)$ and $P_2 = \prod_{5\le q\le P}(1-2/q)$.
 
 *Proof.* From (2.1) in normalised form,
@@ -83,13 +83,13 @@ Since $a+b = 1$ initially, $a+b = P_1$. Also $a' = (1-2/p)a$ with $a=1$ initiall
 ### 2.3 Asymptotics
 
 Removing the factors at $2$ and $3$ (whose product is $1/3$) from Mertens' theorem [1],
-$$P_1 \sim \frac{C}{\log P}, \quad C = 3e^{-\gamma} = 1.6843785; \qquad P_2 \sim \frac{K}{\log^2 P}, \quad K = 12 C_2 e^{-2\gamma} = 2.4972872. \qquad\text{(2.3)}$$
+$$P_1 \sim \frac{C}{\log P}, \quad C = 3e^{-\gamma} = 1.6843785; \qquad P_2 \sim \frac{K}{\log^2 P}, \quad K = 12 C_2 e^{-2\gamma} = 2.4972872.$$
 
 *Verification.* Iterating (2.1) to $P = 2\times10^8$: $a\log^2 P \to 2.497274$; and $(1-d)\log P \to 3.37227$ against the predicted $2C = 3.3687569$.
 
 ### 2.4 Structural reading
 
-$$\frac{b}{a} \sim \frac{C}{K}\log P = 0.6744833 \log P. \qquad\text{(2.4)}$$
+$$\frac{b}{a} \sim \frac{C}{K}\log P = 0.6744833 \log P.$$
 
 Fully alive cells — the twin candidates — die like $1/\log^2 P$, whereas half-dead cells die only like $1/\log P$. The flow is always $NN \to NO/ON \to OO$, and the surviving population becomes overwhelmingly $OO$.
 
@@ -162,7 +162,7 @@ This is (3.2) with $x$ set to $1$ and $q-2$ resolved into $(q-3) + w$; the cell 
 
 ### 4.1 What Theorem 2 gives, and what it does not
 
-Weighted sieves attach to each surviving element a weight depending on its factorisation, and deduce an almost-prime from the positivity of the weighted sum. The weight that powers the current explicit results between consecutive squares and cubes (see [V, §8.5] for those) is Richert's [2]:
+Weighted sieves attach to each surviving element a weight depending on its factorisation, and deduce an almost-prime from the positivity of the weighted sum. The weight that powers the current explicit results between consecutive squares and cubes (see [V, §5.5] for those) is Richert's [2]:
 $$w(a)  =  \lambda  -  \sum_{\substack{p \mid a \cr  z\le p\lt y}}\Big(1 - \frac{\log p}{\log y}\Big), \qquad \lambda = k+1-k_2,$$
 with $z = X^{1/k_1}$ and $y = X^{1/k_2}$; the mechanism is that $w(a) \gt  0$ forces $\Omega(a) \le k$, so a positive lower bound for $\sum w(a)$ over the sifted set produces an almost-prime. (The constant is $\lambda$, not $1$; with $\lambda = 1$ the weight detects $\Omega \le k_2$ instead.) It is a nonlinear function of the factorisation and, through $\log p/\log y$, of the *sizes* of the factors.
 
@@ -223,7 +223,7 @@ Thus $O(25) = O(35) = 5$, $O(45) = 3$, $O(49) = 7$, and $O(105) = 3$ — priorit
 > **Theorem 3.** Let $S_{\lt q}$ denote the survivors of all lines below $q$. Then the ownership layers
 > $$E_q  =  q \cdot S_{\lt q}, \qquad \text{taken from } q^2 \text{ onward},$$
 > are pairwise disjoint, and consequently
-> $$\mathrm{card}S(I)  =  \mathrm{card}I  -  \sum_q \mathrm{card}E_q(I) \qquad\text{(5.1)}$$
+> $$\mathrm{card}S(I)  =  \mathrm{card}I  -  \sum_q \mathrm{card}E_q(I)$$
 > **with no inclusion–exclusion corrections.**
 
 *Proof.* If $n$ has owner $q$ then $n = q r$ with $r$ divisible by no line below $q$, i.e. $r \in S_{\lt q}$; and $n \ge q^2$ since $r \ge q$. Conversely any $q r$ with $r \in S_{\lt q}$ and $q r \ge q^2$ has least prime factor $q$. So $E_q$ is exactly $\lbrace n : O(n) = q\rbrace$, and distinct owners give disjoint sets. $\blacksquare$
@@ -254,7 +254,7 @@ $$\boxed{ \text{The layered bound is below } 1 \text{ for every } z, \text{ howe
 
 **But on the full cycle the repaired sum returns the sieve product and nothing more.** Since each residue class occurs exactly once in every $q$ copies, $|E_q| = \frac{1}{q}|S_{\lt q}|$ on the full CRT cycle; the layer sizes already contain the product of everything below, and
 
-$$\sum_{q\le z} \frac{|E_q|}{|I|}  =  1 - \prod_{q\le z}\Big(1-\frac1q\Big), \qquad\text{hence}\qquad \frac{|S|}{|I|} = \prod_{q\le z}\Big(1-\frac1q\Big). \qquad\text{(5.2)}$$
+$$\sum_{q\le z} \frac{|E_q|}{|I|}  =  1 - \prod_{q\le z}\Big(1-\frac1q\Big), \qquad\text{hence}\qquad \frac{|S|}{|I|} = \prod_{q\le z}\Big(1-\frac1q\Big).$$
 
 *Verification.* Measured layer fractions in $(P^2, 9P^2)$ at $P = 997$: $|E_3| = 0.3333$, $|E_5| = 0.1333$, $|E_7| = 0.0762$ — matching $1/3$, $2/15$, $8/105$ exactly, and identically at $P = 101$ and $P = 499$.
 
@@ -299,7 +299,7 @@ The five rungs of the ladder now all have meanings: $q$ counts cells, $q-1$ sing
 ### 6.2 Why no single number closes the second moment
 
 For a window of $L$ consecutive pair slots placed at $s$, write $N_s(L) = \sum_{j\lt L} A(s+j)$. Averaging over $s$ gives the mean $LT/M$ and, exactly,
-$$\mathrm{Var}(N_L)  =  \frac{LT + 2\sum_{h=1}^{L-1}(L-h) C(h)}{M}  -  \Big(\frac{LT}{M}\Big)^{2}, \qquad\text{(6.1)}$$
+$$\mathrm{Var}(N_L)  =  \frac{LT + 2\sum_{h=1}^{L-1}(L-h) C(h)}{M}  -  \Big(\frac{LT}{M}\Big)^{2},$$
 with no sampling and no independence assumption anywhere.
 
 > **Corollary 5.** There is no function $f$ with $\mathrm{Var}' = f(\mathrm{Var}, q)$.

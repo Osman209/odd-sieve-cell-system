@@ -99,7 +99,7 @@ Write $n = 8t+r$ with $r \in \lbrace 1,3,5,7\rbrace$; then $m = 2t+\varepsilon$ 
 | 7 | $2t+2$ | $t+1$ | $t+1$ | $\lt  8t+7$ ✓ |
 
 Each remainder is a positive linear function of $t$ strictly below $n$, so the quotient is as claimed and
-$$N_0 = (2t+\varepsilon)-(t+\varepsilon-1) = t+1 = \left\lfloor \frac{n+7}{8}\right\rfloor = A. \qquad\text{(3.2)}$$
+$$N_0 = (2t+\varepsilon)-(t+\varepsilon-1) = t+1 = \left\lfloor \frac{n+7}{8}\right\rfloor = A.$$
 
 **The remaining four.** Put $H = (n-1)/2$. For $0 \le j \lt  H$ the interval $I_j$ has length $4j+2 \lt  2n$, so $W_j \in \lbrace 0,1,2\rbrace$. These $H$ intervals tile $(0, 2H^2]$, which contains
 $$\left\lfloor \frac{2H^2}{n}\right\rfloor = H-1$$
@@ -117,6 +117,17 @@ $$\sum_{j \lt  (n-2)/4} \frac{n-4j-2}{n}  \approx  \frac n8,$$
 the correct answer, with deviation never exceeding $0.889$ for odd $n \le 20{,}001$. Sums of this shape normally carry an error of size $\sqrt n \log n$ (character sums) or $n^{1/3}$ (lattice points).
 
 **The reason none appears here is that the indicators are not independent: the intervals tile, and the tiling is exact.** The residues $2j^2 \bmod n$ never enter the argument. Theorem 5 is the statement about those residues, and it is a good deal harder.
+
+**The same absence, named, and in a more general form.** Posing the question on MathOverflow produced a framing that identifies the mechanism and extends it to $\lfloor k j^2/n\rfloor$ for any $k$. Group the $j$ by the value of the linear part, $J_q = \lbrace j : \lfloor k(2j+1)/n\rfloor = q\rbrace$, an interval with endpoints
+$$a_q = \left\lceil \frac{qn-k}{2k} \right\rceil, \qquad b_q = \left\lceil \frac{(q+1)n-k}{2k} \right\rceil - 1,$$
+and let $L_q = \lvert J_q\rvert$. Define
+$$C_q = \left\lfloor \frac{k(b_q+1)^2}{n} \right\rfloor - \left\lfloor \frac{k a_q^2}{n} \right\rfloor - q L_q ,$$
+which by telescoping $\sum_{j \in J_q}(W_j - q)$ is exactly the number of **carries** on $J_q$ — the $j$ at which the increment is $q+1$ rather than $q$. The multiplicities are then
+$$N_0 = L_0 - C_0, \qquad N_i = L_i - C_i + C_{i-1} \ \ (1 \le i \lt 2k), \qquad N_{2k} = C_{2k-1} .$$
+
+*Verification.* Zero mismatches over $17{,}991$ pairs $(k,n)$ with $k$ up to $400$ and odd $n \lt 4000$, and over $3{,}992$ pairs with **even** $n$, which Theorem 2 excludes. For $k = 2$ it reproduces the four multiplicities of Theorem 2 exactly.
+
+**So the absence of an error term is a carry-count phenomenon rather than an equidistribution one**, which is the same reading as the tiling above, stated in a form that survives the generalisation in $k$. *We have not found this recorded anywhere; the question asking for a reference is still open, and we state the identity as verified over the range above rather than as a known result.* The framing is due to a MathOverflow answer [4]; the verification and the extension to even $n$ are ours.
 
 ---
 
@@ -316,3 +327,4 @@ Two details were found by failure rather than by design and are recorded so that
 1. V. T. Sós, *On the distribution mod 1 of the sequence $n\alpha$*, Ann. Univ. Sci. Budapest, Eötvös Sect. Math. **1** (1958), 127–134.
 2. D. R. Heath-Brown, *Pair correlation for fractional parts of $\alpha n^2$*, Math. Proc. Cambridge Philos. Soc. **148** (2010), 385–407.
 3. P. Kurlberg, *The distribution of spacings between quadratic residues, II*, Israel J. Math. **120** (2000), part A, 205–224.
+4. MathOverflow, *Exact multiplicities for the increments of the staircase floor(2j^2/n) — known?*, question 514570 (2026), and the answer there giving the carry-count identity.

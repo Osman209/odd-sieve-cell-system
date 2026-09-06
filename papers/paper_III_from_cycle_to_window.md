@@ -57,7 +57,7 @@ A line is nothing but the strip $k = 0,1,2,\dots$, and the squares do not alter 
 ### 2.2 Theorem 1 (old lines as rulers)
 
 > **Theorem 1.** For a new line $p$ and an old line $q\lt p$, with $x = L_p(k)$,
-> $$x + 6j \equiv 0 \pmod q \iff k \equiv k_0 - j d \pmod q, \qquad d = 3 p^{-1} \bmod q, \qquad\text{(2.1)}$$
+> $$x + 6j \equiv 0 \pmod q \iff k \equiv k_0 - j d \pmod q, \qquad d = 3 p^{-1} \bmod q,$$
 > where $k_0 = -p^2(2p)^{-1} \bmod q$.
 
 *Proof.* $x+6j = p^2+2pk+6j \equiv 0$ gives $k \equiv (-p^2-6j)(2p)^{-1} = k_0 - 3jp^{-1}$. $\blacksquare$
@@ -165,13 +165,13 @@ Split $\varepsilon_r = \mu_r + \xi_r$ into mean and fluctuation.
 *Verification.* The single-line law holds exactly for $r = 5,7,11,13,17,19,23,29,31,37,41,43,47$. The general law gives $\lbrace 5,7\rbrace \mapsto 1$, $\lbrace 5,11\rbrace \mapsto 3$, $\lbrace 7,17\rbrace \mapsto -5$, $\lbrace 7,11\rbrace \mapsto 1$, $\lbrace 11,13\rbrace \mapsto 3$, $\lbrace 5,13\rbrace \mapsto 3$, $\lbrace 5,7,11\rbrace \mapsto 5$ — every value exact.
 
 **$r$ boundary errors, each of size $O(1)$, collapse to $\pm1$.** Consequently the whole inclusion–exclusion compresses into two products:
-$$E_{\text{cycle}} = M\left[\prod_{r}\left(1-\frac2r\right) - \prod_{r}\left(1-\frac{2+(2/r)}{r}\right)\right]. \qquad\text{(4.1)}$$
+$$E_{\text{cycle}} = M\left[\prod_{r}\left(1-\frac2r\right) - \prod_{r}\left(1-\frac{2+(2/r)}{r}\right)\right].$$
 The second product is a factor the purely periodic model does not contain; it is contributed by the square clock.
 
 ### 4.3 Algebraic consequence of identity A
 
 Assuming identity A, $\sum_r -\mu_r/P_r = 1 - Q_z/P_z$, whence
-$$E_{\text{mean}}(U) = \sum_{u\le U}(P_u - Q_u) = O\left(\frac{U}{\log^2 U}\right), \qquad\text{(4.2)}$$
+$$E_{\text{mean}}(U) = \sum_{u\le U}(P_u - Q_u) = O\left(\frac{U}{\log^2 U}\right),$$
 smaller than the main term (3.1) by a full factor of $U$.
 
 *Verification.* At $U = 1000$ the total error is $-2057$ while the mean part contributes $-6.93$; at $U = 2000$, $-6479$ against $-11.24$. **The means account for $0.17$% of the deviation.**
@@ -236,7 +236,7 @@ A large-sieve-type inequality adapted to such *nested* masks would be the kind o
 ### 5.5 What would have sufficed
 
 Precisely a bound
-$$\big|S_r(V)\big|  \le  C\sqrt{N_r(V)} \log^A U, \qquad\text{(5.2)}$$
+$$\big|S_r(V)\big|  \le  C\sqrt{N_r(V)} \log^A U,$$
 where $S_r(V)$ is the centred partial sum since the line's birth and $N_r(V)$ the number of sectors observed. **This is weaker than Hardy–Littlewood: no constant need be identified and no asymptotic formula proved — only a bound.**
 
 The tested data do not support a small uniform constant: the worst ratio $\max|S_r|/\sqrt{N_r}$ rises from $4.25$ at $U=4199$ to $5.75$ at $U=7199$. This does **not** refute the existence of some larger eventual constant. The polylogarithmic form is **beyond what computation can settle here**: each sector costs $O(u)$ work, so distinguishing $\sqrt N \log^A$ from $\sqrt N \log^{A+1}$ would require $U$ in the millions.
