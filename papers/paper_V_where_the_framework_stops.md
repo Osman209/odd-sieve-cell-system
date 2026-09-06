@@ -48,6 +48,8 @@ Section 4 records, in outline, the routes the framework produced before the iden
 | Result | What it says | Section |
 |---------------|-------------------------------------------------|----------|
 | **Theorem 7** | The classical Buchstab upper bound for the composite part is **exactly twice** the corresponding lower bound: $I(s) = 2f_1(s)$ on $2 \le s \le 4$. | §3.1 |
+| **Theorem 8** | Two odd primes sharing a cofactor inside one window must differ by $2$ — no primitivity, no primality of $a$, and $a \ge q$ is automatic. | §5.8 |
+| **Theorem 9** | The equivalence: infinitely many twins iff sharing occurs at unbounded height. The witness $a = p+6$ works for every twin. | §5.8 |
 | **Corollary 1** | Hence the naive balance is $-f_1(s)$ identically: the loss is a factor of two, not a discrepancy to be tightened away. | §3.1 |
 | ***Closed routes*** | The two constraints on the cut are incompatible (§3.2); switching the cut cannot repair it (§3.3); five routes through the line geometry, each closed by measurement in one explicit window (§3.4, App. C.1); a control showing the resources are ample, so only the forced residues obstruct (§3.5); and the trap the section exists to avoid, with its counterexample (§3.6). | §3.2–3.6 |
 
@@ -320,6 +322,13 @@ For the target $\Omega \le 1$, by contrast, Corollary 1 gives $-f_1(s)$ on the s
 
 > **The switching principle is not too weak for the twin problem; it is aimed at the wrong region.** For $\Omega\le2$ the usable region is already positive and switching need only show the vacuous region is small — which Chen proves. For $\Omega\le1$ the usable region is itself short by a factor of two, and switching has nothing to repair.
 
+
+
+**The gap between $(1+2)$ and $(1+1)$ has begun to move, and the cut depth of (2.1) has a name on the new scale.** Li and Liu [32] interpolate between Chen's theorem and the binary conjectures by a parameter: Proposition $(1-a)$ asserts infinitely many primes $p$ with $p+2 = rq$, $r$ prime or $1$ and $r \le q^{a-1}$, so that $a = 2$ is Chen's theorem for twins and $a = 1$ is the twin conjecture itself. They prove $(1-1.75)$ unconditionally and $(1-1.4)$ under a weighted Elliott–Halberstam hypothesis, with the companion results $(1+1.9)$ and $(1+1.4)$ for Goldbach. Their weight is built from the same two quantities used throughout this work, $P^{-}(n)$ and $\Omega(n)$, and the case analysis behind it is the cell-state table of §2.2 in another notation.
+
+The correspondence with the present cut is exact. Their surviving composite has its smaller factor below $x^{\tau}$ with $\tau = (a-1)/a$, so $\tau = 1/3$ — the depth at which Theorem 1 puts a survivor at $\Omega \le 2$ — is $a = 3/2$; and they record independently that the combinatorics of their weighted inequality changes character below $a = 1.5$. The depth this framework stops at is therefore the same depth their method changes shape at, reached from an unrelated direction.
+
+*What this does not give.* It is tempting to combine their conditional $(1-1.4)$, in which every non-twin solution has a factor below $x^{2/7} \lt  x^{1/3}$ and hence a **closed** cell at the cut, with the existence of open cells, and conclude that the two sets meet only at twins. They need not meet: both statements are of the form "infinitely many", over sets that may be disjoint. An argument of that shape would prove that Elliott–Halberstam implies the twin conjecture, which it does not.
 
 ---
 
@@ -608,7 +617,47 @@ That last sentence names a standard device rather than an observation of ours. P
 
 **What does remain** is the numerical optimisation itself, and the fact that at $k=2$ even that is not enough: Campbell records that reaching $\Omega \le 2$ appears to lie beyond an argument using only Type I information, however large $n$ is taken. That is the fourth deficit of §5.1, met in a test problem where the first three do not bite.
 
-### 5.8 The pattern of the whole work
+### 5.8 A third test case: a shared cofactor on two lines
+
+Look at the cofactors rather than the numbers. Two lines $L_p$ and $L_q$ **share** the cofactor $a$ when $pa$ and $qa$ both lie in one window between consecutive odd squares. Only one condition on $a$ is needed, and it is the natural one: that both strikes come after both lines have begun.
+
+> **Theorem 8.** Let $p \lt  q$ be odd primes and let $a \ge q$ satisfy $k^2 \lt  pa \lt  qa \lt  (k+2)^2$ for some odd $k$. Then $q = p+2$. (The hypothesis $a \ge q$ is not a restriction: it holds automatically whenever $q \le k$, and is what confines the sharing to the lines above $k/2$ — see below.)
+
+*Proof.* Both $\sqrt{pa}$ and $\sqrt{qa}$ lie in $(k, k+2)$, so their difference is less than $2$. That difference is
+$$\sqrt{qa}-\sqrt{pa} \ = \ \frac{(q-p)\sqrt{a}}{\sqrt q + \sqrt p} \ \gt \ \frac{(q-p)\sqrt q}{2\sqrt q} \ = \ \frac{q-p}{2},$$
+using $a \ge q$ for the numerator and $p \lt  q$ for the denominator. Hence $q - p \lt  4$, and the difference of two odd primes is even, so $q-p = 2$. $\blacksquare$
+
+Nothing here asks $a$ to be prime, and nothing asks the strikes to be **primitive** — that is, for $p$ to be the least prime factor of $pa$. An inherited strike is an equally good witness: at $k = 31$,
+$$31^2 \ \lt \ 29 \cdot 35 = 1015 \ \lt \ 31 \cdot 35 = 1085 \ \lt \ 33^2,$$
+and the cofactor $35$ is composite, both strikes are owned by smaller lines, and the pair $(29,31)$ is still exhibited. The distinction between primitive and inherited matters for ownership and for coverage counts, as in §2.2; it is not needed here.
+
+*Verification.* Over all windows with odd $k \lt  1000$: $5{,}593$ sharing pairs with $a \ge q$, of which $4{,}764$ have a composite cofactor, and **not one** has $q - p \ne 2$.
+
+**The converse is immediate, with an explicit cofactor.** For any twin $(p, p+2)$ take $a = p+6$. Then
+$$p(p+6) = (p+2)^2 + 2p - 4, \qquad (p+2)(p+6) = (p+4)^2 - 4,$$
+so both strikes lie in $\big((p+2)^2, (p+4)^2\big)$ for every $p \gt  2$, whatever the factorisation of $p+6$. No third prime is required, and no congruence condition: every twin shares a cofactor, always, in a window whose root is its own upper member plus two.
+
+> **Theorem 9.** Infinitely many twins exist if and only if two odd primes share a cofactor, in the sense of Theorem 8, in windows of unbounded height.
+
+*The horizon.* For a fixed twin the sharing windows are finitely many. The constraints $k^2 \lt  pa$ and $(p+2)a \lt  (k+2)^2$ require $k^2/p \lt  (k+2)^2/(p+2)$, that is $(p+2)/p \lt  (1+2/k)^2$, which gives $k \lt  2p$ asymptotically. Measured: the largest window root is $1.824p$ at $p = 17$, $1.901p$ at $p=71$ and $1.944p$ at $p = 269$, approaching the bound from below.
+
+**Where the sharing sits, and an explicit cofactor that forces it.** In the window $W_k = (k^2,(k+2)^2)$ the line $L_p$ has the cofactor set $C_p = \lbrace a \text{ odd} : k^2 \lt  pa \lt  (k+2)^2 \rbrace$, an interval of length $(4k+4)/p$. Two such sets meet only if $q/p \lt  (1+2/k)^2$, which for $q = p+2$ is $p \gt  k^2/(2k+2)$: **all sharing lives in the upper half $k/2 \lt  p \lt  q \le k$**, and no line below $k/2$ takes part. There the hypothesis $a \ge q$ of Theorem 8 is automatic, since $a \gt  k^2/q \gt  k \ge q$, so it may be dropped from the statement. The overlap of $C_p$ and $C_{p+2}$ has length
+$$\frac{(4k+4)p - 2k^2}{p(p+2)},$$
+a function of $p/k$ alone: $0.17$ at $p = 0.51k$, $1.12$ at $0.6k$, $1.88$ at $0.8k$ and exactly $2$ at $p = k$. Since the sets are intervals and the overlap never exceeds $2$, **two lines share at most one odd cofactor, and it is the first cofactor of the smaller line and the last of the larger.** In $(19^2, 21^2)$: line $11$ has $33, 35, 37, 39$, line $13$ has $29, 31, 33$, line $17$ has $23, 25$, line $19$ has $21, 23$ — and the two sharings are $33$ and $23$, each at the ends. Checked over all $2{,}604{,}125$ pairs of odd lines in windows with odd root below $501$: $12{,}019$ sharings, every one of them a single cofactor equal to the first of the smaller and the last of the larger, and every one with $k/2 \lt  p \lt  q \le k$.
+
+The sharing can also be produced outright. Write $k = p + 2t$ with $t \ge 1$ and take
+$$a = p + 4t + 2 . \qquad\text{Then}\qquad pa = k^2 + 2p - 4t^2, \qquad (p+2)a = (k+2)^2 - 4t^2,$$
+so both strikes lie in $W_k$ **whenever $2t^2 \lt  p$** — that is, whenever the two lines are close enough to the root. Verified on $44{,}551$ instances of the identity and $3{,}168$ of the inclusion, without exception. So among adjacent odd lines near the root, sharing is not a tendency but a construction; measured, $92.5\%$ of all adjacent odd pairs above $k/2$ share, at $k = 10^3, 10^4, 10^5$ alike.
+
+**And that is exactly where the primality is missing.** Take $k = 23$. The cofactor lists are $13 : 41,43,45,47$; $17 : 33,35$; $19 : 29,31$; $21 : 27,29$; $23 : 25,27$. Two sharings are forced by the construction — lines $19, 21$ at the cofactor $29$, and lines $21, 23$ at the cofactor $27$ — and all four strikes lie in $(529, 625)$. But the shared line is $21$, which is composite. The two prime lines present, $19$ and $23$, use *different* cofactors in these two sharings, and the composite line between them does not merge them. Of the $25{,}001$ adjacent odd pairs above $k/2$ at $k = 10^5$, $23{,}069$ share and only $519$ consist of two primes — a ratio of $2.1\%$, falling like $1/\log^2 k$.
+
+**Why the equivalence closes the route rather than opening it.** The proof of Theorem 8 used the primality of $p$ and $q$ at exactly one point — to say that $q-p$ is even — and used nothing else about them. Everything geometric in it holds for any two odd numbers two apart:
+$$23^2 \ \lt \ 21 \cdot 27 = 567 \ \lt \ 23 \cdot 27 = 621 \ \lt \ 25^2,$$
+and $21$ is not prime. So the square law forces a shared cofactor between **adjacent odd numbers**, and what is missing is precisely that infinitely many adjacent odd pairs are both prime — the conjecture itself. To prove "sharing occurs at unbounded height" one must exhibit the two primes, since sharing between primes is defined by their primality and has no formulation that avoids it.
+
+The contrast with Theorem 4 is exact and worth keeping in view. There the hypothesis is *one open cell* — a statement about **survival under sieving**, not about primality — and survival is the kind of object a sieve can in principle deliver. An equivalence is useful only when one side lives in a different toolbox; here both sides live in this one.
+
+### 5.9 The pattern of the whole work
 
 $$\boxed{ \text{Across the tested routes, the local laws are much sharper than the available summed bounds.} }$$
 
@@ -620,11 +669,11 @@ The routes examined here exhibit this repeatedly: the pigeonhole constraint (App
 
 ### 6.1 What an external ingredient would have to supply
 
-Taking §5.5 and §5.8 together, the deficits exposed by these tests can be organised into four categories, each corresponding to a standard class of tools.
+Taking §5.5 and §5.9 together, the deficits exposed by these tests can be organised into four categories, each corresponding to a standard class of tools.
 
 | deficit | what is missing | standard remedy |
 |--------------|--------------------------|--------------------------------------|
-| **Summation** (§5.8) | control of the aggregate when local laws are summed over lines | large-sieve inequalities; Buchstab iteration with sign selection (Rosser–Iwaniec [16], Harman [13]) |
+| **Summation** (§5.9) | control of the aggregate when local laws are summed over lines | large-sieve inequalities; Buchstab iteration with sign selection (Rosser–Iwaniec [16], Harman [13]) |
 | **Factor size** (§5.5) | a weight sensitive to *how large* the factors are, not only to how many there are | Richert's logarithmic weights; internally, the per-bin refinement of [II, §4.3] — **carried out there, and it closes** |
 | **Window transfer** ([III, §6]) | passage from a cycle statement to a short window at $s\approx2$ | Buchstab's function; the beta-sieve; Richert weights *in application* |
 | **Bilinearity** ([III, §5.4], §5.2) | information about $n$ *as a product*, with independent weights on the factors | Type II sums; bilinear forms; dispersion |
@@ -942,3 +991,4 @@ The companion papers are cited as [0], [I], [II], [III], [IV].
 
 31. T. Tao and J. Teräväinen, *Quantitative bounds for Gowers uniformity of the Möbius and von Mangoldt functions*, J. Eur. Math. Soc. **27** (2025), 1321–1384.
 32. Y. Zhang, *Bounded gaps between primes*, Ann. of Math. **179** (2014), 1121–1174.
+32. J. Li and J. Liu, *Theorem $(1+1.9)$ on the Goldbach Conjecture*, arXiv:2606.05224 (2026). — *A preprint, not yet refereed; cited for the statement of Propositions $(1\pm a)$ and the results claimed for them.*
