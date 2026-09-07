@@ -11,23 +11,26 @@ authors:
     family-names: Osman
     email: mohamedosmannn2999@gmail.com
     orcid: "https://orcid.org/0009-0004-5912-999X"
-version: 1.7.0
+version: 2.0.0
 doi: 10.5281/zenodo.22085627
-date-released: "2026-09-01"
+date-released: "2026-09-07"
 license: CC-BY-4.0
 repository-code: "https://github.com/Osman209/odd-sieve-cell-system"
 url: "https://osman209.github.io/odd-sieve-cell-system/"
 abstract: >-
-  Seven documents on the elementary sieve of the odd numbers, developed
-  as a coordinate system of lines and cells. Papers 0-IV build the
-  construction and prove what it decides; Paper V derives the point at
-  which it stops from inside the construction rather than quoting it,
-  and measures how much of the difficulty the framework can localise
-  before failing to cross it. Statements that are only measured are
-  labelled as such and listed together, and withdrawn results are kept
-  rather than deleted. No progress toward the twin-prime conjecture is
-  claimed, and no new bound. Seven verification scripts regenerate every
-  number printed, each exiting non-zero when its claim fails.
+  Eleven papers, one overview and nine verification scripts on the
+  elementary sieve of the odd numbers, developed as a coordinate system
+  of lines and cells. Papers 1 to 4 build the coordinates and the
+  transport laws; papers 5 to 8 are the construction and what it decides
+  about twin pairs; papers 9 to 11 derive the point at which it stops
+  from inside the construction rather than quoting it, and measure how
+  much of the difficulty the framework can localise before failing to
+  cross it. Statements that are only measured are labelled as such and
+  listed together, and withdrawn results are kept rather than deleted.
+  Paper 1 is independent of the rest and concerns no prime numbers. No
+  progress toward the twin-prime conjecture is claimed, and no new
+  bound. Nine verification scripts regenerate every number printed, each
+  exiting non-zero when its claim fails.
 keywords:
   - sieve methods
   - twin primes

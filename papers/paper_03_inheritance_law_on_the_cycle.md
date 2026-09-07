@@ -1,12 +1,12 @@
 # The Inheritance Law on the Cycle
 
-## II. Exact transport of the divisor census, and of weights, over a sieve cycle
+## Paper 3. Exact transport of the divisor census, and of weights, over a sieve cycle
 
 ---
 
 ### Abstract
 
-Working in the cell coordinates of Paper I, we study the fixed periodic structure of the odd sieve — no window, no squares. Labelling each cell by the survival state of its two members gives a four-state system whose update under the entry of a new line is linear; we show that it has a conserved quantity and therefore a closed solution, in which the whole state dissolves into the two Mertens products $\prod(1-1/q)$ and $\prod(1-2/q)$ (Theorem 1).
+Working in the cell coordinates of Paper 2, we study the fixed periodic structure of the odd sieve — no window, no squares. Labelling each cell by the survival state of its two members gives a four-state system whose update under the entry of a new line is linear; we show that it has a conserved quantity and therefore a closed solution, in which the whole state dissolves into the two Mertens products $\prod(1-1/q)$ and $\prod(1-2/q)$ (Theorem 1).
 
 The four counts are a *census*, however, not a simulator: we give a two-cell counterexample showing that the final state does not determine the history, so no automaton on the four states can run the process forward. Exactness and blindness turn out to be the same property here — the linear update closes precisely because it forgets which line owns each strike.
 
@@ -16,7 +16,7 @@ That is still not enough for Richert's logarithmic weight, which depends on the 
 
 Finally we record a second exact structure on the same cycle: assigning each integer to its smallest striking line partitions the strip into **disjoint** ownership layers, so the survivor count is a plain difference with no inclusion–exclusion (Theorem 3) — and we show precisely what this costs, namely that the repaired sum returns the sieve product and nothing more.
 
-**Everything here is exact on the full cycle.** The passage to a short window is the subject of Paper III, and it is where the losses are.
+**Everything here is exact on the full cycle.** The passage to a short window is the subject of Paper 4, and it is where the losses are.
 
 **Keywords:** sieve of dimension two, Mertens products, weighted sieves, Richert weights, generating functions.
 
@@ -28,10 +28,10 @@ Finally we record a second exact structure on the same cycle: assigning each int
 
 ## 1. Setting
 
-We use the coordinates of Paper I without change. $L_p(k) = p(p+2k)$ is the line of $p$, beginning at $p^2$; $L_3$ is the coordinate grid, and the odd integers compress to cells $C_b = (6b-1,\ 6b+1)$. Two facts from Paper I are used throughout and nothing else is:
+We use the coordinates of Paper 2 without change. $L_p(k) = p(p+2k)$ is the line of $p$, beginning at $p^2$; $L_3$ is the coordinate grid, and the odd integers compress to cells $C_b = (6b-1,\ 6b+1)$. Two facts from Paper 2 are used throughout and nothing else is:
 
-- **[I, Thm 2] (the cell map).** With $p = 6a+\sigma$, one has $p(6b+\varepsilon) = 6(pb + a\varepsilon) + \sigma\varepsilon$, so the line $p$ sends the two members of $C_b$ into the cells $pb-a$ and $pb+a$. In cell coordinates each branch steps by $p$, not by $6p$.
-- **[I, Thm 3].** The two positions a line closes are $j \equiv \pm 6^{-1} \pmod p$, and they are always distinct; so **exactly two** of every $p$ cells lose a member, one on each rail.
+- **[P2, Thm 2] (the cell map).** With $p = 6a+\sigma$, one has $p(6b+\varepsilon) = 6(pb + a\varepsilon) + \sigma\varepsilon$, so the line $p$ sends the two members of $C_b$ into the cells $pb-a$ and $pb+a$. In cell coordinates each branch steps by $p$, not by $6p$.
+- **[P2, Thm 3].** The two positions a line closes are $j \equiv \pm 6^{-1} \pmod p$, and they are always distinct; so **exactly two** of every $p$ cells lose a member, one on each rail.
 
 The second is the only input the whole of §2–§4 needs. Everything below is a consequence of "of the $p$ copies of any cell, exactly two are struck, one per rail."
 
@@ -105,7 +105,7 @@ Both end in the same state — one member survives, the other is composite — s
 
 **Consequence, stated as a limitation.** No automaton on the four states reproduces the history of individual cells. To recover that history one needs at least the *owner* (or death stage) of each dead member, which is strictly more information than the final state. **Inheritance depth is different information:** it records how many old lines divide either member, not which line killed a member first and not when that happened. Theorem 2 restores the depth distribution, which is enough for the weighted censuses of §§3–4, but it does **not** turn the four-state census into a history simulator. Ownership is introduced separately in §5.
 
-**And it locates a second reading of the same fact.** The four-state law is exact *because* it forgets: a linear update on four numbers can only exist if the update is independent of everything the four numbers do not record. Owner labels and spatial history are precisely what have to be forgotten for the four-number law to close. So exactness and blindness are two sides of the same compression here — which is the pattern this framework repeats, and the reason Paper III has something to measure at all.
+**And it locates a second reading of the same fact.** The four-state law is exact *because* it forgets: a linear update on four numbers can only exist if the update is independent of everything the four numbers do not record. Owner labels and spatial history are precisely what have to be forgotten for the four-number law to close. So exactness and blindness are two sides of the same compression here — which is the pattern this framework repeats, and the reason Paper 4 has something to measure at all.
 
 ## 3. Theorem 2: the refined law, with generating function
 
@@ -118,7 +118,7 @@ Theorem 1 records how many cells occupy each state. One may ask for more: the di
 > Equivalently, marking a strike by $x$ and the two rails by $u$ and $v$, the full census is read off from
 > $$\boxed{ \prod_{5\le q\le z}\big((q-2) + xu + xv\big). } \qquad\text{(3.2)}$$
 
-*Proof.* Of the $p$ copies of any cell, exactly two are struck — one on each rail — by [I, Thm 3]. A copy that is struck acquires one further dividing line, hence depth $j+1$; the other $p-2$ copies retain depth $j$. Reading off which rails are affected in each state gives (3.1), and (3.2) is the generating-function form of the same statement, one factor per line. $\blacksquare$
+*Proof.* Of the $p$ copies of any cell, exactly two are struck — one on each rail — by [P2, Thm 3]. A copy that is struck acquires one further dividing line, hence depth $j+1$; the other $p-2$ copies retain depth $j$. Reading off which rails are affected in each state gives (3.1), and (3.2) is the generating-function form of the same statement, one factor per line. $\blacksquare$
 
 *Verification.* Zero error at $p = 7, 11, 13, 17, 19$, over full cycles up to $M = 1{,}616{,}615$ cells. For the lines up to 19, expanding (3.2) gives
 $$NN = 378675 = \prod(q-2),$$
@@ -142,7 +142,7 @@ This is (3.2) with $x$ set to $1$ and $q-2$ resolved into $(q-3) + w$; the cell 
 
 *The channel carries no information about primality, and this is worth stating so it is not looked for.* Among the cells left open by the lines $5$ through $19$, the proportion that are twin pairs, taken separately for each value of $k$, is $0.996$, $1.010$, $0.984$ and $0.978$ times the overall rate — every ratio within three per cent of one, over $234{,}237$ cells. The refinement is a finer bookkeeping of the same residues, not a new discriminant.
 
-**The same test one layer up.** [I, Cor 2] reads the fate of a cell $C_j$ through the phase $u_p(j) = jc^{-1}$, closure being $u = \pm 1$. The centre of the diamond of two cells $C_a, C_b$ is the cell of index $6ab$, and since $36 \equiv c^{-2} \pmod p$ its phase is the product $u_p(a)u_p(b)$. So the same two gates decide one layer up, and the local count is again exact.
+**The same test one layer up.** [P2, Cor 2] reads the fate of a cell $C_j$ through the phase $u_p(j) = jc^{-1}$, closure being $u = \pm 1$. The centre of the diamond of two cells $C_a, C_b$ is the cell of index $6ab$, and since $36 \equiv c^{-2} \pmod p$ its phase is the product $u_p(a)u_p(b)$. So the same two gates decide one layer up, and the local count is again exact.
 
 > **Corollary 2.** Of the $(p-2)^2$ ordered pairs of phases open to a line $p$, exactly $2(p-3)$ have product $\pm 1$. Hence the number of open pairs whose diamond centre is also open to $p$ is
 > $$(p-2)^2 - 2(p-3) = (p-3)^2 + 1.$$
@@ -151,7 +151,7 @@ This is (3.2) with $x$ set to $1$ and $q-2$ resolved into $(q-3) + w$; the cell 
 
 *Verified:* $5, 17, 65, 101, 197, 257$ at $p = 5, 7, 11, 13, 17, 19$, by direct enumeration.
 
-*A caution that belongs with it.* The count is **conditional** — it is a count over pairs of cells already open to $p$, not a density on the cycle — and the phase computation nowhere uses primality, so like the third channel above it is finer bookkeeping of residues. In particular a law of the shape "the centre dies unless $p \mid ab$" is false as stated: the birth index of [I, Cor 1] is an exception, and at $p = 5$ it accounts for every one of the $49$ failures among $11{,}175$ pairs of twin indices.
+*A caution that belongs with it.* The count is **conditional** — it is a count over pairs of cells already open to $p$, not a density on the cycle — and the phase computation nowhere uses primality, so like the third channel above it is finer bookkeeping of residues. In particular a law of the shape "the centre dies unless $p \mid ab$" is false as stated: the birth index of [P2, Cor 1] is an exception, and at $p = 5$ it accounts for every one of the $49$ failures among $11{,}175$ pairs of twin indices.
 
 **A negative control worth recording.** The obvious cheaper refinement — binning cells by the *value* of a log-weight into a fixed number of bins — does **not** close: prediction error $0$%, $24$%, $14$%, $10$% at $p = 7, 11, 13, 17$. The exactness depends on refining by a quantity that changes by exactly one under a strike, which the depth $j$ does and a binned weight does not.
 
@@ -162,7 +162,7 @@ This is (3.2) with $x$ set to $1$ and $q-2$ resolved into $(q-3) + w$; the cell 
 
 ### 4.1 What Theorem 2 gives, and what it does not
 
-Weighted sieves attach to each surviving element a weight depending on its factorisation, and deduce an almost-prime from the positivity of the weighted sum. The weight that powers the current explicit results between consecutive squares and cubes (see [V, §5.5] for those) is Richert's [2]:
+Weighted sieves attach to each surviving element a weight depending on its factorisation, and deduce an almost-prime from the positivity of the weighted sum. The weight that powers the current explicit results between consecutive squares and cubes (see [P10, §2.5] for those) is Richert's [2]:
 $$w(a)  =  \lambda  -  \sum_{\substack{p \mid a \cr  z\le p\lt y}}\Big(1 - \frac{\log p}{\log y}\Big), \qquad \lambda = k+1-k_2,$$
 with $z = X^{1/k_1}$ and $y = X^{1/k_2}$; the mechanism is that $w(a) \gt  0$ forces $\Omega(a) \le k$, so a positive lower bound for $\sum w(a)$ over the sifted set produces an almost-prime. (The constant is $\lambda$, not $1$; with $\lambda = 1$ the weight detects $\Omega \le k_2$ instead.) It is a nonlinear function of the factorisation and, through $\log p/\log y$, of the *sizes* of the factors.
 
@@ -328,7 +328,7 @@ where $\nu_q(H)$ is the number of distinct residues modulo $q$ that the pattern 
 
 **Measured, not proved:** the cost table and the bin-resolution table of §4.3, which are computations rather than theorems, and the $24$% negative control of §4.2.
 
-**Not addressed here at all:** every theorem above is exact over a full cycle of length $\prod q$. Applications need a window of length $\asymp z^2$. Paper III measures that transfer separately. On the tested windows, soft depth weights transfer very accurately, while the sharp depth-zero indicator shows the familiar deficit near $0.80$. Those are window measurements, not consequences of the exact cycle identities proved here.
+**Not addressed here at all:** every theorem above is exact over a full cycle of length $\prod q$. Applications need a window of length $\asymp z^2$. Paper 4 measures that transfer separately. On the tested windows, soft depth weights transfer very accurately, while the sharp depth-zero indicator shows the familiar deficit near $0.80$. Those are window measurements, not consequences of the exact cycle identities proved here.
 
 **No new bound and no improvement to any known result is claimed.** The survivor density $\prod(1-2/q)$ is the classical $V(z)$ of a sieve of dimension $\kappa = 2$; Theorem 1 dissolves into Mertens products and contains no new constant; Theorem 3 is the least-prime-factor decomposition, and the recursion of §5.2 is Legendre's. What is offered is that several quantities usually carried as estimates are, in these coordinates, identities — and, in the case of weights, that the identity survives a refinement fine enough to be useful.
 
@@ -336,13 +336,14 @@ where $\nu_q(H)$ is the number of distinct residues modulo $q$ that the pattern 
 
 **No progress toward the twin-prime conjecture is claimed, and no new bound.** Priority is not claimed for any result.
 
-*The computations and much of the prose in this paper were prepared with AI assistance (Claude, Anthropic), used for drafting and rewriting code and text, running the computations, searching the literature, and auditing the paper against its own scripts. The research direction, the questions asked, the decisions about what to publish and what to withdraw, and the responsibility for every claim are the author's. The full note is in the repository README.*
+---
 
+*The computations and much of the prose in this paper were prepared with AI assistance (ChatGPT, OpenAI; Claude, Anthropic), used for algebraic derivation, for drafting and rewriting code and text, for running the computations, and for auditing the papers against their own scripts. All statements were checked by the author, who is responsible for them; the repository README sets out the division of labour in full.*
 ---
 
 ## References
 
-The companion papers are cited as [I] and [V].
+The eleven papers of this set are cited as [P1] to [P11], and the numbered entries below are the external works. The two kinds never share a number: a bracket with a P is a companion paper, a bare number is a reference in the list below. This paper imports only the definitions and statements of the companion papers, never their proofs.
 
 1. J. Friedlander and H. Iwaniec, *Opera de Cribro*, AMS Colloquium Publications **57**, 2010. — *the Mertens products of §2.3 and the standard form of the weighted sieve against which Corollary 4 is compared.*
 2. H.-E. Richert, *Selberg's sieve with weights*, Mathematika **16** (1969), 1–22. — *the weight $w(a)$ discussed in §4; it depends on the sizes of the prime factors, which is precisely what Corollary 3 does not transport and Corollary 4 repairs.*

@@ -1,4 +1,14 @@
-// check.js — the seven passes. Run before ANY push of math-bearing markdown.
+// check_github_math.js — the seven passes.  Run before ANY push of math-bearing
+// markdown, and before code/build_pdfs.sh: a math span whose closing $ is preceded
+// by a space renders correctly on GitHub and is invisible to pandoc.
+//
+//   npm install katex && node code/check_github_math.js papers/*.md README.md
+//
+// This is not a mathematical check.  It extracts every formula, applies GitHub's
+// escape-stripping, renders it through KaTeX, and inspects the OUTPUT for the two
+// failures that raise no error: a lost subscript, and a brace that has silently
+// vanished.  It also refuses macros GitHub's deployment rejects, and requires a
+// constant pipe count per table block.  It should report no problems.
 const fs = require('fs'), katex = require('katex');
 const DENY = ['operatorname', '\\rm ', '\\bf ', '\\it ', '\\sf ', '\\tt ', '\\cal ',
               'mathchoice', '\\def', 'newcommand', '\\href', 'includegraphics'];

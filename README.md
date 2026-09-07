@@ -7,16 +7,17 @@
 A coordinate system for the odd sieve: what it proves, what it only measures, and the
 point at which it stops — derived from inside the construction rather than quoted.
 
-Seven documents and nine verification scripts. **Start with the overview.**
+Eleven papers, one overview and nine verification scripts. **Start with the overview.**
 
 ---
 
 ## What this is, and what it is not
 
 **No progress toward the twin-prime conjecture is claimed, and no new bound on anything.**
-Papers 0–IV build a construction and prove what it decides; Paper V exists to establish the
-opposite of a result — that the construction reaches the field's known barrier in its own
-vocabulary, and to say precisely where.
+Papers 1 to 4 build the coordinates and the transport laws, and papers 5 to 8 the construction
+and what it decides about twin pairs. Papers 9 to 11 exist to establish the opposite of a result —
+that the construction reaches the field's known barrier in its own vocabulary, and to say
+precisely where.
 
 Every headline result reached here already lives somewhere in the literature. Each paper
 names the source. The table below is the map.
@@ -43,10 +44,11 @@ names the source. The table below is the map.
    — and then stops exactly where the field stops. (The sifting limits `β₁`, `β₂` are quoted
    from the literature, not derived here.) That the framework has no blind spot of its own is
    the finding.
-2. **The obstruction stated from inside.** Paper V derives the barrier in the construction's
-   own terms rather than citing it, and measures how much of the difficulty the framework
-   can localise before failing to cross it — a set of density `10⁻³`, and still no crossing.
-3. **Negative results and withdrawn claims, kept.** Appendix B of Paper V lists results this
+2. **The obstruction stated from inside.** Paper 9 derives the barrier in the construction's
+   own terms rather than citing it, and papers 10 and 11 measure how much of the difficulty the
+   framework can localise before failing to cross it — a set of density `10⁻³`, and still no
+   crossing.
+3. **Negative results and withdrawn claims, kept.** Appendix B of Paper 11 lists results this
    work produced and then retracted. The rate at which a structure like this manufactures
    plausible but spurious signals is itself among the findings.
 4. **Runnable code for every number printed.** No table appears without a script that
@@ -59,227 +61,127 @@ names the source. The table below is the map.
 ## Contents
 
 ```
-papers/   seven documents, plus one standalone preprint in LaTeX and PDF
+papers/   eleven papers and one overview, plus one standalone preprint in LaTeX and PDF
 code/     nine verification scripts, plus the rendering checker and the site build
 docs/     the GitHub Pages site: a landing page per paper, with its PDF
 ```
 
-### `papers/overview_the_cell_system.md`
+### `papers/paper_01_quadratic_staircase.md`
 
-**Start here.** The whole set in one pass — every result stated once, with its status
-(proved, proved-under-hypothesis, or measured) attached. Eight sections: the coordinates,
-the window, the cycle, the transfer, what the framework decides, where it stops, the
-pattern the work keeps arriving at, and what an external ingredient would have to supply.
+**Paper 1. An Exact Histogram for a Quadratic Staircase.** The increments of $\lfloor 2j^2/n\rfloor$, and the local maxima of $2j^2 \bmod n$.
 
-### `papers/paper_0_quadratic_staircase.md`
+### `papers/paper_02_cells_and_lines.md`
 
-The odd one out: **it concerns no prime numbers at all.** For odd `n`, the increments
-`W_j = ⌊2(j+1)²/n⌋ − ⌊2j²/n⌋` take only the values `0,…,4`, and their five multiplicities
-are given exactly by `A = ⌊(n+7)/8⌋` — with no error term, which is the surprise, since a
-probabilistic model of the same count returns the same answer and would normally carry one.
-A companion theorem counts the interior local maxima of `2j² mod n`: exactly `2A` for every
-odd `n ≥ 51`. Its proof turns on the four values `8x mod n` at the quarter points being
-`±1, ±3, ±5, ±7` in some order, so that their squares always sum to `84`.
+**Paper 2. Cells and Lines.** A coordinate system for the odd sieve.
 
-The paper states plainly how it differs from the objects it resembles. Replacing `j²` by `j`
-gives the characteristic **Sturmian** word, but the analogy is one of form only: this word is
-periodic, has five letters, and its factor complexity and imbalance are measured and reported
-against the Sturmian values to show exactly how far the resemblance fails.
+### `papers/paper_03_inheritance_law_on_the_cycle.md`
 
-Also available as a standalone preprint: [`quadratic_staircase.tex`](papers/quadratic_staircase.tex), [`quadratic_staircase.pdf`](papers/quadratic_staircase.pdf).
+**Paper 3. The Inheritance Law on the Cycle.** Exact transport of the divisor census, and of weights, over a sieve cycle.
 
-### `papers/paper_I_cells_and_lines.md`
+### `papers/paper_04_from_cycle_to_window.md`
 
-The coordinates. Each odd prime `p` is a line `L_p(k) = p² + 2pk`; the numbers `6m ± 1` form
-a cell; the window between consecutive prime squares is where every line that matters is
-already present. Includes the central-factor theorem — for odd `m` the two divisors nearest
-`√m` are reached in exactly `a + b + 2` steps — with its handover corollary, and a section
-saying which of these statements are restatements rather than results.
+**Paper 4. From Cycle to Window.** What survives when an exact periodic law is evaluated on a short interval.
 
-### `papers/paper_II_inheritance_law_on_the_cycle.md`
+### `papers/paper_05_gap_alphabet.md`
 
-Exact transport. Adding a line `q` multiplies the cycle by `q`, and the census transports with
-no error at all. The refined version tracks the full distribution of inheritance depth through
-a finite-state generating function, and a size-binned refinement reproduces Richert's weight
-to `0.4%`. §6 gives the correlation ladder that the singular series of Paper V is built from.
+**Paper 5. The Gap Alphabet.** Which gaps can occur between consecutive odd composites, and where the ladder of proofs stops.
 
-### `papers/paper_III_from_cycle_to_window.md`
+### `papers/paper_06_twin_criterion.md`
 
-What survives the move from an exact periodic law to a short interval. Soft weights transfer
-almost exactly; sharp indicators do not. The distinction is measured rather than asserted, and
-it governs everything in Paper V §8.5.
+**Paper 6. The Twin Criterion: Six Exception Positions.** A single open cell in a sector is a twin pair unless it sits at one of six named places.
 
-### `papers/paper_IV_twin_criterion.md`
+### `papers/paper_07_clocks_and_inheritance.md`
 
-What the framework proves outright: the six exceptional positions, the clock coordinate, the
-sector inheritance laws, the belt between consecutive prime squares, and the four named tracks.
-The line runs gap alphabet → twin criterion → clocks and originality → inheritance across sectors
-→ prime-gate belts → named tracks; the distance-6 closing budget, whose object is a prime pair
-`(p, p+6)` rather than a twin pair, is kept as **Appendix B** so that it does not interrupt it. §3.3 carries the
-exception count over a full period of 35 sectors, where the ceiling is 31 and no finite set of
-lines lowers it; §3.4 lengthens the block, giving ceilings 67, 100, 138 and 163 at 3, 5, 7 and 9
-periods and an order of `L/log²L` from the sieve dimensions of the five exception types. One statement
-(Verified Law 14) is proved under a stated hypothesis and verified numerically beyond it, and
-is labelled that way wherever it appears.
+**Paper 7. Clocks and Inheritance.** Primality as a zero-test, and the capacity of a single line across sectors.
 
-### `papers/paper_V_where_the_framework_stops.md`
+### `papers/paper_08_belts_and_short_windows.md`
 
-The obstruction, derived rather than quoted — **and stated first**. §2 gives the depth cut, the
-unique-owner theorem, the exact twin count `T = C − R + S` and the parity identity
-`2(R − C) = Σ(−1)^Ω`; §3 shows that no ordinary sieve crosses it; and only then do §§4–7 give the
-routes that were tried before the identity was written, each arriving at the same place. Two test
-cases are followed to their end — squares and almost-primes, and Jacobsthal's function — and both
-land on the same wall. §8.5 measures the
-transfer in three layers: the mean is exact; the state totals move by the two-dimensional
-Buchstab factor `e^{2γ}/4`, confirmed to three decimals at `X = 10¹⁰`; the shape carries a
-residual that saturates. It then shows that the quantity a weighted sieve argument actually
-evaluates transfers with a relative error of `0.36%`, so the computation is not the obstruction
-by a wide margin.
+**Paper 8. Belts and Short Windows.** What a line can do between its own square and the next, and the anatomy of the window between consecutive squares.
 
-The section also records a correction made during the work: an earlier draft reported the error
-in a singular-series average as `O(log H)`, and extending the computation to the seventh
-primorial showed that to be the curvature of a quadratic seen over too short a range. The claim
-is withdrawn in place rather than quietly replaced.
+### `papers/paper_09_the_exact_obstruction.md`
 
----
+**Paper 9. The Exact Form of the Obstruction.** An identity for the twin count with no error term, and why an ordinary sieve cannot cross it.
 
-## Reproducibility
+### `papers/paper_10_four_tests.md`
 
-Every number in the papers is regenerated by a script in `code/`. Each exits non-zero when the
-claim it supports does not hold, and each accepts `--force-fail` to exercise that gate.
+**Paper 10. Four Tests of the Cell System.** Jacobsthal, almost-primes between squares, shared cofactors, and collisions.
+
+### `papers/paper_11_what_a_continuation_needs.md`
+
+**Paper 11. What a Continuation Would Have to Supply.** The external ingredient, the limitations, and the routes already closed.
+
+### How to read the citations
+
+Companion papers are cited as `[P1]` to `[P11]`. A bare number in brackets is an entry in that
+paper's own reference list, so `[P9]` is always Paper 9 and `[9]` is always the ninth reference of
+the paper you are reading. Each paper numbers its own results from one, so `[P6, Thm 1]` is
+Theorem 1 of Paper 6 and an unqualified "Theorem 1" is always the paper you are in. Result numbers
+changed at version 2.0.0, when the eleven parts stopped sharing one numbering.
+
+### Checking a claim
+
+Every number printed in the papers is regenerated by a script in `code/`, and each script exits
+non-zero if the claim it supports fails.
 
 ```
-pip install numpy scipy sympy
-
-python3 code/verify_central_pair.py                          # Paper I §5 — the central factor
-python3 code/verify_cell_transfer.py                         # Paper III §6, Paper V §3.2, Appendix B
-python3 code/verify_transfer_layers.py --fast                # Paper V §8.5 — the three transfer layers
-python3 code/verify_singular_series_order.py --hm 1616615    # Paper V §8.6 — checksum at Q₆
-python3 code/verify_exception_dichotomy.py --fast            # Paper IV §3.2, §3.3 — Corollary 2 and the period budget
-python3 code/verify_line_routes.py --fast                    # Paper V §3.4 — the five closed routes
-python3 code/verify_bonferroni_depth.py --fast               # Paper IV §3.9 — the lower bound and its exact order
-python3 code/verify_first_appearance.py --fast               # bad square phases and when they first occur
-python3 code/verify_new_additions.py --fast                   # Paper I 3.5, 3.6 and Paper II 3 — phases, diamond centre, third channel
+python3 code/verify_exception_dichotomy.py         # one script
+for f in code/verify_*.py; do python3 "$f"; done   # all nine
+python3 audit.py                                   # structure: references, numbering, tables
 ```
 
-Full runs:
-
-```
-python3 code/verify_transfer_layers.py           # to X = 10⁹,  ~10 min
-python3 code/verify_transfer_layers.py --deep    # adds X = 10¹⁰, ~35 min
-python3 code/verify_singular_series_order.py     # to Q₇ = 37,182,145, ~2 min
-python3 code/verify_line_routes.py               # all three windows, ~3 min
-```
-
-`verify_singular_series_order.py` uses a segmented sieve so that it reaches the seventh primorial
-inside ordinary memory. Its header documents one thing worth reading before reproducing anything:
-the subtracted expectation is of size `C`, so an unclosed tail in the prime bound is amplified by
-`C` — two runs differing only in that bound disagreed by `0.1` at `C = 1.6×10⁶`, which is larger
-than several of the effects being measured. The script closes that tail analytically, and a
-reproduction that does not will not match.
-
-### Rebuilding the site and the PDFs
-
-`code/build_site.py` regenerates `docs/` — the landing page and one abstract page per paper,
-each carrying Google Scholar citation meta tags. The paper pages hold the abstract only; the
-full text is the PDF and the Markdown in `papers/`, which keeps the site clear of the
-LaTeX-rendering problems a Markdown-serving theme would introduce.
-
-```
-python3 code/build_site.py
-```
-
-### Rebuilding the PDFs
-
-`code/build_pdfs.sh` regenerates `docs/*.pdf` from `papers/*.md` with pandoc and pdflatex,
-using `code/pdf_header.tex`. The same source serves both outputs: `\lbrace`, `\rbrace` and
-`\cr` are valid in KaTeX and in LaTeX alike. Run the rendering checker first — a math span
-whose closing `$` is preceded by a space renders correctly on GitHub and is invisible to
-pandoc, which is how the first conversion attempt failed.
-
-```
-sh code/build_pdfs.sh
-```
-
-### The rendering checker
-
-`code/check_github_math.js` is not a mathematical check. It extracts every formula, applies
-GitHub's escape-stripping, renders it through KaTeX, and inspects the **output** for the two
-failures that raise no error: a lost subscript, and a brace that has silently vanished. It also
-refuses macros GitHub's deployment rejects, and requires a constant pipe count per table block.
-
-```
-npm install katex && node code/check_github_math.js papers/*.md README.md
-```
-
-It should report exactly **one** problem: a false positive in Paper 0, verified by rendering.
-The checker exists because the papers in this repository failed on 741 counts the first time it
-was run against them, in five separate modes, every one of which had bitten before.
-
----
-
-## Three method rules this work exists to illustrate
-
-All three were learned by getting them wrong first, during this work.
-
-**Match on mechanism, never on vocabulary.** Three expert readers were identified in turn as the
-right person to ask about Paper 0 — one on "three-distance theorem", one on "differences of floor
-functions", one on "exact frequencies" — and all three were wrong in the same way: each works on
-the *irrational, aperiodic* side, and this object is rational and periodic. The words matched and
-the regime did not. The same failure at a larger scale would be to call a construction new because
-its notation is.
-
-**A drifting coefficient is a wrong model, not a noisy one.** A singular-series average was fitted
-over a short range, produced a coefficient near `0.85` that moved with the fitting window, and was
-reported as `O(log H)` with the drift described as instability. Extending the range by two orders
-of magnitude showed the drift to be the curvature of `(log C)²`. The instability *was* the signal;
-it was read as noise.
-
-**Reviewing the source is not reviewing the page.** Every paper here passed several content audits
-and would still have been published with hundreds of broken formulas, because no audit had looked
-at the rendered page. Two of the failure modes are silent: a stripped `\{` prints mathematics that
-is simply wrong, with no error box anywhere. **And a checker is not the page either.** After the
-first push, two further modes appeared on GitHub that this repository's own checker had passed —
-a raw `<` inside math, which is scanned as an HTML tag and swallows the rest of the formula, and
-`\tag{}` inside a display, which GitHub lays out as a table whose body collapses to one glyph per
-line. Both are now tested for; both were found by opening the page and reading it. A check that has
-never failed has not been tested.
+Several of the scripts take `--fast` for a shorter run.
 
 ---
 
 ## On the use of AI assistance
 
-The verification scripts in `code/`, and much of the prose in `papers/`,
-were written with the assistance of **Claude (Anthropic)**, used as a working collaborator
-throughout: drafting and rewriting code, running the computations, drafting and editing
-text, searching the literature, and — most usefully — auditing the papers against their own
-scripts.
+Large language models were used as tools. The research direction, the questions, the objects
+studied, and the responsibility for every claim are the author's. **ChatGPT (OpenAI)** was used for
+algebraic derivation and independent checking; **Claude (Anthropic)** for the numerical work, the
+scripts in `code/`, review and most of the prose. Where the two disagreed, computation settled it,
+and the text records the resolution.
 
-The research direction, the questions asked, the decisions about what to publish and what
-to withdraw, and the final responsibility for every claim are the author's.
-
-A great many of the corrections recorded in these papers were found by that auditing: a
-claim stated more precisely than the computation supported, a script that had not caught up
-with a correction to the text, a formula quoted but never tested. Several were errors the
-assistant had itself introduced and then found on a later pass. Where a result is reported
-here, it is because a script regenerates it and the script has been read; that discipline,
-rather than any assurance about the tool, is what the reader is asked to rely on.
+Where a result is reported here it is because a script regenerates it and the script has been read.
+That discipline, rather than any assurance about the tools, is what the reader is asked to rely on.
+**No statement in these papers rests on the assertion of a model.**
 
 ---
 
 ## Status
 
-Seven documents. Papers I–IV are the construction and what it decides; Paper V is the account of
-where it stops, and is the reason the set exists in this form. Paper 0 is independent of the rest
-and can be read on its own.
+Eleven papers and one overview. Papers 1 to 4 build the coordinates and the transport laws;
+papers 5 to 8 are the construction and what it decides about twin pairs; papers 9 to 11 are the
+account of where it stops, and are the reason the set exists in this form. Paper 1 is independent
+of the rest and can be read on its own.
 
-The open question the work leaves is stated in Paper V §9.1, and it is external: the framework
+The open question the work leaves is stated in Paper 11 §2.1, and it is external: the framework
 supplies the objects a weighted sieve argument needs, to measured accuracy, and cannot supply the
 rigorous lower bound that argument would consume. Nothing here suggests that bound is close.
 
 Corrections, counterexamples and pointers to prior art are all welcome; open an issue. **Being told
 that something here is already known is a useful outcome, not an unwelcome one** — the repository's
 own conclusion is that most of it is.
+
+---
+
+## Three method rules, learned by getting them wrong
+
+**Match on mechanism, not on vocabulary.** Three experts were identified in turn as the right reader
+for Paper 1 — on "three-distance theorem", on "differences of floor functions", on "exact
+frequencies" — and all three were wrong the same way: each works on the irrational, aperiodic side,
+and this object is rational and periodic. The words matched and the regime did not.
+
+**A drifting coefficient is a wrong model, not a noisy one.** A singular-series average fitted over
+a short range gave a coefficient near `0.85` that moved with the fitting window, and was reported as
+`O(log H)` with the drift called instability. Two more orders of magnitude showed the drift to be
+the curvature of `(log C)²`. The instability was the signal.
+
+**Reviewing the source is not reviewing the page.** Every paper passed several content audits and
+would still have been published with hundreds of broken formulas, because no audit had looked at
+the rendered page. Two of the failure modes are silent: a stripped `\{` prints mathematics that is
+simply wrong, with no error anywhere. And a checker is not the page either — two further modes
+appeared on GitHub that this repository's own checker had passed. Both were found by opening the
+page and reading it.
 
 ---
 

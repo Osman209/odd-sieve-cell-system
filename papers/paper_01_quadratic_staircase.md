@@ -1,6 +1,6 @@
 # An Exact Histogram for a Quadratic Staircase
 
-## 0. The increments of $\lfloor 2j^2/n\rfloor$, and the local maxima of $2j^2 \bmod n$
+## Paper 1. The increments of $\lfloor 2j^2/n\rfloor$, and the local maxima of $2j^2 \bmod n$
 
 ---
 
@@ -13,7 +13,7 @@ We prove that $W_j \in \lbrace 0,1,2,3,4\rbrace$ for every odd $n$ and every $j$
 $$\mathrm{card}\lbrace W{=}0\rbrace  =  \mathrm{card}\lbrace W{=}4\rbrace  =  A, \qquad \mathrm{card}\lbrace W{=}2\rbrace  =  2A-1,$$
 $$\mathrm{card}\lbrace W{=}1\rbrace  =  \mathrm{card}\lbrace W{=}3\rbrace  =  \tfrac{n+1}{2} - 2A .$$
 
-The proof is a tiling argument and carries **no error term**. This is worth emphasising: a probabilistic model of the same count, assuming $2j^2 \bmod n$ equidistributed, returns the same answer, and sums of this shape normally carry an error of size $\sqrt n \log n$ or $n^{1/3}$. None appears, and the residues $2j^2 \bmod n$ never enter the argument.
+The proof is a tiling argument and carries **no error term**. This is worth emphasising: a probabilistic model of the same count, assuming $2j^2 \bmod n$ equidistributed, returns the same answer, and distributional estimates of this shape normally carry a non-zero error term. None appears here, and the residues $2j^2 \bmod n$ never enter the argument.
 
 The same tiling, read geometrically, also **locates** the increments and not only counts them (Theorem 2b): $\lfloor 2j^2/n\rfloor$ is the ceiling quantisation of the concave parabola $x(n-2x)/n$, the value $W_j = 0$ occurs exactly at the floors of its ascending level crossings and $W_j = 2$ exactly at the descending ones, and the two families are separated by the peak at $n/4$. A mirror relation then reduces the descending list to the ascending one plus one bit per level.
 
@@ -261,7 +261,7 @@ The remaining two are the content, and they are handled together.
 $$8x \equiv e_x \pmod n, \qquad e_x = -r,\ 8-r,\ 8m-8-3r,\ 8m-3r,$$
 and **in every one of the four cases $\lbrace |e_x|\rbrace$ is a permutation of $\lbrace 1,3,5,7\rbrace$** — for instance $r=1,m=1$ gives $(-1,7,-3,5)$ and $r=7,m=3$ gives $(-7,1,-5,3)$. Since $32 \cdot 2x^2 = (8x)^2$,
 $$32\big(2x^2 \bmod n\big) \equiv e_x^2 \pmod n, \qquad \sum_x e_x^2 = 1+9+25+49 = 84 .$$
-Writing $32(2x^2 \bmod n) = e_x^2 + a_x n$ with $a_x \in [0,32)$ determined by $e_x^2 + a_x n \equiv 0 \pmod{32}$, a check of the sixteen classes $n \bmod 32$ gives $\sum_x a_x = 80-4r$ in every case, whence
+Writing $32(2x^2 \bmod n) = e_x^2 + a_x n$ with $a_x \in [1,32)$ determined by $e_x^2 + a_x n \equiv 0 \pmod{32}$, a check of the sixteen classes $n \bmod 32$ gives $\sum_x a_x = 80-4r$ in every case, whence
 $$\sum_x \big(2x^2 \bmod n\big) = \frac{84+(80-4r)n}{32} = \frac{(20-r)n+21}{8}.$$
 On the other hand $\sum_x 2x^2 = 40t^2+(24m-8)t+(4m^2-4m+4)$ exactly, and dividing the difference by $n = 8t+r$ gives $5t+s_r$ with $s_r = -1,1,0,2$, which is $(5n-k_r)/8$. $\blacksquare$
 
@@ -318,8 +318,9 @@ Two details were found by failure rather than by design and are recorded so that
 
 ---
 
-*The computations and much of the prose in this paper were prepared with AI assistance (Claude, Anthropic), used for drafting and rewriting code and text, running the computations, searching the literature, and auditing the paper against its own scripts. The research direction, the questions asked, the decisions about what to publish and what to withdraw, and the responsibility for every claim are the author's. The full note is in the repository README.*
+---
 
+*The computations and much of the prose in this paper were prepared with AI assistance (ChatGPT, OpenAI; Claude, Anthropic), used for algebraic derivation, for drafting and rewriting code and text, for running the computations, and for auditing the papers against their own scripts. All statements were checked by the author, who is responsible for them; the repository README sets out the division of labour in full.*
 ---
 
 ## References

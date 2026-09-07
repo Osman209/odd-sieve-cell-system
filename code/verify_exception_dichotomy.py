@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-verify_exception_dichotomy.py — every number in [IV, §3.2] beyond Theorem 4:
+verify_exception_dichotomy.py — every number in [P6, §2.2] beyond Theorem 4:
 the closed forms of the six exceptional positions, the exhaustiveness of the
 35-class scan, the {5,7} bound of three, the negative result that larger lines
 do not lower it, Corollary 2, and the five residue classes in which the two
@@ -56,7 +56,7 @@ QUAD = {
 
 
 def positions_from_definition(M):
-    """E_M as offsets [IV, Thm 4], plus the sector's first cell."""
+    """E_M as offsets [P6, Thm 1], plus the sector's first cell."""
     off = (M * M + 1) // 6 + 1
     return [2 * M // 3 + off, M + 1 + off, 4 * M // 3 + 2 + off,
             5 * M // 3 + 2 + off, 2 * M + 3 + off, 2 * M + 5 + off]
@@ -200,7 +200,7 @@ def main():
     check("18. C_M is never zero", minC > 0, True)
     print(f"       ({sect} sectors, {cells} open cells, min C_M = {minC})")
 
-    print("\n--- [IV, 3.3]: the exception budget over a full period ---")
+    print("\n--- [P6, §2.3]: the exception budget over a full period ---")
     QUADS = {"A": lambda n: 6*n*n+10*n+4, "B": lambda n: 6*n*n+12*n+6,
              "C": lambda n: 6*n*n+14*n+8, "D": lambda n: 6*n*n+16*n+9,
              "E": lambda n: 6*n*n+18*n+11, "F": lambda n: 6*n*n+18*n+13}
@@ -257,7 +257,7 @@ def main():
             extremal.append((6*n0 + 3) % 510510)
     check("27. the escapee's alignment is among them", 448353 in extremal, True)
 
-    # the partner quadratics of [IV, Prop 1], against the definition
+    # the partner quadratics of [P6, Prop 2], against the definition
     PARTNER = {"A": (36, 60, 23), "C": (36, 84, 47), "D": (36, 96, 53),
                "E": (36, 108, 67), "F": (36, 108, 79)}
     COMP = {"A": lambda n: (6*n+5)**2, "C": lambda n: (6*n+7)**2,
@@ -272,7 +272,7 @@ def main():
             if comp not in (lo, hi) or part != A_*n*n + B_*n + C_: bad += 1
     check("28. partner quadratics against the definition, n < 3000", bad, 0)
 
-    print("\n--- [IV, Prop 1]: the forbidden-class counts of the five types ---")
+    print("\n--- [P6, Prop 2]: the forbidden-class counts of the five types ---")
     from sympy import legendre_symbol
     bad = 0
     tested = 0

@@ -1,18 +1,18 @@
 # From Cycle to Window
 
-## III. What survives when an exact periodic law is evaluated on a short interval
+## Paper 4. What survives when an exact periodic law is evaluated on a short interval
 
 ---
 
 ### Abstract
 
-Paper II establishes exact transport laws for the divisor census of the odd sieve over a full cycle of length $\prod q$. Every application needs a window of length $\asymp z^2$ — exponentially shorter. This paper asks what survives the passage, and answers it with a curve rather than a verdict.
+Paper 3 establishes exact transport laws for the divisor census of the odd sieve over a full cycle of length $\prod q$. Every application considered here needs a window of length $\asymp z^2$ — exponentially shorter. This paper asks what survives the passage, and answers it with a curve rather than a verdict.
 
 We first show that the two motions are compatible in a strong sense: an old line appears to a new one as a **periodic ruler**. For rulers $q\ge7$, a first-cycle square sector is shorter than the period, so the local question is presence or absence rather than counting; $q=5$ is kept as a fixed core exception (Theorems 1 and 2). We then run the sieve at **moving depth** — each sector $(u^2,v^2)$ sieved by all lines $\le u$ — and measure a stable deficit $T/M \approx 0.80$ across three orders of magnitude. We interpret this as the expected dimension-2 Buchstab-type correction at the critical scale $s=2$, but the value $0.80$ itself is a measurement in this paper.
 
 The deviations then admit a useful decomposition. A CRT-based mean law carrying a Legendre symbol and a companion square-cycle cancellation identity are verified exactly on the ranges tested in §4; a complete symbolic proof of those two identities is not supplied here, so they are kept separate from the proved results. The normalised survivor masks do form a **martingale** on the full CRT cycle, with orthogonal differences and total energy $\sum \mathbf{E}(\Delta_r^2)=1/P_z-1$ (Theorem 4). On short windows, the numerical $L^2$ data grow much faster than the target scale: a power fit over the tested range is about $U^{3.16}$. This is evidence against the desired bound at accessible scales, not an asymptotic refutation.
 
-Finally we measure the transfer directly. On the tested windows, linear depth weights give ratio $1.0000$ to the reported precision; the tested truncations $\max(0,1-j/t)$ remain close to $1$ for $t\ge1.5$; and at $t\le1$, where the weight is exactly the depth-zero indicator, the measured ratio is near $0.80$ (Proposition 1). The indicator of depth zero is the twin condition in the moving square window. Thus the sharp loss appears at the endpoint of the measured family, while the interior of the curve remains empirical. A second measurement (§6) tests the general pattern law of [II, §6.3] instead of a weight, and finds it transferring at $1.0000$ for admissible patterns of up to five cells; taken together the two locate the loss in the one-point density rather than in the correlations.
+Finally we measure the transfer directly. On the tested windows, linear depth weights give ratio $1.0000$ to the reported precision; the tested truncations $\max(0,1-j/t)$ remain close to $1$ for $t\ge1.5$; and at $t\le1$, where the weight is exactly the depth-zero indicator, the measured ratio is near $0.80$ (Proposition 1). The indicator of depth zero is the twin condition in the moving square window. Thus the sharp loss appears at the endpoint of the measured family, while the interior of the curve remains empirical. A second measurement (§6) tests the general pattern law of [P3, §6.3] instead of a weight, and finds it transferring at $1.0000$ for admissible patterns of up to five cells; taken together the two locate the loss in the one-point density rather than in the correlations.
 
 **Keywords:** Buchstab function, sieve of dimension two, martingale decomposition, large sieve, weighted sieves.
 
@@ -24,14 +24,14 @@ Finally we measure the transfer directly. On the tested windows, linear depth we
 
 ## 1. Setting, and what is imported
 
-Coordinates from Paper I: $L_p(k) = p(p+2k)$; $L_3$ as the grid; cells $C_b = (6b-1,6b+1)$; sectors bounded by consecutive odd squares. Window combinatorics from Paper 0: the increments $W_j$ of $\lfloor 2j^2/p\rfloor$, with $H_j = 2+W_j$. Exact cycle laws from Paper II: the four-state law and its refinement by inheritance depth, with generating function $\prod_q((q-2)+xu+xv)$.
+Coordinates from Paper 2: $L_p(k) = p(p+2k)$; $L_3$ as the grid; cells $C_b = (6b-1,6b+1)$; sectors bounded by consecutive odd squares. Window combinatorics from Paper 1: the increments $W_j$ of $\lfloor 2j^2/p\rfloor$, with $H_j = 2+W_j$. Exact cycle laws from Paper 3: the four-state law and its refinement by inheritance depth, with generating function $\prod_q((q-2)+xu+xv)$.
 
 Two imported facts do real work below and are stated once:
 
-- **[0, Thm 1].** Within the first cycle, a square sector contains between two and six strikes of any line, for every odd $p$ — the uniform bound on the increments of $\lfloor 2j^2/p\rfloor$. This is what makes §2.3 a *binary* statement for old rulers $q\ge7$; $L_5$ is handled separately as part of the fixed core.
-- **[II, Thm 2].** On the full cycle, each line contributes nothing with probability $(q-2)/q$, a lower-rail strike with probability $1/q$ and an upper-rail strike with probability $1/q$, independently across lines. This is the exact reference distribution against which every window measurement below is compared.
+- **[P1, Thm 1].** Within the first cycle, a square sector contains between two and six strikes of any line, for every odd $p$ — the uniform bound on the increments of $\lfloor 2j^2/p\rfloor$. This is what makes §2.3 a *binary* statement for old rulers $q\ge7$; $L_5$ is handled separately as part of the fixed core.
+- **[P3, Thm 2].** On the full cycle, each line contributes nothing with probability $(q-2)/q$, a lower-rail strike with probability $1/q$ and an upper-rail strike with probability $1/q$, independently across lines. This is the exact reference distribution against which every window measurement below is compared.
 
-The comparison object throughout is a ratio: a quantity measured on the window, divided by the same quantity computed from [II, Thm 2] on the cycle. A ratio of $1$ means the law transfers.
+The comparison object throughout is a ratio: a quantity measured on the window, divided by the same quantity computed from [P3, Thm 2] on the cycle. A ratio of $1$ means the law transfers.
 
 ---
 
@@ -72,13 +72,13 @@ zero failures among $4{,}983$ instances.
 
 ### 2.3 Theorem 2 (binary decision) and phase collisions
 
-Let $\kappa_j = 2j + \lfloor 2j^2/p\rfloor$ be the last $k$-index at the left square boundary, as in [0, §1]. For an old ruler $q$, define the distance from the start of the block to its next mark by
+Let $\kappa_j = 2j + \lfloor 2j^2/p\rfloor$ be the last $k$-index at the left square boundary, as in [P1, §1]. For an old ruler $q$, define the distance from the start of the block to its next mark by
 $$\delta_q(j)=1+\big((\phi_q(p)-\kappa_j-1)\bmod q\big)\in\lbrace 1,\dots,q\rbrace .$$
 Thus the block contains a mark of $q$ exactly when this next-mark distance does not exceed the block length.
 
 > **Theorem 2.** For every old line $q \ge 7$ and every sector $j$ **in the first cycle** $0 \le j \le p-1$, the number of strikes of $q$ inside the block is $C_q(j) \in \lbrace 0,1\rbrace$; and $C_q(j)=1$ exactly when $\delta_q(j) \le H_j$, in which case the strike falls in slot $s = \delta_q(j)$.
 
-*Proof.* By [0, Thm 1], $H_j \le 6 \lt  7 \le q$ throughout the first cycle, so a block is shorter than the ruler's period and cannot contain two of its marks. $\blacksquare$
+*Proof.* By [P1, Thm 1], $H_j \le 6 \lt  7 \le q$ throughout the first cycle, so a block is shorter than the ruler's period and cannot contain two of its marks. $\blacksquare$
 
 **Two hypotheses, both necessary.**
 
@@ -138,7 +138,7 @@ Define the clock vector here by $\Phi_z(p)=(\phi_3(p),\phi_5(p),\dots,\phi_z(p))
 | 59 | 16 | $9.6\times10^{20}$ |
 | 101 | 25 | $1.2\times10^{38}$ |
 
-The survivor pattern of the lines up to $z$ has period exactly $\prod q$ and, by [II, Thm 1], exactly $\prod(q-2)$ surviving cells in it. **Any “compressed law for the next survivor” — a rule carrying a state materially smaller than the cycle — would therefore be a compression of the cycle itself.** We record this as an observation rather than a theorem, but it is the reason any “successor tower” for the sieved strip is a re-description and not a reduction.
+The survivor pattern of the lines up to $z$ has period exactly $\prod q$ and, by [P3, Thm 1], exactly $\prod(q-2)$ surviving cells in it. **Any “compressed law for the next survivor” — a rule carrying a state materially smaller than the cycle — would therefore be a compression of the cycle itself.** We record this as an observation rather than a theorem, but it is the reason any “successor tower” for the sieved strip is a re-description and not a reduction.
 
 ---
 
@@ -246,9 +246,9 @@ The tested data do not support a small uniform constant: the worst ratio $\max|S
 
 ## 6. Transferring the depth distribution to a window
 
-The question is whether the depth distribution of [II, Thm 2] transfers from cycle to short window more stably than the raw survivor count. **On the tested ranges it does for soft weights.** The deterioration is not perfectly monotone — there is a small overshoot near $t=3$ — but the sharp depth-zero endpoint is clearly separated, with ratio near $0.80$.
+The question is whether the depth distribution of [P3, Thm 2] transfers from cycle to short window more stably than the raw survivor count. **On the tested ranges it does for soft weights.** The deterioration is not perfectly monotone — there is a small overshoot near $t=3$ — but the sharp depth-zero endpoint is clearly separated, with ratio near $0.80$.
 
-*Setup.* Moving depth: each sector $(u^2,v^2)$ is sieved by all lines $\le u$, and each cell is recorded with its state and its inheritance depth $j$. The comparison is against the exact cycle distribution implied by [II, Thm 2] — each line contributes nothing with probability $(q-2)/q$, a lower-rail strike with probability $1/q$, an upper-rail strike with probability $1/q$. Four bands of $u$, up to $1.3\times10^{6}$ cells per band.
+*Setup.* Moving depth: each sector $(u^2,v^2)$ is sieved by all lines $\le u$, and each cell is recorded with its state and its inheritance depth $j$. The comparison is against the exact cycle distribution implied by [P3, Thm 2] — each line contributes nothing with probability $(q-2)/q$, a lower-rail strike with probability $1/q$, an upper-rail strike with probability $1/q$. Four bands of $u$, up to $1.3\times10^{6}$ cells per band.
 
 *Raw ratios.* Window over cycle: $NN$ gives $0.80$, $NO/ON$ gives $0.914$, $OO$ gives $1.063$ — the deficit of §3.2 seen state by state. The total-variation distance between the window and cycle depth *shapes* within a state is $0.106$ ($NO/ON$) and $0.089$ ($OO$), i.e. the shape already transfers about twice as well as the count.
 
@@ -274,11 +274,11 @@ Two structural remarks, both of which the table makes visible.
 
 > **Proposition 1 (measured).** On the tested moving-depth windows, linear functions of inheritance depth give transfer ratio $1.0000$ to the reported precision. For every **tested** value $t\ge1.5$, the weight $\max(0,1-j/t)$ stays within about $6$% of $1$ (within about $3.2$% for the tested $t\ge2$), while for $t\le1$ — exactly the indicator $[j=0]$ — the measured ratio is approximately $0.80$.
 
-*A second family: pattern transfer at fixed depth.* Proposition 1 measures the transfer of a *weight* on one cell. The cycle law of [II, §6.3] is more general than that: it transports an arbitrary finite pattern $H$ of cells, with $N_{\mathrm{new}}(H) = (q-\nu_q(H)) N_{\mathrm{old}}(H)$. Nothing above tests it beyond $|H| = 2$, and the patterns are the sharpest indicators the framework has — a pattern of $k$ cells is a condition on $2k$ integers at once. This paragraph tests that law directly.
+*A second family: pattern transfer at fixed depth.* Proposition 1 measures the transfer of a *weight* on one cell. The cycle law of [P3, §6.3] is more general than that: it transports an arbitrary finite pattern $H$ of cells, with $N_{\mathrm{new}}(H) = (q-\nu_q(H)) N_{\mathrm{old}}(H)$. Nothing above tests it beyond $|H| = 2$, and the patterns are the sharpest indicators the framework has — a pattern of $k$ cells is a condition on $2k$ integers at once. This paragraph tests that law directly.
 
 *Setup, and a constraint that appears immediately.* Fix a height $X$ and a depth $z = X^{1/u}$, sieve the whole range $6n\pm1 \le X$ by every line $\le z$, and write $S_n = 1$ when both members of cell $n$ survive. For a pattern $H = \lbrace h_1=0 \lt  \dots \lt  h_k\rbrace$ set
 $$J(H)  =  \frac{\Pr\big(S_{n+h_1} = \dots = S_{n+h_k} = 1\big)}{\Pr(S_n=1)^k}, \qquad L(H)  =  \prod_{5\le q\le z}\frac{1-\nu_q(H)/q}{(1-2/q)^{k}} ,$$
-so that $J/L = 1$ is exactly the assertion that the cycle law of [II, §6.3] survives the passage to a real window at depth $z$. Here $\nu_q(H) = \mathrm{card}\lbrace \pm 6^{-1} - h_i \bmod q\rbrace$, and the pattern must be admissible: consecutive cells $H = \lbrace 0,1,2\rbrace$ already give $\nu_5 = 5$ and density zero, so the shortest admissible patterns are $\lbrace 0,1\rbrace$, $\lbrace 0,1,3\rbrace$, $\lbrace 0,1,3,5\rbrace$, $\lbrace 0,1,3,5,6\rbrace$ — the last a condition on ten integers spanning $38$.
+so that $J/L = 1$ is exactly the assertion that the cycle law of [P3, §6.3] survives the passage to a real window at depth $z$. Here $\nu_q(H) = \mathrm{card}\lbrace \pm 6^{-1} - h_i \bmod q\rbrace$, and the pattern must be admissible: consecutive cells $H = \lbrace 0,1,2\rbrace$ already give $\nu_5 = 5$ and density zero, so the shortest admissible patterns are $\lbrace 0,1\rbrace$, $\lbrace 0,1,3\rbrace$, $\lbrace 0,1,3,5\rbrace$, $\lbrace 0,1,3,5,6\rbrace$ — the last a condition on ten integers spanning $38$.
 
 *Measured*, at $X = 4\times10^{9}$ (all $6.67\times10^{8}$ cells; the $\pm$ column is $1/\sqrt{\text{count}}$):
 
@@ -298,7 +298,7 @@ so that $J/L = 1$ is exactly the assertion that the cycle law of [II, §6.3] sur
 
 *At the moving depth $u = 2$ the residual deviation shrinks with height.* For $H=\lbrace 0,1\rbrace$, $J/L = 1.0311,\ 1.0160,\ 1.0113$ at $X = 10^{8}, 10^{9}, 4\times10^{9}$. Writing the $k$-tuple count with the integral $\int_2^X \mathrm{d}t/\log^{2k}t$ rather than $X/\log^{2k}X$, and the same for the normalising $\Pr(S)^k$, the leading $1/\log X$ corrections cancel and the first surviving term is $1 + 2k(k-1)/\log^2 X$, i.e. $1.008$ for $k=2$ and $1.025$ for $k=3$ at $X = 4\times10^{9}$; the measured $1.0113$ and $1.0640$ sit within one to two standard errors of those. **We report this as an account of the observed size, not as a derivation.**
 
-> **Proposition 2 (measured).** On the tested range, the pattern law of [II, §6.3] transfers to a real window at fixed depth with $J/L = 1$ to within the statistical error, for every tested admissible pattern of up to five cells — a condition on ten integers — at $u = 3$ and $u = 4$. At the moving depth $u=2$ the ratio exceeds $1$ by one to six per cent, decreasing with height.
+> **Proposition 2 (measured).** On the tested range, the pattern law of [P3, §6.3] transfers to a real window at fixed depth with $J/L = 1$ to within the statistical error, for every tested admissible pattern of up to five cells — a condition on ten integers — at $u = 3$ and $u = 4$. At the moving depth $u=2$ the ratio exceeds $1$ by one to six per cent, decreasing with height.
 
 *What this adds to Proposition 1, and it changes the reading of this section.* Proposition 1 shows the one-cell statistic losing about $20$% exactly when the weight sharpens to the depth-zero indicator. Proposition 2 shows a far sharper indicator — the simultaneous survival of ten integers — transferring at $1.0000$. **The two are consistent, and together they separate the loss into two factors: it lies entirely in the one-point density, which carries the Buchstab correction at $s=2$ (§3.2), and not in the correlations built on top of it, which transfer exactly for every pattern tested.** In other words the deficit is a function of the depth relative to the window, not of the sharpness of the statistic.
 
@@ -320,19 +320,20 @@ $$\boxed{\begin{array}{c}\text{The transfer fails in the one-point density and h
 
 $$\boxed{ \text{The exact cycle laws are proved; the short-window transfer remains partly empirical.} }$$
 
-The applications of that statement, and the problems it does and does not decide, are Paper IV.
+The applications of that statement, and the problems it does and does not decide, are Papers 5 to 8.
 
 ---
 
 **No progress toward the twin-prime conjecture is claimed, and no new bound.** Priority is not claimed for any result.
 
-*The computations and much of the prose in this paper were prepared with AI assistance (Claude, Anthropic), used for drafting and rewriting code and text, running the computations, searching the literature, and auditing the paper against its own scripts. The research direction, the questions asked, the decisions about what to publish and what to withdraw, and the responsibility for every claim are the author's. The full note is in the repository README.*
+---
 
+*The computations and much of the prose in this paper were prepared with AI assistance (ChatGPT, OpenAI; Claude, Anthropic), used for algebraic derivation, for drafting and rewriting code and text, for running the computations, and for auditing the papers against their own scripts. All statements were checked by the author, who is responsible for them; the repository README sets out the division of labour in full.*
 ---
 
 ## References
 
-The companion papers are cited as [0] and [II].
+The eleven papers of this set are cited as [P1] to [P11], and the numbered entries below are the external works. The two kinds never share a number: a bracket with a P is a companion paper, a bare number is a reference in the list below. This paper imports only the definitions and statements of the companion papers, never their proofs.
 
 1. P. Campbell, *On the existence of integers with at most 3 prime factors between every pair of consecutive squares*, arXiv:2603.10356 (2026). — *the almost-primes computation whose parameters are used in §6; it runs at sieve variable $s = 3.33$.*
 2. J. Friedlander and H. Iwaniec, *Opera de Cribro*, AMS Colloquium Publications **57**, 2010. — *for the Buchstab-type correction at $s=2$ discussed in §3.2, and for the large-sieve inequalities of the kind §5.4 would need.*

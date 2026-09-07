@@ -3,9 +3,9 @@
 verify_transfer_layers.py — regenerates every number in the block
 "How much is lost in that transfer, measured" added to
 
-    paper_V_where_the_framework_stops.md  §8.5
+    paper_11_what_a_continuation_needs.md  §2.5
 
-The block compares the cycle law of [II, Thm 2] against a direct census over
+The block compares the cycle law of [P3, Thm 2] against a direct census over
 consecutive square windows [M^2,(M+2)^2] near X, at sieve depth z = X^(1/u),
 and separates the comparison into three layers.
 

@@ -18,7 +18,7 @@ REPO = "https://github.com/Osman209/odd-sieve-cell-system"
 SITE = "https://osman209.github.io/odd-sieve-cell-system"
 ORCID = "0009-0004-5912-999X"
 DOI = "10.5281/zenodo.22085627"
-DATE = "2026-09-01"
+DATE = "2026-09-07"
 
 CSS = """<style>body{max-width:52rem;margin:2.5rem auto;padding:0 1.2rem;font:16px/1.6 Georgia,"DejaVu Serif",serif;color:#1a1a1a}
 h1{font-size:1.6rem;line-height:1.3;margin-bottom:.2rem}h2{font-size:1.05rem;font-weight:400;color:#555;margin-top:0}
@@ -32,7 +32,7 @@ PAPERS = [
         slug="overview_the_cell_system",
         title="The Cell System: an Overview",
         sub="Every result of the set stated once, with its status attached: proved, proved under hypothesis, or measured",
-        abs="A single pass over the seven documents. The coordinates; the exact window histogram; "
+        abs="A single pass over the eleven papers. The coordinates; the exact window histogram; "
             "the exact transport of a census over a sieve cycle; what survives the move to a short "
             "interval; what the framework decides outright; where it stops, stated from inside the "
             "construction rather than quoted; the pattern the work keeps arriving at; and what an "
@@ -40,61 +40,70 @@ PAPERS = [
             "is claimed, and no new bound.",
     ),
     dict(
-        slug="paper_0_quadratic_staircase",
-        title="An Exact Histogram for a Quadratic Staircase",
-        sub="Five values, five multiplicities, and no error term — a paper about no prime numbers at all",
-        abs="For odd n, the increments of the staircase floor(2j^2/n) take only the values 0 to 4, and "
-            "their five multiplicities are given exactly by A = floor((n+7)/8). The proof is a tiling "
-            "argument and carries no error term, which is the surprise: a probabilistic model of the "
-            "same count returns the same answer and would normally carry one. A companion theorem "
-            "counts the interior local maxima of 2j^2 mod n, exactly 2A for every odd n at least 51, "
-            "and turns on four residues whose squares always sum to 84. The paper states plainly how "
-            "the object differs from the Sturmian word it resembles: the analogy is one of form only, "
-            "and the factor complexity and imbalance are measured against the Sturmian values to show "
-            "how far it fails. Independent of the rest of the set.",
-        pre="quadratic_staircase.pdf",
+        slug="paper_01_quadratic_staircase",
+        title="Paper 1. An Exact Histogram for a Quadratic Staircase",
+        sub="The increments of floor(2j^2/n), and the local maxima of 2j^2 mod n",
+        abs="An exact histogram for the increments of a quadratic staircase, and the local maxima of 2j^2 mod n, proved rather than observed.",
     ),
     dict(
-        slug="paper_I_cells_and_lines",
-        title="Cells and Lines",
-        sub="The coordinates: lines, cells, the window between prime squares, and the central factor",
-        abs="Each odd prime p is a line L_p(k) = p^2 + 2pk; the numbers 6m plus or minus 1 form a cell; "
-            "and the window between consecutive prime squares is where every line that matters is "
-            "already present. Includes the central-factor theorem — for odd m the two divisors nearest "
-            "the square root are reached in exactly a + b + 2 steps — with its handover corollary, and "
-            "a section saying which of these statements are restatements rather than results.",
+        slug="paper_02_cells_and_lines",
+        title="Paper 2. Cells and Lines",
+        sub="A coordinate system for the odd sieve",
+        abs="The odd numbers coprime to 6 are read as cells and the primes as lines striking them, which turns the sieve into a discrete geometry with exact laws.",
     ),
     dict(
-        slug="paper_II_inheritance_law_on_the_cycle",
-        title="The Inheritance Law on the Cycle",
-        sub="Exact transport of a divisor census, and of weights, over a sieve cycle",
-        abs="Adding a line q multiplies the cycle by q and the census transports with no error at all. "
-            "The refined version tracks the full distribution of inheritance depth through a "
-            "finite-state generating function, so that any weight depending on the number of sieve "
-            "lines met can be evaluated exactly on the cycle; a size-binned refinement reproduces "
-            "Richert's weight to 0.4 per cent. Section 6 gives the correlation ladder from which the "
-            "singular series of Paper V is built, and names it as the Hardy-Littlewood series it is.",
+        slug="paper_03_inheritance_law_on_the_cycle",
+        title="Paper 3. The Inheritance Law on the Cycle",
+        sub="Exact transport of the divisor census, and of weights, over a sieve cycle",
+        abs="Adding a line q multiplies the cycle by q and the census transports with no error at all; a finite-state refinement evaluates any weight depending on the number of lines met.",
     ),
     dict(
-        slug="paper_III_from_cycle_to_window",
-        title="From Cycle to Window",
+        slug="paper_04_from_cycle_to_window",
+        title="Paper 4. From Cycle to Window",
         sub="What survives when an exact periodic law is evaluated on a short interval",
-        abs="An exact law on a sieve cycle is not an exact law on a window, and the loss is not uniform "
-            "across the quantities one might evaluate. Soft weights transfer almost exactly; sharp "
-            "indicators do not. The distinction is measured rather than asserted, and it governs the "
-            "transfer measurements of Paper V.",
+        abs="An exact law on a sieve cycle is not an exact law on a window, and the loss is not uniform: soft weights transfer almost exactly, sharp indicators do not.",
     ),
     dict(
-        slug="paper_IV_twin_criterion",
-        title="The Twin Criterion",
-        sub="What the framework proves outright about gap-two pairs, and how far a residue argument can compress the exceptions",
-        abs="After switching on every line up to M in the sector between M^2 and (M+6)^2, at most six cells can be open without being a twin pair, and their positions are given by an explicit formula in M. Those six positions are exact quadratics in the sector index, so the phases of the lines 5 and 7 depend on one residue class alone and the scan over them is a proof rather than a sample: those two lines cut six open positions to three, and three occur only when (M+2, M+4) is itself a twin, so a twin follows from three open cells rather than seven. Section 3.3 carries this over a full period of 35 tiling sectors, where the budget falls to 31, and shows that no finite set of lines lowers it further: of the 28 maximal configurations, 27 are killed by a fixed prime divisor once the quadratic partner conditions are included, and the survivor - 59 polynomials of total degree 90 - is admissible at every prime, so the residues can be chosen simultaneously against any finite list. Section 3.4 then lengthens the block: the ceilings over 3, 5, 7 and 9 consecutive periods are 67, 100, 138 and 163, and a quadratic shadow argument gives the order, the five index sets being sifted in dimensions 2, 2, 3, 3, 3 so that the ceiling is of order L/log^2 L. The density of hiding places therefore tends to zero, which lowers the number required and leaves the missing ingredient untouched. The later sections read the same window in four other units - the clock, the sequence of sectors, the belt between consecutive prime gates, and four named quadratic tracks near the ends - and each yields an exact law that is then shown not to bind: a construction gives an infinite progression along which any fixed list of named cells is closed by distinct lines, so no fixed number of named cells can force a twin. One statement is proved under a stated hypothesis and verified numerically beyond it, and is labelled that way wherever it appears. An appendix carries an auxiliary exact model whose object is a prime pair (p, p+6) rather than a twin pair.",
+        slug="paper_05_gap_alphabet",
+        title="Paper 5. The Gap Alphabet",
+        sub="Which gaps can occur between consecutive odd composites, and where the ladder of proofs stops",
+        abs="The gap between consecutive odd composites takes only the values 2, 4 and 6, and a gap of 6 is a twin pair; everything settleable without prime input is settled here.",
     ),
     dict(
-        slug="paper_V_where_the_framework_stops",
-        title="Where the Framework Stops",
-        sub="The exact form of the obstruction, and the routes that reach it",
-        abs="The statement comes first. Cutting the sieve at depth z with z^3 above the window makes every surviving endpoint prime or a product of exactly two primes, each with a unique responsible line; the twin count of the window is then exactly C - R + S with no error term, the deficit R - C can only fall as the cut advances, and therefore 2(R - C) equals the sum of (-1)^Omega over the endpoints of the surviving cells. The inequality one wants is precisely the statement that a Liouville sum over the sifted set is negative - equivalently, that more than half of the numbers between P^2 and Q^2 with no small prime factor are prime, for every P and not merely on average. Read as a covariance, the same content puts the missing statement on a correlation between the two rails rather than on any density. Section 3 shows that no purely sieve-theoretic tool crosses it: the classical Buchstab upper bound for the composite part equals exactly twice the corresponding lower bound throughout the relevant range, the two natural constraints on the cut are incompatible, switching is aimed at the region where the sieve is vacuous and that region holds 59.4 per cent of the composite endpoints, and five routes through the line geometry are followed in one explicit window and closed by measurement. Sections 4 to 7 then exhibit the routes the framework produced before the identity was written - capacity and resonance, the closing budget that misses by a conditional 0.73 per cent in the wrong direction, a deterministic local constraint that is real but not binding, and the exact inheritance laws whose constraint binds one line at a time and dissolves in aggregate - and each arrives at the same place. Two test cases whose answers are known independently, Jacobsthal's function and almost-primes between squares, then check that the framework reproduces the right shape and supplies no bound. A claim withdrawn during the work is recorded in place rather than quietly replaced, and a null that was got wrong twice before it was got right is recorded with it.",
+        slug="paper_06_twin_criterion",
+        title="Paper 6. The Twin Criterion: Six Exception Positions",
+        sub="A single open cell in a sector is a twin pair unless it sits at one of six named places",
+        abs="After switching on every line up to M in the sector between M^2 and (M+6)^2, at most six cells can be open without being a twin, and their positions are explicit quadratics in M.",
+    ),
+    dict(
+        slug="paper_07_clocks_and_inheritance",
+        title="Paper 7. Clocks and Inheritance",
+        sub="Primality as a zero-test, and the capacity of a single line across sectors",
+        abs="The same window in two further units: a clock in which primality is the statement that no clock reads zero, and an inheritance law that transports exactly from sector to sector.",
+    ),
+    dict(
+        slug="paper_08_belts_and_short_windows",
+        title="Paper 8. Belts and Short Windows",
+        sub="What a line can do between its own square and the next, and the anatomy of the window between consecutive squares",
+        abs="The belt between consecutive prime squares has an exact size and a reach that depends on the gap rather than the size of the line; the short window is then read in depth.",
+    ),
+    dict(
+        slug="paper_09_the_exact_obstruction",
+        title="Paper 9. The Exact Form of the Obstruction",
+        sub="An identity for the twin count with no error term, and why an ordinary sieve cannot cross it",
+        abs="Under a depth cut the twin count satisfies T = C - R + S with no error term, which turns the twin problem into a comparison of two counts and shows the comparison needs a sign, not a bound.",
+    ),
+    dict(
+        slug="paper_10_four_tests",
+        title="Paper 10. Four Tests of the Cell System",
+        sub="Jacobsthal, almost-primes between squares, shared cofactors, and collisions",
+        abs="Four independent tests of the same framework, each carried to the point where it stops, with the reason it stops given in each case.",
+    ),
+    dict(
+        slug="paper_11_what_a_continuation_needs",
+        title="Paper 11. What a Continuation Would Have to Supply",
+        sub="The external ingredient, the limitations, and the routes already closed",
+        abs="What an external ingredient would have to supply for the identity to become a theorem, why the stopping point is the right one, and an appendix of routes already closed.",
     ),
 ]
 
@@ -146,14 +155,16 @@ def index():
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Cell System &mdash; Mohamed Osman</title>
-<meta name="description" content="A coordinate system for the odd sieve: what it proves, what it measures, and where it stops. Seven documents, nine verification scripts. No twin-prime claim.">
+<meta name="description" content="A coordinate system for the odd sieve: what it proves, what it measures, and where it stops. Eleven papers, one overview and nine verification scripts. No twin-prime claim.">
 {CSS}</head><body>
 <h1>The Cell System</h1>
 <h2>A coordinate system for the odd sieve &mdash; what it proves, what it measures, and where it stops</h2>
 <p class="meta">Mohamed Osman &middot; ORCID <a href="https://orcid.org/{ORCID}">{ORCID}</a> &middot; independent researcher</p>
-<p>Papers 0&ndash;IV build a construction and prove what it decides. Paper V derives the point at which
-it stops <em>from inside the construction</em> rather than quoting it, and measures how much of the
-difficulty the framework can localise before failing to cross it.
+<p>Eleven papers, one overview and nine verification scripts. Papers 1 to 4 build the coordinates
+and the transport laws; papers 5 to 8 are the construction and what it decides about twin pairs;
+papers 9 to 11 derive the point at which it stops <em>from inside the construction</em> rather than
+quoting it, and measure how much of the difficulty the framework can localise before failing to
+cross it.
 <strong>Every headline result reached here already exists in the literature</strong>, and each paper names
 the source. <strong>No progress toward the twin-prime conjecture is claimed, and no new bound.</strong>
 Priority is not claimed for any result.</p>

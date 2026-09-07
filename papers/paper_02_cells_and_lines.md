@@ -1,6 +1,6 @@
 # Cells and Lines
 
-## I. A coordinate system for the odd sieve
+## Paper 2. A coordinate system for the odd sieve
 
 ---
 
@@ -16,7 +16,7 @@ Section 4.5 then reads the same coordinates across sectors rather than inside on
 
 Section 5 settles a second, independent ownership question about the same object: a line holds the *centre* of its strikes — it remains the largest divisor below the square root — for exactly $a+b+2$ steps, where $ab = m$ is the central pair of $m$ (Theorem 8). The loss is a handover with its index named, and the two steps of $2$ in the bound are exactly where the odd lattice enters.
 
-This paper uses no analytic sieve estimates: no Mertens constant, no prime-distribution input, no error terms. The exact histogram carried by the square window was separated out as Paper 0, since it concerns no primes at all; it is quoted here where needed and proved there.
+This paper uses no analytic sieve estimates: no Mertens constant, no prime-distribution input, no error terms. The exact histogram carried by the square window was separated out as Paper 1, since it concerns no primes at all; it is quoted here where needed and proved there.
 
 
 **Keywords:** sieve of Eratosthenes, cell coordinates, difference of squares, integer lattices.
@@ -54,22 +54,11 @@ This paper uses no analytic sieve estimates: no Mertens constant, no prime-distr
 | **Corollary 5** | The first loss is a handover with its index named: $L_m(a+b+2) = L_{m+2a}(b-a)$. At a square it lands on the new line's birth; at a prime it reads $L_p(p+3) = L_{p+2}(p-1)$. | §5.4 |
 | **Corollary 6** | $T(m) = m+2a = a(b+2)$, so a composite hands over to a composite: under iteration of $T$ the primes are a transient set. | §5.5 |
 
-Everything in this paper is proved. The histogram results — Theorems 4, 5, 6, 7 and 8 of the earliest version — are now Paper 0, where they are stated for all odd $n$ and without reference to primes; Theorem 8 above is a new statement and unrelated to them.
+Everything in this paper is proved. The histogram results — Theorems 4, 5, 6, 7 and 8 of the earliest version — are now Paper 1, where they are stated for all odd $n$ and without reference to primes; Theorem 8 above is a new statement and unrelated to them.
 
 ### 0. What this paper is, and what it is not
 
-This is one of six papers built on one coordinate system. The division is by mathematical dependence, not by topic:
-
-| | | depends on |
-|-----|-------------------------------------------|--------------------------|
-| **0** | *An exact histogram for a quadratic staircase* | — (no primes occur in it) |
-| **I** | *Cells and lines* (this paper) | — |
-| **II** | *The inheritance law on the cycle* | the cell coordinates of §3 |
-| **III** | *From cycle to window* | 0, I and II |
-| **IV** | *The twin criterion in cell coordinates* | 0, I, II, III |
-| **V** | *Where the framework stops* | 0, I, II, III, IV |
-
-Papers 0, I and II are independent of one another. Paper 0 is pure arithmetic: it concerns the increments of $\lfloor 2j^2/n\rfloor$ for odd $n$ and mentions no primes at all. Paper I fixes the coordinates; Paper II runs the fixed periodic structure. Paper III is the first that needs several of them at once, because it evaluates II's cycle laws on the window whose combinatorics Paper 0 supplies.
+This paper is the second of eleven built on one coordinate system, and it is the one that fixes the coordinates: everything else in the set is stated in them. It can be read on its own — nothing below is imported from another part — and the map of which paper depends on which is in the overview rather than repeated here.
 
 **This paper uses no analytic sieve estimates.** No density asymptotic, no Mertens constant and no prime-distribution theorem is used below. Everything here is an exact statement about a periodic pattern, and a reader with no interest in primes may read it as such. Priority is not claimed for any result; the searches we ran found no exact match, but the absence of a match found by search is not evidence of novelty.
 
@@ -106,7 +95,7 @@ Each begins at its own square, so a line is responsible exactly for what no smal
 | strikes of $L_5$ | 35, 45 | 55, 65, 75 | 85, 95, 105, 115 | 125, …, 165 | 175, …, 225 |
 | $H_j$ | **2** | **3** | **4** | **5** | **6** |
 
-The widths climb by exactly $8$; the strike count climbs $2,3,4,5,6$ **and stops there**. Writing $H_j = 2 + W_j$ with $W_j = \lfloor 2(j+1)^2/p\rfloor - \lfloor 2j^2/p\rfloor$, both the fact that it stops and the exact multiplicities of the five values are **[0, Theorems 1 and 2]** — statements about odd $n$ in general, with no reference to primes, which is why they were separated into Paper 0.
+The widths climb by exactly $8$; the strike count climbs $2,3,4,5,6$ **and stops there**. Writing $H_j = 2 + W_j$ with $W_j = \lfloor 2(j+1)^2/p\rfloor - \lfloor 2j^2/p\rfloor$, both the fact that it stops and the exact multiplicities of the five values are **[P1, Theorems 1 and 2]** — statements about odd $n$ in general, with no reference to primes, which is why they were separated into Paper 1.
 
 
 ---
@@ -115,7 +104,7 @@ The widths climb by exactly $8$; the strike count climbs $2,3,4,5,6$ **and stops
 
 **The line.** For odd $p$, $L_p(k) = p^2 + 2pk = p(p+2k)$ — the odd multiples of $p$ from $p^2$ onward. Starting at $p^2$ makes each line responsible exactly for what it alone contributes (§2.2), and only prime $p$ contribute anything (Theorem 1).
 
-**The window.** The odd squares $S_j = (p+2j)^2$. The gap between consecutive squares is $4p + 8j + 4$: two full line steps, plus a residue of $8j+4$ that grows by $8$ each time. **That $+8$ is the clock behind every window statement**; its consequences — the uniform bound on the strike count, its exact histogram, and the identity tying the count to the fingerprint $D_j \equiv 4j^2 \pmod{2p}$ — are Paper 0.
+**The window.** The odd squares $S_j = (p+2j)^2$. The gap between consecutive squares is $4p + 8j + 4$: two full line steps, plus a residue of $8j+4$ that grows by $8$ each time. **That $+8$ is the clock behind every window statement**; its consequences — the uniform bound on the strike count, its exact histogram, and the identity tying the count to the fingerprint $D_j \equiv 4j^2 \pmod{2p}$ — are Paper 1.
 
 ---
 
@@ -143,9 +132,9 @@ Any odd multiple of $p$ below $p^2$ has the form $p\cdot s$ with $s\lt p$, hence
 
 $$L_m(k)  =  (m+k)^2 - k^2$$
 
-Every strike is a difference of two squares whose roots differ by the fixed amount $m$. This is the first link between lines and squares; it returns in §3.6 and §3.7, and again in Paper 0.
+Every strike is a difference of two squares whose roots differ by the fixed amount $m$. This is the first link between lines and squares; it returns in §3.6 and §3.7, and again in Paper 1.
 
-**Why the window is taken between consecutive squares, and not somewhere else.** The choice looks like a convenience — a place where the pivot of [IV, §3.1] holds — but there is a stronger reason, and it is a statement about the multiplication table rather than about primes. Consider the odd factor pairs $(a,b)$, $a \le b$, whose product lands in one window:
+**Why the window is taken between consecutive squares, and not somewhere else.** The choice looks like a convenience — a place where the pivot of [P6, §2.1] holds — but there is a stronger reason, and it is a statement about the multiplication table rather than about primes. Consider the odd factor pairs $(a,b)$, $a \le b$, whose product lands in one window:
 $$M^2 \lt  ab \lt  (M+2)^2 .$$
 
 > **Proposition 1.** If $(a,b)$ and $(c,d)$ are two such pairs, both with product in the same window, then $a \lt  c$ forces $b \ge d$. Two factor pairs in one window cannot cross, **even when they belong to different integers.**
@@ -241,7 +230,7 @@ Assign to each factor-cell the state of its two members ($N$ = alive, $O$ = alre
 *Reason.* If $6b+1$ is divisible by some $r\lt p$, then so is $p(6b+1)$. **The state of the factor-cell is transported by multiplication.** Hence
 $$\text{effect of } L_p  =  (\text{its geometric track})  \cap  (\text{previous survivors}).$$
 
-The counting form of this law, its closed solution and its refinement by inheritance depth are the subject of Paper II; nothing below depends on them.
+The counting form of this law, its closed solution and its refinement by inheritance depth are the subject of Paper 3; nothing below depends on them.
 
 *Verification.* Mean new strikes per state $= 2.00 / 1.00 / 1.00 / 0.00$ at $p = 11, 13, 17$, with no deviation.
 
@@ -415,7 +404,7 @@ the sector between consecutive odd squares, anchored so that its root is the low
 
 Examples: $(35,37)$, $(143,145)$, $(323,325)$, $(575,577)$, $(899,901)$, and $(359999,360001) = (599\cdot601,\ \cdot)$.
 
-**This complements [IV, Thm 4] from the other side.** That theorem lists the at most six positions that can be *open without being twins*; Theorem 5 names one position that can *never be a twin at all*. Both are consequences of the anchoring, not of any counting.
+**This complements [P6, Thm 1] from the other side.** That theorem lists the at most six positions that can be *open without being twins*; Theorem 5 names one position that can *never be a twin at all*. Both are consequences of the anchoring, not of any counting.
 
 *(The same anchoring gives a template of six landmarks at distances $u = 0, 2, 2n-2, 2n, 4n-4, 4n$ from the left endpoint — the left square, the first strike of $L_3$, the midpoint cell's lower member $qr$, the midpoint $n^2+1$, the last strike of $L_3$ which coincides with $q(q+4)$, and the right square. Verified for every $n = 6,12,\dots,894$. We record it as a frame rather than a result: everything inside it moves quadratically, since a line's first position in $u$ is $-q^2 \bmod \ell$.)*
 
@@ -445,7 +434,7 @@ Sections 4.1–4.3 index the window by position. This one indexes it by the *str
 
 Keep $n = 6a$, and call **layer $j$** the pair of lines
 $$p = n-6j-1, \qquad s = n-6j+1,$$
-running them on the shared index $k = 6j+t$. Translating the anchor identity $L_{q-6j}(6j) = q^2-36j^2$ of [IV, Thm 12] into the window coordinate $u$ gives, exactly,
+running them on the shared index $k = 6j+t$. Translating the anchor identity $L_{q-6j}(6j) = q^2-36j^2$ of [P10, Thm 5] into the window coordinate $u$ gives, exactly,
 $$u^-(t) = 2pt - 36j^2, \qquad u^+(t) = 4n - 36j^2 + 2st. \qquad\text{(4.1)}$$
 
 *Verification.* Zero failures over $695{,}968$ checks ($a \lt  120$, all $j$, $t \in [-40,60]$).
@@ -476,7 +465,7 @@ while the two positions shift by $-(72j+36)$ and $-(72j+12)$ — differing by $2
 
 *Verification.* Zero failures over $428{,}340$ checks.
 
-**Two consequences.** First, **exactly one strike in three of every line is spent on $L_3$** — a fact used by counting in [IV, §6.2] and elsewhere, here obtained from the coordinate instead. Measured over the whole window at $a = 1667$, the strikes split $33.32\text{ per cent} / 33.32\text{ per cent} / 33.36$% between $u \equiv 0, 2, 4$.
+**Two consequences.** First, **exactly one strike in three of every line is spent on $L_3$** — a fact used by counting in [P8, §2.2] and elsewhere, here obtained from the coordinate instead. Measured over the whole window at $a = 1667$, the strikes split $33.32\text{ per cent} / 33.32\text{ per cent} / 33.36$% between $u \equiv 0, 2, 4$.
 
 Second, the scheduling is **asymmetric between the rails**: the two members of a layer both act on the upper rail at $t \equiv 0$, but on the lower rail at opposite residues, $t\equiv1$ for the left and $t\equiv2$ for the right.
 
@@ -597,7 +586,7 @@ $D_p(j) = 4j^2 \bmod 2p$:
 | 7 | 0, 4, **2**, 8, 8, **2**, 4, 0 |
 | 11 | 0, 4, 16, 14, 20, 12, 12, 20, 14, 16, 4, 0 |
 
-$H_j = 2 + W_j$ over the first cycle (the histogram of these values is [0, Thm 2]):
+$H_j = 2 + W_j$ over the first cycle (the histogram of these values is [P1, Thm 2]):
 
 | $p$ | $H_j$ |
 |------|--------------------------------------------------------------------|
@@ -640,7 +629,7 @@ Moreover $p_+^2 - p_-^2 = 2p_- + 2p_+$ exactly, so the two lines' steps fill the
 
 One rule was followed throughout: **every deviation was measured against an explicit baseline before it was interpreted.** Two consequences worth recording.
 
-- The constant $2$ in $H_j = 2 + W_j$ is essential and was found by failure, not by design: the formula without it fails in $57$ of $78$ tested cases. (Recorded again in [0, App. B], since it is easy to mislay.)
+- The constant $2$ in $H_j = 2 + W_j$ is essential and was found by failure, not by design: the formula without it fails in $57$ of $78$ tested cases. (Recorded again in [P1, App. B], since it is easy to mislay.)
 - $D$ is **not** monotone. The ascending quantity is the raw $4j^2$; after folding modulo $2p$ the order scrambles. For $p = 7$ the fingerprint reads $0, 4, \mathbf{2}, 8, 8, \mathbf{2}, 4, 0$. Monotonicity holds only for $p = 3, 5$. Note also that $H$ satisfies a *sum* symmetry ($=8$) whereas $D$ satisfies an *equality*.
 
 Verification code and the tables behind every "zero failures" claim accompany the monograph from which this series is drawn. The claims of §5 are regenerated by `verify_central_pair.py`.
@@ -649,13 +638,14 @@ Verification code and the tables behind every "zero failures" claim accompany th
 
 **No progress toward the twin-prime conjecture is claimed, and no new bound.** Priority is not claimed for any result.
 
-*The computations and much of the prose in this paper were prepared with AI assistance (Claude, Anthropic), used for drafting and rewriting code and text, running the computations, searching the literature, and auditing the paper against its own scripts. The research direction, the questions asked, the decisions about what to publish and what to withdraw, and the responsibility for every claim are the author's. The full note is in the repository README.*
+---
 
+*The computations and much of the prose in this paper were prepared with AI assistance (ChatGPT, OpenAI; Claude, Anthropic), used for algebraic derivation, for drafting and rewriting code and text, for running the computations, and for auditing the papers against their own scripts. All statements were checked by the author, who is responsible for them; the repository README sets out the division of labour in full.*
 ---
 
 ## References
 
-The companion papers are cited as [0] and [IV].
+The eleven papers of this set are cited as [P1] to [P11], and the numbered entries below are the external works. The two kinds never share a number: a bracket with a P is a companion paper, a bare number is a reference in the list below. This paper imports only the definitions and statements of the companion papers, never their proofs.
 
 1. J. Friedlander and H. Iwaniec, *Opera de Cribro*, AMS Colloquium Publications **57**, 2010. — *used once, in §3.5, to name the classical object of which the geometric statement there is a reading.*
 2. N. J. A. Sloane (ed.), *The On-Line Encyclopedia of Integer Sequences*, sequences A033676, A033677 (the middle divisors) and A063655 (their sum). — *the central pair of §5.1 under its standard names.*

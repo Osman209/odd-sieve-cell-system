@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Verification for the additions of 2026-08-25:
-   [I, 3.5] the exact phase set of twin rows
-   [I, 3.6] the centre of a diamond and its four generators
-   [II, 3]  the line-3 channel in the refined generating function
-   [II, 4]  the pair count (p-3)^2+1
+   [P2, §3.5] the exact phase set of twin rows
+   [P2, §3.6] the centre of a diamond and its four generators
+   [P3, §3]  the line-3 channel in the refined generating function
+   [P3, §4]  the pair count (p-3)^2+1
 Run: python3 verify_new_additions.py [--fast]"""
 import sys, argparse, math
 from sympy import isprime, primerange, symbols, expand
@@ -28,7 +28,7 @@ def main():
     rows = [n for n in range(1, ROW) if isprime(6*n - 1) and isprime(6*n + 1)]
     R = set(rows)
 
-    print("\n--- [I, 3.5]: the exact phase set of a twin row ---")
+    print("\n--- [P2, §3.5]: the exact phase set of a twin row ---")
     bad = 0
     for p in primerange(5, PR):
         c = cpar(p)
@@ -54,7 +54,7 @@ def main():
     check("3. phase +1 among twin rows is {c} if c is a row, else empty", bad_plus, 0)
     check("4. phase -1 never occurs among twin rows", bad_minus, 0)
 
-    print("\n--- [I, 3.6]: the centre of a diamond and its four generators ---")
+    print("\n--- [P2, §3.6]: the centre of a diamond and its four generators ---")
     bad = 0; pairs = 0
     sub = rows[:80]
     for x in sub:
@@ -89,7 +89,7 @@ def main():
     check("9. unordered pairs tested for the 5-law", pairs, len(sub)*(len(sub) - 1)//2)
     check("10. corrected 5-law (5 | ab, or a = 1, or b = 1)", bad, 0)
 
-    print("\n--- [II, 3]: the line-3 channel in the refined generating function ---")
+    print("\n--- [P3, §3]: the line-3 channel in the refined generating function ---")
     u, v, w = symbols("u v w")
     from collections import Counter
     sets = [[5, 7], [5, 7, 11]] + ([] if a.fast else [[5, 7, 11, 13]])
@@ -121,7 +121,7 @@ def main():
     check("12. the 15 open cells split 8 + 6 + 1 by the line-3 channel",
           [cen[(0, 0, k)] for k in (0, 1, 2)], [8, 6, 1])
 
-    print("\n--- [II, 4]: the pair count for a diamond centre ---")
+    print("\n--- [P3, §4]: the pair count for a diamond centre ---")
     for p in (5, 7, 11, 13, 17, 19):
         S = [x for x in range(p) if x % p not in (1, p - 1)]
         cnt = sum(1 for x in S for y in S if (x*y) % p not in (1, p - 1))
@@ -144,7 +144,7 @@ def main():
     print(f"     twin rate by number of strikes spent on the line-3 slot, relative to base: {devs}")
     check("14. every ratio within 3% of one", all(abs(d - 1) <= 0.03 for d in devs), True)
 
-    print("\n--- [I, 3.6]: the gap around a k-line coincidence ---")
+    print("\n--- [P2, §3.6]: the gap around a k-line coincidence ---")
     bad = 0; tested = 0
     for lines in ([5,7],[5,7,11],[5,11,13],[7,11,13,17]):
         P = 1
@@ -156,7 +156,7 @@ def main():
     check("15. images tested around a coincidence", tested > 0, True)
     check("16. every image at distance >= sqrt(P+1)", bad, 0)
 
-    print("\n--- [IV, 3.8]: the balanced window is one word and a rotation ---")
+    print("\n--- [P6, §2.8]: the balanced window is one word and a rotation ---")
     from collections import Counter
     pp, qq, rr = 1009, 1013, 52
     check("17. the bundle condition 52*1013 < 53*1009", 52*1013 < 53*1009, True)
@@ -175,7 +175,7 @@ def main():
     check("20. every window's word is a rotation of the first",
           all(w in rot for w in words), True)
 
-    print("\n--- [IV, 3.8]: ownership and the cofactor ---")
+    print("\n--- [P6, §2.8]: ownership and the cofactor ---")
     from sympy import factorint
     check("21. 10387 = 13*17*47 inside [101^2,103^2)",
           (dict(factorint(10387)), 101**2 <= 10387 < 103**2),
@@ -193,7 +193,7 @@ def main():
                 if not isprime(m): bad += 1
     check("23. clean owner: p^3 >= Q^2 forces a prime cofactor", bad, 0)
 
-    print("\n--- [V, 2.1-2.2]: the cubic cut, the monotone deficit, the counterexample ---")
+    print("\n--- [P9, §§2.1-2.2]: the cubic cut, the monotone deficit, the counterexample ---")
     import numpy as np
     NN = 4_100_000 if a.fast else 20_000_000
     sv = np.ones(NN + 1, dtype=bool); sv[:2] = False
@@ -240,7 +240,7 @@ def main():
     Tw = int((sv[L] & sv[R2] & alive).sum())
     check("29. at the final cut the deficit equals -T", D[-1], -Tw)
 
-    print("\n--- [V, Thm 5]: the pair-overlap bound ---")
+    print("\n--- [P9, Thm 5]: the pair-overlap bound ---")
     from itertools import product as iproduct
     bad = 0; tight = []
     for l, r in iproduct(range(4), repeat=2):
@@ -257,7 +257,7 @@ def main():
     check("34. 7h^2-18h+9 = 0 at h_c", abs(7*hc*hc - 18*hc + 9) < 1e-12, True)
     check("35. alpha_c = exp(-h_c) to five places", round(math.exp(-hc), 5), 0.50681)
 
-    print("\n--- [V, 2.2]: the room identity T = C - R + W ---")
+    print("\n--- [P9, §2.2]: the room identity T = C - R + W ---")
     P, Q = 1009, 1013
     lo, hi = P*P, Q*Q
     z = Q**(2/3)
