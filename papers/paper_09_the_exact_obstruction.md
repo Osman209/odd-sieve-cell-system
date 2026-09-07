@@ -125,7 +125,7 @@ Write, for the window after the cut,
 **A quantitative model for the three counts, and the step it does not license.** Take the cut at the boundary of (2.1), $z = Q^{2/3}$ in a sector $(P^2,Q^2)$, and put
 $$h  =  \sum_{z \lt  q \le P}\frac1q  \longrightarrow  \log\tfrac32  =  0.405465\ldots,$$
 the limit because $\log P/\log z \to 3/2$. If the owed strikes fell on the surviving cells independently, one would get
-$$\frac RC \to 2h = 0.810930, \qquad \frac SC \to h^2 = 0.164402, \qquad \frac TC \to (1-h)^2 = 0.353472 .$$
+$$\frac{R}{C} \to 2h = 0.810930, \qquad \frac{S}{C} \to h^2 = 0.164402, \qquad \frac{T}{C} \to (1-h)^2 = 0.353472 .$$
 *Measured* over the 816 sectors with $5 \le P \lt  6300$: mean $R/C = 0.797$, rising toward $2h$ with $P$ ($0.748, 0.786, 0.798, 0.805$ by range), and $T/C \approx 0.35$ throughout. Sample sectors: $1009\to1013$ gives $C=146$, $R=110$, $S=18$, $T=54$; $2003\to2011$ gives $512, 396, 89, 205$; $6229\to6247$ gives $2729, 2229, 454, 954$.
 
 **The model is good and the inference from it is invalid, which is the point of recording it.** The temptation is to argue that $2h \lt  1$ forces $R \lt  C$. It does not: $2h$ is an average over a long range, while a sector is a short interval, and the two are not interchangeable. The counterexample is small and explicit. In the sector $29^2 \to 31^2$ the cut is $z = 31^{2/3} = 9.87$ and $2h = 0.7145 \lt  1$, yet
@@ -139,9 +139,9 @@ $$A = \sum \Bigl[\binom{\ell}{2}+\binom{r}{2}\Bigr], \qquad B = \sum \ell r,$$
 the pairs of lines piling on one member and the pairs splitting across the two.
 
 > **Theorem 5 (pair-overlap bound).** For all integers $0 \le \ell, r \le 3$,
-> $$\mathbf 1_{\lbrace \ell = r = 0\rbrace} \ \ge\ 1 - \ell - r + \tfrac23\Bigl[\binom{\ell}{2}+\binom{r}{2}\Bigr] + \tfrac19 \ell r,$$
+> $\displaystyle \mathbf 1_{\lbrace \ell = r = 0\rbrace} \ \ge\ 1 - \ell - r + \tfrac23\Bigl[\binom{\ell}{2}+\binom{r}{2}\Bigr] + \tfrac19 \ell r,$
 > and therefore, summing over the surviving cells,
-> $$T \ \ge\ C - R + \tfrac23 A + \tfrac19 B .$$
+> $\displaystyle T \ \ge\ C - R + \tfrac23 A + \tfrac19 B .$
 
 *Proof.* Sixteen cases, checked directly; equality holds at $(0,0)$, $(0,1)$, $(1,0)$, $(0,3)$, $(3,0)$ and $(3,3)$. $\blacksquare$
 
@@ -150,9 +150,9 @@ the pairs of lines piling on one member and the pairs splitting across the two.
 *What changes, and it is the only place in this work where it changes.* The bound uses the overlap as a **resource**: the more the lines pile up, the larger $A$ and $B$, and the better the bound. Consequently the estimates one needs run in the opposite direction from everywhere else — an upper bound for $R$ and lower bounds for $A$ and $B$. In the free model $R/C \sim 2h$ and $A/C \sim B/C \sim h^2$ give $T/C \gtrsim 1 - 2h + \tfrac79 h^2$, whose root is $h_c = (9-3\sqrt2)/7 = 0.679623$, i.e. a cut exponent $\alpha_c = e^{-h_c} = 0.50681$ against $0.60653$ for $R \lt  C$ alone.
 
 *And the model overstates both terms, by different amounts.* Under the cut, a line $L_q$ strikes $n$ only once it has begun, that is when $q^2 \le n$ [Theorem 2], so $\ell$ counts the distinct prime factors $q \mid n$ with $q^2 \le n$: it is $0$ at a prime, $1$ at a product of two primes — the larger line has not started — and $3$ at a product of three, since the two smaller factors already exceed $X^{\alpha} \gt  X^{1/2}$ and so the largest lies below $X^{1/2}$. The value $\ell = 2$ is therefore impossible above $\alpha = 1/2$, and is measured at $0.0005$. Writing $s_k$ for the share of rough numbers with $k$ prime factors, the bound becomes
-$$T/C \ \ge\ 1 - 2\,\mathbf{E}[\ell] + \tfrac43\,\mathbf{E}\!\left[\tbinom{\ell}{2}\right] + \tfrac19\,\mathbf{E}[\ell]^2, \qquad \mathbf{E}[\ell] = s_2 + 3s_3, \quad \mathbf{E}\!\left[\tbinom{\ell}{2}\right] = 3s_3,$$
+$$T/C \ \ge\ 1 - 2\ \mathbf{E}[\ell] + \tfrac43\ \mathbf{E}\left[\tbinom{\ell}{2}\right] + \tfrac19\ \mathbf{E}[\ell]^2, \qquad \mathbf{E}[\ell] = s_2 + 3s_3, \quad \mathbf{E}\left[\tbinom{\ell}{2}\right] = 3s_3,$$
 where the last term uses the independence of the two rails, measured below. The shares follow from the standard density of an integer with $k$ prime factors $X^{a_1} \le \cdots \le X^{a_k}$: with $\beta = \alpha/2$,
-$$s_k \propto I_k(\beta), \qquad I_1 = 1, \quad I_2 = \int_{\beta}^{1/2}\frac{da}{a(1-a)} = \log\frac{1-\beta}{\beta}, \quad I_3 = \iint \frac{da_1\,da_2}{a_1a_2a_3}$$
+$$s_k \propto I_k(\beta), \qquad I_1 = 1, \quad I_2 = \int_{\beta}^{1/2}\frac{da}{a(1-a)} = \log\frac{1-\beta}{\beta}, \quad I_3 = \iint \frac{da_1\ da_2}{a_1a_2a_3}$$
 over $\beta \le a_1 \le a_2 \le a_3$ with $a_3 = 1-a_1-a_2$; no $k \ge 4$ term contributes while $\alpha \gt  1/2$.
 
 | $\alpha$ | $0.60$ | $0.58$ | $0.56$ | $0.55$ | $0.54$ | $0.53$ | $0.52$ |
@@ -174,9 +174,9 @@ By Theorem 1 every surviving endpoint has $\Omega(n) \in \lbrace 1,2\rbrace$, so
 $$\sum_{\text{endpoints of surviving cells}} (-1)^{\Omega(n)}  =  R - P  =  2(R-C).$$
 
 > **Theorem 6.** With the cut (2.1) in force,
-> $$\boxed{ 2 (R-C)  =  \sum_{\text{endpoints of surviving cells}} (-1)^{\Omega(n)} }$$
+> $\displaystyle \boxed{ 2 (R-C)  =  \sum_{\text{endpoints of surviving cells}} (-1)^{\Omega(n)} }$
 > and consequently
-> $$R \lt  C \quad\Longleftrightarrow\quad \sum (-1)^{\Omega(n)} \lt  0 .$$
+> $\displaystyle R \lt  C \quad\Longleftrightarrow\quad \sum (-1)^{\Omega(n)} \lt  0 .$
 
 **This is the point of the paper.** The inequality $R\lt C$ is what every criterion in Papers 5 to 8 eventually reduces to. Theorem 6 says it is *identical* to the statement that a Liouville sum over the sifted set is negative. The parity problem is therefore not an external obstacle that the framework happens to run into; **it is what the framework reduces to.**
 
@@ -204,7 +204,7 @@ Two remarks make the shape of this clearer.
 
 
 **The same content as a covariance, which is the sharpest form we can give it.** Under the cut, classify a surviving cell by the two indicators $C_L, C_R \in \lbrace 0,1\rbrace$ recording whether its left and right endpoints are composite, and set $u = \mathbb E C_L$, $v = \mathbb E C_R$, $\kappa = \mathbb E(C_LC_R) - uv$. A four-state tally of the cells — both prime, one composite either way, both composite — together with $R/C = u+v$ gives immediately
-$$\boxed{\ \frac TC  =  (1-u)(1-v) + \kappa .\ }$$
+$$\boxed{\ \frac{T}{C}  =  (1-u)(1-v) + \kappa .\ }$$
 The independent part and the correlation, and nothing else. The Frechet inequality $\mathbb E(C_LC_R) \ge \max(0, u+v-1)$ then places a floor under $\kappa$, and
 $$T = 0 \quad\Longleftrightarrow\quad \kappa = -(1-u)(1-v),$$
 that is, exactly at maximal anti-correlation between the two rails.
@@ -249,11 +249,11 @@ That uniformity is the reason no choice of cut, level or geometry has ever impro
 The heuristic version of $R\lt C$ is also instructive, because it fails by a small and identifiable amount.
 
 Among the $z$-rough numbers below $x$, the proportion that are prime is $1/(u \omega(u))$ with $u = \log x/\log z$ and $\omega$ Buchstab's function; hence
-$$\frac RC  =  2\Big(1-\frac{1}{u \omega(u)}\Big), \qquad\text{so}\qquad R\lt C \iff u \omega(u) \lt  2 .$$
+$$\frac{R}{C}  =  2\Big(1-\frac{1}{u \omega(u)}\Big), \qquad\text{so}\qquad R\lt C \iff u \omega(u) \lt  2 .$$
 Since $\omega(u) \to e^{-\gamma}$ rapidly, the numerical threshold is $u^{*} \approx 3.5658$, close to the limiting proxy $2e^{\gamma} \approx 3.56215$; the two are near but not equal, and we use $u^{*}$ where the numerics require it and $2e^{\gamma}$ only as the limiting value. Equivalently: **$R\lt C$ asks that more than half the rough numbers be prime.**
 
 *At the natural cut the threshold is closed-form, and needs no delay system.* The cut (2.1) is $z^3 \gt  U$, i.e. $u = 3$, and there $\omega(u) = (1+\log(u-1))/u$ still holds, so
-$$u \omega(u)\big|_{u=3}  =  1+\log 2, \qquad \frac RC  \longrightarrow  2\Big(1-\frac{1}{1+\log 2}\Big)  =  0.818768 .$$
+$$u \omega(u)\big|_{u=3}  =  1+\log 2, \qquad \frac{R}{C}  \longrightarrow  2\Big(1-\frac{1}{1+\log 2}\Big)  =  0.818768 .$$
 The same number arrives without Buchstab at all: a $z$-rough $n \le x$ with $z = x^{1/3}$ is prime or a product of two primes $x^{\alpha}, x^{1-\alpha}$ with $\alpha \in (1/3,1/2)$, and counting the latter gives $\frac{x}{\log x}\int_{1/3}^{1/2}\frac{\mathrm{d}\alpha}{\alpha(1-\alpha)} = \frac{x}{\log x}\log 2$, so $\Phi(x,x^{1/3}) \sim (1+\log 2) x/\log x$ and the prime proportion tends to $1/(1+\log 2) = 0.590616$. **So at the cut this paper actually uses, the heuristic of this subsection is a consequence of the prime number theorem and not of any sieve estimate.**
 
 *Measured*, at $M = h = 1009$ with the cut at $U^{\alpha}$; the predicted row is $2(1-1/u\omega(u))$:

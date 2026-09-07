@@ -27,13 +27,32 @@ function spans(t) {
 function lineOf(t, i) { return t.slice(0, i).split('\n').length; }
 
 let grand = 0;
-for (const f of process.argv.slice(2)) {
+const FILES = process.argv.slice(2);
+if (FILES.length === 0) {
+  // A run with no files silently "passes" and is worse than no check at all.
+  console.error('usage: node code/check_github_math.js papers/*.md README.md');
+  console.error('refusing to run with no files: an empty run would report zero problems.');
+  process.exit(2);
+}
+for (const f of FILES) {
   const t = fs.readFileSync(f, 'utf8');
   const S = spans(t);
-  let esc = 0, fail = 0, silent = 0, deny = 0, pipe = 0, angle = 0, tagc = 0;
+  let esc = 0, fail = 0, silent = 0, deny = 0, pipe = 0, angle = 0, tagc = 0, bq = 0, adj = 0;
   const msgs = [];
+  // display math inside a blockquote: GitHub does not reliably treat it as math,
+  // and markdown emphasis then eats the underscores of }_{ subscripts
+  t.split('\n').forEach((ln, k) => {
+    if (/^\s*>/.test(ln) && ln.includes('$$')) {
+      bq++; msgs.push(`  L${k+1} DISPLAY MATH IN BLOCKQUOTE (use inline $\\displaystyle ...$): ${ln.slice(0,60)}`);
+    }
+    // two spans separated by one punctuation character merge into one on GitHub
+    const a = /\$[^$\n]+\$[^\sA-Za-z0-9]\$[^$\n]+\$/.exec(ln);
+    if (a) { adj++; msgs.push(`  L${k+1} ADJACENT SPANS (merge into one): ${a[0].slice(0,50)}`); }
+  });
   for (const s of S) {
     if (ESC.test(s.tex)) { esc++; msgs.push(`  L${lineOf(t, s.at)} escape-stripped: ${s.tex.slice(0,70)}`); }
+    // a closing $ preceded by a space renders on GitHub and is invisible to pandoc
+    if (!s.disp && /[ ]$/.test(s.tex)) { adj++; msgs.push(`  L${lineOf(t, s.at)} SPACE BEFORE CLOSING $: ${s.tex.slice(-40)}`); }
     ESC.lastIndex = 0;
     const un = s.tex.replace(ESC, '$1');
     for (const d of DENY) if (un.includes(d)) { deny++; msgs.push(`  L${lineOf(t, s.at)} DENIED macro "${d.trim()}": ${un.slice(0,60)}`); }
@@ -66,10 +85,10 @@ for (const f of process.argv.slice(2)) {
       i = j;
     } else i++;
   }
-  const bad = esc + fail + silent + deny + badT + angle + tagc;
+  const bad = esc + fail + silent + deny + badT + angle + tagc + bq + adj;
   grand += bad;
-  console.log(`${f}\n  formulas ${S.length} | escape-stripped ${esc} | render-fail ${fail} | silent-risk ${silent} | denied ${deny} | broken tables ${badT} | raw angle ${angle} | \\tag ${tagc} | raw-pipe spans ${pipe}`);
-  msgs.filter(m=>/FAIL|DENIED|escape|TABLE/.test(m)).concat(msgs.filter(m=>!/FAIL|DENIED|escape|TABLE/.test(m))).slice(0, 14).forEach(m => console.log(m));
+  console.log(`${f}\n  formulas ${S.length} | escape-stripped ${esc} | render-fail ${fail} | silent-risk ${silent} | denied ${deny} | broken tables ${badT} | raw angle ${angle} | \\tag ${tagc} | raw-pipe spans ${pipe} | $$-in-quote ${bq} | adjacency ${adj}`);
+  msgs.filter(m=>/FAIL|DENIED|escape|TABLE|BLOCKQUOTE|ADJACENT|SPACE BEFORE/.test(m)).concat(msgs.filter(m=>!/FAIL|DENIED|escape|TABLE|BLOCKQUOTE|ADJACENT|SPACE BEFORE/.test(m))).slice(0, 14).forEach(m => console.log(m));
   if (msgs.length > 14) console.log(`  ... and ${msgs.length - 14} more`);
 }
 console.log(`\nTOTAL problems: ${grand}`);

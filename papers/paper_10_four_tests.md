@@ -294,14 +294,14 @@ a function of $p/k$ alone: $0.17$ at $p = 0.51k$, $1.12$ at $0.6k$, $1.88$ at $0
 
 The sharing can also be produced outright. Write $k = p + 2t$ with $t \ge 1$ and take
 $$a = p + 4t + 2 . \qquad\text{Then}\qquad pa = k^2 + 2p - 4t^2, \qquad (p+2)a = (k+2)^2 - 4t^2,$$
-so both strikes lie in $W_k$ **whenever $2t^2 \lt  p$** — that is, whenever the two lines are close enough to the root. Verified on $44{,}551$ instances of the identity and $3{,}168$ of the inclusion, without exception. So among adjacent odd lines near the root, sharing is not a tendency but a construction; measured, $92.5\%$ of all adjacent odd pairs above $k/2$ share, at $k = 10^3, 10^4, 10^5$ alike.
+so both strikes lie in $W_k$ **whenever $2t^2 \lt  p$** — that is, whenever the two lines are close enough to the root. Verified on $44{,}551$ instances of the identity and $3{,}168$ of the inclusion, without exception. So among adjacent odd lines near the root, sharing is not a tendency but a construction; measured, $92.5$% of all adjacent odd pairs above $k/2$ share, at $k = 10^3, 10^4, 10^5$ alike.
 
 **The cofactor lists move by a law, and inside the candidate strip the law is exact.** The list $F_p(k) = \lbrace a \text{ odd} : k^2 \lt  pa \lt  (k+2)^2\rbrace$ is the strike set of $L_p$ read on the cofactor axis rather than the cell axis, where [P2, Cor 4] presents it as two interleaved progressions of step $p$; on this axis it is a single run. For a candidate line that run has $h_p(k)$ terms with $2 \le h_p \le 4$ — measured over $40{,}191$ lines, never broken and never outside that range, with $h_p = 2, 3, 4$ occurring $15{,}414$, $18{,}707$ and $6{,}070$ times. Writing $A_p$ and $B_p$ for its first and last entries, $p \lt  q$ gives $A_p \gt  A_q$ and $B_p \gt  B_q$: the runs slide left as the line grows. Since the overlap never exceeds one entry, sharing is an equality of endpoints,
 $$F_p(k) \cap F_q(k) \ne \varnothing \iff A_p = B_q \iff A_p - A_q = 2\big(h_q - 1\big),$$
 verified on all $2{,}666{,}595$ pairs of candidate lines with $k \lt  801$.
 
 Passing to the next window, the line resumes where it stopped, except that a strike landing exactly on the shared boundary belongs to neither open window and is skipped:
-$$A_p(k+2) = B_p(k) + 2 + 2\cdot\mathbf{1}_{\,p \,\mid\, (k+2)^2} = A_p(k) + 2h_p(k) + 2\cdot\mathbf{1}_{\,p \,\mid\, (k+2)^2},$$
+$$A_p(k+2) = B_p(k) + 2 + 2\cdot\mathbf{1}_{\ p \ \mid\  (k+2)^2} = A_p(k) + 2h_p(k) + 2\cdot\mathbf{1}_{\ p \ \mid\  (k+2)^2},$$
 exact on all $79{,}790$ line-window pairs tested, of which $1{,}398$ trigger the indicator. **And the indicator never fires on a prime line of the strip.** If $p$ is prime and $p \mid (k+2)^2$ then $p \mid k+2$; as $k+2 \gt  p$ and both are odd, $k+2 \ge 3p$, while $p \gt  k/2$ gives $3p \gt  3k/2 \gt  k+2$ for $k \ge 5$ — a contradiction. Checked: of the $77{,}427$ prime lines in the strip with $k \lt  3001$, none triggers it, and of the $128$ occurrences inside the strip below $k = 801$ every one is on a composite line.
 
 So within the system of prime candidate lines the movement is an exact equality: each line advances by $2h_p$, which is $4$, $6$ or $8$, and for two lines the difference of the run-starts obeys
@@ -316,7 +316,7 @@ This closed form explains the measured rate. If $2n^2 \bmod p$ is equidistribute
 
 That the structure differs is easy to state. The map $n \mapsto n^2 \bmod p$ is injective on $[P1, (p-1)/2]$ **if and only if $p$ is prime** — a collision $n_1^2 \equiv n_2^2$ needs $p \mid (n_2-n_1)(n_2+n_1)$ with both factors below $p$ — with the single exception $p = 9$, where the smallest collision falls outside the range. Checked: injective for all $76$ odd primes below $400$ and for exactly one of the $122$ odd composites. But the deviation of the sharing count from its mean does not detect it: measured as $|{\cdot}|/\sqrt{p}$ over $p \in [8000, 20000)$, it is $0.270$ for primes, $0.260$ for composites with least factor at least $11$, $0.222$ for multiples of $3$ and $0.203$ for multiples of $5$ — the same order throughout, and *smaller* for the composites with small factors, not larger. The sharing count is a sum over single values of $n$, the threshold moves with $n$, and the sum averages away any local structure in the residues.
 
-**And that is exactly where the primality is missing.** Take $k = 23$. The cofactor lists are $13 : 41,43,45,47$; $17 : 33,35$; $19 : 29,31$; $21 : 27,29$; $23 : 25,27$. Two sharings are forced by the construction — lines $19, 21$ at the cofactor $29$, and lines $21, 23$ at the cofactor $27$ — and all four strikes lie in $(529, 625)$. But the shared line is $21$, which is composite. The two prime lines present, $19$ and $23$, use *different* cofactors in these two sharings, and the composite line between them does not merge them. Of the $25{,}001$ adjacent odd pairs above $k/2$ at $k = 10^5$, $23{,}069$ share and only $519$ consist of two primes — a ratio of $2.1\%$, falling like $1/\log^2 k$.
+**And that is exactly where the primality is missing.** Take $k = 23$. The cofactor lists are $13 : 41,43,45,47$; $17 : 33,35$; $19 : 29,31$; $21 : 27,29$; $23 : 25,27$. Two sharings are forced by the construction — lines $19, 21$ at the cofactor $29$, and lines $21, 23$ at the cofactor $27$ — and all four strikes lie in $(529, 625)$. But the shared line is $21$, which is composite. The two prime lines present, $19$ and $23$, use *different* cofactors in these two sharings, and the composite line between them does not merge them. Of the $25{,}001$ adjacent odd pairs above $k/2$ at $k = 10^5$, $23{,}069$ share and only $519$ consist of two primes — a ratio of $2.1$%, falling like $1/\log^2 k$.
 
 ### 2.10 Why the sharing equivalence closes the route
 
@@ -354,20 +354,20 @@ The upper bound is $6v \le N+9 \iff (a-3)(b-3) \ge 0$, which holds for every fac
 > **Theorem 5.** Let $p \gt  121$ and $H = (N+9)/6$. Inside the slice $H - L \le u \lt  v \le H$ with $3 \le L \lt  \sqrt{N/3}$, a collision exists if and only if $3 \mid N$, and then it is the single pair $u = (N-9)/6$, $v = (N+9)/6$.
 
 This follows from the identity
-$$N\,(v-u-3k) \ = \ 3\Big[ \big(\tfrac{N}{6}-u\big)^2 - \big(\tfrac{N}{6}-v\big)^2 \Big],$$
+$$N\ (v-u-3k) \ = \ 3\Big[ \big(\tfrac{N}{6}-u\big)^2 - \big(\tfrac{N}{6}-v\big)^2 \Big],$$
 whose right side has modulus below $N$ inside the slice while the left is a multiple of $N$; hence $v-u = 3k$, then $u+v = N/3$, so $3 \mid N$, and $v \le N/6 + 3/2$ forces $k=1$. Verified over the primes in $(121, 6\cdot10^4)$: no collision at all when $3 \nmid N$, and exactly one in each of the $3{,}001$ cases with $3 \mid N$.
 
 **Collisions enter the slice in numbered stages, and each stage has an explicit threshold.** Keep $H = (N+9)/6$ and the slice $H - L \le u \lt  v \le H$, and for a collision write $d = v-u$ and $s = u+v$, so that $v^2-u^2 = kN$ becomes $ds = kN$. Since $N$ is odd, $d$ and $k$ have the same parity, so $d - 3k$ is even; put $d - 3k = 2t$. Then
-$$2tN \ = \ d\,(N - 3s),$$
+$$2tN \ = \ d\ (N - 3s),$$
 and the lower edge of the slice gives $s \ge 2(H-L) + d$, whence $2tN \le 3d(2L-3-d)$. The right-hand side is $3[(L-\tfrac32)^2 - (d-L+\tfrac32)^2]$ by an identity, so the bound holds for every $d$ with no further hypothesis:
 
 > **Theorem 6.** For $p \gt  121$ and $L \ge 3$, every collision inside the slice satisfies
-> $$0 \ \le \ t \ \le \ \Big\lfloor \frac{3\,(L - \tfrac32)^2}{2N} \Big\rfloor, \qquad t = \tfrac{1}{2}(d - 3k).$$
+> $\displaystyle 0 \ \le \ t \ \le \ \Big\lfloor \frac{3\ (L - \tfrac32)^2}{2N} \Big\rfloor, \qquad t = \tfrac{1}{2}(d - 3k).$
 > More generally, for a slice with top $H_0$ the bound reads $t \le \lfloor (N - 6H_0 + 6L)^2/(24N) \rfloor$.
 
 So the stages open one at a time as the slice widens: $t = 0$ needs only $L \ge 3$ and is the pair of Theorem 5; $t = 1$ needs $L \ge \tfrac32 + \sqrt{2N/3}$; $t = 2$ needs $L \ge \tfrac32 + \sqrt{4N/3}$. **This widens Theorem 5 by a factor $\sqrt2$:**
 $$3 \le L \ \lt \ \tfrac32 + \sqrt{2N/3} \quad\Longrightarrow\quad \text{the slice detects divisibility by } 3 \text{ and nothing else.}$$
-The parity law and the identity were checked on $276{,}412$ collisions without exception, and the bound on every slice tested once the top of the slice and the reference point use the same $H$ — the exact rational $(p+11)/6$, not its integer part, a distinction that matters at small $p$ and produced spurious violations before it was fixed. The census bears out the staging: in the last $2\%$ of the belt below $p = 1.2\cdot10^5$ there are $5{,}560$ collisions at $t = 0$, $1{,}027$ at $t = 1$, and none above.
+The parity law and the identity were checked on $276{,}412$ collisions without exception, and the bound on every slice tested once the top of the slice and the reference point use the same $H$ — the exact rational $(p+11)/6$, not its integer part, a distinction that matters at small $p$ and produced spurious violations before it was fixed. The census bears out the staging: in the last $2$% of the belt below $p = 1.2\cdot10^5$ there are $5{,}560$ collisions at $t = 0$, $1{,}027$ at $t = 1$, and none above.
 
 The earlier counterexample is now explained rather than merely recorded. At $N = 64{,}375$ the pair $u = 10{,}522$, $v = 10{,}728$ has $d = 206$, $k = 68$, hence $t = 1$; the narrowest slice containing it has $L = H - u = 208.6667$, while the stage-one threshold is $\tfrac32 + \sqrt{2N/3} = 208.6634$. It clears the threshold by $0.0033$.
 

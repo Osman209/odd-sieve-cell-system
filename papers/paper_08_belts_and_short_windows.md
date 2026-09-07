@@ -64,7 +64,7 @@ Sections 3–5 work inside a sector bounded by consecutive odd squares. This sec
 ### 2.1 Theorem 1: the size of a belt
 
 > **Theorem 1.** For consecutive primes $q\lt r$ with $g = r-q$, the belt holds exactly
-> $$G(q,r)  =  \frac{r^2-q^2}{6}-1  =  \frac{g(2q+g)}{6}-1$$
+> $\displaystyle G(q,r)  =  \frac{r^2-q^2}{6}-1  =  \frac{g(2q+g)}{6}-1$
 > cells, so its size grows like $qg$.
 
 *Proof.* Both $q^2$ and $r^2$ are $\equiv 1 \pmod 6$, so the cells strictly between the two gates are exactly the $(r^2-q^2)/6 - 1$ complete cells of $L_3$ in the interval. $\blacksquare$
@@ -74,7 +74,7 @@ Sections 3–5 work inside a sector bounded by consecutive odd squares. This sec
 ### 2.2 Verified Law 2: the new line's reach depends on the gap, not on its size
 
 > **Verified Law 2 (conditional).** Suppose $g^2 \lt  2q$. Then, within its own belt, the number of cells the line $L_q$ can strike at all is
-> $$H_q  =  \left\lfloor \frac{2g}{3}\right\rfloor,$$
+> $\displaystyle H_q  =  \left\lfloor \frac{2g}{3}\right\rfloor,$
 > **independent of $q$.**
 
 *Proof under the hypothesis.* If $g^2 \lt  2q$ the line completes no extra lap before the next gate, so it reaches only the cofactors $q+2, q+4, \dots, q+2g$, giving $g$ candidate strikes; one in every three falls on $L_3$ and so touches no cell of the grid, leaving $\lfloor 2g/3 \rfloor$. $\blacksquare$
@@ -108,7 +108,7 @@ Raw reach is not closing power: a strike may land on a cell an older line has al
 Nothing above uses primality of the intermediate lines, and the next bound deliberately gives them more power than they have.
 
 > **Proposition 1.** In the belt $q\to r$ of length $L = r^2-q^2$, any line $s$ makes at most $\lceil L/2s \rceil$ strikes, of which at most a fraction $2/3$ touch cells of the grid. Hence, allowing **every** odd $s$ not divisible by $3$ in a range to act as an independent line and ignoring all overlap between them, the layer $q-D \le s \le q$ can close at most
-> $$C_D(q,r)  =  \sum_{\substack{q-D \le s \le q\cr  s \text{ odd},\ 3\nmid s}} \left\lceil \tfrac{2}{3}\left\lceil \tfrac{L}{2s}\right\rceil\right\rceil$$
+> $\displaystyle C_D(q,r)  =  \sum_{\substack{q-D \le s \le q\cr  s \text{ odd},\ 3\nmid s}} \left\lceil \tfrac{2}{3}\left\lceil \tfrac{L}{2s}\right\rceil\right\rceil$
 > cells.
 
 For the belt $499 \to 503$ ($G = 667$): the newest quarter has ceiling $C = 168$ ($25$% of the belt) and closes $6$ in fact; the newest half has ceiling $376$ ($56$%) and closes $15$. For $997 \to 1009$ ($G = 4011$): the newest tenth has ceiling $316$ and closes $14$; the newest quarter $836$ and closes $28$; the newest half $1{,}977$ — under half the belt — and closes $68$. **The ceilings are generous by one to two orders of magnitude, and the real burden falls on lines far below $q/2$.**
@@ -126,7 +126,7 @@ Proposition 1 invites an obvious attempt: build the full pyramid of age layers $
 and the cumulative total already passes $G$ at the **second** layer.
 
 The asymptotic is worth getting right, because it is the point of the section. **The sum runs over every $s$ coprime to $6$, not over the primes**, and those have density $1/3$, so
-$$\sum_{\substack{s \le q\cr (s,6)=1}} \frac1s  =  \frac13\log q + O(1), \qquad\text{whence}\qquad \sum_s \tfrac23\cdot\tfrac{L}{2s}  =  \frac L3\sum_s\frac1s  \sim  \frac L9 \log q .$$
+$$\sum_{\substack{s \le q\cr (s,6)=1}} \frac1s  =  \frac13\log q + O(1), \qquad\text{whence}\qquad \sum_s \tfrac23\cdot\tfrac{L}{2s}  =  \frac{L}{3}\sum_s\frac1s  \sim  \frac{L}{9} \log q .$$
 Against $G \sim L/6$ the ratio is therefore
 $$\frac{\sum_s C_s}{G}  \sim  \frac23\log q$$
 — a **logarithm**, not an iterated logarithm. Checked against the table: $\tfrac23\log(q/4)$ gives $3.22$, $3.68$, $5.22$ at $q = 499,\ 997,\ 10007$ against the measured $3.14$, $3.47$, $5.25$.
@@ -146,7 +146,7 @@ between two consecutive odd squares — one third of a sector. Two things live n
 The cut of [P9, §2.1] takes $z$ with $z^3$ above the window, so that every surviving endpoint is prime or a product of exactly two primes. Read line by line rather than as a single cut, the same inequality becomes a ladder.
 
 > **Proposition 1b.** Let $N$ lie in $(M^2,(M+2)^2)$ and let $p$ be its least prime factor, so that the strike $N$ on the line $p$ is *new* — not inherited from any smaller line. If $\Omega(N) \ge r$ then $N \ge p^r$, and therefore
-> $$p  \lt  (M+2)^{2/r} .$$
+> $\displaystyle p  \lt  (M+2)^{2/r} .$
 
 *Proof.* Every prime factor of $N$ is at least $p$, so $N \ge p^{\Omega(N)} \ge p^r$; and $N \lt (M+2)^2$. $\blacksquare$
 
@@ -258,7 +258,7 @@ $$H = S + R_1 + 2R_2, \qquad D = S + R_1 + R_2, \qquad\text{so}\qquad H - D = R_
 A double visit looks like $249065 = 5 \cdot 109 \cdot 457$ in the window at $M = 499$: the core owns it through $5$, and the shell lines $109$ and $457$ each pass over it later without creating anything. A third shell line on the same number is impossible.
 
 **So the composites of the window split without any inclusion–exclusion between the parts:**
-$$\mathcal{C}_{\text{core}} = \lbrace N : P^-(N) \le P_0 \rbrace, \qquad \mathcal{C}_{\text{shell}} = \lbrace N = pq : P_0 \lt p \le M \lt q \rbrace,$$
+$$\mathcal{C}_{\text{core}} = \lbrace N : P^-(N) \le P_0 \rbrace, \qquad \mathcal{C}_{\text{shell}} = \lbrace N = pq : P_0 \lt p \le M \lt q \rbrace\rvert,$$
 the second consisting entirely of semiprimes, the first holding every $N$ with $\Omega \ge 3$ together with the semiprimes whose small factor is in the core.
 
 **The strips of two shell lines almost never meet.** Each shell line inspects the cofactor strip $I_p = (M^2/p,\ (M+2)^2/p)$. For $p \lt r \le M$ these overlap exactly when $rM^2 \lt p(M+2)^2$; writing $r = p+g$ this is $gM^2 \lt 4p(M+1)$.
@@ -284,7 +284,7 @@ Below $T_-$ no two cofactor strips can meet at all; above $T_+$ adjacent odd lin
 **Above $T_+$ the handover carries one bit.** Writing $q_{\min}, q_{\max}$ for the first and last cofactor of a line, the difference $q_{\min}(p-2) - q_{\max}(p)$ takes **only the values $0$ and $2$** — zero exceptions over $89{,}698$ adjacent pairs. So the cofactor blocks of the top shell form a single strip on the odd axis with no gaps at all, and the only repetition permitted is one shared value. Below $T_+$ the differences grow without bound, which is what the threshold marks.
 
 > **Proposition 1d.** For $T_+ \lt p \le M$ put $X = 2(s+1)^2$ with $s = (M-p)/2$, and let $\varepsilon_p = 1$ when the lines $p$ and $p-2$ share a cofactor and $0$ otherwise. Then
-> $$\varepsilon_p = 1 \quad\Longleftrightarrow\quad \left\lfloor \frac{X}{p-2} \right\rfloor + 1 = \left\lceil \frac{X}{p} \right\rceil .$$
+> $\displaystyle \varepsilon_p = 1 \quad\Longleftrightarrow\quad \left\lfloor \frac{X}{p-2} \right\rfloor + 1 = \left\lceil \frac{X}{p} \right\rceil .$
 
 *Proof.* The last diagonal a line reaches is $\lceil X/p\rceil$, since $2s^2 + 2M + 2 = X + 2p$; the first diagonal of the next line is $\lfloor X/(p-2)\rfloor + 1$. The two coincide exactly when the blocks share a value. $\blacksquare$
 
@@ -319,12 +319,12 @@ and as $a$ runs they trace four **tracks**. Substituting $q = 6a-1$ makes every 
 *Verification.* Exact for $a = 1,\dots,399$.
 
 > **Theorem 3 (which lines can ever own a track).** Let $r \gt  3$. Then $r$ divides $36a^2+Ba+C$ for some $a$ exactly when the discriminant $B^2-144C$ is a quadratic residue modulo $r$, the case of discriminant $\equiv 0$ counting as a residue and giving a double root. (For $r = 2, 3$ the leading coefficient vanishes modulo $r$ and the criterion does not apply; those two lines are handled by the grid itself.) For the eight members the discriminants are $144k$ with
-> $$k  =  -4,\ -6 \ (T_1); \qquad -10,\ -12 \ (T_2); \qquad 14,\ 12 \ (T_3); \qquad 8,\ 6 \ (T_4),$$
+> $\displaystyle k  =  -4,\ -6 \ (T_1); \qquad -10,\ -12 \ (T_2); \qquad 14,\ 12 \ (T_3); \qquad 8,\ 6 \ (T_4),$
 > so the conditions read $r \equiv 1 \pmod 4$ and $(-6 | r) = 1$ for $T_1$; $(-10 | r)=1$ and $r \equiv 1 \pmod 3$ for $T_2$; $(14 | r)=1$ and $(3 | r)=1$ for $T_3$; $r \equiv \pm1 \pmod 8$ and $(6 | r)=1$ for $T_4$.
 
 *Verification.* Every prime factor of every member for $a = 1,\dots,400$ — $4{,}209$ checks — satisfies its condition; no violation.
 
-Each individual condition admits half the primes (measured over primes below $10^5$: $49.7$–$50.0$%), but a cell falls to a strike on **either** member, so the union admits three quarters: measured $75.0,\ 74.8,\ 75.0,\ 75.0$% for $T_1,T_2,T_3,T_4$. Requiring eligibility for all four at once cuts this to **exactly a quarter** — the eight discriminants reduce to the five independent characters $(-1),(2),(3),(5),(7)$, giving $32$ sign patterns of which $8$ pass; measured $24.84$% against the naive independent guess $(3/4)^4 = 31.6$%.
+Each individual condition admits half the primes (measured over primes below $10^5$: $49.7\text{--}50.0$%), but a cell falls to a strike on **either** member, so the union admits three quarters: measured $75.0,\ 74.8,\ 75.0,\ 75.0$% for $T_1,T_2,T_3,T_4$. Requiring eligibility for all four at once cuts this to **exactly a quarter** — the eight discriminants reduce to the five independent characters $(-1),(2),(3),(5),(7)$, giving $32$ sign patterns of which $8$ pass; measured $24.84$% against the naive independent guess $(3/4)^4 = 31.6$%.
 
 **The four tracks are not equivalent.** Each is a pair of quadratics, so its twin density is governed by a Bateman–Horn constant [1] $S = \prod_r (1-\nu_r/r)/(1-1/r)^2$, where $\nu_r$ counts the roots of the pair modulo $r$. The correct baseline is a generic cell $(6c-1,6c+1)$, whose constant is $12C_2 = 7.9219$ — **not** the twin constant $2C_2 = 1.320$, which is for pairs $(n,n+2)$ over all $n$ and counts the even $n$ a cell never has.
 

@@ -189,7 +189,7 @@ The cell is symmetric about its centre $6b$; this symmetry is inherited by every
 Write $p = 6a+\sigma$ with $\sigma = \pm 1$.
 
 > **Theorem 2.** For all $b$ and $\varepsilon = \pm 1$,
-> $$p (6b+\varepsilon)  =  6 (pb + a\varepsilon)  +  \sigma\varepsilon.$$
+> $\displaystyle p (6b+\varepsilon)  =  6 (pb + a\varepsilon)  +  \sigma\varepsilon.$
 
 *Proof.* Direct expansion: $p(6b+\varepsilon) = (6a+\sigma)(6b+\varepsilon) = 36ab + 6a\varepsilon + 6b\sigma + \sigma\varepsilon = 6(pb + a\varepsilon) + \sigma\varepsilon$, using $6ab + b\sigma = b(6a+\sigma) = pb$. $\blacksquare$
 
@@ -332,7 +332,7 @@ Three readings of the same picture, and they are the three facts above:
 **The corollary.** Fix the line $p = 6a+\sigma$ and let it act on the cell axis. By Theorem 2 its strikes sit at $c = pb - a$ and $c = pb + a$ for $b = a, a+1, \dots$, so:
 
 > **Corollary 4.** The strikes of $L_p$ on the cell axis form two interleaved arithmetic progressions of common difference $p$, and the gaps between consecutive strikes alternate
-> $$2a, \quad p-2a.$$
+> $\displaystyle 2a, \quad p-2a.$
 > Explicitly, $p = 6a-1$ gives $(2a,\ 4a-1)$ and $p = 6a+1$ gives $(4a+1,\ 2a)$.
 
 Verified with zero errors for every prime $5 \le p \lt  200$. Examples: $p=5$ gives $(2,3)$; $p=7$ gives $(5,2)$; $p=11$ gives $(4,7)$; $p=13$ gives $(9,4)$.
@@ -366,7 +366,7 @@ The two formulas are the same expression with one sign changed, and §3.6 shows 
 Two consequences are immediate, and they are why the pair of formulas is worth stating rather than decorative.
 
 - **(3.7) confines the second regime to a triangle.** If the product is to lie below $(m+h)^2$ then $m(u+v)+uv \lt  2mh+h^2$, and when $h^2 \lt  2m$ this forces $u+v \le h$. The pairs $(u,v)$ with $1 \le u \le v$ available at all therefore number
-$$\sum_{s=2}^{h} \Big\lfloor \tfrac s2 \Big\rfloor  =  \Big\lfloor \tfrac{h^2}{4}\Big\rfloor .$$
+$$\sum_{s=2}^{h} \Big\lfloor \tfrac{s}{2} \Big\rfloor  =  \Big\lfloor \tfrac{h^2}{4}\Big\rfloor .$$
 - **(3.6) admits no such confinement**, since $e-d$ may be small while $d$ and $e$ are both large.
 
 That asymmetry — a bounded triangle above the square, against an unbounded strip across it — is the difference between the two regimes stated quantitatively.
@@ -385,7 +385,7 @@ the sector between consecutive odd squares, anchored so that its root is the low
 ### 4.1 Theorem 4: start and length
 
 > **Theorem 4.** The cells $C_c = (6c-1, 6c+1)$ lying strictly inside $W_a$ are exactly those with
-> $$c  =  c_0,\ c_0+1,\ \dots,\ c_0+N-1, \qquad c_0 = 6a^2-2a+1, \qquad N = 4a-1 .$$
+> $\displaystyle c  =  c_0,\ c_0+1,\ \dots,\ c_0+N-1, \qquad c_0 = 6a^2-2a+1, \qquad N = 4a-1 .$
 > Moreover a line $\ell$ closes the cell $c_0+j$ exactly when $j \equiv \pm 6^{-1} - c_0 \pmod \ell$ — **two residue classes, always.**
 
 *Proof.* $q^2 = 36a^2-12a+1$, so the smallest $c$ with $6c-1 \gt  q^2$ is $(q^2+5)/6 = 6a^2-2a+1$; the largest with $6c+1 \lt  r^2 = 36a^2+12a+1$ is $c_0+4a-2$. The second statement is Theorem 3 translated by $c_0$. $\blacksquare$
@@ -397,7 +397,7 @@ the sector between consecutive odd squares, anchored so that its root is the low
 ### 4.2 Theorem 5: the midpoint is never a twin
 
 > **Theorem 5.** The cell at the exact midpoint of $W_a$ is $(n^2-1,\ n^2+1)$, and its lower member factors as
-> $$n^2-1 = (n-1)(n+1) = q r .$$
+> $\displaystyle n^2-1 = (n-1)(n+1) = q r .$
 > **It is therefore composite for every $a$, so the midpoint cell is never a twin pair.**
 
 *Proof.* The midpoint of $[q^2,r^2]$ is $(q^2+r^2)/2 = n^2+1$, and $n^2-1 = (n-1)(n+1)$. $\blacksquare$
@@ -444,7 +444,7 @@ $$t  =  k - 6j \quad\text{is invariant},$$
 while the two positions shift by $-(72j+36)$ and $-(72j+12)$ — differing by $24$, which is exactly the increase in window width. **The state of the whole window is therefore $(n, j, t)$, and inheritance is $(n,j,t) \mapsto (n+6, j+1, t)$.** (This compresses the bookkeeping and not the arithmetic: the *active range* of $t$ is recomputed each time from $\lceil 18j^2/p\rceil$, and that ceiling is the phase. We record the state because the two laws below are clean in it.)
 
 > **Theorem 6 (two-pass crossing).** At a common index $t$ the two members of a layer are
-> $$u^+ - u^-  =  4n + 4t$$
+> $\displaystyle u^+ - u^-  =  4n + 4t$
 > apart, against a window of width $4n$. Hence a layer has both members inside the window only at $t = 0$; and since $j \gt  0$ forces $t \ge \lceil 18j^2/p\rceil \gt  0$, **every old layer crosses the window in two disjoint passes — the family-$7$ member first, the family-$5$ member after — and only the newly born layer has both members present, sitting exactly on the two endpoints.**
 
 *Proof.* Subtract the two lines of (4.1); the $36j^2$ cancels and $s-p = 2$. The window admits $u^+-u^- \le 4n$ only at $t \le 0$, and the left member requires $2pt \ge 36j^2$. $\blacksquare$
@@ -454,7 +454,7 @@ while the two positions shift by $-(72j+36)$ and $-(72j+12)$ — differing by $2
 **The reading is worth stating.** The window is cut exactly to the size of the pair that is born at its edges; every older pair has already opened wider than the window and can only pass through one member at a time.
 
 > **Theorem 7 (the role of a strike is $t \bmod 3$).** Since $p \equiv -1$, $s \equiv +1$ and $4n \equiv 0 \pmod 6$, equation (4.1) gives
-> $$u^-(t) \equiv 4t, \qquad u^+(t) \equiv 2t \pmod 6 .$$
+> $\displaystyle u^-(t) \equiv 4t, \qquad u^+(t) \equiv 2t \pmod 6 .$
 > With $(n-1)^2 \equiv 1 \pmod 6$, a strike at $u \equiv 0$ falls on the upper member of a cell, at $u \equiv 4$ on the lower member, and at $u \equiv 2$ on $L_3$ — where it touches no cell at all. Hence:
 
 | $t \bmod 3$ | left line ($p$) | right line ($s$) |
@@ -488,11 +488,11 @@ and the two are linked by an exact telescoping:
 *Verification.* Exact for every $r \lt 2000$. At $r = 1$: $M = 9$, $a_1 = 14$, $L_1 = 24$, so $W_1 = (81,225)$ is the cells $14,\dots,37$ — from $(83,85)$ to $(221,223)$ — and the next sector starts at $a_2 = 38$.
 
 **What this removes.** The cell $C_n = (6n-1,6n+1)$ is defined once and for all, and by Theorem 3 each line $p$ closes the two classes $n \equiv \pm 6^{-1} \pmod p$ — also once and for all. Neither depends on the sector. **There is therefore no phase attached to a sector**: what looks like one is only the position of the moving start $a_r$ inside a strip that never moves. The whole of the twin question in these coordinates is
-$$C_r  =  \#\lbrace n \in [a_r,\ a_{r+1}) : n \not\equiv \pm 6^{-1} \pmod p \ \text{ for every } 5 \le p \le M \rbrace,$$
+$$C_r  =  \lvert\lbrace n \in [a_r,\ a_{r+1}) : n \not\equiv \pm 6^{-1} \pmod p \ \text{ for every } 5 \le p \le M \rbrace\rvert,$$
 one fixed periodic pattern read along one moving quadratic trajectory.
 
 **And the trajectory has an exact displacement law.** From (4.2),
-$$a_s - a_r  =  6\big(s(s+1) - r(r+1)\big)  =  6\,(s-r)(s+r+1), \qquad\text{(4.4)}$$
+$$a_s - a_r  =  6\big(s(s+1) - r(r+1)\big)  =  6\ (s-r)(s+r+1), \qquad\text{(4.4)}$$
 so $a_{r+p} \equiv a_r \pmod p$ — the start's motion against a line of step $p$ has period exactly $p$ in $r$ — and if two starts agree modulo every prime of a set $S$ (none of them $2$ or $3$), then $\prod_{p \in S} p$ divides $(s-r)(s+r+1)$. For distinct $r,s \le R$ that product is at most $R(2R+1)$, so **two different starts below $R$ cannot agree modulo more than about $2\log R$ worth of prime mass.** The trajectory is multiplicatively spread.
 
 *What (4.4) does not do, stated here so that it is not attempted again.* It compares two starts. If the start $a_r$ is itself the bad one there is no second start to compare it with: $s = r$ makes the right-hand side zero, every product divides zero, and no contradiction arises. Any displacement law is a two-point statement, and the question — whether one particular $a_r$ lands badly — is a one-point statement. Strengthening the law cannot repair that, because the distance it measures is not there.
@@ -521,9 +521,9 @@ $$\ell(m)  =  \min\lbrace  k \ge 1 : L_m \text{ does not hold the centre of } L_
 ### 5.3 Theorem 8 (when the centre is lost)
 
 > **Theorem 8.** For every odd $m \ge 3$ with central pair $(a,b)$,
-> $$\boxed{ \ell(m)  =  a+b+2 }$$
+> $\displaystyle \boxed{ \ell(m)  =  a+b+2 }$
 > The first loss is the strike
-> $$L_m(a+b+2)  =  m\big(m + 2(a+b+2)\big)  =  ab (a+2)(b+2),$$
+> $\displaystyle L_m(a+b+2)  =  m\big(m + 2(a+b+2)\big)  =  ab (a+2)(b+2),$
 > and the divisor that displaces $m$ from the centre is $a(b+2) = m+2a$.
 
 *Proof.* **The value is attained.** Put $n = (a+2)(b+2) = m + 2(a+b+2)$, which is odd. Then $a(b+2)$ divides $mn$ and

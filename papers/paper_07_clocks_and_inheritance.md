@@ -111,7 +111,7 @@ Theorem 2 is the case that arises inside one sector. Read along the whole row of
 Call a cell of the row **original** if no line below $p$ owns it. Everything before $p^2$ is inherited — a strike $p m$ with $m \lt  p$ carries the smallest prime factor of $m$, which is below $p$ — so $p^2$ is the first original cell on the row. Past it:
 
 > **Theorem 3.** For $p$ prime and $p \le p+2j \lt  p^2$,
-> $$p (p+2j) \ \text{ is original with respect to the lines below } p \quad\Longleftrightarrow\quad p+2j \ \text{ is prime}.$$
+> $\displaystyle p (p+2j) \ \text{ is original with respect to the lines below } p \quad\Longleftrightarrow\quad p+2j \ \text{ is prime}.$
 
 *Proof.* Suppose $p+2j$ is composite. Being below $p^2$, its least prime factor is below $p$:
 $$p+2j = rs \quad\text{with}\quad r \le \sqrt{p+2j} \lt p,$$
@@ -158,7 +158,7 @@ So the first $A(M)$ cells of the later sector repeat the earlier sector's patter
 
 > **Proposition 1.** Let $S$ be the set of primes $r \ge 5$ dividing $p+1$, and put $P = \prod_{r \in S} r$, $A = \prod (r-1)$, $B = \prod (r-2)$ and $m = aP$. Then, exactly,
 > where $N_{\varnothing}$, $N_L$, $N_R$, $N_{LR}$ count the cells untouched by $S$, struck on the left only, on the right only, and on both:
-> $$N_{\varnothing} = 4aB - 1, \qquad N_{L} = N_{R} = 4a(A-B), \qquad N_{LR} = 4a(P - 2A + B),$$
+> $\displaystyle N_{\varnothing} = 4aB - 1, \qquad N_{L} = N_{R} = 4a(A-B), \qquad N_{LR} = 4a(P - 2A + B),$
 
 *Verification.* At $p = 2309$, where $S = \lbrace 5,7,11\rbrace$, $P = 385$, $a = 1$, $A = 240$, $B = 135$: the direct census of the $1539$ cells gives $539 + 420 + 420 + 160$, matching the four formulas exactly. The identities were then checked over every $p \equiv 5 \pmod 6$ below $2000$ — $59$ of them twin, $273$ not — with no exception.
 
@@ -213,7 +213,7 @@ Instead of asking what the lines will close, we ask the dual question: **how man
 Take survivors as vertices and join $x$ to $x+6$. Let $T$, $U$, $Q$ count the edges, the $3$-term runs and the $4$-term runs (runs, not components: a component on $k$ vertices contributes $\max(0,k-2)$ to $U$ and $\max(0,k-3)$ to $Q$).
 
 > **Theorem B1.** The minimum number of deletions required to destroy every distance-$6$ edge is
-> $$\tau = T - U + Q.$$
+> $\displaystyle \tau = T - U + Q.$
 
 *Proof.* By [P5, Thm 3] of [P5, §2.3] every component is a path on at most $4$ vertices. For a path on $v$ vertices the minimum vertex cover has size $\lfloor v/2 \rfloor$, so the cover of a path on $k$ vertices is $\lfloor k/2 \rfloor$. Summing $(k-1)-(k-2)+(k-3)$ over components reproduces $\lfloor k/2\rfloor$ for $k = 2,3,4$ — and **only** for those, since $k=5$ would give $3$ against the true value $2$. The cap of [P5, Thm 3] is thus exactly what makes the identity hold. $\blacksquare$
 
@@ -232,7 +232,7 @@ Take survivors as vertices and join $x$ to $x+6$. Let $T$, $U$, $Q$ count the ed
 Let $G = T - D$ count genuine gap-$6$ pairs, $D$ those with a survivor between. *(The twins sit in $D$: the surviving middle differs by $2$ from one of the two endpoints. So $G$ — the object [P11, App. C] targets — is exactly the twin-free part, which is the content of the caution above. Incidentally, measured on all four cycles below, $U = D$ exactly; we do not use this.)*
 
 > **Theorem B2.** On the full cycle, the entry of a new line $r$ gives
-> $$T' = (r-2)T, \qquad D' = (r-3)D, \qquad G' = (r-2)G + D.$$
+> $\displaystyle T' = (r-2)T, \qquad D' = (r-3)D, \qquad G' = (r-2)G + D.$
 
 *Proof.* Of the $r$ copies of a pair, one has its left member struck and one its right, leaving $r-2$. A $D$-configuration has three sensitive positions (both ends and the middle), leaving $r-3$; and the copy whose middle is deleted becomes a genuine gap-$6$. $\blacksquare$
 

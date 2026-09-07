@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """Structural audit of the eleven papers and the overview. Reports only problems.
 
 Run from anywhere:  python3 audit.py

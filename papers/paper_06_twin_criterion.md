@@ -72,7 +72,7 @@ $$C_M  =  T_M + X_M, \qquad 0 \le X_M \le 6, \qquad\text{(3.4)}$$
 with $X_M$ the number of open cells that are not twin pairs — all of them at the six named positions. **The sector's geometry can move the survivor count away from the twin count only through those six places, and by at most six.** The table below carries an instance: at $M = 10{,}005$ the sector holds $504$ open cells and $503$ twin pairs, the extra one being the cell $(100{,}180{,}079,\ 100{,}180{,}081)$ whose upper member is $(M+4)^2 = 10{,}009^2$ — position $C$. *Measured over the $49{,}999$ sectors with $M \lt 3\cdot10^5$: $X_M = 0$ in $45{,}439$ of them, $1$ in $4{,}369$, $2$ in $186$ and $3$ in five, and never more — so the bound of six is not attained on that range.*
 
 Because the discrepancy is bounded by an explicit constant, $C_M$ still has to track the Hardy–Littlewood prediction for a window of $\lvert W\rvert = 12M+36$ integers at height $M^2$, and the comparison below is a diagnostic on the twin count itself up to that $O(1)$. Write
-$$\mathrm{HL}  =  \frac{2C_2\,\lvert W\rvert}{\log^2(M^2)}, \qquad \mathrm{SP}  =  \lvert W_{\text{cells}}\rvert \prod_{5\le p\le M}\Big(1-\frac2p\Big)$$
+$$\mathrm{HL}  =  \frac{2C_2\ \lvert W\rvert}{\log^2(M^2)}, \qquad \mathrm{SP}  =  \lvert W_{\text{cells}}\rvert \prod_{5\le p\le M}\Big(1-\frac2p\Big)$$
 for that prediction and for the raw sieve product over the cells. Then:
 
 | $M$ | cells | $C_M$ | $\mathrm{HL}$ | $C_M/\mathrm{HL}$ | $\mathrm{SP}$ | $C_M/\mathrm{SP}$ |
@@ -96,7 +96,7 @@ Take the sector in the form used throughout this section: $M \equiv 3 \pmod 6$ a
 $$C_j = \big(M^2+6j+2,\ M^2+6j+4\big), \qquad j = 0,1,\dots,2M+5 .$$
 
 > **Theorem 1.** Switch on every line $p \le M$. Then at most **six** cells of the sector can be open without being a twin pair, and their positions are given explicitly by
-> $$E_M  =  \underbrace{\Big\lbrace \tfrac{2M}{3},\ \ M+1,\ \ \tfrac{5M}{3}+2,\ \ 2M+3\Big\rbrace }_{\text{present only if } M+2 \text{ is prime}}  \cup  \underbrace{\Big\lbrace \tfrac{4M}{3}+2,\ \ 2M+5\Big\rbrace }_{\text{present only if } M+4 \text{ is prime}} .$$
+> $\displaystyle E_M  =  \underbrace{\Big\lbrace \tfrac{2M}{3},\ \ M+1,\ \ \tfrac{5M}{3}+2,\ \ 2M+3\Big\rbrace }_{\text{present only if } M+2 \text{ is prime}}  \cup  \underbrace{\Big\lbrace \tfrac{4M}{3}+2,\ \ 2M+5\Big\rbrace }_{\text{present only if } M+4 \text{ is prime}} .$
 > Consequently **every open cell whose index lies outside $E_M$ is a twin pair.**
 
 *Proof.* The argument has three steps: identify the only possible least prime factor, list its products inside the sector, and place them.
@@ -159,7 +159,7 @@ writing $A,\dots,F$ for the six positions in the order listed above. The collaps
 The pair is special. Line $5$ alone leaves four open; adding $7$ gives three; and **adding $11$, then $13$, changes nothing at all** — the same bound and the same four patterns. The reason is structural rather than numerical: a larger line can choose a phase striking none of the six, and the Chinese remainder theorem then combines that phase freely with the phase of $5$ and $7$ that leaves three. **So the route "add more small lines until the six are closed" is shut**, and we record it so that it is not attempted again in another notation.
 
 > **Corollary 1 (the dichotomy).** Suppose $(M+2, M+4)$ is not a twin pair. Then $|S_M \cap E_M| \le 2$, and consequently
-> $$C_M \ge 3 \quad\Longrightarrow\quad \text{the sector contains a twin, or } (M+2,M+4) \text{ is one.}$$
+> $\displaystyle C_M \ge 3 \quad\Longrightarrow\quad \text{the sector contains a twin, or } (M+2,M+4) \text{ is one.}$
 
 *Proof.* Theorem 1 splits the six positions by what each one needs:
 $$A, D, E \ \text{require} \ M+2 \ \text{prime}; \qquad C, F \ \text{require} \ M+4 \ \text{prime};$$
@@ -167,7 +167,7 @@ $$B \ \text{carries} \ (M+2)(M+4) \ \text{and so requires both}.$$
 If the open set met both groups, $M+2$ and $M+4$ would both be prime and $(M+2, M+4)$ would be the twin. So under the hypothesis the open set lies inside $\lbrace A,D,E\rbrace$ or inside $\lbrace C,F\rbrace$, and $B$ is closed.
 
 Each of the four maximal patterns listed above meets both groups, so none survives. Inspecting the $35$ classes, the patterns that do survive are
-$$\varnothing, \quad \lbrace A\rbrace, \quad \lbrace C\rbrace, \quad \lbrace F\rbrace, \quad \lbrace A,D\rbrace, \quad \lbrace A,E\rbrace, \quad \lbrace C,F\rbrace,$$
+$$\varnothing, \quad \lbrace A\rbrace, \quad \lbrace C\rbrace, \quad \lbrace F\rbrace, \quad \lbrace A,D\rbrace, \quad \lbrace A,E\rbrace, \quad \lbrace C,F\rbrace\rvert,$$
 all of size at most two. $\blacksquare$
 
 *Verification.* Over the same $3{,}332$ sectors $M = 9, 15, \dots, 19{,}999$: the maximum of $|S_M \cap E_M|$ is $3$ in the $340$ sectors where $(M+2,M+4)$ is a twin and **exactly $2$ in the other $2{,}992$**; zero violations of the forcing (an open member of $\lbrace A,D,E\rbrace$ with $M+2$ composite, or of $\lbrace C,F\rbrace$ with $M+4$ composite, or $B$ open without the twin), and zero cases where the open set met both groups without the twin being present. **The separation is exact: three open positions occur only when the twin is already there.** Both bounds are attained — three in $3$ sectors, two in $13$ of the twinless ones — so neither is an artefact of a range too short to reach them.
@@ -227,14 +227,14 @@ $L_p$ has exactly three strikes in this window: $p^2$, $p(p+2)$ and $p(p+4)$, si
 1. **$p^2$.** Of the two pairs it meets, only $(p^2, p^2+2)$ lies in the window — the other has index $-p-1$. For $p\gt 3$, $p^2 \equiv 1 \pmod 3$, so $p^2+2 \equiv 0$: **that pair is already dead.**
 2. **The strike divisible by $3$.** One of $p+2, p+4$ is $\equiv 3 \pmod 6$, so one of $p(p+2), p(p+4)$ lies on $L_3$ and was struck before $L_p$ existed; both pairs it meets were already dead.
 3. **The surviving strike.** Call it
-$$H_p = \begin{cases} p(p+2), & p \equiv 5 \pmod 6,\\[2pt] p(p+4), & p \equiv 1 \pmod 6.\end{cases}$$
+$$H_p = \begin{cases} p(p+2), & p \equiv 5 \pmod 6,\cr p(p+4), & p \equiv 1 \pmod 6.\end{cases}$$
    In either case $H_p \equiv 5 \pmod 6$, so $H_p - 2 \equiv 3 \pmod 6$ and the pair $(H_p-2, H_p)$ is **also already dead.**
 
 Only $(H_p, H_p+2)$ remains. $\blacksquare$
 
 > **Corollary 2.** $D_p = 1$ if and only if **two** primality conditions hold together:
-> $$p \equiv 5 \ (6): \qquad p+2 \ \text{prime} \quad\text{and}\quad p(p+2)+2 \ \text{prime};$$
-> $$p \equiv 1 \ (6): \qquad p+4 \ \text{prime} \quad\text{and}\quad p(p+4)+2 \ \text{prime}.$$
+> $\displaystyle p \equiv 5 \ (6): \qquad p+2 \ \text{prime} \quad\text{and}\quad p(p+2)+2 \ \text{prime};$
+> $\displaystyle p \equiv 1 \ (6): \qquad p+4 \ \text{prime} \quad\text{and}\quad p(p+4)+2 \ \text{prime}.$
 
 *Proof.* The cell $H_p$ survives the older lines exactly when its cofactor,
 $$p+2 \quad\text{or}\quad p+4,$$
@@ -267,7 +267,7 @@ $$(M, S, T, B)  \longmapsto  \big(qM,\ (q-1)S,\ (q-2)T,\ (q-2-\chi_q(2))B\big).$
 **$B$ is the only one of the four that knows the window is anchored at a square**, and the arithmetic that enters is whether $2$ is a quadratic residue.
 
 > **Theorem 4 (the summation identity).** Over $M$ consecutive square windows,
-> $$\sum_{i=0}^{M-1} T_{m+2i}  =  2(m+M) T  -  B .$$
+> $\displaystyle \sum_{i=0}^{M-1} T_{m+2i}  =  2(m+M) T  -  B .$
 
 *Proof.* The $M$ windows together with their $M$ bridges tile a stretch of
 $$a_{m+2M}-a_m  =  2M(m+M)$$
@@ -276,7 +276,7 @@ pair slots, that is exactly $2(m+M)$ complete cycles, holding $2(m+M)T$ survivin
 *Verification.* Checked for $\lbrace 3,5\rbrace$ and $\lbrace 3,5,7\rbrace$ at $m = 9, 15, 101$ — six cases, all exact.
 
 **The collective bias, quantified.** Against the density prediction $T (2m+2M-1)$ for the same total length, the windows hold exactly $T-B$ fewer pairs; measured sums of deviations $-1, -5, -17, -185$ for the four line sets, matching $T-B$ each time. Now
-$$\frac BT  =  \prod_q \Big(1 - \frac{\chi_q(2)}{q-2}\Big),$$
+$$\frac{B}{T}  =  \prod_q \Big(1 - \frac{\chi_q(2)}{q-2}\Big),$$
 which converges: measured $2.5554,\ 2.5517,\ 2.5614,\ 2.5615,\ 2.5622$ at $z = 19,\ 10^3,\ 10^4,\ 10^5,\ 10^6$. The reduced product $\prod(1-\chi_q(2)/q)$ reaches $1.604401$ at $z = 10^6$ against
 $$\frac{1}{L(1,\chi_8)} = 1.604556, \qquad L(1,\chi_8) = \frac{\log(1+\sqrt2)}{\sqrt2} = 0.623225 .$$
 **So the square geometry enters this framework through a Dirichlet $L$-value at $1$ for the character modulo $8$.**
@@ -304,18 +304,18 @@ Two natural constructions were tried and neither adds anything: a window balance
 Every count of $C_M$ in this paper so far has been a direct enumeration. This subsection gives the first *proved* lower bound on it, by importing a classical inequality and observing where it terminates.
 
 Fix a sector and write $W$ for its set of cells, $N = |W| = 2M+6$. For each line $p \le M$ let $B_p \subseteq W$ be the cells it closes — two residue classes modulo $p$, by [P2, Thm 3]. For a cell $d$ put
-$$m(d)  =  \#\lbrace p \le M : d \in B_p \rbrace,$$
+$$m(d)  =  \lvert\lbrace p \le M : d \in B_p \rbrace\rvert,$$
 the number of lines striking it, and define
 $$S_0 = N, \qquad S_i  =  \sum_{d \in W} \binom{m(d)}{i} \quad (i \ge 1). \qquad\text{(3.5)}$$
 The right-hand side of (3.5) is the count of $i$-fold intersections $\lvert \bigcap_{p \in J} B_p \rvert$ summed over all $i$-subsets $J$, each cell contributing once for every $i$-subset of the lines that strike it. Written this way the whole hierarchy is computed in a **single pass over the cells**, at cost $O(N \log\log M)$, rather than by enumerating $\binom{\pi(M)}{i}$ intersections.
 
 > **Proposition 1.** With the notation above, for every $\ell \ge 0$
-> $$C_M  \ge  S_0 - S_1 + S_2 - \cdots - S_{2\ell+1}, \qquad\text{(3.6)}$$
+> $\displaystyle C_M  \ge  S_0 - S_1 + S_2 - \cdots - S_{2\ell+1}, \qquad\text{(3.6)}$
 > and the alternating sum is **exactly** $C_M$ as soon as the truncation order reaches $\max_{d} m(d)$.
 
 *Proof.* A cell struck by exactly $m$ lines contributes
 $$\sum_{i=0}^{L}(-1)^i\binom{m}{i}$$
-to the truncated sum. For $m = 0$ that is $1$. For $m \ge 1$ and $L < m$ the partial alternating binomial sum equals $(-1)^L\binom{m-1}{L}$, which is $\le 0$ when $L$ is odd; hence every struck cell contributes at most $0$ and every open cell exactly $1$, giving (3.6). For $L \ge m \ge 1$ the sum is the complete alternating binomial sum $(1-1)^m = 0$, so once $L \ge \max_d m(d)$ every struck cell contributes $0$ and every open cell $1$, and the total is $C_M$ exactly. $\blacksquare$
+to the truncated sum. For $m = 0$ that is $1$. For $m \ge 1$ and $L \lt m$ the partial alternating binomial sum equals $(-1)^L\binom{m-1}{L}$, which is $\le 0$ when $L$ is odd; hence every struck cell contributes at most $0$ and every open cell exactly $1$, giving (3.6). For $L \ge m \ge 1$ the sum is the complete alternating binomial sum $(1-1)^m = 0$, so once $L \ge \max_d m(d)$ every struck cell contributes $0$ and every open cell $1$, and the total is $C_M$ exactly. $\blacksquare$
 
 The inequality itself is the odd Bonferroni truncation and is classical; the multiplicity form (3.5) and the observation that it terminates at $\max_d m(d)$ are what make it usable here. The same evaluation appears independently in Nguyen [9], in the Goldbach setting of symmetric pairs about a multiple of a primorial — see §2.10.
 
@@ -349,7 +349,7 @@ The first moment $L_1 = N - S_1$ is the union bound, and it dies at once: $\sum_
 
 ### 2.10 The same obstruction from the Goldbach side
 
-The finite-window difficulty this section keeps returning to — a full CRT period has positive density, but the interval belonging to one centre is a *translated fragment* of that period — was reached independently, and stated in almost the same words, by Nguyen [9]. The setting there is Goldbach rather than twins: symmetric pairs $\lbrace C-d, C+d\rbrace$ about a centre $C = a\, p_k^{\#}$, so the pairs have fixed **sum** where ours have fixed **difference**, and the window is anchored at a multiple of a primorial where ours is anchored at a square. Under that translation the two frameworks correspond term by term: the two forbidden cell classes $\pm 6^{-1} \pmod p$ of [P2, Thm 3] are the one or two forbidden lift residues there; $C_M$ corresponds to the survivor sets there; and the survivor density $\prod(1-2/q)$ is the same product.
+The finite-window difficulty this section keeps returning to — a full CRT period has positive density, but the interval belonging to one centre is a *translated fragment* of that period — was reached independently, and stated in almost the same words, by Nguyen [9]. The setting there is Goldbach rather than twins: symmetric pairs $\lbrace C-d, C+d\rbrace$ about a centre $C$ that is a multiple of a primorial, so the pairs have fixed **sum** where ours have fixed **difference**, and the window is anchored at a multiple of a primorial where ours is anchored at a square. Under that translation the two frameworks correspond term by term: the two forbidden cell classes $\pm 6^{-1} \pmod p$ of [P2, Thm 3] are the one or two forbidden lift residues there; $C_M$ corresponds to the survivor sets there; and the survivor density $\prod(1-2/q)$ is the same product.
 
 **One point in that dictionary needs care, and Nguyen raised it.** His $U(C)$ is deliberately *conservative*: it is the set of offsets avoiding every obstruction congruence, whereas the actual terminal set $T(C)$ also contains the **endpoint-prime exceptions** — offsets whose divisible endpoint is the prime $q$ itself, so that nothing is destroyed. In general $U(C) \subsetneq T(C)$, and his own example at $C = 30$ has the offset $23$ giving the surviving pair $\lbrace 7,53\rbrace$ while $19$ gives the genuinely destroyed endpoint $49 = 7^2$.
 
@@ -444,15 +444,15 @@ The four results below sharpen Corollary 1 without strengthening it, and the cen
 **The six are the first rung of a ladder in the width of the window.** Nothing in the argument requires the window to reach only to $(M+6)^2$. Widen it to $W_{M,k} = (M^2, (M+6k)^2)$, keeping the lines at $p \le M$.
 
 > **Corollary 1a (the $k$-ladder).** Let $M \equiv 3 \pmod 6$ and $k \ge 1$ satisfy $M \gt  (6k)^2$, and switch on every line $p \le M$. Then every composite endpoint of an open cell of $W_{M,k}$ is a product $(M+a)(M+b)$ of two primes with $a \le b$ even, not divisible by $3$, and
-> $$a+b \le 12k;$$
+> $\displaystyle a+b \le 12k;$
 > the number of such positions is
-> $$K_k  =  4k + (4k-2) + \cdots + 2  =  2k(2k+1).$$
+> $\displaystyle K_k  =  4k + (4k-2) + \cdots + 2  =  2k(2k+1).$
 > Moreover **no open cell of $W_{M,k}$ has both endpoints composite**, so every exception is a $P_2$ with both factors above $M$ sitting beside a genuine prime, and
-> $$T_{M,k}  =  C_{M,k} - X_{M,k}, \qquad X_{M,k} \le 2k(2k+1).$$
+> $\displaystyle T_{M,k}  =  C_{M,k} - X_{M,k}, \qquad X_{M,k} \le 2k(2k+1).$
 
 *Proof.* A survivor has every prime factor above $M$, so a composite one has exactly two: three would exceed $M^3 \gt  (M+6k)^2$. Coprimality to $6$ forces both offsets even and prime to $3$.
 
-For the range of the offsets, expand $n = M^2 + M(a+b) + ab$. If $a+b \le 12k$ then $ab \le \big(\tfrac{a+b}2\big)^2 \le (6k)^2$, with equality only at $a = b = 6k$, which is divisible by $3$ and so excluded; hence $ab \lt  36k^2$ and $n \lt  (M+6k)^2$. Conversely $a+b$ is even, so if $a+b \gt  12k$ then $a+b \ge 12k+2$ and
+For the range of the offsets, expand $n = M^2 + M(a+b) + ab$. If $a+b \le 12k$ then $ab \le \big(\tfrac{a+b}{2}\big)^2 \le (6k)^2$, with equality only at $a = b = 6k$, which is divisible by $3$ and so excluded; hence $ab \lt  36k^2$ and $n \lt  (M+6k)^2$. Conversely $a+b$ is even, so if $a+b \gt  12k$ then $a+b \ge 12k+2$ and
 $$n - (M+6k)^2  =  M\big(a+b-12k\big) + ab - 36k^2  \ge  2M - 36k^2  \gt  M  \gt  0$$
 by the hypothesis $M \gt  36k^2$. So membership of the window is *equivalent* to $a+b \le 12k$. Counting: $a$ runs over the even non-multiples of $3$ in $[1, 6k-2]$, and for each the admissible $b \ge a$ with $b \le 12k-a$ number $4k, 4k-2, \dots, 2$ in turn, giving $K_k = 2k(2k+1)$.
 
@@ -512,9 +512,9 @@ This is sharper than the sector form, where Corollary 1 lowers the sufficient co
 **Removing the two square positions, and what is left.** Two of the six carry perfect squares, $A = (M+2)^2$ and $C = (M+4)^2$, and these are the only cells of the sector with a square endpoint: the squares between $M^2$ and $(M+6)^2$ are $(M+j)^2$ for $1 \le j \le 5$, and only $j = 2, 4$ give a member coprime to $6$. A twin has two prime members, so **discarding the cells with a square endpoint discards no twin.** Write $C_M^{\circ}$ for the number of open cells with neither member a perfect square.
 
 > **Corollary 1d.** Suppose $(M+2, M+4)$ is not a twin pair. Then at most **one** of the four non-square positions $B, D, E, F$ is open, so
-> $$C_M^{\circ} \ge 2 \quad\Longrightarrow\quad \text{the sector contains a twin.}$$
+> $\displaystyle C_M^{\circ} \ge 2 \quad\Longrightarrow\quad \text{the sector contains a twin.}$
 > Moreover the line $5$ alone settles two residue classes of $M$: if $M \equiv 21 \pmod{30}$ then none of $B, D, E, F$ is open, whatever $M+2$ and $M+4$ are, and if $M \equiv 27 \pmod{30}$ then only $B$ can be, so in both classes
-> $$C_M^{\circ} \ge 1 \quad\Longrightarrow\quad \text{the sector contains a twin, or } (M+2,M+4) \text{ is one.}$$
+> $\displaystyle C_M^{\circ} \ge 1 \quad\Longrightarrow\quad \text{the sector contains a twin, or } (M+2,M+4) \text{ is one.}$
 
 *Proof.* By the grouping in Corollary 1, $B$ needs both $M+2$ and $M+4$ prime and so is closed under the hypothesis, while $D, E$ need $M+2$ prime and $F$ needs $M+4$ prime, so $F$ cannot be open together with $D$ or $E$. It remains to rule out $D$ and $E$ together. Write $p = M+2$. The cell of $D$ is $\big(p(p+6)-2,\ p(p+6)\big)$, whose members are $p(p+1)$ and $(p+2)(p-1)$ modulo $5$; both are non-zero only for $p \equiv 2 \pmod 5$. But then $5 \mid p+8$, so the composite member $p(p+8)$ of $E$ is closed by the line $5$.
 
@@ -530,13 +530,13 @@ Over all $166{,}666{,}665$ sectors below $10^9$: **$D$ and $E$ are never open to
 
 | decade of $M$ | sectors | $A$ | $C$ | $B$ | $D$ | $E$ | $F$ | sq. $\times \log^2$ | non-sq. $\times \log^3$ | ratio $\times \log$ |
 |---|---|---|---|---|---|---|---|---|---|---|
-| $10^4$–$10^5$ | $1.5\times10^4$ | $655$ | $681$ | $70$ | $46$ | $58$ | $148$ | $9.498$ | $23.658$ | $2.491$ |
-| $10^5$–$10^6$ | $1.5\times10^5$ | $4{,}466$ | $4{,}487$ | $383$ | $289$ | $291$ | $738$ | $9.525$ | $22.843$ | $2.398$ |
-| $10^6$–$10^7$ | $1.5\times10^6$ | $32{,}150$ | $32{,}216$ | $2{,}326$ | $1{,}741$ | $1{,}767$ | $4{,}931$ | $9.573$ | $23.940$ | $2.501$ |
-| $10^7$–$10^8$ | $1.5\times10^7$ | $244{,}729$ | $243{,}890$ | $15{,}391$ | $11{,}176$ | $11{,}708$ | $32{,}167$ | $9.686$ | $24.095$ | $2.488$ |
-| $10^8$–$10^9$ | $1.5\times10^8$ | $1{,}912{,}716$ | $1{,}910{,}857$ | $106{,}290$ | $76{,}561$ | $81{,}072$ | $222{,}588$ | $9.742$ | $24.249$ | $2.489$ |
+| $10^4\text{--}10^5$ | $1.5\times10^4$ | $655$ | $681$ | $70$ | $46$ | $58$ | $148$ | $9.498$ | $23.658$ | $2.491$ |
+| $10^5\text{--}10^6$ | $1.5\times10^5$ | $4{,}466$ | $4{,}487$ | $383$ | $289$ | $291$ | $738$ | $9.525$ | $22.843$ | $2.398$ |
+| $10^6\text{--}10^7$ | $1.5\times10^6$ | $32{,}150$ | $32{,}216$ | $2{,}326$ | $1{,}741$ | $1{,}767$ | $4{,}931$ | $9.573$ | $23.940$ | $2.501$ |
+| $10^7\text{--}10^8$ | $1.5\times10^7$ | $244{,}729$ | $243{,}890$ | $15{,}391$ | $11{,}176$ | $11{,}708$ | $32{,}167$ | $9.686$ | $24.095$ | $2.488$ |
+| $10^8\text{--}10^9$ | $1.5\times10^8$ | $1{,}912{,}716$ | $1{,}910{,}857$ | $106{,}290$ | $76{,}561$ | $81{,}072$ | $222{,}588$ | $9.742$ | $24.249$ | $2.489$ |
 
-The last three columns are the point. They give the density of the square family against $\log^2 M$, the density of the non-square family against $\log^3 M$, and the ratio of the two against $\log M$; since the square positions have dimension $2$ and the non-square ones dimension $3$, the first two should tend to constants and the third should be constant as well. All three do: the first settles near $9.7$ after climbing slowly, the second near $24.2$, and the third is $2.49$ across four consecutive decades, varying by under half a per cent. **The dimension count of Corollary 1e is therefore measured, not only derived.** In the last decade the non-square exceptions occupy $0.324\%$ of sectors, so a single open non-square cell forces a twin in $99.68\%$ of them.
+The last three columns are the point. They give the density of the square family against $\log^2 M$, the density of the non-square family against $\log^3 M$, and the ratio of the two against $\log M$; since the square positions have dimension $2$ and the non-square ones dimension $3$, the first two should tend to constants and the third should be constant as well. All three do: the first settles near $9.7$ after climbing slowly, the second near $24.2$, and the third is $2.49$ across four consecutive decades, varying by under half a per cent. **The dimension count of Corollary 1e is therefore measured, not only derived.** In the last decade the non-square exceptions occupy $0.324$% of sectors, so a single open non-square cell forces a twin in $99.68$% of them.
 
 One asymmetry inside the family is worth recording: $F$ is about twice as common as $B$ — the ratio is $2.09$ in the last decade and $2.12$ in the one before — although the two carry the same linear condition in strength, a prime pair at gap $4$ and at gap $2$ having the same singular series. The difference is entirely in the partner: the prime factors of $Q_B = (M+3)^2+1$ must be $1 \bmod 4$, those of $Q_F = (M+6)^2-2$ must be $\pm 1 \bmod 8$, and the two densities differ by that factor.
 
@@ -550,7 +550,7 @@ Let $U(y)$ be the density of residue classes of $M$ in which at least one of $B,
 
 | lines up to $y$ | $23$ | $97$ | $199$ | $499$ | $997$ | $4{,}999$ | $19{,}997$ |
 |---|---|---|---|---|---|---|---|
-| classes free of all four | $79.57\%$ | $91.43\%$ | $94.41\%$ | $96.40\%$ | $97.32\%$ | $98.55\%$ | $99.07\%$ |
+| classes free of all four | $79.57$% | $91.43$% | $94.41$% | $96.40$% | $97.32$% | $98.55$% | $99.07$% |
 | $U(y)(\log y)^2$ | $2.01$ | $1.79$ | $1.57$ | $1.39$ | $1.28$ | $1.05$ | $0.91$ |
 | $U(y)(\log y)^3$ | $6.30$ | $8.20$ | $8.29$ | $8.64$ | $8.84$ | $8.96$ | $9.02$ |
 
@@ -618,9 +618,9 @@ with $\chi_d(q)$ the Legendre symbol. The linear conditions supply one forbidden
 *Propositions 2 to 5 below continue the numbering of the parent set; Propositions 2 to 5 belong to the sibling parts.*
 
 > **Proposition 2.** Let a block of $N = 35L$ consecutive sectors carry an admissible configuration of exceptional cells under the twinless hypothesis, and for $X \in \lbrace A,C,D,E,F\rbrace$ let $I_X$ be the set of sector indices carrying a cell of type $X$. Then
-> $$|I_A|, |I_C| \ll \frac{N}{\log^2 N}, \qquad |I_D|, |I_E|, |I_F| \ll \frac{N}{\log^3 N},$$
+> $\displaystyle |I_A|, |I_C| \ll \frac{N}{\log^2 N}, \qquad |I_D|, |I_E|, |I_F| \ll \frac{N}{\log^3 N},$
 > and consequently
-> $$B_L \ll \frac{L}{\log^2 L}.$$
+> $\displaystyle B_L \ll \frac{L}{\log^2 L}.$
 
 *Proof.* **Step 1: each type forbids an exact number of residue classes.** Fix a prime $q \gt  17$. Admissibility at $q$ means that some residue may be assigned to $M_0$ modulo $q$ at which no polynomial of the configuration vanishes; fix that residue and write $t \equiv M_i \pmod q$. Since $6$ is invertible modulo $q$, the map $i \mapsto t$ is a bijection of $\mathbb{Z}/q$, so it suffices to count forbidden values of $t$.
 
@@ -724,7 +724,7 @@ Proposition 1 is stated for a sharp window, and a sharp window pays a boundary e
 **A mirror law for the sector index.** Fix an odd modulus $d$ and let $\rho(d)$ be the number of residues it forbids ($2^i$ when $d$ is a product of $i$ lines). Writing $N_d(s)$ for the number of those residues met inside the single sector $I_s = [a_s, a_{s+1})$, put $e_d(s) = N_d(s) - \rho(d)L_s/d$.
 
 > **Proposition 3.** $e_d(s+d) = e_d(s)$; and for $0 \le s \le d-2$,
-> $$e_d(d-2-s)  =  -\,e_d(s), \qquad\text{with}\qquad e_d(d-1) = 0 .$$
+> $\displaystyle e_d(d-2-s)  =  -\ e_d(s), \qquad\text{with}\qquad e_d(d-1) = 0 .$
 
 *Proof.* Periodicity is $a_{s+d} \equiv a_s \pmod d$, which is (4.4) of [P2, §4.5]. For the reflection, the two facts needed are
 $$a_{d-2-s} \equiv a_{s+1} \pmod d, \qquad L_s + L_{d-2-s} = 12d .$$
@@ -733,11 +733,11 @@ The first says that — the mirror sector begins, modulo $d$, exactly where $I_s
 *Verification.* Zero failures over the whole cycle for $d = 5, 7, 11, 13, 35, 55, 77$ and $385$, including the two ingredients of the proof checked separately. **So the word of phase errors along a cycle reads $e_0, e_1, \dots, -e_1, -e_0, 0$: it is odd about its own centre.**
 
 **The triangular weight, and an exact discrepancy formula.** Replace the indicator of a window by the triangular weight of half-width $H$,
-$$w_H(u)  =  \max\Big(1-\frac{\lvert u\rvert}{H},\,0\Big),$$
-the Cesàro weight, which is the Fejér kernel on $\mathbb{Z}/d\mathbb{Z}$: $H\,w_H$ is the self-convolution of the indicator of $\lbrace 0,\dots,H-1\rbrace$, so its transform is $\lvert \widehat{\mathbf 1}\rvert^2 \ge 0$ and decays like $h^{-2}$ rather than $h^{-1}$. The weight and that representation are standard in exactly this setting; see [1], where sieve functions are averaged over unions of residue classes in a short interval with the same weight.
+$$w_H(u)  =  \max\Big(1-\frac{\lvert u\rvert}{H},\ 0\Big),$$
+the Cesàro weight, which is the Fejér kernel on $\mathbb{Z}/d\mathbb{Z}$: $H\ w_H$ is the self-convolution of the indicator of $\lbrace 0,\dots,H-1\rbrace$, so its transform is $\lvert \widehat{\mathbf 1}\rvert^2 \ge 0$ and decays like $h^{-2}$ rather than $h^{-1}$. The weight and that representation are standard in exactly this setting; see [1], where sieve functions are averaged over unions of residue classes in a short interval with the same weight.
 
 > **Proposition 4.** Write $H = qd + s$ with $0 \le s \lt d$. Then
-> $$\max_{b \bmod d}\ \Big\lvert \sum_{n \equiv b \,(d)} w_H(n) - \frac{H}{d} \Big\rvert  =  \frac{s(d-s)}{dH}  \le  \frac{d}{4H}. \qquad\text{(3.7)}$$
+> $\displaystyle \max_{b \bmod d}\ \Big\lvert \sum_{n \equiv b \ (d)} w_H(n) - \frac{H}{d} \Big\rvert  =  \frac{s(d-s)}{dH}  \le  \frac{d}{4H}. \qquad\text{(3.7)}$
 > with the maximum attained at $b = 0$.
 
 *Proof.* Let $c_j$ be the number of $n \lt H$ in the class $j \pmod d$ and $c_j = H/d + \delta_j$. The weighted count is $H/d + H^{-1}\sum_j \delta_j\delta_{j-b}$. Exactly $s$ of the classes have $c_j = q+1$ and the rest have $c_j = q$, and those $s$ classes form a cyclic interval $A$, so $\delta_j = \mathbf 1_A(j) - s/d$ and
@@ -749,7 +749,7 @@ This is largest at $b = 0$, where $\lvert A\cap A\rvert = s$ and the value is $s
 **Moving the window as well: a double tent.** Now slide the centre linearly, $c_t = c_0 + t$, and weight the times themselves by a second triangle $q_T(t) = T^{-1}(1-\lvert t\rvert/T)$.
 
 > **Proposition 5.** With that weighting,
-> $$\lvert E_{d,b}\rvert  \le  \frac{d^4+10d^2-11}{45\,d\,H\,T^2}  \ll  \frac{d^3}{45\,H\,T^2},$$
+> $\displaystyle \lvert E_{d,b}\rvert  \le  \frac{d^4+10d^2-11}{45\ d\ H\ T^2}  \ll  \frac{d^3}{45\ H\ T^2},$
 > using the exact identity $\sum_{h=1}^{d-1}\csc^4(\pi h/d) = (d^4+10d^2-11)/45$.
 
 *Proof.* Each triangle contributes the square of a Dirichlet kernel to the Fourier expansion of the error, giving $d^{-1}\sum_{h\ne 0} \lvert D_H(h)\rvert^2 H^{-1}\lvert D_T(h)\rvert^2T^{-2}$; bounding $\lvert D_N(h)\rvert \le \csc(\pi h/d)$ and summing by the identity gives the statement. $\blacksquare$
@@ -775,7 +775,7 @@ Proposition 3 is what makes the second of these usable across sectors rather tha
 The gain on $L_7$ is a factor of about nine at $M = 50{,}001$. **It is nevertheless not enough: the sign does not change, and the order required stays where Proposition 1 put it.** Since the kernels are the classical ones and the exponent is sharp, this is not a failure of the particular smoothing chosen — it is as far as smoothing of this kind goes.
 
 **One further route, closed by an equivalence.** Instead of smoothing line by line, one may smooth the survivor mask itself: with $A \subseteq \mathbb{Z}/Q\mathbb{Z}$ the set of cells surviving every line up to $P$, ask for
-$$\Big\lvert \sum_t q_T(t)\sum_u w_H(u)\,\mathbf 1_A(c_t+u) - H\frac{\lvert A\rvert}{Q} \Big\rvert  \lt  H\frac{\lvert A\rvert}{Q}$$
+$$\Big\lvert \sum_t q_T(t)\sum_u w_H(u)\ \mathbf 1_A(c_t+u) - H\frac{\lvert A\rvert}{Q} \Big\rvert  \lt  H\frac{\lvert A\rvert}{Q}$$
 for every centre $c$, with $H$ and $T$ polynomial in $P$ rather than in the primorial $Q$. The primorial does drop out — the least $H = T$ for which this holds is $2, 3, 5, 7, 10$ at $P = 7, 11, 13, 17, 19$, against $Q = 35$ up to $1{,}616{,}615$ — but the reason is not a new mechanism:
 
 | $P$ | $Q$ | least $H = T$ | largest gap $g$ in $A$ |
@@ -790,7 +790,7 @@ for every centre $c$, with $H$ and $T$ polynomial in $P$ rather than in the prim
 
 **Our reading of why is a matter of where the mass sits.** Proposition 5 controls a modulus $d$ only while $d \ll r$. Splitting each $S_i$ by whether the product $d = p_1\cdots p_i$ of its subset falls below $r$:
 
-| $M$ | $r$ | $S_1$ | $S_2$ | $S_3$ | $S_4$ | $S_5$–$S_7$ |
+| $M$ | $r$ | $S_1$ | $S_2$ | $S_3$ | $S_4$ | $S_5\text{--}S_7$ |
 |------|------|-------|-------|-------|-------|-----------|
 | $20{,}001$ | $3{,}333$ | $88.5$% | $40.1$% | $5.6$% | $0$% | $0$% |
 | $50{,}001$ | $8{,}333$ | $90.0$% | $44.7$% | $8.7$% | $0.2$% | $0$% |

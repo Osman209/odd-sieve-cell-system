@@ -65,7 +65,7 @@ The full cycle state — which grows like $\prod q$ — is thus carried by four 
 Write $a = A/M$ and so on.
 
 > **Theorem 1.** The quantity $a+b$ is form-invariant, $(a+b)' = (1-1/p)(a+b)$, and consequently
-> $$\boxed{(a,b,c,d) = \big(P_2,   P_1-P_2,   P_1-P_2,   1-2P_1+P_2\big)}$$
+> $\displaystyle \boxed{(a,b,c,d) = \big(P_2,   P_1-P_2,   P_1-P_2,   1-2P_1+P_2\big)}$
 > where $P_1 = \prod_{5\le q\le P}(1-1/q)$ and $P_2 = \prod_{5\le q\le P}(1-2/q)$.
 
 *Proof.* From (2.1) in normalised form,
@@ -112,11 +112,11 @@ Both end in the same state — one member survives, the other is composite — s
 Theorem 1 records how many cells occupy each state. One may ask for more: the distribution of **inheritance depth** across states, where the depth $j$ of a cell is the number of old lines dividing either of its members. This refinement also closes, and in closed form.
 
 > **Theorem 2.** Let $N_{s,j}$ count the cells in state $s$ with inheritance depth $j$. Then the entry of a line $p$ gives
-> $$NN_j  \to  (p-2)NN_j + NO_{j+1} + ON_{j+1},$$
-> $$NO_j  \to  (p-2)NO_j + NO_{j+1} + OO_{j+1}, \qquad ON \text{ likewise},$$
-> $$OO_j  \to  (p-2)OO_j + 2 OO_{j+1}. \qquad\text{(3.1)}$$
+> $\displaystyle NN_j  \to  (p-2)NN_j + NO_{j+1} + ON_{j+1},$
+> $\displaystyle NO_j  \to  (p-2)NO_j + NO_{j+1} + OO_{j+1}, \qquad ON \text{ likewise},$
+> $\displaystyle OO_j  \to  (p-2)OO_j + 2 OO_{j+1}. \qquad\text{(3.1)}$
 > Equivalently, marking a strike by $x$ and the two rails by $u$ and $v$, the full census is read off from
-> $$\boxed{ \prod_{5\le q\le z}\big((q-2) + xu + xv\big). } \qquad\text{(3.2)}$$
+> $\displaystyle \boxed{ \prod_{5\le q\le z}\big((q-2) + xu + xv\big). } \qquad\text{(3.2)}$
 
 *Proof.* Of the $p$ copies of any cell, exactly two are struck — one on each rail — by [P2, Thm 3]. A copy that is struck acquires one further dividing line, hence depth $j+1$; the other $p-2$ copies retain depth $j$. Reading off which rails are affected in each state gives (3.1), and (3.2) is the generating-function form of the same statement, one factor per line. $\blacksquare$
 
@@ -145,7 +145,7 @@ This is (3.2) with $x$ set to $1$ and $q-2$ resolved into $(q-3) + w$; the cell 
 **The same test one layer up.** [P2, Cor 2] reads the fate of a cell $C_j$ through the phase $u_p(j) = jc^{-1}$, closure being $u = \pm 1$. The centre of the diamond of two cells $C_a, C_b$ is the cell of index $6ab$, and since $36 \equiv c^{-2} \pmod p$ its phase is the product $u_p(a)u_p(b)$. So the same two gates decide one layer up, and the local count is again exact.
 
 > **Corollary 2.** Of the $(p-2)^2$ ordered pairs of phases open to a line $p$, exactly $2(p-3)$ have product $\pm 1$. Hence the number of open pairs whose diamond centre is also open to $p$ is
-> $$(p-2)^2 - 2(p-3) = (p-3)^2 + 1.$$
+> $\displaystyle (p-2)^2 - 2(p-3) = (p-3)^2 + 1.$
 
 *Proof.* For $u \ne 0, \pm 1$ the two dangerous partners are $u^{-1}$ and $-u^{-1}$; both are open, since $u^{-1} = \pm 1$ would force $u = \pm 1$, and they are distinct. There are $p-3$ such $u$, and $u = 0$ has no dangerous partner. $\blacksquare$
 
@@ -184,7 +184,7 @@ The cheap repair is to bin cells by the value of a log-weight into a fixed numbe
 The obstruction identified in §4.1 is that the marker $x$ in (3.2) records *that* a line struck and never *which*. The repair is to mark by size.
 
 > **Corollary 4.** Let $\beta$ assign to each line a bin. Then on the full cycle
-> $$\prod_{5\le q\le z}\big((q-2) + x_{\beta(q)}u + x_{\beta(q)}v\big) \qquad\text{(4.1)}$$
+> $\displaystyle \prod_{5\le q\le z}\big((q-2) + x_{\beta(q)}u + x_{\beta(q)}v\big) \qquad\text{(4.1)}$
 > transports the **joint distribution of the per-bin strike counts on each rail**, exactly.
 
 *Proof.* Identical to Theorem 2. Of the $p$ copies of any cell exactly two are struck, one on each rail; the only change is that the marker attached to the striking line is $x_{\beta(q)}$ rather than $x$. $\blacksquare$
@@ -221,9 +221,9 @@ $$O(n) = \min\lbrace q : q \mid n,  q \ne n\rbrace , \qquad O(n) = N \text{ if n
 Thus $O(25) = O(35) = 5$, $O(45) = 3$, $O(49) = 7$, and $O(105) = 3$ — priority resolves every overlap, so $105$ belongs to $3$ alone although $5$ and $7$ also divide it.
 
 > **Theorem 3.** Let $S_{\lt q}$ denote the survivors of all lines below $q$. Then the ownership layers
-> $$E_q  =  q \cdot S_{\lt q}, \qquad \text{taken from } q^2 \text{ onward},$$
+> $\displaystyle E_q  =  q \cdot S_{\lt q}, \qquad \text{taken from } q^2 \text{ onward},$
 > are pairwise disjoint, and consequently
-> $$\mathrm{card}S(I)  =  \mathrm{card}I  -  \sum_q \mathrm{card}E_q(I)$$
+> $\displaystyle \mathrm{card}S(I)  =  \mathrm{card}I  -  \sum_q \mathrm{card}E_q(I)$
 > **with no inclusion–exclusion corrections.**
 
 *Proof.* If $n$ has owner $q$ then $n = q r$ with $r$ divisible by no line below $q$, i.e. $r \in S_{\lt q}$; and $n \ge q^2$ since $r \ge q$. Conversely any $q r$ with $r \in S_{\lt q}$ and $q r \ge q^2$ has least prime factor $q$. So $E_q$ is exactly $\lbrace n : O(n) = q\rbrace$, and distinct owners give disjoint sets. $\blacksquare$
@@ -281,7 +281,7 @@ Index gap-2 pairs by $x$, the pair being $(2x+1, 2x+3)$, and set $A(x) = 1$ when
 $$C(h)  =  \sum_{x \bmod M} A(x) A(x+h).$$
 
 > **Theorem 4.** Under the entry of a line $q$,
-> $$C_{\mathrm{new}}(h)  =  K_q(h) C_{\mathrm{old}}(h), \qquad K_q(h) = \begin{cases} q-2, & h \equiv 0 \pmod q,\cr  q-3, & h \equiv \pm1 \pmod q,\cr  q-4, & \text{otherwise,}\end{cases}$$
+> $\displaystyle C_{\mathrm{new}}(h)  =  K_q(h) C_{\mathrm{old}}(h), \qquad K_q(h) = \begin{cases} q-2, & h \equiv 0 \pmod q,\cr  q-3, & h \equiv \pm1 \pmod q,\cr  q-4, & \text{otherwise,}\end{cases}$
 > and hence $C_Q(h) = \prod_{q \in Q} K_q(h)$ outright, with no cycle of length $M$ ever being built.
 
 *Proof.* For a single line $q$, the pair at $x$ dies exactly when $2x+1 \equiv 0$ or $2x+3 \equiv 0$, i.e. when $x \in \lbrace c, c-1\rbrace$ with $c \equiv -1/2 \pmod q$ — **two consecutive classes**, and that is what makes the ladder descend in steps of one. For the pairs at $x$ and at $x+h$ both to survive, $x$ must avoid

@@ -4,6 +4,3 @@ node_modules/
 package-lock.json
 package.json
 .DS_Store
-
-REVIEW_NOTES.md
-COMMIT_MESSAGE.txt

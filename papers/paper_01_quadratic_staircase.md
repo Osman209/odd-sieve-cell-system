@@ -50,7 +50,7 @@ The intervals $I_0, I_1, \dots$ tile $(0,\infty)$. That is the only structural f
 ## 2. Theorem 1: the range
 
 > **Theorem 1.** For every odd $n$ and every $0 \le j \le n-1$,
-> $$W_j \in \lbrace 0,1,2,3,4\rbrace .$$
+> $\displaystyle W_j \in \lbrace 0,1,2,3,4\rbrace .$
 
 *Proof.* The two arguments of the floor differ by
 $$\frac{2(j+1)^2}{n}-\frac{2j^2}{n}  =  \frac{4j+2}{n},$$
@@ -68,8 +68,8 @@ $$W_j + W_{n-1-j} = 4, \qquad W_{(n-1)/2} = 2. \qquad\text{(2.1)}$$
 ## 3. Theorem 2: the exact multiplicities
 
 > **Theorem 2.** Let $n \ge 3$ be odd and $A = \lfloor (n+7)/8\rfloor$. Over the first cycle,
-> $$\mathrm{card}\lbrace W{=}0\rbrace  =  \mathrm{card}\lbrace W{=}4\rbrace  =  A, \qquad \mathrm{card}\lbrace W{=}2\rbrace  =  2A-1,$$
-> $$\mathrm{card}\lbrace W{=}1\rbrace  =  \mathrm{card}\lbrace W{=}3\rbrace  =  \frac{n+1}{2}-2A,$$
+> $\displaystyle \mathrm{card}\lbrace W{=}0\rbrace  =  \mathrm{card}\lbrace W{=}4\rbrace  =  A, \qquad \mathrm{card}\lbrace W{=}2\rbrace  =  2A-1,$
+> $\displaystyle \mathrm{card}\lbrace W{=}1\rbrace  =  \mathrm{card}\lbrace W{=}3\rbrace  =  \frac{n+1}{2}-2A,$
 > and no other value occurs.
 
 | $n$ | $(N_0,N_1,N_2,N_3,N_4)$ | $A$ |
@@ -113,7 +113,7 @@ $$N_1 = N_3 = \frac{n+1}{2}-2A. \qquad \blacksquare$$
 ### 3.1 Why the count has no error term
 
 A probabilistic model, assuming $2j^2 \bmod n$ equidistributed, estimates $N_0$ by
-$$\sum_{j \lt  (n-2)/4} \frac{n-4j-2}{n}  \approx  \frac n8,$$
+$$\sum_{j \lt  (n-2)/4} \frac{n-4j-2}{n}  \approx  \frac{n}{8},$$
 the correct answer, with deviation never exceeding $0.889$ for odd $n \le 20{,}001$. Sums of this shape normally carry an error of size $\sqrt n \log n$ (character sums) or $n^{1/3}$ (lattice points).
 
 **The reason none appears here is that the indicators are not independent: the intervals tile, and the tiling is exact.** The residues $2j^2 \bmod n$ never enter the argument. Theorem 5 is the statement about those residues, and it is a good deal harder.
@@ -142,11 +142,11 @@ $$f(x)  =  x - \frac{2x^2}{n}  =  \frac{x(n-2x)}{n},$$
 a concave parabola with its peak at $x = n/4$. So $D$ is the ceiling quantisation of a parabola, $W_j = 0$ means $D$ rises, $W_j = 1$ that it is flat, and $W_j = 2$ that it falls.
 
 > **Theorem 2b.** Let $H = (n-1)/2$ and $A = \lfloor (n+7)/8\rfloor$ as before, and for $1 \le m \le A$ put
-> $$\alpha_m  =  \left\lfloor \frac{n-\sqrt{n^2-8n(m-1)}}{4}\right\rfloor, \qquad \beta_m  =  \left\lceil \frac{n+\sqrt{n^2-8n(m-1)}}{4}\right\rceil - 1 .$$
+> $\displaystyle \alpha_m  =  \left\lfloor \frac{n-\sqrt{n^2-8n(m-1)}}{4}\right\rfloor, \qquad \beta_m  =  \left\lceil \frac{n+\sqrt{n^2-8n(m-1)}}{4}\right\rceil - 1 .$
 > Then, for $0 \le j \lt H$,
-> $$W_j = 0 \iff j = \alpha_m \text{ for some } 1 \le m \le A, \qquad W_j = 2 \iff j = \beta_m \text{ for some } 2 \le m \le A,$$
+> $\displaystyle W_j = 0 \iff j = \alpha_m \text{ for some } 1 \le m \le A, \qquad W_j = 2 \iff j = \beta_m \text{ for some } 2 \le m \le A,$
 > and $W_j = 1$ at every other index of that range. Moreover
-> $$\max_j D_j = A,$$
+> $\displaystyle \max_j D_j = A,$
 > and the two families are separated by the peak: every $\alpha_m \lt n/4$ and every $\beta_m + 1 \gt n/4$.
 
 *Proof.* $f(j+1)-f(j) = (n-4j-2)/n$ has absolute value less than $1$ throughout $0 \le j \lt H$, so the ceiling can move by at most one step and $D$ is unimodal: it rises while $j \lt n/4$ and falls after, giving the separation and leaving only $W \in \lbrace 0,1,2\rbrace$ on this range. A rise into level $m$ happens at the last integer before $f$ crosses the value $m-1$ upward, and a fall out of it at the last integer before $f$ crosses $m-1$ downward; solving $f(x) = m-1$ gives the two roots
@@ -156,7 +156,7 @@ whence the stated floor and ceiling. The peak value of $f$ on the integers is $(
 *Verification.* Zero mismatches for $1{,}429$ odd $n$ up to $20{,}001$, and the count $\lvert\lbrace \alpha_m\rbrace\rvert = A$ recovers $N_0 = A$ of Theorem 2 for every odd $n \le 20{,}001$. The separation at the peak has zero violations for odd $n \lt 4{,}000$.
 
 **A mirror that halves the data.** The two roots satisfy $x_m^- + x_m^+ = n/2 = H + \tfrac12$, and after the floor and the ceiling this becomes
-$$\beta_m  =  H - \alpha_m - \varepsilon_m, \qquad\text{where}\qquad \varepsilon_m = \begin{cases} 0, & \lbrace x_m^-\rbrace \lt \tfrac12,\\[2pt] 1, & \lbrace x_m^-\rbrace \ge \tfrac12,\end{cases}$$
+$$\beta_m  =  H - \alpha_m - \varepsilon_m, \qquad\text{where}\qquad \varepsilon_m = \begin{cases} 0, & \lbrace x_m^-\rbrace \lt \tfrac12,\cr 1, & \lbrace x_m^-\rbrace \ge \tfrac12,\end{cases}$$
 verified with zero mismatches over $20{,}508$ pairs $(n,m)$ with $n \lt 1{,}500$. So the descending half needs no separate list: the ascending positions $\alpha_m$ and one bit per level determine everything, and the palindrome $W_j + W_{n-1-j} = 4$ of (2.1) then determines the whole word.
 
 **What this does not give.** The crossing set $\mathcal A_n = \lbrace \alpha_m \rbrace$ is a compression of the word, not an arithmetic invariant of it. Measured against a control with the same real crossing positions but randomised fractional parts — same parabola, same density everywhere, no arithmetic — the distribution of $\mathcal A_n \bmod q$ is not more structured than the control but slightly less: over odd $n \in (10^3, 2\cdot10^4)$ the $\chi^2$ statistics are $10.5, 14.5, 24.3, 48.7, 51.5, 68.6$ at $q = 7, 11, 13, 17, 19, 23$ against control means $9.1, 20.3, 28.7, 50.3, 56.0, 80.8$, the true value lying below the control in five cases of six. **The small departure from equidistribution is a consequence of the shape of the parabola — the crossings crowd near $0$ and thin towards the peak — and not of any relation between $n$ and $q$.** This is recorded because the closed form invites the opposite guess.
@@ -168,7 +168,7 @@ verified with zero mismatches over $20{,}508$ pairs $(n,m)$ with $n \lt 1{,}500$
 Index the symmetric pairs $\lbrace j, n-1-j\rbrace$ by $R = 1,3,\dots,n-2$.
 
 > **Theorem 3.** With
-> $$d_n(R) = \left\lfloor \tfrac12 + \frac{(R+2)^2}{2n}\right\rfloor - \left\lfloor \tfrac12 + \frac{R^2}{2n}\right\rfloor,$$
+> $\displaystyle d_n(R) = \left\lfloor \tfrac12 + \frac{(R+2)^2}{2n}\right\rfloor - \left\lfloor \tfrac12 + \frac{R^2}{2n}\right\rfloor,$
 > one has $d_n(R) \in \lbrace 0,1,2\rbrace$, and the corresponding pair of increments is $(W_L, W_R) = (2-d,\ 2+d)$.
 
 *Proof.* The two arguments of the floor differ by
@@ -208,7 +208,7 @@ Theorem 2 counts the values of $W$. The companion question concerns their *arran
 *Range of the statement.* The proof below needs $n \ge 51$, where the interval structure of Step 4 is in its generic configuration. Computation shows the conclusion is in fact true for **every** odd $n$ except five: $n = 3, 5, 7, 9, 49$. Checked exhaustively for all odd $n \le 200{,}001$.
 
 Throughout put
-$$\varepsilon_j = [\, r_{j+1} \lt  r_j \,], \qquad q_j = \left\lfloor \frac{4j+2}{n}\right\rfloor, \qquad H = \frac{n-1}{2},$$
+$$\varepsilon_j = [\  r_{j+1} \lt  r_j \ ], \qquad q_j = \left\lfloor \frac{4j+2}{n}\right\rfloor, \qquad H = \frac{n-1}{2},$$
 $$\Phi(x) = \left\lfloor \frac{2x^2}{n}\right\rfloor + \left\lfloor \frac{2(x-1)^2}{n}\right\rfloor,$$
 so that $\varepsilon_j = W_j - q_j$, and $j$ is a local maximum exactly when $\varepsilon_{j-1} = 0$ and $\varepsilon_j = 1$.
 
@@ -220,7 +220,7 @@ and no maximum straddles the middle. Hence the total is twice the number of maxi
 
 ### 5.2 Step 2: maxima are exactly the mixed pairs
 
-In any $0$–$1$ word the numbers of ascents and descents differ by the boundary values; applied to $\varepsilon_0,\dots,\varepsilon_H$ with both ends $0$, the two are equal. Therefore
+In any $0\text{--}1$ word the numbers of ascents and descents differ by the boundary values; applied to $\varepsilon_0,\dots,\varepsilon_H$ with both ends $0$, the two are equal. Therefore
 $$\mathrm{card}\lbrace j \le H : \varepsilon_{j-1}=0,\ \varepsilon_j=1\rbrace  = \tfrac12 \mathrm{card}\lbrace j \le H : \varepsilon_{j-1} \ne \varepsilon_j\rbrace ,$$
 and combining with Step 1:
 $$\boxed{ \mathrm{card}\lbrace \text{local maxima}\rbrace   =  \mathrm{card}\lbrace  1 \le j \le H  :  \varepsilon_{j-1} \ne \varepsilon_j \rbrace . }$$
@@ -238,8 +238,8 @@ $$P_{2s+1} = \big(8s^2,\ 8(s+1)^2\big], \qquad P_{2s} = \big(2(2s-1)^2,\ 2(2s+1)
 of lengths $8(2s+1)$ and $16s$. Since $8j \lt  4n$ on $j \le H$, each $P_j$ carries $L_j$ or $L_j+1$ multiples with $L_j = \lfloor 8j/n\rfloor \in \lbrace 0,1,2,3\rbrace$, and over any block of consecutive $j$ of one parity the total telescopes. Set $\mathrm{off}_j = (q_{j-1}+q_j)-L_j$; then $j$ is mixed iff $P_j$ carries the **larger** count when $\mathrm{off}_j = 0$, the **smaller** when $\mathrm{off}_j = -1$.
 
 Both $L_j$ and $\mathrm{off}_j$ are explicit step functions of $j$, with jumps only at
-$$1 \lt  \ell_1 = \left\lceil \tfrac n8\right\rceil \le \beta_1 = \left\lceil \tfrac{n-2}4\right\rceil \le \ell_2 = \left\lceil \tfrac n4\right\rceil$$
-$$\le \beta_2 = \left\lceil \tfrac{n+2}4\right\rceil \lt  \ell_3 = \left\lceil \tfrac{3n}8\right\rceil \lt  H \lt  H+1,$$
+$$1 \lt  \ell_1 = \left\lceil \tfrac{n}{8}\right\rceil \le \beta_1 = \left\lceil \tfrac{n-2}{4}\right\rceil \le \ell_2 = \left\lceil \tfrac{n}{4}\right\rceil$$
+$$\le \beta_2 = \left\lceil \tfrac{n+2}{4}\right\rceil \lt  \ell_3 = \left\lceil \tfrac{3n}{8}\right\rceil \lt  H \lt  H+1,$$
 giving **seven** intervals with $(L,\mathrm{off}) = (0,0),(1,-1),(1,0),(2,-1),(2,0),(3,-1),(3,0)$ in order. The last is the single point $j = H$, where $4H+2 = 2n$ forces $q_H = 2$. Combining the two parities, an interval $[\alpha,\beta)$ has $\beta-\alpha$ tiles whose multiples total $\Phi(\beta)-\Phi(\alpha)$, independently of which parity starts it. Its contribution to the mixed count is $G-LC$ if $\mathrm{off}=0$ and $(L+1)C-G$ if $\mathrm{off}=-1$, with $G = \Phi(\beta)-\Phi(\alpha)$ and $C = \beta-\alpha$.
 
 Summing the seven intervals and telescoping the $\Phi$'s (note $\Phi(1)=0$):
@@ -255,7 +255,7 @@ $$-\Phi(\beta_1)+\Phi(\ell_2)-\Phi(\beta_2) = -2t + c_r, \qquad c_r = 3, -1, 1, 
 The remaining two are the content, and they are handled together.
 
 > **Lemma.** For odd $n = 8t+r \ge 51$,
-> $$\Phi\big(\lceil n/8\rceil\big) + \Phi\big(\lceil 3n/8\rceil\big) = \frac{5n-k_r}{8}, \qquad k_r = 13, 7, 25, 19 \ \text{ for } r = 1,3,5,7 .$$
+> $\displaystyle \Phi\big(\lceil n/8\rceil\big) + \Phi\big(\lceil 3n/8\rceil\big) = \frac{5n-k_r}{8}, \qquad k_r = 13, 7, 25, 19 \ \text{ for } r = 1,3,5,7 .$
 
 *Proof.* Put $m = \lceil 3r/8\rceil \in \lbrace 1,2,2,3\rbrace$, so $\lceil n/8\rceil = t+1$ and $\lceil 3n/8\rceil = 3t+m$; the four arguments are $x \in \lbrace t,\ t+1,\ 3t+m-1,\ 3t+m\rbrace$. Because $8t \equiv -r \pmod n$,
 $$8x \equiv e_x \pmod n, \qquad e_x = -r,\ 8-r,\ 8m-8-3r,\ 8m-3r,$$
@@ -269,7 +269,7 @@ On the other hand $\sum_x 2x^2 = 40t^2+(24m-8)t+(4m^2-4m+4)$ exactly, and dividi
 
 ### 5.6 Step 6: assembly
 
-Substituting $\ell_1 = t+1$, $\beta_1 = 2t+\lceil\frac{r-2}{4}\rceil$, $\ell_2 = 2t+\lceil\frac r4\rceil$, $\beta_2 = 2t+\lceil\frac{r+2}{4}\rceil$, $\ell_3 = 3t+m$, $H = 4t+\frac{r-1}{2}$ into (5.1) together with the Lemma gives, in each of the four residue classes,
+Substituting $\ell_1 = t+1$, $\beta_1 = 2t+\lceil\frac{r-2}{4}\rceil$, $\ell_2 = 2t+\lceil\frac{r}{4}\rceil$, $\beta_2 = 2t+\lceil\frac{r+2}{4}\rceil$, $\ell_3 = 3t+m$, $H = 4t+\frac{r-1}{2}$ into (5.1) together with the Lemma gives, in each of the four residue classes,
 $$\mathrm{card}(\text{mixed})  =  2t+2  =  2A. \qquad \blacksquare$$
 
 | $n$ | $8t+1$ | $8t+3$ | $8t+5$ | $8t+7$ |
