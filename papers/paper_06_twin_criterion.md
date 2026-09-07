@@ -583,8 +583,9 @@ Three limits should be read with it, and they are what keep this a remark. It is
 
 **And what it does not buy.** $C_M$ exceeds the twin count of the sector by at most six. Any lower bound on $C_M$ is therefore a lower bound on twins, and (3.2) is an exact reformulation rather than a route. We record it because it is the sharpest form the framework has produced of the twin criterion, not because it weakens the problem.
 
-GitHub stops rendering mathematics after a certain number of expressions in one file; this paper exceeds it, and the last subsection below may appear unrendered there. The PDF on the site carries it in full.
 ## Appendix B — Routes that were tried and closed
+
+GitHub stops rendering mathematics after a certain number of expressions in one file; this paper exceeds it, and the last subsection below may appear unrendered there. The PDF on the site carries it in full.
 
 Each of the four accounts below was in the body of §2 in an earlier version. They are collected here so that §2 reads as a sequence of results, and kept in full because a route closed by measurement or by proof is worth more written down than left to be attempted again. In each case the conclusion, and its status as proof or as measurement, is stated in the corresponding stub in §2.
 
