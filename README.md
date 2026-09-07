@@ -1,6 +1,6 @@
 # The Cell System
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22085627.svg)](https://doi.org/10.5281/zenodo.22085627)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22085626.svg)](https://doi.org/10.5281/zenodo.22085626)
 
 [**Read the papers online — https://osman209.github.io/odd-sieve-cell-system/**](https://osman209.github.io/odd-sieve-cell-system/)
 
