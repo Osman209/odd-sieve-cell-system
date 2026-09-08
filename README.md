@@ -178,29 +178,6 @@ own conclusion is that most of it is.
 
 ---
 
-## Three method rules, learned by getting them wrong
-
-**Match on mechanism, not on vocabulary.** Three experts were identified in turn as the right reader
-for Paper 1 — on "three-distance theorem", on "differences of floor functions", on "exact
-frequencies" — and all three were wrong the same way: each works on the irrational, aperiodic side,
-and this object is rational and periodic. The words matched and the regime did not.
-
-**A drifting coefficient is a wrong model, not a noisy one.** A singular-series average fitted over
-a short range gave a coefficient near `0.85` that moved with the fitting window, and was reported as
-`O(log H)` with the drift called instability. Two more orders of magnitude showed the drift to be
-the curvature of `(log C)²`. The instability was the signal.
-
-**A green script is not a checked claim.** Three separate review passes each found a verification script passing against a definition the paper had not stated: a phase normalised one way in the text and another in the code, a theorem stated for a whole list and tested on a sub-list, a deviation normalised against the wrong cell count. Naming the section a script covers does not catch that; naming the quantity it computes does, which is what `COVERAGE.md` is for.
-
-**Reviewing the source is not reviewing the page.** Every paper passed several content audits and
-would still have been published with hundreds of broken formulas, because no audit had looked at
-the rendered page. Two of the failure modes are silent: a stripped `\{` prints mathematics that is
-simply wrong, with no error anywhere. And a checker is not the page either — two further modes
-appeared on GitHub that this repository's own checker had passed. Both were found by opening the
-page and reading it.
-
----
-
 ## Related work
 
 The author's other line of work — the division table, the Weil quadratic form, the Li–Sekatskii
@@ -223,12 +200,6 @@ Osman, M. (2026). The Cell System: a coordinate system for the odd sieve —
 what it proves, what it measures, and where it stops. Zenodo.
 https://doi.org/10.5281/zenodo.22661627
 ```
-
-The DOI is written in six places — the badge above, the block here, `CITATION.cff`,
-the constant in `code/build_site.py`, and through that constant the landing page and
-every paper page under `docs/`. `python3 code/set_doi.py 10.5281/zenodo.NNNNNNNN`
-writes all six, and `audit.py` refuses a release that still carries the placeholder or
-that disagrees between files.
 
 Repository: <https://github.com/Osman209/odd-sieve-cell-system>
 ORCID: <https://orcid.org/0009-0004-5912-999X>
