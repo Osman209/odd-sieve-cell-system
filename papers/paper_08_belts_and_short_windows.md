@@ -8,7 +8,7 @@
 
 Two local geographies. The belt between the squares of consecutive primes has an exact size, a new line's reach inside its own belt depends on the gap and not on the size of the line, and a whole age layer admits a deterministic ceiling; none of the three closes the argument, and the section says why. The short window between consecutive squares is then read in depth: which lines can create a new deep composite, how the shells of neighbouring lines overlap, and four named cells whose owners are governed by the quadratic character of a discriminant. **No progress toward the twin-prime conjecture is claimed.**
 
-**Numbering.** This paper is one part of a set that was written as a single document and is now published in parts. Each part numbers its own results from one and is self-contained: a reference of the form [Pn, Thm 1] means Theorem 1 of Paper n, and an unqualified "Theorem 1" always means this paper's own. Result numbers therefore differ from those of releases before 2.0.0, where the whole set shared the numbering of the single document.
+**Numbering.** This paper is one part of a set that was written as a single document and is now published in parts. Each part numbers its own results from one and is self-contained: a reference of the form [Pn, Thm 1] means Theorem 1 of Paper n, and an unqualified "Theorem 1" always means this paper's own. Result numbers therefore differ from those of the earlier seven-document releases, where the whole set shared the numbering of the single document.
 
 **How to read the claims in this paper.** Statements set as Theorems, Propositions and Corollaries are proved, and the proofs are given. One result in the set is labelled **Verified Law**: it is proved under a stated hypothesis and verified numerically outside it. Anything described as *measured* is a computation over a stated finite range and is labelled as such where it occurs.
 
@@ -33,14 +33,14 @@ Two local geographies. The belt between the squares of consecutive primes has an
 | Result | What it says | Section |
 |---------------|--------------------------------------------------|---------|
 | **Corollary 1** | No integer of the window carries three shell factors, so the shell's whole overlap is the single count $R_2$ and the composites split into core and shell with no inclusion–exclusion. | §3.1 |
-| **Proposition 1b** | A *new* strike of depth $\Omega \ge r$ forces its line below $(M+2)^{2/r}$, so the large lines lose the power to make deep composites one layer at a time. | §3.1 |
-| **Proposition 1c** | Two shell cofactor strips meet only for twin lines above $M/2$, share at most one odd cofactor, and never meet three at a time. | §3.1 |
-| **Proposition 1d** | The two shell thresholds differ by exactly $2$, and above the upper one the handover between adjacent lines is a single bit with a closed form in $\lfloor X/(p-2)\rfloor$ and $\lceil X/p\rceil$. | §3.1 |
+| **Proposition 2** | A *new* strike of depth $\Omega \ge r$ forces its line below $(M+2)^{2/r}$, so the large lines lose the power to make deep composites one layer at a time. | §3.1 |
+| **Proposition 3** | Two shell cofactor strips meet only for twin lines above $M/2$, share at most one odd cofactor, and never meet three at a time. | §3.1 |
+| **Proposition 4** | The two shell thresholds differ by exactly $2$, and above the upper one the handover between adjacent lines is a single bit with a closed form in $\lfloor X/(p-2)\rfloor$ and $\lceil X/p\rceil$. | §3.1 |
 | **Theorem 3** | Which lines can ever own a track: for $r \gt 3$, by the quadratic character of the discriminant. | §3.3.1 |
 | **Theorem 4** | Simultaneity: a prime closes two of the four tracks in one window only under a stated congruence — nine primes in all. | §3.3.2 |
-| **Proposition 2** | And why Theorem 4 obstructs nothing — $k$ tracks always admit a simultaneous solution. | §3.3.3 |
+| **Proposition 5** | And why Theorem 4 obstructs nothing — $k$ tracks always admit a simultaneous solution. | §3.3.3 |
 
-This part has no appendix of its own. The counting details for the window are in [P6, App. A], and the auxiliary distance-$6$ model — whose object is a prime pair $(p,p+6)$, not a twin pair — is in [P7, App. B].
+This part has no appendix of its own. The counting details for the window are in [P6, App. A], and the auxiliary distance-$6$ model — whose object is a prime pair $(p,p+6)$, not a twin pair — is in [P7, App. A].
 
 ---
 
@@ -59,7 +59,7 @@ A word on the last point, since it is what makes this paper's organisation possi
 
 ## 2. The gate belt: what a line can do between its own square and the next
 
-Sections 3–5 work inside a sector bounded by consecutive odd squares. This section changes the unit: since every prime $q\gt 3$ has $q^2 \equiv 1 \pmod 6$, each prime has a **gate** $G_q$ with $q^2 = 6G_q+1$, and the cell $C_{G_q} = (q^2-2, q^2)$ is closed by $q$ itself. Consecutive primes $q\lt r$ therefore delimit a **belt** of cells $C_{G_q+1},\dots,C_{G_r-1}$ between two gates that are certainly closed. The belts tile the cell axis.
+Papers 6 and 7 work inside a sector bounded by consecutive odd squares. This section changes the unit: since every prime $q\gt 3$ has $q^2 \equiv 1 \pmod 6$, each prime has a **gate** $G_q$ with $q^2 = 6G_q+1$, and the cell $C_{G_q} = (q^2-2, q^2)$ is closed by $q$ itself. Consecutive primes $q\lt r$ therefore delimit a **belt** of cells $C_{G_q+1},\dots,C_{G_r-1}$ between two gates that are certainly closed. The belts tile the cell axis.
 
 ### 2.1 Theorem 1: the size of a belt
 
@@ -81,7 +81,7 @@ Sections 3–5 work inside a sector bounded by consecutive odd squares. This sec
 
 **We do not call this a theorem, because the hypothesis is not available.** $g^2 \lt  2q$ is far weaker than Cramér's conjecture $g = O(\log^2 q)$, which would give it at once — but it is **stronger than anything currently proved, and stronger than the Riemann hypothesis supplies**: RH gives only $g \ll \sqrt q \log q$, hence $g^2 \ll q\log^2 q$, which does not suffice. **Verified over $17{,}981$ belts, every consecutive prime pair with $q \lt  200{,}000$: no failure.**
 
-**The consequence is worth stating plainly.** The belt has $\sim qg/6$ cells and the line born at its left end can touch $\sim 2g/3$ of them. **For a twin gap $g=2$ the line touches exactly one cell, however large $q$ is** — one cell out of $\sim q/3$. A line at $q \approx 10^6$ entering a belt of some hundred thousand cells has a single strike available before the next gate opens.
+**The consequence is worth stating plainly.** The belt has $g(2q+g)/6 - 1 \sim qg/3$ cells and the line born at its left end can touch $\sim 2g/3$ of them. **For a twin gap $g=2$ the line touches exactly one cell, however large $q$ is** — one cell out of $\sim 2q/3$. A line at $q \approx 10^6$ entering a belt of some hundred thousand cells has a single strike available before the next gate opens.
 
 ### 2.3 The collapse of the new line's effect
 
@@ -101,7 +101,7 @@ Raw reach is not closing power: a strike may land on a cell an older line has al
 
 *Measured over every consecutive prime pair below $5{,}000$:* $K_q = 0$ in $71.1$% of belts with $q\lt 1000$ and $76.8$% of belts with $1000\lt q\lt 5000$; mean $K_q$ falls from $0.331$ to $0.259$; the maximum ever observed is $3$. **A new line typically arrives at its own gate to find that the work has already been done.**
 
-**A monotone version of this is false, and we record it because it is the natural guess.** It is not the case that a newer line always closes fewer cells than every older one: in the belt $31\to37$ the first closures are $17:1$, $19:3$, $23:2$, $29:3$, so $29$ — newer than $19$ and $23$ — closes more than both. **The weakness is collective, not line by line.**
+**A monotone version of this is false, and we record it because it is the natural guess.** It is not the case that a newer line always closes fewer cells than every older one: in the belt $31\to37$ the first closures are $17{:}1$, $19{:}3$, $23{:}2$, $29{:}3$, so $29$ — newer than both — closes more than $23$ and as many as $19$. **The weakness is collective, not line by line.**
 
 ### 2.4 A deterministic ceiling for a whole age layer
 
@@ -123,7 +123,7 @@ Proposition 1 invites an obvious attempt: build the full pyramid of age layers $
 | $997\to1009$ | 4,011 | 13,935 | $3.5\times$ |
 | $10007\to10009$ | 6,671 | 35,045 | $5.3\times$ |
 
-and the cumulative total already passes $G$ at the **second** layer.
+and the cumulative total already passes $G$ at the **second** layer. (The layers are half-open, so $s=5$ itself lies below the pyramid and is not summed; at the belt $499\to503$ its own ceiling is $268$, and including it would give $2{,}094+268 = 2{,}362$.)
 
 The asymptotic is worth getting right, because it is the point of the section. **The sum runs over every $s$ coprime to $6$, not over the primes**, and those have density $1/3$, so
 $$\sum_{\substack{s \le q\cr (s,6)=1}} \frac1s  =  \frac13\log q + O(1), \qquad\text{whence}\qquad \sum_s \tfrac23\cdot\tfrac{L}{2s}  =  \frac{L}{3}\sum_s\frac1s  \sim  \frac{L}{9} \log q .$$
@@ -137,7 +137,7 @@ $$\frac{\sum_s C_s}{G}  \sim  \frac23\log q$$
 
 ## 3. The short window between consecutive squares
 
-Sections 3–5 work inside a sector bounded by consecutive odd squares three apart, and §2 changes the unit to the belt between the squares of consecutive primes. This section uses a third unit, the **short window**
+Papers 6 and 7 work inside a sector bounded by consecutive odd squares three apart, and §2 changes the unit to the belt between the squares of consecutive primes. This section uses a third unit, the **short window**
 $$W_M = (M^2,\ (M+2)^2), \qquad \lvert W_M\rvert = 4M+4,$$
 between two consecutive odd squares — one third of a sector. Two things live naturally here and nowhere else in the paper: the depth a line can create, in §3.1 and §3.2, and the four named cells of §3.3 onwards, which Paper 2 already indexes on this window. The results below are stated for $W_M$ and are not statements about the sector.
 
@@ -145,7 +145,7 @@ between two consecutive odd squares — one third of a sector. Two things live n
 
 The cut of [P9, §2.1] takes $z$ with $z^3$ above the window, so that every surviving endpoint is prime or a product of exactly two primes. Read line by line rather than as a single cut, the same inequality becomes a ladder.
 
-> **Proposition 1b.** Let $N$ lie in $(M^2,(M+2)^2)$ and let $p$ be its least prime factor, so that the strike $N$ on the line $p$ is *new* — not inherited from any smaller line. If $\Omega(N) \ge r$ then $N \ge p^r$, and therefore
+> **Proposition 2.** Let $N$ lie in $(M^2,(M+2)^2)$ and let $p$ be its least prime factor, so that the strike $N$ on the line $p$ is *new* — not inherited from any smaller line. If $\Omega(N) \ge r$ then $N \ge p^r$, and therefore
 > $\displaystyle p  \lt  (M+2)^{2/r} .$
 
 *Proof.* Every prime factor of $N$ is at least $p$, so $N \ge p^{\Omega(N)} \ge p^r$; and $N \lt (M+2)^2$. $\blacksquare$
@@ -160,7 +160,7 @@ So the layers come off one at a time as the lines grow:
 | $\Omega \ge 4$ | $p \lt (M+2)^{1/2}$ | $p \lt 316$ |
 | $\Omega \ge 5$ | $p \lt (M+2)^{2/5}$ | $p \lt 100$ |
 
-**Above the first rung, at $(M+2)^{2/3} \lt p \le M$, every new strike is $N = pq$ with $q$ prime**, and any strike with composite cofactor is inherited from a smaller line. At $M = 10^5$ that leaves $2{,}155$ of the $9{,}593$ lines able to create a strike of depth three, $316$ able to create one of depth four, and $100$ of depth five.
+**Above the first rung, at $(M+2)^{2/3} \lt p \le M$, every new strike is $N = pq$ with $q$ prime**, and any strike with composite cofactor is inherited from a smaller line. At $M = 10^5$, where those three bounds are $2{,}154.5$, $316.2$ and $100$, that leaves $324$ of the $9{,}591$ lines able to create a strike of depth three, $64$ able to create one of depth four, and $24$ of depth five.
 
 The bound is necessary and not sufficient: a line below the rung may still fail to produce such a strike in a given window because none of the eligible products lands there. At $M = 65$ the line $13$ is admissible, since $13^3 = 2{,}197 \lt 67^2 = 4{,}489$, yet the largest line actually making a deep new strike in that window is $11$. The narrowest case we found is $M = 35$, where $11^3 = 1331 = 11 \times 121$ lands inside $(35^2, 37^2)$ with $11 \lt 37^{2/3} = 11.10$.
 
@@ -184,7 +184,7 @@ At $M = 499$, where $(M+2)^2 = 251{,}001$, the capacity partitions the lines exa
 
 The boundaries are sharp, not approximate. $61^3 = 226{,}981 \lt 251{,}001$, and the line $61$ does own a triple in that window, $249{,}307 = 61^2\cdot 67$; while $67^3 = 300{,}763$ exceeds it, and every number the line $67$ owns there is a semiprime, for instance $249{,}173 = 67 \cdot 3719$. One rung up, $23^4 = 279{,}841$ is already too large, so $23$ cannot start an $\Omega = 4$, but it does start triples such as $249{,}343 = 23\cdot37\cdot293$.
 
-**Capacity is not a promise, and the gap is where one would not guess.** $19^4 = 130{,}321$ is comfortably inside the window at $M = 499$, so that line is permitted depth four, yet the deepest number it owns there has $\Omega = 3$. Comparing capacity with what is actually owned, over all lines that own anything, the capacity is reached by $74$ of $83$ lines at $M = 499$, $118$ of $128$ at $M = 999$ and $460$ of $482$ at $M = 4{,}999$ — **and in each case the shortfall is confined to the smallest lines**:
+**Capacity is not a promise, and the gap is where one would not guess.** $19^4 = 130{,}321$ is below $(M+2)^2 = 251{,}001$ at $M = 499$ — the capacity test is a comparison with the top of the window, not membership of it — so that line is permitted depth four, yet the deepest number it owns there has $\Omega = 3$. Comparing capacity with what is actually owned, over all lines that own anything, the capacity is reached by $74$ of $83$ lines at $M = 499$, $118$ of $128$ at $M = 999$ and $460$ of $482$ at $M = 4{,}999$ — **and in each case the shortfall is confined to the smallest lines**:
 
 | $M$ | $p=3$ | $p=5$ | $p=7$ | $p=11$ | $p=13$ | first line attaining its capacity |
 |-------|-------|-------|-------|-------|-------|-------|
@@ -194,7 +194,7 @@ The boundaries are sharp, not approximate. $61^3 = 226{,}981 \lt 251{,}001$, and
 
 (capacity / deepest owned). The line $3$ has room for eleven or twelve factors and reaches eight or nine. The reason is the shortness of the window rather than any arithmetic obstruction: a number of that depth owned by $3$ must be smooth as well as large, and a window of length $4M+4$ near $M^2$ is too thin to be likely to contain one. From the middle lines upward the capacity is met exactly, and for $p$ above the first rung it is met trivially, every owned number there being a semiprime.
 
-**The shell takes over the line range as $M$ grows.** The share of lines with $D_M(p) = 2$ — those that can do nothing but $pq$ — is $72$%, $81.9$%, $85.6$%, $91.0$%, $92.8$% and $95.8$% at $M = 101$, $499$, $999$, $4{,}999$, $9{,}999$ and $49{,}999$. **Almost every line, in the limit, is incapable of any depth at all.**
+**The shell takes over the line range as $M$ grows.** The share of lines with $D_M(p) = 2$ — those that can do nothing but $pq$ — is $72$%, $81.9$%, $85.6$%, $91.0$%, $92.8$% and $95.8$% at $M = 101$, $499$, $999$, $4{,}999$, $9{,}999$ and $49{,}999$. **Almost every line, in the limit, is incapable of owning anything deeper than a semiprime.**
 
 In terms of the cofactor: if $p$ owns $N = pm$ and $m$ has $t$ prime factors then $m \ge p^t$, so $p^{t+1} \lt (M+2)^2$ and $t \le D_M(p) - 1$ — zero violations over the $848$ composites of that window. Writing $p \sim M^{\alpha}$ turns the rungs into shells of the exponent, $\alpha r \lt 2$, and the boundaries $M^{2/3}, M^{1/2}, M^{2/5}, M^{1/3}, \dots$: **each shell inward permits one more factor.**
 
@@ -204,14 +204,18 @@ of length $(4M+4)/p$, so it makes about $(2M+2)/p$ strikes there — verified to
 
 Splitting the lines at the first rung and counting what each half actually produces:
 
-| $M$ | region | lines | strikes | new $pq$ | new deep | inherited |
-|-------|-------|-------|-------|-------|-------|-------|
-| 1,005 | $p \le (M+2)^{2/3}$ | 24 | 5,242 | 446 | 1,073 | 3,723 |
-| 1,005 | $(M+2)^{2/3} \lt p \le M$ | 143 | 1,594 | 204 | **0** | 1,390 |
-| 10,005 | $p \le (M+2)^{2/3}$ | 89 | 63,493 | 4,095 | 12,259 | 47,139 |
-| 10,005 | $(M+2)^{2/3} \lt p \le M$ | 1,139 | 15,867 | 1,440 | **0** | 14,427 |
+Two different units meet in the next two tables, and it is worth saying which is which: the counts by $\Omega$ above run over the **odd** integers strictly inside the window, of which there are $2M+1$ — the two endpoints $M^2$ and $(M+2)^2$ are odd and excluded — while the strike column below counts **every** multiple of the line in the window, even ones included.
 
-**At $M = 10^4$ the $89$ lines below the rung are $7.2$% of the $1{,}228$ lines and produce all of the new depth; the other $93$% produce none.** They also carry four times as many strikes. The share below the rung falls as $M$ grows — $28$%, $14.4$%, $7.2$% at $M = 101$, $1{,}005$, $10{,}005$ — so the asymmetry sharpens.
+Write $P_0 = (M+2)^{2/3}$ for the first rung, and call the lines below it the **core** and those between it and $M$ the **shell** — the names used from §3.2 on.
+
+| $M$ | region | lines | strikes | new $pq$ | new deep | inherited |
+|:----|:-------------------|:-----|:------|:-----|:-----|:-----|
+| 1,005 | core, $p \le P_0$ | 24 | 5,242 | 446 | 1,073 | 3,723 |
+| 1,005 | shell, $P_0 \lt p \le M$ | 143 | 1,594 | 204 | **0** | 1,390 |
+| 10,005 | core, $p \le P_0$ | 89 | 63,493 | 4,095 | 12,259 | 47,139 |
+| 10,005 | shell, $P_0 \lt p \le M$ | 1,139 | 15,867 | 1,440 | **0** | 14,427 |
+
+**At $M = 10^4$ the $89$ lines of the core are $7.2$% of the $1{,}228$ lines and produce all of the new depth; the $1{,}139$ of the shell produce none.** They also carry four times as many strikes. The share below the rung falls as $M$ grows — $28$%, $14.4$%, $7.2$%, $3.4$% at $M = 101$, $1{,}005$, $10{,}005$, $100{,}005$ — so the asymmetry sharpens.
 
 **A sharper form of the same fact.** For a line above the rung the composite strikes are not merely inherited from *some* smaller line — they are inherited from a line below the rung. If $p \gt (M+2)^{2/3}$ and the cofactor $m = N/p$ is composite with least prime factor $r$, then $r \le \sqrt m$ and $m \lt (M+2)^2/p$, so
 $$r  \lt  \frac{M+2}{\sqrt p}  \lt  \frac{M+2}{(M+2)^{1/3}}  =  (M+2)^{2/3} .$$
@@ -238,7 +242,9 @@ and every one of the $493$ deeper composites is owned by the core — the shell 
 
 ### 3.2 The shell: overlap, strips, and the handover bit
 
-**The shell's whole behaviour, in one bound and one identity.** Three prime factors all above $P_0 = (M+2)^{2/3}$ would give a product above $P_0^3 = (M+2)^2$, outside the window. Hence:
+**The shell's whole behaviour, in one bound and one identity.** Three prime factors all above the rung $P_0 = (M+2)^{2/3}$ of §3.1 would give a product above $P_0^3 = (M+2)^2$, outside the window. Hence:
+
+Throughout this subsection a shell factor is counted as a **distinct** prime in $(P_0, M]$, a line rather than a multiplicity: at $M = 101$ the two integers $3\cdot59^2$ and $11\cdot31^2$ carry one shell line each, not two.
 
 > **Corollary 1.** No integer of the window carries three shell factors: **a shell line strikes a number that at most one other shell line also strikes.**
 
@@ -263,7 +269,7 @@ the second consisting entirely of semiprimes, the first holding every $N$ with $
 
 **The strips of two shell lines almost never meet.** Each shell line inspects the cofactor strip $I_p = (M^2/p,\ (M+2)^2/p)$. For $p \lt r \le M$ these overlap exactly when $rM^2 \lt p(M+2)^2$; writing $r = p+g$ this is $gM^2 \lt 4p(M+1)$.
 
-> **Proposition 1c.** Two shell strips meet only if $r - p = 2$, and then only if $p \gt M^2/2(M+1)$, roughly $p \gt M/2$. The overlap has width less than $2$, so the two lines share **at most one odd cofactor**. Three strips never meet.
+> **Proposition 3.** Two shell strips meet only if $r - p = 2$, and then only if $p \gt M^2/2(M+1)$, roughly $p \gt M/2$. The overlap has width less than $2$, so the two lines share **at most one odd cofactor**. Three strips never meet.
 
 *Proof.* If $g \ge 4$ then $p \le M-4$, so $4p(M+1) \le 4(M-4)(M+1) \lt 4M^2 \le gM^2$ and the condition fails. With $g = 2$ it reads $2M^2 \lt 4p(M+1)$, which is the stated bound on $p$. The width is
 $$\frac{(M+2)^2}{p+2} - \frac{M^2}{p}  =  \frac{4p(M+1) - 2M^2}{p(p+2)}  \lt  2$$
@@ -275,7 +281,7 @@ So the shell is a sequence of disjoint strips with isolated single touches, and 
 
 *One thing that is not a correlation.* At a touch the two strikes are both new or both inherited, never one of each — but this is forced, not observed: the shared cofactor is a single number, and both strikes are new exactly when it is prime. Nothing is measured by it.
 
-**Two thresholds, two apart.** The shell has a second structure that owes nothing to primality. Measure the window in odd cells, so that its length is $L = 2M+2$, and let $a_p$ be the first cell a line strikes. Then $M^2 + 2a_p \equiv 0 \pmod p$, so
+**Two thresholds, two apart.** The shell has a second structure that owes nothing to primality. Measure the window in odd cells, so that it holds $L = 2M+1$ of them, and let $a_p$ be the first cell a line strikes. Then $M^2 + 2a_p \equiv 0 \pmod p$, so
 $$a_p \equiv -\tfrac{1}{2}M^2 \pmod p ,$$
 which is the ordinary start offset of a segmented sieve; nothing is claimed for it here. What the window adds is that two thresholds appear, and they are adjacent:
 $$T_- = \frac{M^2}{2(M+1)}, \qquad T_+ = \frac{(M+2)^2}{2(M+1)}, \qquad T_+ - T_-  =  \frac{4M+4}{2M+2}  =  2 .$$
@@ -283,7 +289,7 @@ Below $T_-$ no two cofactor strips can meet at all; above $T_+$ adjacent odd lin
 
 **Above $T_+$ the handover carries one bit.** Writing $q_{\min}, q_{\max}$ for the first and last cofactor of a line, the difference $q_{\min}(p-2) - q_{\max}(p)$ takes **only the values $0$ and $2$** — zero exceptions over $89{,}698$ adjacent pairs. So the cofactor blocks of the top shell form a single strip on the odd axis with no gaps at all, and the only repetition permitted is one shared value. Below $T_+$ the differences grow without bound, which is what the threshold marks.
 
-> **Proposition 1d.** For $T_+ \lt p \le M$ put $X = 2(s+1)^2$ with $s = (M-p)/2$, and let $\varepsilon_p = 1$ when the lines $p$ and $p-2$ share a cofactor and $0$ otherwise. Then
+> **Proposition 4.** For $T_+ \lt p \le M$ put $X = 2(s+1)^2$ with $s = (M-p)/2$, and let $\varepsilon_p = 1$ when the lines $p$ and $p-2$ share a cofactor and $0$ otherwise. Then
 > $\displaystyle \varepsilon_p = 1 \quad\Longleftrightarrow\quad \left\lfloor \frac{X}{p-2} \right\rfloor + 1 = \left\lceil \frac{X}{p} \right\rceil .$
 
 *Proof.* The last diagonal a line reaches is $\lceil X/p\rceil$, since $2s^2 + 2M + 2 = X + 2p$; the first diagonal of the next line is $\lfloor X/(p-2)\rfloor + 1$. The two coincide exactly when the blocks share a value. $\blacksquare$
@@ -298,14 +304,14 @@ Below $T_-$ no two cofactor strips can meet at all; above $T_+$ adjacent odd lin
 
 ### 3.3 Four named cells inside the window
 
-Paper 2, [P7, §2], indexes the window by its own cell numbers: it is the interval $c_0,\dots,c_0+N-1$ with $c_0 = 6a^2-2a+1$ and $N = 4a-1$, where $n = 6a$ and the window is $[(n-1)^2,(n+1)^2]$. This section uses that indexing to study the four cells nearest its two ends.
+Paper 2, [P2, §4.1], indexes the window by its own cell numbers: it is the interval $c_0,\dots,c_0+N-1$ with $c_0 = 6a^2-2a+1$ and $N = 4a-1$, where $n = 6a$ and the window is $[(n-1)^2,(n+1)^2]$. This section uses that indexing to study the four cells nearest its two ends.
 
 
 *A note on notation.* The four cells of this section are written $T_1,\dots,T_4$ and are **not** the exception types $A, C, D, E, F$ of [P6, §2.3] and [P6, §2.4]; the two families are unrelated, and the letters are kept apart on purpose.
 
 #### 3.3.1 The four tracks, their character conditions and their densities
 
-The window's template [P7, §2.2] singles out four cells near its two ends. Writing $q = 6a-1$ they are
+The window's template [P2, §4.2] singles out four cells near its two ends. Writing $q = 6a-1$ they are
 $$T_1 = (q^2{+}4,\ q^2{+}6), \quad T_2 = (q^2{+}10,\ q^2{+}12), \quad T_3 = ((q{+}2)^2{-}14,\ (q{+}2)^2{-}12), \quad T_4 = ((q{+}2)^2{-}8,\ (q{+}2)^2{-}6),$$
 and as $a$ runs they trace four **tracks**. Substituting $q = 6a-1$ makes every member a quadratic in $a$:
 
@@ -320,7 +326,7 @@ and as $a$ runs they trace four **tracks**. Substituting $q = 6a-1$ makes every 
 
 > **Theorem 3 (which lines can ever own a track).** Let $r \gt  3$. Then $r$ divides $36a^2+Ba+C$ for some $a$ exactly when the discriminant $B^2-144C$ is a quadratic residue modulo $r$, the case of discriminant $\equiv 0$ counting as a residue and giving a double root. (For $r = 2, 3$ the leading coefficient vanishes modulo $r$ and the criterion does not apply; those two lines are handled by the grid itself.) For the eight members the discriminants are $144k$ with
 > $\displaystyle k  =  -4,\ -6 \ (T_1); \qquad -10,\ -12 \ (T_2); \qquad 14,\ 12 \ (T_3); \qquad 8,\ 6 \ (T_4),$
-> so the conditions read $r \equiv 1 \pmod 4$ and $(-6 | r) = 1$ for $T_1$; $(-10 | r)=1$ and $r \equiv 1 \pmod 3$ for $T_2$; $(14 | r)=1$ and $(3 | r)=1$ for $T_3$; $r \equiv \pm1 \pmod 8$ and $(6 | r)=1$ for $T_4$.
+> so the conditions read $r \equiv 1 \pmod 4$ and $(-6 | r) = 1$ for $T_1$; $(-10 | r)=1$ and $r \equiv 1 \pmod 3$ for $T_2$; $(14 | r)=1$ and $(3 | r)=1$ for $T_3$; $r \equiv \pm1 \pmod 8$ and $(6 | r)=1$ for $T_4$ — in each case *or* $r$ divides the discriminant, the double-root case, which is how $5$ owns the lower member of $T_2$ at $a = 1$ although $(-10 | 5) = 0$.
 
 *Verification.* Every prime factor of every member for $a = 1,\dots,400$ — $4{,}209$ checks — satisfies its condition; no violation.
 
@@ -367,11 +373,11 @@ Eligibility asks which primes can own a track at **some** $a$. The sharper quest
 ---
 
 
-#### 3.3.3 Proposition 2: and why Theorem 4 does not obstruct anything
+#### 3.3.3 Proposition 5: and why Theorem 4 does not obstruct anything
 
 Theorem 4 is sharp, and it is sharp for one line. The next statement shows that it dissolves the moment one is allowed four, and it dissolves by construction rather than by measurement.
 
-> **Proposition 2.** Let $k$ tracks be given, each a pair of quadratics in $a$, and let $N$ be any bound. Then there is an arithmetic progression of $a$ — infinite, explicit, and computable — along which all $k$ tracks are closed simultaneously, every closing line exceeding $N$ and all $k$ of them distinct. Any finite number of further congruence conditions may be imposed at the same time.
+> **Proposition 5.** Let $k$ tracks be given, each a pair of quadratics in $a$, and let $N$ be any bound. Then there is an arithmetic progression of $a$ — infinite, explicit, and computable — along which all $k$ tracks are closed simultaneously, every closing line exceeding $N$ and all $k$ of them distinct. Any finite number of further congruence conditions may be imposed at the same time.
 
 *Proof.* For each track choose a prime $r_i \gt  N$, distinct from the others, whose discriminant condition (Theorem 3) is satisfied, and a root $a_i$ of one of its members modulo $r_i$. The $k$ conditions $a \equiv a_i \pmod{r_i}$ have pairwise coprime moduli, so the Chinese remainder theorem combines them into a single class modulo $\prod r_i$. Further conditions on coprime moduli are appended the same way. $\blacksquare$
 

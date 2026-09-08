@@ -8,7 +8,7 @@
 
 Cutting the sieve at depth $z$ with $z^3$ above the window makes every surviving endpoint either prime or a product of exactly two primes, and in that regime the twin count satisfies $T = C - R + S$ with **no error term**: $C$ the surviving cells, $R$ the semiprime endpoints among them, $S$ the cells with both endpoints composite. The identity turns the twin problem into a comparison of two counts, and its parity form shows what the comparison needs — a sign, not a bound. The paper then measures why an ordinary sieve cannot supply it: the classical loss is exactly a factor of two, the two constraints on the cut are incompatible, switching is aimed at the wrong region, and five routes through the line geometry are closed by measurement rather than by assertion. **No progress toward the twin-prime conjecture is claimed.**
 
-**Numbering.** This paper is one part of a set that was written as a single document and is now published in parts. Each part numbers its own results from one and is self-contained: a reference of the form [Pn, Thm 1] means Theorem 1 of Paper n, and an unqualified "Theorem 1" always means this paper's own. Result numbers therefore differ from those of releases before 2.0.0, where the whole set shared the numbering of the single document.
+**Numbering.** This paper is one part of a set that was written as a single document and is now published in parts. Each part numbers its own results from one and is self-contained: a reference of the form [Pn, Thm 1] means Theorem 1 of Paper n, and an unqualified "Theorem 1" always means this paper's own. Result numbers therefore differ from those of the earlier seven-document releases, where the whole set shared the numbering of the single document.
 
 **How to read the claims in this paper.** Statements set as Theorems, Propositions and Corollaries are proved, and the proofs are given. Anything described as *measured* is a computation over a stated finite range and is labelled as such where it occurs.
 
@@ -39,16 +39,16 @@ Cutting the sieve at depth $z$ with $z^3$ above the window makes every surviving
 | **Theorem 7** | The classical Buchstab upper bound for the composite part is **exactly twice** the corresponding lower bound: $I(s) = 2f_1(s)$ on $2 \le s \le 4$. | §3.1 |
 | *Closed form* | Sharing reduces to $(2n^2 \bmod p) \ge 4n^2/(p+2)$, which explains the measured rate $2/3$ and its blindness to primality. | [P10, §2.9] |
 | **Corollary 1** | Hence the naive balance is $-f_1(s)$ identically: the loss is a factor of two, not a discrepancy to be tightened away. | §3.1 |
-| ***Closed routes*** | The two constraints on the cut are incompatible (§3.2); switching the cut cannot repair it (§3.3); five routes through the line geometry, each closed by measurement in one explicit window (§3.4, and [P11, App. C.1]); a control showing the resources are ample, so only the forced residues obstruct (§3.5); and the trap the section exists to avoid, with its counterexample (§3.6). | §3.2–3.6 |
+| ***Closed routes*** | The two constraints on the cut are incompatible (§3.2); switching the cut cannot repair it (§3.3); five routes through the line geometry, each closed by measurement in one explicit window (§3.4, and [P11, App. B.1]); a control showing the resources are ample, so only the forced residues obstruct (§3.5); and the trap the section exists to avoid, with its counterexample (§3.6). | §3.2–3.6 |
 
-**§4 — The routes that reach the same wall** *(in outline; the full accounts are in [P11, App. C.2], which also states Proposition 2)*
+**§4 — The routes that reach the same wall** *(in outline; the full accounts are in [P11, App. B.2], which also states its Proposition 1)*
 
 | Result | What it says | Section |
 |---------------|--------------------------------------------------|---------|
-| ***Discussion*** | Capacity, resonance and parity each fail on their own. | §4, and [P11, App. C.2] |
-| ***Discussion*** | The closing budget is decomposed into internal quantities and misses by a conditional $0.73$%. | [P11, App. C.2.1] |
-| ***Discussion*** | A deterministic local constraint on how many lines must cooperate, and its weakness — stated as Proposition 2 in the companion part. | [P11, App. C.2.2] |
-| ***Discussion*** | Why the three inheritance laws together still do not close the problem. | [P11, App. C.2.3] |
+| ***Discussion*** | Capacity, resonance and parity each fail on their own. | §4, and [P11, App. B.2] |
+| ***Discussion*** | The closing budget is decomposed into internal quantities and misses by a conditional $0.73$%. | [P11, App. B.2.1] |
+| ***Discussion*** | A deterministic local constraint on how many lines must cooperate, and its weakness — stated as Proposition 1 of [P11]. | [P11, App. B.2.2] |
+| ***Discussion*** | Why the three inheritance laws together still do not close the problem. | [P11, App. B.2.3] |
 
 ---
 
@@ -64,7 +64,7 @@ We use Papers [P1] to [P8] as follows and import nothing else.
 
 **The three words used constantly below**, all as defined in [P2]: a **line** $L_p$ is the odd multiples of $p$ from $p^2$ onward; a **cell** is a pair $C_b = (6b-1,\ 6b+1)$, and it is **open**, or **survives** a set of lines, when neither member lies on any of them; the **window** is the interval between two consecutive odd squares, which in cell coordinates is a block of consecutive indices. A twin pair is an open cell whose two members are both prime, and inside $(u^2,v^2)$ sieved by every line up to $u$ the two notions coincide [P6, §2.1].
 
-**The order of this paper is not the order in which it was found.** §2 states the obstruction and §3 shows that no ordinary sieve crosses it; §4 then summarises the routes that were tried first, each of which arrives at the same place, with the full accounts in [P11, App. C]. Throughout, a statement labelled *measured* is a numerical finding with its controls; it is not a theorem and not an asymptotic claim.
+**The order of this paper is not the order in which it was found.** §2 states the obstruction and §3 shows that no ordinary sieve crosses it; §4 then summarises the routes that were tried first, each of which arrives at the same place, with the full accounts in [P11, App. B]. Throughout, a statement labelled *measured* is a numerical finding with its controls; it is not a theorem and not an asymptotic claim.
 
 ---
 
@@ -126,30 +126,32 @@ Write, for the window after the cut,
 $$h  =  \sum_{z \lt  q \le P}\frac1q  \longrightarrow  \log\tfrac32  =  0.405465\ldots,$$
 the limit because $\log P/\log z \to 3/2$. If the owed strikes fell on the surviving cells independently, one would get
 $$\frac{R}{C} \to 2h = 0.810930, \qquad \frac{S}{C} \to h^2 = 0.164402, \qquad \frac{T}{C} \to (1-h)^2 = 0.353472 .$$
-*Measured* over the 816 sectors with $5 \le P \lt  6300$: mean $R/C = 0.797$, rising toward $2h$ with $P$ ($0.748, 0.786, 0.798, 0.805$ by range), and $T/C \approx 0.35$ throughout. Sample sectors: $1009\to1013$ gives $C=146$, $R=110$, $S=18$, $T=54$; $2003\to2011$ gives $512, 396, 89, 205$; $6229\to6247$ gives $2729, 2229, 454, 954$.
+**That is a first-order model and not the limit, and its closeness is a coincidence.** The true limit is $R/C \to 0.818768$, derived from the prime number theorem in §3.2: the composite share is $\int_{1/3}^{1/2}\mathrm{d}\alpha/(\alpha(1-\alpha))$ normalised by $1+\int$, that is $\log 2/(1+\log 2)$, whereas $h$ is $\int_{1/3}^{1/2}\mathrm{d}\alpha/\alpha = \log(3/2)$. The model drops the cofactor weight $1/(1-\alpha)$, which raises the numerator by $71$%, and omits the normalisation, which raises the denominator by $69$%; the two nearly cancel, and the model lands within one per cent of the truth for that reason and not from accuracy. Everything below uses $0.818768$.
+
+*Measured* over the 816 sectors with $5 \le P \lt  6300$: mean $R/C = 0.797$, rising toward $0.818768$ with $P$ ($0.748, 0.786, 0.798, 0.805$ by range), and $T/C \approx 0.35$ throughout. Sample sectors: $1009\to1013$ gives $C=146$, $R=110$, $S=18$, $T=54$; $2003\to2011$ gives $512, 396, 89, 205$; $6229\to6247$ gives $2729, 2229, 454, 954$.
 
 **The model is good and the inference from it is invalid, which is the point of recording it.** The temptation is to argue that $2h \lt  1$ forces $R \lt  C$. It does not: $2h$ is an average over a long range, while a sector is a short interval, and the two are not interchangeable. The counterexample is small and explicit. In the sector $29^2 \to 31^2$ the cut is $z = 31^{2/3} = 9.87$ and $2h = 0.7145 \lt  1$, yet
 $$C = 8, \qquad R = 8, \qquad S = 2, \qquad T = 2,$$
 so $R = C$ exactly, with Theorem 4 still holding as $8 - 8 + 2 = 2$. Over $5 \le P \lt  6300$ it is the only sector with $R \ge C$.
 
-*And the margin is not generous.* Writing the requirement as $R - 2hC \lt  (1-2h)C \approx 0.189 C$, the fraction of that margin actually consumed has mean $0.064$ and median $0.069$, but reaches $1.000$ at $P=29$, $0.873$ at $P=809$, $0.782$ at $P=599$, $0.723$ at $P=1487$ and $0.564$ at $P=3539$. The worst case falls with $P$, slowly. Equivalently, since $R = 2C(1-\rho)$ with $\rho$ the proportion of surviving endpoints that are prime, the inequality $R \lt  C$ **is** $\rho \gt  1/2$: what has to be proved is that more than half of the $z$-rough numbers in $(P^2,Q^2)$ are prime, for every $P$ and not on average. Any argument that assumes $\rho \gt  1/2$ to derive $R \lt  C$ has assumed its conclusion.
+*And the margin is not generous.* Writing the requirement as $R - 2hC \lt  (1-2h)C \approx 0.189 C$, the fraction of that margin actually consumed has mean $0.064$ and median $0.069$, but reaches $1.000$ at $P=29$, $0.873$ at $P=809$, $0.782$ at $P=599$, $0.723$ at $P=1487$ and $0.564$ at $P=3539$. The worst case falls with $P$, slowly. Equivalently, since $R = 2C(1-\rho)$ with $\rho$ the proportion of surviving endpoints that are prime, the inequality $R \lt  C$ **is** $\rho \gt  1/2$: what would suffice is that more than half of the endpoints of the *surviving cells* of $(P^2,Q^2)$ are prime, for infinitely many $P$. Two cautions belong with that sentence. It is a statement about the endpoints of surviving cells, a conditioned set, not about all $z$-rough numbers of the window; and it is sufficient, not necessary — $R \lt  C$ is $T \gt  S$, which is stronger than $T \gt  0$, and the sector $29 \to 31$ below has $R = C$ with $T = 2$.
 
 **The overlap as a resource, and a lower bound that does not need the model at all.** Everything above tries to force $R \lt  C$. There is a better use of the same data. For a surviving cell write $\ell$ and $r$ for the number of lines above the cut that strike its left and its right member. Under (2.1) — indeed under the weaker $z \ge Q^{1/2}$ — no member carries four such factors, since their product would exceed $z^4 \ge Q^2$, so $\ell, r \le 3$. Put
 $$A = \sum \Bigl[\binom{\ell}{2}+\binom{r}{2}\Bigr], \qquad B = \sum \ell r,$$
 the pairs of lines piling on one member and the pairs splitting across the two.
 
-> **Theorem 5 (pair-overlap bound).** For all integers $0 \le \ell, r \le 3$,
+> **Theorem 5 (pair-overlap bound).** Write $R_{\mathrm{hit}} = \sum(\ell+r)$ for the number of owed **strikes** — equal to $R$ under the cut (2.1), where every composite endpoint has $\ell = 1$, but larger under the weaker cut $z \ge Q^{1/2}$ used below. For all integers $0 \le \ell, r \le 3$,
 > $\displaystyle \mathbf 1_{\lbrace \ell = r = 0\rbrace} \ \ge\ 1 - \ell - r + \tfrac23\Bigl[\binom{\ell}{2}+\binom{r}{2}\Bigr] + \tfrac19 \ell r,$
 > and therefore, summing over the surviving cells,
-> $\displaystyle T \ \ge\ C - R + \tfrac23 A + \tfrac19 B .$
+> $\displaystyle T \ \ge\ C - R_{\mathrm{hit}} + \tfrac23 A + \tfrac19 B .$
 
 *Proof.* Sixteen cases, checked directly; equality holds at $(0,0)$, $(0,1)$, $(1,0)$, $(0,3)$, $(3,0)$ and $(3,3)$. $\blacksquare$
 
-*The coefficients cannot be improved in this shape.* Seeking $T \ge C - R + aA + bB$, the case $(3,0)$ gives $1-3+3a \le 0$, so $a \le 2/3$; taking $a = 2/3$, the case $(3,3)$ gives $1-6+4+9b \le 0$, so $b \le 1/9$.
+*The coefficients cannot be improved in this shape.* Seeking $T \ge C - R_{\mathrm{hit}} + aA + bB$, the case $(3,0)$ gives $1-3+3a \le 0$, so $a \le 2/3$; taking $a = 2/3$, the case $(3,3)$ gives $1-6+4+9b \le 0$, so $b \le 1/9$.
 
 *What changes, and it is the only place in this work where it changes.* The bound uses the overlap as a **resource**: the more the lines pile up, the larger $A$ and $B$, and the better the bound. Consequently the estimates one needs run in the opposite direction from everywhere else — an upper bound for $R$ and lower bounds for $A$ and $B$. In the free model $R/C \sim 2h$ and $A/C \sim B/C \sim h^2$ give $T/C \gtrsim 1 - 2h + \tfrac79 h^2$, whose root is $h_c = (9-3\sqrt2)/7 = 0.679623$, i.e. a cut exponent $\alpha_c = e^{-h_c} = 0.50681$ against $0.60653$ for $R \lt  C$ alone.
 
-*And the model overstates both terms, by different amounts.* Under the cut, a line $L_q$ strikes $n$ only once it has begun, that is when $q^2 \le n$ [Theorem 2], so $\ell$ counts the distinct prime factors $q \mid n$ with $q^2 \le n$: it is $0$ at a prime, $1$ at a product of two primes — the larger line has not started — and $3$ at a product of three, since the two smaller factors already exceed $X^{\alpha} \gt  X^{1/2}$ and so the largest lies below $X^{1/2}$. The value $\ell = 2$ is therefore impossible above $\alpha = 1/2$, and is measured at $0.0005$. Writing $s_k$ for the share of rough numbers with $k$ prime factors, the bound becomes
+*And the model overstates both terms, by different amounts.* Under the cut, a line $L_q$ strikes $n$ only once it has begun, that is when $q^2 \le n$ [Theorem 2], so $\ell$ counts the distinct prime factors $q \mid n$ with $q^2 \le n$: it is $0$ at a prime, $1$ at a product of two primes — the larger line has not started — and $3$ at a product of three, since the two smaller factors already exceed $P^{\alpha}$ with $\alpha \gt  1/2$, so the largest lies below the square root of the product. The value $\ell = 2$ therefore requires a repeated prime factor — $175 = 5^2\cdot7$ carries two distinct lines and both have begun — so it is confined to the squarefull survivors and is measured at $0.0005$; it is rare, not impossible. Writing $s_k$ for the share of rough numbers with $k$ prime factors, the bound becomes
 $$T/C \ \ge\ 1 - 2\ \mathbf{E}[\ell] + \tfrac43\ \mathbf{E}\left[\tbinom{\ell}{2}\right] + \tfrac19\ \mathbf{E}[\ell]^2, \qquad \mathbf{E}[\ell] = s_2 + 3s_3, \quad \mathbf{E}\left[\tbinom{\ell}{2}\right] = 3s_3,$$
 where the last term uses the independence of the two rails, measured below. The shares follow from the standard density of an integer with $k$ prime factors $X^{a_1} \le \cdots \le X^{a_k}$: with $\beta = \alpha/2$,
 $$s_k \propto I_k(\beta), \qquad I_1 = 1, \quad I_2 = \int_{\beta}^{1/2}\frac{da}{a(1-a)} = \log\frac{1-\beta}{\beta}, \quad I_3 = \iint \frac{da_1\ da_2}{a_1a_2a_3}$$
@@ -205,15 +207,15 @@ Two remarks make the shape of this clearer.
 
 **The same content as a covariance, which is the sharpest form we can give it.** Under the cut, classify a surviving cell by the two indicators $C_L, C_R \in \lbrace 0,1\rbrace$ recording whether its left and right endpoints are composite, and set $u = \mathbb E C_L$, $v = \mathbb E C_R$, $\kappa = \mathbb E(C_LC_R) - uv$. A four-state tally of the cells — both prime, one composite either way, both composite — together with $R/C = u+v$ gives immediately
 $$\boxed{\ \frac{T}{C}  =  (1-u)(1-v) + \kappa .\ }$$
-The independent part and the correlation, and nothing else. The Frechet inequality $\mathbb E(C_LC_R) \ge \max(0, u+v-1)$ then places a floor under $\kappa$, and
-$$T = 0 \quad\Longleftrightarrow\quad \kappa = -(1-u)(1-v),$$
-that is, exactly at maximal anti-correlation between the two rails.
+The independent part and the correlation, and nothing else. The Frechet inequality $\mathbb E(C_LC_R) \ge \max(0, u+v-1)$ then places a floor under $\kappa$, namely $\kappa \ge \max(0,u+v-1) - uv$, and
+$$T = 0 \quad\Longleftrightarrow\quad \kappa = -(1-u)(1-v).$$
+**The two agree only when $u+v \ge 1$.** Below that the floor is $-uv$, and $T/C \ge 1-u-v \gt  0$ whatever the correlation: with the composite rates measured at $u \approx v \approx 0.409$ the floor is $-0.167$ against $-(1-u)(1-v) = -0.350$, and no correlation between the rails can empty the window. So the vanishing state is not reached by moving $\kappa$ alone — the marginals have to move too, which is what the exchange of masses below does.
 
 *The barrier realised on this surface.* At the cut $z = Q^{2/3}$ the sifting parameter is $u_B = 3$, where Buchstab's function [1] gives the primes a share $r = 1/(1+\log 2) = 0.59062$ of the rough endpoints and the semiprimes $s = \log 2/(1+\log 2) = 0.40938$. Independence then predicts $R/C = 2s = 0.81877$ and $T/C = r^2 = 0.34883$. Exchanging the two masses — which is precisely the ambiguity Selberg's parity example exploits — and then forcing maximal anti-correlation gives the state $(0,\ s,\ s,\ 1-2s)$, whence $R/C = 2r = 1.18123$, $\kappa$ at its floor, and $T = 0$ exactly. The displacement splits as $\Delta(R/C) = 0.36246$ against $\Delta\kappa$-carrier $= 0.01364$, and $-0.36246 + 0.01364 = -0.34883 = -r^2$: the small quantity is not a shortfall to be closed but the exact overlap movement that lands the configuration on zero.
 
 *Measured.* Over the $793$ sectors with $101 \le P \lt  6300$ at this cut, the weighted mean of $\kappa$ is $+0.000048$, i.e. $+0.00005$ of the Frechet floor, and by range it reads $-0.0041$, $+0.0021$, $+0.0002$, $-0.0001$ — collapsing by an order of magnitude per range and symmetric about zero. Individual sectors scatter between $-0.32$ and $+0.27$ of the floor. At $P = 6229$: $u = 0.3983$, $v = 0.4185$, $\kappa = -0.00032$, $(1-u)(1-v) = 0.3499$ against $T/C = 0.3496$.
 
-*So the wall has a name and a number.* Twins are plentiful for one reason, that $\kappa$ sits at zero; and the parity obstruction is exactly that nothing here forbids $\kappa$ from reaching its floor. The missing statement is about a **correlation between the two rails**, not about a density and not about a sieve — which is why sieve tools were always going to arrive at this point and stop.
+*So the wall has a name and a number.* Twins are plentiful for one reason, that $\kappa$ sits at zero; and the parity obstruction is exactly that nothing here forbids the pair $(u+v, \kappa)$ from reaching the vanishing state — which needs the composite share above one half **and** the correlation at its floor, the two together. The missing statement is about the **joint law of the two rails**, not about a density alone and not about a sieve — which is why sieve tools were always going to arrive at this point and stop.
 
 ---
 
@@ -280,7 +282,9 @@ The prime proportion among surviving endpoints is the quotient of two finite-siz
 
 On the other side, a positive lower bound for $C$ is a sieve lower bound in **dimension two**, and therefore requires $s \gt  \beta_2 = 4.2664$.
 
-$$\boxed{ u \lt  2e^{\gamma} = 3.5621 \quad\text{and}\quad s \gt  \beta_2 = 4.2664 \quad\text{cannot both hold.} }$$
+$$\boxed{ \text{At level of distribution } \theta = 1, \text{ where } s = u: \quad u \lt  2e^{\gamma} = 3.5621 \quad\text{and}\quad u \gt  \beta_2 = 4.2664 \quad\text{cannot both hold.} }$$
+
+(The two variables are different — $u = \log x/\log z$ and $s = \log D/\log z$ with $D = x^{\theta}$ — and coincide only at $\theta = 1$, which is why the level enters the statement; the numerical threshold is $u^{*} \approx 3.5658$, with $2e^{\gamma}$ its limiting value.)
 
 The window is empty, and it stays empty under the dimension-versus-level trade: taking $\kappa = 1$ with $\theta = 1/2$ (Chen's setting) requires $u \gt  \beta_1/\theta = 4$, exactly what $\kappa=2$ with $\theta=1$ requires. **The trade between dimension and level of distribution is neutral for this problem.**
 
@@ -312,7 +316,7 @@ The identity of §2.2 says what must be shown; the line geometry offers five way
 
 The measurements are consistent with one another and with §3.2. The deviation from independence across the window is under three parts in a thousand and changes sign; the partner condition supplies a factor of about $0.17$ and is the whole of the margin; and a bound that does not see both members of a cell at once fails by a factor of five before the sieve constant is reached.
 
-*The five routes, with the window they were run in and the numbers that close each, are in [P11, App. C.1].*
+*The five routes, with the window they were run in and the numbers that close each, are in [P11, App. B.1].*
 
 ---
 
@@ -378,7 +382,7 @@ Three routes were produced by the framework before the identity of §2 was writt
 
 They are worth having on record because each was pursued to its end and because the way each fails is the same way: a lower bound on the survivors is available, an upper bound on the composite part is not, and the two are needed together. That is the shape of §2.3 in three different notations.
 
-*The three routes, with their measurements and the exact point at which each stops, are in [P11, App. C.2].*
+*The three routes, with their measurements and the exact point at which each stops, are in [P11, App. B.2].*
 
 ---
 
@@ -386,14 +390,14 @@ They are worth having on record because each was pursued to its end and because 
 
 $T/M$ at moving depth: see [P4, §3.2].
 
-Contribution of lines to $\sum B_r$:
+Contribution of lines to $\sum B_r$, with $B_r$ as defined in [P4, Thm 3]:
 
 | $U$ | negative | sum | positive | sum |
 |-------|----------|------|----------|------|
 | 1,019 | 136 | $-708.3$ | 33 | $+93.1$ |
 | 2,039 | 271 | $-2306.2$ | 36 | $+162.9$ |
 
-$\mu_r$: prediction against measurement over 1,400 sectors:
+$\mu_r$, the mean of $\varepsilon_r$ over sectors, predicted by Verified identity A of [P4, §4.1]: prediction against measurement over 1,400 sectors:
 
 | $r$ | 5 | 7 | 11 | 17 | 23 | 101 |
 |-----------|----------|------|----------|----------|------|----------|

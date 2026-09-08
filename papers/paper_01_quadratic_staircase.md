@@ -165,7 +165,7 @@ verified with zero mismatches over $20{,}508$ pairs $(n,m)$ with $n \lt 1{,}500$
 
 ## 4. Theorems 3 and 4: pairs
 
-Index the symmetric pairs $\lbrace j, n-1-j\rbrace$ by $R = 1,3,\dots,n-2$.
+Index the symmetric pairs $\lbrace j, n-1-j\rbrace$ by $R = 1,3,\dots,n-2$, the pair at $R$ being the one whose upper index is $j = (n+R)/2$, so that $W_{(n+R)/2} = 2 + d_n(R)$ and its partner sits at $n-1-j$.
 
 > **Theorem 3.** With
 > $\displaystyle d_n(R) = \left\lfloor \tfrac12 + \frac{(R+2)^2}{2n}\right\rfloor - \left\lfloor \tfrac12 + \frac{R^2}{2n}\right\rfloor,$
@@ -204,6 +204,8 @@ As in Theorem 2, the whole census is governed by one integer.
 Theorem 2 counts the values of $W$. The companion question concerns their *arrangement*, and its sharpest form is the number of local maxima of the residue sequence itself.
 
 > **Theorem 5.** Let $n \ge 51$ be odd and $A = \lfloor (n+7)/8\rfloor$. Then $r_j = 2j^2 \bmod n$, $j = 0,\dots,n-1$, has exactly $2A$ interior local maxima.
+
+*The maximum is meant strictly*: $j$ is counted when $r_j \gt r_{j-1}$ and $r_j \gt r_{j+1}$. The weaker reading through $\varepsilon_{j-1} = 0$ used in the proof below agrees with it at every odd $n$ except $n = 7$, so the proof is unaffected, but the exception list is stated for the strict form.
 
 *Range of the statement.* The proof below needs $n \ge 51$, where the interval structure of Step 4 is in its generic configuration. Computation shows the conclusion is in fact true for **every** odd $n$ except five: $n = 3, 5, 7, 9, 49$. Checked exhaustively for all odd $n \le 200{,}001$.
 
@@ -312,7 +314,7 @@ so the fourth interval $[\ell_2,\beta_2)$ is empty here and five of the seven ca
 
 Two details were found by failure rather than by design and are recorded so that a reader reconstructing the argument does not lose time on them.
 
-**The constant $2$ in the increment.** In the application from which this paper was extracted, the increment appears as $H_j = 2+W_j$; dropping the additive constant breaks the formula in $57$ of $78$ tested cases. It is an artefact of that application, not of the staircase, but it is easy to mislay.
+**The constant $2$ in the increment.** In the application from which this paper was extracted, the increment appears as $H_j = 2+W_j$ — the two extra strikes are the two full line-steps in the square gap $4p+8j+4$, and the identity is proved in [P2, §0.1]. Dropping the additive constant breaks the formula in $57$ of $78$ tested cases. It is an artefact of that application, not of the staircase, but it is easy to mislay.
 
 **The seventh interval.** A first version of (5.1) used six intervals and failed for essentially every $n$. The omission is the single point $j = H$, where $4H+2 = 2n$ forces $q_H = 2$ rather than $1$; with it restored the identity holds with zero failures on the whole tested range.
 

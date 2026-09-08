@@ -8,7 +8,7 @@
 
 Between consecutive odd composites the gap takes only the values $2$, $4$ and $6$, and a gap of $6$ *is* a twin pair. That single observation turns the twin problem into a question about one letter of a three-letter alphabet, and this paper settles everything about that alphabet that can be settled without prime input: the two short gaps occur infinitely often for elementary reasons, the long one is equivalent to the conjecture itself, and the forbidden words of the language are classified. On one rail no five survivors above $5$ lie in arithmetic progression of step $6$, and the run counts obey an exact product formula that caps runs at four. **No progress toward the twin-prime conjecture is claimed.**
 
-**Numbering.** This paper is one part of a set that was written as a single document and is now published in parts. Each part numbers its own results from one and is self-contained: a reference of the form [Pn, Thm 1] means Theorem 1 of Paper n, and an unqualified "Theorem 1" always means this paper's own. Result numbers therefore differ from those of releases before 2.0.0, where the whole set shared the numbering of the single document.
+**Numbering.** This paper is one part of a set that was written as a single document and is now published in parts. Each part numbers its own results from one and is self-contained: a reference of the form [Pn, Thm 1] means Theorem 1 of Paper n, and an unqualified "Theorem 1" always means this paper's own. Result numbers therefore differ from those of the earlier seven-document releases, where the whole set shared the numbering of the single document.
 
 **How to read the claims in this paper.** Statements set as Theorems, Propositions and Corollaries are proved, and the proofs are given. One result in the set is labelled **Verified Law**: it is proved under a stated hypothesis and verified numerically outside it. Anything described as *measured* is a computation over a stated finite range and is labelled as such where it occurs.
 
@@ -37,7 +37,7 @@ This paper is short and takes almost nothing from the others. [P2] supplies the 
 
 Two companions are cited but not used as sources. [P9] is where the obstruction that stops the ladder is derived, and [P11] is where the routes around it are collected. Neither is needed to read this paper.
 
-**A warning about the word "gap", carried here because this is the paper that fixes the alphabet.** A *gap* below always means the numerical distance between two consecutive odd composites, so the letter $6$ is a twin pair. That is not the same object as an *edge of length $6$* between two survivors, which is a prime pair $(p, p+6)$ and is studied in [P7, App. B]. The two must not be run together: the phrase "gap 6" would otherwise cover both.
+**A warning about the word "gap", carried here because this is the paper that fixes the alphabet.** A *gap* below always means the numerical distance between two consecutive odd composites, so the letter $6$ is a twin pair. That is not the same object as an *edge of length $6$* between two survivors, which is a prime pair $(p, p+6)$ and is studied in [P7, App. A]. The two must not be run together: the phrase "gap 6" would otherwise cover both.
 
 ---
 
@@ -53,7 +53,7 @@ We record first what the framework proves outright about gaps, and then where th
 
 *Proof.* Among any three consecutive odd numbers the residues modulo $3$ are a permutation of $\lbrace 0,1,2\rbrace$:
 $$n,\ n+2,\ n+4 \ \longrightarrow\ \text{one of them lies on } L_3 .$$
-So, so one is divisible by $3$; and every odd multiple of $3$ from $9$ onward lies on $L_3$. Hence beyond $7$ no three consecutive survivors exist, and the gap is capped at $6$. $\blacksquare$
+So one of them is divisible by $3$; and every odd multiple of $3$ from $9$ onward lies on $L_3$. Hence beyond $7$ no three consecutive survivors exist, and the gap is capped at $6$. $\blacksquare$
 
 Correspondingly: gap $2$ means no survivor between; gap $4$ means one isolated prime; and **gap $6$ means two adjacent survivors, i.e. a twin pair.** Verified: every gap-$6$ interval contains a twin, zero failures among $2{,}992$ instances below $3\times10^5$.
 
@@ -85,7 +85,7 @@ $$\begin{array}{lll}
 | $10^8$ | 4.556 | 1.127 | 0.488 |
 | $2\times10^9$ | 5.762 | 1.257 | **0.498** |
 
-Gaps $2$ and $4$ have **divergent** reciprocal sums (growing like $\log\log N$), and divergence proves infinitude. The gap-$6$ sum **converges** — flattening toward a constant. That constant is the analogue of Brun's constant in the present alphabet and not Brun's constant itself: the latter is $\sum_{\text{twins}}\big(1/p + 1/(p+2)\big) = 1.9021605\ldots$, whereas the column above carries one reciprocal per gap-$6$ event. A convergent reciprocal sum cannot distinguish "infinitely many" from "finitely many". Thus this particular divergence-based density test has no route to the twin conclusion.
+Gaps $2$ and $4$ have **divergent** reciprocal sums, and divergence proves infinitude. The two diverge at different rates: almost every odd composite begins a gap of $2$, so that column grows like $\tfrac12\log N$, while the gap-$4$ column counts isolated primes and grows like $\log\log N$. The gap-$6$ sum **converges**, and that is Brun's theorem [1] rather than a reading of the column: every gap-$6$ interval carries a twin pair by Theorem 1, so this sum is dominated by the sum of $1/p$ over twins. The column shows it flattening toward its constant on the tested range. That constant is the analogue of Brun's constant in the present alphabet and not Brun's constant itself: the latter is $\sum_{\text{twins}}\big(1/p + 1/(p+2)\big) = 1.9021605\ldots$, whereas the column above carries one reciprocal per gap-$6$ event. A convergent reciprocal sum cannot distinguish "infinitely many" from "finitely many". Thus this particular divergence-based density test has no route to the twin conclusion.
 
 ### 2.3 Runs and the cap at four
 
@@ -97,13 +97,15 @@ run through all residues modulo $5$, so exactly one of them is divisible by $5$.
 
 **The exception is real and must be carried in the statement.** For $x = 5$ the run is $5, 11, 17, 23, 29$, and all five are prime; an exhaustive search to $2\times10^5$ finds this and no other. It exists purely because $L_5$ is born at $25$: as a statement about the *residue classes* the argument is exact, and only the birth rule creates the exception.
 
-*Verification.* At sieve depth $97$ over $6\times10^7$ cells, the run-length census is $6{,}448{,}150$ of length $1$; $2{,}404{,}092$ of length $2$; $778{,}762$ of length $3$; $211{,}170$ of length $4$; and **none of length $5$ or more.**
+*Verification.* At sieve depth $97$ over $4\times10^7$ cells of the upper rail $6b+1$, with $b$ running from $0$ and survivors taken to be the members coprime to every prime from $5$ to $97$, the run-length census is $6{,}448{,}150$ of length $1$; $2{,}404{,}092$ of length $2$; $778{,}762$ of length $3$; $211{,}170$ of length $4$; and **none of length $5$ or more.** The range is pinned by the survivor total itself: there are $14{,}437{,}300$ survivors, a density of $0.360932$ against $\prod_{5\le q\le 97}(1-1/q) = 0.360952$. (On the lower rail the same census gives $6{,}448{,}103$, $2{,}403{,}803$, $779{,}340$, $210{,}868$, and under the birth-at-$p^2$ rule that rail carries one run of length five, namely the exception $5, 11, 17, 23, 29$ of Theorem 3. The convention above is therefore part of the statement.) Regenerated by `code/verify_gap_alphabet.py`.
 
-> **Corollary 1.** With $G_k$ the number of runs of $k$ consecutive survivors at spacing $6$ on one rail, the full-cycle counts satisfy $G_k = \prod_{q}(q-k)$.
+> **Corollary 1.** With $G_k$ the number of **starting positions** of a run of $k$ consecutive survivors at spacing $6$ on one rail — so that a run of length $\ell$ is counted once in each of $G_1,\dots,G_\ell$ — the full-cycle counts satisfy $G_k = \prod_{q}(q-k)$, for $k \lt  \min q$.
 
 *Proof.* A run of $k$ forbids exactly $k$ marks on each ruler, leaving $q-k$. $\blacksquare$
 
-*Verification* (direct count on the $t$-axis at $p = 101$):
+**$G_k$ is not the census of maximal runs, and the two must not be read off one table.** For the lines $\lbrace 5,7\rbrace$ the starts are $24, 15, 8, 3, 0$, matching the product; the *maximal* runs of the same cycle are $2$ of length $1$, $2$ of length $2$, $2$ of length $3$ and $3$ of length $4$. Once $k$ reaches the smallest line the product would turn negative, and the true count is $0$: the formula holds below that point and the cap of Theorem 3 is what happens at it.
+
+*Verification* (direct count over a full cycle of the line set, on one rail; the runs are counted at spacing $6$ in the cell index):
 
 | lines | $k{=}1$ | 2 | 3 | 4 | **5** |
 |-------|------|-----|----|----|---|
@@ -122,4 +124,6 @@ run through all residues modulo $5$, so exactly one of them is divisible by $5$.
 
 ## References
 
-The eleven papers of this set are cited as [P1] to [P11]. This paper uses no external reference: everything it quotes is a definition or a statement of a companion paper, never a proof.
+The eleven papers of this set are cited as [P1] to [P11], and the numbered entry below is the external work. This paper imports one result from outside the set — the convergence of §2.2 — and nothing else; every other statement it quotes is a definition or a statement of a companion paper, never a proof.
+
+1. V. Brun, *La série 1/5+1/7+1/11+1/13+⋯ où les dénominateurs sont nombres premiers jumeaux est convergente ou finie*, Bull. Sci. Math. **43** (1919), 100–104, 124–128. — *the convergence of the sum over twin pairs, which dominates the gap-6 column of §2.2.*

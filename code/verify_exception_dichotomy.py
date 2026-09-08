@@ -12,6 +12,9 @@ lines close all six.
 
 Exits non-zero if any check fails.  --force-fail exercises the gate.
 """
+
+COVERS = ["[P6, S2.2]", "[P6, S2.3]"]
+
 import argparse
 import sys
 from itertools import product

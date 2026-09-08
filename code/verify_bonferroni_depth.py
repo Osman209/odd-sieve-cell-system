@@ -32,6 +32,9 @@ sufficient odd order against M.
 Exits non-zero if any self-test fails.  Standard library plus numpy.
 """
 
+COVERS = ["[P6, S2.2]", "[P6, S2.9]"]   # sector geometry from [P2]; E_M and the Bonferroni lower bound on C_M
+
+
 import argparse
 import sys
 from math import comb

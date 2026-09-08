@@ -19,7 +19,10 @@
 %     genuinely longer than that still splits, which is what one wants.
 \BeforeBeginEnvironment{verbatim}{\par\needspace{4\baselineskip}\begin{minipage}{\linewidth}}
 \AfterEndEnvironment{verbatim}{\end{minipage}\par}
-\BeforeBeginEnvironment{longtable}{\needspace{10\baselineskip}}
+% A table whose head lands at the foot of a page prints the head twice: pandoc
+% emits \endfirsthead and \endhead, and a break between them shows both.  Reserve
+% enough lines that a table of the sizes used here moves whole to the next page.
+\BeforeBeginEnvironment{longtable}{\needspace{18\baselineskip}}
 \usepackage{ragged2e}
 % Pandoc gives every column an equal share of the line, which squeezes a wide
 % "what it says" column into four words a line while a narrow "section" column
@@ -32,6 +35,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{newunicodechar}
 \newunicodechar{✓}{\ensuremath{\checkmark}}
+\newunicodechar{⋯}{\ensuremath{\cdots}}
 \usepackage{microtype}
 \setlength{\emergencystretch}{3em}
 \hyphenpenalty=1000

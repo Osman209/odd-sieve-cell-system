@@ -29,6 +29,9 @@ Exits non-zero if any self-test fails.  Standard library plus numpy.
 z = 19 sweeps 1,616,615 residues and takes a couple of minutes.
 """
 
+COVERS = []                              # ORPHAN: no published table depends on this script
+
+
 import argparse
 import sys
 

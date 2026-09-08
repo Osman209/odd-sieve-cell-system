@@ -32,6 +32,9 @@ two runs with different prime bounds do NOT agree.  Keep PB tied to HM.
 
 Outputs D_1..D_8+, their total, and the wave moments M, J, W at each grid point.
 """
+
+COVERS = ["[P10, S2.6]"]           # the level decomposition of Sigma_B(C)
+
 import argparse, math, sys, time
 import numpy as np
 
@@ -202,7 +205,9 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--hm", type=int, default=37_182_145)
     ap.add_argument("--block", type=int, default=1_000_000)
+    ap.add_argument("--fast", action="store_true", help="short run, for the sweep over all scripts")
     a = ap.parse_args()
+    if a.fast: a.hm = min(a.hm, 200_000)
     g = sorted({int(round(10 ** (5 + 0.15 * j))) for j in range(0, 30)
                 if 10 ** (5 + 0.15 * j) <= a.hm} | {1_616_615, a.hm} - {0})
     g = [c for c in g if 1 <= c <= a.hm]

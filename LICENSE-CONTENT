@@ -1,7 +1,22 @@
 Creative Commons Attribution 4.0 International (CC BY 4.0)
-https://creativecommons.org/licenses/by/4.0/
-
-Applies to all text, papers and figures in this repository
-(everything under papers/ and docs/).
 
 Copyright (c) 2026 Mohamed Osman
+
+The papers, text and figures in this repository — everything under papers/ and
+docs/ — are licensed under the Creative Commons Attribution 4.0 International
+licence.
+
+You are free to share and adapt the material for any purpose, including
+commercially, provided you give appropriate credit, provide a link to the
+licence, and indicate if changes were made.
+
+Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+Full legal text:        https://creativecommons.org/licenses/by/4.0/legalcode
+
+Suggested attribution:
+
+  Osman, M. (2026). The Cell System: a coordinate system for the odd sieve —
+  what it proves, what it measures, and where it stops.
+  https://doi.org/10.5281/zenodo.22085626  (CC BY 4.0)
+
+The scripts under code/ are licensed MIT; see LICENSE.

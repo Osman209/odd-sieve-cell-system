@@ -22,6 +22,9 @@ Rows above the run's cutoff are SKIPPED and listed as a REDUCED RUN; they never
 set the exit code.  Exits nonzero if any executed check fails.
 --force-fail exercises the gate.
 """
+
+COVERS = ["[P10, S2.5]"]   # the three layers are printed there, not in [P11]
+
 import sys, math, argparse
 import numpy as np
 

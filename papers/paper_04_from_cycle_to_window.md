@@ -10,7 +10,7 @@ Paper 3 establishes exact transport laws for the divisor census of the odd sieve
 
 We first show that the two motions are compatible in a strong sense: an old line appears to a new one as a **periodic ruler**. For rulers $q\ge7$, a first-cycle square sector is shorter than the period, so the local question is presence or absence rather than counting; $q=5$ is kept as a fixed core exception (Theorems 1 and 2). We then run the sieve at **moving depth** — each sector $(u^2,v^2)$ sieved by all lines $\le u$ — and measure a stable deficit $T/M \approx 0.80$ across three orders of magnitude. We interpret this as the expected dimension-2 Buchstab-type correction at the critical scale $s=2$, but the value $0.80$ itself is a measurement in this paper.
 
-The deviations then admit a useful decomposition. A CRT-based mean law carrying a Legendre symbol and a companion square-cycle cancellation identity are verified exactly on the ranges tested in §4; a complete symbolic proof of those two identities is not supplied here, so they are kept separate from the proved results. The normalised survivor masks do form a **martingale** on the full CRT cycle, with orthogonal differences and total energy $\sum \mathbf{E}(\Delta_r^2)=1/P_z-1$ (Theorem 4). On short windows, the numerical $L^2$ data grow much faster than the target scale: a power fit over the tested range is about $U^{3.16}$. This is evidence against the desired bound at accessible scales, not an asymptotic refutation.
+The deviations then admit a useful decomposition. A CRT-based mean law carrying a Legendre symbol and a companion square-cycle cancellation identity are verified exactly on the ranges tested in §4; a complete symbolic proof of those two identities is not supplied here, so they are kept separate from the proved results. The normalised survivor masks do form a **martingale** on the full CRT cycle, with orthogonal differences and total energy $\sum \mathbf{E}(\Delta_r^2)=1/P_z-1$ (Theorem 4). On short windows the $L^2$ experiment is inconclusive: once each line is normalised by the sectors in which it has been born, the raw deviation sum is flat against the target scale, and the nested deviations that the telescoping identity actually needs separate no model on the range reachable here.
 
 Finally we measure the transfer directly. On the tested windows, linear depth weights give ratio $1.0000$ to the reported precision; the tested truncations $\max(0,1-j/t)$ remain close to $1$ for $t\ge1.5$; and at $t\le1$, where the weight is exactly the depth-zero indicator, the measured ratio is near $0.80$ (Proposition 1). The indicator of depth zero is the twin condition in the moving square window. Thus the sharp loss appears at the endpoint of the measured family, while the interior of the curve remains empirical. A second measurement (§6) tests the general pattern law of [P3, §6.3] instead of a weight, and finds it transferring at $1.0000$ for admissible patterns of up to five cells; taken together the two locate the loss in the one-point density rather than in the correlations.
 
@@ -28,7 +28,7 @@ Coordinates from Paper 2: $L_p(k) = p(p+2k)$; $L_3$ as the grid; cells $C_b = (6
 
 Two imported facts do real work below and are stated once:
 
-- **[P1, Thm 1].** Within the first cycle, a square sector contains between two and six strikes of any line, for every odd $p$ — the uniform bound on the increments of $\lfloor 2j^2/p\rfloor$. This is what makes §2.3 a *binary* statement for old rulers $q\ge7$; $L_5$ is handled separately as part of the fixed core.
+- **[P1, Thm 1].** Within the first cycle, a sector of $p$'s own row — between $(p+2j)^2$ and $(p+2j+2)^2$ with $j \le p-1$ — contains between two and six strikes of $L_p$, for every odd $p$: the uniform bound on the increments of $\lfloor 2j^2/p\rfloor$. This is what makes §2.3 a *binary* statement for old rulers $q\ge7$; $L_5$ is handled separately as part of the fixed core.
 - **[P3, Thm 2].** On the full cycle, each line contributes nothing with probability $(q-2)/q$, a lower-rail strike with probability $1/q$ and an upper-rail strike with probability $1/q$, independently across lines. This is the exact reference distribution against which every window measurement below is compared.
 
 The comparison object throughout is a ratio: a quantity measured on the window, divided by the same quantity computed from [P3, Thm 2] on the cycle. A ratio of $1$ means the law transfers.
@@ -95,25 +95,35 @@ For those rulers the local question changes from counting to presence/absence, a
 ### 3.1 Setup
 
 Let the depth track the window: sieve each sector $(u^2,v^2)$ by all lines $\le u$, and set
+
+Here *u* runs over the integers $\equiv 5 \pmod 6$ and $v = u+2$, which is then also coprime to $6$; a **survivor** is a cell with both members surviving, $C(u)$ is the number of cells of the sector, and $P(u) = \prod_{5\le q\le u}(1-2/q)$ as in Theorem 3 below. Note what this makes $T$: since every odd composite below $v^2$ has a prime factor at most *u*, sieving to *u* leaves exactly the twin pairs, so $T$ counts twins rather than estimating them. **Section 5 indexes its sectors differently** — see there.
 $$T(U) = \sum_{u\le U}(\text{survivors}), \qquad M(U) = \sum_{u\le U} C(u) P(u).$$
 
 ### 3.2 The measured ratio
 
 | range of $n$ | 2–50 | 51–150 | 151–300 | 301–600 | 601–1000 | 1001–1600 |
 |---------------|---------|---------|---------|---------|----------|-----------|
-| $T/M$ | 0.80567 | 0.81865 | 0.81020 | 0.80320 | 0.79456 | 0.79404 |
+| $T/M$ | 0.86709 | 0.82736 | 0.79313 | 0.84748 | 0.81585 | 0.80150 |
 
-$$\boxed{ T/M \approx 0.80,\ \text{stable across three orders of magnitude.} }$$
+Cumulatively over the whole range, $T/M = 0.81152$.
+
+$$\boxed{ T/M \approx 0.80,\ \text{across three orders of magnitude.} }$$
+
+*(Regenerated by `code/verify_l2_stress.py` from the definitions of §3.1. The per-bin values fluctuate more than a cumulative reading would; the stable quantity is the cumulative ratio.)*
 
 **The discrepancy is systematic, not numerical noise.** At moving depth the sieve variable is $s = \log(u^2)/\log u = 2$ exactly, the critical scale at which a naive product is expected to need a Buchstab-type correction [2]. For comparison, in one dimension the familiar factor at $s=2$ is $e^{\gamma}/2=0.8905362$; in the present two-rail experiment the corresponding measured ratio is about $0.80$.
 
 ### 3.3 Why accumulation matters more than a single sector
 
-One does not need $T(u)\gt 0$ for every sector, only $T(U) \to \infty$. Since $\sum C(u) \asymp U^2/6$ and $P(U) \asymp 1/\log^2 U$,
+One does not need $T(u)\gt 0$ for every sector, only $T(U) \to \infty$. On the indexing of this section — $u \equiv 5 \pmod 6$ with the window $(u^2,(u+2)^2)$, so that only one sector in six is swept — one has $\sum_{u \le U} C(u) \asymp U^2/18$, against $U^2/6$ for the every-integer indexing of §5; the two sums differ by that factor of three and only the constant is affected. With $P(U) \asymp 1/\log^2 U$,
 $$M(U) \asymp \frac{U^2}{\log^2 U}, \qquad\text{(3.1)}$$
-so **any error bound of size $O(U\log^A U)$ suffices** — a requirement weaker by a full factor of $U$ than square-root cancellation.
+in either indexing, so **any error bound of size $O(U\log^A U)$ suffices** — a requirement weaker by a full factor of $U$ than square-root cancellation.
 
 ### 3.4 Theorem 3 (telescoping to a single sum)
+
+**The three symbols the theorem uses, defined here.** Inside the sector at $u$, write $N_{r^-}(u)$ for the number of cells still open after every line below $r$ has acted, and $D_r(u)$ for the number of those that the line $r$ then closes — a strike of $r$ on a survivor of the smaller lines, not a raw strike. The **local deviation** is the difference between that and the cyclic prediction $2/r$ of [P3, Thm 2]:
+$$\varepsilon_r(u)  =  D_r(u) - \frac{2 N_{r^-}(u)}{r} . \qquad\text{(3.2)}$$
+Two facts about it are used below and were established in the coordinates of [P2, §4.5]: inside a sector the line $r$ deletes at $s \equiv -u^2/6$ and $s \equiv (2-u^2)/6 \pmod r$, so the two positions are $3^{-1} \bmod r$ apart (zero failures among $85$ tested); and **every ruler's phase is therefore a function of $u^2$ alone**, so under $u \mapsto u+6$ it moves quadratically, $u^2 \mapsto u^2+12u+36$. That quadratic motion is what makes cancellation possible at all. The superscript form $D_r^{(0)}(n)$ used in §4.2 is the same count taken with no earlier lines acting, i.e. the raw strike count of $r$ in the sector $n$.
 
 > **Theorem 3.** With $P(r) = \prod_{5\le q\le r}(1-2/q)$,
 > $\displaystyle T(u) = P(u)\left[C(u) - \sum_{r\le u}\frac{\varepsilon_r(u)}{P(r)}\right], \qquad T(U)-M(U) = \sum_{r\le U} B_r(U),$
@@ -147,7 +157,7 @@ The survivor pattern of the lines up to $z$ has period exactly $\prod q$ and, by
 
 ### 4.1 Verified identity A (the mean, and its Legendre symbol)
 
-Split $\varepsilon_r = \mu_r + \xi_r$ into mean and fluctuation.
+Split the deviation (3.2) as $\varepsilon_r = \mu_r + \xi_r$ into mean and fluctuation.
 
 > **Verified identity A (proof not supplied here).** $\displaystyle \mu_r = -\frac{\chi_r}{r} Q_{r^-}$, where $\chi_r = \left(\frac{2}{r}\right)$ and $Q_r = \prod_{5\le q\le r}\left(1-\frac{2+\chi_q}{q}\right)$.
 
@@ -204,9 +214,13 @@ Since $P_z \asymp 1/\log^2 z$, the total $L^2$ energy of *all* lines is $O(\log^
 
 ### 5.1 Statement
 
-By Cauchy–Schwarz, $\left|\sum_{r\le U} D_r\right| \le \sqrt{\pi(U)}\left(\sum_{r\le U}|D_r|^2\right)^{1/2}$. Hence if
-$$\sum_{r\le U}\big|D_r(X)\big|^2  \ll  (X+U^2) \mathrm{polylog}(U), \qquad X \asymp U^2, \qquad\text{(5.1)}$$
-the total error would be $O(U^{3/2} \mathrm{polylog})$ against a main term $\asymp U^2/\log^2 U$, giving $T(U)\to\infty$ and hence infinitely many twin primes.
+**The sectors here are not those of §3.** In this section *u* runs over **every** integer with the window $(u^2,(u+1)^2)$, again sieved by all lines $\le u$; $X = X(U)$ is the number of cells swept by all the sectors up to $U$, and $X_r(U)$ the number swept by the sectors $u \ge r$ alone, in which the line *r* has been born. The deviation is
+$$D_r(U)  =  \big(\text{all strikes of } r \text{ over the sectors } u\ge r\big)  -  \frac{2X_r(U)}{r} .$$
+**The normalisation matters, and an earlier version of this section used the wrong one.** Subtracting $2X/r$ instead of $2X_r/r$ charges the line *r* with $2/r$ of the cells of the sectors below its own birth, a deterministic quantity of size $2(X - X_r)/r$; summed and squared it dominates everything else and grows like $\sum_{p \le U} p^2 \asymp U^3/\log U$. That term, and not any property of the sieve, is what the table printed in earlier versions was measuring.
+
+By Cauchy–Schwarz, $\left|\sum_{r\le U} B_r\right| \le \sqrt{\pi(U)}\left(\sum_{r\le U}|B_r|^2\right)^{1/2}$ with $B_r$ as in Theorem 3. Hence if
+$$\sum_{r\le U}\big|B_r(U)\big|^2  \ll  (X+U^2) \mathrm{polylog}(U), \qquad X \asymp U^2, \qquad\text{(5.1)}$$
+the total error would be $O(U^{3/2} \mathrm{polylog})$ against a main term $\asymp U^2/\log^2 U$, giving $T(U)\to\infty$ and hence infinitely many twin primes. **The quantity in (5.1) is therefore the nested one of Theorem 3, not the raw strike deviation $D_r$ below**; the two are measured side by side in §5.3, and only the first is tied to $T-M$ by an identity.
 
 ### 5.2 Why $X \asymp U^2$ is the critical scale
 
@@ -214,22 +228,21 @@ The available sector window at depth $U$ has length $\asymp U^2$, while the full
 
 ### 5.3 Numerical stress test of the bound
 
-| $U$ | lines | $\sum\lvert D_r\rvert^2$ | $X+U^2$ | ratio |
-|-------|-------|------|------|-------|
-| 300 | 60 | $1.819\times10^5$ | $1.05\times10^5$ | 1.73 |
-| 600 | 107 | $1.310\times10^6$ | $4.20\times10^5$ | 3.12 |
-| 1,200 | 194 | $1.326\times10^7$ | $1.68\times10^6$ | 7.89 |
-| 2,400 | 355 | $1.245\times10^8$ | $6.72\times10^6$ | **18.53** |
+| $U$ | lines | $\sum\lvert D_r\rvert^2$ | $X+U^2$ | ratio | printed in earlier versions | deterministic term alone |
+|-------|-------|------|------|-------|------|------|
+| 300 | 60 | $5.36\times10^2$ | $1.05\times10^5$ | **0.0051** | 1.68 | 1.64 |
+| 600 | 107 | $2.23\times10^3$ | $4.20\times10^5$ | **0.0053** | 3.00 | 2.96 |
+| 1,200 | 194 | $8.56\times10^3$ | $1.68\times10^6$ | **0.0051** | 5.48 | 5.44 |
 
-Across this range the ratio rises rapidly with $U$. A log-log power fit to the displayed data gives an **effective exponent** about $3.16$ for $\sum|D_r|^2$, compared with the target base scale $U^2$. This is a finite-range fit, not an asymptotic law. Normalising by $U^2\log^A U$ for $A=2,4,6,8,10$ still leaves rising sequences on the tested range, by factors $56, 31, 17, 9.0, 4.9$ respectively.
+**With the birth of each line accounted for, the ratio is flat**, and the growth reported in earlier versions is the deterministic term of §5.1, which supplies $98$ per cent of those numbers at every $U$. The restricted-depth row of earlier versions was flat for the same reason and is withdrawn with the main row. Regenerated by `code/verify_l2_nested.py`.
 
-**Restricting the depth improves the finite-range level but does not flatten the observed trend.** At $z=U^{1/2}$ the ratio is $0.00831,\ 0.02220,\ 0.08504,\ 0.20556,\ 0.85696$ at $U=2400,\dots,38400$. A naive extrapolation of that trend would cross $1$ near $U\approx45{,}000$, but that crossing is not a theorem and is not used as one.
+**And the flat row does not settle (5.1) either, because it is not the quantity (5.1) needs.** The strikes counted in $D_r$ are the raw ones; the error of Theorem 3 is built from the deviations $\varepsilon_r(u)$ of the strikes of *r* **on the survivors of the smaller lines**, and it is those that satisfy $\sum_r B_r = T-M$ exactly. There is no identity making $\sum_r D_r$ the error of the survivor count, so a bound on $\sum_r|D_r|^2$ carries no consequence for $T(U)$. Measured on the same sectors, $\sum_r\lvert\sum_u \varepsilon_r(u)\rvert^2$ divided by $X+U^2$ is $0.035$, $0.040$, $0.063$ at $U = 300, 600, 1200$, an effective exponent of $2.43$ — which separates neither a power nor $U^2\log^A U$ on a range this short.
 
-$$\boxed{ \text{On the tested range, the }L^2\text{ data grow much faster than the target base scale }U^2. }$$
+$$\boxed{ \text{The }L^2\text{ experiment as run does not decide the bound in either direction.} }$$
 
 ### 5.4 Why: the nested masks
 
-The full-cycle orthogonality of Theorem 4 is not observed to transfer uniformly to the tested windows of length $U^2$. A natural explanation is that $\Delta_r$ is not a free difference: it is the quadratic motion seen **through the mask of all smaller lines**, $A_{r^-}=A_{\lbrace 5,\dots,r^-\rbrace }$, so the sequence being tested changes with $r$. The data are consistent with the nesting cost overwhelming the full-cycle orthogonality on these ranges.
+$\Delta_r$ is not a free difference: it is the quadratic motion seen **through the mask of all smaller lines**, $A_{r^-}=A_{\lbrace 5,\dots,r^-\rbrace }$, so the sequence being tested changes with $r$. That is the reason the nested row of §5.3 is the relevant one, and the reason a bound for it does not follow from the full-cycle orthogonality of Theorem 4; the measurements above neither establish the nesting cost nor rule it out.
 
 A large-sieve-type inequality adapted to such *nested* masks would be the kind of estimate needed for (5.1). No such estimate is proved in this paper.
 
@@ -283,7 +296,7 @@ so that $J/L = 1$ is exactly the assertion that the cycle law of [P3, §6.3] sur
 *Measured*, at $X = 4\times10^{9}$ (all $6.67\times10^{8}$ cells; the $\pm$ column is $1/\sqrt{\text{count}}$):
 
 | $u$ | $z$ | $H$ | count | $J$ | $L$ | $J/L$ | $\pm$ |
-|------|--------|------|-----------|--------|--------|--------|--------|
+|:--|:-----|:--------------|:--------|:-----|:-----|:-----|:-----|
 | 4 | 251 | $\lbrace 0,1\rbrace$ | 1,688,188 | 0.3978 | 0.3978 | **1.0000** | 0.0008 |
 | 4 | 251 | $\lbrace 0,1,3\rbrace$ | 142,416 | 0.4207 | 0.4206 | **1.0002** | 0.0026 |
 | 4 | 251 | $\lbrace 0,1,3,5\rbrace$ | 19,817 | 0.7337 | 0.7348 | **0.9985** | 0.0071 |
@@ -314,7 +327,7 @@ $$\boxed{\begin{array}{c}\text{The transfer fails in the one-point density and h
 
 **Verified identities whose complete symbolic proofs are not supplied here.** The mean law with its Legendre symbol (identity A), its algebraic telescoping consequence, and the single-line/multi-line square-cycle cancellation (identity B). They agree with every exact enumeration reported in §4, but they are not counted as proved theorems in this version.
 
-**Measured, not proved.** The stability of $T/M\approx0.80$ (§3.2); the state-space observation (§3.5); the $L^2$ growth in §5.3; the restricted-depth trend; the transfer curve of §6 (Proposition 1); and the pattern transfer of §6 (Proposition 2). The data do not refute a polylogarithmic $L^2$ bound asymptotically, and the finite-window value $1.0000$ for linear weights is a measurement to the reported precision, not an exact equality theorem.
+**Measured, not proved.** The stability of $T/M\approx0.80$ (§3.2); the state-space observation (§3.5); the two $L^2$ rows of §5.3; the transfer curve of §6 (Proposition 1); and the pattern transfer of §6 (Proposition 2). The data do not refute a polylogarithmic $L^2$ bound asymptotically, and the finite-window value $1.0000$ for linear weights is a measurement to the reported precision, not an exact equality theorem.
 
 **The shape of the result.** On the tested windows, soft weights preserve the cycle prediction far better than the sharp depth-zero indicator. The latter is precisely the primality/twin atom in this setup.
 

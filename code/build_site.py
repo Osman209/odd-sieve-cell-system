@@ -17,8 +17,8 @@ import shutil
 REPO = "https://github.com/Osman209/odd-sieve-cell-system"
 SITE = "https://osman209.github.io/odd-sieve-cell-system"
 ORCID = "0009-0004-5912-999X"
-DOI = "10.5281/zenodo.22085627"
-DATE = "2026-09-07"
+DOI = "10.5281/zenodo.22661627"
+DATE = "2026-09-08"
 
 CSS = """<style>body{max-width:52rem;margin:2.5rem auto;padding:0 1.2rem;font:16px/1.6 Georgia,"DejaVu Serif",serif;color:#1a1a1a}
 h1{font-size:1.6rem;line-height:1.3;margin-bottom:.2rem}h2{font-size:1.05rem;font-weight:400;color:#555;margin-top:0}
@@ -155,12 +155,12 @@ def index():
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Cell System &mdash; Mohamed Osman</title>
-<meta name="description" content="A coordinate system for the odd sieve: what it proves, what it measures, and where it stops. Eleven papers, one overview and nine verification scripts. No twin-prime claim.">
+<meta name="description" content="A coordinate system for the odd sieve: what it proves, what it measures, and where it stops. Eleven papers, one overview and twenty-eight verification scripts. No twin-prime claim.">
 {CSS}</head><body>
 <h1>The Cell System</h1>
 <h2>A coordinate system for the odd sieve &mdash; what it proves, what it measures, and where it stops</h2>
 <p class="meta">Mohamed Osman &middot; ORCID <a href="https://orcid.org/{ORCID}">{ORCID}</a> &middot; independent researcher</p>
-<p>Eleven papers, one overview and nine verification scripts. Papers 1 to 4 build the coordinates
+<p>Eleven papers, one overview and twenty-eight verification scripts. Papers 1 to 4 build the coordinates
 and the transport laws; papers 5 to 8 are the construction and what it decides about twin pairs;
 papers 9 to 11 derive the point at which it stops <em>from inside the construction</em> rather than
 quoting it, and measure how much of the difficulty the framework can localise before failing to

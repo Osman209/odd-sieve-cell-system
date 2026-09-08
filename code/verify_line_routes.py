@@ -10,6 +10,9 @@ small factors, and the determinant-one relation).
 
 Exits non-zero if any check fails.  --force-fail exercises the gate.
 """
+
+COVERS = ["[P9, S3.4]"]
+
 import argparse
 import sys
 

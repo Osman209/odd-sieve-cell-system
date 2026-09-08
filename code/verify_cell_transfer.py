@@ -18,6 +18,9 @@ Check  14    : the pattern-transfer table J/L.
 Rows needing a height above the run's cutoff are SKIPPED and listed as a
 REDUCED RUN; they never set the exit code.  Exits nonzero if any check fails.
 """
+
+COVERS = ["[P4, S6.1]", "[P9, S3.2]", "[P11, App. A]"]
+
 import sys, math, argparse
 import numpy as np
 
@@ -243,7 +246,7 @@ def main():
             check("12. X=1e9: pi/Phi reproduces the measured prime share",
                   (pix * math.log(X) / X) / (ph * math.log(X) / X), share, 1e-3)
 
-    print("\n--- [P11, App. B] the survival product ---")
+    print("\n--- [P11, App. A] the survival product ---")
     wantE = {6: 0.9436, 7: 0.9221, 8: 0.8996, 9: 0.8840}
     for e in [6, 7, 8, 9]:
         X = 10 ** e

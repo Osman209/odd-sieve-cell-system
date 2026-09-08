@@ -5,6 +5,9 @@
    [P3, §3]  the line-3 channel in the refined generating function
    [P3, §4]  the pair count (p-3)^2+1
 Run: python3 verify_new_additions.py [--fast]"""
+
+COVERS = ["[P2, S3.5]", "[P2, S3.6]", "[P3, S3]", "[P3, S4]", "[P6, S2.8]", "[P9, S2.2]"]
+
 import sys, argparse, math
 from sympy import isprime, primerange, symbols, expand
 

@@ -95,7 +95,9 @@ Each begins at its own square, so a line is responsible exactly for what no smal
 | strikes of $L_5$ | 35, 45 | 55, 65, 75 | 85, 95, 105, 115 | 125, …, 165 | 175, …, 225 |
 | $H_j$ | **2** | **3** | **4** | **5** | **6** |
 
-The widths climb by exactly $8$; the strike count climbs $2,3,4,5,6$ **and stops there**. Writing $H_j = 2 + W_j$ with $W_j = \lfloor 2(j+1)^2/p\rfloor - \lfloor 2j^2/p\rfloor$, both the fact that it stops and the exact multiplicities of the five values are **[P1, Theorems 1 and 2]** — statements about odd $n$ in general, with no reference to primes, which is why they were separated into Paper 1.
+The widths climb by exactly $8$; the strike count climbs $2,3,4,5,6$ **and stops there**. The link to Paper 1 is an identity, and it is worth writing out once. The strikes of $L_p$ in $\big((p+2j)^2,\ (p+2j+2)^2\big]$ are the numbers $ps$ with $s$ odd and $(p+2j)^2/p \lt  s \le (p+2j+2)^2/p$; writing $s = p+4j+2i$, that is $2j^2/p \lt  i \le 2 + 2(j+1)^2/p$, so the count is
+$$H_j  =  \Big\lfloor 2 + \frac{2(j+1)^2}{p}\Big\rfloor - \Big\lfloor \frac{2j^2}{p}\Big\rfloor  =  2 + W_j, \qquad W_j = \Big\lfloor \frac{2(j+1)^2}{p}\Big\rfloor - \Big\lfloor \frac{2j^2}{p}\Big\rfloor,$$
+the sector being taken open on the left and closed on the right so that a strike at a square is counted once. Both the fact that the count stops and the exact multiplicities of the five values are then **[P1, Theorems 1 and 2]** — statements about odd $n$ in general, with no reference to primes, which is why they were separated into Paper 1.
 
 
 ---
@@ -104,7 +106,7 @@ The widths climb by exactly $8$; the strike count climbs $2,3,4,5,6$ **and stops
 
 **The line.** For odd $p$, $L_p(k) = p^2 + 2pk = p(p+2k)$ — the odd multiples of $p$ from $p^2$ onward. Starting at $p^2$ makes each line responsible exactly for what it alone contributes (§2.2), and only prime $p$ contribute anything (Theorem 1).
 
-**The window.** The odd squares $S_j = (p+2j)^2$. The gap between consecutive squares is $4p + 8j + 4$: two full line steps, plus a residue of $8j+4$ that grows by $8$ each time. **That $+8$ is the clock behind every window statement**; its consequences — the uniform bound on the strike count, its exact histogram, and the identity tying the count to the fingerprint $D_j \equiv 4j^2 \pmod{2p}$ — are Paper 1.
+**The window.** The odd squares $S_j = (p+2j)^2$. The gap between consecutive squares is $4p + 8j + 4$: two full line steps, plus a residue of $8j+4$ that grows by $8$ each time. **That $+8$ is the clock behind every window statement**; its consequences — the uniform bound on the strike count through the first cycle, its exact histogram, and the identity tying the count to the fingerprint $D_j \equiv 4j^2 \pmod{2p}$ — are Paper 1.
 
 ---
 
@@ -252,7 +254,7 @@ $$(p-2) = (p \text{ cells per cycle}) - (2 \text{ branches}).$$
 
 *Closed form.* $6^{-1} = (p+1)/6$ if $p \equiv 5 \pmod 6$, and $(5p+1)/6$ if $p \equiv 1$. Zero failures to $p = 20{,}000$. In particular the two forbidden positions always sit at one sixth and five sixths of the modulus: for $p \sim 10^3$ the smaller lies in $[0.16650, 0.16683]$ against $1/6 = 0.16667$.
 
-**Which of the two positions a twin row can occupy.** Theorem 3 forbids both positions to a surviving cell, but the two are not alike once one asks which cells are twin pairs. Write $c = 6^{-1} \bmod p$, so the forbidden positions are $j \equiv \pm c$, and put $u_p(j) = jc^{-1} \bmod p$, so that they become $u = \pm 1$. If $u_p(j) = +1$ then $j = c + mp$ and the member of $C_j$ that $L_p$ reaches is $p(6m+1)$; at $m = 0$ that member is $p$ itself, which is prime, and for $m \ge 1$ it is composite. If $u_p(j) = -1$ then $j = mp - c$ and the member reached is $p(6m-1)$, composite for every $m \ge 1$ and with no $m = 0$ case, since $j$ would be negative.
+**Which of the two positions a twin row can occupy.** Theorem 3 forbids both positions to a surviving cell, but the two are not alike once one asks which cells are twin pairs. Normalise by the **birth index** rather than by $6^{-1}$: with $p = 6a+\sigma$ put $c = a$, so that $6c \equiv -\sigma \pmod p$ and the two forbidden positions are again $j \equiv \pm c$; put $u_p(j) = jc^{-1} \bmod p$, so that they become $u = \pm 1$. (Normalising by $6^{-1}$ instead would put the birth cell at $u = -\sigma$ and make the statement below false for $p \equiv 1 \bmod 6$: at $p = 7$ the twin $C_1 = (5,7)$ would sit at $u = -1$. The scripts use the birth index throughout.) If $u_p(j) = +1$ then $j = c + mp$ and the member of $C_j$ that $L_p$ reaches is $p(6m+1)$; at $m = 0$ that member is $p$ itself, which is prime, and for $m \ge 1$ it is composite. If $u_p(j) = -1$ then $j = mp - c$ and the member reached is $p(6m-1)$, composite for every $m \ge 1$ and with no $m = 0$ case, since $j$ would be negative.
 
 > **Corollary 1.** Among cells that are twin pairs, the position $u = -1$ is never occupied, and the position $u = +1$ is occupied at the single index $j = c$ and nowhere else — and there only when $C_c$ is itself a twin pair. In short: $+1$ is birth first and closure thereafter, $-1$ is closure always.
 
@@ -365,8 +367,9 @@ The two formulas are the same expression with one sign changed, and §3.6 shows 
 
 Two consequences are immediate, and they are why the pair of formulas is worth stating rather than decorative.
 
-- **(3.7) confines the second regime to a triangle.** If the product is to lie below $(m+h)^2$ then $m(u+v)+uv \lt  2mh+h^2$, and when $h^2 \lt  2m$ this forces $u+v \le h$. The pairs $(u,v)$ with $1 \le u \le v$ available at all therefore number
+- **(3.7) confines the second regime to a triangle.** Write the two even offsets as $u = 2a$ and $v = 2b$. If the product is to lie below $(m+h)^2$ then $2m(a+b)+4ab \lt  2mh+h^2$, and when $h^2 \lt  2m$ that is *equivalent* to $a+b \le h$: one direction because $4ab \le (a+b)^2 \le h^2$, the other because $a+b \ge h+1$ already gives $2m(a+b) \ge 2mh+2m \gt  2mh+h^2$. The pairs $(a,b)$ with $1 \le a \le b$ available at all therefore number
 $$\sum_{s=2}^{h} \Big\lfloor \tfrac{s}{2} \Big\rfloor  =  \Big\lfloor \tfrac{h^2}{4}\Big\rfloor .$$
+(In the offsets themselves the bound reads $u+v \le 2h$, not $u+v \le h$: at $m = 103$, $h = 6$ the pair $u = v = 4$ has $107^2 \lt  109^2$ with $u+v = 8$.)
 - **(3.6) admits no such confinement**, since $e-d$ may be small while $d$ and $e$ are both large.
 
 That asymmetry — a bounded triangle above the square, against an unbounded strip across it — is the difference between the two regimes stated quantitatively.
@@ -402,7 +405,7 @@ the sector between consecutive odd squares, anchored so that its root is the low
 
 *Proof.* The midpoint of $[q^2,r^2]$ is $(q^2+r^2)/2 = n^2+1$, and $n^2-1 = (n-1)(n+1)$. $\blacksquare$
 
-Examples: $(35,37)$, $(143,145)$, $(323,325)$, $(575,577)$, $(899,901)$, and $(359999,360001) = (599\cdot601,\ \cdot)$.
+Examples: $(35,37)$, $(143,145)$, $(323,325)$, $(575,577)$, $(899,901)$, and $(359999,360001)$, whose lower member is $599\cdot601$.
 
 **This complements [P6, Thm 1] from the other side.** That theorem lists the at most six positions that can be *open without being twins*; Theorem 5 names one position that can *never be a twin at all*. Both are consequences of the anchoring, not of any counting.
 
@@ -434,7 +437,7 @@ Sections 4.1–4.3 index the window by position. This one indexes it by the *str
 
 Keep $n = 6a$, and call **layer $j$** the pair of lines
 $$p = n-6j-1, \qquad s = n-6j+1,$$
-running them on the shared index $k = 6j+t$. Translating the anchor identity $L_{q-6j}(6j) = q^2-36j^2$ of [P10, Thm 5] into the window coordinate $u$ gives, exactly,
+running them on the shared index $k = 6j+t$. Translating the anchor identity $L_{q-6j}(6j) = (q-6j)(q+6j) = q^2-36j^2$ into the window coordinate $u$ gives, exactly,
 $$u^-(t) = 2pt - 36j^2, \qquad u^+(t) = 4n - 36j^2 + 2st. \qquad\text{(4.1)}$$
 
 *Verification.* Zero failures over $695{,}968$ checks ($a \lt  120$, all $j$, $t \in [-40,60]$).

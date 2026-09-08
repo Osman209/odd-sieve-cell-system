@@ -14,7 +14,9 @@ The law then **refines**. Tracking, in addition, the *inheritance depth* of each
 
 That is still not enough for Richert's logarithmic weight, which depends on the *sizes* of the factors and not only on their number; we exhibit the gap explicitly. The repair is to mark each line by the bin of its size, and it closes: the refined product transports the joint per-bin census exactly (Corollary 4), at a cost polynomial in $\pi(z)$ for fixed resolution, and eight bins reproduce Richert's weight to $0.4$%.
 
-Finally we record a second exact structure on the same cycle: assigning each integer to its smallest striking line partitions the strip into **disjoint** ownership layers, so the survivor count is a plain difference with no inclusion–exclusion (Theorem 3) — and we show precisely what this costs, namely that the repaired sum returns the sieve product and nothing more.
+We record a second exact structure on the same cycle: assigning each integer to its smallest striking line partitions the strip into **disjoint** ownership layers, so the survivor count is a plain difference with no inclusion–exclusion (Theorem 3) — and we show precisely what this costs, namely that the repaired sum returns the sieve product and nothing more.
+
+Finally §6 transports a *pair* of counts rather than a count: the autocorrelation of the surviving-pair indicator obeys $C_{\mathrm{new}}(h) = K_q(h)C_{\mathrm{old}}(h)$ with the ladder $q-2, q-3, q-4$ (Theorem 4), which is the singular series of the Hardy–Littlewood $k$-tuple conjecture reached by a direct count; and it follows that no single number transports the second moment, so the minimal closing object is the function $C(h)$ itself (Corollary 5).
 
 **Everything here is exact on the full cycle.** The passage to a short window is the subject of Paper 4, and it is where the losses are.
 
@@ -66,7 +68,7 @@ Write $a = A/M$ and so on.
 
 > **Theorem 1.** The quantity $a+b$ is form-invariant, $(a+b)' = (1-1/p)(a+b)$, and consequently
 > $\displaystyle \boxed{(a,b,c,d) = \big(P_2,   P_1-P_2,   P_1-P_2,   1-2P_1+P_2\big)}$
-> where $P_1 = \prod_{5\le q\le P}(1-1/q)$ and $P_2 = \prod_{5\le q\le P}(1-2/q)$.
+> where $P_1 = \prod_{5\le q\le z}(1-1/q)$ and $P_2 = \prod_{5\le q\le z}(1-2/q)$, the products running to the sieve depth $z$ of §1.
 
 *Proof.* From (2.1) in normalised form,
 $$a'+b' = \Big(1-\tfrac2p\Big)a + \Big(1-\tfrac1p\Big)b + \tfrac{a}{p} = a\Big(1-\tfrac2p+\tfrac1p\Big) + \Big(1-\tfrac1p\Big)b = \Big(1-\tfrac1p\Big)(a+b).$$
@@ -111,7 +113,7 @@ Both end in the same state — one member survives, the other is composite — s
 
 Theorem 1 records how many cells occupy each state. One may ask for more: the distribution of **inheritance depth** across states, where the depth $j$ of a cell is the number of old lines dividing either of its members. This refinement also closes, and in closed form.
 
-> **Theorem 2.** Let $N_{s,j}$ count the cells in state $s$ with inheritance depth $j$. Then the entry of a line $p$ gives
+> **Theorem 2.** Let $N_{s,j}$ count the cells in state $s$ with inheritance depth $j$. Then the entry of a line $p$ **distributes** the old cells as follows — each line below reads "an old cell of the named state and depth $j$ contributes to":
 > $\displaystyle NN_j  \to  (p-2)NN_j + NO_{j+1} + ON_{j+1},$
 > $\displaystyle NO_j  \to  (p-2)NO_j + NO_{j+1} + OO_{j+1}, \qquad ON \text{ likewise},$
 > $\displaystyle OO_j  \to  (p-2)OO_j + 2 OO_{j+1}. \qquad\text{(3.1)}$
@@ -163,8 +165,12 @@ This is (3.2) with $x$ set to $1$ and $q-2$ resolved into $(q-3) + w$; the cell 
 ### 4.1 What Theorem 2 gives, and what it does not
 
 Weighted sieves attach to each surviving element a weight depending on its factorisation, and deduce an almost-prime from the positivity of the weighted sum. The weight that powers the current explicit results between consecutive squares and cubes (see [P10, §2.5] for those) is Richert's [2]:
-$$w(a)  =  \lambda  -  \sum_{\substack{p \mid a \cr  z\le p\lt y}}\Big(1 - \frac{\log p}{\log y}\Big), \qquad \lambda = k+1-k_2,$$
-with $z = X^{1/k_1}$ and $y = X^{1/k_2}$; the mechanism is that $w(a) \gt  0$ forces $\Omega(a) \le k$, so a positive lower bound for $\sum w(a)$ over the sifted set produces an almost-prime. (The constant is $\lambda$, not $1$; with $\lambda = 1$ the weight detects $\Omega \le k_2$ instead.) It is a nonlinear function of the factorisation and, through $\log p/\log y$, of the *sizes* of the factors.
+$$w(a)  =  \lambda  -  \sum_{\substack{p^{\alpha} \Vert a \cr  z\le p\lt y}} \alpha \Big(1 - \frac{\log p}{\log y}\Big), \qquad \lambda = k+1-k_2,$$
+with $z = X^{1/k_1}$ and $y = X^{1/k_2}$; the mechanism is that $w(a) \gt  0$ forces $\Omega(a) \le k$, so a positive lower bound for $\sum w(a)$ over the sifted set produces an almost-prime. (The constant is $\lambda$, not $1$; with $\lambda = 1$ the weight detects $\Omega \le k_2$ instead.)
+
+**The multiplicity $\alpha$ is part of the weight and not a decoration**, and we write it out because dropping it breaks the detection: summed over *distinct* primes instead, the number $a = 5^6$ at $z = 4$, $y = 100$, $k = 3$, $\lambda = 1$ carries the single term $1 - \log 5/\log 100$, so $w(a) = \log 5/\log 100 \gt  0$ while $\Omega(a) = 6$. The mechanism counts prime factors with multiplicity because $\Omega$ does. Everything below therefore refines by $\Omega_{\le z}$, the number of *strikes*, and not by the number of distinct lines; on the cycle the two differ only on the cells whose members are divisible by a square of a line, which is where the difference has to be watched.
+
+It is a nonlinear function of the factorisation and, through $\log p/\log y$, of the *sizes* of the factors.
 
 It is tempting to conclude that the framework cannot carry such a weight, since its objects are binary or counts. **That conclusion is half false, and Theorem 2 says which half.** The refined law transports the *full distribution* of inheritance depth, in a finite state space of size $O(\pi(z))$, exactly. Consequently:
 
@@ -184,14 +190,16 @@ The cheap repair is to bin cells by the value of a log-weight into a fixed numbe
 The obstruction identified in §4.1 is that the marker $x$ in (3.2) records *that* a line struck and never *which*. The repair is to mark by size.
 
 > **Corollary 4.** Let $\beta$ assign to each line a bin. Then on the full cycle
-> $\displaystyle \prod_{5\le q\le z}\big((q-2) + x_{\beta(q)}u + x_{\beta(q)}v\big) \qquad\text{(4.1)}$
+> $\displaystyle \prod_{5\le q\le z}\big((q-2) + u_{\beta(q)} + v_{\beta(q)}\big) \qquad\text{(4.1)}$
 > transports the **joint distribution of the per-bin strike counts on each rail**, exactly.
 
-*Proof.* Identical to Theorem 2. Of the $p$ copies of any cell exactly two are struck, one on each rail; the only change is that the marker attached to the striking line is $x_{\beta(q)}$ rather than $x$. $\blacksquare$
+*Proof.* Identical to Theorem 2. Of the $p$ copies of any cell exactly two are struck, one on each rail; the only change is that the markers attached to the striking line are $u_{\beta(q)}$ and $v_{\beta(q)}$ rather than $xu$ and $xv$. $\blacksquare$
 
-*Verification.* Full cycle for the lines $5,\dots,19$ ($M = 1{,}616{,}615$ cells): the census predicted by (4.1) agrees with the direct census in **every** state, at $B = 2$ ($90$ states) and $B = 3$ ($180$ states), with no error.
+**Two variables per bin are needed, and one is not enough.** Writing the factor as $(q-2) + x_{\beta(q)}u + x_{\beta(q)}v$ — one bin marker carrying both rails — loses exactly the joint distribution the corollary claims: a left strike from bin $1$ with a right strike from bin $2$ and the reverse configuration both produce the monomial $x_1x_2uv$, and no coefficient separates them. That form was printed in earlier versions of this section. It transports the per-bin totals and the per-rail totals; it does not transport their joint law, which is what a weight evaluated on one member of a cell needs.
 
-**The cost is polynomial, not exponential.** The state space has size $\prod_b \binom{n_b+2}{2}$, where $n_b$ is the number of lines in bin $b$ — a polynomial of degree $2B$ in $\pi(z)$:
+*Verification.* Full cycle for the lines $5,7,11,13,17,19$ ($M = 1{,}616{,}615$ cells), binned by size into equal blocks: the census predicted by (4.1) agrees with the direct census in **every** state and with no error — $100$ states at $B = 2$ and $216$ at $B = 3$, which are exactly the $\prod_b \binom{n_b+2}{2}$ of the count below. The one-marker form has only $64$ and $108$ distinct monomials for the same line set, which is the collapse just described. Regenerated by `code/verify_bin_generating_function.py`.
+
+**The cost is polynomial in $\pi(z)$ for a fixed number of bins, and only then.** The state space has size $\prod_b \binom{n_b+2}{2}$, where $n_b$ is the number of lines in bin $b$ — a polynomial of degree $2B$ in $\pi(z)$, so the degree grows with the resolution and the table below is a statement about fixed $B$, not a claim that the refinement is cheap at every resolution:
 
 | $z$ | lines | depth only (Thm 2) | $B=2$ | $B=4$ | $B=8$ | unrefined joint, $2^{\pi(z)}$ |
 |--------|-------|--------------------|------|------|------|-----------------------|
@@ -204,7 +212,7 @@ The obstruction identified in §4.1 is that the marker $x$ in (3.2) records *tha
 |----------------|----------------|-------|-------|-------|-------|
 | relative error | $+40.5$% | $+8.2$% | $+2.0$% | $+0.39$% | $+0.10$% |
 
-The $+40.5$% in the first column is exactly the error of ignoring the sizes, i.e. the gap left by Corollary 3; eight bins close it to $0.4$%.
+The $+40.5$% in the first column is exactly the error of ignoring the sizes, i.e. the gap left by Corollary 3; eight bins close it to $0.4$% **on that experiment**. It is a measured accuracy at one height and one parameter set, not a uniform error bound: what the bins control is the resolution of $\log p/\log y$ inside a bin, so the error is governed by the bin width and by how many factors fall in the wide bins, and neither is estimated here.
 
 $$\boxed{ \text{The } \textit{factor-size} \text{ deficit is removable: exact at every resolution, polynomial in } \pi(z),\ 0.4\text{ per cent} \text{ at } B=8. }$$
 
@@ -246,7 +254,7 @@ The layering of §5.1 was reached by asking a specific question: **the union bou
 | 13 | 0.844 | 0.616 | 0.384 |
 | 101 | **1.313** | 0.762 | 0.238 |
 | 997 | **1.698** | 0.838 | 0.162 |
-| $10^6$ | **2.264** | **0.919** | 0.081 |
+| $10^6$ | **2.387** | **0.919** | 0.081 |
 
 $$\boxed{ \text{The layered bound is below } 1 \text{ for every } z, \text{ however many lines are summed.} }$$
 
@@ -324,7 +332,7 @@ where $\nu_q(H)$ is the number of distinct residues modulo $q$ that the pattern 
 
 ## 7. What is exact here, and what is not
 
-**Exact on the cycle, with proof:** the four-state update and its closed solution (Theorem 1); the refined law and its generating function (Theorem 2); arbitrary weights in $\Omega_{\le z}$ (Corollary 3); the refinement by line size at any resolution (Corollary 4); the disjointness of the ownership layers and the resulting inclusion–exclusion-free count (Theorem 3).
+**Exact on the cycle, with proof:** the four-state update and its closed solution (Theorem 1); the refined law and its generating function (Theorem 2); arbitrary weights in $\Omega_{\le z}$ (Corollary 3); the refinement by line size at any resolution (Corollary 4); the disjointness of the ownership layers and the resulting inclusion–exclusion-free count (Theorem 3); and the transport of the autocorrelation with the ladder $q-2, q-3, q-4$ (Theorem 4), together with the consequence that no single number closes the second moment (Corollary 5).
 
 **Measured, not proved:** the cost table and the bin-resolution table of §4.3, which are computations rather than theorems, and the $24$% negative control of §4.2.
 

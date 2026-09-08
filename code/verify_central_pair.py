@@ -15,6 +15,9 @@ verify_central_pair.py — regenerates every claim of [P2, §5] (Theorem 4, Coro
 
 Exits nonzero if any check fails.  --force-fail exercises the gate.
 """
+
+COVERS = ["[P2, S5]"]
+
 import sys, math, argparse
 from sympy import divisors, isprime
 

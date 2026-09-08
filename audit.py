@@ -229,6 +229,19 @@ npapers = len(PAPER)
 nover = len(FILES) - npapers
 nscripts = len(glob.glob(os.path.join(ROOT, "code", "verify_*.py")))
 NUM = {"seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12}
+# The script count is written out in words and is now above twenty, so the words
+# are compound.  Match the compound BEFORE the unit, or "twenty-seven" is read as
+# "seven" and every count reads wrong.
+UNITS = {"one":1,"two":2,"three":3,"four":4,"five":5,"six":6,"seven":7,"eight":8,"nine":9}
+TENS  = {"twenty":20,"thirty":30,"forty":40,"fifty":50}
+def wordnum(w):
+    w = w.replace("\u2013","-").strip()
+    if "-" in w:
+        a, b = w.split("-", 1)
+        return TENS.get(a, 0) + UNITS.get(b, 0)
+    return TENS.get(w, UNITS.get(w, NUM.get(w, 0)))
+WORDNUM_RE = (r"(?:twenty|thirty|forty|fifty)(?:[-\u2013](?:one|two|three|four|five|six|seven|eight|nine))?"
+              r"|seven|eight|nine|ten|eleven|twelve")
 for fn in ("README.md", "CITATION.cff", ".zenodo.json", os.path.join("code", "build_site.py")):
     p = os.path.join(ROOT, fn)
     if not os.path.exists(p): continue
@@ -240,9 +253,90 @@ for fn in ("README.md", "CITATION.cff", ".zenodo.json", os.path.join("code", "bu
                         f"({npapers} papers, {nover} overview)")
         elif NUM[w] != npapers:
             prob.append(f"[{fn}] says '{m.group(0)}' but there are {npapers} papers on disk")
-    for m in re.finditer(r'\b(seven|eight|nine|ten)\s+verification scripts\b', s):
-        if NUM[m.group(1)] != nscripts:
+    for m in re.finditer(r'\b(' + WORDNUM_RE + r')\s+verification scripts\b', s):
+        if wordnum(m.group(1)) != nscripts:
             prob.append(f"[{fn}] says '{m.group(0)}' but there are {nscripts} in code/")
+
+
+# ---------------------------------------------------------------- check 4b
+# COVERAGE.md must have one row per verification script and no row without one.
+# A COVERS line names a section; the coverage row names the DEFINITION, which is
+# where three review passes each found a script passing against a quantity the
+# paper never stated.
+_cov = os.path.join(ROOT, "COVERAGE.md")
+if os.path.exists(_cov):
+    _c = open(_cov, encoding="utf-8").read()
+    _scripts = sorted(os.path.basename(x) for x in glob.glob(os.path.join(ROOT, "code", "verify_*.py")))
+    for _s in _scripts:
+        if _s not in _c:
+            prob.append(f"[COVERAGE.md] no row for {_s}")
+    for _m in set(re.findall(r"`(verify_[a-z0-9_]+\.py)`", _c)):
+        if _m not in _scripts:
+            prob.append(f"[COVERAGE.md] row for {_m}, which is not in code/")
+else:
+    prob.append("COVERAGE.md is missing")
+
+# ---------------------------------------------------------------- check 4c
+# The DOI is written in six places and must be the same in all of them, and must
+# not still be the placeholder when a release is cut.  code/set_doi.py writes all
+# six at once; this check is what stops a push with a dead link.
+_doi = set()
+for _rel in ("README.md", "CITATION.cff", os.path.join("code", "build_site.py"),
+             os.path.join("docs", "index.html")):
+    _p = os.path.join(ROOT, _rel)
+    if not os.path.exists(_p): continue
+    for _m in re.findall(r"10\.5281/zenodo\.(?:\d+|RESERVED)", open(_p, encoding="utf-8").read()):
+        if _m != "10.5281/zenodo.21638887":      # the other repository's DOI
+            _doi.add((_rel, _m))
+_vals = {v for _, v in _doi}
+if len(_vals) > 1:
+    prob.append(f"the DOI differs between files: {sorted(_doi)}")
+if "10.5281/zenodo.RESERVED" in _vals:
+    prob.append("the DOI is still the placeholder — reserve one on Zenodo and run "
+                "code/set_doi.py before publishing")
+
+# ---------------------------------------------------------------- check 4d
+# A release must not carry the working files.  They are listed in .gitignore
+# under a comment saying so; this check reads that list rather than repeating it,
+# so the two cannot drift apart.
+_gi = os.path.join(ROOT, ".gitignore")
+if os.path.exists(_gi):
+    _lines = open(_gi, encoding="utf-8").read().splitlines()
+    try:
+        _start = next(i for i, l in enumerate(_lines) if l.startswith("# working files"))
+        _work = [l.strip() for l in _lines[_start:] if l.strip() and not l.startswith("#")]
+    except StopIteration:
+        _work = []
+    _here = [w for w in _work if os.path.exists(os.path.join(ROOT, w))]
+    if _here and os.environ.get("RELEASE_BUILD"):
+        prob.append("working files present in a release build: " + ", ".join(_here))
+
+# ---------------------------------------------------------------- check 5
+# A bracket must not mean two things.  Sibling papers are [P1]-[P11]; a bare
+# [n] must be an entry in that file's own reference list, and nothing else.
+import glob as _glob, re as _re, os as _os
+CODE_ = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "code")
+for _fn in sorted(_glob.glob(_os.path.join(D, "*.md"))):
+    _t = open(_fn, encoding="utf-8").read()
+    _base = _os.path.basename(_fn)
+    _m = _re.search(r"^#+\s*References\s*$", _t, _re.M)
+    _refs = set()
+    if _m:
+        for _r in _re.finditer(r"^\s*(?:\[(\d+)\]|(\d+)\.)\s", _t[_m.end():], _re.M):
+            _refs.add(int(_r.group(1) or _r.group(2)))
+    _body = _t[:_m.start()] if _m else _t
+    _bad = sorted({int(_c.group(1)) for _c in _re.finditer(r"(?<!P)\[(\d+)\]", _body)} - _refs)
+    if _bad:
+        prob.append(f"[{_base}] bare citation(s) {_bad} with no entry in this "
+                    f"file's reference list - a bracket number must not also name a paper")
+    _badp = sorted({int(_c.group(1)) for _c in _re.finditer(r"\[P(\d+)", _t)} - set(range(1, 12)))
+    if _badp:
+        prob.append(f"[{_base}] sibling citation(s) {['P'+str(_x) for _x in _badp]} outside the range P1-P11")
+
+# every verification script declares what it covers
+for _sc in sorted(_glob.glob(_os.path.join(CODE_, "verify_*.py"))):
+    if not _re.search(r"^COVERS\s*=", open(_sc, encoding="utf-8").read(), _re.M):
+        prob.append(f"[{_os.path.basename(_sc)}] has no COVERS line")
 
 print("\n".join(prob) if prob else "no problems found")
 print(f"\n--- {len(prob)} item(s)")
