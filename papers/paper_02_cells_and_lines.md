@@ -289,7 +289,7 @@ Writing $u = S-D = 2b$ and $v = S+D = 2a$ gives $M = \tfrac{3}{2}uv$: a fixed li
 
 > **Corollary 2.** Let $C_a$ and $C_b$ be distinct twin pairs. Then none of the four primes $6a\pm1$, $6b\pm1$ divides either member of $C_M$ with $M = 6ab$.
 
-*Proof.* Write $p = 6a-1$ and $c = a$, so $u_p(a) = 1$ in the notation of Corollary 1. Since $36 \equiv c^{-2} \pmod p$, one has $36ab \equiv u_p(a)u_p(b) = u_p(b)$, and $u_p(b) = \pm 1$ would put the index $b$ at a forbidden position of $L_p$, contradicting that $C_b$ is a twin pair. The same argument with $p = 6a+1$, and with $a$ and $b$ exchanged, gives the other three. $\blacksquare$
+*Proof.* Write $p = 6a-1$ and $c = a$, so $u_p(a) = 1$ in the notation of Corollary 1. Since $36 \equiv c^{-2} \pmod p$, one has $36ab \equiv u_p(a)u_p(b) = u_p(b)$, and $u_p(b) = \pm 1$ would put the index $b$ at a forbidden position of $L_p$, contradicting that $C_b$ is a twin pair. The same argument with $p = 6a+1$, and with $a$ and $b$ exchanged, gives the other three — the quantity tested is $36ab$ throughout, and $36ab \equiv u_p(a)u_p(b)$ holds for both residue classes of $p$ modulo $6$. $\blacksquare$
 
 *Verification.* Zero strikes over all $6{,}320$ ordered pairs of distinct twin indices below $500$. The self-diamond is the opposite case: at $a = b$ the identity $36a^2-1 = (6a-1)(6a+1)$ closes the centre with the generators themselves.
 

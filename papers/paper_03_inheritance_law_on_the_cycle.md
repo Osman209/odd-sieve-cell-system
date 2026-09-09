@@ -144,14 +144,20 @@ This is (3.2) with $x$ set to $1$ and $q-2$ resolved into $(q-3) + w$; the cell 
 
 *The channel carries no information about primality, and this is worth stating so it is not looked for.* Among the cells left open by the lines $5$ through $19$, the proportion that are twin pairs, taken separately for each value of $k$, is $0.996$, $1.010$, $0.984$ and $0.978$ times the overall rate — every ratio within three per cent of one, over $234{,}237$ cells. The refinement is a finer bookkeeping of the same residues, not a new discriminant.
 
-**The same test one layer up.** [P2, Cor 2] reads the fate of a cell $C_j$ through the phase $u_p(j) = jc^{-1}$, closure being $u = \pm 1$. The centre of the diamond of two cells $C_a, C_b$ is the cell of index $6ab$, and since $36 \equiv c^{-2} \pmod p$ its phase is the product $u_p(a)u_p(b)$. So the same two gates decide one layer up, and the local count is again exact.
+**The same test one layer up.** [P2, Cor 2] reads the fate of a cell $C_j$ through the phase $u_p(j) = jc^{-1}$, closure being $u = \pm 1$. The centre of the diamond of two cells $C_a, C_b$ is the cell of index $6ab$, whose two members are $36ab \mp 1$; so the centre is closed to $p$ exactly when $36ab \equiv \pm 1$. Since $c^{-2} \equiv 36 \pmod p$,
+
+$$u_p(a) \cdot u_p(b) = ab \cdot c^{-2} = 36ab,$$
+
+so the gate applies directly to the **product of the two phases**, with no sign to track: the centre is closed to $p$ if and only if $u_p(a)u_p(b) = \pm 1$. The same two gates therefore decide one layer up, and the local count is again exact.
+
+*(A caution for anyone re-deriving this. The product $u_p(a)u_p(b)$ is $36ab$, which is not the phase of the centre cell: writing $p = 6c+\sigma$ gives $c^{-1} \equiv -6\sigma$ and hence $u_p(6ab) = 6ab\cdot c^{-1} = -\sigma\cdot 36ab$, the product only up to the sign $-\sigma$. Nothing depends on this, because the closure test above is on $36ab$ itself; but the two quantities are not the same, and at $p \equiv 1 \pmod 6$ they differ.)*
 
 > **Corollary 2.** Of the $(p-2)^2$ ordered pairs of phases open to a line $p$, exactly $2(p-3)$ have product $\pm 1$. Hence the number of open pairs whose diamond centre is also open to $p$ is
 > $\displaystyle (p-2)^2 - 2(p-3) = (p-3)^2 + 1.$
 
-*Proof.* For $u \ne 0, \pm 1$ the two dangerous partners are $u^{-1}$ and $-u^{-1}$; both are open, since $u^{-1} = \pm 1$ would force $u = \pm 1$, and they are distinct. There are $p-3$ such $u$, and $u = 0$ has no dangerous partner. $\blacksquare$
+*Proof.* By the identity above the centre is closed to $p$ exactly when $u_p(a)u_p(b) = \pm 1$. For $u \ne 0, \pm 1$ the two dangerous partners are $u^{-1}$ and $-u^{-1}$; both are open, since $u^{-1} = \pm 1$ would force $u = \pm 1$, and they are distinct because $p$ is odd. There are $p-3$ such $u$, and $u = 0$ has no dangerous partner. $\blacksquare$
 
-*Verified:* $5, 17, 65, 101, 197, 257$ at $p = 5, 7, 11, 13, 17, 19$, by direct enumeration.
+*Verified:* $5, 17, 65, 101, 197, 257$ at $p = 5, 7, 11, 13, 17, 19$, by direct enumeration; and the identity $u_p(a)u_p(b) = 36ab$, together with the equivalence between closure of the centre and $u_p(a)u_p(b) = \pm 1$, was checked over every ordered pair of residues for every prime below $60$.
 
 *A caution that belongs with it.* The count is **conditional** — it is a count over pairs of cells already open to $p$, not a density on the cycle — and the phase computation nowhere uses primality, so like the third channel above it is finer bookkeeping of residues. In particular a law of the shape "the centre dies unless $p \mid ab$" is false as stated: the birth index of [P2, Cor 1] is an exception, and at $p = 5$ it accounts for every one of the $49$ failures among $11{,}175$ pairs of twin indices.
 
