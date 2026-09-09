@@ -6,11 +6,11 @@
 
 ### Abstract
 
-The window between consecutive squares is the habitat of the whole set, and this part approaches it with a different tool: the Diamond–Halberstam–Richert sieve in dimension two, with Richert's logarithmic weights. Two theorems are proved, with one corollary. In every sufficiently large window between consecutive squares there is a pair $(a, a+2)$ with $\Omega(a) \le 5$, $\Omega(a+2) \le 5$ and $\Omega(a) + \Omega(a+2) \le 8$, and the number of such pairs is at least a constant multiple of $m/(\log m)^2$. In an interval of length $X^\theta$ the same argument gives a pair with $\Omega \le 5$ on each side for every $\theta \ge 0.38$, with $\Omega \le 4$ for every $\theta \ge 0.513$, and with $\Omega \le 3$ for every $\theta \ge 0.78$. Read back in the coordinate of the set, the second row says that the window $(m^2, (m+\lceil m^{0.026}\rceil)^2)$ carries a pair with at most four prime factors on each side. The four weight coefficients behind these statements are certified by interval arithmetic. A closing section measures, inside the square window itself, exactly how far the four-factor statement is: the deficit is $0.064861$, it lies almost entirely in the upper sifting function, and 59.1% of that function's weighted excess above $1$ sits above $s = 4.3$. **Nothing here is new sieve theory, and no progress toward the twin-prime conjecture is claimed.**
+The window between consecutive squares is the habitat of the whole set, and this part approaches it with a different tool: the Diamond–Halberstam–Richert sieve in dimension two, with Richert's logarithmic weights. Two theorems are proved, with one corollary. In every sufficiently large window between consecutive squares there is a pair $(a, a+2)$ with $\Omega(a) \le 5$, $\Omega(a+2) \le 5$ and $\Omega(a) + \Omega(a+2) \le 8$, and the number of such pairs is at least a constant multiple of $m/(\log m)^2$. In an interval of length $X^\theta$ the same argument gives a pair with $\Omega \le 5$ on each side for every $\theta \ge 0.38$, with $\Omega \le 4$ for every $\theta \ge 0.513$, and with $\Omega \le 3$ for every $\theta \ge 0.78$. Read back in the coordinate of the set, the second row says that the window $(m^2, (m+\lceil m^{0.026}\rceil)^2)$ carries a pair with at most four prime factors on each side. The four weight coefficients behind these statements are certified by interval arithmetic. A closing section measures, inside the square window itself, exactly how far the four-factor statement is: the deficit is $0.064861$, it lies almost entirely in the upper sifting function, and 59.1% of that function's weighted excess above $1$ sits above $s = 4.3$. **Nothing here is new sieve theory, and no progress toward the twin-prime conjecture is claimed.** The published results on this pair carry fewer prime factors than Theorem 1 does — Selberg's weighted sieve already gives a positive density of pairs with $\Omega(n)+\Omega(n+2) \le 5$ — and §10 sets out that comparison. What is not in those results is that **every** sufficiently large window carries one.
 
 **Numbering.** This paper is one part of a set that was written as a single document and is now published in parts. Each part numbers its own results from one and is self-contained: a reference of the form [Pn, Thm 1] means Theorem 1 of Paper n, and an unqualified "Theorem 1" always means this paper's own.
 
-**How to read the claims in this paper.** Statements set as Theorems, Propositions and Lemmas are proved, and the proofs are given. Anything described as *measured* is a computation over a stated finite range and is labelled as such where it occurs. The Diamond–Halberstam–Richert theorems and the values of their transition constants are external inputs, taken from [6] and [5] and not reproved here; what is supplied is the verification that their hypotheses hold for these sequences, and rigorous enclosures for the resulting coefficients.
+**How to read the claims in this paper.** Statements set as Theorems, Propositions and Lemmas are proved, and the proofs are given. Anything described as *measured* is a computation over a stated finite range and is labelled as such where it occurs. The Diamond–Halberstam–Richert theorems and the values of their transition constants are external inputs, taken from [12] and [8] and not reproved here; what is supplied is the verification that their hypotheses hold for these sequences, and rigorous enclosures for the resulting coefficients.
 
 **This part uses no object from the cell system.** No line, no sector, no cell state and no owner appears below. It is placed in this set because it concerns the same window, not because it shares machinery with [P1] to [P11].
 
@@ -85,11 +85,11 @@ $$\prod_{v_1 \le p \lt v_2}\left(1 - g(p)\right)^{-1} \ \le\ \left(\frac{\log v_
 
 for a suitable constant $A$, together with $V(z)$ of order $(\log z)^{-2}$, hence of order $(\log U)^{-2}$.
 
-We use the Diamond–Halberstam–Richert bounds in the form stated in [5, §4, (19)–(20)]: for a sequence of cardinality $X_{\mathcal A}$, density $g$ and remainders $r_d$, sieved at level $M \ge z$, the number of survivors is at most
+We use the Diamond–Halberstam–Richert bounds in the form stated in [8, §4, (19)–(20)]: for a sequence of cardinality $X_{\mathcal A}$, density $g$ and remainders $r_d$, sieved at level $M \ge z$, the number of survivors is at most
 
 $$X_{\mathcal A} V(z)\left\lbrace F_2\left(\frac{\log M}{\log z}\right) + O(\varepsilon(M))\right\rbrace  +  O\left(\sum_{d \lt M,\ d \mid P(z)} 4^{\omega(d)}\lvert r_d\rvert\right)$$
 
-and at least the corresponding expression with $f_2$ in place of $F_2$ and the remainder subtracted, where $\varepsilon(M) = (\log\log M)^2(\log M)^{-1/6} \to 0$. The functions $F_2$ and $f_2$ are the dimension-two sifting functions of [6, §4, Thm 2]; $F_2$ decreases monotonically to $1$ and $f_2$ increases monotonically to $1$. The weights are Richert's [7].
+and at least the corresponding expression with $f_2$ in place of $F_2$ and the remainder subtracted, where $\varepsilon(M) = (\log\log M)^2(\log M)^{-1/6} \to 0$. The functions $F_2$ and $f_2$ are the dimension-two sifting functions of [12, §4, Thm 2]; $F_2$ decreases monotonically to $1$ and $f_2$ increases monotonically to $1$. The weights are Richert's [15].
 
 With $D = H(\log U)^{-20}$, Lemma 1 gives the unweighted remainder bound
 
@@ -151,7 +151,7 @@ For the square window the choice $w = 16$, $u = 3$ gives $\theta w = 8$ and the 
 > $\displaystyle C_5(1/2; 16, 3) \ \ge\ 0.91558, \qquad C_5(0.38; 23.430, 3.376) \ \ge\ 0.08793,$
 > $\displaystyle C_4(0.513; 16.42405, 2.79166) \ \ge\ 0.00621, \qquad C_3(0.78; 10.028, 2.257) \ \ge\ 0.05351 .$
 
-The inputs taken from the literature and **not** reproved are: the dimension-two DHR system as stated in [6, §4, Thm 2]; that $F_2$ decreases to $1$ and $f_2$ increases to $1$; that $\alpha_2$ lies in $[5.3576, 5.3578]$ and $\beta_2$ in $[4.2662, 4.2665]$ — these are the five printed digits of the values $\alpha_2 = 5.3577\ldots$ and $\beta_2 = 4.2664\ldots$ given in [6], rounded outward; and the displayed enclosure of Euler's constant. The transition constants and the explicit formulas are those of [6] and the book [3].
+The inputs taken from the literature and **not** reproved are: the dimension-two DHR system as stated in [12, §4, Thm 2]; that $F_2$ decreases to $1$ and $f_2$ increases to $1$; that $\alpha_2$ lies in $[5.3576, 5.3578]$ and $\beta_2$ in $[4.2662, 4.2665]$ — these are the five printed digits of the values $\alpha_2 = 5.3577\ldots$ and $\beta_2 = 4.2664\ldots$ given in [12], rounded outward; and the displayed enclosure of Euler's constant. The transition constants and the explicit formulas are those of [12] and the book [6].
 
 The certificate computes, with outward-rounded interval arithmetic on a grid of step $0.0002$:
 
@@ -216,7 +216,7 @@ The first and third rows are set well above their thresholds, so their certified
 
 **The square-window form is the one to compare against Theorem 1.** At $k$ fixed the method gives five factors on each side; at $k = \lceil m^{0.026}\rceil$ it gives four. That is the whole distance, stated in the coordinate the set uses.
 
-**"Sufficiently large" is part of both theorems.** Neither proof computes $m_0(k)$ or the threshold in $X$, because the $o(1)$ of (5.2) is not made explicit by the DHR theorems as used. A separate and deliberately wasteful construction, replacing the DHR functions by explicit linear sieves in a vector-sieve combination in the manner of [1], does yield an explicit threshold; it is far too large to be closed by any computation, and it is not the subject of this paper.
+**"Sufficiently large" is part of both theorems.** Neither proof computes $m_0(k)$ or the threshold in $X$, because the $o(1)$ of (5.2) is not made explicit by the DHR theorems as used. A separate and deliberately wasteful construction, replacing the DHR functions by explicit linear sieves in a vector-sieve combination in the manner of [3], does yield an explicit threshold; it is far too large to be closed by any computation, and it is not the subject of this paper.
 
 ---
 
@@ -257,7 +257,7 @@ with $s$ running over $2.4625$ to $7.4578$. Since $\rho$ increases with $s$, **a
 | $5.3577$ to $6$ | $0.0466945$ | 14.33% |
 | $6$ to $7.4578$ | $0.0435701$ | 13.38% |
 
-so 59.1% of the weighted excess lies **above** $s = 4.3$. The band carrying the largest single entry, $[3,4]$, is not where most of the excess is.
+so 59.1% of the weighted excess lies **above** $s = 4.3$. The band carrying the largest single entry, from $s = 3$ to $s = 4$, is not where most of the excess is.
 
 ### 9.3 What an improvement would have to achieve
 
@@ -289,11 +289,25 @@ Replacing $F_2$ by the constant $1$ at the parameters above turns $C_4$ into $+0
 
 ## 10. Placement
 
-What follows is a bounded source review, not a priority search, and no claim of absence from the literature is made.
+What follows is a bounded source review, not a priority search, and no claim of priority or of absence from the literature is made. **The published results on the pair $(n, n+2)$ are stronger than Theorem 1 in the count of prime factors**, and this section says so plainly and identifies where the difference comes from.
 
-Dudek and Johnston [4] showed that every interval between consecutive squares contains an integer with at most four prime factors, and Campbell [2] improved this to three, **for every $n \ge 1$ and with no threshold**. Those are statements about a single integer. The statements here are about a pair at distance $2$, which is a different and harder shape, and they are conditional on an unspecified threshold. The two kinds of result are not comparable in either direction.
+### 10.1 The pair, over the whole range
 
-There is also a line on Chen's theorem in short intervals, begun by Ross at $\theta \ge 0.98$ and lowered in steps to $0.97$; Wu [8] is one of those steps, at $0.971$. Each of them produces a **prime** $p$ in $[x, x+x^\theta]$ with $\Omega(p+2) \le 2$, which is a far stronger conclusion in a far longer interval: a square window near $x$ has length of order $x^{1/2}$, and $x^{0.97}/x^{1/2} \to \infty$, so those theorems cannot be inserted into these windows, and nothing here implies their conclusion.
+Selberg's weighted sieve, given in [16] and described there by its author as of historical interest, proves that for $X$ large the number of $n \le X$ such that one of $n$ and $n+2$ has at most two prime factors and the other at most three is $\gg X(\log X)^{-2}$. So the pair problem already has, over the whole range, **a positive density of pairs with $\Omega(n) + \Omega(n+2) \le 5$** — against the $\le 8$ of Theorem 1. Heath-Brown [10] generalised the argument to almost-prime $k$-tuples, and the line continues: Ho and Tsang [11], Maynard [14] for three-tuples, and Lewulis [13] most recently; Balasubramanian and Srivastav [2] sharpen the constant in Selberg's own inequality. The strongest statement of this shape is Chen's [5]: infinitely many primes $p$ with $\Omega(p+2) \le 2$. Goldston, Graham, Pintz and Yıldırım [9] give a different result in the same area, that the gap between consecutive integers with exactly two prime factors is at most $26$ infinitely often.
+
+**The density is the same, and this should be stated.** Summing the count of Theorem 1 over the windows below $X$ gives $\gg \sum_{m \le \sqrt X} m(\log m)^{-2}$, which is again of order $X(\log X)^{-2}$. Theorem 1 therefore produces no more pairs than [16] does, and produces them with more prime factors.
+
+### 10.2 Where the difference comes from, and what is left
+
+Selberg's counts rest on a level of distribution $2/3$ for the sequence $n(n+2)$, reached with exponential-sum input; the resulting inequality gives the constant $8/\theta + 2 = 14$ at $\theta = 2/3$, and from it the split into two and three prime factors. **That level is an average over the whole range of $n$.** In a single window of length $x^{1/2}$ the level available is the one supplied in §3, with exponent $\theta = 1/2$. So the distance between $\le 5$ and $\le 8$ has an identifiable source, and it is the same quantity that §9 measures from the other side.
+
+What remains after all of this is one thing, and it is the reason the present statements were written down. A positive density of pairs below $X$ does not say that any particular window contains one: a density statement is compatible with the pairs clustering, and none of the results above locates them. Theorem 1 says that **every** sufficiently large window between consecutive squares contains such a pair, with no exceptional windows, and Corollary 1 does the same for four prime factors once the window is allowed to grow. That is the only axis on which the statements here are not dominated, and it is claimed on no other.
+
+### 10.3 The single integer, and the short-interval line
+
+Dudek and Johnston [7] showed that every interval between consecutive squares contains an integer with at most four prime factors, and Campbell [4] improved this to three, **for every $n \ge 1$ and with no threshold**. Those are statements about a single integer, which is a different and easier shape than a pair at distance $2$; and they are explicit where Theorem 1 is not.
+
+There is also a line on Chen's theorem in short intervals, begun by Ross at $\theta \ge 0.98$ and lowered in steps to $0.97$; Wu [17] is one of those steps, at $0.971$. Each of them produces a **prime** $p$ in $[x, x+x^\theta]$ with $\Omega(p+2) \le 2$, a far stronger conclusion in a far longer interval: a square window near $x$ has length of order $x^{1/2}$, and $x^{0.97}/x^{1/2} \to \infty$, so those theorems cannot be inserted into these windows, and nothing here implies their conclusion. The same ceiling governs the bounded-gap machinery: Alweiss and Luo [1] carry the Maynard–Tao result into intervals $[x - x^\delta, x]$ for every $\delta \ge 0.525$, and $0.525$ is where it stops because that is the Baker–Harman–Pintz range in which a prime is known to exist at all. The third row of Theorem 2, at $\theta = 0.78$, lies above that ceiling, so in an interval of that length [1] gives two genuine primes at bounded distance; the only thing the present statement adds there is that the distance is exactly $2$.
 
 ---
 
@@ -301,6 +315,7 @@ There is also a line on Chen's theorem in short intervals, begun by Ross at $\th
 
 - Theorems 1 and 2 hold for **every** sufficiently large window, not for most windows and not on average. The uniformity comes from Lemma 1.
 - The argument uses no unproved hypothesis about the distribution of primes in these windows.
+- The published results on the pair carry fewer prime factors and the same order of density; §10 states this. The only claim made here is the absence of exceptional windows.
 - Nothing here asserts that either member is prime. Nothing here asserts four prime factors on both members of a pair in a square window with $k$ fixed; Corollary 1 reaches four only once $k$ is allowed to grow.
 - "Sufficiently large" is part of both statements. No threshold is computed here, and nothing is claimed about any particular window.
 - The parameter sets are not claimed optimal, and the thresholds in the Observation of §8 are not certified.
@@ -329,11 +344,20 @@ The only numbers in this paper stated without a script are the three thresholds 
 
 The papers of this set are cited as [P1] to [P11], and the numbered entries below are the external works. The two kinds never share a number: a bracket with a P is a companion paper, a bare number is a reference in the list below.
 
-1. M. Bordignon, D. R. Johnston and V. Starichkova, *An explicit version of Chen's theorem and the linear sieve*, Int. J. Number Theory **21** (2025), 2497–2572.
-2. P. Campbell, *On the existence of integers with at most 3 prime factors between every pair of consecutive squares*, arXiv:2603.10356 (2026).
-3. H. G. Diamond and H. Halberstam, *A Higher-Dimensional Sieve Method*, Cambridge Tracts in Mathematics **177**, Cambridge University Press, 2008.
-4. A. W. Dudek and D. R. Johnston, *Almost primes between all squares*, J. Number Theory **278** (2026), 726–745.
-5. C. S. Franze and P.-H. Kao, *Almost-prime values of reducible polynomials at prime arguments*, arXiv:1812.11280 (2018).
-6. P.-H. Kao, *Almost-prime polynomials with prime arguments*, arXiv:1606.03505 (2016).
-7. H.-E. Richert, *Selberg's sieve with weights*, Mathematika **16** (1969), 1–22.
-8. J. Wu, *Chen's double sieve, Goldbach's conjecture and the twin prime problem*, Acta Arith. **114** (2004), 215–273.
+1. R. Alweiss and S. Luo, *Bounded gaps between primes in short intervals*, Res. Number Theory **4** (2018), art. 15.
+2. R. Balasubramanian and P. Srivastav, *On Selberg's approximation to the twin prime problem*, arXiv:1504.04347 (2015).
+3. M. Bordignon, D. R. Johnston and V. Starichkova, *An explicit version of Chen's theorem and the linear sieve*, Int. J. Number Theory **21** (2025), 2497–2572.
+4. P. Campbell, *On the existence of integers with at most 3 prime factors between every pair of consecutive squares*, arXiv:2603.10356 (2026).
+5. J.-R. Chen, *On the representation of a large even integer as the sum of a prime and a product of at most two primes*, Sci. Sinica **16** (1973), 157–176.
+6. H. G. Diamond and H. Halberstam, *A Higher-Dimensional Sieve Method*, Cambridge Tracts in Mathematics **177**, Cambridge University Press, 2008.
+7. A. W. Dudek and D. R. Johnston, *Almost primes between all squares*, J. Number Theory **278** (2026), 726–745.
+8. C. S. Franze and P.-H. Kao, *Almost-prime values of reducible polynomials at prime arguments*, arXiv:1812.11280 (2018).
+9. D. A. Goldston, S. W. Graham, J. Pintz and C. Y. Yıldırım, *Small gaps between primes or almost primes*, arXiv:math/0506067 (2005).
+10. D. R. Heath-Brown, *Almost-prime $k$-tuples*, Mathematika **44** (1997), 245–266.
+11. K.-H. Ho and K.-M. Tsang, *On almost prime $k$-tuples*, J. Number Theory **120** (2006), 33–46.
+12. P.-H. Kao, *Almost-prime polynomials with prime arguments*, arXiv:1606.03505 (2016).
+13. P. Lewulis, *Variants of the Selberg sieve and almost prime $k$-tuples*, Q. J. Math. **74** (2023), 327–363.
+14. J. Maynard, *3-tuples have at most 7 prime factors infinitely often*, Math. Proc. Cambridge Philos. Soc. **155** (2013), 443–457.
+15. H.-E. Richert, *Selberg's sieve with weights*, Mathematika **16** (1969), 1–22.
+16. A. Selberg, *Lectures on Sieves*, Collected Papers, Volume II, Springer, 1991, 65–247.
+17. J. Wu, *Chen's double sieve, Goldbach's conjecture and the twin prime problem*, Acta Arith. **114** (2004), 215–273.
