@@ -2,9 +2,10 @@
 """
 set_doi.py — write one DOI into every file that carries it.
 
-The DOI appears in six independent places: the README badge, the README citation
-block, CITATION.cff, the DOI constant in build_site.py, and — through that
-constant — the landing page and the thirteen paper pages under docs/.  Editing
+The DOI appears in seven independent places: the README badge, the README
+citation block, CITATION.cff, the suggested attribution in LICENSE-CONTENT, the
+DOI constant in build_site.py, and — through that constant — the landing page and
+the twelve paper pages under docs/.  Editing
 them by hand has gone wrong before, so this does all of them at once and then
 tells you to rebuild the site.
 
@@ -24,7 +25,8 @@ PLACEHOLDER = "10.5281/zenodo.RESERVED"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAT = re.compile(r"10\.5281/zenodo\.(?:\d+|RESERVED)")
 
-TARGETS = ["README.md", "CITATION.cff", os.path.join("code", "build_site.py")]
+TARGETS = ["README.md", "CITATION.cff", "LICENSE-CONTENT",
+           os.path.join("code", "build_site.py")]
 
 def current():
     s = open(os.path.join(ROOT, "CITATION.cff"), encoding="utf-8").read()

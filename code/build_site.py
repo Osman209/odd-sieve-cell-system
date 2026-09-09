@@ -32,7 +32,7 @@ PAPERS = [
         slug="overview_the_cell_system",
         title="The Cell System: an Overview",
         sub="Every result of the set stated once, with its status attached: proved, proved under hypothesis, or measured",
-        abs="A single pass over the eleven papers. The coordinates; the exact window histogram; "
+        abs="A single pass over the twelve papers. The coordinates; the exact window histogram; "
             "the exact transport of a census over a sieve cycle; what survives the move to a short "
             "interval; what the framework decides outright; where it stops, stated from inside the "
             "construction rather than quoted; the pattern the work keeps arriving at; and what an "
@@ -105,6 +105,12 @@ PAPERS = [
         sub="The external ingredient, the limitations, and the routes already closed",
         abs="What an external ingredient would have to supply for the identity to become a theorem, why the stopping point is the right one, and an appendix of routes already closed.",
     ),
+    dict(
+        slug="paper_12_paired_almost_primes",
+        title="Paper 12. Paired Almost Primes in Square Windows and in Short Intervals",
+        sub="A dimension-two sieve on the same window, with certified coefficients, and the exact distance to four factors",
+        abs="Every sufficiently large window between consecutive squares carries a pair (a, a+2) with at most five prime factors on each side and at most eight in total; in an interval of length x^theta the same argument gives at most five for theta above 0.38, four above 0.52 and three above 0.78. The four weight coefficients are certified by interval arithmetic. This part uses no object from the cell system.",
+    ),
 ]
 
 
@@ -155,12 +161,12 @@ def index():
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Cell System &mdash; Mohamed Osman</title>
-<meta name="description" content="A coordinate system for the odd sieve: what it proves, what it measures, and where it stops. Eleven papers, one overview and twenty-eight verification scripts. No twin-prime claim.">
+<meta name="description" content="A coordinate system for the odd sieve: what it proves, what it measures, and where it stops. Twelve papers, one overview and thirty verification scripts. No twin-prime claim.">
 {CSS}</head><body>
 <h1>The Cell System</h1>
 <h2>A coordinate system for the odd sieve &mdash; what it proves, what it measures, and where it stops</h2>
 <p class="meta">Mohamed Osman &middot; ORCID <a href="https://orcid.org/{ORCID}">{ORCID}</a> &middot; independent researcher</p>
-<p>Eleven papers, one overview and twenty-eight verification scripts. Papers 1 to 4 build the coordinates
+<p>Twelve papers, one overview and thirty verification scripts. Papers 1 to 4 build the coordinates
 and the transport laws; papers 5 to 8 are the construction and what it decides about twin pairs;
 papers 9 to 11 derive the point at which it stops <em>from inside the construction</em> rather than
 quoting it, and measure how much of the difficulty the framework can localise before failing to

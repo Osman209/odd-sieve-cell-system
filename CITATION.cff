@@ -18,7 +18,7 @@ license: CC-BY-4.0
 repository-code: "https://github.com/Osman209/odd-sieve-cell-system"
 url: "https://osman209.github.io/odd-sieve-cell-system/"
 abstract: >-
-  Eleven papers, one overview and twenty-eight verification scripts on the
+  Twelve papers, one overview and thirty verification scripts on the
   elementary sieve of the odd numbers, developed as a coordinate system
   of lines and cells. Papers 1 to 4 build the coordinates and the
   transport laws; papers 5 to 8 are the construction and what it decides
@@ -29,7 +29,7 @@ abstract: >-
   listed together, and withdrawn results are kept rather than deleted.
   Paper 1 is independent of the rest and concerns no prime numbers. No
   progress toward the twin-prime conjecture is claimed, and no new
-  bound. Twenty-eight verification scripts regenerate every number printed, each
+  bound. Thirty verification scripts regenerate every number printed, each
   exiting non-zero when its claim fails.
 keywords:
   - sieve methods

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Structural audit of the eleven papers and the overview. Reports only problems.
+"""Structural audit of the twelve papers and the overview. Reports only problems.
 
 Run from anywhere:  python3 audit.py
 Exits non-zero when it finds something, so it can gate a push.
@@ -281,8 +281,8 @@ else:
 # not still be the placeholder when a release is cut.  code/set_doi.py writes all
 # six at once; this check is what stops a push with a dead link.
 _doi = set()
-for _rel in ("README.md", "CITATION.cff", os.path.join("code", "build_site.py"),
-             os.path.join("docs", "index.html")):
+for _rel in ("README.md", "CITATION.cff", "LICENSE-CONTENT",
+             os.path.join("code", "build_site.py"), os.path.join("docs", "index.html")):
     _p = os.path.join(ROOT, _rel)
     if not os.path.exists(_p): continue
     for _m in re.findall(r"10\.5281/zenodo\.(?:\d+|RESERVED)", open(_p, encoding="utf-8").read()):
@@ -329,9 +329,9 @@ for _fn in sorted(_glob.glob(_os.path.join(D, "*.md"))):
     if _bad:
         prob.append(f"[{_base}] bare citation(s) {_bad} with no entry in this "
                     f"file's reference list - a bracket number must not also name a paper")
-    _badp = sorted({int(_c.group(1)) for _c in _re.finditer(r"\[P(\d+)", _t)} - set(range(1, 12)))
+    _badp = sorted({int(_c.group(1)) for _c in _re.finditer(r"\[P(\d+)", _t)} - set(range(1, 13)))
     if _badp:
-        prob.append(f"[{_base}] sibling citation(s) {['P'+str(_x) for _x in _badp]} outside the range P1-P11")
+        prob.append(f"[{_base}] sibling citation(s) {['P'+str(_x) for _x in _badp]} outside the range P1-P12")
 
 # every verification script declares what it covers
 for _sc in sorted(_glob.glob(_os.path.join(CODE_, "verify_*.py"))):

@@ -7,7 +7,7 @@
 A coordinate system for the odd sieve: what it proves, what it only measures, and the
 point at which it stops — derived from inside the construction rather than quoted.
 
-Eleven papers, one overview and twenty-eight verification scripts. **Start with the overview.**
+Twelve papers, one overview and thirty verification scripts. **Start with the overview.**
 
 ---
 
@@ -66,8 +66,8 @@ names the source. The table below is the map.
 ## Contents
 
 ```
-papers/   eleven papers and one overview, plus one standalone preprint in LaTeX and PDF
-code/     twenty-eight verification scripts, plus the rendering checker and the site build
+papers/   twelve papers and one overview, plus one standalone preprint in LaTeX and PDF
+code/     thirty verification scripts, plus the rendering checker and the site build
 docs/     the GitHub Pages site: a landing page per paper, with its PDF
 ```
 
@@ -115,9 +115,13 @@ docs/     the GitHub Pages site: a landing page per paper, with its PDF
 
 **Paper 11. What a Continuation Would Have to Supply.** The external ingredient, the limitations, and the routes already closed.
 
+### `papers/paper_12_paired_almost_primes.md`
+
+**Paper 12. Paired Almost Primes in Square Windows and in Short Intervals.** A dimension-two sieve on the same window, with certified coefficients, and a measurement of how far four factors are. This part uses no object from the cell system.
+
 ### How to read the citations
 
-Companion papers are cited as `[P1]` to `[P11]`. A bare number in brackets is an entry in that
+Companion papers are cited as `[P1]` to `[P12]`. A bare number in brackets is an entry in that
 paper's own reference list, so `[P9]` is always Paper 9 and `[9]` is always the ninth reference of
 the paper you are reading. Each paper numbers its own results from one, so `[P6, Thm 1]` is
 Theorem 1 of Paper 6 and an unqualified "Theorem 1" is always the paper you are in. Result numbers
@@ -163,10 +167,11 @@ That discipline, rather than any assurance about the tools, is what the reader i
 
 ## Status
 
-Eleven papers and one overview. Papers 1 to 4 build the coordinates and the transport laws;
+Twelve papers and one overview. Papers 1 to 4 build the coordinates and the transport laws;
 papers 5 to 8 are the construction and what it decides about twin pairs; papers 9 to 11 are the
 account of where it stops, and are the reason the set exists in this form. Paper 1 is independent
-of the rest and can be read on its own.
+of the rest and can be read on its own, and so is Paper 12, which reaches the same window with a
+classical dimension-two sieve and no cell-system object.
 
 The open question the work leaves is stated in Paper 11 §2.1, and it is external: the framework
 supplies the objects a weighted sieve argument needs, to measured accuracy, and cannot supply the
@@ -200,6 +205,12 @@ Osman, M. (2026). The Cell System: a coordinate system for the odd sieve —
 what it proves, what it measures, and where it stops. Zenodo.
 https://doi.org/10.5281/zenodo.22661627
 ```
+
+The DOI is written in seven places — the badge above, the block here, `CITATION.cff`,
+the suggested attribution in `LICENSE-CONTENT`, the constant in `code/build_site.py`,
+and through that constant the landing page and every paper page under `docs/`. `python3 code/set_doi.py 10.5281/zenodo.NNNNNNNN`
+writes all six, and `audit.py` refuses a release that still carries the placeholder or
+that disagrees between files.
 
 Repository: <https://github.com/Osman209/odd-sieve-cell-system>
 ORCID: <https://orcid.org/0009-0004-5912-999X>

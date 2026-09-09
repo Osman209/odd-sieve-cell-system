@@ -6,7 +6,7 @@
 
 ### Abstract
 
-This is a research announcement for eleven short papers built on one coordinate system for the odd integers. It contains **no proofs**; every statement carries a reference to the paper where it is proved, verified or measured, and every statement is labelled with which of those three it is.
+This is a research announcement for eleven short papers built on one coordinate system for the odd integers, together with a twelfth that reaches the same window by a classical route and uses none of that system. It contains **no proofs**; every statement carries a reference to the paper where it is proved, verified or measured, and every statement is labelled with which of those three it is.
 
 The primitive object is the **line** $L_m(k) = m(m+2k)$, the odd multiples of $m$ from $m^2$ onward. The line $L_3$ has step $6$ and so leaves exactly two odd numbers between consecutive strikes; it is therefore treated not as the first sieving line but as the **coordinate grid**, and the odd integers compress into cells $C_b = (6b-1, 6b+1)$. Against this fixed periodic structure the odd squares slide as a **moving window**, widening by $8$ at each step.
 
@@ -48,9 +48,9 @@ Every statement below is tagged:
 
 A fourth kind appears in the papers but carries no tag here, because it is never a result: a **reading** is the author's judgement about what a proof or a measurement appears to mean — where a route seems to lead, why an attempt seems to fail. Every paper marks its own as such.
 
-## The eleven papers, and how they depend on one another
+## The twelve papers, and how they depend on one another
 
-The set falls into three movements. The first four papers build the coordinates and the transport laws; the next four are the construction and what it decides about twin pairs; the last three are the account of where it stops.
+The set falls into three movements, and then stands one paper apart. The first four papers build the coordinates and the transport laws; the next four are the construction and what it decides about twin pairs; the last three of those eleven are the account of where it stops. The twelfth belongs to none of the three.
 
 **Foundations and transport.**
 
@@ -78,9 +78,15 @@ The set falls into three movements. The first four papers build the coordinates 
 | **[P10]** | *Four Tests of the Cell System* | [P1]–[P9] |
 | **[P11]** | *What a Continuation Would Have to Supply* | [P1]–[P10] |
 
-Papers [P1], [P2] and [P3] are independent of one another. **[P1] is the only one a reader with no interest in primes can read on its own**, and it is self-contained. [P5] is a four-page note and can be read immediately after [P2]. Each statement below is tagged, so that the measured claims are not read as theorems.
+**Apart from the system.**
 
-Companion papers are cited throughout as [P1] to [P11]; a bare number in brackets, inside one of the papers, is an entry in that paper's own reference list.
+| | title | depends on |
+|-----|---------------------------------------------|------------------------|
+| **[P12]** | *Paired Almost Primes in Square Windows and in Short Intervals* | — (uses no object of the cell system) |
+
+Papers [P1], [P2] and [P3] are independent of one another. **[P1] is the only one a reader with no interest in primes can read on its own**, and it is self-contained. **[P12] is self-contained too**, for the opposite reason: it applies published sieve theorems to the same window and borrows nothing from the eleven, so a reader who wants only the unconditional statements about that window can read it alone. [P5] is a four-page note and can be read immediately after [P2]. Each statement below is tagged, so that the measured claims are not read as theorems.
+
+Companion papers are cited throughout as [P1] to [P12]; a bare number in brackets, inside one of the papers, is an entry in that paper's own reference list.
 
 ---
 
@@ -313,6 +319,8 @@ $$\boxed{ \text{The framework describes motion between the multiplicative layers
 
 Not a better bound on the number of strikes, nor a sharper local constraint — the framework has produced several of those and they were absorbed. What is needed is an input that distinguishes $\Omega = 1$ from $\Omega = 2$ inside the sifted set. In the published literature the only machinery that has moved that barrier over the integers is the work on correlations of multiplicative functions in the Matomäki–Radziwiłł–Tao line, and the identity of §6 is a Liouville sum, so it is stated in exactly the language that machinery speaks. We record that as the natural next reading, not as a plan.
 
+**What the classical route does reach, for comparison.** [P12] applies the Diamond–Halberstam–Richert sieve in dimension two, with Richert's weights, to the same window and uses no object of this system. It gives, unconditionally and for every sufficiently large window between consecutive squares, a pair $(a, a+2)$ with $\Omega \le 5$ on each member and $\Omega(a)+\Omega(a+2) \le 8$ [P12, Thm 1]; four factors on each member follow once the window is allowed to grow, at $(m^2, (m+\lceil m^{0.026}\rceil)^2)$ [P12, Cor. 1]. Four factors in a window with $k$ fixed are not reached, and [P12, §9] *measures* what is missing: a 19.91% saving, weighted, in the excess of the upper sifting function above its floor. So the barrier of §6 is not an artefact of this coordinate system — the classical route halts on the same side of it, and by a measured amount.
+
 ---
 
 **No progress toward the twin-prime conjecture is claimed, and no new bound.** Priority is not claimed for any result.
@@ -324,7 +332,7 @@ Not a better bound on the number of strikes, nor a sharper local constraint — 
 
 ## References
 
-**The eleven papers.** [P1] *An Exact Histogram for a Quadratic Staircase*; [P2] *Cells and Lines*; [P3] *The Inheritance Law on the Cycle*; [P4] *From Cycle to Window*; [P5] *The Gap Alphabet*; [P6] *The Twin Criterion: Six Exception Positions*; [P7] *Clocks and Inheritance*; [P8] *Belts and Short Windows*; [P9] *The Exact Form of the Obstruction*; [P10] *Four Tests of the Cell System*; [P11] *What a Continuation Would Have to Supply*.
+**The twelve papers.** [P1] *An Exact Histogram for a Quadratic Staircase*; [P2] *Cells and Lines*; [P3] *The Inheritance Law on the Cycle*; [P4] *From Cycle to Window*; [P5] *The Gap Alphabet*; [P6] *The Twin Criterion: Six Exception Positions*; [P7] *Clocks and Inheritance*; [P8] *Belts and Short Windows*; [P9] *The Exact Form of the Obstruction*; [P10] *Four Tests of the Cell System*; [P11] *What a Continuation Would Have to Supply*; [P12] *Paired Almost Primes in Square Windows and in Short Intervals*.
 
 Each paper carries its own numbered reference list. The external works most used across the set are Friedlander–Iwaniec, *Opera de Cribro* (2010); Harman, *Prime-Detecting Sieves* (2007); Richert, *Selberg's sieve with weights* (1969); Diamond–Halberstam, *A higher-dimensional sieve method* (2008); and Polymath, *Variants of the Selberg sieve* (2014).
 
