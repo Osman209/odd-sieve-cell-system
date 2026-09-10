@@ -129,13 +129,13 @@ For odd $n$ put $W_j = \lfloor 2(j+1)^2/n\rfloor - \lfloor 2j^2/n\rfloor$. In th
 $$\mathrm{card}\lbrace W{=}0\rbrace  = \mathrm{card}\lbrace W{=}4\rbrace  = A, \quad \mathrm{card}\lbrace W{=}2\rbrace  = 2A-1, \quad \mathrm{card}\lbrace W{=}1\rbrace  = \mathrm{card}\lbrace W{=}3\rbrace  = \tfrac{n+1}{2}-2A.$$
 Verified with zero exceptions for every odd $n \le 200{,}001$.
 
-**Why this is the paper's best result.** A probabilistic model of the same count returns the same answer; distributional estimates of this shape normally carry a non-zero error term. None appears here. **The reason is that the intervals tile and the tiling is exact — and the residues $2j^2 \bmod n$ never enter the proof.**
+**Why this is the paper's best result.** A probabilistic model of the same count returns the main term $n/8$ and stays within $1$ of the true value, but not the value itself; the theorem carries no error term at all. **The reason is that the intervals tile and the tiling is exact — the count is a difference of two floors taken at the ends, and the residues $2j^2 \bmod n$ never enter the proof.**
 
-**P — [P1, Thms 3, 4].** A symmetric pair of sectors compresses to a single element $d \in \lbrace 0,1,2\rbrace$, and the pair census satisfies $N_2 = N_0+1$: again one integer governs everything.
+**P — [P1, Thms 3, 4].** A symmetric pair of sectors compresses to a single element $d \in \lbrace 0,1,2\rbrace$, and the pair census satisfies $P_2 = P_0+1$: again one integer governs everything.
 
-**P — [P1, Thm 5].** The companion statement, and the one that does concern the residues: for odd $n \ge 51$ the sequence $2j^2 \bmod n$ has exactly $2A$ interior local maxima. Computation extends this to every odd $n$ except $3,5,7,9,49$.
+**P — [P1, Thm 5].** The companion statement, and the one that does concern the residues: the sequence $2j^2 \bmod n$ has exactly $2A$ interior local maxima for every odd $n$ except $3,5,7,9,49$. The argument is uniform for $n \ge 51$ and the twenty-four odd values below that are settled by direct computation, so the exception list is part of the statement.
 
-*The proof of [P1, Thm 5] turns on three moves and one coincidence: a palindrome symmetry; a transition count replacing the two conditions defining a maximum by one; the observation that the relevant **pairs** of intervals tile once separated by parity; and the fact that the four residues $8x \bmod n$ which arise are always $\pm1,\pm3,\pm5,\pm7$ in some order, so their squares always sum to $84$.*
+*The proof of [P1, Thm 5] turns on three moves and one coincidence: a palindrome symmetry; a transition count replacing the two conditions defining a maximum by one; the observation that the relevant **pairs** of intervals tile once separated by parity; and the fact that the four numbers $8x \bmod n$ which arise have signed representatives $\pm1,\pm3,\pm5,\pm7$ in some order, so the squares of those representatives always sum to $84$.*
 
 ---
 

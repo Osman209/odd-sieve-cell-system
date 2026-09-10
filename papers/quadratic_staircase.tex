@@ -41,7 +41,7 @@
 \date{\today}
 
 \begin{abstract}
-For odd $n$ let
+For odd $n \ge 3$ let
 \[
   W_j \;=\; \fl{\frac{2(j+1)^2}{n}} - \fl{\frac{2j^2}{n}},
   \qquad j = 0,1,\dots,n-1 .
@@ -53,24 +53,29 @@ single integer $A = \fl{(n+7)/8}$:
   \#\{W{=}0\} = \#\{W{=}4\} = A, \qquad \#\{W{=}2\} = 2A-1, \qquad
   \#\{W{=}1\} = \#\{W{=}3\} = \tfrac{n+1}{2} - 2A .
 \]
-The proof is a tiling argument and carries no error term. This is worth
-emphasising: a probabilistic model of the same count, assuming
-$2j^2 \bmod n$ equidistributed, returns the same answer, and sums of this
-shape normally carry an error of size $\sqrt{n}\log n$ or $n^{1/3}$. None
-appears, and the residues $2j^2 \bmod n$ never enter the argument.
+The proof is a tiling argument and the multiplicities are exact, with no error
+term. A probabilistic model of the same count, assuming $2j^2 \bmod n$
+equidistributed, returns the main term $n/8$ and stays within $1$ of the true
+value for every odd $n$, but it does not return that value. The exactness is a
+property of the tiling rather than of any averaging, and the residues
+$2j^2 \bmod n$ never enter the argument.
 
 A companion compression is proved for the symmetric pairs (Theorems~3 and~4):
 a pair collapses to a single element of $\{0,1,2\}$, and its census is again
 governed by one integer.
 
 We then prove the corresponding statement about the residues themselves, which
-the histogram deliberately avoids: for odd $n \ge 51$ the sequence
-$2j^2 \bmod n$ has exactly $2A$ interior local maxima (Theorem~5). The proof
+the histogram deliberately avoids: the sequence $2j^2 \bmod n$ has exactly $2A$
+interior local maxima for every odd $n$ except $n = 3,\,5,\,7,\,9,\,49$
+(Theorem~5). The argument is uniform for $n \ge 51$, and the twenty-four odd
+values $3 \le n \le 49$ are settled by direct computation, so the exception list
+belongs to the statement rather than being an observation about it. The proof
 combines a palindrome symmetry, a transition count that replaces the two
 conditions defining a maximum by one, the observation that the relevant
 \emph{pairs} of intervals tile once separated by parity, and a small arithmetic
-coincidence: the four residues $8x \bmod n$ that arise are always
-$\pm1,\pm3,\pm5,\pm7$ in some order, so their squares always sum to $84$.
+coincidence: the four numbers $8x \bmod n$ that arise have signed
+representatives $\pm1,\pm3,\pm5,\pm7$ in some order, so the squares of those
+representatives always sum to $84$.
 
 Nothing in this paper concerns prime numbers.
 \end{abstract}
@@ -241,15 +246,20 @@ and the remaining $n - (N_0+N_2+N_4)$ indices split equally:
 A probabilistic model, assuming $2j^2 \bmod n$ equidistributed, estimates $N_0$
 by
 \[
-  \sum_{j < (n-2)/4} \frac{n-4j-2}{n} \;\approx\; \frac{n}{8},
+  \sum_{j < (n-2)/4} \frac{n-4j-2}{n} \;=\; \frac{n^2-1}{8n},
 \]
-the correct answer, with deviation never exceeding $0.889$ for odd
-$n \le 20{,}001$. Sums of this shape normally carry an error of size
-$\sqrt{n}\,\log n$ (character sums) or $n^{1/3}$ (lattice points).
+the sum being exactly that for every odd $n$, since it telescopes to
+$m - 2m^2/n$ with $m = \fl{(n+1)/4}$. The true value is
+$N_0 = A = \lceil n/8\rceil$, so the model returns the main term $n/8$ and not
+the value itself: the difference $A - (n^2-1)/(8n)$ lies in $[0,1)$ for every
+odd $n$ and reaches $0.889$ at $n = 9$, where the model gives $10/9$ against a
+true count of $2$.
 
-The reason none appears here is that the indicators are not independent: the
-intervals tile, and the tiling is exact. The residues $2j^2 \bmod n$ never enter
-the argument. Theorem~\ref{thm:maxima} is the statement about those residues,
+The exactness of Theorem~\ref{thm:mult} is a property of the tiling and not of
+any averaging. The intervals $I_j$ partition the range, so the number of
+occupied ones is a difference of two floors taken at the two ends, and nothing
+is estimated anywhere in the argument. The residues $2j^2 \bmod n$ never enter
+it. Theorem~\ref{thm:maxima} is the statement about those residues,
 and it is a good deal harder.
 
 \section{Pairs}
@@ -281,7 +291,8 @@ Zero failures over every odd $n < 600$ and every odd $R$ with $1 \le R \le n-2$.
 \end{verification}
 
 \begin{theorem}\label{thm:paircensus}
-Let $N_d = \#\{R : d_n(R) = d\}$. Then $N_2 = N_0+1$.
+Let $P_d = \#\{R : d_n(R) = d\}$, written $P$ rather than $N$ to keep it apart
+from the multiplicities of Theorem~\ref{thm:mult}. Then $P_2 = P_0+1$.
 \end{theorem}
 
 \begin{proof}
@@ -293,9 +304,9 @@ $d_n(R)$ telescopes along them:
 \]
 Hence
 \[
-  N_0+N_1+N_2 = \frac{n-1}{2}, \qquad N_1+2N_2 = \frac{n+1}{2},
+  P_0+P_1+P_2 = \frac{n-1}{2}, \qquad P_1+2P_2 = \frac{n+1}{2},
 \]
-and subtracting gives $N_2-N_0 = 1$.
+and subtracting gives $P_2-P_0 = 1$.
 \end{proof}
 
 \begin{verification}
@@ -326,15 +337,48 @@ their \emph{arrangement}, and its sharpest form is the number of local maxima of
 the residue sequence itself.
 
 \begin{theorem}\label{thm:maxima}
-Let $n \ge 51$ be odd and $A = \fl{(n+7)/8}$. Then $r_j = 2j^2 \bmod n$,
-$j = 0,\dots,n-1$, has exactly $2A$ interior local maxima.
+Let $n \ge 3$ be odd and $A = \fl{(n+7)/8}$. Then $r_j = 2j^2 \bmod n$,
+$j = 0,\dots,n-1$, has exactly $2A$ interior local maxima, except at the five
+values $n = 3,\,5,\,7,\,9,\,49$.
 \end{theorem}
 
+The maximum is meant strictly: $j$ is counted when $r_j > r_{j-1}$ and
+$r_j > r_{j+1}$. The proof below reads a maximum through the weaker pair of
+conditions $\varepsilon_{j-1} = 0$ and $\varepsilon_j = 1$, and the two readings
+agree from $n = 11$ on.
+
+\begin{lemma}[the two readings of a maximum]
+For odd $n \ge 11$ and $1 \le j \le n-2$, the conditions $\varepsilon_{j-1} = 0$
+and $\varepsilon_j = 1$ hold together if and only if $j$ is a strict local
+maximum.
+\end{lemma}
+
+\begin{proof}
+The two readings can differ only where $r_j = r_{j-1}$. That forces
+$2j^2 \equiv 2(j-1)^2$, i.e.\ $n \mid 2(2j-1)$, and $n$ is odd, so
+$n \mid 2j-1$; for $1 \le j \le n-1$ the only solution is $j = H+1$ with
+$H = (n-1)/2$. Doubling identifies the two residues there:
+$2r_H \equiv (n-1)^2 \equiv 1$ and $2 \cdot \frac{n+1}{2} = n+1 \equiv 1$, so
+$r_H = r_{H+1} = (n+1)/2$; and $2r_{H-1} \equiv (n-3)^2 \equiv 9$ with
+$2 \cdot \frac{n+9}{2} = n+9 \equiv 9$, so $r_{H-1} = (n+9)/2$ as soon as
+$(n+9)/2 < n$, that is $n > 9$. Since $r_{H+2} = r_{n-H-2} = r_{H-1}$, we get
+$r_{H+2} > r_{H+1}$, so $\varepsilon_{H+1} = 0$ and the weaker reading does not
+fire at $j = H+1$ either.
+\end{proof}
+
+At $n = 5,\,7,\,9$ the quantity $(n+9)/2$ is not below $n$, the last step fails,
+and the two readings do differ; all three are among the five exceptions in any
+case.
+
 \begin{rangeofstatement}
-The proof below needs $n \ge 51$, where the interval structure of Step~4 is in
-its generic configuration. Computation shows the conclusion is in fact true for
-\emph{every} odd $n$ except five: $n = 3,\,5,\,7,\,9,\,49$. Checked exhaustively
-for all odd $n \le 200{,}001$.
+The argument below is uniform for $n \ge 51$. Two things need it: the interval
+structure of Step~4 is in its generic configuration once $n \ge 13$, and the
+Lemma of Step~5 needs $e_x^2 < n$, which holds exactly when $n > 49$. The
+twenty-four odd values $3 \le n \le 49$ are settled instead by direct
+computation, and five of them fail --- $n = 3,\,5,\,7,\,9,\,49$ --- so the
+statement above, exception list included, is proved rather than observed. The
+count was checked against the direct definition for all odd $n \le 200{,}001$ as
+well.
 \end{rangeofstatement}
 
 Throughout put
@@ -351,7 +395,10 @@ $\varepsilon_{j-1} = 0$ and $\varepsilon_j = 1$.
 
 Since $2(n-j)^2 \equiv 2j^2$, we have $r_j = r_{n-j}$ for $1 \le j \le n-1$.
 Maxima therefore occur in mirror pairs $j \leftrightarrow n-j$, with no fixed
-point because $n$ is odd. Also $r_{H+1} = r_{n-H-1} = r_H$, so
+point because $n$ is odd. The pairing stays inside the interior indices because
+$j = 1$ carries no maximum once $n \ge 9$, where $r_1 = 2$ and $r_2 = 8$; at
+$n = 7$ it does carry one, and its mirror $n-1$ is not an interior index, which
+is one of the reasons $7$ is an exception. Also $r_{H+1} = r_{n-H-1} = r_H$, so
 \[
   \varepsilon_0 = 0 \quad (\text{since } r_1 = 2 > 0 = r_0), \qquad
   \varepsilon_H = 0,
@@ -464,9 +511,20 @@ $(-7,1,-5,3)$. Since $32 \cdot 2x^2 = (8x)^2$,
   32\bigl(2x^2 \bmod n\bigr) \equiv e_x^2 \pmod n,
   \qquad \sum_x e_x^2 = 1+9+25+49 = 84 .
 \]
-Writing $32(2x^2 \bmod n) = e_x^2 + a_x n$ with $a_x \in [0,32)$ determined by
-$e_x^2 + a_x n \equiv 0 \pmod{32}$, a check of the sixteen classes
-$n \bmod 32$ gives $\sum_x a_x = 80-4r$ in every case, whence
+Write $32(2x^2 \bmod n) = e_x^2 + a_x n$. That $a_x$ is an integer in $[1,32)$
+is the one place the hypothesis $n \ge 51$ is used: it gives
+$e_x^2 \le 49 < n$, so $e_x^2$ is already the reduced residue of the left side
+and $a_x \ge 0$, while $a_x = 0$ would force $32 \mid e_x^2$, false for
+$e_x^2 \in \{1,9,25,49\}$; the upper bound is automatic from
+$2x^2 \bmod n < n$. So $a_x$ is the unique such integer with
+$e_x^2 + a_x n \equiv 0 \pmod{32}$, that is $a_x \equiv -n^{-1}e_x^2 \pmod{32}$.
+Now $1^2,3^2,5^2,7^2$ are $1,9,25,17$ modulo $32$, which are precisely the four
+classes there that are $\equiv 1 \pmod 8$; multiplying by the odd number
+$-n^{-1}$ sends $1+8k$ to $-n^{-1}+8k'$ with $k'$ running over $0,1,2,3$ again,
+so the four values $a_x$ are $c,\,c+8,\,c+16,\,c+24$ for the single
+$c \in [1,8]$ with $c \equiv -n^{-1} \pmod 8$. Since $n \equiv r$ and
+$r^2 \equiv 1 \pmod 8$, we have $c = 8-r$, and therefore
+$\sum_x a_x = 4c+48 = 80-4r$, whence
 \[
   \sum_x \bigl(2x^2 \bmod n\bigr) = \frac{84+(80-4r)n}{32}
   = \frac{(20-r)n+21}{8}.
@@ -478,7 +536,10 @@ $s_r = -1,1,0,2$, which is $(5n-k_r)/8$.
 
 \begin{verification}
 The Lemma: zero failures for every odd $n \le 300{,}001$ apart from
-$n = 3,5,7,9,17,25,49$, where the interval structure of Step~4 degenerates.
+$n = 3,5,7,9,17,25,49$. At each of those, $e_x^2 < n$ fails for one of the four
+$x$: that $a_x$ comes out $32$ below the value the congruence alone would give,
+the sum $\sum_x (2x^2 \bmod n)$ is short by exactly $n$, and the Lemma's stated
+value is $1$ below the truth.
 \end{verification}
 
 \subsection{Step 6: assembly}
@@ -503,6 +564,19 @@ $\#$mixed & $2t+2$ & $2t+2$ & $2t+2$ & $2t+2$ \\
 \end{tabular}
 \end{table}
 
+\medskip\noindent
+\textbf{Where the small values break, and why the two exception lists differ.}
+Identity~\eqref{eq:mixed} itself holds for every odd $n \ge 9$, $n = 49$
+included, so nothing goes wrong in Step~4 there; what fails below $51$ is the
+evaluation in Step~5. At $n = 17$ and $n = 25$ the true value of
+$\Phi(\lceil n/8\rceil)+\Phi(\lceil 3n/8\rceil)$ exceeds the Lemma by $1$ while
+the true linear part falls short of $-2t+c_r$ by $1$, the two cancel in the
+bracket, and the conclusion survives. At $n = 49$ only the Lemma fails, the
+bracket is short by $1$, and the count comes out $2A+2 = 16$ against the
+predicted $14$. At $n \le 9$ several of the evaluations fail at once. That is
+why the exception list of Theorem~\ref{thm:maxima} and the exception list of the
+Lemma are not the same list.
+
 \subsection{Remark: what made it work}
 
 A local maximum is \emph{two} consecutive conditions, while
@@ -518,8 +592,10 @@ both.
 
 The one place where genuine arithmetic enters is the Lemma, and it enters
 through a small coincidence worth naming: the four numbers $8x \bmod n$ attached
-to $\lceil n/8\rceil$ and $\lceil 3n/8\rceil$ are, up to sign, always
-$1,3,5,7$ --- so their squares always sum to $84$, whatever $n$ is.
+to $\lceil n/8\rceil$ and $\lceil 3n/8\rceil$ have signed representatives
+$e_x = \pm1,\pm3,\pm5,\pm7$ in some order, so $\sum_x e_x^2 = 84$ whatever $n$
+is. It is those representatives, not the reduced residues themselves, whose
+squares sum to $84$.
 
 \section{Placement}
 
@@ -581,11 +657,15 @@ not the argument.
 \medskip\noindent
 \textbf{The quadratic literature runs the other way.} For irrational $\alpha$
 the fine-scale statistics of $\{j^2\alpha\}$ --- pair correlation and spacings
---- are known only for almost every $\alpha$ and only as limiting laws;
-see Heath-Brown~\cite{hb}. That is a statement about a \emph{continuum} of
-$\alpha$ and about a limiting distribution. A theorem of the present kind --- a
-finite set of values with explicit multiplicities and no error term --- is
-possible only because the orbit here is finite and periodic.
+--- are studied as limiting laws over a \emph{continuum} of $\alpha$.
+Heath-Brown~\cite{hb} is quantitative as well as metric: he constructs a dense
+set of $\alpha$ for which the pair correlation is Poissonian, and for
+Diophantine $\alpha$ he bounds the pair correlation function by $X$ with an
+error of size $X^{7/8}$ in the range $1 \le X \le \log N$ --- a bound at a fixed
+scale rather than a limit. A statement of the present kind --- a finite set of
+values with explicit multiplicities and no error term --- uses the fact that
+$\alpha = 2/n$ is rational here, so that the orbit is finite and periodic. We
+use that structure; we do not claim it is the only route to such a statement.
 
 \medskip\noindent
 \textbf{The nearest relative} is the literature on spacings of quadratic
@@ -620,7 +700,7 @@ $2A = 2\fl{24/8} = 6$.
   1,\quad \ell_1 = 13,\quad \beta_1 = 25,\quad \ell_2 = 26,\quad
   \beta_2 = 26,\quad \ell_3 = 38,\quad H = 50,\quad H+1 = 51,
 \]
-so the fourth interval $[\ell_2,\beta_2)$ is empty here and five of the seven
+so the fourth interval $[\ell_2,\beta_2)$ is empty here and six of the seven
 carry indices, with $(L,\mathrm{off}) = (0,0)$ on $[1,13)$, $(1,-1)$ on
 $[13,25)$, $(1,0)$ at $j=25$, $(2,0)$ on $[26,38)$, $(3,-1)$ on $[38,50)$ and
 $(3,0)$ at $j=50$.

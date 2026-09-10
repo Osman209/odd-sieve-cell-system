@@ -6,24 +6,24 @@
 
 ### Abstract
 
-For odd $n$ let
+For odd $n \ge 3$ let
 $$W_j  =  \left\lfloor \frac{2(j+1)^2}{n}\right\rfloor - \left\lfloor \frac{2j^2}{n}\right\rfloor , \qquad j = 0,1,\dots,n-1 .$$
 
 We prove that $W_j \in \lbrace 0,1,2,3,4\rbrace$ for every odd $n$ and every $j$ in this range, and that the five values occur with multiplicities determined by the single integer $A = \lfloor (n+7)/8\rfloor$:
 $$\mathrm{card}\lbrace W{=}0\rbrace  =  \mathrm{card}\lbrace W{=}4\rbrace  =  A, \qquad \mathrm{card}\lbrace W{=}2\rbrace  =  2A-1,$$
 $$\mathrm{card}\lbrace W{=}1\rbrace  =  \mathrm{card}\lbrace W{=}3\rbrace  =  \tfrac{n+1}{2} - 2A .$$
 
-The proof is a tiling argument and carries **no error term**. This is worth emphasising: a probabilistic model of the same count, assuming $2j^2 \bmod n$ equidistributed, returns the same answer, and distributional estimates of this shape normally carry a non-zero error term. None appears here, and the residues $2j^2 \bmod n$ never enter the argument.
+The proof is a tiling argument and the multiplicities are exact, with **no error term**. A probabilistic model of the same count, assuming $2j^2 \bmod n$ equidistributed, returns the main term $n/8$ and stays within $1$ of the true value for every odd $n$, but it does not return that value. The exactness is a property of the tiling rather than of any averaging, and the residues $2j^2 \bmod n$ never enter the argument.
 
-The same tiling, read geometrically, also **locates** the increments and not only counts them (Theorem 2b): $\lfloor 2j^2/n\rfloor$ is the ceiling quantisation of the concave parabola $x(n-2x)/n$, the value $W_j = 0$ occurs exactly at the floors of its ascending level crossings and $W_j = 2$ exactly at the descending ones, and the two families are separated by the peak at $n/4$. A mirror relation then reduces the descending list to the ascending one plus one bit per level.
+The same tiling, read geometrically, also **locates** the increments and not only counts them (Theorem 2b). The quantity that is quantised is not the staircase itself but the difference $D_j = j - \lfloor 2j^2/n\rfloor$, which equals $\lceil x(n-2x)/n\rceil$ at $x = j$; the staircase $\lfloor 2j^2/n\rfloor$ is only a non-decreasing step function under the convex parabola $2x^2/n$. On the first half $0 \le j \lt (n-1)/2$ the value $W_j = 0$ occurs exactly at the floors of the ascending level crossings of the concave parabola $x(n-2x)/n$ and $W_j = 2$ exactly at the descending ones, the two families being separated by the peak at $n/4$; the second half follows from the palindrome $W_j + W_{n-1-j} = 4$. A mirror relation then reduces the descending list to the ascending one plus one bit per level.
 
 A companion compression is proved for the symmetric pairs (Theorems 3 and 4): a pair collapses to a single element of $\lbrace 0,1,2\rbrace$, and its census is again governed by one integer.
 
-We then prove the corresponding statement about the residues themselves, which the histogram deliberately avoids: for odd $n \ge 51$ the sequence $2j^2 \bmod n$ has exactly $2A$ interior local maxima (Theorem 5). The proof combines a palindrome symmetry, a transition count that replaces the two conditions defining a maximum by one, the observation that the relevant *pairs* of intervals tile once separated by parity, and a small arithmetic coincidence: the four residues $8x \bmod n$ that arise are always $\pm1, \pm3, \pm5, \pm7$ in some order, so their squares always sum to $84$.
+We then prove the corresponding statement about the residues themselves, which the histogram deliberately avoids: the sequence $2j^2 \bmod n$ has exactly $2A$ interior local maxima for every odd $n$ except $n = 3, 5, 7, 9, 49$ (Theorem 5). The argument is uniform for $n \ge 51$, and the twenty-four odd values $3 \le n \le 49$ are settled by direct computation, so the exception list belongs to the statement rather than being an observation about it. The proof combines a palindrome symmetry, a transition count that replaces the two conditions defining a maximum by one, the observation that the relevant *pairs* of intervals tile once separated by parity, and a small arithmetic coincidence: the four numbers $8x \bmod n$ that arise have signed representatives $\pm1, \pm3, \pm5, \pm7$ in some order, so the squares of those representatives always sum to $84$.
 
 Nothing in this paper concerns prime numbers.
 
-**How to read the claims in this paper.** Statements set as Theorems, Propositions and Corollaries are proved, and the proofs are given. Everything else falls into two kinds, and we try to keep them apart. A *measurement* is a computation over a stated finite range; it is labelled with that range, and it supports a claim about that range only. A *reading* is our own judgement about what a measurement or a proof appears to mean, and we mark it as ours rather than stating it as established. In this paper the proportion is heavily weighted to the first kind: everything but the sample tables is proved.
+**How to read the claims in this paper.** Statements set as Theorems, Propositions and Corollaries are proved, and the proofs are given. Everything else falls into two kinds, and we try to keep them apart. A *measurement* is a computation over a stated finite range; it is labelled with that range, and it supports a claim about that range only. A *reading* is our own judgement about what a measurement or a proof appears to mean, and we mark it as ours rather than stating it as established. In this paper the proportion is heavily weighted to the first kind: apart from the sample tables, the one item that is a measurement rather than a proof is the control comparison of §3.2, and it is labelled there.
 
 **Keywords:** floor function, quadratic residues, exact multiplicities, three-distance theorem, equidistribution.
 
@@ -113,10 +113,10 @@ $$N_1 = N_3 = \frac{n+1}{2}-2A. \qquad \blacksquare$$
 ### 3.1 Why the count has no error term
 
 A probabilistic model, assuming $2j^2 \bmod n$ equidistributed, estimates $N_0$ by
-$$\sum_{j \lt  (n-2)/4} \frac{n-4j-2}{n}  \approx  \frac{n}{8},$$
-the correct answer, with deviation never exceeding $0.889$ for odd $n \le 20{,}001$. Sums of this shape normally carry an error of size $\sqrt n \log n$ (character sums) or $n^{1/3}$ (lattice points).
+$$\sum_{j \lt  (n-2)/4} \frac{n-4j-2}{n}  =  \frac{n^2-1}{8n},$$
+the sum being exactly that for every odd $n$, since it telescopes to $m - 2m^2/n$ with $m = \lfloor (n+1)/4\rfloor$. The true value is $N_0 = A = \lceil n/8\rceil$, so the model returns the main term $n/8$ and not the value itself: the difference $A - (n^2-1)/(8n)$ lies in $[0,1)$ for every odd $n$ and reaches $0.889$ at $n = 9$, where the model gives $10/9$ against a true count of $2$.
 
-**The reason none appears here is that the indicators are not independent: the intervals tile, and the tiling is exact.** The residues $2j^2 \bmod n$ never enter the argument. Theorem 5 is the statement about those residues, and it is a good deal harder.
+**The exactness of Theorem 2 is a property of the tiling and not of any averaging.** The intervals $I_j$ partition the range, so the number of occupied ones is a difference of two floors taken at the two ends, and nothing is estimated anywhere in the argument. The residues $2j^2 \bmod n$ never enter it. Theorem 5 is the statement about those residues, and it is a good deal harder.
 
 **The same absence, named, and in a more general form.** Posing the question on MathOverflow produced a framing that identifies the mechanism and extends it to $\lfloor k j^2/n\rfloor$ for any $k$. Group the $j$ by the value of the linear part, $J_q = \lbrace j : \lfloor k(2j+1)/n\rfloor = q\rbrace$, an interval with endpoints
 $$a_q = \left\lceil \frac{qn-k}{2k} \right\rceil, \qquad b_q = \left\lceil \frac{(q+1)n-k}{2k} \right\rceil - 1,$$
@@ -124,6 +124,8 @@ and let $L_q = \lvert J_q\rvert$. Define
 $$C_q = \left\lfloor \frac{k(b_q+1)^2}{n} \right\rfloor - \left\lfloor \frac{k a_q^2}{n} \right\rfloor - q L_q ,$$
 which by telescoping $\sum_{j \in J_q}(W_j - q)$ is exactly the number of **carries** on $J_q$ — the $j$ at which the increment is $q+1$ rather than $q$. The multiplicities are then
 $$N_0 = L_0 - C_0, \qquad N_i = L_i - C_i + C_{i-1} \ \ (1 \le i \lt 2k), \qquad N_{2k} = C_{2k-1} .$$
+
+These three follow in one step, and we record the step rather than leave the identity as a measurement. On $J_q$ the real increment $k(2j+1)/n$ lies in $[q,q+1)$, so $W_j \in \lbrace q, q+1\rbrace$ there, and $C_q = \sum_{j \in J_q}(W_j-q)$ counts exactly the $j \in J_q$ at which the larger value is taken. An index with $W_j = i$ therefore lies either in $J_i$ and is not a carry, or in $J_{i-1}$ and is one, which gives the middle formula; the two ends are the cases where only one of the two alternatives exists.
 
 *Verification.* Zero mismatches over $17{,}991$ pairs $(k,n)$ with $k$ up to $400$ and odd $n \lt 4000$, and over $3{,}992$ pairs with **even** $n$, which Theorem 2 excludes. For $k = 2$ it reproduces the four multiplicities of Theorem 2 exactly.
 
@@ -157,9 +159,9 @@ whence the stated floor and ceiling. The peak value of $f$ on the integers is $(
 
 **A mirror that halves the data.** The two roots satisfy $x_m^- + x_m^+ = n/2 = H + \tfrac12$, and after the floor and the ceiling this becomes
 $$\beta_m  =  H - \alpha_m - \varepsilon_m, \qquad\text{where}\qquad \varepsilon_m = \begin{cases} 0, & \lbrace x_m^-\rbrace \lt \tfrac12,\cr 1, & \lbrace x_m^-\rbrace \ge \tfrac12,\end{cases}$$
-verified with zero mismatches over $20{,}508$ pairs $(n,m)$ with $n \lt 1{,}500$. So the descending half needs no separate list: the ascending positions $\alpha_m$ and one bit per level determine everything, and the palindrome $W_j + W_{n-1-j} = 4$ of (2.1) then determines the whole word.
+which is immediate: writing $x_m^- = \alpha_m + t$ with $0 \le t \lt 1$, the root sum gives $x_m^+ = H + \tfrac12 - \alpha_m - t$, so $\beta_m = \lceil x_m^+\rceil - 1 = H - \alpha_m + \lceil \tfrac12 - t\rceil - 1$, and $\lceil \tfrac12 - t\rceil$ is $1$ for $t \lt \tfrac12$ and $0$ otherwise. Verified in that form with zero mismatches over $20{,}508$ pairs $(n,m)$ with $n \lt 1{,}500$. So the descending half needs no separate list: the ascending positions $\alpha_m$ and one bit per level determine everything, and the palindrome $W_j + W_{n-1-j} = 4$ of (2.1) then determines the whole word.
 
-**What this does not give.** The crossing set $\mathcal A_n = \lbrace \alpha_m \rbrace$ is a compression of the word, not an arithmetic invariant of it. Measured against a control with the same real crossing positions but randomised fractional parts — same parabola, same density everywhere, no arithmetic — the distribution of $\mathcal A_n \bmod q$ is not more structured than the control but slightly less: over odd $n \in (10^3, 2\cdot10^4)$ the $\chi^2$ statistics are $10.5, 14.5, 24.3, 48.7, 51.5, 68.6$ at $q = 7, 11, 13, 17, 19, 23$ against control means $9.1, 20.3, 28.7, 50.3, 56.0, 80.8$, the true value lying below the control in five cases of six. **The small departure from equidistribution is a consequence of the shape of the parabola — the crossings crowd near $0$ and thin towards the peak — and not of any relation between $n$ and $q$.** This is recorded because the closed form invites the opposite guess.
+**What this does not give.** The crossing set $\mathcal A_n = \lbrace \alpha_m \rbrace$ is a compression of the word, not an arithmetic invariant of it, and nothing in Theorem 2b relates $\mathcal A_n \bmod q$ to $n$ at a fixed $q$. A measurement in that direction, over odd $n \in (10^3, 2\cdot10^4)$: the $\chi^2$ statistics of $\mathcal A_n \bmod q$ are $10.5, 14.5, 24.3, 48.7, 51.5, 68.6$ at $q = 7, 11, 13, 17, 19, 23$, against $9.1, 20.3, 28.7, 50.3, 56.0, 80.8$ for a control that keeps the crossing density and removes the arithmetic, the true value lying below the control in five cases of six. We read this as no sign of extra structure in $\mathcal A_n \bmod q$, and as identifying no cause: six values of $q$, with no replication count and no dispersion recorded for the control, support nothing stronger, and the control would have to be stated in full — its randomisation named, so that it can be rerun — before a cause could be argued either way. It is recorded because the closed form invites the opposite guess.
 
 ---
 
@@ -177,17 +179,17 @@ which for $1 \le R \le n-2$ lies strictly between $0$ and $2$; hence the differe
 
 *Verification.* Zero failures over every odd $n \lt  600$ and every odd $R$ with $1 \le R \le n-2$.
 
-> **Theorem 4.** Let $N_d = \mathrm{card}\lbrace R : d_n(R) = d\rbrace$. Then $N_2 = N_0+1$.
+> **Theorem 4.** Let $P_d = \mathrm{card}\lbrace R : d_n(R) = d\rbrace$, written $P$ rather than $N$ to keep it apart from the multiplicities of Theorem 2. Then $P_2 = P_0+1$.
 
 *Proof.* There are $(n-1)/2$ odd values $R = 1,3,\dots,n-2$, and the definition of $d_n(R)$ telescopes along them:
 $$\sum_R d_n(R) = \left\lfloor \tfrac12 + \frac{n^2}{2n}\right\rfloor - \left\lfloor \tfrac12 + \frac{1}{2n}\right\rfloor = \frac{n+1}{2}.$$
 Hence
-$$N_0+N_1+N_2 = \frac{n-1}{2}, \qquad N_1+2N_2 = \frac{n+1}{2},$$
-and subtracting gives $N_2-N_0 = 1$. $\blacksquare$
+$$P_0+P_1+P_2 = \frac{n-1}{2}, \qquad P_1+2P_2 = \frac{n+1}{2},$$
+and subtracting gives $P_2-P_0 = 1$. $\blacksquare$
 
 *Verification.* Zero failures over all odd $n \lt  2000$.
 
-| $n$ | $N_0$ | $N_1$ | $N_2$ |
+| $n$ | $P_0$ | $P_1$ | $P_2$ |
 |------|------|------|------|
 | 11 | 1 | 2 | 2 |
 | 13 | 1 | 3 | 2 |
@@ -203,11 +205,17 @@ As in Theorem 2, the whole census is governed by one integer.
 
 Theorem 2 counts the values of $W$. The companion question concerns their *arrangement*, and its sharpest form is the number of local maxima of the residue sequence itself.
 
-> **Theorem 5.** Let $n \ge 51$ be odd and $A = \lfloor (n+7)/8\rfloor$. Then $r_j = 2j^2 \bmod n$, $j = 0,\dots,n-1$, has exactly $2A$ interior local maxima.
+> **Theorem 5.** Let $n \ge 3$ be odd and $A = \lfloor (n+7)/8\rfloor$. Then $r_j = 2j^2 \bmod n$, $j = 0,\dots,n-1$, has exactly $2A$ interior local maxima, except at the five values $n = 3, 5, 7, 9, 49$.
 
-*The maximum is meant strictly*: $j$ is counted when $r_j \gt r_{j-1}$ and $r_j \gt r_{j+1}$. The weaker reading through $\varepsilon_{j-1} = 0$ used in the proof below agrees with it at every odd $n$ except $n = 7$, so the proof is unaffected, but the exception list is stated for the strict form.
+*The maximum is meant strictly*: $j$ is counted when $r_j \gt r_{j-1}$ and $r_j \gt r_{j+1}$. The proof below reads a maximum through the weaker pair of conditions $\varepsilon_{j-1} = 0$ and $\varepsilon_j = 1$, and the two readings agree from $n = 11$ on.
 
-*Range of the statement.* The proof below needs $n \ge 51$, where the interval structure of Step 4 is in its generic configuration. Computation shows the conclusion is in fact true for **every** odd $n$ except five: $n = 3, 5, 7, 9, 49$. Checked exhaustively for all odd $n \le 200{,}001$.
+> **Lemma (the two readings of a maximum).** For odd $n \ge 11$ and $1 \le j \le n-2$, the conditions $\varepsilon_{j-1} = 0$ and $\varepsilon_j = 1$ hold together if and only if $j$ is a strict local maximum.
+
+*Proof.* The two readings can differ only where $r_j = r_{j-1}$. That forces $2j^2 \equiv 2(j-1)^2$, i.e. $n \mid 2(2j-1)$, and $n$ is odd, so $n \mid 2j-1$; for $1 \le j \le n-1$ the only solution is $j = H+1$ with $H = (n-1)/2$. Doubling identifies the two residues there: $2r_H \equiv (n-1)^2 \equiv 1$ and $2 \cdot \tfrac{n+1}{2} = n+1 \equiv 1$, so $r_H = r_{H+1} = (n+1)/2$; and $2r_{H-1} \equiv (n-3)^2 \equiv 9$ with $2 \cdot \tfrac{n+9}{2} = n+9 \equiv 9$, so $r_{H-1} = (n+9)/2$ as soon as $(n+9)/2 \lt n$, that is $n \gt 9$. Since $r_{H+2} = r_{n-H-2} = r_{H-1}$, we get $r_{H+2} \gt r_{H+1}$, so $\varepsilon_{H+1} = 0$ and the weaker reading does not fire at $j = H+1$ either. $\blacksquare$
+
+At $n = 5, 7, 9$ the quantity $(n+9)/2$ is not below $n$, the last step fails, and the two readings do differ; all three are among the five exceptions in any case.
+
+*Range of the statement.* The argument below is uniform for $n \ge 51$. Two things need it: the interval structure of Step 4 is in its generic configuration once $n \ge 13$, and the Lemma of §5.5 needs $e_x^2 \lt n$, which holds exactly when $n \gt 49$. The twenty-four odd values $3 \le n \le 49$ are settled instead by direct computation, and five of them fail — $n = 3, 5, 7, 9, 49$ — so the statement above, exception list included, is proved rather than observed. The count was checked against the direct definition for all odd $n \le 200{,}001$ as well.
 
 Throughout put
 $$\varepsilon_j = [\  r_{j+1} \lt  r_j \ ], \qquad q_j = \left\lfloor \frac{4j+2}{n}\right\rfloor, \qquad H = \frac{n-1}{2},$$
@@ -216,7 +224,7 @@ so that $\varepsilon_j = W_j - q_j$, and $j$ is a local maximum exactly when $\v
 
 ### 5.1 Step 1: the palindrome
 
-Since $2(n-j)^2 \equiv 2j^2$, we have $r_j = r_{n-j}$ for $1 \le j \le n-1$. Maxima therefore occur in mirror pairs $j \leftrightarrow n-j$, with no fixed point because $n$ is odd. Also $r_{H+1} = r_{n-H-1} = r_H$, so
+Since $2(n-j)^2 \equiv 2j^2$, we have $r_j = r_{n-j}$ for $1 \le j \le n-1$. Maxima therefore occur in mirror pairs $j \leftrightarrow n-j$, with no fixed point because $n$ is odd. The pairing stays inside the interior indices because $j = 1$ carries no maximum once $n \ge 9$, where $r_1 = 2$ and $r_2 = 8$; at $n = 7$ it does carry one, and its mirror $n-1$ is not an interior index, which is one of the reasons $7$ is an exception. Also $r_{H+1} = r_{n-H-1} = r_H$, so
 $$\varepsilon_0 = 0 \quad (\text{since } r_1 = 2 \gt  0 = r_0), \qquad \varepsilon_H = 0,$$
 and no maximum straddles the middle. Hence the total is twice the number of maxima in $1 \le j \le H$.
 
@@ -263,11 +271,11 @@ The remaining two are the content, and they are handled together.
 $$8x \equiv e_x \pmod n, \qquad e_x = -r,\ 8-r,\ 8m-8-3r,\ 8m-3r,$$
 and **in every one of the four cases $\lbrace |e_x|\rbrace$ is a permutation of $\lbrace 1,3,5,7\rbrace$** — for instance $r=1,m=1$ gives $(-1,7,-3,5)$ and $r=7,m=3$ gives $(-7,1,-5,3)$. Since $32 \cdot 2x^2 = (8x)^2$,
 $$32\big(2x^2 \bmod n\big) \equiv e_x^2 \pmod n, \qquad \sum_x e_x^2 = 1+9+25+49 = 84 .$$
-Writing $32(2x^2 \bmod n) = e_x^2 + a_x n$ with $a_x \in [1,32)$ determined by $e_x^2 + a_x n \equiv 0 \pmod{32}$, a check of the sixteen classes $n \bmod 32$ gives $\sum_x a_x = 80-4r$ in every case, whence
+Write $32(2x^2 \bmod n) = e_x^2 + a_x n$. That $a_x$ is an integer in $[1,32)$ is the one place the hypothesis $n \ge 51$ is used: it gives $e_x^2 \le 49 \lt n$, so $e_x^2$ is already the reduced residue of the left side and $a_x \ge 0$, while $a_x = 0$ would force $32 \mid e_x^2$, false for $e_x^2 \in \lbrace 1,9,25,49\rbrace$; the upper bound is automatic from $2x^2 \bmod n \lt n$. So $a_x$ is the unique such integer with $e_x^2 + a_x n \equiv 0 \pmod{32}$, i.e. $a_x \equiv -n^{-1}e_x^2 \pmod{32}$. Now $1^2, 3^2, 5^2, 7^2$ are $1, 9, 25, 17$ modulo $32$, which are precisely the four classes there that are $\equiv 1 \pmod 8$; multiplying by the odd number $-n^{-1}$ sends $1+8k$ to $-n^{-1}+8k'$ with $k'$ running over $0,1,2,3$ again, so the four values $a_x$ are $c, c+8, c+16, c+24$ for the single $c \in [1,8]$ with $c \equiv -n^{-1} \pmod 8$. Since $n \equiv r$ and $r^2 \equiv 1 \pmod 8$, we have $c = 8-r$, and therefore $\sum_x a_x = 4c+48 = 80-4r$, whence
 $$\sum_x \big(2x^2 \bmod n\big) = \frac{84+(80-4r)n}{32} = \frac{(20-r)n+21}{8}.$$
 On the other hand $\sum_x 2x^2 = 40t^2+(24m-8)t+(4m^2-4m+4)$ exactly, and dividing the difference by $n = 8t+r$ gives $5t+s_r$ with $s_r = -1,1,0,2$, which is $(5n-k_r)/8$. $\blacksquare$
 
-*Verification of the Lemma.* Zero failures for every odd $n \le 300{,}001$ apart from $n = 3,5,7,9,17,25,49$, where the interval structure of Step 4 degenerates.
+*Verification of the Lemma.* Zero failures for every odd $n \le 300{,}001$ apart from $n = 3, 5, 7, 9, 17, 25, 49$. At each of those, $e_x^2 \lt n$ fails for one of the four $x$: that $a_x$ comes out $32$ below the value the congruence alone would give, the sum $\sum_x (2x^2 \bmod n)$ is short by exactly $n$, and the Lemma's stated value is $1$ below the truth.
 
 ### 5.6 Step 6: assembly
 
@@ -278,11 +286,13 @@ $$\mathrm{card}(\text{mixed})  =  2t+2  =  2A. \qquad \blacksquare$$
 |------|------|------|------|------|
 | $\mathrm{card}(\text{mixed})$ | $2t+2$ | $2t+2$ | $2t+2$ | $2t+2$ |
 
+*Where the small values break, and why the two exception lists differ.* Formula (5.1) itself holds for every odd $n \ge 9$, $n = 49$ included, so nothing goes wrong in Step 4 there; what fails below $51$ is the evaluation in Step 5. At $n = 17$ and $n = 25$ the true value of $\Phi(\lceil n/8\rceil)+\Phi(\lceil 3n/8\rceil)$ exceeds the Lemma by $1$ while the true linear part falls short of $-2t+c_r$ by $1$, the two cancel in the bracket, and the conclusion survives. At $n = 49$ only the Lemma fails, the bracket is short by $1$, and the count comes out $2A+2 = 16$ against the predicted $14$. At $n \le 9$ several of the evaluations fail at once. That is why the exception list of Theorem 5 and the exception list of the Lemma are not the same list.
+
 ### 5.7 Remark: what made it work
 
 A local maximum is *two* consecutive conditions, while Theorem 2 counts $j$ satisfying *one*; and while the intervals $I_j$ tile, consecutive $P_j$ overlap. The apparent obstruction dissolves in two moves. Steps 2 and 3 convert the two conditions into one — a condition on the count of multiples in the single interval $P_j$ — and Step 4 observes that the $P_j$ tile perfectly once separated by parity. The elementary weight $\sum_j \varepsilon_j = (n-1)/2$, which follows from $\gcd(4,n)=1$ because the increments $(4j+2) \bmod n$ then run over every residue, is thereby joined by a second weight, of pairs rather than of single terms, and the same tiling carries both.
 
-The one place where genuine arithmetic enters is the Lemma, and it enters through a small coincidence worth naming: the four numbers $8x \bmod n$ attached to $\lceil n/8\rceil$ and $\lceil 3n/8\rceil$ are, up to sign, always $1,3,5,7$ — so their squares always sum to $84$, whatever $n$ is.
+The one place where genuine arithmetic enters is the Lemma, and it enters through a small coincidence worth naming: the four numbers $8x \bmod n$ attached to $\lceil n/8\rceil$ and $\lceil 3n/8\rceil$ have signed representatives $e_x = \pm1, \pm3, \pm5, \pm7$ in some order, so $\sum_x e_x^2 = 84$ whatever $n$ is. It is those representatives, not the reduced residues themselves, whose squares sum to $84$.
 
 ---
 
@@ -290,9 +300,9 @@ The one place where genuine arithmetic enters is the Lemma, and it enters throug
 
 Since $r_j = 2j^2 \bmod n$ is $n\lbrace j^2\alpha\rbrace$ with $\alpha = 2/n$ **rational**, the natural comparisons are these.
 
-**The linear analogue.** For $\lbrace j\alpha\rbrace$ the three-distance theorem of Sós, Świerczkowski and Surányi [1] states that the gaps between consecutive points take at most three values. Theorems 2 and 4 are of that flavour — a small fixed set of values with exactly determined multiplicities — but the object is quadratic and the statement is about the increments of the associated staircase rather than about gaps. We do not claim the three-distance theorem as a template; the resemblance is one of shape.
+**The linear analogue.** For $\lbrace j\alpha\rbrace$ the three-distance theorem [1], proved independently by Sós, by Świerczkowski and by Surányi, states that the gaps between consecutive points take at most three values. Theorems 2 and 4 are of that flavour — a small fixed set of values with exactly determined multiplicities — but the object is quadratic and the statement is about the increments of the associated staircase rather than about gaps. We do not claim the three-distance theorem as a template; the resemblance is one of shape.
 
-**The quadratic literature runs the other way.** For irrational $\alpha$ the fine-scale statistics of $\lbrace j^2\alpha\rbrace$ — pair correlation and spacings — are known only for almost every $\alpha$ and only as limiting laws; see Heath-Brown [2]. That is a statement about a *continuum* of $\alpha$ and about a limiting distribution. A theorem of the present kind — a finite set of values with explicit multiplicities and no error term — is possible only because the orbit here is finite and periodic.
+**The quadratic literature runs the other way.** For irrational $\alpha$ the fine-scale statistics of $\lbrace j^2\alpha\rbrace$ — pair correlation and spacings — are studied as limiting laws over a *continuum* of $\alpha$. Heath-Brown [2] is quantitative as well as metric: he constructs a dense set of $\alpha$ for which the pair correlation is Poissonian, and for Diophantine $\alpha$ he bounds the pair correlation function by $X$ with an error of size $X^{7/8}$ in the range $1 \le X \le \log N$ — a bound at a fixed scale rather than a limit. A statement of the present kind — a finite set of values with explicit multiplicities and no error term — uses the fact that $\alpha = 2/n$ is rational here, so that the orbit is finite and periodic. We use that structure; we do not claim it is the only route to such a statement.
 
 **The nearest relative** is the literature on spacings of quadratic residues modulo $q$, for instance Kurlberg [3]. The results there are again distributional; Theorems 2, 4 and 5 are exact identities for a single explicit sequence.
 
@@ -308,7 +318,7 @@ We are not aware of the multiplicities of Theorem 2, the pair census of Theorem 
 
 **The seven intervals of Step 4, $n = 101$** ($t = 12$, $r = 5$, $H = 50$): the boundaries are
 $$1,\quad \ell_1 = 13,\quad \beta_1 = 25,\quad \ell_2 = 26,\quad \beta_2 = 26,\quad \ell_3 = 38,\quad H = 50,\quad H+1 = 51,$$
-so the fourth interval $[\ell_2,\beta_2)$ is empty here and five of the seven carry indices, with $(L,\mathrm{off}) = (0,0)$ on $[1,13)$, $(1,-1)$ on $[13,25)$, $(1,0)$ at $j=25$, $(2,0)$ on $[26,38)$, $(3,-1)$ on $[38,50)$ and $(3,0)$ at $j=50$.
+so the fourth interval $[\ell_2,\beta_2)$ is empty here and six of the seven carry indices, with $(L,\mathrm{off}) = (0,0)$ on $[1,13)$, $(1,-1)$ on $[13,25)$, $(1,0)$ at $j=25$, $(2,0)$ on $[26,38)$, $(3,-1)$ on $[38,50)$ and $(3,0)$ at $j=50$.
 
 ## Appendix B — Note on method
 
