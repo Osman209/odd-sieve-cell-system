@@ -7,7 +7,7 @@
 A coordinate system for the odd sieve: what it proves, what it only measures, and the
 point at which it stops — derived from inside the construction rather than quoted.
 
-Twelve papers, one overview and twenty-nine verification scripts. **Start with the overview.**
+Twelve papers, one overview and thirty verification scripts. **Start with the overview.**
 
 ---
 
@@ -67,7 +67,7 @@ names the source. The table below is the map.
 
 ```
 papers/   twelve papers and one overview, plus one standalone preprint in LaTeX and PDF
-code/     twenty-nine verification scripts, plus the rendering checker and the site build
+code/     thirty verification scripts, plus the rendering checker and the site build
 docs/     the GitHub Pages site: a landing page per paper, with its PDF
 ```
 
