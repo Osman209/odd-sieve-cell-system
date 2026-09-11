@@ -6,7 +6,7 @@
 
 ### Abstract
 
-After switching on every line $p \le M$ in the sector $(M^2,(M+6)^2)$, **at most six cells can be open without being a twin**, and their positions are explicit quadratics in *M*. The criterion that follows is the sharpest the framework produces: a single open cell suffices, provided it is not at one of six named places. The six are the strikes of the two lines born inside the sector, minus the strikes lost to the line 3, and the same walk gives the ladder 2*k*(2*k*+1) in a window widened *k*-fold. Two of the six carry perfect squares and may be discarded; of the four that remain at most one can be open at a time, and in one residue class modulo 30 the line 5 closes all four outright, in a second all but one. A census over the 166,666,665 sectors below $10^{9}$ finds no violation of any statement here and measures the sifting dimension of the survivors as three. **No progress toward the twin-prime conjecture is claimed.**
+After switching on every line $p \le M$ in the sector $(M^2,(M+6)^2)$, **at most six cells can be open without being a twin**, and their positions are explicit quadratics in *M*. The criterion that follows is the sharpest the framework produces: a single open cell suffices, provided it is not at one of six named places. The six are the strikes of the two lines born inside the sector, minus the strikes lost to the line 3, and the same walk gives the ladder 2*k*(2*k*+1) in a window widened *k*-fold. Two of the six carry perfect squares and may be discarded; of the four that remain at most one can be open at a time **provided the root pair (*M*+2, *M*+4) is not itself a twin**, and in one residue class modulo 30 the line 5 closes all four outright, in a second all but one. The condition is necessary: at *M* = 9 the root pair (11,13) is a twin and two non-square exceptions, 209 and 221, are open together. A census over the 166,666,665 sectors below $10^{9}$ finds no violation of any statement here and measures the sifting dimension of the survivors as three. **No progress toward the twin-prime conjecture is claimed.**
 
 **Numbering.** This paper is one part of a set that was written as a single document and is now published in parts. Each part numbers its own results from one and is self-contained: a reference of the form [Pn, Thm 1] means Theorem 1 of Paper n, and an unqualified "Theorem 1" always means this paper's own. Result numbers therefore differ from those of the earlier seven-document releases, where the whole set shared the numbering of the single document.
 
@@ -30,8 +30,8 @@ After switching on every line $p \le M$ in the sector $(M^2,(M+6)^2)$, **at most
 | **Corollary 1a** | The six generalise: in $(M^2,(M+6k)^2)$ with $M \gt  (6k)^2$ there are 2*k*(2*k*+1) candidate positions and no open cell with two composite endpoints. | §2.2, App. A.3 |
 | **Corollary 1b** | A line above 31 closes at most one of the six exception cells, unless it divides *M*+8, when it closes two. The large lines cannot gather the exceptions. | §2.2, App. A.3 |
 | **Corollary 1c** | In the symmetric window between the squares of $6r\mp1$, a single surviving cell of any kind gives a twin pair — the central cell by the primality of its own endpoints. | §2.2, App. A.3 |
-| **Corollary 1d** | Discarding cells with a square endpoint leaves at most **one** exception, and none at all when $M \equiv 21 \pmod{30}$. | §2.2, App. A.3 |
-| **Corollary 1e** | The sectors carrying an open non-square exception have density zero — the four positions are sifted in dimension three, measured over $1.7\times10^{8}$ sectors. | §2.2, App. A.3 |
+| **Corollary 1d** | If (*M*+2,*M*+4) is not a twin, discarding cells with a square endpoint leaves at most **one** exception, and none at all when $M \equiv 21 \pmod{30}$. Without that condition the statement is false — see *M* = 9. | §2.2, App. A.3 |
+| **Corollary 1e** | The sectors carrying an open non-square exception have density zero, and in the quantitative form 1e' at most $O(X/\log^3 X)$ of them — the four positions are sifted in dimension three, measured over $1.7\times10^{8}$ sectors. | §2.2, App. A.3 |
 | *Remark* | Each of the six partner quadratics takes square-free values with at most two prime factors infinitely often, by Iwaniec and Lemke Oliver — separately, not simultaneously. | §2.2, App. A.3 |
 | **Proposition 2** | The admissible exceptional configurations in a block of *N* = 35*L* sectors number $B_L \ll L/\log^2 L$, by the Selberg sieve. | §2.4, App. B.1 |
 | **Theorem 2** | A newly born line closes **at most one** twin cell in its own first window: $D_p \in \lbrace 0,1\rbrace$. | §2.5 |
@@ -39,7 +39,7 @@ After switching on every line $p \le M$ in the sector $(M^2,(M+6)^2)$, **at most
 | **Theorem 3** | The bridge pair: $B' = (q-2-\chi_q(2))B$ — the only law here that knows the window is anchored at a square. | §2.6 |
 | **Theorem 4** | The summation identity over *M* consecutive square windows. | §2.6 |
 | ***Recorded, not used*** | Two constructions that do not help — the balanced window, and ownership through the cofactor — kept so they are not retried. | §2.8, App. B.3 |
-| **Proposition 1** | The odd Bonferroni truncation is a **proved** lower bound on $C_{M}$, evaluated in one pass by the multiplicity *m*(*d*), and exact once the order reaches $\max_d m(d)$ — which grows like $\log\log M$, not like $\pi(M)$. | §2.9 |
+| **Proposition 1** | The odd Bonferroni truncation is a **proved** lower bound on $C_{M}$, evaluated in one pass by the multiplicity *m*(*d*), and exact once the order reaches $\max_d m(d)$ — and that order is $\Theta(\log M/\log\log M)$ by Proposition 1', far below $\pi(M)$; the truncation error is exact at every odd order. | §2.9 |
 | ***Placement*** | The same finite-window obstruction, reached independently from the Goldbach side. | §2.10 |
 | **Propositions 3–5** | A mirror law for the sector index; the exact discrepancy $s(d-s)/(dH)$ of a Fejér window, whence $d/(4H)$; and $\ll d^3/(HT^2)$ for a moving one, with a sharp exponent. The kernels are classical and cited; together they gain a factor of nine on $L_{7}$ and **reach none of $S_{5}$ and beyond**. | §2.11, App. B.4 |
 
@@ -126,7 +126,7 @@ Finally, if *M*+2 is composite then it has a prime factor $\le M$, so its four p
 
 **Example, *M* = 9.** The sector (81,225) has 24 cells; $E_9 = \lbrace 6, 10, 14, 17, 21, 23\rbrace$, carrying
 $$121 = 11^2,\quad 143 = 11\cdot13,\quad 169 = 13^2,\quad 187 = 11\cdot17,\quad 209 = 11\cdot19,\quad 221 = 13\cdot17 .$$
-No other composite can inhabit an open cell of that sector.
+No other composite can inhabit an open cell of that sector. Of the six, **three are actually open**: 169 at position *C*, and 209 and 221 at *E* and *F*. The sector has $C_9 = 10$ open cells and $T_9 = 7$ twins, so $T_M \ge C_M - 2$ fails here — and this is the sector that shows why Corollary 1d carries its hypothesis, since the root pair (11,13) is a twin. It is also the smallest case, which is why it is easy to read past.
 
 **The candidate set $E_{M}$ has 0, 2, 4 or 6 elements**, according to the primality of *M*+2 and *M*+4:
 
@@ -149,7 +149,7 @@ The same walk gives the ladder of Corollary 1a below without algebra: in $(M^2, 
 $$S_M \not\subseteq E_M, \qquad\text{(2.3)}$$
 where $S_{M}$ is the set of open indices: **a single open cell suffices, provided it is not at one of six named places.** And the six places are fixed by the geometry of the square — they are not chosen by the lines, whose phases are periodic and unrelated to *M*.
 
-**The lines 5 and 7 alone cut six to three, and the pair is not interchangeable.** Writing *M* = 6*n*+3, the six positions are exact quadratics in *n* as absolute cell indices:
+**The lines 5 and 7 alone cut six to three, and the pair is not interchangeable.** This uses both lines, so it is stated for $M \ge 9$; the sector $M = 3$ has neither line switched on and is excluded throughout. Writing *M* = 6*n*+3, the six positions are exact quadratics in *n* as absolute cell indices:
 $$A = 6n^2+10n+4, \qquad B = 6n^2+12n+6, \qquad C = 6n^2+14n+8,$$
 $$D = 6n^2+16n+9, \qquad E = 6n^2+18n+11, \qquad F = 6n^2+18n+13.$$
 (verified for $n = 1,\dots,3999$ against the definition). Each is therefore a function of $n \bmod p$ modulo any *p*, so the state of all six under the lines 5 and 7 depends on $n \bmod 35$ alone: **the 35 classes are not a sample but the whole question**, and checking them is a proof rather than an experiment. Doing so gives $\max|S_M \cap E_M| \le 3$ after those two lines alone, with only four maximal patterns —
@@ -169,6 +169,8 @@ If the open set met both groups, *M*+2 and *M*+4 would both be prime and (*M*+2,
 Each of the four maximal patterns listed above meets both groups, so none survives. Inspecting the 35 classes, the patterns that do survive are
 $$\varnothing, \quad \lbrace A\rbrace, \quad \lbrace C\rbrace, \quad \lbrace F\rbrace, \quad \lbrace A,D\rbrace, \quad \lbrace A,E\rbrace, \quad \lbrace C,F\rbrace,$$
 all of size at most two. $\blacksquare$
+
+*What that list is a list of.* These are the patterns available **at the level of a residue class modulo 35**, that is, the sets left open by the lines 5 and 7 alone and compatible with the dichotomy. The set actually open in a given sector is a subset of one of them, since the larger lines may close more; measured over the 3,332 sectors $M = 9,\dots,19{,}999$ with a non-twin root pair, the realised sets are these seven together with $\lbrace D\rbrace$ and $\lbrace E\rbrace$ alone, which arise when a larger line closes *A*. The bound $|S_M \cap E_M| \le 2$ is unaffected.
 
 *Verification.* Over the same 3,332 sectors $M = 9, 15, \dots, 19{,}999$: the maximum of $|S_M \cap E_M|$ is 3 in the 340 sectors where (*M*+2,*M*+4) is a twin and **exactly 2 in the other 2,992**; zero violations of the forcing (an open member of $\lbrace A,D,E\rbrace$ with *M*+2 composite, or of $\lbrace C,F\rbrace$ with *M*+4 composite, or *B* open without the twin), and zero cases where the open set met both groups without the twin being present. **The separation is exact: three open positions occur only when the twin is already there.** Both bounds are attained — three in 3 sectors, two in 13 of the twinless ones — so neither is an artefact of a range too short to reach them.
 
@@ -334,9 +336,9 @@ The inequality itself is the odd Bonferroni truncation and is classical; the mul
 | 501 | 1008 | -1538 | -839 | -40 | 46 | 47 |
 | 753 | 1512 | -2490 | -1431 | -93 | 74 | 75 |
 
-The first moment $L_1 = N - S_1$ is the union bound, and it dies at once: $\sum_p 2/p$ passes 1 at *M* = 13 and grows like $2\log\log M$ thereafter, so $L_{1}$ is negative from *M* = 21 on and carries no information. Order three is exact through *M* = 21; order five through *M* = 141; order seven through *M* = 381, and at *M* = 753 it is short by one.
+The first moment $L_1 = N - S_1$ is the union bound, and it dies at once: $\sum_p 2/p$ passes 1 at *M* = 13 and grows like $2\log\log M$ thereafter, so $L_{1}$ is negative from *M* = 21 on and carries no information. Order three is exact through *M* = 21; order five through *M* = 51 — at *M* = 105 it already gives 20 against $C_M = 21$, and at *M* = 141 it gives 25 against 29, so an earlier version's "through *M* = 141" contradicted the row beside it; order seven through *M* = 381, and at *M* = 753 it is short by one.
 
-**Why the order needed grows so slowly.** By Proposition 1 the hierarchy terminates at $\max_d m(d)$, and the mean of *m*(*d*) over the sector is $\sum_{p \le M} 2/p \approx 2\log\log M$ — about 4.1 at $M = 10^6$. The maximum over 2*M*+6 cells therefore grows like $\log\log M$ as well, and measurement confirms it:
+**Where the hierarchy terminates, and it is not at the mean.** By Proposition 1 the truncation is exact once the order reaches $\max_d m(d)$, and the mean of *m*(*d*) over the sector is $\sum_{p \le M} 2/p \approx 2\log\log M$ — about 4.1 at $M = 10^6$. An earlier version of this subsection inferred from that mean that the **maximum** is also of order $\log\log M$. That inference is invalid — a maximum over $2M+6$ samples is not controlled by their mean — and the conclusion is false. The correct order is given by Proposition 1' below. The measurements are:
 
 | *M* | $10^{3}$ | $5\cdot10^3$ | $10^{4}$ | $5\cdot10^4$ | $10^{5}$ | $2\cdot10^5$ | $5\cdot10^5$ | $10^{6}$ |
 |--------------------------|------|------|------|------|------|------|------|------|
@@ -344,6 +346,26 @@ The first moment $L_1 = N - S_1$ is the union bound, and it dies at once: $\sum_
 | least odd *j* with $L_j \gt 0$ | 7 | 7 | 9 | 9 | 9 | 9 | 9 | 11 |
 
 **Across three orders of magnitude in *M* the order required rises only from seven to eleven** — against $\pi(M) = 78{,}498$ lines at the top of that range. So the natural reading of "one would have to take every order" as "one would have to take $\pi(M)$ orders" is wrong by four orders of magnitude, and the exact point is reached at a quantity that (2.4) already computes for free.
+
+> **Proposition 1' (the exact termination order).** Let $p_1 = 5, p_2 = 7, \dots$ be the primes from 5 on, $Q_k = p_1\cdots p_k$, and $K(t) = \max\lbrace k \ge 0 : Q_k \le t\rbrace$. Then for every $M \equiv 3 \pmod 6$ with $M \ge 9$,
+> $\displaystyle K(2M+6) \ \le\ \max_d m(d) \ \le\ K\big((M+6)^4\big),$
+> and consequently $\max_d m(d) = \Theta\big(\log M/\log\log M\big)$.
+
+*Proof.* **Lower bound.** Put $k = K(2M+6)$. Every prime dividing $Q_k$ is at most *M*: for $k = 1$ because $5 \le M$, and for $k \ge 2$ because $Q_k \ge 5p_k$ gives $p_k \le (2M+6)/5 \le M$. Since $\gcd(6, Q_k) = 1$ the congruence $6d \equiv 1 \pmod{Q_k}$ has one solution class, and the sector's $2M+6 \ge Q_k$ consecutive indices contain it; that cell has $6d-1 \equiv 0$ modulo every $p_i \mid Q_k$, so all *k* lines strike it. Both its endpoints exceed $M^2 \ge p_i^2$, so each line has been born and the strike is active. The witness is explicit: $d = a + (6^{-1} - a \bmod Q_k)$. **Upper bound.** If *m* distinct primes strike a cell their product divides $(6d-1)(6d+1) \lt (M+6)^4$, and that product is at least $Q_m$. **Asymptotics.** $\log Q_k \sim k\log k$ by the prime number theorem, so $K(t) \sim \log t/\log\log t$, and the two bounds differ only in the constant, which lies between 1 and 4. $\blacksquare$
+
+**The finite data cannot decide this, and that is worth stating.** Over the tabulated range the two candidate orders are numerically indistinguishable: $\max_d m(d)$ divided by $2\log\log M$ reads $2.33, 2.10, 2.25, 2.31, 2.25, 2.40$ at $M = 1005$ to $200{,}001$, and divided by $\log M/\log\log M$ it reads $2.52, 2.26, 2.41, 2.42, 2.33, 2.46$ — both flat, neither favoured. So the table above is not evidence against the earlier claim and was never in conflict with it; what settles the order is the construction in Proposition 1', not the measurement.
+
+> **Proposition 1'' (the exact truncation error).** For every odd $j \ge 1$,
+> $\displaystyle C_M - L_j  =  \sum_{d : m(d) \gt  j} \binom{m(d)-1}{j},$
+> every summand strictly positive. Hence, for odd *j*, $L_j = C_M$ **if and only if** $j \ge \max_d m(d)$.
+
+*Proof.* Cell by cell, from the partial alternating binomial sum $\sum_{i\le j}(-1)^i\binom{m}{i} = (-1)^j\binom{m-1}{j}$ used in the proof of Proposition 1; summing over the cells gives the identity, and positivity of each term gives the equivalence. $\blacksquare$
+
+This upgrades the termination criterion of Proposition 1 from sufficient to necessary and sufficient, and it gives the error at every truncation rather than only its sign. Writing $h_r$ for the number of cells of multiplicity *r*, the remainder is $\sum_{r\gt j} h_r\binom{r-1}{j}$, so a certificate for the multiplicity histogram certifies the whole hierarchy at once.
+
+**Two orders that must not be confused.** The least order at which the truncation becomes *exact* is $\max_d m(d)$, of order $\log M/\log\log M$. The least order at which it first becomes *positive* — which is what a lower bound on $C_M$ actually needs — is a different quantity, tabulated above as seven to eleven, and nothing here determines its growth. Proposition 1' bounds the first and says nothing about the second.
+
+*Regenerated by `code/verify_max_multiplicity.py`.*
 
 **And what this does not buy, stated plainly.** The bound is proved and the order is small; the *number of terms* is not. Turning (2.5) into a theorem about all *M* requires asymptotic control of $S_1, \dots, S_j$ for $j \asymp \log\log M$, and $S_{j}$ is a sum over *j*-tuples of primes of the same shape that makes $S_{1}$ diverge. The hierarchy therefore moves the difficulty from "the union bound is negative" to "a uniform estimate is needed for sums of order $\log\log M$" — a shorter distance, and the same kind of distance. It is recorded here as an exact computational tool and as a sharper statement of where the estimate is missing, not as a route.
 
@@ -484,7 +506,7 @@ So the large lines cannot gather the exceptions: **collective covering of the si
 
 **A symmetric window in which one survivor suffices.** The sector can be replaced by the window between the squares of a twin-shaped pair. Put *P* = 6*r*-1 and *Q* = 6*r*+1 and take
 $$J_r = (P^2,\ Q^2),$$
-which contains exactly *N* = 4*r*-1 complete cells (6*b*-1, 6*b*+1) and is centred on $PQ+1 = (6r)^2$ — verified for every $r \lt 3000$. Switch on every prime line $\ell \lt P$. A composite below $Q^2$ has a prime factor below *P* with the single exception of PQ itself, so:
+which contains exactly *N* = 4*r*-1 complete cells (6*b*-1, 6*b*+1) and is centred on $PQ+1 = (6r)^2$ — verified for every $r \lt 3000$. Switch on every prime line $\ell \lt P$. A composite **inside** $(P^2, Q^2)$ has a prime factor below *P* with the single exception of *PQ* itself — the restriction to the open interval matters, since $P^2$ is a composite of the window's lower boundary that has no prime factor below *P*, and it is not a cell member. So:
 
 > **Corollary 1c.** In $J_{r}$, a surviving cell other than the central one is a twin pair; and if the **central** cell (PQ, PQ+2) survives, then *P* and *Q* are both prime, so (*P*,*Q*) is a twin pair. **One survivor of any kind suffices.**
 
@@ -547,7 +569,15 @@ The third row settles the order: the second row falls throughout, the third stea
 
 *Proof.* Fix *y*. Every line $r \le y$ is active in a sector with $M \gt  y$, so an open non-square exception there survives all of them, and its residue class of *M* lies in the exceptional set counted by *U*(*y*). That set is a union of classes modulo a fixed modulus, so the density of such *M* up to *X* tends to at most *U*(*y*) as $X \to \infty$. Letting $y \to \infty$ afterwards and using $U(y) \to 0$ gives the claim. $\blacksquare$
 
-The order of the two limits matters: the modulus of the class decomposition grows with *y*, so one may not substitute *y* = *M* and read off a rate. The statement gives vanishing density and no rate, and it says nothing about whether any particular sector has an open cell.
+The order of the two limits matters: the modulus of the class decomposition grows with *y*, so one may not substitute *y* = *M* and read off a rate. The statement as proved gives vanishing density and no rate.
+
+**A rate is available, from a standard sieve theorem rather than from this argument.** Openness of an exception is, for $M \gt 36$, equivalent to the simultaneous primality of the polynomials in its row of the classification above: *A* needs $M+2$ and $(M+2)^2-2$; *C* needs $M+4$ and $(M+4)^2-2$; *B* needs $M+2$, $M+4$ and $(M+2)(M+4)+2$; *D* needs $M+2$, $M+8$, $(M+2)(M+8)-2$; *E* needs $M+2$, $M+10$, $(M+2)(M+10)+2$; *F* needs $M+4$, $M+8$, $(M+4)(M+8)+2$. The linear members must be prime because a composite one would have a prime factor $\le M$; the partner must be prime because otherwise the cell would carry two surviving composites, which the six-position classification excludes. Writing $M = 6t+3$, each row is a set of distinct irreducible polynomials in *t* with positive leading coefficients — the quadratic discriminants are $288, -144, 288, 1584, 2016, 288$, none a square — with two members in rows *A*, *C* and three in the others. The polynomial Selberg upper bound [13, eq. (2)] then gives $O(Y/(\log Y)^g)$ values of $t \le Y$ at which all *g* are prime, and if a row had a fixed prime divisor its solution set would be finite instead, so no admissibility hypothesis is needed. Summing over the rows:
+
+> **Corollary 1e' (quantitative form).** $\displaystyle \mathrm{card}\lbrace M \le X : \text{the sector carries an open non-square exception}\rbrace \ \ll\ \frac{X}{(\log X)^3},$ and with the square positions included the bound is $O\big(X/(\log X)^2\big)$. No hypothesis on the root pair is required.
+
+Equivalently, since $C_M - T_M$ is the number of open exceptions and is at most six,
+$$0 \ \le \sum_{\substack{9 \le M \le X\cr M \equiv 3\ (6)}} (C_M - T_M) \ \ll\ \frac{X}{(\log X)^2}, \qquad 0 \ \le \sum (C_M^{\circ} - T_M) \ \ll\ \frac{X}{(\log X)^3},$$
+$C_M^{\circ}$ counting open cells with no square endpoint. **So outside $O(X/\log^3 X)$ roots up to *X*, the square-discarded criterion has no exceptions at all: $C_M^{\circ} = T_M$.** This is an application of a published sieve bound, not a new sieve, and it does not establish a single survivor in any prescribed sector — both sides may be zero. Nor do separate upper bounds for the two families show that almost every actual exception is a square one; that would need control of the denominator.
 
 **A statement about the partners that the literature does supply.** Writing *M* = 6*t*+3, each of the six partners becomes a quadratic in *t*:
 
@@ -643,10 +673,11 @@ with $\kappa_A = \kappa_C = 2$ and $\kappa_D = \kappa_E = \kappa_F = 3$, the sec
 
 **Step 3: the upper-bound sieve.** Selberg's sieve applied to the interval $\lbrace 0,\dots,N-1\rbrace$ with the removed classes of Step 1 gives, for any *z*,
 
-$$|I_X|  \le  N \prod_{q \lt  z}\Bigl(1-\frac{\omega_X(q)}{q}\Bigr)\bigl(1+o(1)\bigr)  +  O\bigl(z^{2+\varepsilon}\bigr).$$
+$$|I_X|  \ll  N \prod_{q \lt  z}\Bigl(1-\frac{\omega_X(q)}{q}\Bigr)  +  O\bigl(z^{2+\varepsilon}\bigr).$$
+(The implied constant is the sieve constant of the theorem quoted; a leading factor $1+o(1)$ multiplying the raw Euler product is not what a fixed-level Selberg bound gives, and an earlier version printed it that way. Only the order of the main term is used below.)
 The error is the usual one for sifting an interval: with $|\lambda_d| \le 1$ the remainder is $\sum_{d_1,d_2 \lt  z} |r_{[d_1,d_2]}|$ where $r_{m}$ counts the removed classes modulo *m*, so it is bounded by a divisor-function factor times $z^2$.
 
-Taking $z = N^{1/3}$ makes the error $O(N^{2/3})$ and, by Step 2, the main term $\ll N/(\log N)^{\kappa_X}$. This is the stated bound for each $I_{X}$.
+Taking $z = N^{1/3}$ makes the error $O\bigl(N^{(2+\varepsilon)/3}\bigr)$ — not $O(N^{2/3})$, as an earlier version had it — which for any fixed $0 \lt \varepsilon \lt 1$ is still $o\bigl(N/(\log N)^{\kappa_X}\bigr)$; and, by Step 2, the main term is $\ll N/(\log N)^{\kappa_X}$. This is the stated bound for each $I_{X}$.
 
 **Step 4: summation.** Under the twinless hypothesis the type *B* is empty, since it requires both *M*+2 and *M*+4 prime. A sector carries at most one cell of any given type, so the number of exceptional cells in the block is exactly $\sum_X |I_X|$, which by Step 3 is $\ll N/(\log N)^2$. With *N* = 35*L* this is $\ll L/\log^2 L$. $\blacksquare$
 
@@ -727,7 +758,7 @@ the Cesàro weight, which is the Fejér kernel on $\mathbb{Z}/d\mathbb{Z}$: $H\ 
 
 *Proof.* Let $c_{j}$ be the number of $n \lt H$ in the class $j \pmod d$ and $c_j = H/d + \delta_j$. The weighted count is $H/d + H^{-1}\sum_j \delta_j\delta_{j-b}$. Exactly *s* of the classes have $c_j = q+1$ and the rest have $c_j = q$, and those *s* classes form a cyclic interval *A*, so $\delta_j = \mathbf 1_A(j) - s/d$ and
 $$\sum_j \delta_j\delta_{j-b}  =  \lvert A \cap (A+b)\rvert - \frac{s^2}{d}.$$
-This is largest at *b* = 0, where $\lvert A\cap A\rvert = s$ and the value is $s - s^2/d = s(d-s)/d$; and $s(d-s)/d \le d/4$, with equality only when $s = d/2$ — so for the odd moduli of this paper the second inequality in (B.4.1) is always strict. $\blacksquare$
+This is largest at *b* = 0, where $\lvert A\cap A\rvert = s$ and the value is $s - s^2/d = s(d-s)/d$. Since (B.4.1) is a maximum of an **absolute** value, the negative extreme has to be bounded too, and it is smaller: $\lvert A\cap(A+b)\rvert \ge \max(0,\ 2s-d)$ by inclusion–exclusion inside $\mathbb Z/d$, so the quantity is at least $-s^2/d$ when $s \le d/2$ and at least $-(d-s)^2/d$ when $s \ge d/2$; in the first case $s^2 \le s(d-s)$ and in the second $(d-s)^2 \le s(d-s)$, so in both the $b = 0$ value dominates in modulus and the maximum in (B.4.1) is attained there. (Checked directly for every pair $d \lt 80$, $0 \le s \lt d$.) Finally $s(d-s)/d \le d/4$, with equality only when $s = d/2$ — so for the odd moduli of this paper the second inequality in (B.4.1) is always strict. $\blacksquare$
 
 **Where this sits.** Smoothing by a Fejér kernel, and the resulting order $O(d/H)$, are classical: [9, Ex. 24.2.1.1(d)] asks for the pointwise estimate $0 \le \Delta_N(x) \le \min\lbrace N, 1/(4N\lVert x\rVert^2)\rbrace$, with the constant $\tfrac14$ arising the same way, from $\sin \pi x \ge 2\lVert x\rVert$. That estimate is not (B.4.1), though. The left side of (B.4.1) is an *average* of the kernel over a subgroup of frequencies, $d^{-1}\sum_{h\ne0} e(-hb/d)\Delta_H(h/d)$, not a pointwise value of it; applying the pointwise bound term by term and summing recovers the order but overshoots $d/(4H)$ by a factor of 2.93, 3.25 and 3.29 at $d = 11, 101, 1001$, stable in *H*. **The equality in (B.4.1) is the part we have not found stated anywhere**, and it explains the near-sharpness of $d/(4H)$ without any measurement: the ratio of the two sides is $4s(d-s)/d^2$, which for odd *d* is largest at $s = (d\pm1)/2$ and equals $(d^2-1)/d^2$. The closest treatment of the same kernel on the same group that we have found is Grieshop [5], whose result is of a different shape — an $L^2 \to L^\infty$ bound of order $\sqrt{N/r}$ for an arbitrary subset — and whose Remark 5.4 names the boundary error of size $1$ that (B.4.1) evaluates and then sets it aside. We state (B.4.1) as elementary and probably folklore rather than as new, and would be glad to be pointed at a source.
 
@@ -795,7 +826,7 @@ The one direction that is proved is the one the route needs. Establishing the in
 
 ## References
 
-The eleven papers of this set are cited as [P1] to [P11], and the numbered entries below are the external works. The two kinds never share a number: a bracket with a P is a companion paper, a bare number is a reference in the list below. This paper imports only the definitions and statements of the companion papers, never their proofs.
+The companion papers of this set are cited as [P1] to [P12], and the numbered entries below are the external works. The two kinds never share a number: a bracket with a P is a companion paper, a bare number is a reference in the list below. This paper imports only the definitions and statements of the companion papers, never their proofs.
 
 1. G. Coppola and M. Laporta, *Sieve functions in arithmetic bands*, Hardy–Ramanujan J. **39** (2016), 21–37; arXiv:1503.07502.
 2. H. G. Diamond and H. Halberstam, *A higher-dimensional sieve method*, Cambridge Tracts in Mathematics **177**, Cambridge University Press, 2008.
@@ -809,3 +840,4 @@ The eleven papers of this set are cited as [P1] to [P11], and the numbered entri
 10. G. Morpurgo, *On a stricter twin primes conjecture, and on the Polignac's conjecture in general*, arXiv:2210.15487 (2022; revised 2023). — *A preprint, not peer reviewed; a heuristic prediction with numerical comparison, containing no theorems. Cited as contemporaneous independent work using the same coordinates.*
 11. T. T. K. Nguyen, *Finite-window noncovering on primorial wheels: higher-order CRT bounds and shift correlations*, Preprints.org (2026), doi:10.20944/preprints202608.1299.v1. — *A preprint, not peer reviewed; cited as contemporaneous independent work reaching the same finite-window diagnosis from the Goldbach side.*
 12. A. Schinzel and W. Sierpiński, *Sur certaines hypothèses concernant les nombres premiers*, Acta Arith. **4** (1958), 185–208; erratum, ibid. **5** (1959), 259.
+13. M. Bordignon and E. S. Lee, *Explicit upper bounds for the number of primes simultaneously representable by any set of irreducible polynomials*, arXiv:2211.11012. — *equation (2) there states the upper bound used for Corollary 1e', citing [6, Thm. 5.3]; the entry was added for that citation and its proof is not re-derived here.*

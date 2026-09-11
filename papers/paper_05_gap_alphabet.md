@@ -124,6 +124,6 @@ run through all residues modulo $5$, so exactly one of them is divisible by $5$.
 
 ## References
 
-The eleven papers of this set are cited as [P1] to [P11], and the numbered entry below is the external work. This paper imports one result from outside the set — the convergence of §2.2 — and nothing else; every other statement it quotes is a definition or a statement of a companion paper, never a proof.
+The companion papers of this set are cited as [P1] to [P12], and the numbered entry below is the external work. This paper imports one result from outside the set — the convergence of §2.2 — and nothing else; every other statement it quotes is a definition or a statement of a companion paper, never a proof.
 
 1. V. Brun, *La série 1/5+1/7+1/11+1/13+⋯ où les dénominateurs sont nombres premiers jumeaux est convergente ou finie*, Bull. Sci. Math. **43** (1919), 100–104, 124–128. — *the convergence of the sum over twin pairs, which dominates the gap-6 column of §2.2.*

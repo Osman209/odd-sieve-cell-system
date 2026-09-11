@@ -11,7 +11,9 @@ Proves C_r(theta; w, u) > 0 for three parameter sets, where
 
 Inputs taken from the literature and NOT reproved here: the DHR dimension-two
 system as stated in Kao, Section 4, Theorem 2; F_2 decreasing with F_2 >= 1;
-f_2 increasing with f_2 <= 1; alpha_2 in [5.356, 5.360]; beta_2 in [4.266, 4.268].
+f_2 increasing with f_2 <= 1; alpha_2 in [5.3576, 5.3578]; beta_2 in [4.2662, 4.2665]. The lower-bound
+integral for f_2 starts at the grid node at or above BETA_HI, so no part of it
+can fall below beta_2.
 Everything else is computed with outward-rounded interval arithmetic and
 monotone Riemann enclosures.  Standard library only.
 """
@@ -63,16 +65,19 @@ gamma = I('0.5772156649015328606065120900824024310',
           '0.5772156649015328606065120900824024311')
 E2 = (2*gamma).exp()                       # e^{2 gamma}
 
-H = D('0.0005')                             # grid step (exact terminating)
+H = D('0.0002')                             # grid step (exact terminating)
 SMAX = D('10')
 N = int(SMAX/H) + 1
-def idx(x): return int(D(x)/H)             # x must be a grid multiple
+def idx(x): return int(D(x)/H)             # largest grid node at or below x
+def idx_up(x):                             # smallest grid node at or above x
+    k = idx(x)
+    return k if D(k)*H == D(x) else k + 1
 S = [I(D(i)*H) for i in range(N)]
 
-ALPHA_LO = D('5.356')                      # <= alpha_2
-ALPHA_HI = D('5.360')                      # >= alpha_2
-BETA_LO  = D('4.266')                      # <= beta_2
-BETA_HI  = D('4.268')                      # >= beta_2
+ALPHA_LO = D('5.3576')                     # <= alpha_2
+ALPHA_HI = D('5.3578')                     # >= alpha_2
+BETA_LO  = D('4.2662')                     # <= beta_2
+BETA_HI  = D('4.2665')                     # >= beta_2
 
 # ------------------------------------------------------- sigma_2 enclosures
 # sigma_2(s) = s^2/(8 e^{2g})           0 < s <= 2
@@ -114,7 +119,7 @@ Fhi[0] = D('1e30')
 # s^2 F_2(s) is increasing everywhere; for s >= ALPHA_HI,
 # s^2 F_2(s) <= ALPHA_HI^2 F_2(ALPHA_LO) + int_{ALPHA_LO}^s 2t f_2(t-1) dt
 # s^2 F_2(s) >= ALPHA_LO^2 F_2(ALPHA_LO) + int_{ALPHA_HI}^s 2t f_2(t-1) dt
-ibL = idx(BETA_LO); ibH = idx(BETA_HI); i1 = idx('1')
+ibL = idx(BETA_LO); ibH = idx_up(BETA_HI); i1 = idx('1')
 flo_acc = I(0); fhi_acc = I(0)
 Flo_acc = I(ALPHA_LO)**2*I(Flo[iAlo])
 Fhi_acc = I(ALPHA_HI)**2*I(Fhi[iAlo])
@@ -148,9 +153,12 @@ def f_lo(x):
 # ------------------------------------------------------------ the ladder
 CASES = [('square window, Omega<=5', 5, D('0.5'), D('16'), D('3')),
          ('Omega<=5', 5, D('0.38'), D('23.43'),  D('3.376')),
-         ('Omega<=4', 4, D('0.514'), D('16.3683'), D('2.7828')),
+         ('Omega<=4', 4, D('0.513'), D('16.42405'), D('2.79166')),
          ('Omega<=3', 3, D('0.78'), D('10.028'), D('2.257'))]
-M = 6000
+M = 20000
+# the conservative bounds quoted in [P12, Prop. 1]; the run must clear each
+CLAIM = {'square window, Omega<=5': D('0.91558'), 'Omega<=5': D('0.08793'),
+         'Omega<=4': D('0.00621'), 'Omega<=3': D('0.05351')}
 out = {'grid_step': str(H), 'alpha_2_bracket': [str(ALPHA_LO), str(ALPHA_HI)],
        'beta_2_bracket': [str(BETA_LO), str(BETA_HI)],
        'F_2_samples': {}, 'f_2_samples': {}, 'cases': []}
@@ -160,25 +168,30 @@ for x in ['4', '5', '5.356', '6', '7', '8', '9']:
 
 ok = True
 for name, r, th, w, u in CASES:
-    al = D(1)/w; be = D(1)/u
+    # 1/w and 1/u are not exact decimals: enclose them, and cover [1/w, 1/u]
+    # from the outside so no part of the integral is omitted.
+    AL = I(1)/I(w)
+    BE = I(1)/I(u)
     sD = I(th)*I(w)
     eta = I(r+1) - I(u)
-    step = (be - al)/M
+    lo, hi = AL.lo, BE.hi
+    step = I(hi - lo)/M
     J = I(0)
     for j in range(M):
-        a = al + D(j)*step; b = a + step
-        wt = I(1)/I(a) - I(u)              # weight decreasing in t: max at t=a
-        arg = I(w)*(I(th) - I(b))          # F_2 argument smallest at t=b
-        J = J + I(step)*wt*F_up(arg)
+        a = I(lo) + j*step                 # interval enclosing the left node
+        b = a + step                       # interval enclosing the right node
+        wt = I(1)/I(a.lo) - I(u)           # 1/t - u decreases in t: largest at t = a
+        arg = I(w)*(I(th) - I(b.hi))       # the F_2 argument is smallest at t = b
+        J = J + I(b.hi - a.lo)*wt*F_up(arg)
     C = eta*f_lo(sD) - 2*J
-    good = C.lo > 0
+    good = C.lo > CLAIM[name]
     ok = ok and good
     out['cases'].append({'target': name, 'r': r, 'theta': str(th), 'w': str(w),
                          'u': str(u), 's_D': sD.lst(), 'eta': eta.lst(),
                          'f_2(s_D)_lower': str(f_lo(sD).lo), 'J_upper': str(J.hi),
                          'C_lower': str(C.lo), 'positive': good})
-    print('%-9s r=%d theta=%s : f_2(%s) >= %s , J <= %s , C >= %s  %s'
-          % (name, r, th, str(sD.lo)[:6], str(f_lo(sD).lo)[:8], str(J.hi)[:8],
+    print('%-9s r=%d theta=%s w=%s u=%s : f_2(%s) >= %s , J <= %s , C >= %s  %s'
+          % (name, r, th, w, u, str(sD.lo)[:6], str(f_lo(sD).lo)[:8], str(J.hi)[:8],
              str(C.lo)[:9], 'OK' if good else 'FAILED'), file=sys.stderr)
     assert good, 'coefficient not certified positive for ' + name
 

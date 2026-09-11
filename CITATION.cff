@@ -11,25 +11,26 @@ authors:
     family-names: Osman
     email: mohamedosmannn2999@gmail.com
     orcid: "https://orcid.org/0009-0004-5912-999X"
-version: 1.0.0
+version: 1.1.0
 doi: 10.5281/zenodo.22661627
-date-released: "2026-09-08"
+date-released: 2026-09-11
 license: CC-BY-4.0
 repository-code: "https://github.com/Osman209/odd-sieve-cell-system"
 url: "https://osman209.github.io/odd-sieve-cell-system/"
 abstract: >-
-  Twelve papers, one overview and thirty verification scripts on the
+  Twelve papers, one overview and thirty-three verification scripts on the
   elementary sieve of the odd numbers, developed as a coordinate system
   of lines and cells. Papers 1 to 4 build the coordinates and the
   transport laws; papers 5 to 8 are the construction and what it decides
   about twin pairs; papers 9 to 11 derive the point at which it stops
   from inside the construction rather than quoting it, and measure how
   much of the difficulty the framework can localise before failing to
-  cross it. Statements that are only measured are labelled as such and
+  cross it; paper 12 stands apart from the system and uses none of its
+  objects. Statements that are only measured are labelled as such and
   listed together, and withdrawn results are kept rather than deleted.
   Paper 1 is independent of the rest and concerns no prime numbers. No
   progress toward the twin-prime conjecture is claimed, and no new
-  bound. Thirty verification scripts regenerate every number printed, each
+  bound. Thirty-three verification scripts regenerate every number printed, each
   exiting non-zero when its claim fails.
 keywords:
   - sieve methods

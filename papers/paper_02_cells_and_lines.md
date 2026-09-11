@@ -648,7 +648,7 @@ Verification code and the tables behind every "zero failures" claim accompany th
 
 ## References
 
-The eleven papers of this set are cited as [P1] to [P11], and the numbered entries below are the external works. The two kinds never share a number: a bracket with a P is a companion paper, a bare number is a reference in the list below. This paper imports only the definitions and statements of the companion papers, never their proofs.
+The companion papers of this set are cited as [P1] to [P12], and the numbered entries below are the external works. The two kinds never share a number: a bracket with a P is a companion paper, a bare number is a reference in the list below. This paper imports only the definitions and statements of the companion papers, never their proofs.
 
 1. J. Friedlander and H. Iwaniec, *Opera de Cribro*, AMS Colloquium Publications **57**, 2010. — *used once, in §3.5, to name the classical object of which the geometric statement there is a reading.*
 2. N. J. A. Sloane (ed.), *The On-Line Encyclopedia of Integer Sequences*, sequences A033676, A033677 (the middle divisors) and A063655 (their sum). — *the central pair of §5.1 under its standard names.*

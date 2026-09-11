@@ -357,7 +357,7 @@ where $\nu_q(H)$ is the number of distinct residues modulo $q$ that the pattern 
 
 ## References
 
-The eleven papers of this set are cited as [P1] to [P11], and the numbered entries below are the external works. The two kinds never share a number: a bracket with a P is a companion paper, a bare number is a reference in the list below. This paper imports only the definitions and statements of the companion papers, never their proofs.
+The companion papers of this set are cited as [P1] to [P12], and the numbered entries below are the external works. The two kinds never share a number: a bracket with a P is a companion paper, a bare number is a reference in the list below. This paper imports only the definitions and statements of the companion papers, never their proofs.
 
 1. J. Friedlander and H. Iwaniec, *Opera de Cribro*, AMS Colloquium Publications **57**, 2010. — *the Mertens products of §2.3 and the standard form of the weighted sieve against which Corollary 4 is compared.*
 2. H.-E. Richert, *Selberg's sieve with weights*, Mathematika **16** (1969), 1–22. — *the weight $w(a)$ discussed in §4; it depends on the sizes of the prime factors, which is precisely what Corollary 3 does not transport and Corollary 4 repairs.*

@@ -434,7 +434,7 @@ The routes examined here exhibit this repeatedly: the pigeonhole constraint ([P1
 
 ## References
 
-The eleven papers of this set are cited as [P1] to [P11], and the numbered entries below are the external works. The two kinds never share a number: a bracket with a P is a companion paper, a bare number is a reference in the list below. This paper imports only the definitions and statements of the companion papers, never their proofs.
+The companion papers of this set are cited as [P1] to [P12], and the numbered entries below are the external works. The two kinds never share a number: a bracket with a P is a companion paper, a bare number is a reference in the list below. This paper imports only the definitions and statements of the companion papers, never their proofs.
 
 1. D. Bazzanella, *Primes between consecutive squares*, Arch. Math. (Basel) **75** (2000), no. 1, 29–34.
 2. D. Bazzanella, *Some conditional results on primes between consecutive squares*, Funct. Approx. Comment. Math. **45** (2011), no. 2, 255–263.

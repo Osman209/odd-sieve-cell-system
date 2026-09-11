@@ -7,7 +7,7 @@
 A coordinate system for the odd sieve: what it proves, what it only measures, and the
 point at which it stops — derived from inside the construction rather than quoted.
 
-Twelve papers, one overview and thirty verification scripts. **Start with the overview.**
+Twelve papers, one overview and thirty-three verification scripts. **Start with the overview.**
 
 ---
 
@@ -39,9 +39,11 @@ names the source. The table below is the map.
 **What the repository offers instead of a new result:**
 
 1. **A construction followed honestly to its end.** An elementary coordinate system of lines
-   and cells, developed until it produces Buchstab's decomposition, the Hardy–Littlewood
-   singular series and the exact factor-of-two loss `I(s) = 2f₁(s)` *without importing them*
-   — and then stops exactly where the field stops. (The sifting limits `β₁`, `β₂` are quoted
+   and cells, developed until it produces Buchstab's decomposition and the Hardy–Littlewood
+   singular series *without importing them*, and reaches the linear-sieve identity
+   `I(s) = 2f₁(s)` — an identity between the two sieve functions, whose application to counting
+   pairs would need a sequence, a density and a level of distribution that are not supplied
+   here — and then stops exactly where the field stops. (The sifting limits `β₁`, `β₂` are quoted
    from the literature, not derived here.) That the framework has no blind spot of its own is
    the finding.
 2. **The obstruction stated from inside.** Paper 9 derives the barrier in the construction's
@@ -67,7 +69,7 @@ names the source. The table below is the map.
 
 ```
 papers/   twelve papers and one overview, plus one standalone preprint in LaTeX and PDF
-code/     thirty verification scripts, plus the rendering checker and the site build
+code/     thirty-three verification scripts, plus the rendering checker and the site build
 docs/     the GitHub Pages site: a landing page per paper, with its PDF
 ```
 
@@ -113,11 +115,15 @@ docs/     the GitHub Pages site: a landing page per paper, with its PDF
 
 ### `papers/paper_11_what_a_continuation_needs.md`
 
-**Paper 11. What a Continuation Would Have to Supply.** The external ingredient, the limitations, and the routes already closed.
+**Paper 11. What a Continuation Would Have to Supply.** The external ingredient, the limitations, and the routes already tried, each recorded at the width its own measurement supports.
+
+### `papers/paper_12_paired_almost_primes.md`
+
+**Paper 12. Paired Almost-Primes in the Square Window and in Short Intervals.** A dimension-two sieve applied directly, using no object from the cell system; placed last, and independent of [P1]–[P11].
 
 ### How to read the citations
 
-Companion papers are cited as `[P1]` to `[P11]`. A bare number in brackets is an entry in that
+Companion papers are cited as `[P1]` to `[P12]`. A bare number in brackets is an entry in that
 paper's own reference list, so `[P9]` is always Paper 9 and `[9]` is always the ninth reference of
 the paper you are reading. Each paper numbers its own results from one, so `[P6, Thm 1]` is
 Theorem 1 of Paper 6 and an unqualified "Theorem 1" is always the paper you are in. Result numbers
@@ -131,7 +137,7 @@ non-zero if the claim it supports fails.
 
 ```
 python3 code/verify_exception_dichotomy.py         # one script
-for f in code/verify_*.py; do python3 "$f"; done   # all twenty-eight
+for f in code/verify_*.py; do python3 "$f"; done   # all thirty-three
 python3 audit.py                                   # structure: references, numbering, tables
 ```
 
@@ -165,8 +171,9 @@ That discipline, rather than any assurance about the tools, is what the reader i
 
 Twelve papers and one overview. Papers 1 to 4 build the coordinates and the transport laws;
 papers 5 to 8 are the construction and what it decides about twin pairs; papers 9 to 11 are the
-account of where it stops, and are the reason the set exists in this form. Paper 1 is independent
-of the rest and can be read on its own.
+account of where it stops, and are the reason the set exists in this form; paper 12 stands apart
+from the system and uses none of its objects. Paper 1 is independent of the rest and can be read
+on its own.
 
 The open question the work leaves is stated in Paper 11 §2.1, and it is external: the framework
 supplies the objects a weighted sieve argument needs, to measured accuracy, and cannot supply the

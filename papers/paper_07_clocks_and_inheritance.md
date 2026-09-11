@@ -288,4 +288,4 @@ so $243$ is the point at which the constraint $q \gt  P/3$ becomes the binding o
 
 ## References
 
-The eleven papers of this set are cited as [P1] to [P11]. This paper uses no external reference: everything it quotes is a definition or a statement of a companion paper, never a proof.
+The companion papers of this set are cited as [P1] to [P12]. This paper uses no external reference: everything it quotes is a definition or a statement of a companion paper, never a proof.

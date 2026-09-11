@@ -18,7 +18,7 @@ REPO = "https://github.com/Osman209/odd-sieve-cell-system"
 SITE = "https://osman209.github.io/odd-sieve-cell-system"
 ORCID = "0009-0004-5912-999X"
 DOI = "10.5281/zenodo.22661627"
-DATE = "2026-09-08"
+DATE = "2026-09-11"
 
 CSS = """<style>body{max-width:52rem;margin:2.5rem auto;padding:0 1.2rem;font:16px/1.6 Georgia,"DejaVu Serif",serif;color:#1a1a1a}
 h1{font-size:1.6rem;line-height:1.3;margin-bottom:.2rem}h2{font-size:1.05rem;font-weight:400;color:#555;margin-top:0}
@@ -102,8 +102,8 @@ PAPERS = [
     dict(
         slug="paper_11_what_a_continuation_needs",
         title="Paper 11. What a Continuation Would Have to Supply",
-        sub="The external ingredient, the limitations, and the routes already closed",
-        abs="What an external ingredient would have to supply for the identity to become a theorem, why the stopping point is the right one, and an appendix of routes already closed.",
+        sub="The external ingredient, the limitations, and the routes already tried",
+        abs="What an external ingredient would have to supply for the identity to become a theorem, why the stopping point is the right one, and an appendix of routes already tried, each recorded at the width its own measurement supports.",
     ),
     dict(
         slug="paper_12_paired_almost_primes",
@@ -161,12 +161,12 @@ def index():
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Cell System &mdash; Mohamed Osman</title>
-<meta name="description" content="A coordinate system for the odd sieve: what it proves, what it measures, and where it stops. Twelve papers, one overview and thirty verification scripts. No twin-prime claim.">
+<meta name="description" content="A coordinate system for the odd sieve: what it proves, what it measures, and where it stops. Twelve papers, one overview and thirty-three verification scripts. No twin-prime claim.">
 {CSS}</head><body>
 <h1>The Cell System</h1>
 <h2>A coordinate system for the odd sieve &mdash; what it proves, what it measures, and where it stops</h2>
 <p class="meta">Mohamed Osman &middot; ORCID <a href="https://orcid.org/{ORCID}">{ORCID}</a> &middot; independent researcher</p>
-<p>Twelve papers, one overview and thirty verification scripts. Papers 1 to 4 build the coordinates
+<p>Twelve papers, one overview and thirty-three verification scripts. Papers 1 to 4 build the coordinates
 and the transport laws; papers 5 to 8 are the construction and what it decides about twin pairs;
 papers 9 to 11 derive the point at which it stops <em>from inside the construction</em> rather than
 quoting it, and measure how much of the difficulty the framework can localise before failing to

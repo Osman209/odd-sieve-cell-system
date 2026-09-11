@@ -354,7 +354,7 @@ The only numbers in this paper stated without a script are the three thresholds 
 
 ## References
 
-The papers of this set are cited as [P1] to [P11], and the numbered entries below are the external works. The two kinds never share a number: a bracket with a P is a companion paper, a bare number is a reference in the list below.
+The companion papers of this set are cited as [P1] to [P12], and the numbered entries below are the external works. The two kinds never share a number: a bracket with a P is a companion paper, a bare number is a reference in the list below.
 
 1. R. Alweiss and S. Luo, *Bounded gaps between primes in short intervals*, Res. Number Theory **4** (2018), art. 15.
 2. R. Balasubramanian and P. Srivastav, *On Selberg's approximation to the twin prime problem*, arXiv:1504.04347 (2015).
