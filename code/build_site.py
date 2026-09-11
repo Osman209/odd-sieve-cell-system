@@ -17,7 +17,7 @@ import shutil
 REPO = "https://github.com/Osman209/odd-sieve-cell-system"
 SITE = "https://osman209.github.io/odd-sieve-cell-system"
 ORCID = "0009-0004-5912-999X"
-DOI = "10.5281/zenodo.22661627"
+DOI = "10.5281/zenodo.22661626"
 DATE = "2026-09-11"
 
 CSS = """<style>body{max-width:52rem;margin:2.5rem auto;padding:0 1.2rem;font:16px/1.6 Georgia,"DejaVu Serif",serif;color:#1a1a1a}

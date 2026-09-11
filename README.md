@@ -1,6 +1,6 @@
 # The Cell System
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22661627.svg)](https://doi.org/10.5281/zenodo.22661627)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22661626.svg)](https://doi.org/10.5281/zenodo.22661626)
 
 [**Read the papers online — https://osman209.github.io/odd-sieve-cell-system/**](https://osman209.github.io/odd-sieve-cell-system/)
 
@@ -205,7 +205,7 @@ The two programmes are independent; nothing here depends on anything there.
 ```
 Osman, M. (2026). The Cell System: a coordinate system for the odd sieve —
 what it proves, what it measures, and where it stops. Zenodo.
-https://doi.org/10.5281/zenodo.22661627
+https://doi.org/10.5281/zenodo.22661626
 ```
 
 The DOI is written in seven places — the badge above, the block here, `CITATION.cff`,
