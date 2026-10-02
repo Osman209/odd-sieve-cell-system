@@ -7,20 +7,21 @@
 A coordinate system for the odd sieve: what it proves, what it only measures, and the
 point at which it stops — derived from inside the construction rather than quoted.
 
-Twelve papers, one overview and thirty-three verification scripts. **Start with the overview.**
+Twelve papers, one overview and thirty-four verification scripts. **Start with the overview.**
 
 ---
 
 ## What this is, and what it is not
 
-**No progress toward the twin-prime conjecture is claimed, and no new bound on anything.**
+**No progress toward the twin-prime conjecture is claimed.** Papers 1 to 11 claim no new bound; Paper 12 states its own position in its abstract.
 Papers 1 to 4 build the coordinates and the transport laws, and papers 5 to 8 the construction
 and what it decides about twin pairs. Papers 9 to 11 exist to establish the opposite of a result —
 that the construction reaches the field's known barrier in its own vocabulary, and to say
 precisely where.
 
-Every headline result reached here already lives somewhere in the literature. Each paper
-names the source. The table below is the map.
+Every headline result of Papers 1 to 11 already lives somewhere in the literature. Each paper
+names the source. The table below is the map. The one exception so far is the overlap weight
+of Paper 12 (§5 there): no source for it has been found, and no novelty is claimed for it.
 
 | what the papers reach | where it already lives |
 |---|---|
@@ -69,7 +70,7 @@ names the source. The table below is the map.
 
 ```
 papers/   twelve papers and one overview, plus one standalone preprint in LaTeX and PDF
-code/     thirty-three verification scripts, plus the rendering checker and the site build
+code/     thirty-four verification scripts, plus the rendering checker and the site build
 docs/     the GitHub Pages site: a landing page per paper, with its PDF
 ```
 
@@ -119,7 +120,7 @@ docs/     the GitHub Pages site: a landing page per paper, with its PDF
 
 ### `papers/paper_12_paired_almost_primes.md`
 
-**Paper 12. Paired Almost-Primes in the Square Window and in Short Intervals.** A dimension-two sieve applied directly, using no object from the cell system; placed last, and independent of [P1]–[P11].
+**Paper 12. Paired Almost-Primes in the Square Window and in Short Intervals.** A dimension-two sieve applied directly, using no object from the cell system; placed last, and independent of [P1]–[P11]. Release 1.2.0 adds an overlap weight that gives pairs with at most four prime factors on each member in every large square window with fixed width and in every interval of length X^0.499, and a total of at most seven with the plain weight.
 
 ### How to read the citations
 
@@ -137,7 +138,7 @@ non-zero if the claim it supports fails.
 
 ```
 python3 code/verify_exception_dichotomy.py         # one script
-for f in code/verify_*.py; do python3 "$f"; done   # all thirty-three
+for f in code/verify_*.py; do python3 "$f"; done   # all thirty-four
 python3 audit.py                                   # structure: references, numbering, tables
 ```
 

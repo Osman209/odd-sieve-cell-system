@@ -2,7 +2,7 @@
 """Interval certificate for paired almost primes in intervals of length x^theta.
 
 COVERS: the four weight coefficients C_r(theta; w, u) declared in [P12],
-Proposition 2 and Theorem 1 -- it encloses the dimension-two DHR functions
+Proposition 1, and through it Theorem 3 -- it encloses the dimension-two DHR functions
 F_2 and f_2 and returns a rigorous lower bound for each coefficient.
 
 Proves C_r(theta; w, u) > 0 for three parameter sets, where

@@ -16,7 +16,7 @@ The framework then stops, and it stops in the same place every time. We state th
 $$2(R-C)  =  \sum (-1)^{\Omega(n)}$$
 over the endpoints of the surviving cells. The inequality one wants, $R \lt  C$, is therefore precisely the statement that a Liouville sum over the sifted set is negative. **The parity problem is not an obstacle imported from sieve theory; it is what the construction reduces to on its own.**
 
-**No progress toward the twin-prime conjecture is claimed, and no new bound.**
+**No progress toward the twin-prime conjecture is claimed.** Papers [P1] to [P11] claim no new bound; [P12] states its own position in its abstract.
 
 ---
 
@@ -319,11 +319,11 @@ $$\boxed{ \text{The framework describes motion between the multiplicative layers
 
 Not a better bound on the number of strikes, nor a sharper local constraint — the framework has produced several of those and they were absorbed. What is needed is an input that distinguishes $\Omega = 1$ from $\Omega = 2$ inside the sifted set. In the published literature the only machinery that has moved that barrier over the integers is the work on correlations of multiplicative functions in the Matomäki–Radziwiłł–Tao line, and the identity of §6 is a Liouville sum, so it is stated in exactly the language that machinery speaks. We record that as the natural next reading, not as a plan.
 
-**What the classical route does reach, for comparison.** [P12] applies the Diamond–Halberstam–Richert sieve in dimension two, with Richert's weights, to the same window and uses no object of this system. It gives, unconditionally and for every sufficiently large window between consecutive squares, a pair $(a, a+2)$ with $\Omega \le 5$ on each member and $\Omega(a)+\Omega(a+2) \le 8$ [P12, Thm 1]; four factors on each member follow once the window is allowed to grow, at $(m^2, (m+\lceil m^{0.026}\rceil)^2)$ [P12, Cor. 1]. Four factors in a window with $k$ fixed are not reached, and [P12, §9] *measures* what is missing: a 19.91% saving, weighted, in the excess of the upper sifting function above its floor. So the barrier of §6 is not an artefact of this coordinate system — the classical route halts on the same side of it, and by a measured amount.
+**What the classical route does reach, for comparison.** [P12] applies the Diamond–Halberstam–Richert sieve in dimension two, with Richert's weights, to the same window and uses no object of this system. It gives, unconditionally and for every sufficiently large window between consecutive squares, a pair $(a, a+2)$ with $\Omega \le 4$ on each member [P12, Thm 1], using a weight that also charges the two members jointly. Richert's weight alone gives five on each member there, and [P12, §8] *measures* what it lacks for four: a 19.91% saving, weighted, in the excess of the upper sifting function above its floor. So the barrier of §6 is not an artefact of this coordinate system: the classical route, with that weight too, stops at four factors on each member, far from one.
 
 ---
 
-**No progress toward the twin-prime conjecture is claimed, and no new bound.** Priority is not claimed for any result.
+**No progress toward the twin-prime conjecture is claimed.** Priority is not claimed for any result.
 
 ---
 
