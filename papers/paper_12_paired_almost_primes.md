@@ -130,11 +130,11 @@ $$w = 18.48, \qquad u = 2.7253, \qquad A = 0.422, \qquad L = 1.5972, \qquad \kap
 
 and put
 
-$$h_p = \min\lbrace 1 - u t_p,\ A + L t_p \rbrace, \qquad C(n) = \sum_{\substack{z \le p \lt y \cr p \mid n}} h_p, \qquad \mathrm{wt}^*(b) = \eta - B(6b-1) - B(6b+1) + \kappa C(6b-1) C(6b+1).$$
+$$h_p = \min\lbrace 1 - u t_p,\ A + L t_p \rbrace, \qquad C(n) = \sum_{\substack{z \le p \lt y \cr p \mid n}} h_p, \qquad \mathrm{wt}^{\ast}(b) = \eta - B(6b-1) - B(6b+1) + \kappa C(6b-1) C(6b+1).$$
 
 Then $0 \le h_p \le 1 - u t_p$, so $0 \le C(n) \le B(n)$.
 
-> **Lemma 3.** $\mathrm{wt}^*(b) \le 0$ whenever $B(6b-1) \ge \eta$ or $B(6b+1) \ge \eta$, and $\mathrm{wt}^*(b) \le \eta$ for every $b$.
+> **Lemma 3.** $\mathrm{wt}^{\ast}(b) \le 0$ whenever $B(6b-1) \ge \eta$ or $B(6b+1) \ge \eta$, and $\mathrm{wt}^{\ast}(b) \le \eta$ for every $b$.
 
 *Proof.* Let a member $n \le U$ have $j$ distinct prime factors in $[z, y)$. Each has $t_p \ge 1/w$ and their sum is at most $1$, so $j \le 18$, and $x = B(n) = j - u\sum t_p$ satisfies
 
@@ -146,7 +146,7 @@ Without the integer $j$ in (5.1), $C(n)$ could be large while $B(n)$ is small, a
 
 **The weighted sum.** The overlap term is a sum over pairs $p \mid 6b-1$, $q \mid 6b+1$ of the second count in (3.1), bounded below by $f_2$ at level $D/(pq)$. With (4.1) and partial summation over $p$ and $q$,
 
-$$\sum_{\substack{b \in \mathcal B \cr (Q(b), P(z)) = 1}} \mathrm{wt}^*(b) \ \ge\ H V(z) \left\lbrace C_* + o(1) \right\rbrace, \qquad C_* = C_{5-u}(\theta; w, u) + \kappa \int_{1/w}^{1/u}\int_{1/w}^{1/u} \frac{h(t)h(v)}{tv} f_2\left(w(\theta - t - v)\right) dt\ dv, \qquad\text{(5.2)}$$
+$$\sum_{\substack{b \in \mathcal B \cr (Q(b), P(z)) = 1}} \mathrm{wt}^{\ast}(b) \ \ge\ H V(z) \left\lbrace C_{\ast} + o(1) \right\rbrace, \qquad C_{\ast} = C_{5-u}(\theta; w, u) + \kappa \int_{1/w}^{1/u}\int_{1/w}^{1/u} \frac{h(t)h(v)}{tv} f_2\left(w(\theta - t - v)\right) dt\ dv, \qquad\text{(5.2)}$$
 
 with $h(t) = \min\lbrace 1 - ut, A + Lt \rbrace$. There is no factor $2$ in the double integral: one root is prescribed at each of $p$ and $q$.
 
@@ -157,7 +157,7 @@ with $h(t) = \min\lbrace 1 - ut, A + Lt \rbrace$. There is no factor $2$ in the 
 > **Proposition 1.** For Richert's weight with $\eta = r + 1 - u$,
 > $\displaystyle C_{6-u}(1/2; 16, 3) \ge 0.91558, \quad C_{6-u}(0.38; 23.43, 3.376) \ge 0.08793, \quad C_{5-u}(0.513; 16.42405, 2.79166) \ge 0.00621, \quad C_{4-u}(0.78; 10.028, 2.257) \ge 0.05351.$
 
-> **Proposition 2.** For the overlap weight of §5, $C_* \ge 0.0064$ at $\theta = 1/2$ and $C_* \ge 0.0017$ at $\theta = 0.499$.
+> **Proposition 2.** For the overlap weight of §5, $C_{\ast} \ge 0.0064$ at $\theta = 1/2$ and $C_{\ast} \ge 0.0017$ at $\theta = 0.499$.
 
 > **Proposition 3.** For Richert's weight with $\eta = 8 - 2u$, $w = 18.75$ and $u = 2.38$: $C_{8-2u} \ge 0.42$ at $\theta = 1/2$ and $C_{8-2u} \ge 0.41$ at $\theta = 0.499$.
 
