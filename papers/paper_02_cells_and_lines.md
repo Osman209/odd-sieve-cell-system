@@ -6,18 +6,20 @@
 
 ### Abstract
 
-We give a coordinate system for the odd integers in which several statements usually carried as estimates become identities.
+We give coordinates for the odd integers in which several sieve statements become identities.
 
-The primitive object is not the prime but the **line** $L_m(k) = m(m+2k)$, the odd multiples of $m$ from $m^2$ onward; only prime $m$ contribute anything, in both directions (Theorem 1). The line $L_3$ has step $6$ and so leaves exactly two odd numbers between consecutive strikes, which makes it not the first sieving line but the **coordinate grid**: the odd integers compress into cells $C_b = (6b-1,6b+1)$. Every line then acts on the cells by a single map (Theorem 2), from which a line's mirror symmetry is seen to be *inherited from the cell* rather than intrinsic to the line. The two cell positions a line closes are $\pm 6^{-1}$ modulo that line and are always distinct, so exactly two of every $p$ cells lose a member (Theorem 3) — the factor $(p-2)$ of the sieve product, read as geometry rather than as a density. Two further readings of the same picture are recorded: the diamond coordinates, in which the fingerprint law is the projection of a single straight line (Corollary 4), and the change at a square front from a difference of the two factors' distances to a sum of them (§3.7).
+**The objects.** The line of $m$ is $L_m(k) = m(m+2k)$, the odd multiples of $m$ from $m^2$ on. A line adds a position no smaller line covers if and only if $m$ is prime (Theorem 1). The line of $3$ leaves two odd numbers between its strikes, so it becomes the grid: the odd integers group into **cells**
+$$C_b = (6b-1,\ 6b+1).$$
 
-The same coordinates are then applied to the window $[(6a-1)^2,(6a+1)^2]$ (§4). It is exactly an interval of consecutive **cell indices**, starting at $6a^2-2a+1$ and of length $4a-1$, on which every line is two arithmetic progressions (Theorem 4); its midpoint cell is $(n^2-1,n^2+1)$ and so is never a twin (Theorem 5); and indexing by each line's strike number makes $t = k-6j$ invariant under the passage to the next window, in which coordinate two further laws are exact (Theorems 6, 7).
+**Main result (Theorem 3).** A prime line $p \ge 5$ closes exactly the two cell positions
+$$b \equiv \pm 6^{-1} \pmod p ,$$
+which are always distinct. So exactly two of every $p$ cells lose a member — the factor $(p-2)$ of the sieve product, read as geometry. Theorem 2 gives the single map behind this.
 
-Section 4.5 then reads the same coordinates across sectors rather than inside one: the sectors anchored at $M = 6r+3$ have start $a_r = 6r(r+1)+2$ and length $12(r+1)$, and the two are linked by $a_{r+1}-a_r = L_r$ exactly, so the sectors **tile** the cell strip. Since the cell and the two closed classes $n \equiv \pm 6^{-1} \pmod p$ are fixed once and for all, no sector carries a phase of its own — what looks like one is the position of the moving quadratic start inside a strip that never moves.
+**Windows and sectors (§4).** The window $[(6a-1)^2,(6a+1)^2]$ is an interval of $4a-1$ cell indices starting at $6a^2-2a+1$, on which every line is two arithmetic progressions (Theorem 4). Its middle cell is $(n^2-1,n^2+1)$ and is never a twin (Theorem 5). The sectors tile the cell strip exactly, so no sector carries a phase of its own (§4.5).
 
-Section 5 settles a second, independent ownership question about the same object: a line holds the *centre* of its strikes — it remains the largest divisor below the square root — for exactly $a+b+2$ steps, where $ab = m$ is the central pair of $m$ (Theorem 8). The loss is a handover with its index named, and the two steps of $2$ in the bound are exactly where the odd lattice enters.
+**Ownership (Theorem 8).** A line stays the largest divisor below the square root of its strikes for exactly $a+b+2$ steps, where $ab = m$ is the central pair of $m$.
 
-This paper uses no analytic sieve estimates: no Mertens constant, no prime-distribution input, no error terms. The exact histogram carried by the square window was separated out as Paper 1, since it concerns no primes at all; it is quoted here where needed and proved there.
-
+No analytic estimate is used. The histogram of the square window is proved separately in Paper 1.
 
 **Keywords:** sieve of Eratosthenes, cell coordinates, difference of squares, integer lattices.
 

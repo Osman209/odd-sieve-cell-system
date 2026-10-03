@@ -341,7 +341,7 @@ check("17 and 25: the Lemma is +1 and the linear part -1, so they cancel",
 check("49: the Lemma is +1 and the linear part 0, so the count is 2A+2",
       lemma_gap(49) == 1 and linear_gap(49) == 0)
 
-# 8.6  the abstract's two corrected descriptions -----------------------------
+# 8.6  the two corrected descriptions of [P1, §3.2] -----------------------------
 bad = 0
 for n in odds(3, rng(299, 2001, 2001)):
     for j in range(n):
@@ -349,7 +349,7 @@ for n in odds(3, rng(299, 2001, 2001)):
 check("D_j = j - floor(2j^2/n) = ceil(j(n-2j)/n), the object Theorem 2b quantises",
       bad == 0)
 nc = [n for n in odds(3, 299) if bool(np.any(np.diff(Wvec(n)) < 0))]
-check("floor(2j^2/n) is not convex, so the abstract says 'non-decreasing' instead",
+check("floor(2j^2/n) is not convex, so [P1, §3.2] says 'non-decreasing' instead",
       len(nc) > 100, "%d of %d odd n < 300" % (len(nc), len(list(odds(3, 299)))))
 
 # 8.7  the sample data of Appendix A -----------------------------------------

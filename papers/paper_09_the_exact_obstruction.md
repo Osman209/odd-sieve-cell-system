@@ -284,7 +284,7 @@ The heuristic version of $R\lt C$ is also instructive, because it fails by a sma
 
 Among the $z$-rough numbers below $x$, the proportion that are prime is $1/(u \omega(u))$ with $u = \log x/\log z$ and $\omega$ Buchstab's function; hence
 $$\frac{R}{C}  =  2\Big(1-\frac{1}{u \omega(u)}\Big), \qquad\text{so}\qquad R\lt C \iff u \omega(u) \lt  2 .$$
-Since $\omega(u) \to e^{-\gamma}$ rapidly, the numerical threshold is $u^{*} \approx 3.5658$, close to the limiting proxy $2e^{\gamma} \approx 3.56215$; the two are near but not equal, and we use $u^{*}$ where the numerics require it and $2e^{\gamma}$ only as the limiting value. Equivalently: **$R\lt C$ asks that more than half the rough numbers be prime.**
+Since $\omega(u) \to e^{-\gamma}$ rapidly, the numerical threshold is $u^{\ast} \approx 3.5658$, close to the limiting proxy $2e^{\gamma} \approx 3.56215$; the two are near but not equal, and we use $u^{\ast}$ where the numerics require it and $2e^{\gamma}$ only as the limiting value. Equivalently: **$R\lt C$ asks that more than half the rough numbers be prime.**
 
 *At the natural cut the threshold is closed-form, and needs no delay system.* The cut (2.1) is $z^3 \gt  U$, i.e. $u = 3$, and there $\omega(u) = (1+\log(u-1))/u$ still holds, so
 $$u \omega(u)\big|_{u=3}  =  1+\log 2, \qquad \frac{R}{C}  \longrightarrow  2\Big(1-\frac{1}{1+\log 2}\Big)  =  0.818768 .$$
@@ -316,7 +316,7 @@ On the other side, a positive lower bound for $C$ is a sieve lower bound in **di
 
 $$\boxed{ \text{At level of distribution } \theta = 1, \text{ where } s = u: \quad u \lt  2e^{\gamma} = 3.5621 \quad\text{and}\quad u \gt  \beta_2 = 4.2664 \quad\text{cannot both hold.} }$$
 
-(The two variables are different — $u = \log x/\log z$ and $s = \log D/\log z$ with $D = x^{\theta}$ — and coincide only at $\theta = 1$, which is why the level enters the statement; the numerical threshold is $u^{*} \approx 3.5658$, with $2e^{\gamma}$ its limiting value.)
+(The two variables are different — $u = \log x/\log z$ and $s = \log D/\log z$ with $D = x^{\theta}$ — and coincide only at $\theta = 1$, which is why the level enters the statement; the numerical threshold is $u^{\ast} \approx 3.5658$, with $2e^{\gamma}$ its limiting value.)
 
 The window is empty, and it stays empty under the dimension-versus-level trade: taking $\kappa = 1$ with $\theta = 1/2$ (Chen's setting) requires $u \gt  \beta_1/\theta = 4$, exactly what $\kappa=2$ with $\theta=1$ requires. **The trade between dimension and level of distribution is neutral for this problem.**
 

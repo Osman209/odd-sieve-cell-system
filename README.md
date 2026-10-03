@@ -7,7 +7,7 @@
 A coordinate system for the odd sieve: what it proves, what it only measures, and the
 point at which it stops — derived from inside the construction rather than quoted.
 
-Twelve papers, one overview and thirty-four verification scripts. **Start with the overview.**
+Twelve papers, one overview and thirty-six verification scripts. **Start with the overview.**
 
 ---
 
@@ -70,7 +70,7 @@ of Paper 12 (§5 there): no source for it has been found, and no novelty is clai
 
 ```
 papers/   twelve papers and one overview, plus one standalone preprint in LaTeX and PDF
-code/     thirty-four verification scripts, plus the rendering checker and the site build
+code/     thirty-six verification scripts, plus the rendering checker and the site build
 docs/     the GitHub Pages site: a landing page per paper, with its PDF
 ```
 
@@ -88,7 +88,7 @@ docs/     the GitHub Pages site: a landing page per paper, with its PDF
 
 ### `papers/paper_04_from_cycle_to_window.md`
 
-**Paper 4. From Cycle to Window.** What survives when an exact periodic law is evaluated on a short interval.
+**Paper 4. From Cycle to Window.** What survives when an exact periodic law is evaluated on a short interval. Release 1.3.0 corrects the L² target of §5.1: the old bound would force T/M → 1, against the conditional Hardy–Littlewood limit e^(2γ)/4 ≈ 0.7931; it is replaced by the sufficient condition T ≥ M(1 − √Q).
 
 ### `papers/paper_05_gap_alphabet.md`
 
@@ -138,7 +138,7 @@ non-zero if the claim it supports fails.
 
 ```
 python3 code/verify_exception_dichotomy.py         # one script
-for f in code/verify_*.py; do python3 "$f"; done   # all thirty-four
+for f in code/verify_*.py; do python3 "$f"; done   # all thirty-six
 python3 audit.py                                   # structure: references, numbering, tables
 ```
 

@@ -166,11 +166,13 @@ This is the first point in the framework at which stacking the lines does not bl
 
 **P — [P4, Thm 4] (martingale).** On the full CRT cycle the normalised survivor masks have orthogonal differences and total energy exactly $1/P_z-1$. **So the primorial is present as a period, but the size of the $L^2$ error does not carry it.**
 
-**M — [P4, §3.2].** At moving depth the measured ratio is $T/M \approx 0.80$, stable across three orders of magnitude. At moving depth the sieve variable is $s = 2$ exactly, the scale at which a Buchstab-type correction is expected; the value $0.80$ itself is a measurement.
+**M — [P4, §3.2].** At moving depth the measured ratio is $T/M \approx 0.80$, stable across three orders of magnitude. At moving depth the sieve variable is $s = 2$ exactly, the scale at which a Buchstab-type correction is expected; the value $0.80$ itself is a measurement. Under the Hardy–Littlewood conjecture the ratio tends to $e^{2\gamma}/4 = 0.7930547$, and the measured value on every-integer sectors is $0.793733$ at $U = 10^5$. Split by the depth $a = \log p/\log n$ of the lines, the deficit follows a Buchstab model $(e^{\gamma}\omega(2/a))^2 - 1$ to within $0.0007$, and most of the net loss comes from lines with $a \gt  0.8$. The model is a heuristic, checked against the data and not proved.
 
 **V — [P4, §4].** A mean law carrying a Legendre symbol, and a square-cycle cancellation identity summing to $-(2/r)$ over a cycle. Both agree with every exact enumeration reported; complete symbolic proofs are not supplied.
 
 **M — [P4, §5.3].** The $L^2$ question. Once each line is normalised by the cells of the sectors in which it has been born, the raw deviation sum is flat against the base scale $U^2$ on the tested range; the growth reported in earlier versions was the deterministic term created by the other normalisation. **The tested quantity does not decide the bound in either direction.**
+
+**M — [P4, §5.1].** A correction. The bound (5.1), read in earlier versions as the target, would force $T/M \to 1$, so it cannot hold together with the Hardy–Littlewood conjecture; the same applies to the per-line target of [P4, §5.5]. The paper replaces it by a sufficient condition: with $Q(U) = k(U)E(U)/M(U)^2$, one has $T \ge M(1 - \sqrt{Q})$, so $Q \le \eta \lt  1$ for all large $U$ would be enough. The measured $Q$ rises from $0.0635$ at $U = 1200$ to $0.0907$ at $U = 10^5$; no bound on it is proved.
 
 **M — [P4, §6].** The transfer curve. Linear depth weights transfer at ratio $1.0000$ to the reported precision; the truncations $\max(0,1-j/t)$ stay within about $3.2$% of $1$ for tested $t\ge2$; and at $t \le 1$ — exactly the indicator $[j=0]$, which **is** the twin condition in the moving window — the ratio drops to $\approx 0.80$.
 

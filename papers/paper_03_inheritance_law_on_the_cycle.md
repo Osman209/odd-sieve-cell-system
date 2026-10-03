@@ -6,19 +6,19 @@
 
 ### Abstract
 
-Working in the cell coordinates of Paper 2, we study the fixed periodic structure of the odd sieve — no window, no squares. Labelling each cell by the survival state of its two members gives a four-state system whose update under the entry of a new line is linear; we show that it has a conserved quantity and therefore a closed solution, in which the whole state dissolves into the two Mertens products $\prod(1-1/q)$ and $\prod(1-2/q)$ (Theorem 1).
+We study the odd sieve over one full period $\prod q$ of its lines, in the cells of Paper 2. Each cell is in one of four states, by which of its two members survive.
 
-The four counts are a *census*, however, not a simulator: we give a two-cell counterexample showing that the final state does not determine the history, so no automaton on the four states can run the process forward. Exactness and blindness turn out to be the same property here — the linear update closes precisely because it forgets which line owns each strike.
+**Main result (Theorem 1).** After the lines $5 \le q \le z$ have acted, the four state shares are exactly
+$$(a,b,c,d) = \big(P_2,\ P_1-P_2,\ P_1-P_2,\ 1-2P_1+P_2\big), \qquad P_1 = \prod_{5\le q\le z}\Big(1-\frac1q\Big),\quad P_2 = \prod_{5\le q\le z}\Big(1-\frac2q\Big).$$
+The four counts are a census, not a simulator: two cells can end in the same state by different histories.
 
-The law then **refines**. Tracking, in addition, the *inheritance depth* of each cell — the number of old lines dividing either member — the transport remains exact, in a finite state space of size $O(\pi(z))$, with closed generating function $\prod_q\big((q-2)+xu+xv\big)$ (Theorem 2). Resolving the inert block further, so that the strike a line spends on the grid of $3$ is marked separately, gives $\prod_q\big((q-3)+u+v+w\big)$ and splits the open cells by that channel without changing their number (Corollary 1) — a finer bookkeeping of the same residues, carrying, as we measure, no information about which open cells are twin pairs. Consequently $\sum f(\Omega_{\le z})$ is computable exactly on the cycle for an arbitrary $f$, nonlinear truncations included (Corollary 3).
+**Refinements, all exact on the cycle.**
+- Counting also how many lines divide each cell, the census has generating function $\prod_q\big((q-2)+xu+xv\big)$ (Theorem 2). So $\sum f(\Omega_{\le z})$ is exact for any $f$ (Corollary 3).
+- Marking each line by the bin of its size transports the per-bin census exactly (Corollary 4); eight bins reproduce Richert's logarithmic weight to $0.4$%.
+- Giving each integer to its smallest striking line splits the strip into disjoint layers, so the survivor count needs no inclusion–exclusion (Theorem 3).
+- The pair correlation obeys $C_{\mathrm{new}}(h) = K_q(h) C_{\mathrm{old}}(h)$ with $K_q(h) \in \lbrace q-2,\ q-3,\ q-4\rbrace$ (Theorem 4). This is the Hardy–Littlewood singular series, reached by a direct count.
 
-That is still not enough for Richert's logarithmic weight, which depends on the *sizes* of the factors and not only on their number; we exhibit the gap explicitly. The repair is to mark each line by the bin of its size, and it closes: the refined product transports the joint per-bin census exactly (Corollary 4), at a cost polynomial in $\pi(z)$ for fixed resolution, and eight bins reproduce Richert's weight to $0.4$%.
-
-We record a second exact structure on the same cycle: assigning each integer to its smallest striking line partitions the strip into **disjoint** ownership layers, so the survivor count is a plain difference with no inclusion–exclusion (Theorem 3) — and we show precisely what this costs, namely that the repaired sum returns the sieve product and nothing more.
-
-Finally §6 transports a *pair* of counts rather than a count: the autocorrelation of the surviving-pair indicator obeys $C_{\mathrm{new}}(h) = K_q(h)C_{\mathrm{old}}(h)$ with the ladder $q-2, q-3, q-4$ (Theorem 4), which is the singular series of the Hardy–Littlewood $k$-tuple conjecture reached by a direct count; and it follows that no single number transports the second moment, so the minimal closing object is the function $C(h)$ itself (Corollary 5).
-
-**Everything here is exact on the full cycle.** The passage to a short window is the subject of Paper 4, and it is where the losses are.
+**Everything here is exact on the full cycle.** The passage to a short window is Paper 4, and that is where the losses are.
 
 **Keywords:** sieve of dimension two, Mertens products, weighted sieves, Richert weights, generating functions.
 

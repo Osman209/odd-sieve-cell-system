@@ -6,13 +6,19 @@
 
 ### Abstract
 
-Paper 3 establishes exact transport laws for the divisor census of the odd sieve over a full cycle of length $\prod q$. Every application considered here needs a window of length $\asymp z^2$ — exponentially shorter. This paper asks what survives the passage, and answers it with a curve rather than a verdict.
+Paper 3 gives exact laws over a full cycle of length $\prod q$. Applications need a window of length about $z^2$, which is exponentially shorter. This paper asks what survives.
 
-We first show that the two motions are compatible in a strong sense: an old line appears to a new one as a **periodic ruler**. For rulers $q\ge7$, a first-cycle square sector is shorter than the period, so the local question is presence or absence rather than counting; $q=5$ is kept as a fixed core exception (Theorems 1 and 2). We then run the sieve at **moving depth** — each sector $(u^2,v^2)$ sieved by all lines $\le u$ — and measure a stable deficit $T/M \approx 0.80$ across three orders of magnitude. We interpret this as the expected dimension-2 Buchstab-type correction at the critical scale $s=2$, but the value $0.80$ itself is a measurement in this paper.
+**Proved.** An old line $q \ge 7$ acts on a new one as a periodic ruler, and in a first-cycle sector it strikes either once or not at all (Theorems 1 and 2). The deficit telescopes to one sum (Theorem 3):
+$$T(U) - M(U) = \sum_{r\le U} B_r(U).$$
+On the full cycle the survivor masks form a martingale with energy $\sum \mathbf{E}(\Delta_r^2) = 1/P_z - 1$ (Theorem 4).
 
-The deviations then admit a useful decomposition. A CRT-based mean law carrying a Legendre symbol and a companion square-cycle cancellation identity are verified exactly on the ranges tested in §4; a complete symbolic proof of those two identities is not supplied here, so they are kept separate from the proved results. The normalised survivor masks do form a **martingale** on the full CRT cycle, with orthogonal differences and total energy $\sum \mathbf{E}(\Delta_r^2)=1/P_z-1$ (Theorem 4). On short windows the $L^2$ experiment is inconclusive: once each line is normalised by the sectors in which it has been born, the raw deviation sum is flat against the target scale, and the nested deviations that the telescoping identity actually needs separate no model on the range reachable here.
+**Measured.** On every-integer sectors at moving depth, the ratio of twins to the sieve product is
+$$T(U)/M(U) = 0.793733 \quad\text{at } U = 10^5 ,$$
+against the limit $e^{2\gamma}/4 = 0.7930547$ that the Hardy–Littlewood conjecture predicts. Split by line depth, the deficit follows a Buchstab model to within $0.0007$.
 
-Finally we measure the transfer directly. On the tested windows, linear depth weights give ratio $1.0000$ to the reported precision; the tested truncations $\max(0,1-j/t)$ remain close to $1$ for $t\ge1.5$; and at $t\le1$, where the weight is exactly the depth-zero indicator, the measured ratio is near $0.80$ (Proposition 1). The indicator of depth zero is the twin condition in the moving square window. Thus the sharp loss appears at the endpoint of the measured family, while the interior of the curve remains empirical. A second measurement (§6) tests the general pattern law of [P3, §6.3] instead of a weight, and finds it transferring at $1.0000$ for admissible patterns of up to five cells; taken together the two locate the loss in the one-point density rather than in the correlations.
+**Corrected.** The $L^2$ bound (5.1) set as the target in earlier versions would force $T/M \to 1$, so it cannot hold together with the conjecture. It is replaced by a sufficient condition: $T \ge M(1-\sqrt{Q})$, with $Q(U) = k(U)E(U)/M(U)^2$. The measured $Q$ is below $0.1$ but rising; no bound on it is proved.
+
+**Transfer (§6).** Soft depth weights transfer to the window at ratio near $1$; the sharp depth-zero indicator, which is the twin condition, transfers at about $0.80$ (Proposition 1). Patterns of up to five cells transfer at $1.0000$ (Proposition 2), which puts the loss in the one-point density.
 
 **Keywords:** Buchstab function, sieve of dimension two, martingale decomposition, large sieve, weighted sieves.
 
@@ -113,11 +119,28 @@ $$\boxed{ T/M \approx 0.80,\ \text{across three orders of magnitude.} }$$
 
 **The discrepancy is systematic, not numerical noise.** At moving depth the sieve variable is $s = \log(u^2)/\log u = 2$ exactly, the critical scale at which a naive product is expected to need a Buchstab-type correction [2]. For comparison, in one dimension the familiar factor at $s=2$ is $e^{\gamma}/2=0.8905362$; in the present two-rail experiment the corresponding measured ratio is about $0.80$.
 
+**What the ratio should tend to.** Take the every-integer sectors $(n^2,(n+1)^2)$ of §5, and let $C_2$ be the twin-prime constant. Mertens' product gives $P(n) \sim 12C_2e^{-2\gamma}/\log^2 n$, so $M(U) \sim 2C_2e^{-2\gamma}U^2/\log^2 U$. The Hardy–Littlewood conjecture [3] gives $T(U) \sim (C_2/2)U^2/\log^2 U$. If that conjecture holds, then
+$$\frac{T(U)}{M(U)} \to \frac{e^{2\gamma}}{4} = 0.7930547 .$$
+This limit is conditional. Measured on those sectors, the ratio is $0.810480$ at $U = 300$, $0.795771$ at $U = 10^4$ and $0.793733$ at $U = 10^5$. So a ratio near $0.80$ is what the conjecture predicts; on this reading it is the expected main-term correction, not a loss of twins.
+
+**Where the loss sits, by depth.** Theorem 3 below splits $T - M$ into one term for each pair (sector $n$, line $p$). Put each term in a bin by the depth $a = \log p/\log n$ of the line in its sector, and add the bins up to $a_0$. For one sector this partial sum is exactly $P(n)\big(N_z(n)/P(z) - C(n)\big)$ with $z = n^{a_0}$, where $N_z(n)$ counts the cells that survive the lines up to $z$. Divided by $M$, the measured curve is compared with
+$$\big(e^{\gamma} \omega(2/a_0)\big)^2 - 1,$$
+where $\omega$ is Buchstab's function. This is the curve the two ends of a cell would give if each behaved like an independent integer with no prime factor below $n^{a_0}$. It is a heuristic model, and at $a_0 = 1$ it is the conditional limit above.
+
+| $a_0$ | 0.5 | 0.6 | 0.7 | 0.8 | 0.9 | 1.0 |
+|---|---|---|---|---|---|---|
+| measured, $U = 10^5$ | $-0.00007$ | $-0.00131$ | $+0.01830$ | $+0.00204$ | $-0.07410$ | $-0.20627$ |
+| model | $0.00000$ | $-0.00167$ | $+0.01862$ | $+0.00259$ | $-0.07395$ | $-0.20695$ |
+
+Over all twenty bins, the largest gap between the two rows is $0.0007$ at $U = 10^5$ and $0.0013$ at $U = 3\times 10^4$. The lines with $a \le 0.5$ add about nothing. Between $a = 0.6$ and $a = 0.7$ the sum rises to about $+1.8$ per cent, and by $a = 0.8$ it has fallen back to about $+0.2$ per cent. So most of the net loss comes from lines deeper than $a = 0.8$. *(Regenerated by `code/verify_depth_profile.py`; the model is checked against the data, not proved.)*
+
+A struck endpoint near the top has a simple shape. Suppose $x = pt$ is struck by $p$ in the sector $n$ and its cell survived every smaller line. Then $t$ has no prime factor below $p$. If $p^3 \gt  (n+1)^2$, then $t \lt  p^2$, so $t$ is prime. The weaker condition $a \gt  2/3$ is not enough in a finite sector: at $n = 36$, $p = 11$ the cell $(1331, 1333)$ has $a = 0.669$ and $t = 121$.
+
 ### 3.3 Why accumulation matters more than a single sector
 
 One does not need $T(u)\gt 0$ for every sector, only $T(U) \to \infty$. On the indexing of this section — $u \equiv 5 \pmod 6$ with the window $(u^2,(u+2)^2)$, so that only one sector in six is swept — one has $\sum_{u \le U} C(u) \asymp U^2/18$, against $U^2/6$ for the every-integer indexing of §5; the two sums differ by that factor of three and only the constant is affected. With $P(U) \asymp 1/\log^2 U$,
 $$M(U) \asymp \frac{U^2}{\log^2 U}, \qquad\text{(3.1)}$$
-in either indexing, so **any error bound of size $O(U\log^A U)$ suffices** — a requirement weaker by a full factor of $U$ than square-root cancellation.
+in either indexing, so **any error bound of size $O(U\log^A U)$ suffices** — a requirement weaker by a full factor of $U$ than square-root cancellation. This is a sufficient condition only. Under the Hardy–Littlewood conjecture no such bound holds: $T - M$ is then close to $-M/5$, of the same order as $M$ (§3.2, §5.1). What can be hoped for is a bound on the error *relative to* $M$ with a constant below $1$, as in §5.1.
 
 ### 3.4 Theorem 3 (telescoping to a single sum)
 
@@ -220,7 +243,24 @@ $$D_r(U)  =  \big(\text{all strikes of } r \text{ over the sectors } u\ge r\big)
 
 By Cauchy–Schwarz, $\left|\sum_{r\le U} B_r\right| \le \sqrt{\pi(U)}\left(\sum_{r\le U}|B_r|^2\right)^{1/2}$ with $B_r$ as in Theorem 3. Hence if
 $$\sum_{r\le U}\big|B_r(U)\big|^2  \ll  (X+U^2) \mathrm{polylog}(U), \qquad X \asymp U^2, \qquad\text{(5.1)}$$
-the total error would be $O(U^{3/2} \mathrm{polylog})$ against a main term $\asymp U^2/\log^2 U$, giving $T(U)\to\infty$ and hence infinitely many twin primes. **The quantity in (5.1) is therefore the nested one of Theorem 3, not the raw strike deviation $D_r$ below**; the two are measured side by side in §5.3, and only the first is tied to $T-M$ by an identity.
+the total error would be $O(U^{3/2} \mathrm{polylog})$ against a main term $\asymp U^2/\log^2 U$.
+
+**Correction: (5.1) asks for too much.** Earlier versions read (5.1) as the bound that would give $T(U) \to \infty$. It would, but it would also force $T(U)/M(U) \to 1$. The Hardy–Littlewood conjecture predicts the limit $e^{2\gamma}/4 = 0.7930547$ instead (§3.2). So (5.1) and the conjecture cannot both hold. This is a conditional incompatibility, not a disproof of (5.1). Under the conjecture, Cauchy–Schwarz even forces $\sum_r|B_r(U)|^2 \gg U^3/\log^3 U$.
+
+**A weaker condition is enough.** Write $k(U)$ for the number of lines $5 \le r \le U$, $E(U) = \sum_{r\le U}|B_r(U)|^2$ and
+$$Q(U) = \frac{k(U) E(U)}{M(U)^2}.$$
+Cauchy–Schwarz and Theorem 3 give, with no assumption,
+$$T(U) \ge M(U)\big(1 - \sqrt{Q(U)}\big).$$
+So if $Q(U) \le \eta \lt  1$ for some fixed $\eta$ and all large $U$, there are infinitely many twin primes. This allows an energy of size $U^3/\log^3 U$, provided its constant is small enough. It is a sufficient condition only. No bound on $Q$ is proved here. Cauchy–Schwarz and conditions of this shape are standard; nothing new is claimed for them.
+
+| $U$ | $1200$ | $10^4$ | $2\times10^4$ | $5\times10^4$ | $10^5$ |
+|---|---|---|---|---|---|
+| $T/M$ | $0.805010$ | $0.795771$ | $0.794442$ | $0.793829$ | $0.793733$ |
+| $Q$ | $0.063546$ | $0.074875$ | $0.079064$ | $0.085126$ | $0.090695$ |
+
+*(Regenerated by `code/verify_weighted_l2.py`, which also checks $\sum_r B_r = T - M$ and checks $T$ against an ordinary sieve of the twin pairs.)* $Q$ stays far below $1$ on this range, but it rises on every step from $U = 1200$. The data therefore do not show that $Q$ stays bounded below $1$.
+
+**The quantity in (5.1) is therefore the nested one of Theorem 3, not the raw strike deviation $D_r$ below**; the two are measured side by side in §5.3, and only the first is tied to $T-M$ by an identity.
 
 ### 5.2 Why $X \asymp U^2$ is the critical scale
 
@@ -244,13 +284,13 @@ $$\boxed{ \text{The }L^2\text{ experiment as run does not decide the bound in ei
 
 $\Delta_r$ is not a free difference: it is the quadratic motion seen **through the mask of all smaller lines**, $A_{r^-}=A_{\lbrace 5,\dots,r^-\rbrace }$, so the sequence being tested changes with $r$. That is the reason the nested row of §5.3 is the relevant one, and the reason a bound for it does not follow from the full-cycle orthogonality of Theorem 4; the measurements above neither establish the nesting cost nor rule it out.
 
-A large-sieve-type inequality adapted to such *nested* masks would be the kind of estimate needed for (5.1). No such estimate is proved in this paper.
+A large-sieve-type inequality adapted to such *nested* masks would be the kind of estimate needed to bound $Q(U)$. No such estimate is proved in this paper.
 
-### 5.5 What would have sufficed
+### 5.5 A target from earlier versions
 
 Precisely a bound
 $$\big|S_r(V)\big|  \le  C\sqrt{N_r(V)} \log^A U,$$
-where $S_r(V)$ is the centred partial sum since the line's birth and $N_r(V)$ the number of sectors observed. **This is weaker than Hardy–Littlewood: no constant need be identified and no asymptotic formula proved — only a bound.**
+where $S_r(V)$ is the centred partial sum since the line's birth and $N_r(V)$ the number of sectors observed. Earlier versions called this weaker than Hardy–Littlewood. **That was wrong in the same way as (5.1).** Summed over the $k(U) \asymp U/\log U$ lines, a bound of this shape for every line gives $|T - M| = O(U^{3/2}\log^{A'} U) = o(M)$, so it too would force $T/M \to 1$, against the conditional limit $e^{2\gamma}/4$. Read as a target, it is replaced by the condition on $Q(U)$ in §5.1.
 
 The tested data do not support a small uniform constant: the worst ratio $\max|S_r|/\sqrt{N_r}$ rises from $4.25$ at $U=4199$ to $5.75$ at $U=7199$. This does **not** refute the existence of some larger eventual constant. The polylogarithmic form is **beyond what computation can settle here**: each sector costs $O(u)$ work, so distinguishing $\sqrt N \log^A$ from $\sqrt N \log^{A+1}$ would require $U$ in the millions.
 
@@ -327,7 +367,7 @@ $$\boxed{\begin{array}{c}\text{The transfer fails in the one-point density and h
 
 **Verified identities whose complete symbolic proofs are not supplied here.** The mean law with its Legendre symbol (identity A), its algebraic telescoping consequence, and the single-line/multi-line square-cycle cancellation (identity B). They agree with every exact enumeration reported in §4, but they are not counted as proved theorems in this version.
 
-**Measured, not proved.** The stability of $T/M\approx0.80$ (§3.2); the state-space observation (§3.5); the two $L^2$ rows of §5.3; the transfer curve of §6 (Proposition 1); and the pattern transfer of §6 (Proposition 2). The data do not refute a polylogarithmic $L^2$ bound asymptotically, and the finite-window value $1.0000$ for linear weights is a measurement to the reported precision, not an exact equality theorem.
+**Measured, not proved.** The stability of $T/M\approx0.80$ and its agreement with the conditional limit $e^{2\gamma}/4$ (§3.2); the depth profile of §3.2 against its Buchstab model; the values of $Q(U)$ in §5.1; the state-space observation (§3.5); the two $L^2$ rows of §5.3; the transfer curve of §6 (Proposition 1); and the pattern transfer of §6 (Proposition 2). The data do not refute a polylogarithmic $L^2$ bound asymptotically, and the finite-window value $1.0000$ for linear weights is a measurement to the reported precision, not an exact equality theorem.
 
 **The shape of the result.** On the tested windows, soft weights preserve the cycle prediction far better than the sharp depth-zero indicator. The latter is precisely the primality/twin atom in this setup.
 
@@ -350,4 +390,5 @@ The companion papers of this set are cited as [P1] to [P12], and the numbered en
 
 1. P. Campbell, *On the existence of integers with at most 3 prime factors between every pair of consecutive squares*, arXiv:2603.10356 (2026). — *the almost-primes computation whose parameters are used in §6; it runs at sieve variable $s = 3.33$.*
 2. J. Friedlander and H. Iwaniec, *Opera de Cribro*, AMS Colloquium Publications **57**, 2010. — *for the Buchstab-type correction at $s=2$ discussed in §3.2, and for the large-sieve inequalities of the kind §5.4 would need.*
+3. G. H. Hardy and J. E. Littlewood, *Some problems of 'Partitio Numerorum'; III: On the expression of a number as a sum of primes*, Acta Math. **44** (1923), 1–70. — *for the conjectured twin-prime count behind the conditional limit $e^{2\gamma}/4$ of §3.2 and §5.1.*
 

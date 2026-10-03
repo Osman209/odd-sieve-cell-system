@@ -9,17 +9,14 @@
 For odd $n \ge 3$ let
 $$W_j  =  \left\lfloor \frac{2(j+1)^2}{n}\right\rfloor - \left\lfloor \frac{2j^2}{n}\right\rfloor , \qquad j = 0,1,\dots,n-1 .$$
 
-We prove that $W_j \in \lbrace 0,1,2,3,4\rbrace$ for every odd $n$ and every $j$ in this range, and that the five values occur with multiplicities determined by the single integer $A = \lfloor (n+7)/8\rfloor$:
-$$\mathrm{card}\lbrace W{=}0\rbrace  =  \mathrm{card}\lbrace W{=}4\rbrace  =  A, \qquad \mathrm{card}\lbrace W{=}2\rbrace  =  2A-1,$$
-$$\mathrm{card}\lbrace W{=}1\rbrace  =  \mathrm{card}\lbrace W{=}3\rbrace  =  \tfrac{n+1}{2} - 2A .$$
+**Main result (Theorem 2).** Every $W_j$ lies in $\lbrace 0,1,2,3,4\rbrace$, and with $A = \lfloor (n+7)/8\rfloor$ the five values occur exactly
+$$\mathrm{card}\lbrace W{=}0\rbrace  =  \mathrm{card}\lbrace W{=}4\rbrace  =  A, \qquad \mathrm{card}\lbrace W{=}2\rbrace  =  2A-1, \qquad \mathrm{card}\lbrace W{=}1\rbrace  =  \mathrm{card}\lbrace W{=}3\rbrace  =  \tfrac{n+1}{2} - 2A .$$
 
-The proof is a tiling argument and the multiplicities are exact, with **no error term**. A probabilistic model of the same count, assuming $2j^2 \bmod n$ equidistributed, returns the main term $n/8$ and stays within $1$ of the true value for every odd $n$, but it does not return that value. The exactness is a property of the tiling rather than of any averaging, and the residues $2j^2 \bmod n$ never enter the argument.
+There is no error term. The proof is a tiling, and the residues $2j^2 \bmod n$ never enter it. A random model of the residues gives the main term $n/8$; it stays within $1$ of the true count but does not equal it.
 
-The same tiling, read geometrically, also **locates** the increments and not only counts them (Theorem 2b). The quantity that is quantised is not the staircase itself but the difference $D_j = j - \lfloor 2j^2/n\rfloor$, which equals $\lceil x(n-2x)/n\rceil$ at $x = j$; the staircase $\lfloor 2j^2/n\rfloor$ is only a non-decreasing step function under the convex parabola $2x^2/n$. On the first half $0 \le j \lt (n-1)/2$ the value $W_j = 0$ occurs exactly at the floors of the ascending level crossings of the concave parabola $x(n-2x)/n$ and $W_j = 2$ exactly at the descending ones, the two families being separated by the peak at $n/4$; the second half follows from the palindrome $W_j + W_{n-1-j} = 4$. A mirror relation then reduces the descending list to the ascending one plus one bit per level.
+The same tiling also says *where* the values $0$ and $2$ fall: at the floors of the rising and falling level crossings of the parabola $x(n-2x)/n$ (Theorem 2b). Symmetric pairs compress to one symbol each, with a census again fixed by one integer (Theorems 3 and 4).
 
-A companion compression is proved for the symmetric pairs (Theorems 3 and 4): a pair collapses to a single element of $\lbrace 0,1,2\rbrace$, and its census is again governed by one integer.
-
-We then prove the corresponding statement about the residues themselves, which the histogram deliberately avoids: the sequence $2j^2 \bmod n$ has exactly $2A$ interior local maxima for every odd $n$ except $n = 3, 5, 7, 9, 49$ (Theorem 5). The argument is uniform for $n \ge 51$, and the twenty-four odd values $3 \le n \le 49$ are settled by direct computation, so the exception list belongs to the statement rather than being an observation about it. The proof combines a palindrome symmetry, a transition count that replaces the two conditions defining a maximum by one, the observation that the relevant *pairs* of intervals tile once separated by parity, and a small arithmetic coincidence: the four numbers $8x \bmod n$ that arise have signed representatives $\pm1, \pm3, \pm5, \pm7$ in some order, so the squares of those representatives always sum to $84$.
+**Second result (Theorem 5).** The sequence $2j^2 \bmod n$ has exactly $2A$ interior local maxima for every odd $n$ except $n = 3, 5, 7, 9, 49$. The proof is uniform for $n \ge 51$; the smaller cases are checked one by one.
 
 Nothing in this paper concerns prime numbers.
 
@@ -141,7 +138,7 @@ Set
 $$D_j  =  j - \left\lfloor \frac{2j^2}{n}\right\rfloor, \qquad\text{so that}\qquad D_{j+1}-D_j  =  1 - W_j .$$
 Because $j$ is an integer, $D_j = \lceil f(j)\rceil$ with
 $$f(x)  =  x - \frac{2x^2}{n}  =  \frac{x(n-2x)}{n},$$
-a concave parabola with its peak at $x = n/4$. So $D$ is the ceiling quantisation of a parabola, $W_j = 0$ means $D$ rises, $W_j = 1$ that it is flat, and $W_j = 2$ that it falls.
+a concave parabola with its peak at $x = n/4$. So $D$ is the ceiling quantisation of a parabola, $W_j = 0$ means $D$ rises, $W_j = 1$ that it is flat, and $W_j = 2$ that it falls. The quantity quantised is $D_j$, not the staircase $\lfloor 2j^2/n\rfloor$ itself: the staircase is only a non-decreasing step function under the convex parabola $2x^2/n$, and it is not convex.
 
 > **Theorem 2b.** Let $H = (n-1)/2$ and $A = \lfloor (n+7)/8\rfloor$ as before, and for $1 \le m \le A$ put
 > $\displaystyle \alpha_m  =  \left\lfloor \frac{n-\sqrt{n^2-8n(m-1)}}{4}\right\rfloor, \qquad \beta_m  =  \left\lceil \frac{n+\sqrt{n^2-8n(m-1)}}{4}\right\rceil - 1 .$
