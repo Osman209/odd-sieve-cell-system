@@ -10,7 +10,7 @@ Paper 3 gives exact laws over a full cycle of length $\prod q$. Applications nee
 
 **Proved.** An old line $q \ge 7$ acts on a new one as a periodic ruler, and in a first-cycle sector it strikes either once or not at all (Theorems 1 and 2). The deficit telescopes to one sum (Theorem 3):
 $$T(U) - M(U) = \sum_{r\le U} B_r(U).$$
-On the full cycle the survivor masks form a martingale with energy $\sum \mathbf{E}(\Delta_r^2) = 1/P_z - 1$ (Theorem 4).
+On the full cycle the survivor masks form a martingale with energy $\sum \mathbf{E}(\Delta_r^2) = 1/P_z - 1$ (Theorem 4). Over a full cycle of sectors the boundary errors of any set of lines sum to $2^{|S|} - \prod_{r\in S}(2 + (2/r))$ (identity B), and the mean deviation of a line carries the Legendre symbol $(2/r)$ (identity A); both are proved in §4.
 
 **Measured.** On every-integer sectors at moving depth, the ratio of twins to the sieve product is
 $$T(U)/M(U) = 0.793733 \quad\text{at } U = 10^5 ,$$
@@ -78,17 +78,17 @@ zero failures among $4{,}983$ instances.
 
 ### 2.3 Theorem 2 (binary decision) and phase collisions
 
-Let $\kappa_j = 2j + \lfloor 2j^2/p\rfloor$ be the last $k$-index at the left square boundary, as in [P1, §1]. For an old ruler $q$, define the distance from the start of the block to its next mark by
+Let $\kappa_j = 2j + \lfloor 2j^2/p\rfloor$ be the last $k$-index at the left square boundary, as in [P2, §0.1]. For an old ruler $q$, define the distance from the start of the block to its next mark by
 $$\delta_q(j)=1+\big((\phi_q(p)-\kappa_j-1)\bmod q\big)\in\lbrace 1,\dots,q\rbrace .$$
 Thus the block contains a mark of $q$ exactly when this next-mark distance does not exceed the block length.
 
 > **Theorem 2.** For every old line $q \ge 7$ and every sector $j$ **in the first cycle** $0 \le j \le p-1$, the number of strikes of $q$ inside the block is $C_q(j) \in \lbrace 0,1\rbrace$; and $C_q(j)=1$ exactly when $\delta_q(j) \le H_j$, in which case the strike falls in slot $s = \delta_q(j)$.
 
-*Proof.* By [P1, Thm 1], $H_j \le 6 \lt  7 \le q$ throughout the first cycle, so a block is shorter than the ruler's period and cannot contain two of its marks. $\blacksquare$
+*Proof.* By [P2, §0.1] and [P1, Thm 1], $H_j = 2 + W_j \le 6 \lt  7 \le q$ throughout the first cycle, so a block is shorter than the ruler's period and cannot contain two of its marks. $\blacksquare$
 
 **Two hypotheses, both necessary.**
 
-- *The first cycle.* Beyond it $H_j = H^{(0)}_j + 4r$, so a block can be longer than the ruler's period and the conclusion fails. Counterexamples at $p = 11$, $q = 7$: the sectors $j = 18, 21, 23, 25, 27, 28, 29, 30$ (with $H_j = 9$ to $13$) each contain **two** marks of $7$ — ten such sectors in the first three cycles. Every use of Theorem 2 below is inside the first cycle.
+- *The first cycle.* Beyond it $H_j = H^{(0)}_j + 4r$, so a block can be longer than the ruler's period and the conclusion fails. Counterexamples at $p = 11$, $q = 7$: the sectors $j = 18, 21, 23, 25, 27, 28, 29, 30, 31, 32$ (with $H_j = 9$ to $14$) each contain **two** marks of $7$ — ten such sectors in the first three cycles. Every use of Theorem 2 below is inside the first cycle.
 - *The ruler $q \ge 7$.* The ruler $q=5$ can meet a block of length $6$ twice. In the moving-depth calculations $L_5$ is included explicitly in the fixed core; all subsequent uses of the binary ruler statement refer to $q\ge7$.
 
 For those rulers the local question changes from counting to presence/absence, and the state of a block is a **word** $W_j$ of length $H_j \le 6$.
@@ -178,24 +178,40 @@ The survivor pattern of the lines up to $z$ has period exactly $\prod q$ and, by
 
 ## 4. Decomposing the deviations
 
-### 4.1 Verified identity A (the mean, and its Legendre symbol)
+### 4.1 Identity A (the mean, and its Legendre symbol)
 
-Split the deviation (3.2) as $\varepsilon_r = \mu_r + \xi_r$ into mean and fluctuation.
+Split the deviation (3.2) as $\varepsilon_r = \mu_r + \xi_r$ into mean and fluctuation, the mean $\mu_r$ being taken over a full period: $\prod_{5\le q\le r} q$ consecutive sectors of the family of §3, all with $u \ge r$.
 
-> **Verified identity A (proof not supplied here).** $\displaystyle \mu_r = -\frac{\chi_r}{r} Q_{r^-}$, where $\chi_r = \left(\frac{2}{r}\right)$ and $Q_r = \prod_{5\le q\le r}\left(1-\frac{2+\chi_q}{q}\right)$.
+> **Identity A.** $\displaystyle \mu_r = -\frac{\chi_r}{r} Q_{r^-}$, where $\chi_r = \left(\frac{2}{r}\right)$ and $Q_r = \prod_{5\le q\le r}\left(1-\frac{2+\chi_q}{q}\right)$.
 
-*Origin of the symbol.* At a square boundary the line $r$ can strike when $u^2 \equiv 0$ or $u^2 \equiv 2 \pmod r$; the number of admissible phases of $u$ is therefore $1 + (1+\chi_r) = 2+\chi_r$, and a CRT count suggests the product structure across a set of lines. The formula below is verified extensively, but the full symbolic CRT derivation is not included in this paper.
+The proof rests on identity B and is given after it, in §4.2.
 
-*Verification.* Over 1,400 sectors with standard errors, the $z$-scores against the prediction are $0.04,  0.01,  -0.44,  0.26,  0.49,  0.33,  -1.03,  0.48,  0.32,  -0.80$ for $r = 5,\dots,101$ — all within one standard error. The two cleanest cases agree to three digits: $r=5$ predicts $0.200000$ and measures $0.200286$; $r=7$ predicts $-0.114286$ and measures $-0.113959$.
+*Origin of the symbol.* At a square boundary the line $r$ can strike when $u^2 \equiv 0$ or $u^2 \equiv 2 \pmod r$; the number of admissible phases of $u$ is therefore $1 + (1+\chi_r) = 2+\chi_r$, and a CRT count suggests the product structure across a set of lines. The proof in §4.2 makes this count exact.
 
-### 4.2 Verified identity B (square-cycle cancellation)
+*Check.* Over 1,400 consecutive sectors (not a whole number of periods) with standard errors, the $z$-scores against the prediction are $0.04,  0.01,  -0.44,  0.26,  0.49,  0.33,  -1.03,  0.48,  0.32,  -0.80$ for $r = 5,\dots,101$ — all within one standard error. The two cleanest cases agree to three digits: $r=5$ predicts $0.200000$ and measures $0.200286$; $r=7$ predicts $-0.114286$ and measures $-0.113959$.
 
-> **Verified identity B (proof not supplied here).** With $\eta_r(n) = D_r^{(0)}(n) - 2C(n)/r$, summed over a full cycle of $r$ sectors,
+### 4.2 Identity B (square-cycle cancellation)
+
+> **Identity B.** With $\eta_r(n) = D_r^{(0)}(n) - 2C(n)/r$, summed over a full cycle of $r$ sectors,
 > $\displaystyle \sum_{\text{cycle}} \eta_r = -\left(\frac{2}{r}\right);$
 > and for any set $S$ of lines, over a cycle of length $M_S = \prod_{r\in S} r$,
 > $\displaystyle \sum_{\text{cycle}} \eta_S = 2^{|S|} - \prod_{r\in S}\left(2 + \left(\frac{2}{r}\right)\right).$
 
-*Verification.* The single-line law holds exactly for $r = 5,7,11,13,17,19,23,29,31,37,41,43,47$. The general law gives $\lbrace 5,7\rbrace \mapsto 1$, $\lbrace 5,11\rbrace \mapsto 3$, $\lbrace 7,17\rbrace \mapsto -5$, $\lbrace 7,11\rbrace \mapsto 1$, $\lbrace 11,13\rbrace \mapsto 3$, $\lbrace 5,13\rbrace \mapsto 3$, $\lbrace 5,7,11\rbrace \mapsto 5$ — every value exact.
+Here $D_S^{(0)}(n)$ counts the cells of the sector with a member divisible by every line of $S$, and $\eta_S(n) = D_S^{(0)}(n) - 2^{|S|}C(n)/M_S$. When $u \ge \max S$ every such multiple lies above the line's square, so this is the raw strike count.
+
+*Proof.* Take a sector $(u^2, v^2)$ with $u, v$ coprime to $6$. Since $u^2 \equiv v^2 \equiv 1 \pmod 6$, its cells are $C_m$ for $L \le m \le R$ with $6L = u^2 + 5$ and $6R = v^2 - 7$, so $C = R - L + 1$. Put $M = M_S$. A cell $C_m$ has a member divisible by every $r \in S$ exactly when $6m \equiv \pm 1 \pmod r$ for each $r$, that is when $(6m)^2 \equiv 1 \pmod M$; this gives $2^{|S|}$ classes $\rho$ of $6m$. Counting the $m \in [L, R]$ in one class gives $C/M + \lambda(u^2 - 1 - \rho) - \lambda(v^2 - 7 - \rho)$, where $\lambda(y) = \big((6^{-1}y) \bmod M\big)/M$. So
+$$\eta_S = \sum_{\rho^2 \equiv 1} \big[\lambda(u^2 - 1 - \rho) - \lambda(v^2 - 7 - \rho)\big].$$
+Over a cycle of $M$ consecutive sectors, $u$ and $v$ each run through all residues modulo $M$. Let $K(t)$ be the number of pairs $(w, \rho)$ modulo $M$ with $\rho^2 \equiv 1$ and $w^2 - \rho \equiv t$. Writing $y = 6s$, so that $\lambda(y) = s/M$ for $0 \le s \lt M$,
+$$\sum_{\text{cycle}} \eta_S = \frac1M \sum_{s=0}^{M-1} s \big[K(6s+1) - K(6(s+1)+1)\big] = \frac1M \sum_{t} K(t) - K(1) = 2^{|S|} - K(1),$$
+by summation by parts, since $6M + 1 \equiv 1$ and $\sum_t K(t) = 2^{|S|}M$. By the Chinese remainder theorem $K(1)$ is a product over $r \in S$, and modulo $r$ the pairs with $w^2 - \rho \equiv 1$ are $\rho = -1, w = 0$ and $\rho = 1, w^2 \equiv 2$: there are $2 + (2/r)$ of them. With one line this is $2 - 2 - (2/r) = -(2/r)$. $\blacksquare$
+
+The proof uses only that $u$ and $v$ each run through all residues modulo $M$. So the cycle sum does not depend on the starting sector, and it holds for the family $u = 6n - 1$ of §3, for the family $u = 6n + 1$, $v = 6n + 5$, and for windows between consecutive integers coprime to $6$, which is their union.
+
+*Proof of identity A.* Let $T$ run over the sets of lines below $r$. By inclusion–exclusion, $D_r = \sum_T (-1)^{|T|} D^{(0)}_{T \cup \lbrace r\rbrace}$ and $N_{r^-} = \sum_T (-1)^{|T|} D^{(0)}_T$, with $D^{(0)}_\varnothing = C$. The main terms cancel and
+$$\varepsilon_r = \sum_T (-1)^{|T|}\Big(\eta_{T \cup \lbrace r\rbrace} - \frac2r \eta_T\Big), \qquad \eta_\varnothing = 0 .$$
+A full period is a whole number of cycles for every $T$, so identity B gives the mean of $\eta_T$ as $\big(2^{|T|} - \Pi_T\big)/M_T$, with $\Pi_T = \prod_{q \in T}(2 + \chi_q)$. Each $T$ then contributes $-(\chi_r/r)(-1)^{|T|}\Pi_T/M_T$, and the sum over $T$ is the expansion of $-(\chi_r/r)Q_{r^-}$. $\blacksquare$
+
+*Checks.* The single-line law holds exactly for $r = 5,7,11,13,17,19,23,29,31,37,41,43,47$. The general law gives $\lbrace 5,7\rbrace \mapsto 1$, $\lbrace 5,11\rbrace \mapsto 3$, $\lbrace 7,17\rbrace \mapsto -5$, $\lbrace 7,11\rbrace \mapsto 1$, $\lbrace 11,13\rbrace \mapsto 3$, $\lbrace 5,13\rbrace \mapsto 3$, $\lbrace 5,7,11\rbrace \mapsto 5$. Identity A holds exactly over full periods for $r = 5, 7, 11, 13$: $1/5$, $-4/35$, $16/385$, $32/1001$. All are regenerated by `code/verify_proved_identities.py`.
 
 **$r$ boundary errors, each of size $O(1)$, collapse to $\pm1$.** Consequently the whole inclusion–exclusion compresses into two products:
 $$E_{\text{cycle}} = M\left[\prod_{r}\left(1-\frac2r\right) - \prod_{r}\left(1-\frac{2+(2/r)}{r}\right)\right].$$
@@ -203,11 +219,11 @@ The second product is a factor the purely periodic model does not contain; it is
 
 ### 4.3 Algebraic consequence of identity A
 
-Assuming identity A, $\sum_r -\mu_r/P_r = 1 - Q_z/P_z$, whence
+By identity A, $\sum_r -\mu_r/P_r = 1 - Q_z/P_z$ (the sum telescopes, since $Q_r/P_r - Q_{r^-}/P_{r^-} = -(\chi_r/r)Q_{r^-}/P_r$), whence
 $$E_{\text{mean}}(U) = \sum_{u\le U}(P_u - Q_u) = O\left(\frac{U}{\log^2 U}\right),$$
 smaller than the main term (3.1) by a full factor of $U$.
 
-*Verification.* At $U = 1000$ the total error is $-2057$ while the mean part contributes $-6.93$; at $U = 2000$, $-6479$ against $-11.24$. **The means account for $0.17$% of the deviation.**
+*Check.* On windows between squares of consecutive integers coprime to $6$ ($u = 5, 7, 11, 13, \dots$), at $U = 1000$ the total error is $-2057$ while the mean part contributes $-6.93$; at $U = 2000$, $-6479$ against $-11.24$ (`code/verify_proved_identities.py`). **The means account for $0.17$% of the deviation.**
 
 ### 4.4 Theorem 4 (martingale structure)
 
@@ -363,9 +379,7 @@ $$\boxed{\begin{array}{c}\text{The transfer fails in the one-point density and h
 
 ## 7. What this paper establishes
 
-**Proved.** Old lines act as rulers with phase $\phi_q(p)\equiv(q-p)/2$ and the binary decision for $q\ge7$ (Theorems 1, 2); the telescoping identity reducing the iterative deviations to a single sum (Theorem 3); and the full-cycle martingale structure with its energy identity (Theorem 4).
-
-**Verified identities whose complete symbolic proofs are not supplied here.** The mean law with its Legendre symbol (identity A), its algebraic telescoping consequence, and the single-line/multi-line square-cycle cancellation (identity B). They agree with every exact enumeration reported in §4, but they are not counted as proved theorems in this version.
+**Proved.** Old lines act as rulers with phase $\phi_q(p)\equiv(q-p)/2$ and the binary decision for $q\ge7$ (Theorems 1, 2); the telescoping identity reducing the iterative deviations to a single sum (Theorem 3); the full-cycle martingale structure with its energy identity (Theorem 4); the square-cycle cancellation for one line and for any set of lines (identity B), the mean law with its Legendre symbol over a full period (identity A), and its telescoping consequence (§4.3).
 
 **Measured, not proved.** The stability of $T/M\approx0.80$ and its agreement with the conditional limit $e^{2\gamma}/4$ (§3.2); the depth profile of §3.2 against its Buchstab model; the values of $Q(U)$ in §5.1; the state-space observation (§3.5); the two $L^2$ rows of §5.3; the transfer curve of §6 (Proposition 1); and the pattern transfer of §6 (Proposition 2). The data do not refute a polylogarithmic $L^2$ bound asymptotically, and the finite-window value $1.0000$ for linear weights is a measurement to the reported precision, not an exact equality theorem.
 
@@ -382,6 +396,7 @@ The applications of that statement, and the problems it does and does not decide
 ---
 
 *The computations and much of the prose in this paper were prepared with AI assistance (ChatGPT, OpenAI; Claude, Anthropic), used for algebraic derivation, for drafting and rewriting code and text, for running the computations, and for auditing the papers against their own scripts. All statements were checked by the author, who is responsible for them; the repository README sets out the division of labour in full.*
+
 ---
 
 ## References

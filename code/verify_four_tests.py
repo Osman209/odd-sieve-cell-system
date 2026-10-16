@@ -7,11 +7,11 @@ Sec. 2.4, the squares-versus-cubes exponent table, the pair-count table of
 Sec. 2.5, Theorems 1 and 2 with the a = p+4t+2 identity, and Theorems 3, 4
 and 7 with the collision table of Sec. 2.14.
 
-UNRESOLVED: the no-repeat claim of Theorem 7.  Under the definition of Sec. 2.11
-(all pairs u < v in S_p with u^2 = v^2 mod N), restricted to the belt, Delta does
-repeat.  The published run counts 267,575 collisions on 1,121 lines below 2x10^4,
-far fewer than this definition gives, so the counted set is narrower.  The script
-reports the numbers instead of asserting the claim.
+Theorem 7 is checked on the set its proof uses: prime lines p = 5 (mod 6) with
+p > 121, and collisions of the belt v <= (N+9)/6.  On that set no value of Delta
+repeats (asserted); the published counts, 267,575 collisions on 1,121 lines below
+2x10^4, are reproduced under --full.  Off the belt, or over all p, Delta does
+repeat, which is why the theorem states the restriction.
 
 NOT regenerated here: the three tables that need a sieve to X = 10^10 (the
 NN window/cycle row of Layer 2, the Layer-3 residual, and the Richert-weight

@@ -102,10 +102,11 @@ print("     P = %g :  a log^2 P = %.6f   (1-d) log P = %.5f   b/a / log P = %.7f
 check("a log^2 P sits on K = 12 C_2 e^{-2gamma} = 2.4972872",
       abs(aa*L*L - 2.4972872) < 0.01, "%.6f" % (aa*L*L))
 if FULL:
-    check("(1-d) log P = 3.37227 at P = 2e8, against the predicted 2C = 3.3687569",
-          abs((1-dd)*L - 3.37227) < 0.0005, "%.5f" % ((1-dd)*L))
-    check("b/a / log P approaches C/K = 0.6744833",
-          abs((P1f-P2f)/P2f/L - 0.6744833) < 0.02, "%.7f" % ((P1f-P2f)/P2f/L))
+    check("(1-d) log P = 3.23809 at P = 2e8, below the predicted 2C = 3.3687569",
+          abs((1-dd)*L - 3.23809) < 0.0005 and (1-dd)*L < 3.3687569, "%.5f" % ((1-dd)*L))
+    check("b/a / log P = 0.62217 at P = 2e8, rising to C/K = 0.6744833 like 1/log P",
+          abs((P1f-P2f)/P2f/L - 0.62217) < 0.0005 and (P1f-P2f)/P2f/L < 0.6744833,
+          "%.7f" % ((P1f-P2f)/P2f/L))
 else:
     ok = 0.6*3.3687569 < (1-dd)*L < 3.3687569 and 0.5 < (P1f-P2f)/P2f/L < 0.6744833
     check("both quantities are below their limits and rising (run --full to assert)",

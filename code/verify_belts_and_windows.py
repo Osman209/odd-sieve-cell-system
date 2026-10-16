@@ -3,7 +3,7 @@
 verify_belts_and_windows.py  --  generator for Paper 8,
 "Belts and Short Windows".
 
-Covers Theorem 1, Verified Law 2 with the collapse table, Proposition 1 with
+Covers Theorem 1, Theorem 2 with the collapse table, Proposition 1 with
 the layer-ceiling pyramid, the depth ladder of Sec. 3.1 with its four tables,
 the shell identity H - D = R_2 of Sec. 3.2 with its table, and the four track
 quadratics with the character conditions of Theorem 3.
@@ -60,8 +60,8 @@ check("G = g(2q+g)/6 - 1 agrees with (r^2-q^2)/6 - 1",
       all(G(q, r) == (r-q)*(2*q + r-q)//6 - 1
           for q, r in zip(list(primerange(5, 2000))[:-1], list(primerange(5, 2000))[1:])))
 
-# ------------------------------------------------------------- Verified Law 2
-print("\n2. Verified Law 2: reach depends on the gap, not on the size")
+# ------------------------------------------------------------- Theorem 2
+print("\n2. Theorem 2: reach depends on the gap, not on the size")
 def reach(q, r):
     g = r - q
     return sum(1 for k in range(1, g + 1) if (q + 2*k) % 3)

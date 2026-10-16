@@ -10,7 +10,7 @@ Two local geographies. The belt between the squares of consecutive primes has an
 
 **Numbering.** This paper is one part of a set that was written as a single document and is now published in parts. Each part numbers its own results from one and is self-contained: a reference of the form [Pn, Thm 1] means Theorem 1 of Paper n, and an unqualified "Theorem 1" always means this paper's own. Result numbers therefore differ from those of the earlier seven-document releases, where the whole set shared the numbering of the single document.
 
-**How to read the claims in this paper.** Statements set as Theorems, Propositions and Corollaries are proved, and the proofs are given. One result in the set is labelled **Verified Law**: it is proved under a stated hypothesis and verified numerically outside it. Anything described as *measured* is a computation over a stated finite range and is labelled as such where it occurs.
+**How to read the claims in this paper.** Statements set as Theorems, Propositions and Corollaries are proved, and the proofs are given. Anything described as *measured* is a computation over a stated finite range and is labelled as such where it occurs.
 
 **Keywords:** twin primes, sieve cycles, short intervals, cell coordinates.
 
@@ -25,7 +25,7 @@ Two local geographies. The belt between the squares of consecutive primes has an
 | Result | What it says | Section |
 |-----------------|------------------------------------------------|---------|
 | **Theorem 1** | The exact size of a belt between the squares of consecutive primes. | §2.1 |
-| **Verified Law 2** | *Conditional on $g^2 \lt 2q$*, and **verified rather than proved**: a new line's reach depends on the gap, not on its size. | §2.2 |
+| **Theorem 2** | The exact number of belt cells a new line strikes; it is $\lfloor 2g/3\rfloor$, independent of the line's size, whenever $g^2 \lt 2q$. | §2.2 |
 | **Proposition 1** | In a belt of length $L$, any line $s$ makes at most $\lceil L/2s \rceil$ strikes — the layer ceiling. | §2.4 |
 
 **§3 — The short window between consecutive squares**
@@ -46,7 +46,7 @@ This part has no appendix of its own. The counting details for the window are in
 
 ## 1. Setting
 
-We use Papers [P1] and [P2]–[P4] as follows. Paper [P9]–[P11] is a companion rather than a source: it is cited where the obstruction it derives explains why a cut is placed where it is, and nothing else is imported from it.
+We use Papers [P1] and [P2]–[P4] as follows. Papers [P9]–[P11] are companions rather than sources: they are cited where the obstruction they derive explains why a cut is placed where it is, and nothing else is imported from them.
 
 - **[P1]** supplies the window combinatorics: the increments $W_j$ of $\lfloor 2j^2/p\rfloor$, their uniform bound and their exact histogram.
 - **[P2]** supplies the coordinates: the line $L_p(k) = p(p+2k)$ beginning at $p^2$, the grid $L_3$, the cells $C_b = (6b-1, 6b+1)$, and the square window with its $+8$ growth.
@@ -71,15 +71,15 @@ Papers 6 and 7 work inside a sector bounded by consecutive odd squares. This sec
 
 *Verification.* $G = 3, 11, 7, 19, 11, 27, 51, 19, 67$ for the nine consecutive belts $5\to7, 7\to11, \dots, 31\to37$, and $247, 67, 667, 4011$ for $89\to97$, $101\to103$, $499\to503$ and $997\to1009$; each reproduces from the formula.
 
-### 2.2 Verified Law 2: the new line's reach depends on the gap, not on its size
+### 2.2 Theorem 2: the new line's reach depends on the gap, not on its size
 
-> **Verified Law 2 (conditional).** Suppose $g^2 \lt  2q$. Then, within its own belt, the number of cells the line $L_q$ can strike at all is
-> $\displaystyle H_q  =  \left\lfloor \frac{2g}{3}\right\rfloor,$
-> **independent of $q$.**
+> **Theorem 2.** Within its own belt $(q^2, r^2)$, the number of cells the line $L_q$ strikes is
+> $\displaystyle H_q = \mathrm{card}\big\lbrace s \equiv \pm1 \pmod 6 : q \lt s \lt (r^2-2)/q \big\rbrace .$
+> If $g^2 \lt 2q$ this is $\displaystyle H_q = \left\lfloor \frac{2g}{3}\right\rfloor$, **independent of $q$**; in every case $\lfloor 2g/3\rfloor \le H_q \le \lfloor 2g/3\rfloor + (g^2-2)/(3q) + 1$.
 
-*Proof under the hypothesis.* If $g^2 \lt  2q$ the line completes no extra lap before the next gate, so it reaches only the cofactors $q+2, q+4, \dots, q+2g$, giving $g$ candidate strikes; one in every three falls on $L_3$ and so touches no cell of the grid, leaving $\lfloor 2g/3 \rfloor$. $\blacksquare$
+*Proof.* A strike of $L_q$ on a cell is a member $qs$ with $s$ odd, and a member of a cell is $\equiv \pm1 \pmod 6$, so $s \equiv \pm1 \pmod 6$; a cell is struck at most once, since its two members are coprime. As $q^2 \equiv r^2 \equiv 1 \pmod 6$, the members inside the belt run from $q^2+4$ to $r^2-6$, and $r^2-2$ belongs to the gate cell $(r^2-2, r^2)$. So the strikes are exactly the $s \equiv \pm 1 \pmod 6$ with $q \lt s$ and $qs \lt r^2-2$. Now $(r^2-2)/q = q + 2g + (g^2-2)/q$. If $g^2 \lt 2q$ the last term is below $2$, so the odd $s$ allowed are exactly $q+2, \dots, q+2g$. Among the $2g$ integers after $q$, the number $\equiv \pm1 \pmod 6$ is $2g/3$ when $3 \mid g$. Otherwise the alignment is forced by the primality of $r = q+g$: $g \equiv 4 \pmod 6$ forces $q \equiv 1 \pmod 6$, and $g \equiv 2 \pmod 6$ forces $q \equiv 5 \pmod 6$; in both cases the count is $\lfloor 2g/3 \rfloor$. Without the hypothesis, the extra values of $s$ lie in an interval of length $(g^2-2)/q - 2$, which holds fewer than $(g^2-2)/(3q) + 1$ of them. $\blacksquare$
 
-**We do not call this a theorem, because the hypothesis is not available.** $g^2 \lt  2q$ is far weaker than Cramér's conjecture $g = O(\log^2 q)$, which would give it at once — but it is **stronger than anything currently proved, and stronger than the Riemann hypothesis supplies**: RH gives only $g \ll \sqrt q \log q$, hence $g^2 \ll q\log^2 q$, which does not suffice. **Verified over $17{,}981$ belts, every consecutive prime pair with $q \lt  200{,}000$: no failure.**
+**Only the independence of $q$ needs the hypothesis**, and the hypothesis is not available. $g^2 \lt  2q$ is far weaker than Cramér's conjecture $g = O(\log^2 q)$, which would give it at once — but it is **stronger than anything currently proved, and stronger than the Riemann hypothesis supplies**: RH gives only $g \ll \sqrt q \log q$, hence $g^2 \ll q\log^2 q$, which does not suffice. Unconditionally the theorem gives $H_q = \lfloor 2g/3\rfloor + O(g^2/q + 1)$. **Checked over the $17{,}982$ belts with $q \lt  200{,}000$: the formula matches the direct count in every belt, and the hypothesis holds in all but one ($q = 7$, where $H_7 = 2$ anyway)** (`code/verify_proved_identities.py`).
 
 **The consequence is worth stating plainly.** The belt has $g(2q+g)/6 - 1 \sim qg/3$ cells and the line born at its left end can touch $\sim 2g/3$ of them. **For a twin gap $g=2$ the line touches exactly one cell, however large $q$ is** — one cell out of $\sim 2q/3$. A line at $q \approx 10^6$ entering a belt of some hundred thousand cells has a single strike available before the next gate opens.
 
@@ -129,9 +129,9 @@ The asymptotic is worth getting right, because it is the point of the section. *
 $$\sum_{\substack{s \le q\cr (s,6)=1}} \frac1s  =  \frac13\log q + O(1), \qquad\text{whence}\qquad \sum_s \tfrac23\cdot\tfrac{L}{2s}  =  \frac{L}{3}\sum_s\frac1s  \sim  \frac{L}{9} \log q .$$
 Against $G \sim L/6$ the ratio is therefore
 $$\frac{\sum_s C_s}{G}  \sim  \frac23\log q$$
-— a **logarithm**, not an iterated logarithm. Checked against the table: $\tfrac23\log(q/4)$ gives $3.22$, $3.68$, $5.22$ at $q = 499,\ 997,\ 10007$ against the measured $3.14$, $3.47$, $5.25$.
+— a **logarithm**, not an iterated logarithm. Checked against the table, with the constant $1/4$ fitted to it: $\tfrac23\log(q/4)$ gives $3.22$, $3.68$, $5.22$ at $q = 499,\ 997,\ 10007$ against the measured $3.14$, $3.47$, $5.25$.
 
-> **So the belt decomposition establishes three of the four things one would want — the belt grows like $qg$, the new line's reach is $O(g)$ and independent of $q$, and no fixed set of old lines can serve arbitrarily long belts — and refutes the fourth. The moving tail of recent lines is not capacity-limited; its ceilings exceed the belt by a factor that grows.** What is left is the forced overlap between the layers, which is $\prod(1-2/q)$ and describes the cycle, not the belt. This is [P9, §2]–[P9, §3] again, reached from the belt side.
+> **So the belt decomposition establishes three of the four things one would want — the belt grows like $qg$, the new line's reach is $\lfloor 2g/3\rfloor + O(g^2/q+1)$, and independent of $q$ whenever $g^2 \lt 2q$, and no fixed set of old lines can serve arbitrarily long belts — and refutes the fourth. The moving tail of recent lines is not capacity-limited; its ceilings exceed the belt by a factor that grows.** What is left is the forced overlap between the layers, which is $\prod(1-2/q)$ and describes the cycle, not the belt. This is [P9, §2]–[P9, §3] again, reached from the belt side.
 
 ---
 
@@ -264,7 +264,7 @@ $$H = S + R_1 + 2R_2, \qquad D = S + R_1 + R_2, \qquad\text{so}\qquad H - D = R_
 A double visit looks like $249065 = 5 \cdot 109 \cdot 457$ in the window at $M = 499$: the core owns it through $5$, and the shell lines $109$ and $457$ each pass over it later without creating anything. A third shell line on the same number is impossible.
 
 **So the composites of the window split without any inclusion–exclusion between the parts:**
-$$\mathcal{C}_{\text{core}} = \lbrace N : P^-(N) \le P_0 \rbrace, \qquad \mathcal{C}_{\text{shell}} = \lbrace N = pq : P_0 \lt p \le M \lt q \rbrace\rvert,$$
+$$\mathcal{C}_{\text{core}} = \lbrace N : P^-(N) \le P_0 \rbrace, \qquad \mathcal{C}_{\text{shell}} = \lbrace N = pq : P_0 \lt p \le M \lt q \rbrace,$$
 the second consisting entirely of semiprimes, the first holding every $N$ with $\Omega \ge 3$ together with the semiprimes whose small factor is in the core.
 
 **The strips of two shell lines almost never meet.** Each shell line inspects the cofactor strip $I_p = (M^2/p,\ (M+2)^2/p)$. For $p \lt r \le M$ these overlap exactly when $rM^2 \lt p(M+2)^2$; writing $r = p+g$ this is $gM^2 \lt 4p(M+1)$.
@@ -287,12 +287,12 @@ which is the ordinary start offset of a segmented sieve; nothing is claimed for 
 $$T_- = \frac{M^2}{2(M+1)}, \qquad T_+ = \frac{(M+2)^2}{2(M+1)}, \qquad T_+ - T_-  =  \frac{4M+4}{2M+2}  =  2 .$$
 Below $T_-$ no two cofactor strips can meet at all; above $T_+$ adjacent odd lines are guaranteed to hand over without a gap. **Since the difference is exactly $2$, the transition holds at most one odd line** — zero failures over odd $M \lt 3000$. At $M = 499$ that line is $251$, with $T_- = 249.001$ and $T_+ = 251.001$.
 
-**Above $T_+$ the handover carries one bit.** Writing $q_{\min}, q_{\max}$ for the first and last cofactor of a line, the difference $q_{\min}(p-2) - q_{\max}(p)$ takes **only the values $0$ and $2$** — zero exceptions over $89{,}698$ adjacent pairs. So the cofactor blocks of the top shell form a single strip on the odd axis with no gaps at all, and the only repetition permitted is one shared value. Below $T_+$ the differences grow without bound, which is what the threshold marks.
+**Above $T_+$ the handover carries one bit.** Writing $q_{\min}, q_{\max}$ for the first and last cofactor of a line, the difference $q_{\min}(p-2) - q_{\max}(p)$ takes **only the values $0$ and $2$** (Proposition 4; zero exceptions over $89{,}698$ adjacent pairs). So the cofactor blocks of the top shell form a single strip on the odd axis with no gaps at all, and the only repetition permitted is one shared value. Below $T_+$ the differences grow without bound, which is what the threshold marks.
 
 > **Proposition 4.** For $T_+ \lt p \le M$ put $X = 2(s+1)^2$ with $s = (M-p)/2$, and let $\varepsilon_p = 1$ when the lines $p$ and $p-2$ share a cofactor and $0$ otherwise. Then
-> $\displaystyle \varepsilon_p = 1 \quad\Longleftrightarrow\quad \left\lfloor \frac{X}{p-2} \right\rfloor + 1 = \left\lceil \frac{X}{p} \right\rceil .$
+> $\displaystyle q_{\min}(p-2) - q_{\max}(p) = 2\Big(\Big\lfloor \frac{X}{p-2} \Big\rfloor + 1 - \Big\lceil \frac{X}{p} \Big\rceil\Big) \in \lbrace 0, 2\rbrace, \qquad \varepsilon_p = 1 \iff \left\lfloor \frac{X}{p-2} \right\rfloor + 1 = \left\lceil \frac{X}{p} \right\rceil .$
 
-*Proof.* The last diagonal a line reaches is $\lceil X/p\rceil$, since $2s^2 + 2M + 2 = X + 2p$; the first diagonal of the next line is $\lfloor X/(p-2)\rfloor + 1$. The two coincide exactly when the blocks share a value. $\blacksquare$
+*Proof.* With $M = p + 2s$ one has $(M+2)^2/p = p + 4(s+1) + 2X/p$. The odd cofactors of $p$ are $p + 4(s+1) + 2j$, and $j \lt X/p$, so $q_{\max}(p) = p + 4(s+1) + 2(\lceil X/p\rceil - 1)$. For the line $p-2$, $M = (p-2) + 2(s+1)$ gives $M^2/(p-2) = p - 2 + 4(s+1) + 2X/(p-2)$, so $q_{\min}(p-2) = p - 2 + 4(s+1) + 2(\lfloor X/(p-2)\rfloor + 1)$. Subtracting gives the formula. The bracket is never negative, since $X/(p-2) \gt X/p$. And $X/(p-2) - X/p = 4(s+1)^2/(p(p-2))$, which is below $1$ exactly when $p(p-2) \gt (M-p+2)^2$, that is when $2p(M+1) \gt (M+2)^2$, that is $p \gt T_+$; then the two numbers differ by less than $1$ and the bracket is $0$ or $1$. The lines share a cofactor exactly when it is $1$. $\blacksquare$
 
 *Verification.* Zero failures over $561{,}748$ adjacent pairs above $T_+$ for odd $M \lt 3000$. The share with $\varepsilon = 1$ settles: $0.807$, $0.771$, $0.777$, $0.776$, $0.773$ at $M = 499$, $999$, $4999$, $9999$, $49999$.
 
@@ -332,7 +332,7 @@ and as $a$ runs they trace four **tracks**. Substituting $q = 6a-1$ makes every 
 
 Each individual condition admits half the primes (measured over primes below $10^5$: $49.7\text{--}50.0$%), but a cell falls to a strike on **either** member, so the union admits three quarters: measured $75.0,\ 74.8,\ 75.0,\ 75.0$% for $T_1,T_2,T_3,T_4$. Requiring eligibility for all four at once cuts this to **exactly a quarter** — the eight discriminants reduce to the five independent characters $(-1),(2),(3),(5),(7)$, giving $32$ sign patterns of which $8$ pass; measured $24.84$% against the naive independent guess $(3/4)^4 = 31.6$%.
 
-**The four tracks are not equivalent.** Each is a pair of quadratics, so its twin density is governed by a Bateman–Horn constant [1] $S = \prod_r (1-\nu_r/r)/(1-1/r)^2$, where $\nu_r$ counts the roots of the pair modulo $r$. The correct baseline is a generic cell $(6c-1,6c+1)$, whose constant is $12C_2 = 7.9219$ — **not** the twin constant $2C_2 = 1.320$, which is for pairs $(n,n+2)$ over all $n$ and counts the even $n$ a cell never has.
+**The four tracks are not equivalent.** Each is a pair of quadratics, so its twin density is predicted by a Bateman–Horn constant [1] $S = \prod_r (1-\nu_r/r)/(1-1/r)^2$, where $\nu_r$ counts the roots of the pair modulo $r$. The correct baseline is a generic cell $(6c-1,6c+1)$, whose constant is $12C_2 = 7.9219$ — **not** the twin constant $2C_2 = 1.320$, which is for pairs $(n,n+2)$ over all $n$ and counts the even $n$ a cell never has.
 
 | track | $\nu_5$ | $\nu_7$ | $\nu_{11}$ | $S$ | $S/12C_2$ |
 |-------|------|------|------|------|------|
@@ -368,7 +368,7 @@ Eligibility asks which primes can own a track at **some** $a$. The sharper quest
 
 **The contrast is the point.** Eligibility for one cell admits three quarters of all primes; for all four at once, a quarter — both infinite. **Simultaneous double duty admits nine primes and no more.** The character condition loses the shared variable $a$; restoring it collapses an infinite set to a finite one, and this is the sharpest local statement in the paper after [P7, Cor 3].
 
-**And, as with every local statement here, it does not bind.** Closing all four cells requires at least two lines — a special prime may serve $T_1$ & $T_3$ and another $T_2$ & $T_4$ — and at most four. Measured over $a = 3000,\dots,10000$: of $7{,}000$ windows, $6{,}512$ have all four closed, using two distinct lines in $973$ cases, three in $4{,}748$ and four in $791$, so one of the nine special primes does double duty in $5{,}721$ of them. Against this, the lines available number $\pi(q) = 428$, $2{,}062$ and $6{,}055$ at $a = 500$, $3000$, $10000$. **Four out of six thousand is free.**
+**And, as with every local statement here, it does not bind.** Closing all four cells requires at least two lines — a special prime may serve $T_1$ & $T_3$ and another $T_2$ & $T_4$ — and at most four. Measured over $a = 3000,\dots,10000$: of $7{,}000$ windows, $6{,}512$ have all four closed, using two distinct lines in $973$ cases, three in $4{,}748$ and four in $791$, so one of the nine special primes does double duty in $5{,}721$ of them. Against this, the lines available (from $5$ to $q$) number $428$, $2{,}062$ and $6{,}055$ at $a = 500$, $3000$, $10000$. **Four out of six thousand is free.**
 
 ---
 
@@ -400,6 +400,7 @@ We state this as a proposition rather than a remark because it is the reason to 
 ---
 
 *The computations and much of the prose in this paper were prepared with AI assistance (ChatGPT, OpenAI; Claude, Anthropic), used for algebraic derivation, for drafting and rewriting code and text, for running the computations, and for auditing the papers against their own scripts. All statements were checked by the author, who is responsible for them; the repository README sets out the division of labour in full.*
+
 ---
 
 ## References

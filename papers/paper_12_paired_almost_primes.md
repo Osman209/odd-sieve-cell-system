@@ -16,7 +16,7 @@ and that every interval $(X, X + X^{0.499}]$ with $X$ large contains $\gg X^{0.4
 
 **This part uses no object from the cell system.** No line, sector, cell state or owner appears below. It is placed in the set because it concerns the same window.
 
-**How to read the claims.** Theorems, Propositions and Lemmas are proved here. Anything called *measured* is a computation and is labelled where it occurs. The Diamond–Halberstam–Richert theorems and the values of their transition constants are external inputs, taken from [7] and [5] and not reproved.
+**How to read the claims.** Theorems, Propositions and Lemmas are proved here. Anything called *measured* is a computation and is labelled where it occurs. The Diamond–Halberstam–Richert theorems [3] and the values of their transition constants are external inputs, used in the form given in [7] and [5] and not reproved.
 
 **Keywords:** almost primes, square windows, short intervals, dimension-two sieve, Richert weights, overlap weight, interval arithmetic.
 
@@ -173,7 +173,7 @@ All four parameter sets used satisfy the conditions of §3 and §4:
 
 - Theorem 1, $w = 18.48$, $u = 2.7253$: $1/u = 0.36693 \lt 0.499$, $\theta - 1/u \ge 0.13207 \gt 1/w = 0.05411$, $\theta w \ge 9.2215 \gt \beta_2$.
 - Theorem 2, $w = 18.75$, $u = 2.38$: $1/u = 0.42017 \lt 0.499$, $\theta - 1/u \ge 0.07883 \gt 1/w = 0.05333$, $\theta w \ge 9.356 \gt \beta_2$.
-- Theorem 3, $(w, u) = (23.43, 3.376)$ at $\theta = 0.38$ and $(10.028, 2.257)$ at $\theta = 0.78$: $1/u = 0.29621$ and $0.44306$, $\theta - 1/u = 0.08379$ and $0.33694$ against $1/w = 0.04268$ and $0.09972$, and $\theta w = 8.9034$ and $7.8218$.
+- Theorem 3, $(w, u) = (23.43, 3.376)$ at $\theta = 0.38$ and $(10.028, 2.257)$ at $\theta = 0.78$: $1/u = 0.29621$ and $0.44307$, $\theta - 1/u = 0.08379$ and $0.33693$ against $1/w = 0.04268$ and $0.09972$, and $\theta w = 8.9034$ and $7.8218$.
 
 *Proof of Theorems 1 to 3.* Take the weight of §5 for Theorem 1, Richert's weight with $\eta = 8 - 2u$ for Theorem 2, and with $\eta = r + 1 - u$ for Theorem 3. By (4.1) or (5.2) and Propositions 1 to 3, the weighted sum over sifted cells is at least $c HV(z)$ for some $c \gt 0$ and all large $X$; the remainders are $o(HV(z))$ by (3.2). Every weight is at most $\eta$ (Lemma 3 for the overlap weight; $B \ge 0$ otherwise), so deleting the cells of (4.2) costs at most $\eta E = o(HV(z))$, and the sum stays positive. A remaining cell with positive weight satisfies the factor bound: by Lemma 3 and Lemma 2 for Theorem 1, and by the two consequences of Lemma 2 for Theorems 2 and 3. The number of such cells is at least the weighted sum divided by $\eta$, which is of order $HV(z)$, that is $X^\theta(\log X)^{-2}$, or $m(\log m)^{-2}$ in the square window ($\theta = 1/2$). For larger $\theta$ the same parameters work: raising $\theta$ raises every $f_2$ value and lowers every $F_2$ value in (4.1) and (5.2). $\blacksquare$
 

@@ -10,7 +10,7 @@ The same window read in two further units. In the clock unit each line carries a
 
 **Numbering.** This paper is one part of a set that was written as a single document and is now published in parts. Each part numbers its own results from one and is self-contained: a reference of the form [Pn, Thm 1] means Theorem 1 of Paper n, and an unqualified "Theorem 1" always means this paper's own. Result numbers therefore differ from those of the earlier seven-document releases, where the whole set shared the numbering of the single document.
 
-**How to read the claims in this paper.** Statements set as Theorems, Propositions and Corollaries are proved, and the proofs are given. One result in the set is labelled **Verified Law**: it is proved under a stated hypothesis and verified numerically outside it. Anything described as *measured* is a computation over a stated finite range and is labelled as such where it occurs.
+**How to read the claims in this paper.** Statements set as Theorems, Propositions and Corollaries are proved, and the proofs are given. Anything described as *measured* is a computation over a stated finite range and is labelled as such where it occurs.
 
 **Keywords:** twin primes, sieve cycles, inheritance, cell coordinates.
 
@@ -50,7 +50,7 @@ The same window read in two further units. In the clock unit each line carries a
 
 ## 1. Setting
 
-We use Papers [P1] and [P2]–[P4] as follows. Paper [P9]–[P11] is a companion rather than a source: it is cited where the obstruction it derives explains why a cut is placed where it is, and nothing else is imported from it.
+We use Papers [P1] and [P2]–[P4] as follows. Papers [P9]–[P11] are companions rather than sources: they are cited where the obstruction they derive explains why a cut is placed where it is, and nothing else is imported from them.
 
 - **[P1]** supplies the window combinatorics: the increments $W_j$ of $\lfloor 2j^2/p\rfloor$, their uniform bound and their exact histogram.
 - **[P2]** supplies the coordinates: the line $L_p(k) = p(p+2k)$ beginning at $p^2$, the grid $L_3$, the cells $C_b = (6b-1, 6b+1)$, and the square window with its $+8$ growth.
@@ -127,7 +127,7 @@ Writing $\mathsf O$ for original and $\mathsf I$ for inherited, the row crosses 
 
 **Second, the shadow lies on a curve already in the series.** The tested cell is
 $$p (p+2)  =  (p+1)^2 - 1,$$
-so every twin test sits one unit below an even square: $35 = 36-1$, $143 = 144-1$, $323 = 324-1$, $899 = 900-1$. **That is [P2, Thm 5] read along the row instead of across the window** — the cell $(n^2-1,\ n^2+1)$ with $n = p+1$, whose lower member $(n-1)(n+1)$ is composite by construction. The two statements are the same fact.
+so every twin test sits one unit below an even square: $35 = 36-1$, $143 = 144-1$, $323 = 324-1$, $899 = 900-1$. **For $p \equiv 5 \pmod 6$, which every twin $p \gt 3$ satisfies, that is [P2, Thm 5] read along the row instead of across the window** — the cell $(n^2-1,\ n^2+1)$ with $n = p+1$, whose lower member $(n-1)(n+1)$ is composite by construction. The two statements are the same fact.
 
 **And the reformulation is exact, which is precisely why it is not progress.** Writing $\sigma(p)$ for the smallest line **below $p$** owning $p(p+2)$ — the line $L_p$ itself always owns it, since $p(p+2) \gt  p^2$ — one has $\sigma(p) = \mathrm{spf}(p+2) \le \sqrt{p+2}$ when $p+2$ is composite, and $\sigma(p) = \infty$ exactly when $(p,p+2)$ is a twin. Proving $\sigma(p) = \infty$ infinitely often is proving the twin conjecture, in the same words. What the row picture adds is a suggestion — that if twins were finite, every new diagonal point would need its shadow claimed by some line below $\sqrt p$ — and the suggestion does not survive measurement: over $6{,}835$ composite cases with $p \lt  200{,}000$ the claimant is at most $13$ in $63.6$% of them and at most $100$ in $89.9$%, the counts being $5$: $2248$, $7$: $1125$, $11$: $557$, $13$: $415$, $17$: $303$. **The $\sqrt p$ bound is nowhere near tight; the shadows are claimed by the smallest lines, not by a delicate conspiracy of many.**
 
@@ -154,7 +154,7 @@ So the first $A(M)$ cells of the later sector repeat the earlier sector's patter
 **What it says.** A *fixed* set of old lines never catches up with the window. Each time its cycle returns to the same phase, the sector has grown, and a known positive number $12S$ of fresh open cells appears. Only lines born after the set was fixed can close them.
 
 
-**A window whose lines are synchronised with it.** Theorem 4 moves along the cycle. The opposite situation — a window whose length is a whole number of periods of the lines acting on it — also occurs, and there the counts are identities rather than estimates. Fix $p \equiv 5 \pmod 6$, put $C = (p+1)^2$ and index the interval $(p^2,(p+2)^2)$ by the cells $X_d = (C+6d-1,\ C+6d+1)$ for $-(2m-1) \le d \le 2m-1$ where $p+1 = 6m$, so the interval holds $N = 4m-1$ cells. A line $r \ge 5$ completes a whole number of its cycles inside the strip if and only if $r \mid 4m$, and since $r$ is odd and larger than $3$ this is $r \mid p+1$.
+**A window whose lines are synchronised with it.** Theorem 4 moves along the cycle. The opposite situation — a window whose length is a whole number of periods of the lines acting on it — also occurs, and there the counts are identities rather than estimates. Fix $p \equiv 5 \pmod 6$, put $C = (p+1)^2$ and index the interval $(p^2,(p+2)^2)$ by the cells $X_d = (C+6d-1,\ C+6d+1)$ for $-(2m-1) \le d \le 2m-1$ where $p+1 = 6m$, so the interval holds $N = 4m-1$ cells. A line $r \ge 5$ completes a whole number of its cycles on the strip extended by one cell to $4m$ cells if and only if $r \mid 4m$, and since $r$ is odd and larger than $3$ this is $r \mid p+1$.
 
 > **Proposition 1.** Let $S$ be the set of primes $r \ge 5$ dividing $p+1$, put $P = \prod_{r \in S} r$, $A = \prod (r-1)$, $B = \prod (r-2)$, and suppose $m = aP$. Write $N_{\varnothing}$, $N_L$, $N_R$, $N_{LR}$ for the number of cells of the strip untouched by $S$, struck on the left member only, on the right member only, and on both. Then, exactly,
 > $\displaystyle N_{\varnothing} = 4aB - 1, \qquad N_{L} = N_{R} = 4a(A-B), \qquad N_{LR} = 4a(P - 2A + B).$
@@ -185,9 +185,9 @@ which we call a **family**. A new line $q$ closes a cell $c$ when $c \equiv \pm 
 
 *Proof.* Add the two members in each of the three ways: $L_d + L_{-d} = 2(C-1) = 2p(p+2)$, $L_d + R_{-d} = 2C$, and $R_d + R_{-d} = 2(C+1)$. If $q$ divides both members of a pair it divides their sum, and $q$ is odd. $\blacksquare$
 
-*What the three channels are worth.* The first is empty exactly when $p$ and $p+2$ are both prime, since then $p(p+2)$ has no factor below $p$ — this is the one place in this subsection where the twin hypothesis does any work. The second is the set $S$ itself. The third is not empty in general: the number of **mirror pairs** closed on both sides by a single line is $5, 12, 0, 0, 375, 657, 4$ at $p = 101, 137, 2309, 3299, 5741, 10007, 17789$, the zeros being the accident that $(p+1)^2+1$ is prime there. (It is not a count of lines: at most six primes below $p$ divide one of the three quantities, and Proposition 2 bounds the lines, not the pairs.)
+*What the three channels are worth.* The first is empty exactly when $p$ and $p+2$ are both prime, since then $p(p+2)$ has no factor below $p$ — this is the one place in this subsection where the twin hypothesis does any work. The second is the set $S$ itself. The third is not empty in general: the number of **mirror pairs** closed on both sides by a single line through this third channel is $5, 12, 0, 0, 375, 657, 4$ at $p = 101, 137, 2309, 3299, 5741, 10007, 17789$, the zeros being the accident that $(p+1)^2+1$ is prime there. (It is a count of pairs, not of lines: Proposition 2 bounds the lines, not the pairs.)
 
-*And the reflection settles nothing about twins, which is the point of recording it.* Measured over the first six of those $p$: the two halves carry exactly equal cell counts and exactly equal survivor counts, every time, while the twin counts differ by $-1, -2, -1, -8, +2, +10$. The symmetry transports the structure perfectly and constrains the one quantity one wants not at all — a symmetry gives structure on a set when it is non-empty, and never gives non-emptiness.
+*And the reflection settles nothing about twins, which is the point of recording it.* Measured over the first six of those $p$: the two halves carry exactly equal cell counts and exactly equal counts of cells surviving the synchronised lines $S$, every time, while the twin counts differ by $-1, -2, -1, -8, +2, +10$. The symmetry transports the structure perfectly and constrains the one quantity one wants not at all — a symmetry gives structure on a set when it is non-empty, and never gives non-emptiness.
 
 ### 3.3 Corollary 3: the exceptional lines are finite in number
 
@@ -218,7 +218,7 @@ Take survivors as vertices and join $x$ to $x+6$. Let $T$, $U$, $Q$ count the ed
 > **Theorem A1.** The minimum number of deletions required to destroy every distance-$6$ edge is
 > $\displaystyle \tau = T - U + Q.$
 
-*Proof.* By [P5, Thm 3] of [P5, §2.3] every component is a path on at most $4$ vertices. For a path on $v$ vertices the minimum vertex cover has size $\lfloor v/2 \rfloor$, so the cover of a path on $k$ vertices is $\lfloor k/2 \rfloor$. Summing $(k-1)-(k-2)+(k-3)$ over components reproduces $\lfloor k/2\rfloor$ for $k = 2,3,4$ — and **only** for those, since $k=5$ would give $3$ against the true value $2$. The cap of [P5, Thm 3] is thus exactly what makes the identity hold. $\blacksquare$
+*Proof.* By [P5, Thm 3] every component is a path on at most $4$ vertices. For a path on $v$ vertices the minimum vertex cover has size $\lfloor v/2 \rfloor$, so the cover of a path on $k$ vertices is $\lfloor k/2 \rfloor$. Summing $(k-1)-(k-2)+(k-3)$ over components reproduces $\lfloor k/2\rfloor$ for $k = 2,3,4$ — and **only** for those, since $k=5$ would give $3$ against the true value $2$. The cap of [P5, Thm 3] is thus exactly what makes the identity hold. $\blacksquare$
 
 *Verification* by direct component decomposition:
 
@@ -232,7 +232,7 @@ Take survivors as vertices and join $x$ to $x+6$. Let $T$, $U$, $Q$ count the ed
 
 ### A.2 Propagation laws
 
-Let $G = T - D$ count genuine gap-$6$ pairs, $D$ those with a survivor between. *(The twins sit in $D$: the surviving middle differs by $2$ from one of the two endpoints. So $G$ — the object [P11, App. B] targets — is exactly the twin-free part, which is the content of the caution above. Incidentally, measured on all four cycles below, $U = D$ exactly; we do not use this.)*
+Let $G = T - D$ count genuine gap-$6$ pairs, $D$ those with a survivor between. *(The twins sit in $D$: the surviving middle differs by $2$ from one of the two endpoints. So $G$ — the object [P11, App. B] targets — is exactly the twin-free part, which is the content of the caution above. Incidentally $U = D = 2\prod(r-3)$ on the full cycle, for a reason worth one line: a $3$-term run $\lbrace x, x+6, x+12\rbrace$ and a $D$-configuration — the pair $\lbrace x, x+6\rbrace$ with its one middle candidate coprime to $3$ — are both three-point patterns with distinct residues modulo every line $r \ge 5$, so each survives in exactly $r-3$ of the $r$ copies, and both start from $2$ per period $6$. This matches the $D$ column below; we do not use it.)*
 
 > **Theorem A2.** On the full cycle, the entry of a new line $r$ gives
 > $\displaystyle T' = (r-2)T, \qquad D' = (r-3)D, \qquad G' = (r-2)G + D.$
@@ -284,6 +284,7 @@ so $243$ is the point at which the constraint $q \gt  P/3$ becomes the binding o
 ---
 
 *The computations and much of the prose in this paper were prepared with AI assistance (ChatGPT, OpenAI; Claude, Anthropic), used for algebraic derivation, for drafting and rewriting code and text, for running the computations, and for auditing the papers against their own scripts. All statements were checked by the author, who is responsible for them; the repository README sets out the division of labour in full.*
+
 ---
 
 ## References

@@ -57,7 +57,7 @@ which is positive and, for $j \le n-1$, strictly less than $4$. A difference of 
 
 The restriction $j \le n-1$ is real: for $j$ in the range $[rn, (r+1)n)$ the same computation gives $W_j \in \lbrace 4r, \dots, 4r+4\rbrace$, so the bound moves up in steps of four. Everything below concerns $0 \le j \le n-1$, which we call the **first cycle**.
 
-Two further symmetries, both immediate from (1.1), will be used:
+Two further symmetries will be used. Both are immediate from $\lfloor 2(n-x)^2/n\rfloor = \lfloor 2x^2/n\rfloor + 2n - 4x$, which gives $W_{n-1-j} = 4 - W_j$:
 $$W_j + W_{n-1-j} = 4, \qquad W_{(n-1)/2} = 2. \qquad\text{(2.1)}$$
 
 ---
@@ -124,9 +124,9 @@ $$N_0 = L_0 - C_0, \qquad N_i = L_i - C_i + C_{i-1} \ \ (1 \le i \lt 2k), \qquad
 
 These three follow in one step, and we record the step rather than leave the identity as a measurement. On $J_q$ the real increment $k(2j+1)/n$ lies in $[q,q+1)$, so $W_j \in \lbrace q, q+1\rbrace$ there, and $C_q = \sum_{j \in J_q}(W_j-q)$ counts exactly the $j \in J_q$ at which the larger value is taken. An index with $W_j = i$ therefore lies either in $J_i$ and is not a carry, or in $J_{i-1}$ and is one, which gives the middle formula; the two ends are the cases where only one of the two alternatives exists.
 
-*Verification.* Zero mismatches over $17{,}991$ pairs $(k,n)$ with $k$ up to $400$ and odd $n \lt 4000$, and over $3{,}992$ pairs with **even** $n$, which Theorem 2 excludes. For $k = 2$ it reproduces the four multiplicities of Theorem 2 exactly.
+*Verification.* Zero mismatches over $17{,}991$ pairs $(k,n)$ with $2 \le k \le 10$ and odd $n \lt 4000$, over $k = 50, 100, 200, 400$ with odd $n \le 401$, and over $3{,}987$ pairs with **even** $n$ ($2 \le k \le 10$, $n \le 888$), which Theorem 2 excludes. For $k = 2$ it reproduces the four multiplicities of Theorem 2 exactly.
 
-**So the absence of an error term is a carry-count phenomenon rather than an equidistribution one**, which is the same reading as the tiling above, stated in a form that survives the generalisation in $k$. *We have not found this recorded anywhere; the question asking for a reference is still open, and we state the identity as verified over the range above rather than as a known result.* The framing is due to a MathOverflow answer [4]; the verification and the extension to even $n$ are ours.
+**So the absence of an error term is a carry-count phenomenon rather than an equidistribution one**, which is the same reading as the tiling above, stated in a form that survives the generalisation in $k$. *We have not found this recorded anywhere; the question asking for a reference is still open, and we give the identity with its one-step proof above rather than as a known result.* The framing is due to a MathOverflow answer [4]; the verification and the extension to even $n$ are ours.
 
 ---
 
@@ -152,13 +152,13 @@ a concave parabola with its peak at $x = n/4$. So $D$ is the ceiling quantisatio
 $$x_m^{\pm}  =  \frac{n \pm \sqrt{n^2-8n(m-1)}}{4},$$
 whence the stated floor and ceiling. The peak value of $f$ on the integers is $(n^2-1)/(8n)$, since $n$ is odd and the nearest integer to $n/4$ is at distance $1/4$; its ceiling is $A$. $\blacksquare$
 
-*Verification.* Zero mismatches for $1{,}429$ odd $n$ up to $20{,}001$, and the count $\lvert\lbrace \alpha_m\rbrace\rvert = A$ recovers $N_0 = A$ of Theorem 2 for every odd $n \le 20{,}001$. The separation at the peak has zero violations for odd $n \lt 4{,}000$.
+*Verification.* Zero mismatches for all $10{,}000$ odd $n$ up to $20{,}001$, and the count $\lvert\lbrace \alpha_m\rbrace\rvert = A$ recovers $N_0 = A$ of Theorem 2 for every odd $n \le 20{,}001$. The separation at the peak has zero violations for odd $n \lt 4{,}000$.
 
 **A mirror that halves the data.** The two roots satisfy $x_m^- + x_m^+ = n/2 = H + \tfrac12$, and after the floor and the ceiling this becomes
 $$\beta_m  =  H - \alpha_m - \varepsilon_m, \qquad\text{where}\qquad \varepsilon_m = \begin{cases} 0, & \lbrace x_m^-\rbrace \lt \tfrac12,\cr 1, & \lbrace x_m^-\rbrace \ge \tfrac12,\end{cases}$$
-which is immediate: writing $x_m^- = \alpha_m + t$ with $0 \le t \lt 1$, the root sum gives $x_m^+ = H + \tfrac12 - \alpha_m - t$, so $\beta_m = \lceil x_m^+\rceil - 1 = H - \alpha_m + \lceil \tfrac12 - t\rceil - 1$, and $\lceil \tfrac12 - t\rceil$ is $1$ for $t \lt \tfrac12$ and $0$ otherwise. Verified in that form with zero mismatches over $20{,}508$ pairs $(n,m)$ with $n \lt 1{,}500$. So the descending half needs no separate list: the ascending positions $\alpha_m$ and one bit per level determine everything, and the palindrome $W_j + W_{n-1-j} = 4$ of (2.1) then determines the whole word.
+which is immediate: writing $x_m^- = \alpha_m + t$ with $0 \le t \lt 1$, the root sum gives $x_m^+ = H + \tfrac12 - \alpha_m - t$, so $\beta_m = \lceil x_m^+\rceil - 1 = H - \alpha_m + \lceil \tfrac12 - t\rceil - 1$, and $\lceil \tfrac12 - t\rceil$ is $1$ for $t \lt \tfrac12$ and $0$ otherwise. Verified in that form with zero mismatches over $70{,}687$ pairs $(n,m)$ with $n \lt 1{,}500$. So the descending half needs no separate list: the ascending positions $\alpha_m$ and one bit per level determine everything, and the palindrome $W_j + W_{n-1-j} = 4$ of (2.1) then determines the whole word.
 
-**What this does not give.** The crossing set $\mathcal A_n = \lbrace \alpha_m \rbrace$ is a compression of the word, not an arithmetic invariant of it, and nothing in Theorem 2b relates $\mathcal A_n \bmod q$ to $n$ at a fixed $q$. A measurement in that direction, over odd $n \in (10^3, 2\cdot10^4)$: the $\chi^2$ statistics of $\mathcal A_n \bmod q$ are $10.5, 14.5, 24.3, 48.7, 51.5, 68.6$ at $q = 7, 11, 13, 17, 19, 23$, against $9.1, 20.3, 28.7, 50.3, 56.0, 80.8$ for a control that keeps the crossing density and removes the arithmetic, the true value lying below the control in five cases of six. We read this as no sign of extra structure in $\mathcal A_n \bmod q$, and as identifying no cause: six values of $q$, with no replication count and no dispersion recorded for the control, support nothing stronger, and the control would have to be stated in full — its randomisation named, so that it can be rerun — before a cause could be argued either way. It is recorded because the closed form invites the opposite guess.
+**What this does not give.** The crossing set $\mathcal A_n = \lbrace \alpha_m \rbrace$ is a compression of the word, not an arithmetic invariant of it, and nothing in Theorem 2b relates $\mathcal A_n \bmod q$ to $n$ at a fixed $q$. A $\chi^2$ comparison of $\mathcal A_n \bmod q$ at $q = 7, \dots, 23$, over odd $n \in (10^3, 2\cdot10^4)$, against a control that keeps the crossing density, showed no sign of extra structure. The control was not recorded in a form that can be rerun and no generator was kept, so the comparison supports nothing; it is mentioned only because the closed form invites the opposite guess.
 
 ---
 
@@ -194,7 +194,9 @@ and subtracting gives $P_2-P_0 = 1$. $\blacksquare$
 | 101 | 12 | 25 | 13 |
 | 499 | 62 | 124 | 63 |
 
-As in Theorem 2, the whole census is governed by one integer.
+**The whole census, from Theorem 2.** The partner of the upper index $(n+R)/2$ is $i = (n-2-R)/2$, so $W_i = 2 - d_n(R)$ by (2.1). Hence $d_n(R) = 2$ exactly when $W_i = 0$, and $d_n(R) = 0$ exactly when $W_i = 2$ with $i \lt (n-1)/2$. Below the middle the real increment $2(2j+1)/n$ is less than $2$, so $W_j \le 2$ there and, by (2.1), the value $0$ never occurs above the middle: all $A$ zeros of Theorem 2 are lower indices. The value $2$ occurs $2A-1$ times, once at the middle and otherwise in mirror pairs. So
+$$P_2 = A, \qquad P_0 = A - 1, \qquad P_1 = \tfrac{n+1}{2} - 2A,$$
+which contains Theorem 4 and fixes each count, not only their difference; the rows of the table are these values. As in Theorem 2, the whole census is governed by one integer.
 
 ---
 
@@ -321,7 +323,7 @@ so the fourth interval $[\ell_2,\beta_2)$ is empty here and six of the seven car
 
 Two details were found by failure rather than by design and are recorded so that a reader reconstructing the argument does not lose time on them.
 
-**The constant $2$ in the increment.** In the application from which this paper was extracted, the increment appears as $H_j = 2+W_j$ — the two extra strikes are the two full line-steps in the square gap $4p+8j+4$, and the identity is proved in [P2, §0.1]. Dropping the additive constant breaks the formula in $57$ of $78$ tested cases. It is an artefact of that application, not of the staircase, but it is easy to mislay.
+**The constant $2$ in the increment.** In the application from which this paper was extracted, the increment appears as $H_j = 2+W_j$ — the two extra strikes are the two full line-steps in the square gap $4p+8j+4$, and the identity is proved in [P2, §0.1]. Dropping the additive constant breaks the formula in $57$ of $78$ tested cases (a count from an early run; no generator was kept). It is an artefact of that application, not of the staircase, but it is easy to mislay.
 
 **The seventh interval.** A first version of (5.1) used six intervals and failed for essentially every $n$. The omission is the single point $j = H$, where $4H+2 = 2n$ forces $q_H = 2$ rather than $1$; with it restored the identity holds with zero failures on the whole tested range.
 
@@ -330,6 +332,7 @@ Two details were found by failure rather than by design and are recorded so that
 ---
 
 *The computations and much of the prose in this paper were prepared with AI assistance (ChatGPT, OpenAI; Claude, Anthropic), used for algebraic derivation, for drafting and rewriting code and text, for running the computations, and for auditing the papers against their own scripts. All statements were checked by the author, who is responsible for them; the repository README sets out the division of labour in full.*
+
 ---
 
 ## References

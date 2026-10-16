@@ -16,7 +16,7 @@ A census of all $166{,}666{,}665$ sectors below $10^{9}$ finds no violation of a
 
 **Numbering.** This paper is one part of a set that was written as a single document and is now published in parts. Each part numbers its own results from one and is self-contained: a reference of the form [Pn, Thm 1] means Theorem 1 of Paper n, and an unqualified "Theorem 1" always means this paper's own. Result numbers therefore differ from those of the earlier seven-document releases, where the whole set shared the numbering of the single document.
 
-**How to read the claims in this paper.** Statements set as Theorems, Propositions and Corollaries are proved, and the proofs are given. One result in the set is labelled **Verified Law**: it is proved under a stated hypothesis and verified numerically outside it. Anything described as *measured* is a computation over a stated finite range and is labelled as such where it occurs.
+**How to read the claims in this paper.** Statements set as Theorems, Propositions and Corollaries are proved, and the proofs are given. Anything described as *measured* is a computation over a stated finite range and is labelled as such where it occurs.
 
 **Keywords:** twin primes, exception positions, sieve cycles, cell coordinates, singular series.
 
@@ -53,7 +53,7 @@ A census of all $166{,}666{,}665$ sectors below $10^{9}$ finds no violation of a
 
 ## 1. Setting
 
-We use Papers [P1] and [P2]–[P4] as follows. Paper [P9]–[P11] is a companion, not a source: it is cited where its obstruction explains why a cut is placed where it is, and nothing else is taken from it.
+We use Papers [P1] and [P2]–[P4] as follows. Papers [P9]–[P11] are companions, not sources: they are cited where their obstruction explains why a cut is placed where it is, and nothing else is taken from them.
 
 - **[P1]** supplies the window combinatorics: the increments $W_{j}$ of $\lfloor 2j^2/p\rfloor$, their uniform bound and their exact histogram.
 - **[P2]** supplies the coordinates: the line $L_p(k) = p(p+2k)$ beginning at $p^2$, the grid $L_{3}$, the cells $C_b = (6b-1, 6b+1)$, and the square window with its +8 growth.
@@ -77,7 +77,7 @@ $$\boxed{ \text{a surviving } NN \text{ cell in } (u^2,v^2)  =  \text{a twin pri
 $$C_M  =  T_M + X_M, \qquad 0 \le X_M \le 6, \qquad\text{(2.2)}$$
 with $X_{M}$ the number of open cells that are not twin pairs, all at the six named positions. **The sector's geometry can move the survivor count away from the twin count only through those six places, and by at most six.** An instance from the table below: at $M = 10{,}005$ the sector holds 504 open cells and 503 twin pairs. The extra one is the cell $(100{,}180{,}079,\ 100{,}180{,}081)$, whose upper member is $(M+4)^2 = 10{,}009^2$ — position *C*. *Measured over the 49,999 sectors with $M \lt 3\cdot10^5$: $X_M = 0$ in 45,439 of them, 1 in 4,369, 2 in 186 and 3 in five, and never more — so the bound of six is not attained on that range.*
 
-Since the discrepancy is bounded by an explicit constant, $C_{M}$ must still track the Hardy–Littlewood prediction for a window of $\lvert W\rvert = 12M+36$ integers at height $M^2$. The comparison below is thus a diagnostic on the twin count itself, up to that *O*(1). Write
+Since the discrepancy is bounded by an explicit constant, $C_{M}$ is the twin count up to six, so it should track the Hardy–Littlewood prediction (a conjecture) for a window of $\lvert W\rvert = 12M+36$ integers at height $M^2$. The comparison below is thus a diagnostic on the twin count itself, up to that *O*(1). Write
 $$\mathrm{HL}  =  \frac{2C_2\ \lvert W\rvert}{\log^2(M^2)}, \qquad \mathrm{SP}  =  \lvert W_{\text{cells}}\rvert \prod_{5\le p\le M}\Big(1-\frac2p\Big)$$
 for that prediction and for the raw sieve product over the cells. Then:
 
@@ -147,7 +147,7 @@ At *M* = 999 both $1001 = 7\cdot11\cdot13$ and $1003 = 17\cdot59$ are composite,
 
 *Two remarks on the sharpness of this count.* $E_{M}$ is a set of candidate **positions**; fewer cells are actually open without being twins. Position *B* carries (*M*+2)(*M*+4) and so needs **both** *M*+2 and *M*+4 prime. When *M*+4 is composite its least prime factor is at most $\sqrt{M+4} \lt M$, so an older line has already closed that cell and it cannot be an exception. Hence the row "*M*+2 prime, *M*+4 composite" admits at most **three** actual exceptions, not four. And the caps are not reached on any tested range: over every $M \equiv 3 \pmod 6$ below 4000, the largest number of open non-twin cells in a sector is 0, 2, 2 and 3 in the four rows. What Theorem 1 asserts, and all that is used below, is the inclusion $S_M \setminus E_M \subseteq \lbrace \text{twins}\rbrace$.
 
-**Why six: the positions are the steps of the newborn lines.** A line $L_{p}$ is dormant from its first contact with $L_{3}$ at 3*p* until its birth at $p^2$. That stretch is *p*(*p*-3), i.e. $(p-3)/2$ steps of 2*p*, each owned by a smaller line. After birth it walks on in steps of 2*p*. Because $p^2 \equiv 1 \pmod 6$, the walk lands in turn on an upper member, on $L_{3}$, and on a lower member: one step in three falls on $L_{3}$ and strikes no cell. Only two lines are born inside the sector, *M*+2 and *M*+4. From its birth, $L_{M+2}$ makes five steps before $(M+6)^2$ ($k = 0,\dots,4$, since $(M+2)^2 + 2(M+2)k \lt  (M+6)^2$ forces $k \le 4$); *k* = 2 falls on $L_{3}$, and the other four are *A*, *B*, *D*, *E*. $L_{M+4}$ makes three steps ($k \le 2$); *k* = 1 falls on $L_{3}$, and the other two are *C*, *F*. Four and two make six. This is Theorem 1 again, proved by counting steps instead of factor pairs, and it explains the number as well as proving it.
+**Why six: the positions are the steps of the newborn lines.** A line $L_{p}$ is dormant from its first contact with $L_{3}$ at 3*p* until its birth at $p^2$. That stretch is *p*(*p*-3), i.e. $(p-3)/2$ steps of 2*p*, each owned by a smaller line. After birth it walks on in steps of 2*p*. Because $p^2 \equiv 1 \pmod 6$, the walk lands in turn on an upper member, on $L_{3}$, and on a lower member when $p \equiv 1 \pmod 6$, and on an upper member, a lower member and $L_3$ when $p \equiv 5 \pmod 6$: either way one step in three falls on $L_{3}$ and strikes no cell. Only two lines are born inside the sector, *M*+2 and *M*+4. From its birth, $L_{M+2}$ makes five steps before $(M+6)^2$ ($k = 0,\dots,4$, since $(M+2)^2 + 2(M+2)k \lt  (M+6)^2$ forces $k \le 4$); *k* = 2 falls on $L_{3}$, and the other four are *A*, *B*, *D*, *E*. $L_{M+4}$ makes three steps ($k \le 2$); *k* = 1 falls on $L_{3}$, and the other two are *C*, *F*. Four and two make six. This is Theorem 1 again, proved by counting steps instead of factor pairs, and it explains the number as well as proving it.
 
 The same walk gives the ladder of Corollary 1a below without algebra. In $(M^2, (M+6k)^2)$ the newborn lines are *M*+*a* for the 2*k* admissible offsets *a*. Walking each from its birth and dropping the steps on $L_{3}$ leaves $4k, 4k-2, \dots, 2$ cells — the rows of that corollary — with $2k^2$ steps lost to $L_{3}$ in all and 2*k*(2*k*+1) cells kept. Checked against the corollary's list for $k \le 6$ on four windows each, twenty-four in all, with exact agreement. At *k* = 2 the four newborn lines make 11, 9, 5, 3 steps inside the window and lose 3, 3, 1, 1 of them to $L_{3}$.
 
@@ -176,7 +176,7 @@ Each of the four maximal patterns above meets both groups, so none survives. Fro
 $$\varnothing, \quad \lbrace A\rbrace, \quad \lbrace C\rbrace, \quad \lbrace F\rbrace, \quad \lbrace A,D\rbrace, \quad \lbrace A,E\rbrace, \quad \lbrace C,F\rbrace,$$
 all of size at most two. $\blacksquare$
 
-*What that list is a list of.* These are the patterns open **at the level of a residue class modulo 35**: the sets the lines 5 and 7 alone leave open that fit the dichotomy. The set actually open in a sector is a subset of one of them, since larger lines may close more. Over the 3,332 sectors $M = 9,\dots,19{,}999$ with a non-twin root pair, the realised sets are these seven plus $\lbrace D\rbrace$ and $\lbrace E\rbrace$ alone, which arise when a larger line closes *A*. The bound $|S_M \cap E_M| \le 2$ is unaffected.
+*What that list is a list of.* These are the patterns open **at the level of a residue class modulo 35**: the sets the lines 5 and 7 alone leave open that fit the dichotomy. The set actually open in a sector is a subset of one of them, since larger lines may close more. Over the 2,992 sectors among $M = 9,\dots,19{,}999$ with a non-twin root pair, the realised sets are these seven plus $\lbrace D\rbrace$ and $\lbrace E\rbrace$ alone, which arise when a larger line closes *A*. The bound $|S_M \cap E_M| \le 2$ is unaffected.
 
 *Verification.* Over the same 3,332 sectors $M = 9, 15, \dots, 19{,}999$: the maximum of $|S_M \cap E_M|$ is 3 in the 340 sectors where (*M*+2,*M*+4) is a twin and **exactly 2 in the other 2,992**. The forcing is never violated (an open member of $\lbrace A,D,E\rbrace$ with *M*+2 composite, of $\lbrace C,F\rbrace$ with *M*+4 composite, or *B* open without the twin), and the open set never meets both groups without the twin. **The separation is exact: three open positions occur only when the twin is already there.** Both bounds are attained — three in 3 sectors, two in 13 of the twinless ones — so neither is an artefact of a short range.
 
@@ -200,11 +200,11 @@ Summing the per-phase caps gives $5\cdot0+20\cdot1+10\cdot2 = 40$. The coupling 
 
 $$\sum_{i=0}^{34}\bigl|S_{M_i}\cap E_{M_i}\bigr| \le 31 \qquad\text{(no twin in the window)},$$
 
-with the ceiling 31 attained in 9 of the 2431 alignments and the 2431 values peaking at 26.
+with the ceiling 31 attained in 9 of the 2431 alignments and the 2431 values having mode 26.
 
 **That ceiling cannot be lowered by any finite set of lines, and this is a theorem, not a report of failed attempts.**
 
-*What is and is not claimed.* The budget is a maximum over residues. What is proved: for every finite set of lines, some choice of residues lets the extremal configuration survive them all, so no residue-based argument brings the ceiling below 31. It is *not* a claim that an integer $M_{0}$ realising the configuration exists, still less infinitely many. That would need all 133 polynomials prime at once, which is Hypothesis H and is not assumed here.
+*What is and is not claimed.* The budget is a maximum over residues. What is proved: for every finite set of lines, some choice of residues lets the extremal configuration survive them all, so no residue-based argument brings the ceiling below 31. It is *not* a claim that an integer $M_{0}$ realising the configuration exists, still less infinitely many. That would need all 59 polynomials prime at once, which is Hypothesis H and is not assumed here.
 
 *The system.* The 9 extremal alignments carry 28 distinct maximal configurations. Each needs certain $M_0+a$ prime — 27 to 30 of them — and the *partner* member of each of the 31 cells to survive. The partners are quadratics in *n*: $36n^2+60n+23$ for *A*, $36n^2+84n+47$ for *C*, $36n^2+96n+53$ for *D*, $36n^2+108n+67$ for *E* and $36n^2+108n+79$ for *F* (verified against the definition for $n \lt 3000$).
 
@@ -342,7 +342,7 @@ The inequality is the classical odd Bonferroni truncation. The multiplicity form
 | 501 | 1008 | -1538 | -839 | -40 | 46 | 47 |
 | 753 | 1512 | -2490 | -1431 | -93 | 74 | 75 |
 
-The first moment $L_1 = N - S_1$ is the union bound, and it dies at once: $\sum_p 2/p$ passes 1 at *M* = 13 and then grows like $2\log\log M$, so $L_{1}$ is negative from *M* = 21 on and carries no information. Order three is exact through *M* = 21. Order five is exact through *M* = 51; at *M* = 105 it gives 20 against $C_M = 21$, and at *M* = 141 it gives 25 against 29, so an earlier version's "through *M* = 141" contradicted the row beside it. Order seven is exact through *M* = 381 and short by one at *M* = 753.
+The first moment $L_1 = N - S_1$ is the union bound, and it dies at once: $\sum_p 2/p$ passes 1 at *M* = 13 and then grows like $2\log\log M$, so $L_{1}$ is negative from *M* = 21 on and carries no information. Order three is exact through *M* = 21. Order five is exact through *M* = 51; at *M* = 105 it gives 20 against $C_M = 21$, and at *M* = 141 it gives 25 against 29, so an earlier version's "through *M* = 141" contradicted the row beside it. Order seven is exact through *M* = 381 and short by one at *M* = 501 and at *M* = 753.
 
 **Where the hierarchy terminates, and it is not at the mean.** By Proposition 1 the truncation is exact once the order reaches $\max_d m(d)$. The mean of *m*(*d*) over the sector is $\sum_{p \le M} 2/p \approx 2\log\log M$ — about 4.1 at $M = 10^6$. An earlier version inferred from that mean that the **maximum** is also of order $\log\log M$. That inference is invalid — a maximum over $2M+6$ samples is not controlled by their mean — and the conclusion is false. Proposition 1' below gives the correct order. The measurements:
 
@@ -412,8 +412,6 @@ Smoothing gains a factor of about nine on $L_{7}$ at $M = 50{,}001$ and does not
 
 **What this paper imports, and it is only the coordinates.** [P1] for the window combinatorics, [P2] for the lines, the cells and the square window, [P3] for the exact cycle laws, and [P4] for the transfer measurements — the four listed in §1. Nothing from [P5], [P7] or [P8] is used in any proof above; those are companions, with their results in their own places.
 
-**Verified but not proved.** Nothing in this paper carries that label. The one result of the set that does, the reach $\lfloor 2g/3\rfloor$ of [P8, Verified Law 2], is not used here.
-
 **Measured, and labelled as such where they occur.** Each item is a computation over a stated finite range and supports a claim about that range only.
 
 - The agreement of $C_{M}$ with the Hardy–Littlewood prediction — within about 2% from *M* = 20,001 on, with one row 7.9% out — and the two phase controls that go with it — §2.1.
@@ -424,15 +422,16 @@ Smoothing gains a factor of about nine on $L_{7}$ at $M = 50{,}001$ and does not
 
 **Where the supporting material is.** The counting details and the ladder in the width of the window are in Appendix A; A.3 carries Corollaries 1a to 1e and the census to $M = 10^9$. Appendix B holds four accounts moved from §2: the block budgets (B.1), the square-phase mean (B.2), the two constructions that do not help (B.3), and the smoothing bounds with the mass they miss (B.4). Each has a stub in §2 with its conclusion and status.
 
-**Covered by the verification scripts.** `verify_exception_dichotomy.py` covers the closed forms of the six positions, the $\lbrace 5,7\rbrace$ table, Corollary 1, the whole of the period budget of §2.3 (the per-phase caps $5\cdot0+20\cdot1+10\cdot2 = 40$, the coupling to 37, the ceiling 31 over all 2431 alignments, the nine that attain it, and the partner quadratics), and Step 1 of Proposition 2 over all 423 primes below 3000. `verify_bonferroni_depth.py` covers Proposition 1 — the geometry of §§2.9 and [P2, §4.5], the exception positions of Theorem 1 over every sector below *M* = 2500, the exactness of the alternating sum at order $\max_d m(d)$, and the published values. `verify_first_appearance.py` covers the bad-phase sweep and its least representative. `verify_new_additions.py` covers the exact phase set of [P2, Cor 1] over 428 primes, the diamond-centre corollary over 6,320 pairs, the coincidence gap of [P2, Cor 3], the third channel and pair count of [P3, Cor 1–2], and the two constructions of §2.8 — the rotation of the balanced word over 20 windows and the clean-owner theorem.
+**Covered by the verification scripts.** `verify_exception_dichotomy.py` covers the closed forms of the six positions, the $\lbrace 5,7\rbrace$ table, Corollary 1, the whole of the period budget of §2.3 (the per-phase caps $5\cdot0+20\cdot1+10\cdot2 = 40$, the coupling to 37, the ceiling 31 over all 2431 alignments, the nine that attain it, and the partner quadratics), and Step 1 of Proposition 2 over all 423 primes below 3000. `verify_bonferroni_depth.py` covers Proposition 1 — the geometry of §§2.9 and [P2, §4.5], the exception positions of Theorem 1 over every sector below *M* = 2500, the exactness of the alternating sum at order $\max_d m(d)$, and the published values. `verify_exception_certificate.py` covers the 28 maximal configurations of §2.3, the primes that eliminate 27 of them, and the admissibility of the 59 polynomials of the survivor. `verify_max_multiplicity.py` covers the order $\Theta(\log M/\log\log M)$ of $\max_d m(d)$ in §2.9 and its explicit witness. `verify_new_additions.py` covers the exact phase set of [P2, Cor 1] over 428 primes, the diamond-centre corollary over 6,320 pairs, the coincidence gap of [P2, Cor 3], the third channel and pair count of [P3, Cor 1–2], and the two constructions of §2.8 — the rotation of the balanced word over 20 windows and the clean-owner theorem.
 
-**Not here.** Every statement above is *exact* — an identity, a cap, or an explicit list. None is a lower bound, and a lower bound is what the twin conjecture needs. Each criterion above needs a lower bound on a quantity that exceeds the twin count of a sector by at most a constant. So the criteria are exact reformulations, not routes.
+**Not here.** Every statement above is *exact* — an identity, a cap, or an explicit list. None gives a lower bound that stays positive for all large $M$ — Proposition 1 is a lower bound, but its truncations turn negative — and such a bound is what the twin conjecture needs. Each criterion above needs a lower bound on a quantity that exceeds the twin count of a sector by at most a constant. So the criteria are exact reformulations, not routes.
 
 The measurements behind that, the four tests the framework was checked against, and where and why it stops, are in **Papers 9 to 11**.
 
 ---
 
 *The computations and much of the prose in this paper were prepared with AI assistance (ChatGPT, OpenAI; Claude, Anthropic), used for algebraic derivation, for drafting and rewriting code and text, for running the computations, and for auditing the papers against their own scripts. All statements were checked by the author, who is responsible for them; the repository README sets out the division of labour in full.*
+
 ---
 
 ---
@@ -444,7 +443,7 @@ The two routine computations below are quoted in §2 and kept here so they do no
 ### A.1 Raw cell count and main term
 
 $$C = \frac{v^2-u^2}{6}-1, \qquad C_- = 4n-1  (u=6n-1), \qquad C_+ = 8n+3  (u=6n+1),$$
-and $C \equiv 3 \pmod 4$ always (zero failures over 427 consecutive prime pairs) — an exact property that still gives no protective invariant, since a single line's deletion count has no fixed parity. The main term is $M = C P_2$.
+and $C \equiv 3 \pmod 4$ always — for $p, q$ coprime to $6$, $q^2 - p^2 \equiv 0 \pmod{24}$, so $C = (q^2-p^2)/6 - 1 \equiv -1 \pmod 4$ — an exact property that still gives no protective invariant, since a single line's deletion count has no fixed parity. The main term is $M = C P_2$.
 
 ### A.2 Local deviations
 
@@ -479,7 +478,7 @@ If *c*+*d* = *a*+*b* the difference is cd-ab, divisible by 4 since all four offs
 
 *The hypothesis is load-bearing.* Dropping $M \gt  36k^2$ on the same range gives both failures at once: open cells with two composite endpoints (1 at *k*=2, 7 at *k*=3, 15 at *k*=5) and exceptions outside the description (3, 13 and 30). The condition is stronger than needed — Theorem 1 needs none at *k*=1 — but it makes the short argument above work.
 
-*And widening does not help.* The ceiling grows like $4k^2$ and the open cells only like $2kM/\log^2 M$, so the margin $C_{M,k} - K_k$ scales as $M/\big((2k+1)\log^2 M\big)$: linearly worse in *k*. **The case *k* = 1 already in Theorem 1 is the best one**; the ladder completes the description and is no step toward forcing a survivor. The missing ingredient is unchanged: a lower bound on $C_{M,k}$.
+*And widening does not help.* The ceiling grows like $4k^2$ and the open cells only like $2kM/\log^2 M$, so the ratio $C_{M,k}/K_k$ scales as $M/\big((2k+1)\log^2 M\big)$: linearly worse in *k*. **The case *k* = 1 already in Theorem 1 is the best one**; the ladder completes the description and is no step toward forcing a survivor. The missing ingredient is unchanged: a lower bound on $C_{M,k}$.
 
 **Which old lines can close two of the six at once.** Label the six cells by their composite member: $A = (M+2)^2$, *B* = (*M*+2)(*M*+4), $C = (M+4)^2$, *D* = (*M*+2)(*M*+8), $E = (M+2)(M+10)$ and *F* = (*M*+4)(*M*+8). An old line *r* closes a cell when it divides either member. Then:
 
@@ -491,7 +490,7 @@ $$Q_D = p^2+6p-2,\quad Q_E = p^2+8p+2,\quad Q_F = p^2+8p+14 .$$
 
 *Closures through the composite member.* A line $r \le M$ is smaller than both *p* and *p*+2, so *r* divides none of $A = p^2$, *B* = *p*(*p*+2), $C = (p+2)^2$ except through *M*+8 or *M*+10. Hence $r \mid M+8$ closes *D* and *F*, and $r \mid M+10$ closes *E*; and *r* cannot divide both *M*+8 and *M*+10, whose difference is 2.
 
-*Two partners.* If *r* divides $Q_{X}$ and $Q_{Y}$ it divides their difference. Nine of the fifteen differences are 2*p*, 6*p*, 2*q*, 6*q*, 8*q* or 12 with *q* = *p*+2, and each forces $r \in \lbrace 2,3\rbrace$ or $r \in \lbrace p,q\rbrace$, all excluded. The other six are settled by putting the resulting congruence back into one partner:
+*Two partners.* If *r* divides $Q_{X}$ and $Q_{Y}$ it divides their difference. Nine of the fifteen differences are 2*p*, 4*p*, 6*p*, 2*q*, 6*q*, 8*q* or 12 with *q* = *p*+2, and each forces $r \in \lbrace 2,3\rbrace$ or $r \in \lbrace p,q\rbrace$, all excluded. The other six are settled by putting the resulting congruence back into one partner:
 
 | pair | *r* divides | substitution | conclusion |
 |------|------|------|------|
@@ -504,7 +503,7 @@ $$Q_D = p^2+6p-2,\quad Q_E = p^2+8p+2,\quad Q_F = p^2+8p+14 .$$
 
 *One composite and one partner.* If $r \mid M+8$ then $p \equiv -6$, and the six partners reduce to $34, 26, 14, -2, -10, 2$ modulo *r*, so *r* divides no partner beyond *D* and *F* themselves. If $r \mid M+10$ then $p \equiv -8$ and the partners reduce to $62, 50, 34, 14, 2, 14$ — the fifth is $Q_E \equiv 64-64+2$, so $E$ is closed through its composite member, not its partner. The largest new modulus is $62 = 2\cdot 31$, the source of the constant. $\blacksquare$
 
-*The constant is sharp.* The bound $r \gt 31$ cannot be lowered: *r* = 31 closes *A* and *E* together whenever $31 \mid M+10$ and $31 \mid (M+2)^2-2$. This happens in 128 of the twin sectors below $M = 400{,}000$, the first at *M* = 1695.
+*The constant is sharp.* The bound $r \gt 31$ cannot be lowered: *r* = 31 closes *A* and *E* together whenever $31 \mid M+10$ (which already gives $31 \mid (M+2)^2-2$, since $(-8)^2 - 2 = 62$). This happens in 128 of the twin sectors below $M = 400{,}000$, the first at *M* = 1695.
 
 *Verification.* Zero violations over all 3,802 sectors below $M = 400{,}000$ with *M*+2 and *M*+4 both prime, so that all six cells exist. There the only multiple closure by a line above 31 is $\lbrace D,F\rbrace$, 4,060 times; below 31 every combination appears, the commonest being $\lbrace D,E,F\rbrace$, $\lbrace B,D\rbrace$, $\lbrace B,E\rbrace$ and $\lbrace D,F\rbrace$.
 
@@ -553,7 +552,7 @@ Over all 166,666,665 sectors below $10^{9}$: ***D* and *E* are never open togeth
 
 The last three columns are the point. They give the square family's density against $\log^2 M$, the non-square family's density against $\log^3 M$, and their ratio against $\log M$. The square positions have dimension 2 and the non-square ones dimension 3, so all three should tend to constants. All three do: the first settles near 9.7 after a slow climb, the second near 24.2, and the third is 2.49 across four consecutive decades, varying by under half a per cent. **The dimension count of Corollary 1e is thus measured, not only derived.** In the last decade the non-square exceptions occupy 0.324% of sectors, so a single open non-square cell forces a twin in 99.68% of them.
 
-One asymmetry inside the family: *F* is about twice as common as *B* — the ratio is 2.09 in the last decade and 2.12 in the one before — though the two carry linear conditions of the same strength, since prime pairs at gap 4 and at gap 2 have the same singular series. The difference lies wholly in the partner: the prime factors of $Q_B = (M+3)^2+1$ must be $1 \bmod 4$, those of $Q_F = (M+6)^2-2$ must be $\pm 1 \bmod 8$, and the two densities differ by that factor.
+One asymmetry inside the family: *F* is about twice as common as *B* — the ratio is 2.09 in each of the last two decades and 2.12 in the one before them — though the two carry linear conditions of the same strength, since prime pairs at gap 4 and at gap 2 have the same singular series. The difference lies wholly in the partner: the prime factors of $Q_B = (M+3)^2+1$ must be $1 \bmod 4$, those of $Q_F = (M+6)^2-2$ must be $\pm 1 \bmod 8$, and the two densities differ by that factor.
 
 **How rare the non-square exceptions are, and in what sense this can be proved.** The four non-square positions are sifted in dimension **three**, not two. The composite member of each is a product of two linear forms in *M*, so it forbids two residues modulo every line *r*; the partner is an irreducible quadratic and forbids two more or none. With $\left(\tfrac{\cdot}{r}\right)$ the Legendre symbol, the partners are
 $$Q_B = (M+3)^2+1, \quad Q_D = (M+5)^2-11, \quad Q_E = (M+6)^2-14, \quad Q_F = (M+6)^2-2,$$
@@ -780,7 +779,7 @@ This is largest at *b* = 0, where $\lvert A\cap A\rvert = s$ and the value is $s
 
 **A remark on the case *H* = *T*.** There the Fourier multiplier of the two-stage weight is $\lvert D_N(h)\rvert^4/N^3 = \Delta_N(h/d)^2/N$ — the square of the Fejér kernel, which up to normalisation is the **Jackson kernel** of approximation theory. So at equal parameters the construction is a Jackson-type smoothing on the Fourier side. The spatial weight is a convolution of two triangles, not a Jackson kernel; the two should not be confused.
 
-**The exponent is sharp, and the construction has a name.** Expanding $E_{d,b}$ over the non-zero frequencies and keeping one Fourier coefficient gives a lower bound for $\max_b \lvert E_{d,b}\rvert$. At $H = T = (d-1)/2$ one has $\lvert D_H(1)\rvert \asymp d$, so that lower bound and $d^3/(HT^2)$ are both of order 1, and no smaller power of *d* can hold uniformly in *H* and *T*. **This settles the exponent 3, not the sharpness of the constant $1/45$.** Measured at that choice, $\max_b\lvert E_{d,b}\rvert$ against the bound is $0.225/0.237$, $0.191/0.203$ and $0.181/0.193$ at *d* = 11, 23, 37 — a stable ratio near 0.94. The two-stage device is **iterated Fejér smoothing on $\mathbb{Z}/d\mathbb{Z}$**: the moving centre turns the time average into a second convolution on the same cyclic group, so the two Fejér multipliers multiply. Both the sharpness argument and the name are due to a respondent to a question of mine on MathOverflow; the numbers here are my own check of them.
+**The exponent is sharp, and the construction has a name.** Expanding $E_{d,b}$ over the non-zero frequencies and keeping one Fourier coefficient gives a lower bound for $\max_b \lvert E_{d,b}\rvert$. At $H = T = (d-1)/2$ one has $\lvert D_H(1)\rvert \asymp d$, so that lower bound and $d^3/(HT^2)$ are both of order 1, and no smaller power of *d* can hold uniformly in *H* and *T*. **This settles the exponent 3, not the sharpness of the constant $1/45$.** Measured at that choice, $\max_b\lvert E_{d,b}\rvert$ against the bound is $0.225/0.237$, $0.191/0.203$ and $0.181/0.193$ at *d* = 11, 23, 37 — a stable ratio near 0.94. The two-stage device is **iterated Fejér smoothing on $\mathbb{Z}/d\mathbb{Z}$**: the moving centre turns the time average into a second convolution on the same cyclic group, so the two Fejér multipliers multiply. Both the sharpness argument and the name are due to a respondent to a question by the author on MathOverflow; the numbers here are the author's check of them.
 
 Proposition 3 makes the second of these usable across sectors, not just inside one: the moving centre samples consecutive sectors, whose errors are odd about a common centre, so the sliding average is a cancellation, not merely a smoothing.
 
@@ -821,7 +820,7 @@ The proved direction is the one the route needs. The inequality with *H* polynom
 | 20,001 | 3,333 | 88.5% | 40.1% | 5.6% | 0% | 0% |
 | 50,001 | 8,333 | 90.0% | 44.7% | 8.7% | 0.2% | 0% |
 
-**Smoothing reaches almost all of $S_{1}$ and none of $S_{5}$ and beyond.** The arithmetic is immediate: for $p_1\cdots p_i \lt r$ the primes must average $r^{1/i}$, which at *i* = 4 and $r = 8{,}333$ leaves only three subsets — $\lbrace 5,7,11,13\rbrace$, $\lbrace 5,7,11,17\rbrace$ and $\lbrace 5,7,13,17\rbrace$ — and at *i* = 5 none. $S_{1}$ is the term that died at *M* = 21, and the terms that decide the sign of $L_{7}$ are $S_{4}$ through $S_{7}$, so **the smoothing controls exactly the part that never needed controlling.** On that reading we record a closed route: the boundary error does not seem to be what makes the sign negative, and since the moving kernel's exponent is sharp we do not expect another window shape to change it.
+**Smoothing reaches almost all of $S_{1}$ and none of $S_{5}$ and beyond.** The arithmetic is immediate: for $p_1\cdots p_i \lt r$ the primes must average $r^{1/i}$, which at *i* = 4 and $r = 8{,}333$ leaves only four subsets — $\lbrace 5,7,11,13\rbrace$, $\lbrace 5,7,11,17\rbrace$, $\lbrace 5,7,11,19\rbrace$ and $\lbrace 5,7,13,17\rbrace$ — and at *i* = 5 none. $S_{1}$ is the term that died at *M* = 21, and the terms that decide the sign of $L_{7}$ are $S_{4}$ through $S_{7}$, so **the smoothing controls exactly the part that never needed controlling.** On that reading we record a closed route: the boundary error does not seem to be what makes the sign negative, and since the moving kernel's exponent is sharp we do not expect another window shape to change it.
 
 ---
 

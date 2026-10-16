@@ -173,7 +173,7 @@ for k, c in exp_c.items():
     U = sum(max(0, v-2)*n for v, n in comp.items())
     Q4 = sum(max(0, v-3)*n for v, n in comp.items())
     ok = ok and comp == c and cover == T - U + Q4
-check("Theorem B1: the component census and tau = T - U + Q", ok,
+check("Theorem A1: the component census and tau = T - U + Q", ok,
       "{5,7} cover = %d" % sum(v//2*n for v, n in rows[(5,7)][3].items()))
 exp_t = {(5,): (8,6,4,2), (5,7): (48,30,16,14), (5,7,11): (480,270,128,142),
          (5,7,11,13): (5760,2970,1280,1690)}

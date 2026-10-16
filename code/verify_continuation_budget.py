@@ -2,9 +2,9 @@
 """
 verify_continuation_budget.py
 
-COVERS = ["[P11, App. C.2]"]
+COVERS = ["[P11, App. B.2.1]"]
 
-Closes the closing-budget tables of [P11, App. C.2].
+Closes the closing-budget tables of [P11, App. B.2.1].
 
 Objects, all inside the window (P^2, 9P^2) after the lines up to P have acted:
 
@@ -12,15 +12,15 @@ Objects, all inside the window (P^2, 9P^2) after the lines up to P have acted:
     T, D   distance-6 edges among survivors, and those with a survivor between
     G      T - D, the genuine gap-6 pairs
     tau    the minimum deletion cover of the distance-6 graph, = T - U + Q
-           by [P7, Thm B1], with U and Q the 3- and 4-term runs
+           by [P7, Thm A1], with U and Q the 3- and 4-term runs
     S_P    the surviving semiprimes, sum over P < q < 3P of
            pi(9P^2/q) - pi(q-1), each counted once by its least factor
     c_p    (K/S) / (2G/V), with C the survivors a future line removes (the
            composites), S = |C| and K = sum of deg_6 over C
 
-NOT covered here: the Delta_q profile binned by q/P of C.2.1.1, the block
-standard-deviation table of C.2.2, and the mean of (-1)^Omega over rough n in
-[P9, S2.2] -- the last needs 4e7 factorisations at 1e8.
+NOT covered here: the Delta_q profile binned by q/P of B.2.1.1 and the block
+standard-deviation table of B.2.2 (no generator exists for either).  The mean of
+(-1)^Omega over rough n in [P9, S2.3] is covered by verify_parity_mean.py.
 
 Modes:  --fast (seconds)   default (minutes)   --full (P up to 1999)
 """
@@ -28,7 +28,7 @@ import sys, math
 from sympy import primerange, primepi, isprime
 import numpy as np
 
-COVERS = ["[P11, App. C.2]"]
+COVERS = ["[P11, App. B.2.1]"]
 FAST = "--fast" in sys.argv
 FULL = "--full" in sys.argv
 fails = 0
@@ -70,7 +70,7 @@ def graph(P):
 def semiprimes(P):
     return sum(int(primepi(9*P*P//q)) - int(primepi(q - 1)) for q in primerange(P + 1, 3*P))
 
-print("\n1. C.2.1.2: the cover tau against the available deletions S")
+print("\n1. B.2.1.2: the cover tau against the available deletions S")
 rows = {101: (2283, 1867, 1.2228)}
 if not FAST: rows[499] = (32550, 28186, 1.1548)
 if FULL: rows[997] = (107439, 95613, 1.1237)
@@ -80,14 +80,14 @@ for P, (tau_e, S_e, ratio) in rows.items():
     S = semiprimes(P)
     ok = ok and cover == tau_e and abs(S - S_e) <= 1 and abs(cover/S - ratio) < 2e-3
     det.append("P=%d: tau=%d S=%d ratio=%.4f" % (P, cover, S, cover/S))
-    check("tau = T - U + Q at P = %d, as [P7, Thm B1] says" % P, cover == tuq)
+    check("tau = T - U + Q at P = %d, as [P7, Thm A1] says" % P, cover == tuq)
 check("the tau / S rows", ok, "; ".join(det))
 check("the conditional ratio 5.9304658 / 5.8875106 = 1.0072960",
       abs(5.9304658/5.8875106 - 1.0072960) < 5e-7)
 check("the formal main term of S is (9 log 3 - 4) = 5.8875106",
       abs(9*math.log(3) - 4 - 5.8875106) < 5e-7)
 
-print("\n2. C.2.1.1: the local scale of tau")
+print("\n2. B.2.1.1: the local scale of tau")
 det = []
 for P in ([101, 499] if FAST else ([101, 499, 997] if not FULL else [101, 499, 997, 1999])):
     v, s, V, T, D, cover, _ = graph(P)
@@ -97,7 +97,7 @@ check("the scale approaches 16 C_2 e^{-gamma} = 5.9304658 from above",
       abs(16*0.6601618158468695*math.exp(-0.5772156649015329) - 5.9304658) < 5e-7)
 check("the turning point q/P = 0.3 is where P^2/q = 3P", abs(1/3 - 0.3) < 0.034)
 
-print("\n3. C.2.1.3: the concentration factor c_p")
+print("\n3. B.2.1.3: the concentration factor c_p")
 rows = {101: 1.0074, 199: 1.0143}
 if not FAST: rows[499] = 1.0035
 if FULL: rows[997] = 1.0094

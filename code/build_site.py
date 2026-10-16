@@ -18,7 +18,7 @@ REPO = "https://github.com/Osman209/odd-sieve-cell-system"
 SITE = "https://osman209.github.io/odd-sieve-cell-system"
 ORCID = "0009-0004-5912-999X"
 DOI = "10.5281/zenodo.22661626"
-DATE = "2026-10-03"
+DATE = "2026-10-16"
 
 CSS = """<style>body{max-width:52rem;margin:2.5rem auto;padding:0 1.2rem;font:16px/1.6 Georgia,"DejaVu Serif",serif;color:#1a1a1a}
 h1{font-size:1.6rem;line-height:1.3;margin-bottom:.2rem}h2{font-size:1.05rem;font-weight:400;color:#555;margin-top:0}
@@ -31,7 +31,7 @@ PAPERS = [
     dict(
         slug="overview_the_cell_system",
         title="The Cell System: an Overview",
-        sub="Every result of the set stated once, with its status attached: proved, proved under hypothesis, or measured",
+        sub="Every result of the set stated once, with its status attached: proved or measured",
         abs="A single pass over the twelve papers. The coordinates; the exact window histogram; "
             "the exact transport of a census over a sieve cycle; what survives the move to a short "
             "interval; what the framework decides outright; where it stops, stated from inside the "
@@ -61,7 +61,7 @@ PAPERS = [
         slug="paper_04_from_cycle_to_window",
         title="Paper 4. From Cycle to Window",
         sub="What survives when an exact periodic law is evaluated on a short interval",
-        abs="An exact law on a sieve cycle is not an exact law on a window, and the loss is not uniform: soft weights transfer almost exactly, sharp indicators do not. The twin-to-product ratio sits at the conditional Hardy-Littlewood value e^(2 gamma)/4.",
+        abs="An exact law on a sieve cycle is not an exact law on a window, and the loss is not uniform: soft weights transfer almost exactly, sharp indicators do not. The twin-to-product ratio is measured close to e^(2 gamma)/4, the value the Hardy-Littlewood conjecture predicts.",
     ),
     dict(
         slug="paper_05_gap_alphabet",
@@ -161,12 +161,12 @@ def index():
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Cell System &mdash; Mohamed Osman</title>
-<meta name="description" content="A coordinate system for the odd sieve: what it proves, what it measures, and where it stops. Twelve papers, one overview and thirty-six verification scripts. No twin-prime claim.">
+<meta name="description" content="A coordinate system for the odd sieve: what it proves, what it measures, and where it stops. Twelve papers, one overview and thirty-seven verification scripts. No twin-prime claim.">
 {CSS}</head><body>
 <h1>The Cell System</h1>
 <h2>A coordinate system for the odd sieve &mdash; what it proves, what it measures, and where it stops</h2>
 <p class="meta">Mohamed Osman &middot; ORCID <a href="https://orcid.org/{ORCID}">{ORCID}</a> &middot; independent researcher</p>
-<p>Twelve papers, one overview and thirty-six verification scripts. Papers 1 to 4 build the coordinates
+<p>Twelve papers, one overview and thirty-seven verification scripts. Papers 1 to 4 build the coordinates
 and the transport laws; papers 5 to 8 are the construction and what it decides about twin pairs;
 papers 9 to 11 derive the point at which it stops <em>from inside the construction</em> rather than
 quoting it, and measure how much of the difficulty the framework can localise before failing to

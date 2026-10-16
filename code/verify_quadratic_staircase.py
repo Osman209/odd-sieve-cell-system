@@ -183,8 +183,9 @@ check("d_n(R) in {0,1,2} and (W_L, W_R) = (2-d, 2+d)", bad == 0)
 bad = 0
 for n in odds(3, rng(499, 1999, 1999)):
     c = np.bincount([d_n(n, R) for R in range(1, n - 1, 2)], minlength=3)
-    if c[2] != c[0] + 1: bad += 1
-check("Theorem 4: P_2 = P_0 + 1", bad == 0)
+    A_ = (n + 7) // 8
+    if c[2] != c[0] + 1 or c[2] != A_ or c[0] != A_ - 1 or c[1] != (n + 1) // 2 - 2 * A_: bad += 1
+check("Theorem 4: P_2 = P_0 + 1, and the census P_2 = A, P_0 = A-1, P_1 = (n+1)/2 - 2A", bad == 0)
 t4 = {11: (1,2,2), 13: (1,3,2), 31: (3,8,4), 101: (12,25,13), 499: (62,124,63)}
 ok = all(tuple(np.bincount([d_n(n, R) for R in range(1, n - 1, 2)], minlength=3)) == r
          for n, r in t4.items())

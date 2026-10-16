@@ -17,7 +17,7 @@ which are always distinct. So exactly two of every $p$ cells lose a member — t
 
 **Windows and sectors (§4).** The window $[(6a-1)^2,(6a+1)^2]$ is an interval of $4a-1$ cell indices starting at $6a^2-2a+1$, on which every line is two arithmetic progressions (Theorem 4). Its middle cell is $(n^2-1,n^2+1)$ and is never a twin (Theorem 5). The sectors tile the cell strip exactly, so no sector carries a phase of its own (§4.5).
 
-**Ownership (Theorem 8).** A line stays the largest divisor below the square root of its strikes for exactly $a+b+2$ steps, where $ab = m$ is the central pair of $m$.
+**Ownership (Theorem 8).** A line stays the largest divisor below the square root of its strikes until step $a+b+2$, where it first loses that place; here $ab = m$ is the central pair of $m$.
 
 No analytic estimate is used. The histogram of the square window is proved separately in Paper 1.
 
@@ -52,11 +52,11 @@ No analytic estimate is used. The histogram of the square window is proved separ
 
 | | statement | where |
 |-------------|------------------------------------------------------|-------|
-| **Theorem 8** | $L_m$ holds the centre of its strikes — it stays the largest divisor below the square root — for exactly $a+b+2$ steps, where $(a,b)$ is the central pair of $m$; the displacing divisor is $m+2a$. | §5.3 |
+| **Theorem 8** | $L_m$ holds the centre of its strikes — it stays the largest divisor below the square root — until step $a+b+2$, where it first loses it, and $(a,b)$ is the central pair of $m$; the displacing divisor is $m+2a$. | §5.3 |
 | **Corollary 5** | The first loss is a handover with its index named: $L_m(a+b+2) = L_{m+2a}(b-a)$. At a square it lands on the new line's birth; at a prime it reads $L_p(p+3) = L_{p+2}(p-1)$. | §5.4 |
 | **Corollary 6** | $T(m) = m+2a = a(b+2)$, so a composite hands over to a composite: under iteration of $T$ the primes are a transient set. | §5.5 |
 
-Everything in this paper is proved. The histogram results — Theorems 4, 5, 6, 7 and 8 of the earliest version — are now Paper 1, where they are stated for all odd $n$ and without reference to primes; Theorem 8 above is a new statement and unrelated to them.
+Every Theorem, Proposition and Corollary in this paper is proved; the few measurements (§2.5, §4.4) are labelled where they occur. The histogram results — Theorems 4, 5, 6, 7 and 8 of the earliest version — are now Paper 1, where they are stated for all odd $n$ and without reference to primes; Theorem 8 above is a new statement and unrelated to them.
 
 ### 0. What this paper is, and what it is not
 
@@ -175,7 +175,7 @@ Consequently the underlying network consists of the odd prime lines alone.
 
 ### 2.5 Why the prime $2$ is excluded
 
-With $L_2$ admitted, gaps between consecutive struck numbers lie in $\lbrace 1,2\rbrace$ with maximum $2$, and a twin pair becomes the *word* $(2,2)$ — not an extremal object. Restricted to odd integers, the gaps lie in $\lbrace 2,4,6\rbrace$ and a twin pair is the *maximal letter* $6$. Measured over $10^6$ integers. Excluding $2$ therefore sharpens the description rather than weakening it.
+With $L_2$ admitted, gaps between consecutive struck numbers lie in $\lbrace 1,2\rbrace$ with maximum $2$, and a twin pair becomes the *word* $(2,2)$ — not an extremal object. Restricted to odd integers, the gaps lie in $\lbrace 2,4,6\rbrace$ and a twin pair is the *maximal letter* $6$: of three consecutive odd numbers one is a multiple of $3$, so two consecutive odd composites are at most $6$ apart, and a gap of $6$ leaves exactly the two odd numbers between them, a cell, both prime ([P5, Thm 1]). Excluding $2$ therefore sharpens the description rather than weakening it.
 
 ---
 
@@ -256,7 +256,7 @@ $$(p-2) = (p \text{ cells per cycle}) - (2 \text{ branches}).$$
 
 *Closed form.* $6^{-1} = (p+1)/6$ if $p \equiv 5 \pmod 6$, and $(5p+1)/6$ if $p \equiv 1$. Zero failures to $p = 20{,}000$. In particular the two forbidden positions always sit at one sixth and five sixths of the modulus: for $p \sim 10^3$ the smaller lies in $[0.16650, 0.16683]$ against $1/6 = 0.16667$.
 
-**Which of the two positions a twin row can occupy.** Theorem 3 forbids both positions to a surviving cell, but the two are not alike once one asks which cells are twin pairs. Normalise by the **birth index** rather than by $6^{-1}$: with $p = 6a+\sigma$ put $c = a$, so that $6c \equiv -\sigma \pmod p$ and the two forbidden positions are again $j \equiv \pm c$; put $u_p(j) = jc^{-1} \bmod p$, so that they become $u = \pm 1$. (Normalising by $6^{-1}$ instead would put the birth cell at $u = -\sigma$ and make the statement below false for $p \equiv 1 \bmod 6$: at $p = 7$ the twin $C_1 = (5,7)$ would sit at $u = -1$. The scripts use the birth index throughout.) If $u_p(j) = +1$ then $j = c + mp$ and the member of $C_j$ that $L_p$ reaches is $p(6m+1)$; at $m = 0$ that member is $p$ itself, which is prime, and for $m \ge 1$ it is composite. If $u_p(j) = -1$ then $j = mp - c$ and the member reached is $p(6m-1)$, composite for every $m \ge 1$ and with no $m = 0$ case, since $j$ would be negative.
+**Which of the two positions a twin row can occupy.** Theorem 3 forbids both positions to a surviving cell, but the two are not alike once one asks which cells are twin pairs. Normalise by the **birth index** rather than by $6^{-1}$: with $p = 6a+\sigma$ put $c = a$, so that $6c \equiv -\sigma \pmod p$ and the two forbidden positions are again $j \equiv \pm c$; put $u_p(j) = jc^{-1} \bmod p$, so that they become $u = \pm 1$. (Normalising by $6^{-1}$ instead would put the birth cell at $u = -\sigma$ and make the statement below false for $p \equiv 1 \bmod 6$: at $p = 7$ the twin $C_1 = (5,7)$ would sit at $u = -1$. The scripts use the birth index throughout.) If $u_p(j) = +1$ then $j = c + mp$ and the member of $C_j$ divisible by $p$ is $p(6m+1)$; at $m = 0$ that member is $p$ itself, which is prime, and for $m \ge 1$ it is composite. If $u_p(j) = -1$ then $j = mp - c$ and the member reached is $p(6m-1)$, composite for every $m \ge 1$ and with no $m = 0$ case, since $j$ would be negative.
 
 > **Corollary 1.** Among cells that are twin pairs, the position $u = -1$ is never occupied, and the position $u = +1$ is occupied at the single index $j = c$ and nowhere else — and there only when $C_c$ is itself a twin pair. In short: $+1$ is birth first and closure thereafter, $-1$ is closure always.
 
@@ -369,7 +369,7 @@ The two formulas are the same expression with one sign changed, and §3.6 shows 
 
 Two consequences are immediate, and they are why the pair of formulas is worth stating rather than decorative.
 
-- **(3.7) confines the second regime to a triangle.** Write the two even offsets as $u = 2a$ and $v = 2b$. If the product is to lie below $(m+h)^2$ then $2m(a+b)+4ab \lt  2mh+h^2$, and when $h^2 \lt  2m$ that is *equivalent* to $a+b \le h$: one direction because $4ab \le (a+b)^2 \le h^2$, the other because $a+b \ge h+1$ already gives $2m(a+b) \ge 2mh+2m \gt  2mh+h^2$. The pairs $(a,b)$ with $1 \le a \le b$ available at all therefore number
+- **(3.7) confines the second regime to a triangle.** Write the two even offsets as $u = 2a$ and $v = 2b$. If the product is to be at most $(m+h)^2$ then $2m(a+b)+4ab \le 2mh+h^2$, and when $h^2 \lt  2m$ that is *equivalent* to $a+b \le h$: one direction because $4ab \le (a+b)^2 \le h^2$, the other because $a+b \ge h+1$ already gives $2m(a+b) \ge 2mh+2m \gt  2mh+h^2$. The pairs $(a,b)$ with $1 \le a \le b$ available at all therefore number
 $$\sum_{s=2}^{h} \Big\lfloor \tfrac{s}{2} \Big\rfloor  =  \Big\lfloor \tfrac{h^2}{4}\Big\rfloor .$$
 (In the offsets themselves the bound reads $u+v \le 2h$, not $u+v \le h$: at $m = 103$, $h = 6$ the pair $u = v = 4$ has $107^2 \lt  109^2$ with $u+v = 8$.)
 - **(3.6) admits no such confinement**, since $e-d$ may be small while $d$ and $e$ are both large.
@@ -470,11 +470,11 @@ while the two positions shift by $-(72j+36)$ and $-(72j+12)$ — differing by $2
 
 *Verification.* Zero failures over $428{,}340$ checks.
 
-**Two consequences.** First, **exactly one strike in three of every line is spent on $L_3$** — a fact used by counting in [P8, §2.2] and elsewhere, here obtained from the coordinate instead. Measured over the whole window at $a = 1667$, the strikes split $33.32\text{ per cent} / 33.32\text{ per cent} / 33.36$% between $u \equiv 0, 2, 4$.
+**Two consequences.** First, **exactly one strike in three of every line is spent on $L_3$** — a fact used by counting in [P8, §2.2] and elsewhere, here obtained from the coordinate instead. Measured over the whole window at $a = 1667$, the strikes split $33.32\text{ per cent} / 33.32\text{ per cent} / 33.36$% between $u \equiv 0, 2, 4$ (no generator was kept for this split).
 
 Second, the scheduling is **asymmetric between the rails**: the two members of a layer both act on the upper rail at $t \equiv 0$, but on the lower rail at opposite residues, $t\equiv1$ for the left and $t\equiv2$ for the right.
 
-**That asymmetry has a testable consequence, and it fails.** If it mattered, cells closed only on the upper rail would differ systematically from cells closed only on the lower. Over $1{,}000$ windows ($a = 200,\dots,1199$) the difference has mean $-1.03$ with standard deviation $20.05$, giving $t = -1.62$, and is positive in $470$ of $1000$ windows. **No effect.** We report it because the asymmetry in $t$ is real and it was the one place in this section from which a statement about twins could have come.
+**That asymmetry has a testable consequence, and it fails.** If it mattered, cells closed only on the upper rail would differ systematically from cells closed only on the lower. Over $1{,}000$ windows ($a = 200,\dots,1199$) the difference has mean $-1.03$ with standard deviation $20.05$, giving $t = -1.62$, and is positive in $470$ of $1000$ windows (no generator was kept for this test). **No effect.** We report it because the asymmetry in $t$ is real and it was the one place in this section from which a statement about twins could have come.
 
 ### 4.5 The strip is fixed and the sectors tile it
 
@@ -493,7 +493,7 @@ and the two are linked by an exact telescoping:
 *Verification.* Exact for every $r \lt 2000$. At $r = 1$: $M = 9$, $a_1 = 14$, $L_1 = 24$, so $W_1 = (81,225)$ is the cells $14,\dots,37$ — from $(83,85)$ to $(221,223)$ — and the next sector starts at $a_2 = 38$.
 
 **What this removes.** The cell $C_n = (6n-1,6n+1)$ is defined once and for all, and by Theorem 3 each line $p$ closes the two classes $n \equiv \pm 6^{-1} \pmod p$ — also once and for all. Neither depends on the sector. **There is therefore no phase attached to a sector**: what looks like one is only the position of the moving start $a_r$ inside a strip that never moves. The whole of the twin question in these coordinates is
-$$C_r  =  \lvert\lbrace n \in [a_r,\ a_{r+1}) : n \not\equiv \pm 6^{-1} \pmod p \ \text{ for every } 5 \le p \le M \rbrace\rvert,$$
+$$C_r  =  \lvert\lbrace n \in [a_r,\ a_{r+1}) : n \not\equiv \pm 6^{-1} \pmod p \ \text{ for every } 5 \le p \lt M+6 \rbrace\rvert,$$
 one fixed periodic pattern read along one moving quadratic trajectory.
 
 **And the trajectory has an exact displacement law.** From (4.2),
@@ -634,10 +634,10 @@ Moreover $p_+^2 - p_-^2 = 2p_- + 2p_+$ exactly, so the two lines' steps fill the
 
 One rule was followed throughout: **every deviation was measured against an explicit baseline before it was interpreted.** Two consequences worth recording.
 
-- The constant $2$ in $H_j = 2 + W_j$ is essential and was found by failure, not by design: the formula without it fails in $57$ of $78$ tested cases. (Recorded again in [P1, App. B], since it is easy to mislay.)
+- The constant $2$ in $H_j = 2 + W_j$ is essential and was found by failure, not by design: the formula without it fails in $57$ of $78$ tested cases (a count from an early run; no generator was kept). (Recorded again in [P1, App. B], since it is easy to mislay.)
 - $D$ is **not** monotone. The ascending quantity is the raw $4j^2$; after folding modulo $2p$ the order scrambles. For $p = 7$ the fingerprint reads $0, 4, \mathbf{2}, 8, 8, \mathbf{2}, 4, 0$. Monotonicity holds only for $p = 3, 5$. Note also that $H$ satisfies a *sum* symmetry ($=8$) whereas $D$ satisfies an *equality*.
 
-Verification code and the tables behind every "zero failures" claim accompany the monograph from which this series is drawn. The claims of §5 are regenerated by `verify_central_pair.py`.
+The scripts in `code/` regenerate the checks of this paper; the claims of §5 are regenerated by `verify_central_pair.py`. Two measurements of §4.4 (the split of one third and the rail-asymmetry test) have no generator and are marked there.
 
 ---
 
@@ -646,6 +646,7 @@ Verification code and the tables behind every "zero failures" claim accompany th
 ---
 
 *The computations and much of the prose in this paper were prepared with AI assistance (ChatGPT, OpenAI; Claude, Anthropic), used for algebraic derivation, for drafting and rewriting code and text, for running the computations, and for auditing the papers against their own scripts. All statements were checked by the author, who is responsible for them; the repository README sets out the division of labour in full.*
+
 ---
 
 ## References

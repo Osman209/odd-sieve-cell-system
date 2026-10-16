@@ -338,6 +338,38 @@ for _sc in sorted(_glob.glob(_os.path.join(CODE_, "verify_*.py"))):
     if not _re.search(r"^COVERS\s*=", open(_sc, encoding="utf-8").read(), _re.M):
         prob.append(f"[{_os.path.basename(_sc)}] has no COVERS line")
 
+# ---- 13. a rule line directly under a paragraph turns that paragraph into a heading
+# (setext).  GitHub and pandoc both do it: the AI note of eleven papers rendered as an
+# H2 and appeared in the PDF outline.  Leave a blank line before every "---".
+for _fn in sorted(_glob.glob(_os.path.join(D, "*.md"))) + [_os.path.join(ROOT, x) for x in ("README.md", "COVERAGE.md")]:
+    if not _os.path.exists(_fn): continue
+    _L = open(_fn, encoding="utf-8").read().split("\n"); _fence = False
+    for _i, _ln in enumerate(_L):
+        if _ln.strip().startswith("```"): _fence = not _fence
+        if _fence or _i == 0: continue
+        _pv = _L[_i - 1]
+        if (_re.match(r"^ {0,3}(-{2,}|={2,})\s*$", _ln) and _pv.strip()
+                and not _pv.lstrip().startswith(("|", "#", ">"))
+                and not _re.match(r"^\s*([-*+]|\d+\.)\s", _pv)
+                and not _re.match(r"^ {0,3}(-{2,}|={2,})\s*$", _pv)):
+            prob.append(f"[{_os.path.basename(_fn)}] line {_i+1}: rule under a paragraph makes it a heading - add a blank line")
+
+# ---- 14. companion references outside the papers (COVERAGE, README) resolve too
+for _rel in ("README.md", "COVERAGE.md"):
+    _p = _os.path.join(ROOT, _rel)
+    if not _os.path.exists(_p): continue
+    for _m in _re.finditer(r"\[P(\d{1,2})\s*,\s*([^\]]+)\]", open(_p, encoding="utf-8").read()):
+        _n, _ref = int(_m.group(1)), _m.group(2)
+        _tgt = PAPER.get(_n)
+        if not _tgt: prob.append(f"[{_rel}] [P{_n}, {_ref}]: no such paper"); continue
+        _h = headings(texts[_tgt])
+        for _s in _re.findall(r"\u00a7+\s*(\d+(?:\.\d+)*)", _ref) + _re.findall(r"[\u2013-]\s*(\d+\.\d+)", _ref):
+            if _s not in _h: prob.append(f"[{_rel}] [P{_n}, {_ref}]: no heading {_s} in paper {_n}")
+        for _a in _re.findall(r"App(?:\.|endix)?\s+([A-Z](?:\.\d+)*)", _ref):
+            if _a not in _h: prob.append(f"[{_rel}] [P{_n}, {_ref}]: no appendix {_a} in paper {_n}")
+        for _k, _num in _re.findall(r"(Thm|Theorem|Prop|Proposition|Cor|Corollary|Lemma)\.?\s*(\d+[a-z]?)", _ref):
+            if _num not in declared(texts[_tgt], ABB[_k]): prob.append(f"[{_rel}] [P{_n}, {_ref}]: {ABB[_k]} {_num} not declared in paper {_n}")
+
 print("\n".join(prob) if prob else "no problems found")
 print(f"\n--- {len(prob)} item(s)")
 sys.exit(1 if prob else 0)

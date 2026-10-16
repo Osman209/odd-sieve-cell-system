@@ -2,7 +2,7 @@
 """
 verify_cell_transfer.py — regenerates every number added to
 
-    paper_04_from_cycle_to_window.md   §6.1  (pattern transfer, Proposition 2)
+    paper_04_from_cycle_to_window.md   §6    (pattern transfer, Proposition 2)
     paper_09_the_exact_obstruction.md §3.2 (prediction row, the R/C decades)
     paper_11_what_a_continuation_needs.md Appendix B (the survival-product bullet)
 
@@ -19,7 +19,7 @@ Rows needing a height above the run's cutoff are SKIPPED and listed as a
 REDUCED RUN; they never set the exit code.  Exits nonzero if any check fails.
 """
 
-COVERS = ["[P4, S6.1]", "[P9, S3.2]", "[P11, App. A]"]
+COVERS = ["[P4, S6]", "[P9, S3.2]", "[P11, App. A]"]
 
 import sys, math, argparse
 import numpy as np
@@ -272,7 +272,7 @@ def main():
                 check(f"16. X=1e9: partial ratio / (e^g.omega({uu}))^2",
                       math.exp(ld2 - ln2) / (math.exp(GAMMA) * om(uu)) ** 2, w, 2e-3)
 
-    print("\n--- [P4, §6.1] admissibility and pattern transfer ---")
+    print("\n--- [P4, §6] admissibility and pattern transfer ---")
     check("17. nu_5({0,1,2}) = 5 (consecutive cells inadmissible)", nu(5, (0, 1, 2)), 5, 0)
     pats = [(0, 1), (0, 1, 3), (0, 1, 3, 5), (0, 1, 3, 5, 6)]
     for h in pats:
